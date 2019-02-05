@@ -6,6 +6,7 @@
 function general_setting()
 {
 	$('#submit_general').prop('disabled', true);
+	$('#submit_general').val('Saving...');
 	
 	var judul1 = $('#judul1').val();
 	var judul2 = $('#judul2').val();
@@ -34,6 +35,7 @@ function general_setting()
 	.done(function( data ) {
 			$("#result").empty().append(data).hide().fadeIn();
 			$('#submit_general').prop('disabled', false);
+			$('#submit_general').val('Save');
 			window.location='/blog/setting#top';
   	});
 	
