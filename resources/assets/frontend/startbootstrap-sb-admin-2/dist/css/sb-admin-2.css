@@ -1,0 +1,178 @@
+.img-circle {
+    border-radius: 50%;
+}
+.intro-header {
+  background-color: #000000;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro-header .site-heading {
+  padding: 100px 0 30px;
+  color: white;
+  max-width:700px;
+  margin:0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header .site-heading {
+    padding: 150px 0;
+  }
+  .intro-header .site-heading h1{
+    font-size: 80px;
+  }
+}
+.intro-header .site-heading {
+  text-align: center;
+}
+.intro-header .site-heading h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  filter: alpha(opacity=60);
+  
+}
+.transbox {
+    margin: 20px;
+	border-radius: 10px;
+	color: #ffffff;
+    background-color: #000000;
+    border: 0px;
+    background: rgba(0,0,0,0.3);
+	filter: alpha(opacity=30);
+	padding-bottom:2px;  
+}
+.navbar-default {
+    border-color: rgba(34,34,34,.05);
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    background-color:#000000;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+	
+}
+.navbar-default .navbar-header .navbar-brand {
+	font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-weight: 700;
+    color: #FFFFFF;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  	filter: alpha(opacity=60);
+}
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #63a0cc;
+}
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #BBBBBB;
+}
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+    color: #63a0cc;
+}
+.navbar-default .nav > li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: #63a0cc!important;
+    background-color: transparent;
+}
+.navbar-default .nav > li.active>a:hover,
+.navbar-default .nav>li.active>a:focus:hover {
+    background-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background: rgba(0,0,0,0.7);
+}
+.navbar-default .navbar-toggle {
+	background: rgba(0,0,0,0.7);
+}
+@media(min-width:768px) {
+    .navbar-default {
+        border-color: rgba(255,255,255,.3);
+        background-color: transparent;
+    }
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255,255,255,.7);
+    }
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #fff;
+    }
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgba(255,255,255,.7);
+    }
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #fff;
+    }
+    .navbar-default.affix {
+        border-color: rgba(34,34,34,.05);
+        background-color:#000000;
+    }
+    .navbar-default.affix .navbar-header .navbar-brand {
+        color: #fff;
+    }
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: #63a0cc;
+    }
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        color: #fff;
+    }
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: #63a0cc;
+    }
+}
+
+.tldate {
+ 	 display: block;
+ 	 width: 150px;
+ 	 background: #e9f0f5;
+ 	 color: #becad2;
+ 	 margin: 0 auto;
+ 	 padding: 3px 0;
+ 	 text-align: center;
+ 	 font-size: 1.2em;
+}
+
+.text-faded {
+ 	 color: rgba(255, 255, 255, 0.7);
+ 	 font-size:14px;
+}
+
+
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 1em !important;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
