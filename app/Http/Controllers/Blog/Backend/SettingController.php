@@ -88,9 +88,6 @@ class SettingController extends Controller
 					"id"=>"1",
 					"message"=>'Update Success'
 					]);
-			print('<div class="alert alert-success"  role="alert">
-					Update Success
-				</div>');
 		}
 		
 	}

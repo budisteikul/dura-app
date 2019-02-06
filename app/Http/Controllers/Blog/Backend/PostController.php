@@ -150,6 +150,7 @@ class PostController extends Controller
 					"message"=>'success'
 					]);
 		}
+		
 		$user = Auth::user();
 		$job = false;
 		$title =  $request->input('title');
@@ -238,8 +239,8 @@ class PostController extends Controller
 		//================================================
 		if($job)
 		{
-			//$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			//dispatch($rcloneJob);	
+			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
+   			dispatch($rcloneJob);	
 		}
 		//================================================	
     	BlogClass::repair_layout($id);
@@ -320,15 +321,15 @@ class PostController extends Controller
 			//====================================================================================================
 			
 		}
-		
+		BlogClass::repair_layout($blog_posts->id);
 		//================================================
 		if($job)
 		{
-			//$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			//dispatch($rcloneJob);	
+			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
+   			dispatch($rcloneJob);	
 		}
 		//================================================		
-    	BlogClass::repair_layout($blog_posts->id);
+    	
 		return response()->json([
 					"id"=>"1",
 					"message"=>'success'

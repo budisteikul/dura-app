@@ -50,7 +50,7 @@ function UPDATE()
     <div class="row justify-content-center">
         <div class="col-md-12">
              <div class="card">
-                <div class="card-header">Edit Photo</div>
+                <div class="card-header"><i class="fa fa-camera"></i> Edit Photo</div>
                 <div class="card-body">
 				
 <form onSubmit="return UPDATE()">
@@ -59,27 +59,29 @@ function UPDATE()
 
 <div class="container">
 	<div class="row">
-		@foreach($result->attachments as $attachment)
+		@foreach($result->attachments->sortBy('sort') as $attachment)
+				
 				<div class="col-auto" style="margin-top:10px;">
 					<img style="padding-bottom:5px; height:150px;" class="image-photo" src="/storage/images/250/{{ $attachment->public_id .".". $attachment->format }}" >
 				
 					
-   <div class="form-row align-items-center">
-    <div class="col-auto">
-      <input type="text" class="form-control text-center" style="width:50px;" id="attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="{{ $attachment->sort }}">
-    </div>
+					<div class="form-row align-items-center">
+						<div class="col-auto">
+							<input type="text" class="form-control text-center" style="width:50px;" id="attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="{{ $attachment->sort }}">
+						</div>
     
-    <div class="col-auto">
-      <div class="form-check mb-2">
-        <input type="checkbox" id="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="hapus">
-        <label class="form-check-label" for="autoSizingCheck">
-          Delete
-        </label>
-      </div>
-    </div>
-    
-  </div>
+						<div class="col-auto">
+							<div class="form-check">
+								<input type="checkbox" id="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="hapus">
+								<label class="form-check-label" for="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}">
+								Delete
+								</label>
+							</div>
+						</div>
+					</div>
+					
 				</div>
+				
 		@endforeach
 	</div>
 </div>

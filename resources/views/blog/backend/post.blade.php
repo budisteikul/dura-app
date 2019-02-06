@@ -85,7 +85,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Gallery</div>
+                <div class="card-header"><i class="fa fa-image"></i> Gallery</div>
                 <div class="card-body">
       
       	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/post/create?content_type=photo'"><b class="fa fa-camera"></b> Add photo</button>
