@@ -19,14 +19,13 @@ class CreateBlogPostsTable extends Migration
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
-			$table->string('judul',255)->nullable();
-			$table->string('slug',255)->nullable();
-			$table->string('tipe_post',10)->default('post');
-			$table->string('tipe_konten',10)->default('text');
-			$table->dateTime('tanggal')->nullable();
-			$table->longText('konten')->nullable();
+			$table->string('title')->nullable();
+			$table->string('slug')->nullable();
+			$table->string('post_type',10)->default('post');
+			$table->string('content_type',10)->default('text');
+			$table->dateTime('date')->nullable();
+			$table->longText('content')->nullable();
 			$table->string('layout')->nullable();
-			$table->longText('note')->nullable();
 			$table->tinyInteger('status')->default(1);
             $table->nullableTimestamps();
         });

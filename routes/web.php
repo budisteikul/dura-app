@@ -84,21 +84,10 @@ Route::get('/test', function () {
 */
 
 Auth::routes(['verify' => true]);
-
 Route::get('/home',function(){ return redirect('/'); })->name('home')->middleware(['auth', 'verified']);
-
 //========================================================================
 // Blog App Route
 //========================================================================
-Route::get('/blog/post', 'Blog\Backend\PostController@getIndex');
-Route::get('/blog/post/data', 'Blog\Backend\PostController@getData');
-Route::get('/blog/post/edit/{id}','Blog\Backend\PostController@getEditPost');
-Route::post('/blog/post/edit','Blog\Backend\PostController@postEditPost');
-Route::get('/blog/post/add/{tipe_konten}','Blog\Backend\PostController@getAddPost');
-Route::post('/blog/post/add','Blog\Backend\PostController@postAddPost');
-Route::get('/blog/post/delete/{id}','Blog\Backend\PostController@getDeletePost');
-Route::get('/blog/post/publish/{id}/{status}', 'Blog\Backend\PostController@getPublishData');
-Route::post('/blog/file/add', 'Blog\Backend\FileController@postFileAdd');
-Route::post('/blog/file/delete', 'Blog\Backend\FileController@postFileDelete');
-Route::get('/blog/setting', 'Blog\Backend\SettingController@getSetting');
-Route::post('/blog/setting', 'Blog\Backend\SettingController@postSetting');
+Route::resource('/blog/post','Blog\Backend\PostController')->middleware(['auth', 'verified']);
+Route::resource('/blog/file', 'Blog\Backend\FileController')->only('store','destroy')->middleware(['auth', 'verified']);
+Route::resource('/blog/setting','Blog\Backend\SettingController')->only('edit','update')->middleware(['auth', 'verified']);

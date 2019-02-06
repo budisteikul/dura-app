@@ -13,78 +13,88 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_tmp;
 use App\Models\Blog\blog_attachments;
+use Illuminate\Support\Facades\Validator;
+
 class PostController extends Controller
 {
 	
-	public function __construct()
+	public function index(Request $request)
 	{
-    	$this->middleware(['auth', 'verified']);
-	}
-		
-	public function getData()
-	{
-		$user = Auth::user();
-		$posts = blog_posts::with(array('attachments' => function($query)
+		if($request->ajax())
+		{
+			$user = Auth::user();
+			$posts = blog_posts::with(array('attachments' => function($query)
 				   {
 					   $query->where('resource_type', 'image');
 					   $query->orderBy('sort', 'asc');
 				   }
-				   ))->where('user_id',$user->id)->where('tipe_post','post')->orderBy('tanggal','desc');
-        return Datatables::eloquent($posts)
-		->addColumn('contents', function ($post){
-				$contents = "";
+				   ))->where('user_id',$user->id)->where('post_type','post')->orderBy('date','desc');
+			return Datatables::eloquent($posts)
+				->addColumn('contents', function ($post){
+					$contents = "";
 				
-                if(@count($post->attachments))
-				{
-					foreach($post->attachments as $attachment)
+					if(@count($post->attachments))
 					{
-						$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. $attachment->public_id .'.'. $attachment->format .'">';
+						foreach($post->attachments as $attachment)
+						{
+							$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. $attachment->public_id .'.'. $attachment->format .'">';
+						}
+					
+						$contents .=	"<br />". $post->content;
+					
 					}
-					
-					$contents .=	"<br />". $post->konten;
-					
-				}
-				else
-				{
-					$contents = $post->konten;
-				}
-				return $contents;
-            })
-		->editColumn('tanggal', function ($post){
-                return $post->tanggal;
-            })
-		->addColumn('action', function ($post) {
-				if($post->status==1)
-				{
-					$label = ""	;
-					$status = 0;
-					$button = "btn-primary";
-					$icon = "fa-toggle-on";
-					$text = " On";
-				}
-				else
-				{
-					$label = "";
-					$status = 1;
-					$button = "btn-primary";
-					$icon = "fa-toggle-off";
-					$text = " Off";
-				}
-                return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/post/edit/'.$post->id.'\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="delPost(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="upPost(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
-            })
-		->rawColumns(['action','contents'])
-		->toJson();
-	}
-		
-	public function getIndex()
-	{
-		$user = Auth::user();
-    	return view('blog.backend.post')->with('user',$user);
-	}
+					else
+					{
+						$contents = $post->content;
+					}
+					return $contents;
+				})
+				->editColumn('date', function ($post){
+					return $post->date;
+				})
+				->addColumn('action', function ($post) {
+					if($post->status==1)
+					{
+						$label = ""	;
+						$status = 0;
+						$button = "btn-primary";
+						$icon = "fa-toggle-on";
+						$text = " On";
+					}
+					else
+					{
+						$label = "";
+						$status = 1;
+						$button = "btn-primary";
+						$icon = "fa-toggle-off";
+						$text = " Off";
+					}
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/post/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="UPDATE(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
+				})
+				->rawColumns(['action','contents'])
+				->toJson();
+			}
+			else
+			{
+				return view('blog.backend.post');
+			}
+		}
+
 	
-	public function getAddPost($tipe_konten)
+	public function create(Request $request)
 	{
 		$user = Auth::user();
+
+		$content_type = $request->input('content_type');
+		switch($content_type)
+		{
+			case "photo":
+			$content_type = "photo";
+			break;
+			default:
+			$content_type = "photo";
+		}
+
 		$result = blog_tmp::where('user_id',$user->id)->get();
 		foreach($result as $rs)
 		{
@@ -95,47 +105,61 @@ class PostController extends Controller
 		}
 		blog_tmp::where('user_id',$user->id)->delete();
 		
-		$tanggal = date("Y-m-d H:i:s", strtotime('+7 hours'));
-		
-    		return view('blog.backend.post-add')
-				->with('user',$user)
-				->with('tanggal',$tanggal)
-				->with('tipe_konten',$tipe_konten);
+		$stdClass = app();
+		$setting = $stdClass->make('stdClass');
+		$setting->key = Uuid::uuid4();
+		$setting->date = date("Y-m-d H:i:s", strtotime('+7 hours'));
+		$setting->content_type = $content_type;
+		$setting->post_type = 'post';
+    	return view('blog.backend.post-add')->with('setting',$setting);
 		
 	}
 	
-	public function getEditPost($id)
+	public function edit($id)
 	{
 		$user = Auth::user();
 		$stdClass = app();
 		$setting = $stdClass->make('stdClass');
+		$setting->key = Uuid::uuid4();
 		$result = blog_posts::where('user_id',$user->id)->find($id);
-		$result_attachments = blog_attachments::where('post_id',$result->id)->where('user_id',$user->id)->orderBy('sort','asc')->get();
 		
 		return view('blog.backend.post-edit')
-			   ->with('user',$user)
 			   ->with('result',$result)
-			   ->with('result_attachments',$result_attachments)
-			   ->with('id',$id)
 			   ->with('setting',$setting);
 	}
 	
-	public function postEditPost(Request $request)
+	public function update(Request $request, $id)
 	{
-		
+		if($request->input('status')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'status' => 'in:0,1'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+				
+			$user = Auth::user();
+			$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
+			$blog_posts->status = $request->input('status');
+			$blog_posts->save();
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+		}
 		$user = Auth::user();
 		$job = false;
-		$judul =  $request->input('judul');
-		$tanggal =  $request->input('tanggal');
+		$title =  $request->input('title');
+		$date =  $request->input('date');
 		$user_id =  $user->id;
 		$key = $request->input('key');
-		$tipe_konten = $request->input('tipe_konten');
-		$tipe_post = $request->input('tipe_post');
-		$konten = $request->input('konten');
+		$content_type = $request->input('content_type');
+		$post_type = $request->input('post_type');
+		$content = $request->input('content');
 		$layout = $request->input('layout');
-		$id = $request->input('id');
-		
-		
 		
 		$result = blog_attachments::where('post_id',$id)->where('user_id',$user->id)->get();
 		foreach($result as $rs)
@@ -159,29 +183,26 @@ class PostController extends Controller
 			
 		}
 		
-		if($judul=="") $judul = date("j M Y", strtotime($tanggal));
-		$guid = BlogClass::makeSlug($judul,$user_id,$id);
-		
+		if($title=="") $title = date("j M Y", strtotime($date));
+		$guid = BlogClass::makeSlug($title,$user_id,$id);
 		
 		$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
-		$blog_posts->judul = $judul;
+		$blog_posts->title = $title;
 		$blog_posts->slug = $guid;
-		$blog_posts->konten = $konten;
+		$blog_posts->content = $content;
 		$blog_posts->layout = $layout;
-		$blog_posts->tanggal = $tanggal;
-		$blog_posts->tipe_konten = $tipe_konten;
-		$blog_posts->tipe_post = $tipe_post;
+		$blog_posts->date = $date;
+		$blog_posts->content_type = $content_type;
+		$blog_posts->post_type = $post_type;
 		$blog_posts->save();
 		
 		$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->get();
-		
 		if(@count($result))
 		{
 			$job = true;
 		}
 		
 		$sort_order = blog_attachments::where('post_id',$id)->where('user_id',$user->id)->max('sort');
-		
 		foreach($result as $rs)
 		{
 				$sort_order++;
@@ -222,34 +243,38 @@ class PostController extends Controller
 		}
 		//================================================	
     	BlogClass::repair_layout($id);
+		return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
 	}
 	
-	public function postAddPost(Request $request)
+	public function store(Request $request)
 	{
 		
 		$user = Auth::user();
 		$job = false;
-		$judul =  $request->input('judul');
-		$tanggal =  $request->input('tanggal');
+		$title =  $request->input('title');
+		$date =  $request->input('date');
 		$user_id =  $user->id;
 		$key = $request->input('key');
-		$tipe_konten = $request->input('tipe_konten');
-		$tipe_post = $request->input('tipe_post');
-		$konten = $request->input('konten');
+		$content_type = $request->input('content_type');
+		$post_type = $request->input('post_type');
+		$content = $request->input('content');
 		$layout = $request->input('layout');
 		
-		if($judul=="") $judul = date("j M Y", strtotime($tanggal));
-		$guid = BlogClass::makeSlug($judul,$user_id);
+		if($title=="") $title = date("j M Y", strtotime($date));
+		$guid = BlogClass::makeSlug($title,$user_id);
 		
 		$blog_posts = new blog_posts;
-		$blog_posts->judul = $judul;
+		$blog_posts->title = $title;
 		$blog_posts->slug = $guid;
-		$blog_posts->konten = $konten;
+		$blog_posts->content = $content;
 		$blog_posts->layout = $layout;
-		$blog_posts->tanggal = $tanggal;
+		$blog_posts->date = $date;
 		$blog_posts->user_id = $user_id;
-		$blog_posts->tipe_konten = $tipe_konten;
-		$blog_posts->tipe_post = $tipe_post;
+		$blog_posts->content_type = $content_type;
+		$blog_posts->post_type = $post_type;
 		$blog_posts->status = 0;
 		$blog_posts->save();
 		
@@ -304,9 +329,13 @@ class PostController extends Controller
 		}
 		//================================================		
     	BlogClass::repair_layout($blog_posts->id);
+		return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
 	}
 	
-	public function getDeletePost($id)
+	public function destroy($id)
 	{
 		$user = Auth::user();
 		$job = false;
@@ -332,14 +361,6 @@ class PostController extends Controller
    			//dispatch($rcloneJob);
 		}
 		//================================================
-	}
-	
-	public function getPublishData($id,$status)
-	{
-		$user = Auth::user();
-		$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
-		$blog_posts->status = $status;
-		$blog_posts->save();
 	}
 	
 }

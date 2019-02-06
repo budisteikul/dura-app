@@ -1,6 +1,4 @@
 @extends('layouts.app')
-@section('title', 'Blog Post')
-@section('user', $user->name )
 @section('content')
     
 	<script type="text/javascript">
@@ -9,10 +7,10 @@
 			{
 				"processing": true,
        			"serverSide": true,
-        		"ajax": '/blog/post/data',
+        		"ajax": '/blog/post',
 				"order": [[ 0, "desc" ]],
 				columns: [
-					{data: 'judul', name: 'judul', className: 'auto', orderable: false},
+					{data: 'title', name: 'title', className: 'auto', orderable: false},
 					{data: 'contents', name: 'contents', orderable: false},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
@@ -25,21 +23,27 @@
 			
 	});
 	
-	function upPost(id, status)
+	function UPDATE(id, status)
 	{
 		var table = $('#dataTables-example').DataTable();
 		$.ajax({
-     	async: false,
-     	type: 'GET',
-     	url: '/blog/post/publish/'+ id +'/'+ status
-		}).done(function( msg ) {
-			table.ajax.reload( null, false );
-		});	
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+        	"status":status
+        },
+		type: 'PUT',
+		url: "/blog/post/"+ id
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				table.ajax.reload( null, false );
+			}
+		});
 	}
 	
 	
 	
-	function delPost(id)
+	function DELETE(id)
 	{
 		$.confirm({
     		title: 'Warning',
@@ -53,13 +57,15 @@
             		keys: ['enter'],
             		action: function(){
                  		var table = $('#dataTables-example').DataTable();
-					$.ajax({
-     					async: false,
-     					type: 'GET',
-     					url: '/blog/post/delete/'+ id
-					}).done(function( msg ) {
-					table.ajax.reload( null, false );
-					});	
+							$.ajax({
+							beforeSend: function(request) {
+    							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
+  						},
+     						type: 'DELETE',
+     						url: '/blog/post/'+ id
+						}).done(function( msg ) {
+							table.ajax.reload( null, false );
+						});	
             		}
         		},
         		cancel: function(){
@@ -82,7 +88,7 @@
                 <div class="card-header">Gallery</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-primary"  onclick="window.location='/blog/post/add/photo'"><b class="fa fa-camera"></b> Add photo</button>
+      	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/post/create?content_type=photo'"><b class="fa fa-camera"></b> Add photo</button>
         <hr>
 		<table class="table table-hover" id="dataTables-example" style="width:100%">
 			<thead style="display:none">

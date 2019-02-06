@@ -1,6 +1,4 @@
 @extends('layouts.app')
-@section('title', 'Blog Post')
-@section('user', $user->name )
 @section('content')
 <script language="javascript">
 function general_setting()
@@ -8,36 +6,31 @@ function general_setting()
 	$('#submit_general').prop('disabled', true);
 	$('#submit_general').val('Saving...');
 	
-	var judul1 = $('#judul1').val();
-	var judul2 = $('#judul2').val();
-	var deskripsi = $('#deskripsi').val();
-	var facebook = $('#facebook').val();
-	var twitter = $('#twitter').val();
-	var instagram = $('#instagram').val();
-	var github = $('#github').val();
-	var path = $('#path').val();
-	var key = $('#key').val();
-	var _token = $('#_token').val();
-	$.post("/blog/setting", { 
-	judul1: judul1,
-	judul2: judul2,
-	deskripsi: deskripsi,
-	facebook: facebook,
-	twitter: twitter,
-	instagram: instagram,
-	github: github,
-	path: path,
-	key: key,
-	tipe: "general_setting",
-	_token:_token,
-	submit: "Update"
-	} )
-	.done(function( data ) {
-			$("#result").empty().append(data).hide().fadeIn();
-			$('#submit_general').prop('disabled', false);
-			$('#submit_general').val('Save');
-			window.location='/blog/setting#top';
-  	});
+	$.ajax({
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+			judul1: $('#judul1').val(),
+			judul2: $('#judul2').val(),
+			deskripsi: $('#deskripsi').val(),
+			facebook: $('#facebook').val(),
+			twitter: $('#twitter').val(),
+			instagram: $('#instagram').val(),
+			github: $('#github').val(),
+			path: $('#path').val(),
+			key: 'header_file',
+			tipe: "general_setting"
+        },
+		type: 'PUT',
+		url: "/blog/setting/{{ Auth::user()->id }}"
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				window.location='/blog/setting/{{ Auth::user()->id }}/edit#top';
+				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
+				$('#submit_general').prop('disabled', false);
+				$('#submit_general').val('Save');
+			}
+		});	
 	
 	return false;
 }
@@ -82,7 +75,7 @@ function general_setting()
 		$(document).ready(function()
 		{
 			var settings = {
-   		 		url: "/blog/file/add",
+   		 		url: "/blog/file",
    		 		dragDrop:true,
    		 		fileName: "myfile",
    		 		allowedTypes:"jpg,jpeg",	
@@ -94,17 +87,20 @@ function general_setting()
 		
    				 },
     	 		showDelete:true,
-		 		formData: { key: 'header_file', _token: '{{csrf_token()}}' },
+		 		formData: { key: 'header_file', _token: $("meta[name=csrf-token]").attr("content") },
 		 		deleteCallback: function(data,pd)
 		 		{
 	     			for(var i=0;i<data.length;i++)
 		 			{
-						$.post("/blog/file/delete",{_token:"{{csrf_token()}}",name:data[i]},
-        				function(resp, textStatus, jqXHR)
-        				{
-            				//Show Message  
-            				//$("#status").append("<div>File Deleted</div>");      
-        				});
+						$.ajax({
+							beforeSend: function(request) {
+    							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
+  						},
+     						type: 'DELETE',
+     						url: '/blog/file/'+ data[i]
+						}).done(function( msg ) {
+							
+						});	
     				}      
     				pd.statusbar.hide();
 				}

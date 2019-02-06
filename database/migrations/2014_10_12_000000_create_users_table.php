@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
 			$table->string('picture_path')->nullable();
 			$table->string('picture_url')->nullable();
 			$table->string('domain')->nullable();
-			$table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
 		

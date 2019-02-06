@@ -16,7 +16,7 @@ class SettingController extends Controller
     	$this->middleware(['auth', 'verified']);
 	}
 		
-	public function getSetting()
+	public function edit($id)
 	{
 		
 		$user = Auth::user();
@@ -32,9 +32,6 @@ class SettingController extends Controller
 		$setting->github = BlogClass::getConf('github');
 		$setting->path = BlogClass::getConf('path');
 		
-		
-		
-		
 		$results = blog_tmp::where('key','header_file')->get();
 		foreach($results as $result)
 		{
@@ -46,7 +43,7 @@ class SettingController extends Controller
 		return view('blog.backend.setting')->with('user',$user)->with('setting',$setting);
 	}
 	
-	public function postSetting(Request $request)
+	public function update(Request $request,$id)
 	{
 		$user = Auth::user();
 		$tipe = $request->input('tipe');
@@ -86,6 +83,11 @@ class SettingController extends Controller
 				copy($result->file,'storage/images/header/'. $header);
 				unlink($result->file);
 			}
+			
+			return response()->json([
+					"id"=>"1",
+					"message"=>'Update Success'
+					]);
 			print('<div class="alert alert-success"  role="alert">
 					Update Success
 				</div>');

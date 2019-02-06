@@ -57,7 +57,7 @@
                                 <a class="nav-link" href="/blog/post"><i class="fa fa-image"></i> {{ __('Gallery') }}</a>
                             </li>
 							<li class="nav-item">
-                                <a class="nav-link" href="/blog/setting"><i class="fa fa-gear"></i> {{ __('Setting') }}</a>
+                                <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-gear"></i> {{ __('Setting') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -10,23 +10,18 @@ use App\Models\Blog\blog_tmp;
 
 class FileController extends Controller
 {
-	public function __construct()
-	{
-    	$this->middleware(['auth', 'verified']);
-	}
 	
-	public function postFileDelete(Request $request)
+	public function destroy($id)
 	{
 		$user = Auth::user();
-		$filename = $request->input('name');
-		blog_tmp::where('user_id',$user->id)->where('file',"../storage/logs/". $filename)->delete();
-		if(file_exists("../storage/logs/". $filename))
+		blog_tmp::where('user_id',$user->id)->where('file',"../storage/logs/". $id)->delete();
+		if(file_exists("../storage/logs/". $id))
 		{
-			unlink("../storage/logs/". $filename);
+			unlink("../storage/logs/". $id);
 		}
 	}
 	
-	public function postFileAdd(Request $request)
+	public function store(Request $request)
 	{
 		$ret = array();
 		$user = Auth::user();

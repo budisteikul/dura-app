@@ -60,32 +60,32 @@
  	<ul class="timeline">
 	<?php
 	$i = 1;
-	$tanggal = "";
+	$date = "";
 	?>
     @foreach($results as $result)
     	<?php
 		
-		$aaa = $result->tanggal;
-		$cek_tanggal = DB::table('blog_posts')
-					   ->where('tanggal',function($query) use ($aaa){
-						  		$query->select(DB::Raw(' min(tanggal) '))->from('blog_posts')->where('tanggal','>',$aaa);
+		$aaa = $result->date;
+		$cek_date = DB::table('blog_posts')
+					   ->where('date',function($query) use ($aaa){
+						  		$query->select(DB::Raw(' min(date) '))->from('blog_posts')->where('date','>',$aaa);
 						  })
 					   ->where('user_id',$setting->user_id)
 					   ->first();
-		if(isset($cek_tanggal->tanggal)) $tanggal = strtoupper(date("F",strtotime($cek_tanggal->tanggal)) ." ". date("Y",strtotime($cek_tanggal->tanggal)));
+		if(isset($cek_date->date)) $date = strtoupper(date("F",strtotime($cek_date->date)) ." ". date("Y",strtotime($cek_date->date)));
 		
-		$time=strtotime($result->tanggal);
+		$time=strtotime($result->date);
 		$day=date("d",$time);
 		$month=date("F",$time);
 		$MONTH=date("M",$time);
 		$year=date("Y",$time);
 		
-		$tanggal2 = strtoupper($month ." ". $year);
-		if(($tanggal!=$tanggal2))
+		$date2 = strtoupper($month ." ". $year);
+		if(($date!=$date2))
 		{
-			$tanggal = $tanggal2;
+			$date = $date2;
 			?>
-			<li class="test"><div class="tldate"><?= $tanggal ?></div></li>
+			<li class="test"><div class="tldate"><?= $date ?></div></li>
 			<?php	
 		}
 		
@@ -105,7 +105,7 @@
 			<div class="timeline-panel" style="background-color:#FFFFFF; margin-right:4px; margin-left:4px;">
 				<div class="timeline-heading">
 					<p class="text-muted text-left">
-					<i class="fa fa-clock-o"></i> <?= App\Classes\Blog\BlogClass::timeAgo($result->tanggal) ?>
+					<i class="fa fa-clock-o"></i> <?= App\Classes\Blog\BlogClass::timeAgo($result->date) ?>
 					</p>
 				</div>
                 <?php
@@ -151,8 +151,8 @@
                     </div>
                     </div>
                     
-                    @if(!empty($result->konten))
-                    <div class="timeline-footer">{{ $result->konten }}</div>
+                    @if(!empty($result->content))
+                    <div class="timeline-footer">{{ $result->content }}</div>
                     @endif
                 
                 </div>
@@ -163,8 +163,8 @@
             
             	<div class="timeline-body">
                 	<div id="loading" style="background: url(/img/output_DTGK2a.gif) no-repeat center;">
-                    @if(!empty($result->konten))
-                    {!! $result->konten !!}
+                    @if(!empty($result->content))
+                    {!! $result->content !!}
                     @endif
                     </div>
                 </div>	

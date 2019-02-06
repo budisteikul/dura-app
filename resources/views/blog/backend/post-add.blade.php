@@ -1,41 +1,37 @@
 @extends('layouts.app')
-@section('title', 'Blog Post')
-@section('user', $user->name )
 @section('content')
 
 <script language="javascript">
-function postPost()
+function STORE()
 {
 	$('#submit').prop('disabled', true);
 	$('#submit').val('Saving...');
 	
-	
-	var table = $('#dataTables-example').DataTable();
-	$.post("/blog/post/add", {
-		tipe_post: $('#tipe_post').val(),
-		tipe_konten: $('#tipe_konten').val(),
-		konten: $('#konten').val(),
-		layout: $('#layout').val(),
-		tanggal: $('#tanggal').val(),
-		key: $('#key').val(),
-		_token: $('#_token').val(),
-		judul: $('#judul').val(),
-		submit: "Add" } )
-	.done(function( data ) {
-    	if(data=="")
-		{
-			//table.ajax.reload( null, false );
-			//$.fancybox.close();
-			window.location='/blog/post';
-		}
-		else
-		{
-			$("#result").empty().append(data).hide().fadeIn();
-			$('#submit').prop('disabled', false);
-			$('#submit').val('Save');
-		}
-  	});
-	
+	$.ajax({
+			data: {
+        		"_token": $("meta[name=csrf-token]").attr("content"),
+        		post_type: '{{ $setting->post_type }}',
+				content_type: '{{ $setting->content_type }}',
+				content: $('#content').val(),
+				layout: $('#layout').val(),
+				date: $('#date').val(),
+				key: '{{ $setting->key }}',
+				title: $('#title').val()
+        	},
+			type: 'POST',
+			url: '/blog/post'
+			}).done(function( data ) {
+			if(data.id=="1")
+			{
+				window.location='/blog/post';
+			}
+			else
+			{
+				$("#result").empty().append(data).hide().fadeIn();
+				$('#submit').prop('disabled', false);
+				$('#submit').val('Save');
+			}
+		});
 	
 	return false;
 }
@@ -47,24 +43,10 @@ function postPost()
             <div class="card">
                 <div class="card-header">Add Photo</div>
                 <div class="card-body">
+				
+<form onSubmit="return STORE()">
 
-
-
-
-
-<form method="post" action="/blog/post/add" onSubmit="return postPost()">
-
-@if (count($errors) > 0)
-	<div class="alert alert-danger">
-		<ul>
-			@foreach ($errors->all() as $error)
-				<li>{{ $error }}</li>
-			@endforeach
-		</ul>
-	</div>
-@endif
 <div id="result"></div>
-
 
 <div class="form-group">
 <div id="status"></div>
@@ -73,7 +55,7 @@ function postPost()
 $(document).ready(function()
 {
 var settings = {
-    url: "/blog/file/add",
+    url: "/blog/file",
     multiple:false,
 	dragDrop:true,
 	maxFileCount:-1,
@@ -87,17 +69,20 @@ var settings = {
 		
     },
     showDelete:true,
-	formData: { key: $('#key').val() , _token: $('#_token').val() },
+	formData: { key: '{{ $setting->key }}' , _token: $("meta[name=csrf-token]").attr("content") },
     deleteCallback: function(data,pd)
 	{
     for(var i=0;i<data.length;i++)
     {
-		$.post("/blog/file/delete",{_token:$('#_token').val(),name:data[i]},
-        function(resp, textStatus, jqXHR)
-        {
-            //Show Message  
-            //$("#status").append("<div>File Deleted</div>");      
-        });
+						$.ajax({
+							beforeSend: function(request) {
+    							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
+  						},
+     						type: 'DELETE',
+     						url: '/blog/file/'+ data[i]
+						}).done(function( msg ) {
+							
+						});	
      }      
     pd.statusbar.hide();
 	}
@@ -112,7 +97,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 
 
 <div class="form-group">
-	<input type="text" id="konten" name="konten" class="form-control" placeholder="Caption" autocomplete="off">
+	<input type="text" id="content" name="content" class="form-control" placeholder="Caption" autocomplete="off">
 </div>
 <div class="form-group">
 	<input type="text" id="layout" name="layout" class="form-control" placeholder="Layout" autocomplete="off">
@@ -123,7 +108,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 <div class="form-group">   
 				            
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type="text" id="tanggal" name="tanggal" value="{{$tanggal}}" id="date1" class="form-control" readonly>
+                    <input type="text" id="date" name="date" value="{{$setting->date}}" id="date1" class="form-control" readonly>
                     <div class="input-group-append input-group-addon text-muted">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
@@ -141,10 +126,6 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
         </script>    
 </div>
      
-<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
-<input type="hidden" name="key" id="key" value="{{md5(date('YmdHis'))}}">
-<input type="hidden" id="tipe_post" name="tipe_post" value="post">
-<input type="hidden" id="tipe_konten" name="tipe_konten" value="{{ $tipe_konten }}">
 <input  class="btn btn-danger" type="button" onClick="window.location='/blog/post'" name="submit" value="Cancel">&nbsp;<input  class="btn btn-primary" id="submit" type="submit" name="submit" value="Save">
 </form>
 

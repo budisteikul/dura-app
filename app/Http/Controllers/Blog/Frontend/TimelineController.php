@@ -14,16 +14,16 @@ class TimelineController extends Controller
 	
 	public function __construct()
 	{
-		$domain = strtolower(str_ireplace("www.","",$_SERVER['HTTP_HOST']));
-		$get_user = User::where('domain',$domain)->where('active',1)->first();
-		if(@count($get_user))
-		{
-			$this->user_id = $get_user->id;
-		}
-		else
-		{
+		//$domain = strtolower(str_ireplace("www.","",$_SERVER['HTTP_HOST']));
+		//$get_user = User::where('domain',$domain)->whereNotNull('email_verified_at')->first();
+		//if(@count($get_user))
+		//{
+			//$this->user_id = $get_user->id;
+		//}
+		//else
+		//{
 			$this->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
-		}
+		//}
 		
 	}
 	
@@ -31,21 +31,21 @@ class TimelineController extends Controller
 	{
 		
 		$user_id = $this->user_id;
-		$get_user = User::where('id',$user_id)->where('active',1)->first();
+		$get_user = User::where('id',$user_id)->whereNotNull('email_verified_at')->first();
 		
 		if (Auth::check()) {
 			
 			$check = blog_posts::where('user_id',$user_id)
-				   ->where('tipe_konten','photo')
-				   ->orderBy('tanggal','desc')
+				   ->where('content_type','photo')
+				   ->orderBy('date','desc')
 				   ->first();
 		}
 		else
 		{
 				$check = blog_posts::where('user_id',$user_id)
-				   ->where('tipe_konten','photo')
+				   ->where('content_type','photo')
 				   ->where('status',1)
-				   ->orderBy('tanggal','desc')
+				   ->orderBy('date','desc')
 				   ->first();
 		}
 		
@@ -63,8 +63,8 @@ class TimelineController extends Controller
 				   }
 				   ))
 				   ->where('user_id',$user_id)
-				   ->where('tipe_konten','photo')
-				   ->orderBy('tanggal','desc')
+				   ->where('content_type','photo')
+				   ->orderBy('date','desc')
 				   ->paginate(6);
 		}
 		else
@@ -76,9 +76,9 @@ class TimelineController extends Controller
 				   }
 				   ))
 				   ->where('user_id',$user_id)
-				   ->where('tipe_konten','photo')
+				   ->where('content_type','photo')
 				   ->where('status',1)
-				   ->orderBy('tanggal','desc')
+				   ->orderBy('date','desc')
 				   ->paginate(6);
 		}
 		
