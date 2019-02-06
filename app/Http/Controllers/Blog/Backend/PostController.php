@@ -210,7 +210,8 @@ class PostController extends Controller
 				//====================================================================================================
 			
 				$public_id = Uuid::uuid4();
-				$photo = BlogClass::getAttrPhoto($rs->file);
+				
+				$photo = BlogClass::getAttrPhoto(storage_path('app/').$rs->file);
 				
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
@@ -230,10 +231,10 @@ class PostController extends Controller
 				$blog_attachments->user_id = $user->id;
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
+				BlogClass::createPhoto(storage_path('app/').$rs->file,$public_id .'.'. $photo->format);
 			
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
-				unlink($rs->file);
+				unlink(storage_path('app/').$rs->file);
 			//====================================================================================================
 		}
 		//================================================
@@ -294,7 +295,7 @@ class PostController extends Controller
 			//====================================================================================================
 				
 				$public_id = Uuid::uuid4();
-				$photo = BlogClass::getAttrPhoto($rs->file);
+				$photo = BlogClass::getAttrPhoto(storage_path('app/').$rs->file);
 				
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
@@ -314,10 +315,10 @@ class PostController extends Controller
 				$blog_attachments->user_id = $user->id;
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
+				BlogClass::createPhoto(storage_path('app/').$rs->file,$public_id .'.'. $photo->format);
 				
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
-				unlink($rs->file);
+				unlink(storage_path('app/').$rs->file);
 			//====================================================================================================
 			
 		}

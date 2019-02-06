@@ -83,8 +83,15 @@ Route::get('/test', function () {
 });
 */
 
+Route::get('/test',function(){
+	print(storage_path('app/'));
+	exit();
+	//Storage::disk('public')->putFileAs('photos', new File('../../../test.jpg'), 'photo.jpg');
+	Storage::copy('test.jpg', 'test2.jpg');
+	});
+
 Auth::routes(['verify' => true]);
-Route::get('/home',function(){ return redirect('/'); })->name('home')->middleware(['auth', 'verified']);
+Route::get('/home',function(){ return redirect('/blog/post'); })->name('home')->middleware(['auth', 'verified']);
 //========================================================================
 // Blog App Route
 //========================================================================

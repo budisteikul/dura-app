@@ -44,8 +44,10 @@ function STORE()
                 <div class="card-header"><i class="fa fa-camera"></i> Add Photo</div>
                 <div class="card-body">
 				
-<form onSubmit="return STORE()">
-
+<form method="post" action="/blog/post" onSubmit="return STORE()">
+<input type="hidden" name="post_type" value="{{ $setting->post_type }}">
+<input type="hidden" name="content_type" value="{{ $setting->content_type }}">
+<input type="hidden" name="key" value="{{ $setting->key }}">
 <div id="result"></div>
 
 <div class="form-group">
@@ -72,8 +74,10 @@ var settings = {
 	formData: { key: '{{ $setting->key }}' , _token: $("meta[name=csrf-token]").attr("content") },
     deleteCallback: function(data,pd)
 	{
+		
     for(var i=0;i<data.length;i++)
     {
+		
 						$.ajax({
 							beforeSend: function(request) {
     							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));

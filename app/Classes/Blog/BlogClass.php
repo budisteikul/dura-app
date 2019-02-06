@@ -7,7 +7,7 @@ use Intervention\Image\Facades\Image;
 use App\Models\Blog\blog_attachments;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
-
+use Storage;
 class BlogClass {
 
 	public static function timeAgo($timestamp){
@@ -77,7 +77,10 @@ class BlogClass {
 	
 	public static function createPhoto($file_path,$file)
 	{
+		BlogClass::createDirPhoto();
 		copy($file_path,'storage/images/original/'. $file );
+		
+		//Storage::disk('local')->copy($file_path,'storage/images/original/'. $file);
 		$img = Image::make('storage/images/original/'. $file );
 		$img->fit(500, 500);
 		$img->save('storage/images/500/'. $file );
