@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
 			$table->string('picture_path')->nullable();
 			$table->string('picture_url')->nullable();
-			$table->string('domain')->nullable();
             $table->timestamps();
         });
 		

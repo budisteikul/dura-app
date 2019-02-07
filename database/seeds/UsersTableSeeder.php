@@ -19,7 +19,6 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@ratnawahyu.com',
             'password' => bcrypt('asdasd'),
 			'email_verified_at' => date('Y-m-d H:i:s'),
-			'domain' => 'ratnawahyu.com',
 			'picture_url' => 'storage/images/gravatar/pp1.jpg',
         ]);
     }
