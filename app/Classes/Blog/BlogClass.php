@@ -44,10 +44,11 @@ class BlogClass {
 	{
 		$stdClass = app();
     	$photo = $stdClass->make('stdClass');
-		list($width, $height, $type, $attr) = getimagesize(realpath($file));
-		$get_mime = getimagesize(realpath($file));
+		$path = storage_path('app/') . $file;
+		list($width, $height, $type, $attr) = getimagesize(realpath($path));
+		$get_mime = getimagesize(realpath($path));
 		$mime = explode("/",$get_mime['mime']);
-		$size = filesize(realpath($file));
+		$size = filesize(realpath($path));
 		$photo->width = $width;
 		$photo->height = $height;
 		$photo->resource_type = $mime[0];
@@ -58,6 +59,7 @@ class BlogClass {
 		$photo->signature = "signature";
 		$photo->type = "upload";
 		$photo->etag = "etag";
+		$photo->path = $path;
 		return $photo;	
 	}
 	
@@ -78,37 +80,40 @@ class BlogClass {
 	public static function createPhoto($file_path,$file)
 	{
 		BlogClass::createDirPhoto();
-		copy($file_path,'storage/images/original/'. $file );
-		
-		//Storage::disk('local')->copy($file_path,'storage/images/original/'. $file);
-		$img = Image::make('storage/images/original/'. $file );
+		Storage::disk('local')->copy($file_path,'public/images/original/'. $file);
+		$img = Image::make(storage_path('app').'/public/images/original/'. $file );
 		$img->fit(500, 500);
-		$img->save('storage/images/500/'. $file );
-		$img = Image::make('storage/images/500/'. $file );
+		$img->save(storage_path('app').'/public/images/500/'. $file );
+		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
 		$img->resize(250, 250);
-		$img->save('storage/images/250/'. $file );
-		$img = Image::make('storage/images/500/'. $file );
+		$img->save(storage_path('app').'/public/images/250/'. $file );
+		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
 		$img->resize(50, 50);
-		$img->save('storage/images/50/'. $file );
+		$img->save(storage_path('app').'/public/images/50/'. $file );
+	}
+	
+	public static function deleteTempPhoto($file)
+	{
+		Storage::disk('local')->delete($file);
 	}
 	
 	public static function deletePhoto($file)
 	{
-				if(file_exists("storage/images/50/". $file))
+				if(Storage::disk('public')->exists('images/50/'. $file))
 				{
-					unlink("storage/images/50/". $file);
+					Storage::disk('public')->delete('images/50/'. $file);
 				}
-				if(file_exists("storage/images/250/". $file))
+				if(Storage::disk('public')->exists('images/250/'. $file))
 				{
-					unlink("storage/images/250/". $file);
+					Storage::disk('public')->delete('images/250/'. $file);
 				}
-				if(file_exists("storage/images/500/". $file))
+				if(Storage::disk('public')->exists('images/500/'. $file))
 				{
-					unlink("storage/images/500/". $file);
+					Storage::disk('public')->delete('images/500/'. $file);
 				}
-				if(file_exists("storage/images/original/". $file))
+				if(Storage::disk('public')->exists('images/original/'. $file))
 				{
-					unlink("storage/images/original/". $file);
+					Storage::disk('public')->delete('images/original/'. $file);
 				}
 	}
 	

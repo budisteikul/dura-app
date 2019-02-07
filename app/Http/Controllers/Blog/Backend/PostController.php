@@ -14,6 +14,7 @@ use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_tmp;
 use App\Models\Blog\blog_attachments;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -100,7 +101,7 @@ class PostController extends Controller
 		{
 			if(file_exists($rs->file))
 			{
-				unlink($rs->file);	
+				BlogClass::deleteTempPhoto($rs->file);	
 			}
 		}
 		blog_tmp::where('user_id',$user->id)->delete();
@@ -210,9 +211,7 @@ class PostController extends Controller
 				//====================================================================================================
 			
 				$public_id = Uuid::uuid4();
-				
-				$photo = BlogClass::getAttrPhoto(storage_path('app/').$rs->file);
-				
+				$photo = BlogClass::getAttrPhoto($rs->file);
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->public_id = $public_id;
@@ -231,10 +230,9 @@ class PostController extends Controller
 				$blog_attachments->user_id = $user->id;
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto(storage_path('app/').$rs->file,$public_id .'.'. $photo->format);
-			
+				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
-				unlink(storage_path('app/').$rs->file);
+				BlogClass::deleteTempPhoto($rs->file);
 			//====================================================================================================
 		}
 		//================================================
@@ -295,7 +293,7 @@ class PostController extends Controller
 			//====================================================================================================
 				
 				$public_id = Uuid::uuid4();
-				$photo = BlogClass::getAttrPhoto(storage_path('app/').$rs->file);
+				$photo = BlogClass::getAttrPhoto($rs->file);
 				
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
@@ -315,10 +313,10 @@ class PostController extends Controller
 				$blog_attachments->user_id = $user->id;
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto(storage_path('app/').$rs->file,$public_id .'.'. $photo->format);
-				
+				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
-				unlink(storage_path('app/').$rs->file);
+				BlogClass::deleteTempPhoto($rs->file);
+				
 			//====================================================================================================
 			
 		}

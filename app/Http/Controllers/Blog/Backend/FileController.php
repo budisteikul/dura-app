@@ -32,27 +32,25 @@ class FileController extends Controller
     			['key' => $key]
 			);
 			
-				$path = storage_path('app/') . $path;
-				list($width, $height, $type, $attr) = getimagesize($path);
-    			$size = getimagesize($path);
+				$file = BlogClass::getAttrPhoto($path);
 			
 				if($key!="header_file"){
-					if($width>1280)
+					if($file->width>1280)
 					{
-						$img = Image::make($pathfile);
+						$img = Image::make($file->path);
 						$img->resize(1280, null, function ($constraint) {
     						$constraint->aspectRatio();
 						});
-						$img->save($path);
+						$img->save($file->path);
 					
 					}
-					else if($height>1280)
+					else if($file->height>1280)
 					{
-						$img = Image::make($path);
+						$img = Image::make($file->path);
 						$img->resize(null, 1280, function ($constraint) {
     						$constraint->aspectRatio();
 						});
-						$img->save($path);
+						$img->save($file->path);
 					
 					}
 				}	

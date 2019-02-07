@@ -15,11 +15,11 @@ mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
 mix.scripts([
-	'public/assets/backend/jquery-form/jquery.form.js',
-	'public/assets/backend/jquery-uploadfile/js/jquery.uploadfile.min.js',
-	'public/assets/backend/moment/min/moment.min.js',
-	'public/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-	'public/assets/backend/jquery-confirm/dist/jquery-confirm.min.js'
+	'resources/assets/backend/jquery-form/jquery.form.js',
+	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.min.js',
+	'resources/assets/backend/moment/min/moment.min.js',
+	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.js'
 	],'public/js/app_tmp2.js');
 
 mix.scripts([
@@ -29,10 +29,10 @@ mix.scripts([
 
 mix.styles([
 	'public/css/app_tmp1.css',
-	'public/assets/backend/jquery-uploadfile/css/uploadfile.css',
-	'public/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-	'public/assets/backend/font-awesome/css/font-awesome.min.css',
-	'public/assets/backend/jquery-confirm/dist/jquery-confirm.min.css'
+	'resources/assets/backend/jquery-uploadfile/css/uploadfile.css',
+	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+	'resources/assets/backend/font-awesome/css/font-awesome.min.css',
+	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css'
 	],'public/css/app.css');
 	
 	
