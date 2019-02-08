@@ -49,7 +49,7 @@ mix.styles([
 	
 	
 	
-/*
+
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
 	'resources/assets/frontend/bootstrap/dist/js/bootstrap.min.js',
@@ -79,4 +79,3 @@ mix.styles([
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-*/
