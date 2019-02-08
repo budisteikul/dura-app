@@ -84,11 +84,7 @@ Route::get('/test', function () {
 */
 
 Route::get('/test',function(){
-		$blog_tmp = new \App\Models\Blog\blog_settings;
-		$blog_tmp->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
-		$blog_tmp->name = 'domain';
-		$blog_tmp->value = 'ratnawahyu.com';
-		$blog_tmp->save();
+		
 		/*
 		$result = DB::table('blog_attachments')->get();
 			foreach($result as $rs)
@@ -102,7 +98,7 @@ Route::get('/test',function(){
 	});
 
 Auth::routes(['verify' => true]);
-Route::get('/home',function(){ return redirect('/blog/post'); })->name('home')->middleware(['auth', 'verified']);
+Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 //========================================================================
 // Blog App Route
 //========================================================================

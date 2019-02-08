@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
+use App\Classes\Blog\BlogClass;
+use Illuminate\Support\Facades\Auth;
+use Redirect;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+		BlogClass::setConf('domain',preg_replace('#^https?://#', '', Request::root()),Auth::user()->id);
+        return Redirect('/blog/post');
+		//return view('home');
     }
 }

@@ -15,16 +15,18 @@ class TimelineController extends Controller
 	
 	public function __construct()
 	{
-		
-		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Request::root()))->where('name','domain')->first();
-		$this->user_id = $blog_setting->user_id;
 	}
 	
 	public function getIndex(Request $request)
 	{
+		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Request::root()))->where('name','domain')->first();
+		if(!$blog_setting) return Redirect('/home');
 		
-		$user_id = $this->user_id;
+		$user_id = $blog_setting->user_id;
 		$get_user = User::where('id',$user_id)->whereNotNull('email_verified_at')->first();
+		if(!$get_user) return Redirect('/login');
+		
+		
 		
 		if (Auth::check()) {
 			
