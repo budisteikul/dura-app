@@ -84,13 +84,19 @@ Route::get('/test', function () {
 */
 
 Route::get('/test',function(){
-	//Storage::disk('local')->copy('temp/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/test.jpg', 'temp/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/test2.jpg');
-						
-						$img = Image::make(storage_path('app/') .'temp/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/test.jpg');
-						$img->resize(1280, null, function ($constraint) {
-    						$constraint->aspectRatio();
-						});
-						$img->save(storage_path('app/') .'temp/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/resize.jpg');
+		$result = DB::table('blog_attachments')->get();
+			foreach($result as $rs)
+			{
+				DB::table('blog_attachments')->where('id',$rs->id)->update([
+					'file_name'=>$rs->public_id.'.'.$rs->format,
+					'file_height'=>$rs->height,
+					'file_width'=>$rs->width,
+					'file_mimetype'=>'image/jpeg',
+					'file_size'=>$rs->bytes,
+					'file_path'=>'images/original/'.$rs->public_id.'.'.$rs->format,
+					'file_url'=>'/storage/images/original/'.$rs->public_id.'.'.$rs->format,
+				]);
+			}
 	});
 
 Auth::routes(['verify' => true]);
