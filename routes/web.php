@@ -84,6 +84,12 @@ Route::get('/test', function () {
 */
 
 Route::get('/test',function(){
+		$blog_tmp = new \App\Models\Blog\blog_settings;
+		$blog_tmp->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
+		$blog_tmp->name = 'domain';
+		$blog_tmp->value = 'ratnawahyu.com';
+		$blog_tmp->save();
+		/*
 		$result = DB::table('blog_attachments')->get();
 			foreach($result as $rs)
 			{
@@ -92,6 +98,7 @@ Route::get('/test',function(){
 					'file_url'=>'/storage/images/original/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/'.$rs->file_name,
 				]);
 			}
+		*/
 	});
 
 Auth::routes(['verify' => true]);
