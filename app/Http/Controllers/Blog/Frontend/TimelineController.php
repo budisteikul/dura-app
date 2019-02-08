@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Request;
 use App\Classes\Blog\BlogClass;
 use Redirect;
 use App\Models\Blog\blog_posts;
+use App\Models\Blog\blog_settings;
 use App\User;
 
 class TimelineController extends Controller
@@ -14,17 +15,9 @@ class TimelineController extends Controller
 	
 	public function __construct()
 	{
-		//$domain = strtolower(str_ireplace("www.","",$_SERVER['HTTP_HOST']));
-		//$get_user = User::where('domain',$domain)->whereNotNull('email_verified_at')->first();
-		//if(@count($get_user))
-		//{
-			//$this->user_id = $get_user->id;
-		//}
-		//else
-		//{
-			$this->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
-		//}
-		
+		print(preg_replace('#^https?://#', '', Request::root()));
+		exit();
+		$this->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
 	}
 	
 	public function getIndex(Request $request)
