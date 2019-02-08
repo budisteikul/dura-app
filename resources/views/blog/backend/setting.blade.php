@@ -9,9 +9,9 @@ function general_setting()
 	$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
-			judul1: $('#judul1').val(),
-			judul2: $('#judul2').val(),
-			deskripsi: $('#deskripsi').val(),
+			title1: $('#title1').val(),
+			title2: $('#title2').val(),
+			description: $('#description').val(),
 			facebook: $('#facebook').val(),
 			twitter: $('#twitter').val(),
 			instagram: $('#instagram').val(),
@@ -55,17 +55,17 @@ function general_setting()
     
 	<div class="form-group">
 		<b>Judul 1 :</b>
-		<input id="judul1" type="text" name="judul1" class="form-control" value="{{ $setting->judul1 }}" placeholder="Judul">
+		<input id="title1" type="text" name="title1" class="form-control" value="{{ $setting->title1 }}" placeholder="Judul">
 	</div>
     
 	<div class="form-group">
 		<b>Judul 2 :</b>
-		<input id="judul2" type="text" name="judul2" class="form-control" value="{{ $setting->judul2 }}" placeholder="Judul">
+		<input id="title2" type="text" name="title2" class="form-control" value="{{ $setting->title2 }}" placeholder="Judul">
 	</div>
     
 	<div class="form-group">
-		<b>Deskripsi :</b>
-		<textarea id="deskripsi" name="deskripsi" class="form-control" style="height:200px;">{{ $setting->deskripsi }}</textarea>
+		<b>description :</b>
+		<textarea id="description" name="description" class="form-control" style="height:200px;">{{ $setting->description }}</textarea>
 	</div>
     
 	<div class="form-group">

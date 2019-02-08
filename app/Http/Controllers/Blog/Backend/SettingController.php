@@ -22,9 +22,9 @@ class SettingController extends Controller
 		$user = Auth::user();
 		$stdClass = app();
     	$setting = $stdClass->make('stdClass');
-		$setting->judul1 = BlogClass::getConf('judul1');
-		$setting->judul2 = BlogClass::getConf('judul2');
-		$setting->deskripsi = BlogClass::getConf('deskripsi');
+		$setting->title1 = BlogClass::getConf('title1');
+		$setting->title2 = BlogClass::getConf('title2');
+		$setting->description = BlogClass::getConf('description');
 		$setting->header = BlogClass::getConf('header');
 		$setting->facebook = BlogClass::getConf('facebook');
 		$setting->twitter = BlogClass::getConf('twitter');
@@ -50,9 +50,9 @@ class SettingController extends Controller
 		
 		if($tipe=="general_setting"){
 			$key = $request->input('key');
-			BlogClass::setConf('judul1',$request->input('judul1'));
-			BlogClass::setConf('judul2',$request->input('judul2'));
-			BlogClass::setConf('deskripsi',$request->input('deskripsi'));
+			BlogClass::setConf('title1',$request->input('title1'));
+			BlogClass::setConf('title2',$request->input('title2'));
+			BlogClass::setConf('description',$request->input('description'));
 			BlogClass::setConf('facebook',$request->input('facebook'));
 			BlogClass::setConf('twitter',$request->input('twitter'));
 			BlogClass::setConf('instagram',$request->input('instagram'));
