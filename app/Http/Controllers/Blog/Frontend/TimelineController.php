@@ -87,10 +87,10 @@ class TimelineController extends Controller
 		$stdClass = app();
     	$setting = $stdClass->make('stdClass');
 		
-		$setting->judul1 = BlogClass::getConf('judul1',$user_id);
-		if($setting->judul1=="") $setting->judul1 = str_ireplace("www.","",$_SERVER['HTTP_HOST']);
-		$setting->judul2 = BlogClass::getConf('judul2',$user_id);
-		$setting->deskripsi = BlogClass::getConf('deskripsi',$user_id);
+		$setting->title1 = BlogClass::getConf('title1',$user_id);
+		if($setting->title1=="") $setting->title1 = str_ireplace("www.","",$_SERVER['HTTP_HOST']);
+		$setting->title2 = BlogClass::getConf('title2',$user_id);
+		$setting->description = BlogClass::getConf('description',$user_id);
 		$setting->gravatar = $get_user->picture_url;
 		//===========================================================================
 		$header = BlogClass::getConf('header',$user_id);
@@ -105,7 +105,7 @@ class TimelineController extends Controller
 		$url = Request::url();
 		$setting->url = $url;
 		$setting->image = $setting->url . $setting->header;
-		$setting->title = $setting->judul2;
+		$setting->title = $setting->title2;
 		$setting->user_id = $user_id;
 		
 		return view('blog.frontend.timeline')->with('setting',$setting)->with('results',$results);
