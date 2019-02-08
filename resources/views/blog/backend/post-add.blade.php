@@ -57,7 +57,7 @@ $(document).ready(function()
 {
 var settings = {
     url: "/blog/file",
-    multiple:false,
+    multiple:true,
 	dragDrop:true,
 	maxFileCount:-1,
     fileName: "myfile",
@@ -68,7 +68,7 @@ var settings = {
 	onSuccess:function(files,data,xhr)
     {
 		$.each( data, function( index, value ) {
-						alert(value);
+						
 					});	
     },
     showDelete:true,
@@ -78,7 +78,7 @@ var settings = {
 		
     for(var i=0;i<data.length;i++)
     {
-						alert(data[i]);
+						
 						$.ajax({
 							beforeSend: function(request) {
     							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));

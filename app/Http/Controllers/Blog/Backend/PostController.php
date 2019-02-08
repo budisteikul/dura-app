@@ -209,7 +209,6 @@ class PostController extends Controller
 				$sort_order++;
 				//====================================================================================================
 			
-				$photo = BlogClass::getAttrPhoto($rs->file);
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->sort = $sort_order;
@@ -221,8 +220,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = $file->path;
-				$blog_attachments->file_url = $file->url;
+				$blog_attachments->file_path = 'images/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/original/'. $file->name;
 				
 				$blog_attachments->save();
 				
@@ -288,8 +287,6 @@ class PostController extends Controller
 			
 			//====================================================================================================
 				
-				$photo = BlogClass::getAttrPhoto($rs->file);
-				
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->sort = $sort_order;
@@ -301,8 +298,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = $file->path;
-				$blog_attachments->file_url = $file->url;
+				$blog_attachments->file_path = 'images/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/original/'. $file->name;
 				
 				
 				$blog_attachments->save();

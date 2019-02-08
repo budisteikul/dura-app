@@ -23,18 +23,13 @@ class CreateBlogAttachmentsTable extends Migration
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
-			$table->string('public_id',255)->nullable();
-			$table->string('version',255)->nullable();
-			$table->string('signature',255)->nullable();
-			$table->string('width',255)->nullable();
-			$table->string('height',255)->nullable();
-			$table->string('format',255)->nullable();
-			$table->string('resource_type',255)->nullable();
-			$table->string('bytes',255)->nullable();
-			$table->string('type',255)->nullable();
-			$table->string('etag',255)->nullable();
-			$table->string('url',255)->nullable();
-			$table->string('secure_url',255)->nullable();
+			$table->string('file_name')->nullable();
+			$table->string('file_height')->nullable();
+			$table->string('file_width')->nullable();
+			$table->string('file_mimetype')->nullable();
+			$table->string('file_size')->nullable();
+			$table->string('file_path')->nullable();
+			$table->string('file_url')->nullable();
 			$table->integer('sort')->nullable();
             $table->nullableTimestamps();
         });

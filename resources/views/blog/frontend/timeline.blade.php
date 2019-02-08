@@ -133,7 +133,7 @@
 						if($d>1)
 						{
 						?>
-								<a href="/storage/images/original/{{ $attachment->public_id .".". $attachment->format }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
+								<a href="/storage/images/original/{{ $attachment->file_name }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
 									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/250/'. $attachment->file_name) }}" alt=""  />
 								</a>
 						<?php	
@@ -141,7 +141,7 @@
 						else
 						{
 						?>
-                        		<a href="/storage/images/original/{{ $attachment->public_id .".". $attachment->format }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
+                        		<a href="/storage/images/original/{{ $attachment->file_name }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
 									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/500/'. $attachment->file_name) }}" alt=""  />
 								</a>
                         <?php

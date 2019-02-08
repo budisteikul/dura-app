@@ -58,40 +58,11 @@ class BlogClass {
 		$file_attr->height = $height;
 		$file_attr->size = $size;
 		$file_attr->mimetype = $get_mime['mime'];
-		
+		$file_attr->full_path = $path;
 		return $file_attr;
 	}
 	
-	public static function getAttrPhoto($file)
-	{
-		/*
-			$table->string('file_path')->nullable();
-			$table->string('file_url')->nullable();
-			$table->string('file_name')->nullable();
-			$table->string('file_mimetype')->nullable();
-			$table->string('file_size')->nullable();
-			$url = Storage::url('file.jpg');
-			*/
-		$stdClass = app();
-    	$photo = $stdClass->make('stdClass');
-		$path = storage_path('app/') . $file;
-		list($width, $height, $type, $attr) = getimagesize(realpath($path));
-		$get_mime = getimagesize(realpath($path));
-		$mime = explode("/",$get_mime['mime']);
-		$size = filesize(realpath($path));
-		$photo->width = $width;
-		$photo->height = $height;
-		$photo->resource_type = $mime[0];
-		$photo->format = $mime[1];
-		if($photo->format=="jpeg") $photo->format = "jpg";
-		$photo->bytes = $size;
-		$photo->version = date('U');
-		$photo->signature = "signature";
-		$photo->type = "upload";
-		$photo->etag = "etag";
-		$photo->path = $path;
-		return $photo;	
-	}
+	
 	
 	public static function createDirPhoto()
 	{

@@ -27,7 +27,7 @@ class FileController extends Controller
 		
 		
 		$path = Storage::disk('local')->putFile('temp/'. Auth::user()->id, $files);
-		$file = BlogClass::getAttrPhoto($path);
+		$file = BlogClass::getAttrFile($path);
 		
 		$blog_tmp = new blog_tmp();
 		$blog_tmp->user_id = Auth::user()->id;
@@ -41,20 +41,20 @@ class FileController extends Controller
 				if($key!="header_file"){
 					if($file->width>1280)
 					{
-						$img = Image::make($file->path);
+						$img = Image::make($file->full_path);
 						$img->resize(1280, null, function ($constraint) {
     						$constraint->aspectRatio();
 						});
-						$img->save($file->path);
+						$img->save($file->full_path);
 					
 					}
 					else if($file->height>1280)
 					{
-						$img = Image::make($file->path);
+						$img = Image::make($file->full_path);
 						$img->resize(null, 1280, function ($constraint) {
     						$constraint->aspectRatio();
 						});
-						$img->save($file->path);
+						$img->save($file->full_path);
 					
 					}
 				}	
