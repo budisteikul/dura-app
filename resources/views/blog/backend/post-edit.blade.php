@@ -94,7 +94,7 @@ $(document).ready(function()
 {
 var settings = {
     url: "/blog/file",
-    multiple:false,
+    multiple:true,
 	dragDrop:true,
 	maxFileCount:-1,
     fileName: "myfile",
