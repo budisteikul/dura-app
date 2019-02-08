@@ -37,7 +37,7 @@ class PostController extends Controller
 					{
 						foreach($post->attachments as $attachment)
 						{
-							$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. $attachment->file_name .'">';
+							$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. Auth::user()->id .'/'. $attachment->file_name .'">';
 						}
 					
 						$contents .=	"<br />". $post->content;
@@ -220,8 +220,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/original/'. $file->name;
+				$blog_attachments->file_path = 'images/original/'. Auth::user()->id .'/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/original/'.  Auth::user()->id .'/'. $file->name;
 				
 				$blog_attachments->save();
 				
@@ -298,8 +298,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/original/'. $file->name;
+				$blog_attachments->file_path = 'images/original/'.  Auth::user()->id .'/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/original/'.  Auth::user()->id .'/'. $file->name;
 				
 				
 				$blog_attachments->save();
