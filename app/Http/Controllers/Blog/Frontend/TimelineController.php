@@ -15,9 +15,9 @@ class TimelineController extends Controller
 	
 	public function __construct()
 	{
-		print(preg_replace('#^https?://#', '', Request::root()));
-		exit();
-		$this->user_id = 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3';
+		
+		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Request::root()))->where('name','domain')->first();
+		$this->user_id = $blog_setting->user_id;
 	}
 	
 	public function getIndex(Request $request)
