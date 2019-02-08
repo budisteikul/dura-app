@@ -48,7 +48,7 @@
 				<img class="img-circle" src="{{ $setting->gravatar }}" style="margin-top:15px">
 				<hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<p class="text-faded mb-5" style="margin-left:10px; margin-right:10px; margin-bottom:20px; padding:5px; ">
-					{!! nl2br($setting->deskripsi) !!}
+					{!! nl2br($setting->description) !!}
 				</p>
 			</div>
              <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
