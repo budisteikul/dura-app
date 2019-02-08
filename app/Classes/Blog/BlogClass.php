@@ -90,11 +90,11 @@ class BlogClass {
 		$img->fit(500, 500);
 		$img->save(storage_path('app').'/public/images/500/'. $file );
 		
-		$img = Image::make(storage_path('app').'/public/images/250/'. $file );
+		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
 		$img->resize(250, 250);
 		$img->save(storage_path('app').'/public/images/250/'. $file );
 		
-		$img = Image::make(storage_path('app').'/public/images/50/'. $file );
+		$img = Image::make(storage_path('app').'/public/images/250/'. $file );
 		$img->resize(50, 50);
 		$img->save(storage_path('app').'/public/images/50/'. $file );
 	}
