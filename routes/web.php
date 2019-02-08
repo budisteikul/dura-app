@@ -88,13 +88,8 @@ Route::get('/test',function(){
 			foreach($result as $rs)
 			{
 				DB::table('blog_attachments')->where('id',$rs->id)->update([
-					'file_name'=>$rs->public_id.'.'.$rs->format,
-					'file_height'=>$rs->height,
-					'file_width'=>$rs->width,
-					'file_mimetype'=>'image/jpeg',
-					'file_size'=>$rs->bytes,
-					'file_path'=>'images/original/'.$rs->public_id.'.'.$rs->format,
-					'file_url'=>'/storage/images/original/'.$rs->public_id.'.'.$rs->format,
+					'file_path'=>'images/original/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/'.$rs->file_name,
+					'file_url'=>'/storage/images/original/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/'.$rs->file_name,
 				]);
 			}
 	});
