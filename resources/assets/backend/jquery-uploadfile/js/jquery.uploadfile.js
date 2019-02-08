@@ -85,7 +85,7 @@
             showQueueDiv: false,
             statusBarWidth: "100%",
             dragdropWidth: "100%",
-            showPreview: false,
+            showPreview: true,
             previewHeight: "auto",
             previewWidth: "100",
             extraHTML:false
@@ -631,7 +631,7 @@
             this.preview = $("<img class='ajax-file-upload-preview' />").width(s.previewWidth).height(s.previewHeight).appendTo(this.statusbar).hide();
             this.filename = $("<div class='ajax-file-upload-filename'></div>").appendTo(this.statusbar);
             this.progressDiv = $("<div class='ajax-file-upload-progress'>").appendTo(this.statusbar).hide();
-            this.progressbar = $("<div class='ajax-file-upload-bar'></div>").appendTo(this.progressDiv);
+            this.progressbar = $("<div class='ajax-file-upload-bar' style='height:25px;'></div>").appendTo(this.progressDiv);
             this.abort = $("<div>" + s.abortStr + "</div>").appendTo(this.statusbar).hide();
             this.cancel = $("<div>" + s.cancelStr + "</div>").appendTo(this.statusbar).hide();
             this.done = $("<div>" + s.doneStr + "</div>").appendTo(this.statusbar).hide();

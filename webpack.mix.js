@@ -11,12 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
-mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
+//mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
+//mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
 mix.scripts([
 	'resources/assets/backend/jquery-form/jquery.form.js',
-	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.min.js',
+	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.js',
 	'resources/assets/backend/moment/min/moment.min.js',
 	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.js'
@@ -27,6 +27,7 @@ mix.scripts([
 	'public/js/app_tmp2.js'
 	],'public/js/app.js');
 
+
 mix.styles([
 	'public/css/app_tmp1.css',
 	'resources/assets/backend/jquery-uploadfile/css/uploadfile.css',
@@ -35,7 +36,7 @@ mix.styles([
 	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css'
 	],'public/css/app.css');
 	
-	
+/*	
 	
 	
 	
@@ -79,3 +80,4 @@ mix.styles([
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
+*/
