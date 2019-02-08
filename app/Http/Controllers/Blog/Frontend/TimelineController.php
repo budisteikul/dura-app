@@ -1,10 +1,9 @@
 <?php
 namespace App\Http\Controllers\Blog\Frontend;
 use App\Http\Controllers\Controller;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use App\Classes\Blog\BlogClass;
-use Redirect;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
 use App\User;
@@ -46,7 +45,7 @@ class TimelineController extends Controller
 		
 		if(!@count($check))
 		{	
-				return Redirect('/login');
+				return redirect('/login');
 		}
 		
 		
