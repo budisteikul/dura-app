@@ -16,9 +16,9 @@ class BlogClass {
 		$datetime2=date_create($timestamp);
 		$diff=date_diff($datetime1, $datetime2);
 		$timemsg='';
+		
 		if($diff->y > 0){
 			$timemsg = $diff->y .' year'. ($diff->y > 1?"s":'');
-
 		}
 		else if($diff->m > 0){
 			$timemsg = $diff->m . ' month'. ($diff->m > 1?"s":'');
@@ -40,8 +40,38 @@ class BlogClass {
 		return $timemsg;
 	}
 	
+	
+	public static function getAttrFile($file)
+	{
+		$path = storage_path('app/') . $file;
+		list($width, $height, $type, $attr) = getimagesize(realpath($path));
+		$get_mime = getimagesize(realpath($path));
+		$size = filesize(realpath($path));
+		
+		$stdClass = app();
+    	$file_attr = $stdClass->make('stdClass');
+		
+		$file_attr->name = basename($file);
+		$file_attr->path = $file;
+		$file_attr->url = Storage::url($file);
+		$file_attr->width = $width;
+		$file_attr->height = $height;
+		$file_attr->size = $size;
+		$file_attr->mimetype = $get_mime['mime'];
+		
+		return $file_attr;
+	}
+	
 	public static function getAttrPhoto($file)
 	{
+		/*
+			$table->string('file_path')->nullable();
+			$table->string('file_url')->nullable();
+			$table->string('file_name')->nullable();
+			$table->string('file_mimetype')->nullable();
+			$table->string('file_size')->nullable();
+			$url = Storage::url('file.jpg');
+			*/
 		$stdClass = app();
     	$photo = $stdClass->make('stdClass');
 		$path = storage_path('app/') . $file;
@@ -79,15 +109,21 @@ class BlogClass {
 	
 	public static function createPhoto($file_path,$file)
 	{
-		BlogClass::createDirPhoto();
+		//BlogClass::createDirPhoto();
 		Storage::disk('local')->copy($file_path,'public/images/original/'. $file);
-		$img = Image::make(storage_path('app').'/public/images/original/'. $file );
+		Storage::disk('local')->copy($file_path,'public/images/500/'. $file);
+		Storage::disk('local')->copy($file_path,'public/images/250/'. $file);
+		Storage::disk('local')->copy($file_path,'public/images/50/'. $file);
+		
+		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
 		$img->fit(500, 500);
 		$img->save(storage_path('app').'/public/images/500/'. $file );
-		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
+		
+		$img = Image::make(storage_path('app').'/public/images/250/'. $file );
 		$img->resize(250, 250);
 		$img->save(storage_path('app').'/public/images/250/'. $file );
-		$img = Image::make(storage_path('app').'/public/images/500/'. $file );
+		
+		$img = Image::make(storage_path('app').'/public/images/50/'. $file );
 		$img->resize(50, 50);
 		$img->save(storage_path('app').'/public/images/50/'. $file );
 	}

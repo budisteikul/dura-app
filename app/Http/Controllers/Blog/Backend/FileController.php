@@ -14,9 +14,9 @@ class FileController extends Controller
 	
 	public function destroy($id)
 	{
-		$path = 'temp/'.Auth::user()->id.'/'. $id;
-		blog_tmp::where('user_id',Auth::user()->id)->where('file',$path)->delete();
-		Storage::delete($path);
+		$blog_tmp = blog_tmp::find($id);
+		Storage::delete($blog_tmp->file);
+		blog_tmp::where('id',$id)->delete();
 	}
 	
 	public function store(Request $request)
@@ -24,15 +24,19 @@ class FileController extends Controller
 		$ret = array();
 		$files = $request->file('myfile');
 		$key = $request->input('key');
-		$ret[]= $files->getClientOriginalName();
 		
-		$path = Storage::disk('local')->putFileAs('temp/'. Auth::user()->id, $files, $files->getClientOriginalName());
-		$blog_tmp = blog_tmp::updateOrCreate(
-    			['user_id' => Auth::user()->id, 'file' => $path],
-    			['key' => $key]
-			);
+		
+		$path = Storage::disk('local')->putFile('temp/'. Auth::user()->id, $files);
+		$file = BlogClass::getAttrPhoto($path);
+		
+		$blog_tmp = new blog_tmp();
+		$blog_tmp->user_id = Auth::user()->id;
+		$blog_tmp->file = $path;
+		$blog_tmp->key = $key;
+		$blog_tmp->save();
+		$ret[] = $blog_tmp->id;
 			
-				$file = BlogClass::getAttrPhoto($path);
+				
 			
 				if($key!="header_file"){
 					if($file->width>1280)
@@ -54,6 +58,7 @@ class FileController extends Controller
 					
 					}
 				}	
+				
 		return response()->json($ret);
 	}
 	

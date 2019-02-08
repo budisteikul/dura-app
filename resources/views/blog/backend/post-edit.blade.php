@@ -62,7 +62,7 @@ function UPDATE()
 		@foreach($result->attachments->sortBy('sort') as $attachment)
 				
 				<div class="col-auto" style="margin-top:10px;">
-					<img style="padding-bottom:5px; height:150px;" class="image-photo" src="/storage/images/250/{{ $attachment->public_id .".". $attachment->format }}" >
+					<img style="padding-bottom:5px; height:150px;" class="image-photo" src="/storage/images/250/{{ $attachment->file_name }}" >
 				
 					
 					<div class="form-row align-items-center">

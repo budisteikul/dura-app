@@ -58,7 +58,6 @@ class TimelineController extends Controller
 		if (Auth::check()) {
 			$results = blog_posts::with(array('attachments' => function($query)
 				   {
-					   $query->where('resource_type', 'image');
 					   $query->orderBy('sort', 'asc');
 				   }
 				   ))

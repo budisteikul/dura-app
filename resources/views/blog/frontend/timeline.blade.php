@@ -134,7 +134,7 @@
 						{
 						?>
 								<a href="/storage/images/original/{{ $attachment->public_id .".". $attachment->format }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
-									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/250/'. $attachment->public_id .".". $attachment->format) }}" alt=""  />
+									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/250/'. $attachment->file_name) }}" alt=""  />
 								</a>
 						<?php	
 						}
@@ -142,7 +142,7 @@
 						{
 						?>
                         		<a href="/storage/images/original/{{ $attachment->public_id .".". $attachment->format }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
-									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/500/'. $attachment->public_id .".". $attachment->format) }}" alt=""  />
+									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/500/'. $attachment->file_name) }}" alt=""  />
 								</a>
                         <?php
 						}

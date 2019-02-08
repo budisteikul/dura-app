@@ -26,7 +26,6 @@ class PostController extends Controller
 			$user = Auth::user();
 			$posts = blog_posts::with(array('attachments' => function($query)
 				   {
-					   $query->where('resource_type', 'image');
 					   $query->orderBy('sort', 'asc');
 				   }
 				   ))->where('user_id',$user->id)->where('post_type','post')->orderBy('date','desc');
@@ -38,7 +37,7 @@ class PostController extends Controller
 					{
 						foreach($post->attachments as $attachment)
 						{
-							$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. $attachment->public_id .'.'. $attachment->format .'">';
+							$contents	 .= '<img style="margin:1px;" src="/storage/images/50/'. $attachment->file_name .'">';
 						}
 					
 						$contents .=	"<br />". $post->content;
@@ -178,7 +177,7 @@ class PostController extends Controller
 				$blog_attachments = blog_attachments::where('user_id',$user->id)->find($rs->id);
 				$blog_attachments->delete();
 				
-				BlogClass::deletePhoto($rs->public_id .".". $rs->format);
+				BlogClass::deletePhoto($rs->file_name);
 				
 				$job = true;
 			}
@@ -210,27 +209,24 @@ class PostController extends Controller
 				$sort_order++;
 				//====================================================================================================
 			
-				$public_id = Uuid::uuid4();
 				$photo = BlogClass::getAttrPhoto($rs->file);
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
-				$blog_attachments->public_id = $public_id;
-				$blog_attachments->version = $photo->version;
-				$blog_attachments->signature = $photo->signature;
-				$blog_attachments->width = $photo->width;
-				$blog_attachments->height = $photo->height;
-				$blog_attachments->format = $photo->format;
-				$blog_attachments->resource_type = $photo->resource_type;
-				$blog_attachments->bytes = $photo->bytes;
-				$blog_attachments->type = $photo->type;
-				$blog_attachments->etag = $photo->etag;
-				$blog_attachments->url = url('/') ."/storage/images/original/". $public_id .".". $photo->format;
-				$blog_attachments->secure_url = str_ireplace("http://","https://",$blog_attachments->url);
 				$blog_attachments->sort = $sort_order;
 				$blog_attachments->user_id = $user->id;
+				
+				$file = BlogClass::getAttrFile($rs->file);
+				$blog_attachments->file_name = $file->name;
+				$blog_attachments->file_size = $file->size;
+				$blog_attachments->file_mimetype = $file->mimetype;
+				$blog_attachments->file_width = $file->width;
+				$blog_attachments->file_height = $file->height;
+				$blog_attachments->file_path = $file->path;
+				$blog_attachments->file_url = $file->url;
+				
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
+				BlogClass::createPhoto($rs->file,$file->name);
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
 				BlogClass::deleteTempPhoto($rs->file);
 			//====================================================================================================
@@ -292,28 +288,26 @@ class PostController extends Controller
 			
 			//====================================================================================================
 				
-				$public_id = Uuid::uuid4();
 				$photo = BlogClass::getAttrPhoto($rs->file);
 				
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
-				$blog_attachments->public_id = $public_id;
-				$blog_attachments->version = $photo->version;
-				$blog_attachments->signature = $photo->signature;
-				$blog_attachments->width = $photo->width;
-				$blog_attachments->height = $photo->height;
-				$blog_attachments->format = $photo->format;
-				$blog_attachments->resource_type = $photo->resource_type;
-				$blog_attachments->bytes = $photo->bytes;
-				$blog_attachments->type = $photo->type;
-				$blog_attachments->etag = $photo->etag;
-				$blog_attachments->url = url('/') ."/storage/images/original/". $public_id .".". $photo->format;
-				$blog_attachments->secure_url = str_ireplace("http://","https://",$blog_attachments->url);
 				$blog_attachments->sort = $sort_order;
 				$blog_attachments->user_id = $user->id;
+				
+				$file = BlogClass::getAttrFile($rs->file);
+				$blog_attachments->file_name = $file->name;
+				$blog_attachments->file_size = $file->size;
+				$blog_attachments->file_mimetype = $file->mimetype;
+				$blog_attachments->file_width = $file->width;
+				$blog_attachments->file_height = $file->height;
+				$blog_attachments->file_path = $file->path;
+				$blog_attachments->file_url = $file->url;
+				
+				
 				$blog_attachments->save();
 				
-				BlogClass::createPhoto($rs->file,$public_id .'.'. $photo->format);
+				BlogClass::createPhoto($rs->file,$file->name);
 				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
 				BlogClass::deleteTempPhoto($rs->file);
 				
@@ -347,7 +341,7 @@ class PostController extends Controller
 		foreach($result as $rs)
 		{
 				//====================================================================================================
-					BlogClass::deletePhoto($rs->public_id .".". $rs->format);
+					BlogClass::deletePhoto($rs->file_name);
 				//====================================================================================================
 		}
 		
