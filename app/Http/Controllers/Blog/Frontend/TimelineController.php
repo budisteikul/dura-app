@@ -16,7 +16,7 @@ class TimelineController extends Controller
 	{
 	}
 	
-	public function getIndex(Request $request)
+	public function index()
 	{
 		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Request::root()))->where('name','domain')->first();
 		if(!$blog_setting) return Redirect('/home');
@@ -88,7 +88,7 @@ class TimelineController extends Controller
 		$setting->gravatar = $get_user->picture_url;
 		//===========================================================================
 		$header = BlogClass::getConf('header',$user_id);
-		$setting->header = "/storage/images/header/". $header ;
+		$setting->header = "/storage/images/header/".$user_id.'/'. $header ;
 		//===========================================================================
 		$setting->facebook = BlogClass::getConf('facebook',$user_id);
 		$setting->twitter = BlogClass::getConf('twitter',$user_id);

@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Blog\blog_tmp;
-use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
@@ -31,16 +30,17 @@ class SettingController extends Controller
 		$setting->instagram = BlogClass::getConf('instagram');
 		$setting->github = BlogClass::getConf('github');
 		$setting->path = BlogClass::getConf('path');
+		$setting->user_id = $user->id;
 		
 		$results = blog_tmp::where('key','header_file')->get();
 		foreach($results as $result)
 		{
-			unlink($result->file);	
+			BlogClass::deleteTempPhoto($result->file);
 		}
 		blog_tmp::where('key','header_file')->delete();
 		
 		
-		return view('blog.backend.setting')->with('user',$user)->with('setting',$setting);
+		return view('blog.backend.setting')->with('setting',$setting);
 	}
 	
 	public function update(Request $request,$id)
@@ -66,22 +66,14 @@ class SettingController extends Controller
 			
 				if($header != "")
 				{
-				
-					if(file_exists("storage/images/header/". $header))
-					{
-						unlink("storage/images/header/". $header);
-					}
-				
+					Storage::disk('public')->delete('images/header/'. $user->id .'/'. $header);
 				}
 				
+				$file_attr = BlogClass::getAttrFile($result->file);
+				Storage::disk('local')->copy($result->file,'public/images/header/'. $user->id .'/'. $file_attr->name);
 				blog_tmp::where('key',$key)->where('file',$result->file)->where('user_id',$user->id)->delete();
-				
-				$header = Uuid::uuid4();
-				$photo = BlogClass::getAttrPhoto($result->file);
-				$header = $header .".". $photo->format;
-				BlogClass::setConf('header',$header);
-				copy($result->file,'storage/images/header/'. $header);
-				unlink($result->file);
+				BlogClass::setConf('header',$file_attr->name);
+				BlogClass::deleteTempPhoto($result->file);
 			}
 			
 			return response()->json([

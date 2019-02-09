@@ -7,7 +7,8 @@ use Intervention\Image\Facades\Image;
 use App\Models\Blog\blog_attachments;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
-use Storage;
+use Illuminate\Support\Facades\Storage;
+
 class BlogClass {
 
 	public static function timeAgo($timestamp){

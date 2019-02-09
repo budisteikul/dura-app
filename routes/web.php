@@ -12,8 +12,7 @@ use Ramsey\Uuid\Uuid as Generator;
 |
 */
 
-Route::get('/', 'Blog\Frontend\TimelineController@getIndex');
-Route::post('/', 'Blog\Frontend\TimelineController@getIndex');
+Route::get('/', 'Blog\Frontend\TimelineController@index');
 
 /*
 Route::get('/test', function () {

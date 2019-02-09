@@ -21,11 +21,11 @@ function general_setting()
 			tipe: "general_setting"
         },
 		type: 'PUT',
-		url: "/blog/setting/{{ Auth::user()->id }}"
+		url: "/blog/setting/{{ $setting->user_id }}"
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location='/blog/setting/{{ Auth::user()->id }}/edit#top';
+				window.location='/blog/setting/{{ $setting->user_id }}/edit#top';
 				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
 				$('#submit_general').prop('disabled', false);
 				$('#submit_general').val('Save');
@@ -50,8 +50,11 @@ function general_setting()
     <div id="result"></div>
         
                     
-    <form method="post" action="/blog/setting" onSubmit="return general_setting()">
-
+    <form method="post" action="/blog/setting/{{ $setting->user_id }}">
+    @method('PUT');
+	<input type="hidden" id="tipe" name="tipe" value="general_setting">
+	<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
+	<input type="hidden" id="key" name="key" value="header_file">
     
 	<div class="form-group">
 		<b>Judul 1 :</b>
@@ -136,9 +139,7 @@ function general_setting()
 	</div>
     
 	
-	<input type="hidden" id="tipe" name="tipe" value="general_setting">
-	<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
-	<input type="hidden" id="key" name="key" value="header_file">
+	
 	<input  class="btn btn-lg btn-primary btn-block" id="submit_general" type="submit" name="submit_general" value="Save">
 	
 </form>
