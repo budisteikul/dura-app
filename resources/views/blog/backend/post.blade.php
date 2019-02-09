@@ -9,6 +9,7 @@
 				"processing": true,
        			"serverSide": true,
         		"ajax": '/blog/post',
+"scrollX": true,
 				"order": [[ 0, "desc" ]],
 				columns: [
 					{data: 'title', name: 'title', className: 'auto', orderable: false},
