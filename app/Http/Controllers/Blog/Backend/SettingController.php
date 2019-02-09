@@ -78,7 +78,7 @@ class SettingController extends Controller
 			
 			return response()->json([
 					"id"=>"1",
-					"message"=>'Update Success'
+					"message"=>'<i class="fa fa-check"></i> Update Success'
 					]);
 		}
 		

@@ -50,12 +50,7 @@ function UPDATE()
     <div id="result"></div>
         
                     
-    <form method="post" action="/blog/setting/{{ $setting->user_id }}" onSubmit="return UPDATE()">
-    @method('PUT');
-	<input type="hidden" id="tipe" name="tipe" value="general_setting">
-	<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
-	<input type="hidden" id="key" name="key" value="header_file">
-    
+    <form onSubmit="return UPDATE()">
 	<div class="form-group">
 		<b>Judul 1 :</b>
 		<input id="title1" type="text" name="title1" class="form-control" value="{{ $setting->title1 }}" placeholder="Judul">
