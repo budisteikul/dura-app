@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <script language="javascript">
-function general_setting()
+function UPDATE()
 {
 	$('#submit_general').prop('disabled', true);
 	$('#submit_general').val('Saving...');
@@ -50,7 +50,7 @@ function general_setting()
     <div id="result"></div>
         
                     
-    <form method="post" action="/blog/setting/{{ $setting->user_id }}">
+    <form method="post" action="/blog/setting/{{ $setting->user_id }}" onSubmit="return UPDATE()">
     @method('PUT');
 	<input type="hidden" id="tipe" name="tipe" value="general_setting">
 	<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
