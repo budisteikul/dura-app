@@ -14,3 +14,25 @@
 }
 
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+
+@media screen and (max-width: 767px) {
+   	div.dataTables_info {
+		position:absolute;
+		}
+	div.dataTables_wrapper div.dataTables_paginate {
+		float:none;
+		text-align:center;
+		}
+	
+	li.paginate_button.previous {
+        display: inline;
+    }
+ 
+    li.paginate_button.next {
+        display: inline;
+    }
+ 
+    li.paginate_button {
+        display: none;
+    }
+}

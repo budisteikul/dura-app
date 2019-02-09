@@ -6,17 +6,24 @@
      $.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
 			var table = $('#dataTables-example').DataTable(
 			{
+				
 				"processing": true,
        			"serverSide": true,
         		"ajax": '/blog/post',
-"scrollX": true,
+				"scrollX": true,
+				"language": {
+    				"paginate": {
+      					"previous": "<i class='fa fa-angle-left'></i>",
+						"next": "<i class='fa fa-angle-right'></i>"
+    				}
+  				},
 				"order": [[ 0, "desc" ]],
-				columns: [
+				"columns": [
 					{data: 'title', name: 'title', className: 'auto', orderable: false},
 					{data: 'contents', name: 'contents', orderable: false},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
-				"pagingType": "first_last_numbers",
+				"pagingType": "full_numbers",
 				"fnDrawCallback": function () {
 					
 				}
@@ -79,10 +86,7 @@
 	}
 	
 	
-	</script>
-
-          
-         
+	</script>  
  <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
