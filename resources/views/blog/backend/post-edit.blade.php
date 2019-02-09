@@ -101,7 +101,7 @@ var settings = {
     allowedTypes:"jpg,jpeg,png",	
     returnType:"json",
 	acceptFiles:"image/*",
-	uploadStr:"<i class=\"fa fa-camera fa-fw\"></i> Capture",
+	uploadStr:"<i class=\"fa fa-folder-open\"></i> Browse",
 	onSuccess:function(files,data,xhr)
     {
 		

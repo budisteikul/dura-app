@@ -78,10 +78,12 @@ function UPDATE()
    		 		url: "/blog/file",
    		 		dragDrop:true,
    		 		fileName: "myfile",
-   		 		allowedTypes:"jpg,jpeg",	
+   		 		allowedTypes:"jpg,jpeg,png",	
    		 		returnType:"json",
+				acceptFiles:"image/*",
 		 		allowDuplicates: false,
 		 		multiple: false,
+				uploadStr:"<i class=\"fa fa-folder-open\"></i> Browse",
 		 		onSuccess:function(files,data,xhr)
    				 {
 		
