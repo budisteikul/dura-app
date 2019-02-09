@@ -51,18 +51,20 @@ function UPDATE()
         
                     
     <form onSubmit="return UPDATE()">
-	<div class="form-group">
-		<b>Judul 1 :</b>
-		<input id="title1" type="text" name="title1" class="form-control" value="{{ $setting->title1 }}" placeholder="Judul">
-	</div>
-    
-	<div class="form-group">
-		<b>Judul 2 :</b>
+    <div class="form-group">
+		<b>Header :</b>
 		<input id="title2" type="text" name="title2" class="form-control" value="{{ $setting->title2 }}" placeholder="Judul">
 	</div>
     
 	<div class="form-group">
-		<b>description :</b>
+		<b>Title :</b>
+		<input id="title1" type="text" name="title1" class="form-control" value="{{ $setting->title1 }}" placeholder="Judul">
+	</div>
+    
+	
+    
+	<div class="form-group">
+		<b>Description :</b>
 		<textarea id="description" name="description" class="form-control" style="height:200px;">{{ $setting->description }}</textarea>
 	</div>
     
