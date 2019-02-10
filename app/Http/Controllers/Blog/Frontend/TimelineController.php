@@ -20,10 +20,10 @@ class TimelineController extends Controller
 			$output = array();
 			$user_id = $request->input('user_id');
 			$post_id = $request->input('post_id');
-			$attachments = blog_attachments::where('post_id',$post_id)->where('user_id',$user_id)->orderBy('sort')->get();
-			foreach($attachments as $attachment)
+			$result = blog_posts::where('user_id',$user_id)->find($post_id);
+			foreach($result->attachments as $attachment)
 			{
-				$output[] = array('src' => '/storage/images/original/'. $user_id .'/'. $attachment->file_name, 'thumb' => '/storage/images/250/'. $user_id .'/'. $attachment->file_name);
+				$output[] = array('src' => '/storage/images/original/'. $user_id .'/'. $attachment->file_name, 'thumb' => '/storage/images/250/'. $user_id .'/'. $attachment->file_name, 'caption' => $result->title);
 			}
 		return response()->json($output);
 		}
