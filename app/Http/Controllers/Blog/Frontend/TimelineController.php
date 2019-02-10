@@ -37,8 +37,8 @@ class TimelineController extends Controller
 			}
 			foreach($result->attachments as $attachment)
 			{
-				$src = '/storage/images/original/'. $user_id .'/'. $attachment->file_name;
-				$thumb = '/storage/images/250/'. $user_id .'/'. $attachment->file_name;
+				$src = '/storage/images/'. $user_id .'/original/'. $attachment->file_name;
+				$thumb = '/storage/images/'. $user_id .'/250/'. $attachment->file_name;
 				$caption = $result->content;
 				if($caption=="") $caption = $result->title;
 				$output[] = array('src' => $src, 'thumb' => $thumb, 'caption' => $caption);
@@ -116,7 +116,7 @@ class TimelineController extends Controller
 		$setting->gravatar = $get_user->picture_url;
 		//===========================================================================
 		$header = BlogClass::getConf('header',$user_id);
-		$setting->header = "/storage/images/header/".$user_id.'/'. $header ;
+		$setting->header = '/storage/images/'. $user_id .'/header/'. $header ;
 		//===========================================================================
 		$setting->facebook = BlogClass::getConf('facebook',$user_id);
 		$setting->twitter = BlogClass::getConf('twitter',$user_id);

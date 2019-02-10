@@ -63,42 +63,26 @@ class BlogClass {
 		return $file_attr;
 	}
 	
-	
-	
-	public static function createDirPhoto()
-	{
-			$path = public_path().'/storage/images/50';
-			File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-    		$path = public_path().'/storage/images/250';
-			File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-			$path = public_path().'/storage/images/500';
-			File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-			$path = public_path().'/storage/images/original';
-			File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-			$path = public_path().'/storage/images/header';
-			File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-	}
-	
 	public static function createPhoto($file_path,$file)
 	{
 		//BlogClass::createDirPhoto();
 		$user_path = Auth::user()->id .'/';
-		Storage::disk('local')->copy($file_path,'public/images/original/'. $user_path . $file);
-		Storage::disk('local')->copy($file_path,'public/images/500/'. $user_path . $file);
-		Storage::disk('local')->copy($file_path,'public/images/250/'. $user_path . $file);
-		Storage::disk('local')->copy($file_path,'public/images/50/'. $user_path . $file);
+		Storage::disk('local')->copy($file_path,'public/images/'. $user_path .'original/'.  $file);
+		Storage::disk('local')->copy($file_path,'public/images/'. $user_path .'500/'. $file);
+		Storage::disk('local')->copy($file_path,'public/images/'. $user_path .'250/'.  $file);
+		Storage::disk('local')->copy($file_path,'public/images/'. $user_path .'50/'.  $file);
 		
-		$img = Image::make(storage_path('app').'/public/images/500/'. $user_path . $file );
+		$img = Image::make(storage_path('app').'/public/images/'. $user_path .'500/'. $file );
 		$img->fit(500, 500);
-		$img->save(storage_path('app').'/public/images/500/'. $user_path . $file );
+		$img->save(storage_path('app').'/public/images/'. $user_path .'500/'. $file );
 		
-		$img = Image::make(storage_path('app').'/public/images/500/'. $user_path . $file );
+		$img = Image::make(storage_path('app').'/public/images/'. $user_path .'500/'. $file );
 		$img->resize(250, 250);
-		$img->save(storage_path('app').'/public/images/250/'. $user_path . $file );
+		$img->save(storage_path('app').'/public/images/'. $user_path .'250/'. $file );
 		
-		$img = Image::make(storage_path('app').'/public/images/250/'. $user_path . $file );
+		$img = Image::make(storage_path('app').'/public/images/'. $user_path .'250/'. $file );
 		$img->resize(50, 50);
-		$img->save(storage_path('app').'/public/images/50/'. $user_path . $file );
+		$img->save(storage_path('app').'/public/images/'. $user_path .'50/'. $file );
 	}
 	
 	public static function deleteTempPhoto($file)
@@ -109,21 +93,21 @@ class BlogClass {
 	public static function deletePhoto($file)
 	{
 				$user_path = Auth::user()->id .'/';
-				if(Storage::disk('public')->exists('images/50/'. $user_path . $file))
+				if(Storage::disk('public')->exists('images/'.$user_path .'50/'.  $file))
 				{
-					Storage::disk('public')->delete('images/50/'. $user_path . $file);
+					Storage::disk('public')->delete('images/'.$user_path .'50/'. $file);
 				}
-				if(Storage::disk('public')->exists('images/250/'. $user_path . $file))
+				if(Storage::disk('public')->exists('images/'.$user_path .'250/'. $file))
 				{
-					Storage::disk('public')->delete('images/250/'. $user_path . $file);
+					Storage::disk('public')->delete('images/'.$user_path .'250/'. $file);
 				}
-				if(Storage::disk('public')->exists('images/500/'. $user_path . $file))
+				if(Storage::disk('public')->exists('images/'.$user_path .'500/'. $file))
 				{
-					Storage::disk('public')->delete('images/500/'. $user_path . $file);
+					Storage::disk('public')->delete('images/'.$user_path .'500/'. $file);
 				}
-				if(Storage::disk('public')->exists('images/original/'. $user_path . $file))
+				if(Storage::disk('public')->exists('images/'.$user_path .'original/'. $file))
 				{
-					Storage::disk('public')->delete('images/original/'. $user_path . $file);
+					Storage::disk('public')->delete('images/'.$user_path .'original/'. $file);
 				}
 	}
 	
