@@ -20,7 +20,11 @@ class TimelineController extends Controller
 			$output = array();
 			$user_id = $request->input('user_id');
 			$post_id = $request->input('post_id');
-			$result = blog_posts::where('user_id',$user_id)->find($post_id);
+			$result = blog_posts::with(array('attachments' => function($query)
+				   {
+					   $query->orderBy('sort', 'asc');
+				   }
+				   ))->where('user_id',$user_id)->find($post_id);
 			foreach($result->attachments as $attachment)
 			{
 				$src = '/storage/images/original/'. $user_id .'/'. $attachment->file_name;
