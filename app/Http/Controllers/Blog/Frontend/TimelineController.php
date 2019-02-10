@@ -23,7 +23,11 @@ class TimelineController extends Controller
 			$result = blog_posts::where('user_id',$user_id)->find($post_id);
 			foreach($result->attachments as $attachment)
 			{
-				$output[] = array('src' => '/storage/images/original/'. $user_id .'/'. $attachment->file_name, 'thumb' => '/storage/images/250/'. $user_id .'/'. $attachment->file_name, 'caption' => $result->title);
+				$src = '/storage/images/original/'. $user_id .'/'. $attachment->file_name;
+				$thumb = '/storage/images/250/'. $user_id .'/'. $attachment->file_name;
+				$caption = $result->content;
+				if($caption=="") $caption = $result->title;
+				$output[] = array('src' => $src, 'thumb' => $thumb, 'caption' => $caption);
 			}
 		return response()->json($output);
 		}
