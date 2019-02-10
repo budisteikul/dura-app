@@ -212,7 +212,7 @@
 <script>
 function openFancyBox(id,index,animated_id)
 {
-		$('#'+ animated_id).addClass('infinite animated rubberBand');
+		$('#'+ animated_id).addClass('infinite animated tada');
 		$.ajax({
             type: 'GET',
             url: '/',
@@ -223,7 +223,7 @@ function openFancyBox(id,index,animated_id)
         	},
             dataType: 'json',
             success: function (data) {
-				$('#'+ animated_id).removeClass('infinite animated rubberBand');
+				$('#'+ animated_id).removeClass('infinite animated tada');
                 $.fancybox.open(data,
 				{
 					index: index,
