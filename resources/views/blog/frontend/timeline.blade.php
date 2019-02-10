@@ -217,7 +217,8 @@ function openFancyBox(id,index)
             url: '/',
 			data: {
         		"post_id": id,
-				"user_id": '{{ $setting->user_id }}'
+				"user_id": '{{ $setting->user_id }}',
+				"request": 'fancybox'
         	},
             dataType: 'json',
             success: function (data) {

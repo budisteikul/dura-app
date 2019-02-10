@@ -15,7 +15,7 @@ class TimelineController extends Controller
 	
 	public function index(Request $request)
 	{
-		if($request->ajax())
+		if($request->ajax() && $request->input('request') == "fancybox")
 		{
 			$output = array();
 			$user_id = $request->input('user_id');
