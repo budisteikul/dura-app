@@ -214,6 +214,7 @@ function openFancyBox(id,index)
 {
 		$.ajax({
             type: 'GET',
+			async: false,
             url: '/',
 			data: {
         		"post_id": id,
