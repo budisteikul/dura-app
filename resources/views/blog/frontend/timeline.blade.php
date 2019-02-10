@@ -212,7 +212,7 @@
 <script>
 function openFancyBox(id,index,animated_id)
 {
-		$('#'+ animated_id).addClass('animated pulse');
+		$('#'+ animated_id).addClass('infinite animated pulse');
 		$.ajax({
             type: 'GET',
             url: '/',
@@ -223,6 +223,7 @@ function openFancyBox(id,index,animated_id)
         	},
             dataType: 'json',
             success: function (data) {
+				$('#'+ animated_id).removeClass('infinite animated pulse');
                 $.fancybox.open(data,
 				{
 					index: index,
