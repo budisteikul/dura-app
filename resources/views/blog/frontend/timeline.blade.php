@@ -134,14 +134,14 @@
 						if($d>1)
 						{
 						?>
-								<img onClick="return openFancyBox('{{ $result->id }}','{{ $index }}')" class="image-photo" src="{{ asset('/storage/images/250/'. $setting->user_id .'/'. $attachment->file_name) }}" alt=""  />
+								<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}')" class="image-photo" src="{{ asset('/storage/images/250/'. $setting->user_id .'/'. $attachment->file_name) }}" alt=""  />
 								
 						<?php	
 						}
 						else
 						{
 						?>
-                        		<img onClick="return openFancyBox('{{ $result->id }}','{{ $index }}')" class="image-photo" src="{{ asset('/storage/images/500/'.$setting->user_id.'/'. $attachment->file_name) }}" alt=""  />
+                        		<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}')" class="image-photo" src="{{ asset('/storage/images/500/'.$setting->user_id.'/'. $attachment->file_name) }}" alt=""  />
 								
                         <?php
 						}
@@ -210,8 +210,9 @@
     
 		
 <script>
-function openFancyBox(id,index)
+function openFancyBox(id,index,animated_id)
 {
+		$('#'+ animated_id).addClass('animated pulse');
 		$.ajax({
             type: 'GET',
 			async: false,
