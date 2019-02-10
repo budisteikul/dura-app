@@ -2,23 +2,33 @@
 namespace App\Http\Controllers\Blog\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Request as Http;
 use App\Classes\Blog\BlogClass;
 use App\Models\Blog\blog_posts;
+use App\Models\Blog\blog_attachments;
 use App\Models\Blog\blog_settings;
 use App\User;
+use Illuminate\Http\Request;
 
 class TimelineController extends Controller
 {
 	
-	
-	public function __construct()
+	public function index(Request $request)
 	{
-	}
-	
-	public function index()
-	{
-		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Request::root()))->where('name','domain')->first();
+		if($request->ajax())
+		{
+			$output = array();
+			$user_id = $request->input('user_id');
+			$post_id = $request->input('post_id');
+			$attachments = blog_attachments::where('post_id',$post_id)->where('user_id',$user_id)->orderBy('sort')->get();
+			foreach($attachments as $attachment)
+			{
+				$output[] = array('src' => '/storage/images/original/'. $user_id .'/'. $attachment->file_name, 'thumb' => '/storage/images/250/'. $user_id .'/'. $attachment->file_name);
+			}
+		return response()->json($output);
+		}
+		
+		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Http::root()))->where('name','domain')->first();
 		if(!$blog_setting) return Redirect('/home');
 		
 		$user_id = $blog_setting->user_id;
@@ -96,7 +106,7 @@ class TimelineController extends Controller
 		$setting->github = BlogClass::getConf('github',$user_id);
 		$setting->path = BlogClass::getConf('path',$user_id);
 		
-		$url = Request::url();
+		$url = Http::url();
 		$setting->url = $url;
 		$setting->image = $setting->url . $setting->header;
 		$setting->title = $setting->title2;

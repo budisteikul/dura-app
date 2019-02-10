@@ -14,6 +14,7 @@ use Ramsey\Uuid\Uuid as Generator;
 
 Route::get('/', 'Blog\Frontend\TimelineController@index');
 
+
 /*
 Route::get('/test', function () {
 	$result3 = DB::table('blog_settings2')->get();

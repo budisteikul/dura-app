@@ -120,6 +120,7 @@
 					$b = str_split($a);
 					$c = 0 ;
 					$e = 0 ;
+					$index = 0 ;
 					?>
                     @foreach($result->attachments as $attachment)
                     	<?php
@@ -133,19 +134,18 @@
 						if($d>1)
 						{
 						?>
-								<a href="/storage/images/original/{{ $setting->user_id }}/{{ $attachment->file_name }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
-									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/250/'. $setting->user_id .'/'. $attachment->file_name) }}" alt=""  />
-								</a>
+								<img onClick="return openFancyBox('{{ $result->id }}','{{ $index }}')" id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/250/'. $setting->user_id .'/'. $attachment->file_name) }}" alt=""  />
+								
 						<?php	
 						}
 						else
 						{
 						?>
-                        		<a href="/storage/images/original/{{$setting->user_id}}/{{ $attachment->file_name }}" data-fancybox="image-{{$result->id}}" data-caption="{{ $result->judul }}" style="display:block; margin-bottom:2px">
-									<img id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/500/'.$setting->user_id.'/'. $attachment->file_name) }}" alt=""  />
-								</a>
+                        		<img onClick="return openFancyBox('{{ $result->id }}','{{ $index }}')" id="{{ $attachment->id }}" class="image-photo" src="{{ asset('/storage/images/500/'.$setting->user_id.'/'. $attachment->file_name) }}" alt=""  />
+								
                         <?php
 						}
+						$index++;
 						?>
                     @endforeach
                     </div>
@@ -210,6 +210,27 @@
     
 		
 <script>
+function openFancyBox(id,index)
+{
+		$.ajax({
+            type: 'GET',
+            url: '/',
+			data: {
+        		"post_id": id,
+				"user_id": '{{ $setting->user_id }}'
+        	},
+            dataType: 'json',
+            success: function (data) {
+                $.fancybox.open(data,
+				{
+					index: index,
+					protect: true
+				});
+            }
+        });
+	return false;
+}
+
 (function($) {
 	 photogrid();
       	var $container = $('.timeline');
