@@ -33,7 +33,7 @@ class TimelineController extends Controller
 				if($caption=="") $caption = $result->title;
 				$output[] = array('src' => $src, 'thumb' => $thumb, 'caption' => $caption);
 			}
-		return response()->json($output);
+			return response()->json($output);
 		}
 		
 		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Http::root()))->where('name','domain')->first();
