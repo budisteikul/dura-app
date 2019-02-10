@@ -215,7 +215,6 @@ function openFancyBox(id,index,animated_id)
 		$('#'+ animated_id).addClass('animated pulse');
 		$.ajax({
             type: 'GET',
-			async: false,
             url: '/',
 			data: {
         		"post_id": id,
