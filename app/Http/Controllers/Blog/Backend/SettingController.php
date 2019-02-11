@@ -30,6 +30,7 @@ class SettingController extends Controller
 		$setting->instagram = BlogClass::getConf('instagram');
 		$setting->github = BlogClass::getConf('github');
 		$setting->path = BlogClass::getConf('path');
+		$setting->domain = BlogClass::getConf('domain');
 		$setting->user_id = $user->id;
 		
 		$results = blog_tmp::where('key','header_file')->get();
@@ -50,6 +51,7 @@ class SettingController extends Controller
 		
 		if($tipe=="general_setting"){
 			$key = $request->input('key');
+			BlogClass::setConf('domain',preg_replace('#^https?://#', '', $request->input('domain')));
 			BlogClass::setConf('title1',$request->input('title1'));
 			BlogClass::setConf('title2',$request->input('title2'));
 			BlogClass::setConf('description',$request->input('description'));
@@ -58,6 +60,7 @@ class SettingController extends Controller
 			BlogClass::setConf('instagram',$request->input('instagram'));
 			BlogClass::setConf('github',$request->input('github'));
 			BlogClass::setConf('path',$request->input('path'));
+			
 			$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->first();
 			if (@count($result))
 			{
@@ -76,9 +79,35 @@ class SettingController extends Controller
 				BlogClass::deleteTempPhoto($result->file);
 			}
 			
+			$user = Auth::user();
+			$stdClass = app();
+    		$setting = $stdClass->make('stdClass');
+			$setting->title1 = BlogClass::getConf('title1');
+			$setting->title2 = BlogClass::getConf('title2');
+			$setting->description = BlogClass::getConf('description');
+			$setting->header = BlogClass::getConf('header');
+			$setting->facebook = BlogClass::getConf('facebook');
+			$setting->twitter = BlogClass::getConf('twitter');
+			$setting->instagram = BlogClass::getConf('instagram');
+			$setting->github = BlogClass::getConf('github');
+			$setting->path = BlogClass::getConf('path');
+			$setting->domain = BlogClass::getConf('domain');
+			$setting->user_id = $user->id;
+			
 			return response()->json([
 					"id"=>"1",
-					"message"=>'<i class="fa fa-check"></i> Update Success'
+					"message"=>'<i class="fa fa-check"></i> Update Success',
+					"domain"=>$setting->domain,
+					"title1"=>$setting->title1,
+					"title2"=>$setting->title2,
+					"description"=>$setting->description,
+					"facebook"=>$setting->facebook,
+					"twitter"=>$setting->twitter,
+					"instagram"=>$setting->instagram,
+					"github"=>$setting->github,
+					"path"=>$setting->path,
+					"header"=>$setting->header,
+					"user_id"=>$setting->user_id
 					]);
 		}
 		

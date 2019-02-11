@@ -3,6 +3,7 @@
 <script language="javascript">
 function UPDATE()
 {
+	
 	$('#submit_general').prop('disabled', true);
 	$('#submit_general').val('Saving...');
 	
@@ -15,6 +16,7 @@ function UPDATE()
 			facebook: $('#facebook').val(),
 			twitter: $('#twitter').val(),
 			instagram: $('#instagram').val(),
+			domain: $('#domain').val(),
 			github: $('#github').val(),
 			path: $('#path').val(),
 			key: 'header_file',
@@ -27,6 +29,22 @@ function UPDATE()
 			{
 				window.location='/blog/setting/{{ $setting->user_id }}/edit#top';
 				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
+				
+				$('.ajax-file-upload-statusbar').remove();
+				
+				$('#domain').val(data.domain);
+				$('#title1').val(data.title1);
+				$('#title2').val(data.title2);
+				$('#description').val(data.description);
+				$('#facebook').val(data.facebook);
+				$('#twitter').val(data.twitter);
+				$('#instagram').val(data.instagram);
+				$('#github').val(data.github);
+				$('#path').val(data.path);
+				
+				$('#div_header').removeClass('d-none');
+				$("#header").attr("src","/storage/images/{{ Auth::user()->id }}/header/"+ data.header);
+				
 				$('#submit_general').prop('disabled', false);
 				$('#submit_general').val('Save');
 			}
@@ -52,8 +70,13 @@ function UPDATE()
                     
     <form onSubmit="return UPDATE()">
     <div class="form-group">
+		<b>Domain :</b>
+		<input id="domain" type="text" name="domain" class="form-control" value="{{ $setting->domain }}" placeholder="http://www.domain.com/">
+	</div>
+    
+    <div class="form-group">
 		<b>Header :</b>
-		<input id="title2" type="text" name="title2" class="form-control" value="{{ $setting->title2 }}" placeholder="Judul">
+		<input id="title2" type="text" name="title2" class="form-control" value="{{ $setting->title2 }}" placeholder="Header">
 	</div>
     
 	<div class="form-group">
@@ -68,10 +91,16 @@ function UPDATE()
 		<textarea id="description" name="description" class="form-control" style="height:200px;">{{ $setting->description }}</textarea>
 	</div>
     
+    
+    <div id="div_header" class="form-group {{ empty($setting->header) ? 'd-none' : '' }}">
+		<img id="header" src="/storage/images/{{ Auth::user()->id }}/header/{{ $setting->header }}" width="200" height="100">
+	</div>
+    
 	<div class="form-group">
 		<div id="status"></div>
 		<div id="mulitplefileuploader"><b class="fa fa-plus"> Upload </b></div>
 		<script>
+		
 		$(document).ready(function()
 		{
 			var settings = {
@@ -81,7 +110,7 @@ function UPDATE()
    		 		allowedTypes:"jpg,jpeg,png",	
    		 		returnType:"json",
 				acceptFiles:"image/*",
-		 		allowDuplicates: false,
+		 		allowDuplicates: true,
 		 		multiple: false,
 				uploadStr:"<i class=\"fa fa-folder-open\"></i> Browse",
 		 		onSuccess:function(files,data,xhr)
@@ -107,7 +136,9 @@ function UPDATE()
     				pd.statusbar.hide();
 				}
 			}
+			
 			var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
+			
 		});
 		</script>
 	</div>
