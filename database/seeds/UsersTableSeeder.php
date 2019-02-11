@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'asd@asd.asd',
             'password' => bcrypt('asdasd'),
 			'email_verified_at' => date('Y-m-d H:i:s'),
-			'picture_url' => 'storage/images/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/gravatar/pp1.jpg',
+			'picture_url' => '/img/avatar4.png',
         ]);
     }
 }

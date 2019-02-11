@@ -36,7 +36,7 @@ mix.styles([
 	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css'
 	],'public/css/app.css');
 	
-	
+mix.copyDirectory('resources/assets/backend/avatars', 'public/img');	
 	
 	
 	
