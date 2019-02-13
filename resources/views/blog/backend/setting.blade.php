@@ -5,7 +5,7 @@ function UPDATE()
 {
 	
 	$('#submit_general').prop('disabled', true);
-	$('#submit_general').val('Saving...');
+	$('#submit_general').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	$.ajax({
 		data: {
@@ -42,7 +42,7 @@ function UPDATE()
 				$("#header").attr("src","/storage/images/{{ Auth::user()->id }}/header/"+ data.header);
 				
 				$('#submit_general').prop('disabled', false);
-				$('#submit_general').val('Save');
+				$('#submit_general').html('<i class="fa fa-save"></i> Save');
 			}
 		});	
 	
@@ -151,8 +151,8 @@ function UPDATE()
 		<input type="text" id="instagram" name="instagram" class="form-control" value="{{ $setting->instagram }}" placeholder="Instagram link">
 	</div>
     
-	<input  class="btn btn-lg btn-primary btn-block" id="submit_general" type="submit" name="submit_general" value="Save">
-    
+	
+    <button id="submit_general" type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i> Save</button>
 </form>
                     
                     <!-- ################################################### -->

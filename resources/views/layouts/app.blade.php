@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ str_ireplace("www.","",$_SERVER['HTTP_HOST']) }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ str_ireplace("www.","",$_SERVER['HTTP_HOST']) }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                             @endif
                         @else
                         	<li class="nav-item">
-                                <a class="nav-link" href="/blog/post"><i class="fa fa-image"></i> {{ __('Gallery') }}</a>
+                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Gallery') }}</a>
                             </li>
 							<li class="nav-item">
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-gear"></i> {{ __('Setting') }}</a>

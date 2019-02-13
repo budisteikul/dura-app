@@ -9,12 +9,14 @@
 				
 				"processing": true,
        			"serverSide": true,
-        		"ajax": '/blog/post',
+        		"ajax": '/blog/photo',
 				"scrollX": true,
 				"language": {
     				"paginate": {
-      					"previous": "<i class='fa fa-angle-left'></i>",
-						"next": "<i class='fa fa-angle-right'></i>"
+      					"previous": "<i class='fa fa-step-backward'></i>",
+						"next": "<i class='fa fa-step-forward'></i>",
+						"first": "<i class='fa fa-fast-backward'></i>",
+						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
 				"order": [[ 0, "desc" ]],
@@ -41,7 +43,7 @@
         	"status":status
         },
 		type: 'PUT',
-		url: "/blog/post/"+ id
+		url: "/blog/photo/"+ id
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
@@ -71,7 +73,7 @@
     							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
   						},
      						type: 'DELETE',
-     						url: '/blog/post/'+ id
+     						url: '/blog/photo/'+ id
 						}).done(function( msg ) {
 							table.ajax.reload( null, false );
 						});	
@@ -94,7 +96,7 @@
                 <div class="card-header"><i class="fa fa-image"></i> Gallery</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/post/create?content_type=photo'"><b class="fa fa-camera"></b> Add photo</button>
+      	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/photo/create'"><b class="fa fa-camera"></b> Add photo</button>
         <hr>
 		<table class="table table-hover" id="dataTables-example" style="width:100%">
 			<thead style="display:none">

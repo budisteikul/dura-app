@@ -53,11 +53,9 @@ class TimelineController extends Controller
 		$get_user = User::where('id',$user_id)->whereNotNull('email_verified_at')->first();
 		if(!$get_user) return Redirect('/login');
 		
-		
-		
 		if (Auth::check()) {
 			
-			$check = blog_posts::where('user_id',$user_id)
+				$check = blog_posts::where('user_id',$user_id)
 				   ->where('content_type','photo')
 				   ->orderBy('date','desc')
 				   ->first();
@@ -92,7 +90,6 @@ class TimelineController extends Controller
 		{
 			$results = blog_posts::with(array('attachments' => function($query)
 				   {
-					   $query->where('resource_type', 'image');
 					   $query->orderBy('sort', 'asc');
 				   }
 				   ))

@@ -16,7 +16,7 @@ use App\Models\Blog\blog_attachments;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
-class PostController extends Controller
+class PhotoController extends Controller
 {
 	
 	public function index(Request $request)
@@ -69,32 +69,21 @@ class PostController extends Controller
 						$icon = "fa-toggle-off";
 						$text = " Off";
 					}
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/post/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="UPDATE(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/photo/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="UPDATE(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
 				->rawColumns(['action','contents'])
 				->toJson();
 			}
 			else
 			{
-				return view('blog.backend.post');
+				return view('blog.backend.photo.index');
 			}
 		}
 
 	
-	public function create(Request $request)
+	public function create()
 	{
 		$user = Auth::user();
-
-		$content_type = $request->input('content_type');
-		switch($content_type)
-		{
-			case "photo":
-			$content_type = "photo";
-			break;
-			default:
-			$content_type = "photo";
-		}
-
 		$result = blog_tmp::where('user_id',$user->id)->get();
 		foreach($result as $rs)
 		{
@@ -109,9 +98,9 @@ class PostController extends Controller
 		$setting = $stdClass->make('stdClass');
 		$setting->key = Uuid::uuid4();
 		$setting->date = date("Y-m-d H:i:s", strtotime('+7 hours'));
-		$setting->content_type = $content_type;
+		$setting->content_type = 'photo';
 		$setting->post_type = 'post';
-    	return view('blog.backend.post-add')->with('setting',$setting);
+    	return view('blog.backend.photo.create')->with('setting',$setting);
 		
 	}
 	
@@ -123,7 +112,7 @@ class PostController extends Controller
 		$setting->key = Uuid::uuid4();
 		$result = blog_posts::where('user_id',$user->id)->find($id);
 		
-		return view('blog.backend.post-edit')
+		return view('blog.backend.photo.edit')
 			   ->with('result',$result)
 			   ->with('setting',$setting);
 	}

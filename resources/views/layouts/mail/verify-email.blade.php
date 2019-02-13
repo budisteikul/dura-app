@@ -206,7 +206,7 @@
                             <w:anchorlock/>
                             <center style="color:#ffffff;font-family:sans-serif;font-size:15px;">Verify Email</center>
                           </v:roundrect><![endif]-->
-                            <a href="{{$action_url}}" class="button button--blue">Verify Email</a>
+                            <a href="{!!$action_url!!}" class="button button--blue">Verify Email</a>
                           </div>
                         </td>
                       </tr>
@@ -219,7 +219,7 @@
                         <td>
                           <p class="sub">If you’re having trouble clicking the button, copy and paste the URL below into your web browser.
                           </p>
-                          <p class="sub"><a href="{{$action_url}}">{{$action_url}}</a></p>
+                          <p class="sub"><a href="{!!$action_url!!}">{!!$action_url!!}</a></p>
                         </td>
                       </tr>
                     </table>

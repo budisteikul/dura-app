@@ -14,6 +14,8 @@ function RESEND()
 			if(data.id==1)
 			{
 				$('.card-body').prepend('<div id="alert" class="alert alert-success" role="alert">'+ data.message +'</div>');
+				$('#span').remove();
+				$('#form').prepend('<a id="submit" href="{{ route('verification.resend') }}" onClick="return RESEND()">{{ __('click here to request another') }}</a>');
 			}
 			else
 			{

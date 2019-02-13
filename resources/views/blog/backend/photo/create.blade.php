@@ -4,7 +4,7 @@
 function STORE()
 {
 	$('#submit').prop('disabled', true);
-	$('#submit').val('Saving...');
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	$.ajax({
 			data: {
@@ -18,17 +18,17 @@ function STORE()
 				title: $('#title').val()
         	},
 			type: 'POST',
-			url: '/blog/post'
+			url: '/blog/photo'
 			}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location='/blog/post';
+				window.location='/blog/photo';
 			}
 			else
 			{
 				$("#result").empty().append(data).hide().fadeIn();
 				$('#submit').prop('disabled', false);
-				$('#submit').val('Save');
+				$('#submit').html('<i class="fa fa-save"></i> Save');
 			}
 		});
 	
@@ -43,10 +43,7 @@ function STORE()
                 <div class="card-header"><i class="fa fa-camera"></i> Add Photo</div>
                 <div class="card-body">
 				
-<form method="post" action="/blog/post" onSubmit="return STORE()">
-<input type="hidden" name="post_type" value="{{ $setting->post_type }}">
-<input type="hidden" name="content_type" value="{{ $setting->content_type }}">
-<input type="hidden" name="key" value="{{ $setting->key }}">
+<form onSubmit="return STORE()">
 <div id="result"></div>
 
 <div class="form-group">
@@ -131,7 +128,8 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
         </script>    
 </div>
      
-<input  class="btn btn-danger" type="button" onClick="window.location='/blog/post'" name="submit" value="Cancel">&nbsp;<input  class="btn btn-primary" id="submit" type="submit" name="submit" value="Save">
+<button  class="btn btn-danger" type="button" onClick="window.location='/blog/photo'"><i class="fa fa-close"></i> Cancel</button>
+<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
 
 

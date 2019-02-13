@@ -4,7 +4,7 @@
 function UPDATE()
 {
 	$('#submit').prop('disabled', true);
-	$('#submit').val('Saving...');
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	@foreach($result->attachments as $attachment)
 	var attachment_{{ str_ireplace("-","_",$attachment->id) }} = $('#attachment_{{ str_ireplace("-","_",$attachment->id) }}').val();
@@ -29,17 +29,17 @@ function UPDATE()
 			key: '{{ $setting->key }}'
         },
 		type: 'PUT',
-		url: "/blog/post/{{ $result->id }}"
+		url: "/blog/photo/{{ $result->id }}"
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location='/blog/post';
+				window.location='/blog/photo';
 			}
 			else
 			{
 				$("#result").empty().append(data).hide().fadeIn();
 				$('#submit').prop('disabled', false);
-				$('#submit').val('Save');
+				$('#submit').html('<i class="fa fa-save"></i> Save');
 			}
 		});	
 		
@@ -62,17 +62,17 @@ function UPDATE()
 		@foreach($result->attachments->sortBy('sort') as $attachment)
 				
 				<div class="col-auto" style="margin-top:10px;">
-					<img style="padding-bottom:5px; height:150px;" class="image-photo" src="/storage/images/{{ Auth::user()->id }}/250/{{ $attachment->file_name }}" >
+					<img style=" height:150px; " class="image-photo rounded" src="/storage/images/{{ Auth::user()->id }}/250/{{ $attachment->file_name }}" >
 				
 					
-					<div class="form-row align-items-center">
+					<div class="form-row align-items-center pt-1">
 						<div class="col-auto">
 							<input type="text" class="form-control text-center" style="width:50px;" id="attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="{{ $attachment->sort }}">
 						</div>
     
 						<div class="col-auto">
-							<div class="form-check">
-								<input type="checkbox" id="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="hapus">
+							<div class="form-check form-check-inline">
+								<input type="checkbox" class="form-check-input" id="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="hapus">
 								<label class="form-check-label" for="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}">
 								Delete
 								</label>
@@ -159,7 +159,8 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
             });
         </script>    
 </div>
-<input  class="btn btn-danger" type="button" onClick="window.location='/blog/post'" name="submit" value="Cancel">&nbsp;<input  class="btn btn-primary" id="submit" type="submit" name="submit" value="Save">
+<button  class="btn btn-danger" type="button" onClick="window.location='/blog/photo'"><i class="fa fa-close"></i> Cancel</button>
+<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
 </div>
 </div>       

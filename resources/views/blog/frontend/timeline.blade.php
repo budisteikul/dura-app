@@ -1,3 +1,4 @@
+@inject('blog', 'App\Classes\Blog\BlogClass')
 @extends('layouts.frontend')
 @section('title', $setting->title)
 @section('content')
@@ -32,7 +33,7 @@
 					{!! $setting->facebook!="" ? '<li><a target="_blank" href="'. $setting->facebook .'"><i class="fa fa-facebook-square"></i> Facebook</a></li>' : '' !!}
                     {!! $setting->twitter!="" ? '<li><a target="_blank" href="'. $setting->twitter .'"><i class="fa fa-twitter-square"></i> Twitter</a></li>' : '' !!}
                     {!! $setting->instagram!="" ? '<li><a target="_blank" href="'. $setting->instagram .'"><i class="fa fa-instagram"></i> Instagram</a></li>' : '' !!}
-                    {!! Auth::check() ? '<li><a href="/blog/post"><i class="fa fa-user"></i> Admin</a></li>' : '<li><a href="/auth/login"><i class="fa fa-user"></i> Login</a></li>' !!}
+                    {!! Auth::check() ? '<li><a href="/blog/photo"><i class="fa fa-user"></i> Admin</a></li>' : '<li><a href="/auth/login"><i class="fa fa-user"></i> Login</a></li>' !!}
                     
                 </ul>
             </div>
@@ -105,7 +106,7 @@
 			<div class="timeline-panel" style="background-color:#FFFFFF; margin-right:4px; margin-left:4px;">
 				<div class="timeline-heading">
 					<p class="text-muted text-left">
-					<i class="fa fa-clock-o"></i> <?= App\Classes\Blog\BlogClass::timeAgo($result->date) ?>
+					<i class="fa fa-clock-o"></i> <?= $blog->timeAgo($result->date) ?>
 					</p>
 				</div>
                 <?php

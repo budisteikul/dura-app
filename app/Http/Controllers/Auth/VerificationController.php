@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
 use App\User;
 use App\Notifications\Auth\VerifyEmailNotifications;
-
+use Illuminate\Auth\Events\Verified;
 
 class VerificationController extends Controller
 {
@@ -48,6 +48,23 @@ class VerificationController extends Controller
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath())
                         : view('auth.verify');
+    }
+	
+	public function verify(Request $request)
+    {
+        if ($request->route('id') != $request->user()->getKey()) {
+            throw new AuthorizationException;
+        }
+
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath());
+        }
+
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+
+        return redirect($this->redirectPath())->with('verified', true);
     }
 	
 	public function resend(Request $request)
