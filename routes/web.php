@@ -85,16 +85,16 @@ Route::get('/test', function () {
 
 Route::get('/test',function(){
 		
-		/*
+		
 		$result = DB::table('blog_attachments')->get();
 			foreach($result as $rs)
 			{
 				DB::table('blog_attachments')->where('id',$rs->id)->update([
-					'file_path'=>'images/original/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/'.$rs->file_name,
-					'file_url'=>'/storage/images/original/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/'.$rs->file_name,
+					'file_path'=>'images/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/original/'.$rs->file_name,
+					'file_url'=>'/storage/images/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/original/'.$rs->file_name,
 				]);
 			}
-		*/
+		
 	});
 
 Auth::routes(['verify' => true]);

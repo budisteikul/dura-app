@@ -17,8 +17,6 @@ function UPDATE()
 			twitter: $('#twitter').val(),
 			instagram: $('#instagram').val(),
 			domain: $('#domain').val(),
-			github: $('#github').val(),
-			path: $('#path').val(),
 			key: 'header_file',
 			tipe: "general_setting"
         },
@@ -39,8 +37,6 @@ function UPDATE()
 				$('#facebook').val(data.facebook);
 				$('#twitter').val(data.twitter);
 				$('#instagram').val(data.instagram);
-				$('#github').val(data.github);
-				$('#path').val(data.path);
 				
 				$('#div_header').removeClass('d-none');
 				$("#header").attr("src","/storage/images/{{ Auth::user()->id }}/header/"+ data.header);
@@ -84,13 +80,10 @@ function UPDATE()
 		<input id="title1" type="text" name="title1" class="form-control" value="{{ $setting->title1 }}" placeholder="Judul">
 	</div>
     
-	
-    
 	<div class="form-group">
 		<b>Description :</b>
 		<textarea id="description" name="description" class="form-control" style="height:200px;">{{ $setting->description }}</textarea>
 	</div>
-    
     
     <div id="div_header" class="form-group {{ empty($setting->header) ? 'd-none' : '' }}">
 		<img id="header" src="/storage/images/{{ Auth::user()->id }}/header/{{ $setting->header }}" width="200" height="100">
@@ -158,20 +151,8 @@ function UPDATE()
 		<input type="text" id="instagram" name="instagram" class="form-control" value="{{ $setting->instagram }}" placeholder="Instagram link">
 	</div>
     
-	<div class="form-group">
-		<b>Path :</b>
-		<input type="text" id="path" name="path" class="form-control" value="{{ $setting->path }}" placeholder="Path link">
-	</div>
-    
-	<div class="form-group">
-		<b>Github :</b>
-		<input type="text" id="github" name="github" class="form-control" value="{{ $setting->github }}" placeholder="Github link">
-	</div>
-    
-	
-	
 	<input  class="btn btn-lg btn-primary btn-block" id="submit_general" type="submit" name="submit_general" value="Save">
-	
+    
 </form>
                     
                     <!-- ################################################### -->

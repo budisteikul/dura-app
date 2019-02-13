@@ -28,8 +28,6 @@ class SettingController extends Controller
 		$setting->facebook = BlogClass::getConf('facebook');
 		$setting->twitter = BlogClass::getConf('twitter');
 		$setting->instagram = BlogClass::getConf('instagram');
-		$setting->github = BlogClass::getConf('github');
-		$setting->path = BlogClass::getConf('path');
 		$setting->domain = BlogClass::getConf('domain');
 		$setting->user_id = $user->id;
 		
@@ -58,8 +56,6 @@ class SettingController extends Controller
 			BlogClass::setConf('facebook',$request->input('facebook'));
 			BlogClass::setConf('twitter',$request->input('twitter'));
 			BlogClass::setConf('instagram',$request->input('instagram'));
-			BlogClass::setConf('github',$request->input('github'));
-			BlogClass::setConf('path',$request->input('path'));
 			
 			$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->first();
 			if (@count($result))
@@ -89,8 +85,6 @@ class SettingController extends Controller
 			$setting->facebook = BlogClass::getConf('facebook');
 			$setting->twitter = BlogClass::getConf('twitter');
 			$setting->instagram = BlogClass::getConf('instagram');
-			$setting->github = BlogClass::getConf('github');
-			$setting->path = BlogClass::getConf('path');
 			$setting->domain = BlogClass::getConf('domain');
 			$setting->user_id = $user->id;
 			
@@ -104,8 +98,6 @@ class SettingController extends Controller
 					"facebook"=>$setting->facebook,
 					"twitter"=>$setting->twitter,
 					"instagram"=>$setting->instagram,
-					"github"=>$setting->github,
-					"path"=>$setting->path,
 					"header"=>$setting->header,
 					"user_id"=>$setting->user_id
 					]);
