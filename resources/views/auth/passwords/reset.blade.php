@@ -2,7 +2,7 @@
 
 @section('content')
 <script language="javascript">
-function RESET()
+function AUTH_RESET()
 {
 	var error = false;
 	var input = ["email", "password", "password-confirm"];
@@ -56,7 +56,7 @@ function RESET()
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}" onSubmit="return RESET()">
+                    <form method="POST" action="{{ route('password.update') }}" onSubmit="return AUTH_RESET()">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">

@@ -3,7 +3,7 @@
 @section('content')
 
 <script language="javascript">
-function LOGIN()
+function AUTH_LOGIN()
 {
 	var error = false;
 	var input = ["email", "password"];
@@ -55,7 +55,7 @@ function LOGIN()
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" onSubmit="return LOGIN()">
+                    <form method="POST" action="{{ route('login') }}" onSubmit="return AUTH_LOGIN()">
                         @csrf
 
                         <div class="form-group row">

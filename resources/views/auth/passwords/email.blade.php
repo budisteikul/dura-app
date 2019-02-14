@@ -2,7 +2,7 @@
 
 @section('content')
 <script language="javascript">
-function REQUEST()
+function AUTH_REQUEST()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
@@ -63,7 +63,7 @@ function REQUEST()
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}" onSubmit="return REQUEST()">
+                    <form method="POST" action="{{ route('password.email') }}" onSubmit="return AUTH_REQUEST()">
                         @csrf
 
                         <div class="form-group row">

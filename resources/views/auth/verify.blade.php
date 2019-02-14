@@ -2,7 +2,7 @@
 
 @section('content')
 <script language="javascript">
-function RESEND()
+function AUTH_RESEND()
 {
 	$('#alert').fadeOut();
 	$('#submit').remove();
@@ -43,7 +43,7 @@ function RESEND()
                     @endif
 					
                     {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <span id="form"><a id="submit" href="{{ route('verification.resend') }}" onClick="return RESEND()">{{ __('click here to request another') }}</a>.</span>
+                    {{ __('If you did not receive the email') }}, <span id="form"><a id="submit" href="{{ route('verification.resend') }}" onClick="return AUTH_RESEND()">{{ __('click here to request another') }}</a>.</span>
 					
 				</div>
             </div>

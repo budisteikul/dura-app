@@ -2,7 +2,7 @@
 
 @section('content')
 <script language="javascript">
-function REGISTER()
+function AUTH_REGISTER()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
@@ -55,7 +55,7 @@ function REGISTER()
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form onSubmit="return REGISTER()">
+                    <form onSubmit="return AUTH_REGISTER()">
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
