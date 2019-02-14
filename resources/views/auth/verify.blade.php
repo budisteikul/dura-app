@@ -14,18 +14,15 @@ function AUTH_RESEND()
 			{
 				$('.card-body').prepend('<div id="alert" class="alert alert-success" role="alert">'+ data.message +'</div>');
 				$('#span').remove();
-				$('#form').prepend('<a id="submit" href="{{ route('verification.resend') }}" onClick="return RESEND()">{{ __('click here to request another') }}</a>');
+				$('#form').prepend('<a id="submit" href="{{ route('verification.resend') }}" onClick="AUTH_RESEND(); return false;">{{ __('click here to request another') }}</a>');
 			}
 			else
 			{
 				$('.card-body').prepend('<div id="alert" class="alert alert-danger" role="alert">'+ data.message +'</div>');
 				$('#span').remove();
-				$('#form').prepend('<a id="submit" href="{{ route('verification.resend') }}" onClick="return RESEND()">{{ __('click here to request another') }}</a>');
+				$('#form').prepend('<a id="submit" href="{{ route('verification.resend') }}" onClick="AUTH_RESEND(); return false;">{{ __('click here to request another') }}</a>');
 			}
 		});	
-	
-	
-	return false;
 }
 </script>
 <div class="container">
@@ -36,7 +33,7 @@ function AUTH_RESEND()
 
                 <div class="card-body">
                     {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <span id="form"><a id="submit" href="{{ route('verification.resend') }}" onClick="return AUTH_RESEND()">{{ __('click here to request another') }}</a>.</span>
+                    {{ __('If you did not receive the email') }}, <span id="form"><a id="submit" href="{{ route('verification.resend') }}" onClick="AUTH_RESEND(); return false;">{{ __('click here to request another') }}</a>.</span>
 					
 				</div>
             </div>
