@@ -95,19 +95,23 @@ class BlogClass {
 				$user_path = Auth::user()->id .'/';
 				if(Storage::disk('public')->exists('images/'.$user_path .'50/'.  $file))
 				{
-					Storage::disk('public')->delete('images/'.$user_path .'50/'. $file);
+					//Storage::disk('public')->delete('images/'.$user_path .'50/'. $file);
+					Storage::disk('public')->move('images/'.$user_path .'50/'. $file, 'images/'.$user_path .'50/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'250/'. $file))
 				{
-					Storage::disk('public')->delete('images/'.$user_path .'250/'. $file);
+					//Storage::disk('public')->delete('images/'.$user_path .'250/'. $file);
+					Storage::disk('public')->move('images/'.$user_path .'250/'. $file, 'images/'.$user_path .'250/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'500/'. $file))
 				{
-					Storage::disk('public')->delete('images/'.$user_path .'500/'. $file);
+					//Storage::disk('public')->delete('images/'.$user_path .'500/'. $file);
+					Storage::disk('public')->move('images/'.$user_path .'500/'. $file, 'images/'.$user_path .'500/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'original/'. $file))
 				{
-					Storage::disk('public')->delete('images/'.$user_path .'original/'. $file);
+					//Storage::disk('public')->delete('images/'.$user_path .'original/'. $file);
+					Storage::disk('public')->move('images/'.$user_path .'original/'. $file, 'images/'.$user_path .'original/trash/'. $file);
 				}
 	}
 	

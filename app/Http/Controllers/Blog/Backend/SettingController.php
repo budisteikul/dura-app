@@ -65,7 +65,8 @@ class SettingController extends Controller
 			
 				if($header != "")
 				{
-					Storage::disk('public')->delete('images/'. $user->id .'/header/'. $header);
+					//Storage::disk('public')->delete('images/'. $user->id .'/header/'. $header);
+					Storage::disk('public')->move('images/'. $user->id .'/header/'. $header, 'images/'. $user->id .'/header/trash/'. $header);
 				}
 				
 				$file_attr = BlogClass::getAttrFile($result->file);
