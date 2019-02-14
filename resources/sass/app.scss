@@ -16,6 +16,14 @@
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
 
 @media screen and (max-width: 767px) {
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    text-align: center;
+	justify-content:center;
+  }
+}
+
+/*
+@media screen and (max-width: 767px) {
    	div.dataTables_info {
 		position:absolute;
 		}
@@ -36,3 +44,4 @@
         display: none;
     }
 }
+*/

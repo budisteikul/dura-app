@@ -11,6 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -50,7 +51,7 @@ mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 	
 	
 	
-
+/*
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
 	'resources/assets/frontend/bootstrap/dist/js/bootstrap.min.js',
@@ -80,3 +81,4 @@ mix.styles([
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
+*/

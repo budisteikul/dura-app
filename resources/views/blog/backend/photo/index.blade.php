@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    
+
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {	
      $.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
@@ -25,6 +25,7 @@
 					{data: 'contents', name: 'contents', orderable: false},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
+				
 				"pagingType": "full_numbers",
 				"fnDrawCallback": function () {
 					
