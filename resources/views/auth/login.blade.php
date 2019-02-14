@@ -9,6 +9,7 @@ function LOGIN()
 	var input = ["email", "password"];
 	
 	$("#submit").attr("disabled", true);
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	$.each(input, function( index, value ) {
 		$('#'+ value).removeClass('is-invalid');
@@ -39,6 +40,7 @@ function LOGIN()
 						}
 					});	
 					$("#submit").attr("disabled", false);
+					$('#submit').html('{{ __('Login') }}');
 				}
 		});	
 	

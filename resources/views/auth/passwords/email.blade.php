@@ -6,6 +6,7 @@ function REQUEST()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	$('#label-email').remove();
 	$('#alert').fadeOut();
 	
@@ -41,6 +42,7 @@ function REQUEST()
 						}
 						});	
 					$("#submit").attr("disabled", false);
+					$('#submit').html('{{ __('Send Password Reset Link') }}');
 				}
 		});	
 	

@@ -7,6 +7,7 @@ function RESET()
 	var error = false;
 	var input = ["email", "password", "password-confirm"];
 	$("#submit").attr("disabled", true);
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -40,6 +41,7 @@ function RESET()
 				$('#password').val('');
 				$('#password_confirmation').val('');
 				$("#submit").attr("disabled", false);
+				$('#submit').html('{{ __('Reset Password') }}');
 			}
 		});
 	

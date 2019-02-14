@@ -6,6 +6,7 @@ function REGISTER()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
+	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	var input = ["name", "email", "password", "password-confirm"];
 	
 	$.each(input, function( index, value ) {
@@ -39,6 +40,7 @@ function REGISTER()
 						}
 					});
 				$("#submit").attr("disabled", false);
+				$('#submit').html('{{ __('Register') }}');
 			}
 		});
 	
