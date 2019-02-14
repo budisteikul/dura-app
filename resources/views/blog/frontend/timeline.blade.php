@@ -33,7 +33,7 @@
 					{!! $setting->facebook!="" ? '<li><a target="_blank" href="'. $setting->facebook .'"><i class="fa fa-facebook-square"></i> Facebook</a></li>' : '' !!}
                     {!! $setting->twitter!="" ? '<li><a target="_blank" href="'. $setting->twitter .'"><i class="fa fa-twitter-square"></i> Twitter</a></li>' : '' !!}
                     {!! $setting->instagram!="" ? '<li><a target="_blank" href="'. $setting->instagram .'"><i class="fa fa-instagram"></i> Instagram</a></li>' : '' !!}
-                    {!! Auth::check() ? '<li><a href="/blog/photo"><i class="fa fa-user"></i> Admin</a></li>' : '<li><a href="/auth/login"><i class="fa fa-user"></i> Login</a></li>' !!}
+                    {!! Auth::check() ? '<li><a href="/blog/photo"><i class="fa fa-user"></i> Admin</a></li>' : '<li><a href="/login"><i class="fa fa-user"></i> Login</a></li>' !!}
                     
                 </ul>
             </div>
