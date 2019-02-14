@@ -19,9 +19,12 @@ class CreateBlogSettingsTable extends Migration
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
+				
 			$table->string('name',50)->nullable();
 			$table->longText('value')->nullable();
+			
             $table->timestamps();
+			$table->softDeletes();
         });
 		
     }

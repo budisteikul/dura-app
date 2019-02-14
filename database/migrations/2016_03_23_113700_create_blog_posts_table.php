@@ -19,6 +19,7 @@ class CreateBlogPostsTable extends Migration
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
+				
 			$table->string('title')->nullable();
 			$table->string('slug')->nullable();
 			$table->string('post_type',10)->default('post');
@@ -27,7 +28,9 @@ class CreateBlogPostsTable extends Migration
 			$table->longText('content')->nullable();
 			$table->string('layout')->nullable();
 			$table->tinyInteger('status')->default(1);
-            $table->nullableTimestamps();
+			
+            $table->timestamps();
+			$table->softDeletes();
         });
     }
 

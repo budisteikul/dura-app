@@ -21,8 +21,6 @@ function UPDATE()
 				attachment_{{ str_ireplace("-","_",$attachment->id) }}: attachment_{{ str_ireplace("-","_",$attachment->id) }}, del_attachment_{{ str_ireplace("-","_",$attachment->id) }}: del_attachment_{{ str_ireplace("-","_",$attachment->id) }},
 			@endforeach
         	title:$('#title').val(),
-			post_type: '{{ $result->post_type }}',
-			content_type: '{{ $result->content_type }}',
 			content: $('#content').val(),
 			date: $('#date').val(),
 			layout: $('#layout').val(),

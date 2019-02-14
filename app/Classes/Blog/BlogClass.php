@@ -140,14 +140,9 @@ class BlogClass {
 	}
 	
 	
-	public static function setConf($name,$value,$user_id="")
+	public static function setConf($name,$value)
 		{
-			if($user_id=="")
-			{
-				$user = Auth::user();
-				$user_id = $user->id;	
-			}
-			
+			$user_id = Auth::user()->id;
 			$result = blog_settings::where('name',$name)->where('user_id',$user_id)->first();
 			
 			if(empty($result))
@@ -158,28 +153,14 @@ class BlogClass {
 				$result->save();
 			}
 			
-			if($value=="" && $name!="")
-			{
-				$result = blog_settings::where('user_id',$user_id)->where('name',$name)->first();
-				$result->delete();
-			}
-			else
-			{
-				$result = blog_settings::where('user_id',$user_id)->where('name',$name)->first();
-				$result->value = $value;
-				$result->save();
-			}
+			$result = blog_settings::where('user_id',$user_id)->where('name',$name)->first();
+			$result->value = $value;
+			$result->save();
 		}
 	
 	public static function getConf($name,$user_id="")
 		{
-			if($user_id=="")
-			{
-				$user = Auth::user();
-				$user_id = $user->id;	
-			}
-			
-			$value = "";
+			if($user_id=="") $user_id = Auth::user()->id;
 			$result = blog_settings::where('name',$name)->where('user_id',$user_id)->first();
 			
 			if(empty($result))
@@ -189,11 +170,9 @@ class BlogClass {
 				$result->user_id = $user_id;
 				$result->save();
 			}
-			else
-			{
-				$value = $result->value;
-			}
-    		return $value;
+			
+			$result = blog_settings::where('user_id',$user_id)->where('name',$name)->first();
+    		return $result->value;
 		}
 		
 	public static function makeSlug($string,$user_id,$id="")

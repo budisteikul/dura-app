@@ -98,8 +98,6 @@ class PhotoController extends Controller
 		$setting = $stdClass->make('stdClass');
 		$setting->key = Uuid::uuid4();
 		$setting->date = date("Y-m-d H:i:s", strtotime('+7 hours'));
-		$setting->content_type = 'photo';
-		$setting->post_type = 'post';
     	return view('blog.backend.photo.create')->with('setting',$setting);
 		
 	}
@@ -119,6 +117,7 @@ class PhotoController extends Controller
 	
 	public function update(Request $request, $id)
 	{
+		$user = Auth::user();
 		if($request->input('status')!="")
 		{
 			$validator = Validator::make($request->all(), [
@@ -130,7 +129,6 @@ class PhotoController extends Controller
 				return response()->json($errors);
        		}
 				
-			$user = Auth::user();
 			$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
 			$blog_posts->status = $request->input('status');
 			$blog_posts->save();
@@ -140,30 +138,27 @@ class PhotoController extends Controller
 					]);
 		}
 		
-		$user = Auth::user();
 		$job = false;
 		$title =  $request->input('title');
 		$date =  $request->input('date');
 		$user_id =  $user->id;
 		$key = $request->input('key');
-		$content_type = $request->input('content_type');
-		$post_type = $request->input('post_type');
 		$content = $request->input('content');
 		$layout = $request->input('layout');
 		
-		$result = blog_attachments::where('post_id',$id)->where('user_id',$user->id)->get();
+		$result = blog_attachments::where('post_id',$id)->get();
 		foreach($result as $rs)
 		{
 			$sort_order = $request->input('attachment_'. str_ireplace("-","_",$rs->id));
 			if($sort_order=="") $sort_order = 0;
-			$blog_attachments = blog_attachments::where('user_id',$user->id)->find($rs->id);
+			$blog_attachments = blog_attachments::find($rs->id);
 			$blog_attachments->sort = $sort_order;
 			$blog_attachments->save();
 			
 			$bbb = $request->input('del_attachment_'. str_ireplace("-","_",$rs->id));
 			if($bbb=="hapus")
 			{
-				$blog_attachments = blog_attachments::where('user_id',$user->id)->find($rs->id);
+				$blog_attachments = blog_attachments::find($rs->id);
 				$blog_attachments->delete();
 				
 				BlogClass::deletePhoto($rs->file_name);
@@ -176,23 +171,23 @@ class PhotoController extends Controller
 		if($title=="") $title = date("j M Y", strtotime($date));
 		$guid = BlogClass::makeSlug($title,$user_id,$id);
 		
-		$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
+		$blog_posts = blog_posts::where('user_id',$user_id)->find($id);
 		$blog_posts->title = $title;
 		$blog_posts->slug = $guid;
 		$blog_posts->content = $content;
 		$blog_posts->layout = $layout;
 		$blog_posts->date = $date;
-		$blog_posts->content_type = $content_type;
-		$blog_posts->post_type = $post_type;
+		$blog_posts->content_type = 'photo';
+		$blog_posts->post_type = 'post';
 		$blog_posts->save();
 		
-		$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->get();
+		$result = blog_tmp::where('key',$key)->where('user_id',$user_id)->get();
 		if(@count($result))
 		{
 			$job = true;
 		}
 		
-		$sort_order = blog_attachments::where('post_id',$id)->where('user_id',$user->id)->max('sort');
+		$sort_order = blog_attachments::where('post_id',$id)->max('sort');
 		foreach($result as $rs)
 		{
 				$sort_order++;
@@ -201,7 +196,6 @@ class PhotoController extends Controller
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->sort = $sort_order;
-				$blog_attachments->user_id = $user->id;
 				
 				$file = BlogClass::getAttrFile($rs->file);
 				$blog_attachments->file_name = $file->name;
@@ -209,13 +203,13 @@ class PhotoController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/'. Auth::user()->id .'/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/'. Auth::user()->id .'/original/'. $file->name;
+				$blog_attachments->file_path = 'images/'. $user_id .'/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/'. $user_id .'/original/'. $file->name;
 				
 				$blog_attachments->save();
 				
 				BlogClass::createPhoto($rs->file,$file->name);
-				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
+				blog_tmp::where('id',$rs->id)->delete();
 				BlogClass::deleteTempPhoto($rs->file);
 			//====================================================================================================
 		}
@@ -242,8 +236,6 @@ class PhotoController extends Controller
 		$date =  $request->input('date');
 		$user_id =  $user->id;
 		$key = $request->input('key');
-		$content_type = $request->input('content_type');
-		$post_type = $request->input('post_type');
 		$content = $request->input('content');
 		$layout = $request->input('layout');
 		
@@ -257,12 +249,12 @@ class PhotoController extends Controller
 		$blog_posts->layout = $layout;
 		$blog_posts->date = $date;
 		$blog_posts->user_id = $user_id;
-		$blog_posts->content_type = $content_type;
-		$blog_posts->post_type = $post_type;
+		$blog_posts->content_type = 'photo';
+		$blog_posts->post_type = 'post';
 		$blog_posts->status = 0;
 		$blog_posts->save();
 		
-		$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->get();
+		$result = blog_tmp::where('key',$key)->where('user_id',$user_id)->get();
 		
 		if(@count($result))
 		{
@@ -279,7 +271,6 @@ class PhotoController extends Controller
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->sort = $sort_order;
-				$blog_attachments->user_id = $user->id;
 				
 				$file = BlogClass::getAttrFile($rs->file);
 				$blog_attachments->file_name = $file->name;
@@ -287,14 +278,13 @@ class PhotoController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/'. Auth::user()->id .'/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/'. Auth::user()->id .'/original/'. $file->name;
-				
+				$blog_attachments->file_path = 'images/'. $user_id .'/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/'. $user_id .'/original/'. $file->name;
 				
 				$blog_attachments->save();
 				
 				BlogClass::createPhoto($rs->file,$file->name);
-				blog_tmp::where('key',$key)->where('file',$rs->file)->where('user_id',$user->id)->delete();
+				blog_tmp::where('id',$rs->id)->delete();
 				BlogClass::deleteTempPhoto($rs->file);
 				
 			//====================================================================================================
@@ -319,7 +309,7 @@ class PhotoController extends Controller
 	{
 		$user = Auth::user();
 		$job = false;
-		$result = blog_attachments::where('post_id',$id)->where('user_id',$user->id)->get();
+		$result = blog_attachments::where('post_id',$id)->get();
 		if(@count($result))
 		{
 			$job = true;	
@@ -327,7 +317,7 @@ class PhotoController extends Controller
 		foreach($result as $rs)
 		{
 				//====================================================================================================
-					BlogClass::deletePhoto($rs->file_name);
+				BlogClass::deletePhoto($rs->file_name);
 				//====================================================================================================
 		}
 		
@@ -337,8 +327,8 @@ class PhotoController extends Controller
 		//================================================
 		if($job)
 		{
-			//$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			//dispatch($rcloneJob);
+			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
+   			dispatch($rcloneJob);
 		}
 		//================================================
 	}

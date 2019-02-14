@@ -19,9 +19,12 @@ class CreateBlogTmpTable extends Migration
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
+				
 			$table->string('file',255);
 			$table->string('key',255);
-            $table->nullableTimestamps();
+			
+            $table->timestamps();
+			$table->softDeletes();
         });
     }
 

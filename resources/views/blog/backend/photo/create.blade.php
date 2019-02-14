@@ -9,8 +9,6 @@ function STORE()
 	$.ajax({
 			data: {
         		"_token": $("meta[name=csrf-token]").attr("content"),
-        		post_type: '{{ $setting->post_type }}',
-				content_type: '{{ $setting->content_type }}',
 				content: $('#content').val(),
 				layout: $('#layout').val(),
 				date: $('#date').val(),
