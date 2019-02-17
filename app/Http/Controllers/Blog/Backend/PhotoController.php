@@ -37,7 +37,7 @@ class PhotoController extends Controller
 					{
 						foreach($post->attachments as $attachment)
 						{
-							$contents	 .= '<img style="margin:1px;" src="/storage/images/'. Auth::user()->id .'/50/'. $attachment->file_name .'">';
+							$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/images/'. Auth::user()->id .'/50/'. $attachment->file_name .'">';
 						}
 					
 						$contents .=	"<br />". $post->content;

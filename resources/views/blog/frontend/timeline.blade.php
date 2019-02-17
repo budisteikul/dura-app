@@ -236,7 +236,8 @@ function openFancyBox(id,index,animated_id)
 }
 
 (function($) {
-	 photogrid();
+				
+	 	photogrid();
       	var $container = $('.timeline');
       	$container.infinitescroll({
         navSelector  : '.halaman',    		// selector for the paged navigation

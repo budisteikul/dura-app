@@ -51,7 +51,7 @@ function UPDATE()
                 <div class="card-header"><i class="fa fa-camera"></i> Edit Photo</div>
                 <div class="card-body">
 				
-<form onSubmit="return UPDATE()">
+<form onSubmit="UPDATE(); return false;">
 
 <div id="result"></div>
 
@@ -131,7 +131,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 </div>
 
 <div class="form-group">
-	<input type="text" id="content" name="content" value="{{$result->content}}" class="form-control" placeholder="Caption" autocomplete="off">
+    <textarea class="form-control" id="content" name="content" rows="3" placeholder="Caption">{{$result->content}}</textarea>
 </div>
 
 <div class="form-group">

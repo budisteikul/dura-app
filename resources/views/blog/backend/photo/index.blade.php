@@ -100,15 +100,22 @@
       	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/photo/create'"><b class="fa fa-camera"></b> Add photo</button>
         <hr>
 		<table class="table table-hover" id="dataTables-example" style="width:100%">
-			<thead style="display:none">
+			<thead style="visibility:hidden">
 				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
+					<th style="width:13%"></th>
+					<th style="width:62%"></th>
+					<th style="width:35%"></th>
 				</tr>
 			</thead>
 			<tbody>           
 			</tbody>
+            <tfoot style="visibility:hidden">
+            	<tr>
+     				<td></td>
+                    <td></td>
+                    <td></td>
+    			</tr>
+            </tfoot>
 		</table>
 		
                 </div>

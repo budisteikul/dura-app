@@ -41,7 +41,7 @@ function STORE()
                 <div class="card-header"><i class="fa fa-camera"></i> Add Photo</div>
                 <div class="card-body">
 				
-<form onSubmit="return STORE()">
+<form onSubmit="STORE(); return false;">
 <div id="result"></div>
 
 <div class="form-group">
@@ -95,10 +95,10 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 
 
 
-
 <div class="form-group">
-	<input type="text" id="content" name="content" class="form-control" placeholder="Caption" autocomplete="off">
+    <textarea class="form-control" id="content" name="content" rows="3" placeholder="Caption"></textarea>
 </div>
+
 <div class="form-group">
 	<input type="text" id="layout" name="layout" class="form-control" placeholder="Layout" autocomplete="off">
 </div>

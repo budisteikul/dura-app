@@ -64,7 +64,7 @@ function UPDATE()
     <div id="result"></div>
         
                     
-    <form onSubmit="return UPDATE()">
+    <form onSubmit="UPDATE(); return false;">
     <div class="form-group">
 		<b>Domain :</b>
 		<input id="domain" type="text" name="domain" class="form-control" value="{{ $setting->domain }}" placeholder="http://www.domain.com/">
