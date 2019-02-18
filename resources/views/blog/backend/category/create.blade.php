@@ -27,8 +27,12 @@ function STORE()
 			if(data.id=="1")
 			{
 				//window.location.href = data.message;
-				$('#dataTables-example').DataTable().ajax.reload( null, false );
-				$.fancybox.close();
+				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
+				setTimeout(function() {
+       				$('#dataTables-example').DataTable().ajax.reload( null, false );
+					$.fancybox.close();	
+   				},500);
+				
 			}
 			else
 			{
@@ -49,7 +53,7 @@ function STORE()
 }
 </script>
 
-<div class="container">
+<div class="container h-100">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">

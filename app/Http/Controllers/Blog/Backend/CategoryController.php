@@ -80,7 +80,7 @@ class CategoryController extends Controller
 		
 		return response()->json([
 					"id" => "1",
-					"message" => '/blog/category'
+					"message" => 'Success'
 				]);
 		
     }
@@ -145,7 +145,7 @@ class CategoryController extends Controller
 		
 		return response()->json([
 					"id" => "1",
-					"message" => '/blog/category'
+					"message" => 'Success'
 				]);
     }
 

@@ -26,8 +26,11 @@ function UPDATE()
 			if(data.id=="1")
 			{
 				//window.location.href = data.message;
-				$('#dataTables-example').DataTable().ajax.reload( null, false );
-				$.fancybox.close();
+				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
+				setTimeout(function() {
+       				$('#dataTables-example').DataTable().ajax.reload( null, false );
+					$.fancybox.close();	
+   				},500);
 			}
 			else
 			{
@@ -47,11 +50,11 @@ function UPDATE()
 	return false;
 }
 </script>
- <div class="container">
+ <div class="container h-100">
     <div class="row justify-content-center">
         <div class="col-md-12">
              <div class="card">
-                <div class="card-header"><i class="fa fa-camera"></i> Edit Photo</div>
+                <div class="card-header">Edit category</div>
                 <div class="card-body">
 				
 <form  onSubmit="UPDATE(); return false;">
