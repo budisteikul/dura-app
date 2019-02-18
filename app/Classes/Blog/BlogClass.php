@@ -7,6 +7,7 @@ use Intervention\Image\Facades\Image;
 use App\Models\Blog\blog_attachments;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
+use App\Models\Blog\blog_categories;
 use Illuminate\Support\Facades\Storage;
 
 class BlogClass {
@@ -95,22 +96,18 @@ class BlogClass {
 				$user_path = Auth::user()->id .'/';
 				if(Storage::disk('public')->exists('images/'.$user_path .'50/'.  $file))
 				{
-					//Storage::disk('public')->delete('images/'.$user_path .'50/'. $file);
 					Storage::disk('public')->move('images/'.$user_path .'50/'. $file, 'images/'.$user_path .'50/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'250/'. $file))
 				{
-					//Storage::disk('public')->delete('images/'.$user_path .'250/'. $file);
 					Storage::disk('public')->move('images/'.$user_path .'250/'. $file, 'images/'.$user_path .'250/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'500/'. $file))
 				{
-					//Storage::disk('public')->delete('images/'.$user_path .'500/'. $file);
 					Storage::disk('public')->move('images/'.$user_path .'500/'. $file, 'images/'.$user_path .'500/trash/'. $file);
 				}
 				if(Storage::disk('public')->exists('images/'.$user_path .'original/'. $file))
 				{
-					//Storage::disk('public')->delete('images/'.$user_path .'original/'. $file);
 					Storage::disk('public')->move('images/'.$user_path .'original/'. $file, 'images/'.$user_path .'original/trash/'. $file);
 				}
 	}
@@ -195,6 +192,37 @@ class BlogClass {
 				else
 				{
 					$results = blog_posts::where('user_id',$user_id) ->where('slug',$string_test)->where('id','<>',$id)->count();
+				}
+				if($results==0)
+				{
+					$cek=0;	
+				}
+				else
+				{
+					$string_test = $string ."-". $i;
+				}
+				$i++;
+			}
+			return $string_test;
+			
+		}
+		
+	public static function makeSlugCat($string,$user_id,$id="")
+		{
+			
+			$string = str_slug($string,"-");
+			$cek = 1;
+			$string_test = $string;
+			$i = 2;
+			while($cek==1)
+			{
+				if ($id=="")
+				{
+					$results = blog_categories::where('user_id',$user_id) ->where('slug',$string_test)->count();
+				}
+				else
+				{
+					$results = blog_categories::where('user_id',$user_id) ->where('slug',$string_test)->where('id','<>',$id)->count();
 				}
 				if($results==0)
 				{
