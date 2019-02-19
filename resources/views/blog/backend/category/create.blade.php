@@ -26,13 +26,9 @@ function STORE()
 			
 			if(data.id=="1")
 			{
-				//window.location.href = data.message;
-				$("#result").empty().append('<div class="alert alert-success"  role="alert">'+ data.message +'</div>').hide().fadeIn();
-				setTimeout(function() {
+				
        				$('#dataTables-example').DataTable().ajax.reload( null, false );
 					$.fancybox.close();	
-   				},500);
-				
 			}
 			else
 			{
