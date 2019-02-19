@@ -1,6 +1,6 @@
 
 <script language="javascript">
-function STORE()
+function UPDATE()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
@@ -13,17 +13,29 @@ function STORE()
 	});
 	
 	var category_id = $('input[name="category_id\\[\\]"]:checked').map(function(i, elem) { return $(this).val(); }).get();
+	
+	@foreach($result->attachments as $attachment)
+	var attachment_{{ str_ireplace("-","_",$attachment->id) }} = $('#attachment_{{ str_ireplace("-","_",$attachment->id) }}').val();
+	if($('#del_attachment_{{ str_ireplace("-","_",$attachment->id) }}').is(':checked'))
+	{
+		var del_attachment_{{ str_ireplace("-","_",$attachment->id) }} = $('#del_attachment_{{ str_ireplace("-","_",$attachment->id) }}').val();
+	}
+	@endforeach
+	
 	$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
+			@foreach($result->attachments as $attachment)
+				attachment_{{ str_ireplace("-","_",$attachment->id) }}: attachment_{{ str_ireplace("-","_",$attachment->id) }}, del_attachment_{{ str_ireplace("-","_",$attachment->id) }}: del_attachment_{{ str_ireplace("-","_",$attachment->id) }},
+			@endforeach
 			"title": $('#title').val(),
 			"category_id": category_id,
         	"content": $('#content').val(),
 			"date": $('#date').val(),
 			"key": '{{ $setting->key }}'
         },
-		type: 'POST',
-		url: '{{ route('blog_post.store') }}'
+		type: 'PUT',
+		url: "{{ route('blog_post.index') }}/{{ $result->id }}"
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -60,18 +72,44 @@ function STORE()
                 <div class="card-header">Add post</div>
                 <div class="card-body">
 				
-<form onSubmit="STORE(); return false;">
+<form onSubmit="UPDATE(); return false;">
 
 <div id="result"></div>
 
 <div class="form-group">
 	<label for="title">Title :</label>
-	<input type="text" id="title" name="title" class="form-control" placeholder="Title">
+	<input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ $result->title }}">
 </div>
 
 <div class="form-group">
 	<label for="content">Content :</label>
-    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Content"></textarea>
+    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Content">{{ $result->content }}</textarea>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		@foreach($result->attachments->sortBy('sort') as $attachment)
+				<div class="col-auto" style="margin-top:10px;">
+					<img style=" height:150px; " class="image-photo rounded" src="/storage/images/{{ Auth::user()->id }}/250/{{ $attachment->file_name }}" >
+				
+					
+					<div class="form-row align-items-center pt-1">
+						<div class="col-auto">
+							<input type="text" class="form-control text-center" style="width:50px;" id="attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="{{ $attachment->sort }}">
+						</div>
+    
+						<div class="col-auto">
+							<div class="form-check form-check-inline">
+								<input type="checkbox" class="form-check-input" id="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" name="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}" value="hapus">
+								<label class="form-check-label" for="del_attachment_{{ str_ireplace("-","_",$attachment->id) }}">
+								Delete
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+		@endforeach
+	</div>
 </div>
 
 <div class="form-group">
@@ -126,6 +164,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 <div class="form-group">
 	<div>
     <label for="category_id">Category :</label>
+    
     </div>
     @php
     $i = 1;
@@ -134,8 +173,10 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
     @php
     $i++;
     @endphp
+   	
 	<div class="form-check form-check-inline">
-  		<input class="form-check-input" type="checkbox" name="category_id[]" id="category_id_{{ $i }}" value="{{ $result_category->id }}">
+  
+  		<input class="form-check-input" type="checkbox" name="category_id[]" id="category_id_{{ $i }}" value="{{ $result_category->id }}" {{ ($result->categories->contains($result_category->id)) ? 'checked' : '' }}>
   		<label class="form-check-label" for="category_id_{{ $i }}">{{ $result_category->name }}</label>
 	</div>
     @endforeach
@@ -144,7 +185,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 <div class="form-group">   
 	<label for="datetimepicker1">Date :</label>
 	<div class='input-group date' id='datetimepicker1'>
-		<input type="text" id="date" name="date" value="{{$setting->date}}" id="date1" class="form-control" readonly>
+		<input type="text" id="date" name="date" value="{{$result->date}}" id="date1" class="form-control" readonly>
 		<div class="input-group-append input-group-addon text-muted">
 			<div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>      

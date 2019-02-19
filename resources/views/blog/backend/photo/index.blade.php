@@ -35,7 +35,7 @@
 			
 	});
 	
-	function UPDATE(id, status)
+	function STATUS(id, status)
 	{
 		var table = $('#dataTables-example').DataTable();
 		$.ajax({

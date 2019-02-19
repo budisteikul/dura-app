@@ -29,12 +29,27 @@ class PostController extends Controller
 		{
 			$posts = blog_posts::with('attachments')
 			->where('user_id',$user->id)
-			->where('post_type','post')
 			->where('content_type','standard');
 			return Datatables::eloquent($posts)
 				->addIndexColumn()
 				->addColumn('action', function ($post) {
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$post->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div>';
+					if($post->status==1)
+					{
+						$label = ""	;
+						$status = 0;
+						$button = "btn-primary";
+						$icon = "fa-toggle-on";
+						$text = " On";
+					}
+					else
+					{
+						$label = "";
+						$status = 1;
+						$button = "btn-primary";
+						$icon = "fa-toggle-off";
+						$text = " Off";
+					}
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$post->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
 				->rawColumns(['action'])
 				->toJson();
@@ -87,11 +102,9 @@ class PostController extends Controller
 		$content = $request->input('content');
 		$category_id = $request->input('category_id');
 		
-		$slug = BlogClass::makeSlug($title,$user_id);
-		
 		$blog_posts = new blog_posts;
 		$blog_posts->title = $title;
-		$blog_posts->slug = $slug;
+		$blog_posts->slug = BlogClass::makeSlug($title,$user_id);
 		$blog_posts->content = $content;
 		$blog_posts->date = $date;
 		$blog_posts->user_id = $user_id;
@@ -153,7 +166,16 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+         $user = Auth::user();
+		 $result = blog_posts::with('categories')->where('user_id',$user->id)->findOrFail($id);
+		 $result_categories = blog_categories::where('user_id',$user->id)->get();
+		 $stdClass = app();
+		 $setting = $stdClass->make('stdClass');
+		 $setting->key = Uuid::uuid4();
+         return view('blog.backend.post.edit')
+		 ->with('result_categories',$result_categories)
+		 ->with('result',$result)
+		 ->with('setting',$setting);
     }
 
     /**
@@ -165,7 +187,104 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+		
+		if($request->input('status')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'status' => 'in:0,1'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+				
+			$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
+			$blog_posts->status = $request->input('status');
+			$blog_posts->save();
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+		}
+		
+        $validator = Validator::make($request->all(), [
+          	'title' => ['required', 'string', 'max:255'],
+       	]);
+        
+       	if ($validator->fails()) {
+            $errors = $validator->errors();
+			return response()->json($errors);
+       	}
+		
+		$title =  $request->input('title');
+		$date =  $request->input('date');
+		$user_id =  $user->id;
+		$key = $request->input('key');
+		$content = $request->input('content');
+		$category_id = $request->input('category_id');
+		
+		$result = blog_attachments::where('post_id',$id)->get();
+		foreach($result as $rs)
+		{
+			$sort_order = $request->input('attachment_'. str_ireplace("-","_",$rs->id));
+			if($sort_order=="") $sort_order = 0;
+			$blog_attachments = blog_attachments::find($rs->id);
+			$blog_attachments->sort = $sort_order;
+			$blog_attachments->save();
+			
+			$bbb = $request->input('del_attachment_'. str_ireplace("-","_",$rs->id));
+			if($bbb=="hapus")
+			{
+				$blog_attachments = blog_attachments::find($rs->id);
+				$blog_attachments->delete();
+				BlogClass::deletePhoto($rs->file_name);
+			}
+			
+		}
+		
+		$blog_posts = blog_posts::findOrFail($id);
+		$blog_posts->title = $title;
+		$blog_posts->slug = BlogClass::makeSlug($title,$user_id,$id);
+		$blog_posts->content = $content;
+		$blog_posts->date = $date;
+		$blog_posts->user_id = $user_id;
+		$blog_posts->content_type = 'standard';
+		$blog_posts->post_type = 'post';
+		$blog_posts->save();
+		
+		$blog_posts->categories()->detach();
+		$blog_posts->categories()->attach($category_id,['user_id' => $user_id]);
+		
+		$result = blog_tmp::where('key',$key)->where('user_id',$user_id)->get();
+		$sort_order = blog_attachments::where('post_id',$id)->max('sort');
+		foreach($result as $rs)
+		{
+				$sort_order++;
+				$blog_attachments = new blog_attachments;
+				$blog_attachments->post_id = $blog_posts->id;
+				$blog_attachments->sort = $sort_order;
+				
+				$file = BlogClass::getAttrFile($rs->file);
+				$blog_attachments->file_name = $file->name;
+				$blog_attachments->file_size = $file->size;
+				$blog_attachments->file_mimetype = $file->mimetype;
+				$blog_attachments->file_width = $file->width;
+				$blog_attachments->file_height = $file->height;
+				$blog_attachments->file_path = 'images/'. $user_id .'/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/images/'. $user_id .'/original/'. $file->name;
+				
+				$blog_attachments->save();
+				
+				BlogClass::createPhoto($rs->file,$file->name);
+				blog_tmp::where('id',$rs->id)->delete();
+				BlogClass::deleteTempPhoto($rs->file);
+		}
+		return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
     }
 
     /**
@@ -184,7 +303,6 @@ class PostController extends Controller
 		}
 		$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
 		$blog_posts->attachments()->delete();
-		$blog_posts->categories()->detach();
 		$blog_posts->delete();
     }
 }

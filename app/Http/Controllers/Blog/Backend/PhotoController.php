@@ -28,7 +28,7 @@ class PhotoController extends Controller
 				   {
 					   $query->orderBy('sort', 'asc');
 				   }
-				   ))->where('user_id',$user->id)->where('post_type','post')->orderBy('date','desc');
+				   ))->where('user_id',$user->id)->where('content_type','photo')->orderBy('date','desc');
 			return Datatables::eloquent($posts)
 				->addColumn('contents', function ($post){
 					$contents = "";
@@ -69,7 +69,7 @@ class PhotoController extends Controller
 						$icon = "fa-toggle-off";
 						$text = " Off";
 					}
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/photo/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="UPDATE(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/photo/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
 				->rawColumns(['action','contents'])
 				->toJson();

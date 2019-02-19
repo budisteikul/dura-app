@@ -89,6 +89,24 @@
    		});
 		
 	}
+	
+	function STATUS(id, status)
+	{
+		var table = $('#dataTables-example').DataTable();
+		$.ajax({
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+        	"status":status
+        },
+		type: 'PUT',
+		url: "/blog/post/"+ id
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				table.ajax.reload( null, false );
+			}
+		});
+	}
 	</script>  
  <div class="container">
     <div class="row justify-content-center">
