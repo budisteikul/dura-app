@@ -21,6 +21,8 @@ Route::resource('/blog/photo','Blog\Backend\PhotoController',[ 'names' => 'blog_
 	->middleware(['auth', 'verified']);
 Route::resource('/blog/category','Blog\Backend\CategoryController',[ 'names' => 'blog_category' ])
 	->middleware(['auth', 'verified']);
+	Route::resource('/blog/post','Blog\Backend\PostController',[ 'names' => 'blog_post' ])
+	->middleware(['auth', 'verified']);
 Route::resource('/blog/file', 'Blog\Backend\FileController',[ 'names' => 'blog_file' ])
 	->only('store','destroy')
 	->middleware(['auth', 'verified']);
