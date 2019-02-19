@@ -44,12 +44,8 @@ class CreateBlogCategoriesPostsTable extends Migration
     {
 		Schema::table('blog_categories_posts', function (Blueprint $table) {
             $table->dropForeign('blog_categories_posts_category_id_foreign');
-        });
-		Schema::table('blog_categories_posts', function (Blueprint $table) {
-            $table->dropForeign('blog_categories_posts_post_id_foreign');
-        });
-		Schema::table('blog_categories_posts', function (Blueprint $table) {
-            $table->dropForeign('blog_categories_posts_user_id_foreign');
+			$table->dropForeign('blog_categories_posts_post_id_foreign');
+			$table->dropForeign('blog_categories_posts_user_id_foreign');
         });
         Schema::dropIfExists('blog_categories_posts');
     }
