@@ -14,14 +14,16 @@ class CreateBlogCategoriesTable extends Migration
     public function up()
     {
         Schema::create('blog_categories', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
+			
 			$table->uuid('parent_id');
+				
 			$table->uuid('user_id');
 			$table->foreign('user_id')
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
 			
-			$table->primary(['id', 'parent_id']);
+			//$table->primary(['id', 'parent_id']);
 			$table->string('name')->nullable();
 			$table->string('slug')->nullable();
 			$table->longText('description')->nullable();
