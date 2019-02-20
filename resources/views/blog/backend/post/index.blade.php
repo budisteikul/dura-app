@@ -23,8 +23,9 @@
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
-					{data: 'title', name: 'title', className: 'auto'},
-					{data: 'content', name: 'content'},
+					{data: 'title', name: 'title'},
+					{data: 'categories', name: 'categories.name'},
+					{data: 'attachments', name: 'attachments', orderable: false, searchable: false},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
 				
@@ -123,7 +124,8 @@
                 	<th></th>
                 	<th>No</th>
 					<th>Title</th>
-					<th>Content</th>
+                    <th>Categories</th>
+                    <th>Attachments</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -132,6 +134,7 @@
             <tfoot style="visibility:hidden">
             	<tr>
      				<td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

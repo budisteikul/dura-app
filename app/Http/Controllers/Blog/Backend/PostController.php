@@ -27,11 +27,25 @@ class PostController extends Controller
         $user = Auth::user();
 		if($request->ajax())
 		{
-			$posts = blog_posts::with('attachments')
+			$posts = blog_posts::with('categories')
+			->with('attachments')
 			->where('user_id',$user->id)
 			->where('content_type','standard');
 			return Datatables::eloquent($posts)
 				->addIndexColumn()
+				->addColumn('attachments',function (blog_posts $blog_posts) {
+						$file = '';
+						foreach($blog_posts->attachments as $attachment)
+						{
+							$file .= '<img class="rounded" style="margin:1px;" src="/storage/images/'. Auth::user()->id .'/50/'. $attachment->file_name .'">';
+						}
+						return $file;
+					})
+				->addColumn('categories',function (blog_posts $blog_posts) {
+						return $blog_posts->categories->map(function($post) {
+                        	return str_limit($post->name, 30, '...');
+                    	})->implode(', ');
+					})
 				->addColumn('action', function ($post) {
 					if($post->status==1)
 					{
@@ -51,7 +65,7 @@ class PostController extends Controller
 					}
 					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$post->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
-				->rawColumns(['action'])
+				->rawColumns(['action','attachments'])
 				->toJson();
 		}
         return view('blog.backend.post.index');
