@@ -48,7 +48,7 @@ function UPDATE()
     <div class="row justify-content-center">
         <div class="col-md-12">
              <div class="card">
-                <div class="card-header"><i class="fa fa-camera"></i> Edit Photo</div>
+                <div class="card-header">Edit photo</div>
                 <div class="card-body">
 				
 <form onSubmit="UPDATE(); return false;">

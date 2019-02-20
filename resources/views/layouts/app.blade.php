@@ -55,14 +55,14 @@
                         @else
                         	@if(env("APP_ENV")=="local")
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog/category">{{ __('Categories') }}</a>
+                                <a class="nav-link" href="/blog/category"><i class="fa fa-navicon"></i> {{ __('Categories') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog/post">{{ __('Posts') }}</a>
+                                <a class="nav-link" href="/blog/post"><i class="fa fa-newspaper-o"></i> {{ __('Posts') }}</a>
                             </li>
                             @endif
                         	<li class="nav-item">
-                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Gallery') }}</a>
+                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Photo') }}</a>
                             </li>
 							<li class="nav-item">
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-gear"></i> {{ __('Setting') }}</a>

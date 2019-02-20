@@ -113,7 +113,7 @@
                 <div class="card-header">Posts</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus"></b> Add post</button>
+      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add post</button>
         <hr>
 		<table class="table table-hover table-striped" id="dataTables-example" style="width:100%">
 			<thead>

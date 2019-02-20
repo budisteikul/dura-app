@@ -26,7 +26,7 @@ class CategoryController extends Controller
 			return Datatables::eloquent($categories)
 				->addIndexColumn()
 				->addColumn('action', function ($category) {
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div>';
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-light"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-light"><i class="fa fa-trash-o"></i> Delete</button></div>';
 				})
 				->rawColumns(['action'])
 				->toJson();

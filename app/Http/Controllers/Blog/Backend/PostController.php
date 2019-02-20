@@ -51,7 +51,7 @@ class PostController extends Controller
 					{
 						$label = ""	;
 						$status = 0;
-						$button = "btn-primary";
+						$button = "btn-light";
 						$icon = "fa-toggle-on";
 						$text = " On";
 					}
@@ -59,11 +59,11 @@ class PostController extends Controller
 					{
 						$label = "";
 						$status = 1;
-						$button = "btn-primary";
+						$button = "btn-light";
 						$icon = "fa-toggle-off";
 						$text = " Off";
 					}
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$post->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-del" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
+					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$post->id.'\'); return false;" class="btn btn-light"><i class="fa fa-pencil"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-light"><i class="fa fa-trash-o"></i> Delete</button><button id="btn-update" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
 				->rawColumns(['action','attachments'])
 				->toJson();
