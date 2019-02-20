@@ -32,7 +32,7 @@ class RCloneImages implements ShouldQueue
      */
     public function handle()
     {
-        $process = new Process(array('rclone','--config=/home/pi/.rclone.conf', 'sync', '/home/pi/public_html/ratnawahyu.com/public/storage/images/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/original/', 'gdrive:/ratnawahyu.com/'));
+        $process = new Process(array('rclone','--config=/home/pi/.rclone.conf', 'sync', '/home/pi/public_html/ratnawahyu.com/public/storage/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/original/', 'gdrive:/ratnawahyu.com/'));
 		$process->run();
     }
 }
