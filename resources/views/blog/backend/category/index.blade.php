@@ -75,6 +75,7 @@
 		$.fancybox.open({
         	type: 'ajax',
        	 	src: '{{ route('blog_category.create') }}',
+			touch: false,
    		});	
 	}
 	
@@ -83,6 +84,7 @@
 		$.fancybox.open({
         	type: 'ajax',
        	 	src: '{{ route('blog_category.index') }}/'+ id +'/edit',
+			touch: false,
    		});
 		
 	}
