@@ -24,7 +24,7 @@
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
 					{data: 'title', name: 'title'},
-					{data: 'categories', name: 'categories.name'},
+					{data: 'categories', name: 'categories.name', orderable: false},
 					{data: 'attachments', name: 'attachments', orderable: false, searchable: false},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
