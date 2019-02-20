@@ -1,4 +1,3 @@
-
 <script language="javascript">
 function STORE()
 {
@@ -71,7 +70,7 @@ function STORE()
 
 <div class="form-group">
 	<label for="content">Content :</label>
-    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Content"></textarea>
+    <textarea class="form-control" id="content" name="content" rows="8" placeholder="Content"></textarea>
 </div>
 
 <div class="form-group">
