@@ -68,7 +68,7 @@ class CategoryController extends Controller
 		$description = $request->input('description');
 		$parent_id = $request->input('parent_id');
 		$slug = BlogClass::makeSlugCat($name,$user->id);
-		if(empty($parent_id)) $parent_id = 0;
+		if(empty($parent_id)) $parent_id = '00000000-0000-0000-0000-000000000000';
 		
 		$blog_categories = new blog_categories();
 		$blog_categories->parent_id = $parent_id;
@@ -133,7 +133,7 @@ class CategoryController extends Controller
 		$description = $request->input('description');
 		$parent_id = $request->input('parent_id');
 		$slug = BlogClass::makeSlugCat($name,$user->id,$id);
-		if(empty($parent_id)) $parent_id = 0;
+		if(empty($parent_id)) $parent_id = '00000000-0000-0000-0000-000000000000';
 		
 		$blog_categories = blog_categories::where('user_id',$user->id)->findOrFail($id);
 		$blog_categories->parent_id = $parent_id;

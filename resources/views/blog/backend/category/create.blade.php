@@ -56,8 +56,8 @@ function STORE()
                 <div class="card-header">Add category</div>
                 <div class="card-body">
 				
-<form method="post" action="/blog/category" onSubmit="STORE(); return false;">
-@csrf
+<form onSubmit="STORE(); return false;">
+
 <div id="result"></div>
 
 <div class="form-group">
