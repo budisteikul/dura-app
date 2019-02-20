@@ -65,12 +65,11 @@ class SettingController extends Controller
 			
 				if($header != "")
 				{
-					//Storage::disk('public')->delete('images/'. $user->id .'/header/'. $header);
-					Storage::disk('public')->move('images/'. $user->id .'/header/'. $header, 'images/'. $user->id .'/header/trash/'. $header);
+					Storage::disk('public')->move($user->id .'/images/header/'. $header, $user->id.'/images/header/trash/'. $header);
 				}
 				
 				$file_attr = BlogClass::getAttrFile($result->file);
-				Storage::disk('local')->copy($result->file,'public/images/'. $user->id .'/header/'. $file_attr->name);
+				Storage::disk('local')->copy($result->file,'public/'. $user->id .'/images/header/'. $file_attr->name);
 				blog_tmp::where('key',$key)->where('file',$result->file)->where('user_id',$user->id)->delete();
 				BlogClass::setConf('header',$file_attr->name);
 				BlogClass::deleteTempPhoto($result->file);

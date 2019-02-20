@@ -37,7 +37,7 @@ class PostController extends Controller
 						$file = '';
 						foreach($blog_posts->attachments as $attachment)
 						{
-							$file .= '<img class="rounded" style="margin:1px;" src="/storage/images/'. Auth::user()->id .'/50/'. $attachment->file_name .'">';
+							$file .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
 						}
 						return $file;
 					})
@@ -145,8 +145,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/'. $user_id .'/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/'. $user_id .'/original/'. $file->name;
+				$blog_attachments->file_path = $user_id .'images/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/'. $user_id .'/images/original/'. $file->name;
 				
 				$blog_attachments->save();
 				
@@ -286,8 +286,8 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = 'images/'. $user_id .'/original/'. $file->name;
-				$blog_attachments->file_url = '/storage/images/'. $user_id .'/original/'. $file->name;
+				$blog_attachments->file_path = $user_id .'images/original/'. $file->name;
+				$blog_attachments->file_url = '/storage/'. $user_id .'/images/original/'. $file->name;
 				
 				$blog_attachments->save();
 				
