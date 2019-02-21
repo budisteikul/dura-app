@@ -85,7 +85,7 @@ class PostController extends Controller
 		$setting->key = Uuid::uuid4();
 		$setting->date = date("Y-m-d H:i:s", strtotime('+7 hours'));
 		
-		$result_categories = blog_categories::where('user_id',$user->id)->where('status',1)->get();
+		$result_categories = blog_categories::where('user_id',$user->id)->get();
         return view('blog.backend.post.create')
 				->with('result_categories',$result_categories)
 				->with('setting',$setting);
@@ -182,7 +182,7 @@ class PostController extends Controller
     {
          $user = Auth::user();
 		 $result = blog_posts::with('categories')->where('user_id',$user->id)->findOrFail($id);
-		 $result_categories = blog_categories::where('user_id',$user->id)->where('status',1)->get();
+		 $result_categories = blog_categories::where('user_id',$user->id)->get();
 		 $stdClass = app();
 		 $setting = $stdClass->make('stdClass');
 		 $setting->key = Uuid::uuid4();
