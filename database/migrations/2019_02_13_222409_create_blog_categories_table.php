@@ -23,10 +23,10 @@ class CreateBlogCategoriesTable extends Migration
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
 			
-			//$table->primary(['id', 'parent_id']);
 			$table->string('name')->nullable();
 			$table->string('slug')->nullable();
 			$table->longText('description')->nullable();
+			$table->tinyInteger('status')->default(1);
 			
             $table->timestamps();
 			$table->softDeletes();

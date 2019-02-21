@@ -26,7 +26,23 @@ class CategoryController extends Controller
 			return Datatables::eloquent($categories)
 				->addIndexColumn()
 				->addColumn('action', function ($category) {
-					return '<div class="btn-group" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-light"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-light"><i class="fa fa-trash-o"></i> Delete</button></div>';
+					if($category->status==1)
+					{
+						$label = ""	;
+						$status = 0;
+						$button = "btn-primary";
+						$icon = "fa-toggle-on";
+						$text = " On";
+					}
+					else
+					{
+						$label = "";
+						$status = 1;
+						$button = "btn-primary";
+						$icon = "fa-toggle-off";
+						$text = " Off";
+					}
+					return '<div class="btn-group mr-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div><div class="btn-group" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $category->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
 				})
 				->rawColumns(['action'])
 				->toJson();
@@ -76,6 +92,7 @@ class CategoryController extends Controller
 		$blog_categories->name = $name;
 		$blog_categories->description = $description;
 		$blog_categories->slug = $slug;
+		$blog_categories->status = 0;
 		$blog_categories->save();
 		
 		return response()->json([
@@ -120,6 +137,28 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
+		
+		if($request->input('status')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'status' => 'in:0,1'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+				
+			$blog_categories = blog_categories::where('user_id',$user->id)->find($id);
+			$blog_categories->status = $request->input('status');
+			$blog_categories->save();
+			
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+		}
+		
 		$validator = Validator::make($request->all(), [
           	'name' => ['required', 'string', 'max:255'],
        	]);
