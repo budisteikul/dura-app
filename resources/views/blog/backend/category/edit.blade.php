@@ -48,7 +48,7 @@ function UPDATE()
 </script>
  <div class="container h-100">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 pr-0 pl-0 pt-0 pb-0">
              <div class="card">
                 <div class="card-header">Edit category</div>
                 <div class="card-body">

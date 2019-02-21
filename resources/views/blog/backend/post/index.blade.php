@@ -77,6 +77,7 @@
         	type: 'ajax',
        	 	src: '{{ route('blog_post.create') }}',
 			touch: false,
+			modal: true,
    		});	
 	}
 	
@@ -86,6 +87,7 @@
         	type: 'ajax',
        	 	src: '{{ route('blog_post.index') }}/'+ id +'/edit',
 			touch: false,
+			modal: true,
    		});
 		
 	}
