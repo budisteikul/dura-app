@@ -122,6 +122,8 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 </script>
 
 </div>
+
+
 <div class="form-group">
 	<div>
     <label for="category_id">Category :</label>
@@ -139,6 +141,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 	</div>
     @endforeach
 </div>
+
 
 <div class="form-group">   
 	<label for="datetimepicker1">Date :</label>
