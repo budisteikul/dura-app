@@ -48,10 +48,11 @@ function STORE()
 	return false;
 }
 </script>
-
-<div class="container h-100">
+ <div class="container h-100">
     <div class="row justify-content-center">
         <div class="col-md-12">
+		
+		
             <div class="card">
                 <div class="card-header">Add category</div>
                 <div class="card-body">
@@ -80,20 +81,12 @@ function STORE()
     </select>
 </div>
        
-     
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
-
-
-
-
-
-
-
-    </div>
+</div>
 </div>       
 			
-        </div>
+		</div>
     </div>
-</div>       
+</div>
