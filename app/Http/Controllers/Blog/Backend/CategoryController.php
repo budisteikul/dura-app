@@ -42,7 +42,7 @@ class CategoryController extends Controller
 						$icon = "fa-toggle-off";
 						$text = " Pending";
 					}
-					return '<div class="btn-group mr-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div><div class="btn-group" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $category->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>';
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$category->id.'\'); return false;" class="btn btn-success"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $category->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $category->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 				})
 				->rawColumns(['action'])
 				->toJson();

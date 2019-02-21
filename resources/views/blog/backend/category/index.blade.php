@@ -123,10 +123,10 @@
 			<thead>
 				<tr>
                 	<th></th>
-                	<th>No</th>
+                	<th style="width:20px">No</th>
 					<th>Name</th>
 					<th>Description</th>
-					<th></th>
+					<th style="width:270px"></th>
 				</tr>
 			</thead>
 			<tbody>           

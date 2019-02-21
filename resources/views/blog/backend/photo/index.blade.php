@@ -102,9 +102,9 @@
 		<table class="table table-hover" id="dataTables-example" style="width:100%">
 			<thead style="visibility:hidden">
 				<tr>
-					<th style="width:13%"></th>
-					<th style="width:62%"></th>
-					<th style="width:35%"></th>
+					<th style="width:100px"></th>
+					<th></th>
+					<th style="width:270px"></th>
 				</tr>
 			</thead>
 			<tbody>           
