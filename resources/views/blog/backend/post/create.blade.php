@@ -146,14 +146,14 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 <div class="form-group">   
 	<label for="datetimepicker1">Date :</label>
 	<div class='input-group date' id='datetimepicker1'>
-		<input type="text" id="date" name="date" value="{{$setting->date}}" id="date1" class="form-control" readonly>
+		<input type="text" id="date" name="date" value="{{$setting->date}}" class="form-control date" readonly>
 		<div class="input-group-append input-group-addon text-muted">
 			<div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>      
 	</div>
  		<script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker({
+                $('#date').datetimepicker({
 					format: 'YYYY-MM-DD HH:mm:00',
 					showTodayButton: true,
 					showClose: true,
