@@ -94,7 +94,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Gallery</div>
+                <div class="card-header">Galleries</div>
                 <div class="card-body">
       
       	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/photo/create'"><b class="fa fa-plus-square"></b> Add photo</button>

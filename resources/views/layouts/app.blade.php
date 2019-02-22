@@ -62,7 +62,7 @@
                             </li>
                             @endif
                         	<li class="nav-item">
-                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Photo') }}</a>
+                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Galleries') }}</a>
                             </li>
 							<li class="nav-item">
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-gear"></i> {{ __('Setting') }}</a>
