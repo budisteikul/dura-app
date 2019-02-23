@@ -7,123 +7,6 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
-<style>
-#mainNav {
-  	border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color:#000000;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
-.navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
-}
-
-.navbar-toggler:hover, .navbar-toggler:focus {
-  text-decoration: none !important;
-  outline: none;
-  box-shadow: none;
-}
-
-
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
-}
-
-#mainNav .navbar-brand {
-  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  color: #ccd0d5;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-}
-
-#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #FFFFFF;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link {
-  	text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    color: #dce5ec;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #FFFFFF;
-}
-
-@media(min-width:768px) {
-  #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-    border: none;
-    background-color: transparent;
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: #212529;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-  
-}
-  .timeline-heading .timeline-footer {
-	font-size:14px;
-	}
-.timeline-footer {
-	font-size:14px;
-	}
-	
-	.tldate {
- 	 display: block;
- 	 width: 150px;
- 	 background: #e9f0f5;
- 	 color: #becad2;
- 	 margin: 0 auto;
- 	 padding: 3px 0;
- 	 text-align: center;
- 	 font-size: 1.1em;
-}
-
-.timeline > li > .timeline-badge > span.timeline-day {
-    font-size: 1.3em;
-	color:#FFFFFF;
-}
-
-.timeline > li > .timeline-badge > span.timeline-month {
-    font-size: .6em;
-    position: relative;
-    top: -17px;
-	color:#FFFFFF;
-}
-</style>
 @endpush
     
    <!-- ################################################################### -->
@@ -136,18 +19,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
+          
+          {!! $setting->facebook!="" ? '
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Food Tours</a>
-          </li>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->facebook.'\'"><i class="fa fa-facebook-square"></i> Facebook</a>
+          </li>' : '' !!}
+          
+           {!! $setting->twitter!="" ? '
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Itinerary</a>
-          </li>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'"><i class="fa fa-facebook-square"></i> Twitter</a>
+          </li>' : '' !!}
+          
+           {!! $setting->instagram!="" ? '
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">The Tour Guide</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Booking</a>
-          </li>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'"><i class="fa fa-facebook-square"></i> Instagram</a>
+          </li>' : '' !!}
+          
           {!! Auth::check() ? '
           <li class="nav-item">
           	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\'/blog/post\'"><i class="fa fa-user"></i> Admin</a>
