@@ -27,12 +27,12 @@
           
            {!! $setting->twitter!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'"><i class="fa fa-facebook-square"></i> Twitter</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'"><i class="fa fa-twitter-square"></i> Twitter</a>
           </li>' : '' !!}
           
            {!! $setting->instagram!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'"><i class="fa fa-facebook-square"></i> Instagram</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'"><i class="fa fa-instagram"></i> Instagram</a>
           </li>' : '' !!}
           
           {!! Auth::check() ? '
