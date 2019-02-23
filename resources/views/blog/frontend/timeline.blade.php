@@ -46,7 +46,7 @@
   </nav>
    
 <!-- ################################################################### -->
-	<header class="intro-header" style="background-image: url('{{ $setting->header }}'); background-color:#000000">
+	<header id="page-top" class="intro-header" style="background-image: url('{{ $setting->header }}'); background-color:#000000">
     	<div class="site-heading">
         	<div class="transbox">
 				<img class="img-circle" src="{{ $setting->gravatar }}" style="margin-top:15px">

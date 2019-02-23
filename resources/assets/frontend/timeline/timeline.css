@@ -41,7 +41,7 @@
   filter: alpha(opacity=60);
 }
 
-#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:hover {
   color: #FFFFFF;
 }
 
@@ -157,6 +157,7 @@
 	}
 .timeline-footer {
 	font-size:14px;
+	margin-top:16px;
 	}
 
 .timeline:before {
