@@ -135,14 +135,14 @@
 						if($d>1)
 						{
 						?>
-								<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}')" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  />
+								<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}')" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  />
 								
 						<?php	
 						}
 						else
 						{
 						?>
-                        		<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}')" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  />
+                        		<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}')" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  />
 								
                         <?php
 						}
@@ -184,34 +184,27 @@
 	<a href="{!! $results->nextPageUrl() !!}" style="visibility:hidden">Next</a>
 </div> 
 <a href="#0" class="cd-top">Top</a>
-    <!-- ################################################################### -->
-  	
-    <script type="text/javascript">
-		function photogrid()
-		{
-			$('.photoset-grid').photosetGrid({
-				borderColor: '#FFFFFF',
-				highresLinks: true,
-				borderWidth: '2px',
-				gutter: '2px',
-				borderActive: true,
-				onInit: function(){},
-    			onComplete: function(){
-					
-						$('.photoset-grid').css({
-            				'visibility': 'visible'
-        				});
-		
-    			}
- 			});
-		}
-		
-	</script>
-    
-    
-		
 <script>
-function openFancyBox(id,index,animated_id)
+function photogrid()
+{
+	$('.photoset-grid').photosetGrid({
+		borderColor: '#FFFFFF',
+		highresLinks: true,
+		borderWidth: '2px',
+		gutter: '2px',
+		borderActive: true,
+		onInit: function(){},
+		onComplete: function(){
+					
+			$('.photoset-grid').css({
+				'visibility': 'visible'
+			});
+		
+		}
+	});
+}
+		
+function openFancyBox(id,index,animated_id,user_id)
 {
 		$('#'+ animated_id).addClass('infinite animated bounceIn');
 		$.ajax({
@@ -219,7 +212,7 @@ function openFancyBox(id,index,animated_id)
             url: '/',
 			data: {
         		"post_id": id,
-				"user_id": '{{ $setting->user_id }}',
+				"user_id": user_id,
 				"request": 'fancybox'
         	},
             dataType: 'json',
@@ -240,9 +233,9 @@ function openFancyBox(id,index,animated_id)
 	 	photogrid();
       	var $container = $('.timeline');
       	$container.infinitescroll({
-        navSelector  : '.halaman',    		// selector for the paged navigation
-      	nextSelector : '.halaman a:first',  // selector for the NEXT link (to page 2)
-        itemSelector : '.test',     		// selector for all items you'll retrieve
+        navSelector  : '.halaman',    		
+      	nextSelector : '.halaman a:first',  
+        itemSelector : '.test',     		
 		debug: true,
 		path: function (pagenum) {
 			var test = pagenum + ( {{ $results->currentPage() }} - 1 );
@@ -281,9 +274,9 @@ function openFancyBox(id,index,animated_id)
 	 
 	
 		
-  "use strict"; // Start of use strict
+  "use strict";
 
-  // Smooth scrolling using jQuery easing
+  
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -297,18 +290,18 @@ function openFancyBox(id,index,animated_id)
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
+ 
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
+  
   $('body').scrollspy({
     target: '#mainNav',
     offset: 56
   });
 
-  // Collapse Navbar
+  
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
@@ -316,13 +309,11 @@ function openFancyBox(id,index,animated_id)
       $("#mainNav").removeClass("navbar-shrink");
     }
   };
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
-
   
+  navbarCollapse();
+  
+  $(window).scroll(navbarCollapse);
+})(jQuery);
 
-})(jQuery); // End of use strict
 </script>
 @endsection

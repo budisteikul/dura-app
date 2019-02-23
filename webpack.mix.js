@@ -53,10 +53,10 @@ mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts'
 	
 	
 	
-/*
+
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
-	'resources/assets/frontend/bootstrap/dist/js/bootstrap.min.js',
+	'resources/assets/frontend/bootstrap-3.4.1/dist/js/bootstrap.min.js',
 	'resources/assets/frontend/jquery-easing/jquery.easing.min.js',
 	'resources/assets/frontend/jquery-infinite-scroll/jquery.infinitescroll.min.js',
 	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
@@ -69,7 +69,7 @@ mix.scripts([
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
-	'resources/assets/frontend/bootstrap/dist/css/bootstrap.min.css',
+	'resources/assets/frontend/bootstrap-3.4.1/dist/css/bootstrap.min.css',
 	'resources/assets/frontend/font-awesome/css/font-awesome.min.css',
 	'resources/assets/frontend/startbootstrap-sb-admin-2/dist/css/timeline.css',
 	'resources/assets/frontend/animate.css/animate.min.css',
@@ -77,10 +77,9 @@ mix.styles([
 	'resources/assets/frontend/photoset-grid/css/main.css',
 	'resources/assets/frontend/back-to-top/css/style.css',
 	'resources/assets/frontend/fancybox-master/dist/jquery.fancybox.min.css',
-	'resources/assets/frontend/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'
+	'resources/assets/frontend/timeline/timeline.css'
 	],'public/css/ratnawahyu.css');
 
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-*/
