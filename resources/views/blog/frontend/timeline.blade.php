@@ -1,5 +1,5 @@
 @inject('blog', 'App\Classes\Blog\BlogClass')
-@extends('layouts.frontend')
+@extends('layouts.timeline')
 @section('title', $setting->title)
 @section('content')
 @push('scripts')
@@ -22,22 +22,22 @@
           
           {!! $setting->facebook!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->facebook.'\'; return false;"><i class="fa fa-facebook-square"></i> Facebook</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->facebook .'"><i class="fa fa-facebook-square"></i> Facebook</a>
           </li>' : '' !!}
           
            {!! $setting->twitter!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'; return false;"><i class="fa fa-twitter-square"></i> Twitter</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->twitter .'"><i class="fa fa-twitter-square"></i> Twitter</a>
           </li>' : '' !!}
           
            {!! $setting->instagram!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'; return false;"><i class="fa fa-instagram"></i> Instagram</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->instagram .'"><i class="fa fa-instagram"></i> Instagram</a>
           </li>' : '' !!}
           
           {!! Auth::check() ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\'/blog/photo\'; return false;"><i class="fa fa-user"></i> Admin</a>
+          	<a class="nav-link" href="/blog/photo"><i class="fa fa-user"></i> Admin</a>
           </li>' : '' !!}
           
         </ul>
@@ -183,10 +183,10 @@
 </ul>
 
 </section> 
-<div class="halaman" style="background-color:#e9f0f5">
+<div class="pagination" style="background-color:#e9f0f5">
 	<a href="{!! $results->nextPageUrl() !!}" style="visibility:hidden">Next</a>
 </div> 
-<a href="#0" class="cd-top">Top</a>
+<a href="#page-top" class="cd-top js-scroll-trigger">Top</a>
 <script>
 function photogrid()
 {
@@ -206,6 +206,7 @@ function photogrid()
 		}
 	});
 }
+photogrid();
 		
 function openFancyBox(id,index,animated_id,user_id)
 {
@@ -233,39 +234,35 @@ function openFancyBox(id,index,animated_id,user_id)
 
 
 (function($) {
-       photogrid();
+       
       	var $container = $('.timeline');
       	$container.infinitescroll({
-        navSelector  : '.halaman',    		
-      	nextSelector : '.halaman a:first',  
-        itemSelector : '.test',     		
-		debug: true,
-		path: function (pagenum) {
-			var test = pagenum + ( {{ $results->currentPage() }} - 1 );
-  			return '/?page=' + test;
-		},		
-        loading: {
-          finishedMsg: "You've reached the end of time",
-          img: '/img/output_DTGK2a.gif',
-		  msgText: "Loading..."
-          }
-        },
+        	navSelector  : '.pagination',    		
+      		nextSelector : '.pagination a:first',  
+        	itemSelector : '.test',     		
+			debug: false,
+			path: function (pagenum) {
+				var test = pagenum + ( {{ $results->currentPage() }} - 1 );
+  				return '/?page=' + test;
+			},		
+        	loading: {
+          		finishedMsg: "You've reached the end of time",
+          		img: '/img/output_DTGK2a.gif',
+		  		msgText: "Loading..."
+         	 }
+        	},
         function( newElements ) {
 		  $('.timeline').infinitescroll('pause');
 		  $('.image-photo').attr('height','50');
 		  $('.image-photo').attr('width','50');
-		  
 		  $('.photoset-grid').imagesLoaded()
-		  	
-  		  	.done( function( instance, image ) {
-				
+  		  .done( function( instance, image ) {
 				 photogrid();
      			 $('.image-photo').removeAttr('height');
 				 $('.image-photo').removeAttr('width');
 				 $('.timeline').infinitescroll('resume');
 				 $("#loading").removeAttr("style")
 			 })
-			 
         }
       );
 	  
@@ -286,16 +283,8 @@ function openFancyBox(id,index,animated_id,user_id)
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 56
-  });
+ 
+ 
 
   // Collapse Navbar
   var navbarCollapse = function() {

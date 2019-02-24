@@ -62,16 +62,13 @@ mix.scripts([
 	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
 	'resources/assets/frontend/bootstrap/js/affix.js',
-	//'resources/assets/frontend/FitText.js/jquery.fittext.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
 	'resources/assets/frontend/fancybox-master/dist/jquery.fancybox.min.js',
-	//'resources/assets/frontend/scrollreveal/scrollreveal.min.js'
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
 	'resources/assets/frontend/bootstrap-4.2.1/dist/css/bootstrap.min.css',
 	'resources/assets/frontend/font-awesome/css/font-awesome.min.css',
-	'resources/assets/frontend/startbootstrap-sb-admin-2/dist/css/timeline.css',
 	'resources/assets/frontend/animate.css/animate.min.css',
 	'resources/assets/frontend/jquery-infinite-scroll/main.css',
 	'resources/assets/frontend/photoset-grid/css/main.css',
