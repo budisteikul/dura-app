@@ -138,14 +138,14 @@
 						if($d>1)
 						{
 						?>
-								<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}')" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  />
+								<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}') return false;" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  />
 								
 						<?php	
 						}
 						else
 						{
 						?>
-                        		<img id="{{ $attachment->id }}" onClick="return openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}')" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  />
+                        		<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}','{{ $setting->user_id }}'); return false;" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  />
 								
                         <?php
 						}
