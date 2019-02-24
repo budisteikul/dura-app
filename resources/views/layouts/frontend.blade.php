@@ -25,7 +25,9 @@
     <![endif]-->
    
 </head>
-<body style="background-color:#d7e4ed">
+<body>
+<div style="background-color:#d7e4ed">
 	@yield('content')
+</div>
 </body>
 </html>
