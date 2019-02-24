@@ -231,9 +231,9 @@ function openFancyBox(id,index,animated_id,user_id)
 	return false;
 }
 
+
 (function($) {
-				
-	 	photogrid();
+       photogrid();
       	var $container = $('.timeline');
       	$container.infinitescroll({
         navSelector  : '.halaman',    		
