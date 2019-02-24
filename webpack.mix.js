@@ -62,10 +62,10 @@ mix.scripts([
 	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
 	'resources/assets/frontend/bootstrap/js/affix.js',
-	'resources/assets/frontend/FitText.js/jquery.fittext.js',
+	//'resources/assets/frontend/FitText.js/jquery.fittext.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
 	'resources/assets/frontend/fancybox-master/dist/jquery.fancybox.min.js',
-	'resources/assets/frontend/scrollreveal/scrollreveal.min.js'
+	//'resources/assets/frontend/scrollreveal/scrollreveal.min.js'
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
