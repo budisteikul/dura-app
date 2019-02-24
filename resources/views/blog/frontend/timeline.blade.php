@@ -22,22 +22,22 @@
           
           {!! $setting->facebook!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->facebook.'\'"><i class="fa fa-facebook-square"></i> Facebook</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->facebook.'\'; return false;"><i class="fa fa-facebook-square"></i> Facebook</a>
           </li>' : '' !!}
           
            {!! $setting->twitter!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'"><i class="fa fa-twitter-square"></i> Twitter</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->twitter.'\'; return false;"><i class="fa fa-twitter-square"></i> Twitter</a>
           </li>' : '' !!}
           
            {!! $setting->instagram!="" ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'"><i class="fa fa-instagram"></i> Instagram</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\''.$setting->instagram.'\'; return false;"><i class="fa fa-instagram"></i> Instagram</a>
           </li>' : '' !!}
           
           {!! Auth::check() ? '
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\'/blog/post\'"><i class="fa fa-user"></i> Admin</a>
+          	<a class="nav-link js-scroll-trigger" href="#" onClick="window.location=\'/blog/photo\'; return false;"><i class="fa fa-user"></i> Admin</a>
           </li>' : '' !!}
           
         </ul>
