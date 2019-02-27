@@ -98,6 +98,7 @@
 		?>
         <!-- ################################################################### -->
 		<li<?= $style ?>>
+        
 			<div class="timeline-badge success">
 				<span class="timeline-day">
                 	<?= $day ?>
@@ -106,6 +107,7 @@
                 	<?= strtoupper($MONTH) ?>
                 </span>
             </div>
+            
 			<div class="timeline-panel" style="background-color:#FFFFFF; margin-right:4px; margin-left:4px;">
 				<div class="timeline-heading">
 					<p class="text-muted text-left">
@@ -180,9 +182,8 @@
 		 $i++;
 		 ?>
 	@endforeach
-</ul>
-
-</section> 
+	</ul>
+ </section> 
 <div class="pagination" style="background-color:#e9f0f5">
 	<a href="{!! $results->nextPageUrl() !!}" style="visibility:hidden">Next</a>
 </div> 
@@ -206,7 +207,6 @@ function photogrid()
 		}
 	});
 }
-photogrid();
 		
 function openFancyBox(id,index,animated_id,user_id)
 {
@@ -216,8 +216,7 @@ function openFancyBox(id,index,animated_id,user_id)
             url: '/',
 			data: {
         		"post_id": id,
-				"user_id": user_id,
-				"request": 'fancybox'
+				"user_id": user_id
         	},
             dataType: 'json',
             success: function (data) {
@@ -229,12 +228,13 @@ function openFancyBox(id,index,animated_id,user_id)
 				});
             }
         });
-	return false;
 }
 
 
 (function($) {
-       
+        
+		photogrid();
+		
       	var $container = $('.timeline');
       	$container.infinitescroll({
         	navSelector  : '.pagination',    		
@@ -263,8 +263,8 @@ function openFancyBox(id,index,animated_id,user_id)
 				 $('.timeline').infinitescroll('resume');
 				 $("#loading").removeAttr("style")
 			 })
-        }
-      );
+         }
+       );
 	  
 	
   "use strict"; // Start of use strict
@@ -294,8 +294,10 @@ function openFancyBox(id,index,animated_id,user_id)
       $("#mainNav").removeClass("navbar-shrink");
     }
   };
+  
   // Collapse now if page is not at top
   navbarCollapse();
+  
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 })(jQuery);

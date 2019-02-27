@@ -11,6 +11,8 @@
 */
 
 Route::get('/', 'Blog\Frontend\TimelineController@index');
+Route::post('/', 'Blog\Frontend\TimelineController@store');
+
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 
