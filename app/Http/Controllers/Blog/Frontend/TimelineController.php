@@ -16,17 +16,16 @@ class TimelineController extends Controller
 	public function index(Request $request)
 	{
 		
-		if($request->ajax() && !empty($request->input('user_id')))
+		if($request->ajax() && !empty($request->input('post_id')))
 		{
 			$output = array();
-			$user_id = $request->input('user_id');
 			$post_id = $request->input('post_id');
 			if (Auth::check()) {
 				$result = blog_posts::with(array('attachments' => function($query)
 				   {
 					   $query->orderBy('sort', 'asc');
 				   }
-				   ))->where('user_id',$user_id)->find($post_id);
+				   ))->where('user_id',Auth::user()->id)->find($post_id);
 			}
 			else
 			{
@@ -34,12 +33,12 @@ class TimelineController extends Controller
 				   {
 					   $query->orderBy('sort', 'asc');
 				   }
-				   ))->where('user_id',$user_id)->where('status',1)->find($post_id);
+				   ))->where('status',1)->find($post_id);
 			}
 			foreach($result->attachments as $attachment)
 			{
-				$src = '/storage/'. $user_id .'/images/original/'. $attachment->file_name;
-				$thumb = '/storage/'. $user_id .'/images/250/'. $attachment->file_name;
+				$src = '/storage/'. $result->user_id .'/images/original/'. $attachment->file_name;
+				$thumb = '/storage/'. $result->user_id .'/images/250/'. $attachment->file_name;
 				$caption = $result->content;
 				if($caption=="") $caption = $result->title;
 				$output[] = array('src' => $src, 'thumb' => $thumb, 'caption' => $caption);

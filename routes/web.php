@@ -10,8 +10,10 @@
 |
 */
 
+
+
 Route::get('/', 'Blog\Frontend\TimelineController@index');
-Route::post('/', 'Blog\Frontend\TimelineController@store');
+Route::get('/landing', 'Blog\Frontend\LandingController@index');
 
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
@@ -31,3 +33,4 @@ Route::resource('/blog/file', 'Blog\Backend\FileController',[ 'names' => 'blog_f
 Route::resource('/blog/setting','Blog\Backend\SettingController',[ 'names' => 'blog_setting' ])
 	->only('edit','update')
 	->middleware(['auth', 'verified']);
+	
