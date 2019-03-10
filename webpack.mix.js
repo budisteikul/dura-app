@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-/*
+
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -41,22 +41,12 @@ mix.styles([
 	
 mix.copyDirectory('resources/assets/backend/avatars', 'public/img');	
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');	
-*/	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
-	'resources/assets/frontend/bootstrap-4.2.1/dist/js/bootstrap.min.js',
+	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
 	'resources/assets/frontend/jquery-easing/jquery.easing.min.js',
 	'resources/assets/frontend/jquery-infinite-scroll/jquery.infinitescroll.min.js',
 	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
@@ -67,7 +57,7 @@ mix.scripts([
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
-	'resources/assets/frontend/bootstrap-4.2.1/dist/css/bootstrap.min.css',
+	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
 	'resources/assets/frontend/font-awesome/css/font-awesome.min.css',
 	'resources/assets/frontend/animate.css/animate.min.css',
 	'resources/assets/frontend/jquery-infinite-scroll/main.css',
