@@ -23,33 +23,7 @@ class LandingController extends Controller
     public function index()
     {
 		
-		
-		$user_id = '93e56719-6e48-4d96-b7bb-be93c23b8c24';
-		$get_user = User::where('id',$user_id)->whereNotNull('email_verified_at')->first();
-		
-		
-		$stdClass = app();
-    	$setting = $stdClass->make('stdClass');
-		
-		$setting->title1 = BlogClass::getConf('title1',$user_id);
-		if($setting->title1=="") $setting->title1 = str_ireplace("www.","",$_SERVER['HTTP_HOST']);
-		$setting->title2 = BlogClass::getConf('title2',$user_id);
-		$setting->description = BlogClass::getConf('description',$user_id);
-		$setting->gravatar = $get_user->picture_url;
-		//===========================================================================
-		$header = BlogClass::getConf('header',$user_id);
-		$setting->header = '/storage/'. $user_id .'/images/header/'. $header ;
-		//===========================================================================
-		$setting->facebook = BlogClass::getConf('facebook',$user_id);
-		$setting->twitter = BlogClass::getConf('twitter',$user_id);
-		$setting->instagram = BlogClass::getConf('instagram',$user_id);
-		
-		$url = Http::url();
-		$setting->url = $url;
-		$setting->image = $setting->url . $setting->header;
-		$setting->title = $setting->title2;
-		$setting->user_id = $user_id;
-        return view('blog.frontend.landing')->with('setting',$setting);
+        return view('blog.frontend.landing');
     }
 
     /**

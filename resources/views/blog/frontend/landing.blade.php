@@ -1,6 +1,5 @@
-@inject('blog', 'App\Classes\Blog\BlogClass')
 @extends('layouts.landing')
-@section('title', $setting->title1)
+@section('title', 'Title')
 @section('content')
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -127,33 +126,16 @@ footer ul.quicklinks {
 <!-- ################################################################### -->
   <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ $setting->title1 }}</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Title</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          
-          {!! $setting->facebook!="" ? '
-          <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->facebook .'"><i class="fa fa-facebook-square"></i> Facebook</a>
-          </li>' : '' !!}
-          
-           {!! $setting->twitter!="" ? '
-          <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->twitter .'"><i class="fa fa-twitter-square"></i> Twitter</a>
-          </li>' : '' !!}
-          
-           {!! $setting->instagram!="" ? '
-          <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->instagram .'"><i class="fa fa-instagram"></i> Instagram</a>
-          </li>' : '' !!}
-          
           {!! Auth::check() ? '
           <li class="nav-item">
           	<a class="nav-link" href="/blog/photo"><i class="fa fa-user"></i> Admin</a>
           </li>' : '' !!}
-          
         </ul>
       </div>
     </div>
@@ -161,7 +143,7 @@ footer ul.quicklinks {
 <!-- ################################################################### -->
 <!-- Header -->   
 <!-- ################################################################### -->
-	<header id="page-top" class="intro-header" style="background-image: url('{{ $setting->header }}'); background-color:#000000">
+	<header id="page-top" class="intro-header" style="background-image: background-color:#000000;">
     	<div class="site-heading">
         	<div class="transbox">
 				<h1 style="padding-top:50px;">Find your holiday today with Vertikal Trip</h1>
