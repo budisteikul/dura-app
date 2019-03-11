@@ -16,6 +16,11 @@ class BlogController extends Controller
     {
         return view('blog.frontend.blog');
     }
+	
+	 public function single()
+    {
+        return view('blog.frontend.single');
+    }
 
     /**
      * Show the form for creating a new resource.

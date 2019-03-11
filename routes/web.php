@@ -15,6 +15,7 @@
 Route::get('/', 'Blog\Frontend\TimelineController@index');
 Route::get('/landing', 'Blog\Frontend\LandingController@index');
 Route::get('/blog', 'Blog\Frontend\BlogController@index');
+Route::get('/single', 'Blog\Frontend\BlogController@single');
 
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
