@@ -129,7 +129,7 @@
 					<th>Title</th>
                     <th>Categories</th>
                     <th>Attachments</th>
-					<th style="width:270px"></th>
+					<th style="width:280px"></th>
 				</tr>
 			</thead>
 			<tbody>           

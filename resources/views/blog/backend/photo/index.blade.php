@@ -104,7 +104,7 @@
 				<tr>
 					<th style="width:100px"></th>
 					<th></th>
-					<th style="width:270px"></th>
+					<th style="width:280px"></th>
 				</tr>
 			</thead>
 			<tbody>           

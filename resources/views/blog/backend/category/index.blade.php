@@ -126,7 +126,7 @@
                 	<th style="width:20px">No</th>
 					<th>Name</th>
 					<th>Description</th>
-					<th style="width:270px"></th>
+					<th style="width:280px"></th>
 				</tr>
 			</thead>
 			<tbody>           

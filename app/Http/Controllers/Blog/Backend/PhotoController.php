@@ -69,7 +69,7 @@ class PhotoController extends Controller
 						$icon = "fa-toggle-off";
 						$text = " Pending";
 					}
-					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-1" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/photo/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-pencil-square-o"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></div><div class="btn-group mb-1" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-1" role="group"><button id="btn-edit" type="button" onClick="window.location=\'/blog/photo/'.$post->id.'/edit\'" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $post->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-1" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $post->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 				})
 				->rawColumns(['action','contents'])
 				->toJson();

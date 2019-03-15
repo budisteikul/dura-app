@@ -192,7 +192,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
         </script>    
 </div>       
      
-<button  class="btn btn-danger" type="button" onClick="close_window();"><i class="fa fa-close"></i> Cancel</button>
+<button  class="btn btn-danger" type="button" onClick="close_window();"><i class="fa fa-window-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
 
