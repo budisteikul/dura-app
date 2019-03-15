@@ -17,7 +17,6 @@ mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
 mix.scripts([
 	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.js',
-	/*'resources/assets/backend/moment/min/moment.min.js',*/
 	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
 	],'public/js/app_tmp2.js');
 
