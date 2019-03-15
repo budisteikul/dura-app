@@ -6,8 +6,12 @@
  */
 
 require('./bootstrap');
+
 require('datatables.net');
 require('datatables.net-bs4');
+
+require('jquery-form');
+
 require('tinymce');
 require('tinymce/plugins/advlist');
 require('tinymce/plugins/autolink');
