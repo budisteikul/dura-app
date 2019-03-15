@@ -29,7 +29,9 @@
     "bootstrap": "^4.3.1",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
+    "jquery-confirm": "^3.3.4",
     "jquery-form": "^4.2.2",
+    "moment": "^2.24.0",
     "tinymce": "^5.0.2"
   }
 }

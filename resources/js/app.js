@@ -13,6 +13,10 @@ require('datatables.net-bs4');
 require('jquery-form');
 require('@fancyapps/fancybox');
 
+require('jquery-confirm');
+
+window.moment = require('moment');
+
 require('tinymce');
 require('tinymce/plugins/advlist');
 require('tinymce/plugins/autolink');
