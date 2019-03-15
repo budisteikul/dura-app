@@ -34,13 +34,11 @@ mix.styles([
 	'public/css/app_tmp1.css',
 	'resources/assets/backend/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-	/* 'resources/assets/backend/font-awesome/css/font-awesome.min.css', */
 	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css',
 	'resources/assets/backend/fancybox-master/dist/jquery.fancybox.min.css'
 	],'public/css/app.css');
 	
-mix.copyDirectory('resources/assets/backend/avatars', 'public/img');	
-/* mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts'); */
+mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
