@@ -47,15 +47,19 @@
    
 <!-- ################################################################### -->
 	<header id="page-top" class="intro-header" style="background-image: url('{{ $setting->header }}'); background-color:#000000">
-    	<div class="site-heading">
-        	<div class="transbox">
-				<img class="img-circle" src="{{ $setting->gravatar }}" style="margin-top:15px">
+    	
+        <div class="col-lg-8 col-md-10 mx-auto">
+    	<div class="site-heading text-center">
+        	<div class="transbox" style="min-height:285px; padding-top:35px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
+				<img class="img-circle" src="{{ $setting->gravatar }}">
 				<hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<p class="text-faded mb-5" style="margin-left:10px; margin-right:10px; margin-bottom:20px; padding:5px; ">
+				<p class="text-faded">
 					{!! nl2br($setting->description) !!}
 				</p>
 			</div>
              <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
+       
+       </div>
        </div>
     </header>
 <!-- ################################################################### -->
@@ -183,7 +187,12 @@
 		 ?>
 	@endforeach
 	</ul>
- </section> 
+ </section>
+<!-- footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; {{ $setting->title }} 2019</p>
+    </div>
+</footer --> 
 <div class="pagination" style="background-color:#e9f0f5">
 	<a href="{!! $results->nextPageUrl() !!}" style="visibility:hidden">Next</a>
 </div> 

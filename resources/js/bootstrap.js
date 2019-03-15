@@ -13,8 +13,6 @@ try {
 
     require('bootstrap');
 	
-	require('datatables.net');
-	require('datatables.net-bs4');
 	
 } catch (e) {}
 

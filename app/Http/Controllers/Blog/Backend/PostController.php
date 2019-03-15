@@ -145,7 +145,7 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = $user_id .'images/original/'. $file->name;
+				$blog_attachments->file_path = $user_id .'/images/original/'. $file->name;
 				$blog_attachments->file_url = '/storage/'. $user_id .'/images/original/'. $file->name;
 				
 				$blog_attachments->save();
@@ -286,7 +286,7 @@ class PostController extends Controller
 				$blog_attachments->file_mimetype = $file->mimetype;
 				$blog_attachments->file_width = $file->width;
 				$blog_attachments->file_height = $file->height;
-				$blog_attachments->file_path = $user_id .'images/original/'. $file->name;
+				$blog_attachments->file_path = $user_id .'/images/original/'. $file->name;
 				$blog_attachments->file_url = '/storage/'. $user_id .'/images/original/'. $file->name;
 				
 				$blog_attachments->save();
