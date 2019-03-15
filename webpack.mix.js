@@ -19,8 +19,7 @@ mix.scripts([
 	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.js',
 	'resources/assets/backend/moment/min/moment.min.js',
 	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.js',
-	'resources/assets/backend/fancybox-master/dist/jquery.fancybox.min.js'
+	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.js'
 	],'public/js/app_tmp2.js');
 
 mix.scripts([
@@ -33,8 +32,7 @@ mix.styles([
 	'public/css/app_tmp1.css',
 	'resources/assets/backend/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css',
-	'resources/assets/backend/fancybox-master/dist/jquery.fancybox.min.css'
+	'resources/assets/backend/jquery-confirm/dist/jquery-confirm.min.css'
 	],'public/css/app.css');
 	
 mix.copyDirectory('resources/assets/backend/avatars', 'public/img');

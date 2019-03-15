@@ -11,6 +11,7 @@ require('datatables.net');
 require('datatables.net-bs4');
 
 require('jquery-form');
+require('@fancyapps/fancybox');
 
 require('tinymce');
 require('tinymce/plugins/advlist');
