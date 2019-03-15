@@ -78,7 +78,7 @@
        	 	src: '{{ route('blog_post.create') }}',
 			touch: false,
 			modal: true,
-   		});	
+   		});
 	}
 	
 	function EDIT(id)
@@ -109,6 +109,8 @@
 			}
 		});
 	}
+	
+	
 	</script>  
  <div class="container">
     <div class="row justify-content-center">

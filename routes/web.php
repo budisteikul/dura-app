@@ -1,5 +1,5 @@
 <?php
-use DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +20,11 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
-Route::get('/repair', function () {
-    $results = DB::table('blog_attachments')->get();
-	foreach($results as $rs)
-	{
-		DB::table('blog_attachments')->where('id',$rs->id)->update(['file_path'=>'eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/original/'. $rs->file_name,'file_url'=>'/storage/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/original/'. $rs->file_name]);
-	}
+Route::domain('192.168.40.245')->group(function () {
+    Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
+
+
 
 
 Route::get('/landing', 'Blog\Frontend\LandingController@index');

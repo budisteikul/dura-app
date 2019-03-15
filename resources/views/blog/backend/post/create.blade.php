@@ -1,6 +1,32 @@
+<script>
+$( document ).ready(function() {
+    	tinymce.init({
+  		selector: 'textarea.tinymce',
+ 		height: 500,
+  		menubar: false,
+  		plugins: [
+    	'advlist autolink lists link image charmap print preview anchor',
+    	'searchreplace visualblocks code fullscreen',
+    	'insertdatetime media table paste code help wordcount'
+  		],
+  		toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+  		content_css: [
+    	'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    	'//www.tiny.cloud/css/codepen.min.css'
+  		]
+		});	
+});
+</script>
 <script language="javascript">
+function close_window()
+{
+	tinymce.remove();
+	$.fancybox.close();	
+}
+
 function STORE()
 {
+	tinymce.triggerSave();
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
@@ -29,8 +55,8 @@ function STORE()
 			{
 				
        				$('#dataTables-example').DataTable().ajax.reload( null, false );
-					$.fancybox.close();	
-   				
+					tinymce.remove();
+					$.fancybox.close();
 				
 			}
 			else
@@ -68,9 +94,10 @@ function STORE()
 	<input type="text" id="title" name="title" class="form-control" placeholder="Title">
 </div>
 
+
 <div class="form-group">
 	<label for="content">Content :</label>
-    <textarea class="form-control" id="content" name="content" rows="8" placeholder="Content"></textarea>
+    <textarea class="form-control tinymce" id="content" name="content" rows="8" placeholder="Content"></textarea>
 </div>
 
 <div class="form-group">
@@ -80,6 +107,8 @@ function STORE()
 <script>
 $(document).ready(function()
 {
+	
+	
 var settings = {
     url: "/blog/file",
     multiple:true,
@@ -163,7 +192,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
         </script>    
 </div>       
      
-<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-close"></i> Cancel</button>
+<button  class="btn btn-danger" type="button" onClick="close_window();"><i class="fa fa-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
 

@@ -40,8 +40,10 @@ mix.styles([
 	],'public/css/app.css');
 	
 mix.copyDirectory('resources/assets/backend/avatars', 'public/img');	
-mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');	
+mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 
+mix.copy('node_modules/tinymce/skins', 'public/js/skins');
+mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 	
 	
 /*
