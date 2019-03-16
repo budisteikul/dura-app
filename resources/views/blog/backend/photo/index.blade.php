@@ -96,7 +96,7 @@
 			touch: false,
 			modal: true,
 			beforeShow : function() {
-            	$('body').css({'overflow':'hidden'});
+            	$('body').hide();
         	},
 			afterClose : function() {
             	$('body').css({'overflow':'visible'});
