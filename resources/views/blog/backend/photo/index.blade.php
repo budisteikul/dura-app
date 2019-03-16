@@ -96,10 +96,10 @@
 			touch: false,
 			modal: true,
 			beforeShow : function() {
-            	$('body').hide();
+            	$('body').css({'overflow':'hidden'});
         	},
 			afterClose : function() {
-            	$('body').show();
+            	$('body').css({'overflow':'visible'});
         	}
    		});
 	}
@@ -111,6 +111,12 @@
        	 	src: '{{ route('blog_photo.index') }}/'+ id +'/edit',
 			touch: false,
 			modal: true,
+			beforeShow : function() {
+            	$('body').css({'overflow':'hidden'});
+        	},
+			afterClose : function() {
+            	$('body').css({'overflow':'visible'});
+        	}
    		});
 		
 	}

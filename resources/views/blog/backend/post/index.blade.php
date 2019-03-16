@@ -78,6 +78,12 @@
        	 	src: '{{ route('blog_post.create') }}',
 			touch: false,
 			modal: true,
+			beforeShow : function() {
+            	$('body').css({'overflow':'hidden'});
+        	},
+			afterClose : function() {
+            	$('body').css({'overflow':'visible'});
+        	}
    		});
 	}
 	
@@ -88,6 +94,12 @@
        	 	src: '{{ route('blog_post.index') }}/'+ id +'/edit',
 			touch: false,
 			modal: true,
+			beforeShow : function() {
+            	$('body').css({'overflow':'hidden'});
+        	},
+			afterClose : function() {
+            	$('body').css({'overflow':'visible'});
+        	}
    		});
 		
 	}
