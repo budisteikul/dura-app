@@ -95,6 +95,12 @@
        	 	src: '{{ route('blog_photo.create') }}',
 			touch: false,
 			modal: true,
+			beforeShow : function() {
+            	$('body').css({'overflow':'hidden'});
+        	},
+			afterClose : function() {
+            	$('body').css({'overflow':'visible'});
+        	}
    		});
 	}
 	
