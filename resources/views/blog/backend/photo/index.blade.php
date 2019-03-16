@@ -99,7 +99,7 @@
             	$('body').hide();
         	},
 			afterClose : function() {
-            	$('body').css({'overflow':'visible'});
+            	$('body').show();
         	}
    		});
 	}
