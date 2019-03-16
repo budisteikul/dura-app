@@ -35,8 +35,8 @@ mix.styles([
 mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-	
-	
+
+
 /*
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
@@ -45,9 +45,8 @@ mix.scripts([
 	'resources/assets/frontend/jquery-infinite-scroll/jquery.infinitescroll.min.js',
 	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
-	'resources/assets/frontend/bootstrap/js/affix.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
-	'resources/assets/frontend/fancybox-master/dist/jquery.fancybox.min.js',
+	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
@@ -57,7 +56,7 @@ mix.styles([
 	'resources/assets/frontend/jquery-infinite-scroll/main.css',
 	'resources/assets/frontend/photoset-grid/css/main.css',
 	'resources/assets/frontend/back-to-top/css/style.css',
-	'resources/assets/frontend/fancybox-master/dist/jquery.fancybox.min.css',
+	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/timeline/timeline.css'
 	],'public/css/ratnawahyu.css');
 
