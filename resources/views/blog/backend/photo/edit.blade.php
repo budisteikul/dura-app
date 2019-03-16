@@ -161,7 +161,11 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 					ignoreReadonly: true,
 					icons: {
                     	time: "fa fa-clock"
-                	}
+                	},
+					widgetPositioning: {
+            			horizontal: 'left',
+            			vertical: 'top'
+        			}
 				});
             });
         </script>    
