@@ -1,6 +1,9 @@
-@extends('layouts.app')
-@section('content')
 <script language="javascript">
+function close_window()
+{
+	$.fancybox.close();	
+}
+
 function STORE()
 {
 	$('#submit').prop('disabled', true);
@@ -20,7 +23,8 @@ function STORE()
 			}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location='/blog/photo';
+				$('#dataTables-example').DataTable().ajax.reload( null, false );
+				$.fancybox.close();
 			}
 			else
 			{
@@ -34,9 +38,10 @@ function STORE()
 }
 </script>
 
+<div class="container-fluid h-100">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 pr-0 pl-0 pt-0 pb-0">
             <div class="card">
                 <div class="card-header">Add photo</div>
                 <div class="card-body">
@@ -129,7 +134,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
         </script>    
 </div>
      
-<button  class="btn btn-danger" type="button" onClick="window.location='/blog/photo'"><i class="fa fa-window-close"></i> Cancel</button>
+<button  class="btn btn-danger" type="button" onClick="close_window();"><i class="fa fa-window-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 </form>
 
@@ -144,5 +149,5 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 			
         </div>
     </div>
-</div>       
-@endsection
+</div>  
+</div>     

@@ -88,7 +88,26 @@
 				
 	}
 	
+	function CREATE()
+	{
+		$.fancybox.open({
+        	type: 'ajax',
+       	 	src: '{{ route('blog_photo.create') }}',
+			touch: false,
+			modal: true,
+   		});
+	}
 	
+	function EDIT(id)
+	{
+		$.fancybox.open({
+        	type: 'ajax',
+       	 	src: '{{ route('blog_photo.index') }}/'+ id +'/edit',
+			touch: false,
+			modal: true,
+   		});
+		
+	}
 	</script>  
  <div class="container">
     <div class="row justify-content-center">
@@ -97,7 +116,7 @@
                 <div class="card-header">Galleries</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-secondary"  onclick="window.location='/blog/photo/create'"><b class="fa fa-plus-square"></b> Add photo</button>
+      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add photo</button>
         <hr>
 		<table class="table table-hover" id="dataTables-example" style="width:100%">
 			<thead style="visibility:hidden">
