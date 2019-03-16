@@ -30,6 +30,7 @@ function AUTH_REQUEST()
 					
 					$('.card-body').prepend('<div id="alert" class="alert alert-success" role="alert">'+ data.message +'</div>');
 					$("#submit").attr("disabled", false);
+					$('#submit').html('{{ __('Send Password Reset Link') }}');
 				}
 				else
 				{
