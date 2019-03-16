@@ -91,6 +91,7 @@ function UPDATE()
 <br><br>
 @endif
 <div class="form-group">
+<label>Photo :</label>
 <div id="status"></div>
 <div id="mulitplefileuploader"><b class="fa fa-plus"> Upload </b></div>
 <script>
@@ -137,14 +138,17 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 </div>
 
 <div class="form-group">
+	<label for="content">Caption :</label>
     <textarea class="form-control" id="content" name="content" rows="3" placeholder="Caption">{{$result->content}}</textarea>
 </div>
 
 <div class="form-group">
+	<label for="layout">Layout :</label>
 	<input type="text" id="layout" name="layout" value="{{$result->layout}}" class="form-control" placeholder="Layout" autocomplete="off">
 </div>
 		
 <div class="form-group">	
+<label for="datetimepicker1">Date :</label>
                 <div class='input-group' id='datetimepicker1'>
                     <input type="text" id="date" name="date" value="{{$result->date}}" class="form-control bg-white" readonly>
                     <div class="input-group-append input-group-addon text-muted">
