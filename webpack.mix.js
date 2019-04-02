@@ -37,7 +37,7 @@ mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 
 
-/*
+
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
 	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
@@ -63,7 +63,7 @@ mix.styles([
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-*/
+
 
 
 /*
