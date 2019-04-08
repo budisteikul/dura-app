@@ -40,7 +40,7 @@ class PhotoController extends Controller
 							$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
 						}
 					
-						$contents .=	"<br />". $post->content;
+						$contents .=	"<div style='margin-top:10px;'>". $post->content ."</div>";
 					
 					}
 					else
