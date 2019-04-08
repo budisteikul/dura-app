@@ -46,7 +46,7 @@ class TimelineController extends Controller
 			return response()->json($output);
 		}
 		
-		$blog_setting = blog_settings::where('value',preg_replace('#^https?://#', '', Http::root()))->where('name','domain')->first();
+		$blog_setting = blog_settings::where('value','like','%'. preg_replace('#^https?://#', '', Http::root() .'%'))->where('name','domain')->first();
 		if(!$blog_setting) return Redirect('/home');
 		
 		$user_id = $blog_setting->user_id;

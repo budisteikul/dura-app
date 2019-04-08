@@ -16,17 +16,7 @@
 
 
 
-Route::domain('www.ratnawahyu.com')->group(function () {
-    Route::get('/', 'Blog\Frontend\TimelineController@index');
-});
-
-Route::domain('192.168.40.245')->group(function () {
-    Route::get('/', 'Blog\Frontend\TimelineController@index');
-});
-
-Route::domain('localhost')->group(function () {
-    Route::get('/', 'Blog\Frontend\TimelineController@index');
-});
+Route::get('/', 'Blog\Frontend\TimelineController@index');
 
 
 
