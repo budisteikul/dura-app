@@ -8,160 +8,6 @@
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
 <style>
-#mainNav {
-  	border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-	/* ========================================================== */
-    background-color:#000000;
-	/* ========================================================== */
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
-.navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
-}
-
-.navbar-toggler:hover, .navbar-toggler:focus {
-  text-decoration: none !important;
-  outline: none;
-  box-shadow: none;
-}
-
-
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
-}
-
-#mainNav .navbar-brand {
-  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  color: #ccd0d5;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-}
-
-#mainNav .navbar-brand.active, #mainNav .navbar-brand:hover {
-  color: #FFFFFF;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link {
-  	text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    color: #dce5ec;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #FFFFFF;
-}
-
-@media(min-width:768px) {
-  #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-    border: none;
-    background-color: transparent;
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 0;
-    padding-bottom: 0;
-	/* ========================================================== */
-	background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,0.8);
-	filter: alpha(opacity=30);
-	/* ========================================================== */
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-  
-}
-.img-circle {
-    border-radius: 50%;
-}
-.intro-header {
-  background-color: #000000;
-  background: no-repeat center center;
-  background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-.intro-header .site-heading {
-  padding: 100px 0 30px;
-  color: white;
-  max-width:700px;
-  margin:0 auto;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header .site-heading {
-    padding: 150px 0;
-  }
-  .intro-header .site-heading h1{
-    font-size: 80px;
-  }
-}
-.intro-header .site-heading {
-  text-align: center;
-}
-.intro-header .site-heading h1 {
-  font-size: 50px;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-  
-}
-.transbox {
-    margin: 20px;
-	border-radius: 10px;
-	color: #ffffff;
-    background-color: #000000;
-    border: 0px;
-    background: rgba(0,0,0,0.3);
-	filter: alpha(opacity=30);
-	padding-bottom:2px;  
-}
-
-.tldate {
- 	 display: block;
- 	 width: 150px;
- 	 background: #e9f0f5;
- 	 color: #becad2;
- 	 margin: 0 auto;
- 	 padding: 3px 0;
- 	 text-align: center;
- 	 font-size: 1.1em;
-}
-
-.text-faded {
- 	 color: rgba(255, 255, 255, 0.7);
- 	 font-size:14px;
-}
-
 blockquote {
   font-style: italic;
   color: #868e96;
@@ -209,7 +55,7 @@ article{
    <!-- Navigation -->
   <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Vetikal Trip</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Ratna Wahyuningtyas</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -235,21 +81,21 @@ article{
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('/storage/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/header/Yjep3WbsqDzzs41muHQHE3OgRZ7xs1JE9509psLk.jpeg'); background-color:#000000">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:25px; padding-bottom:25px; padding-left:10px; padding-right:10px;">
-            	<img class="img-circle" src="http://placehold.it/150x150">
+        	<div class="transbox" style=" min-height:285px; padding-top:35px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
+            	<img class="img-circle" src="storage/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/gravatar/pp1.jpg">
 				
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <!-- h1 style="font-size:30px;">Terms and Cancellation Policy</h1 -->
-				<h1 id="title">Wonderful Experience</h1>
+				<h1 id="title">Terms and Cancellation Policy</h1>
 				<p class="text-faded">
 					Posted on August 24, 2019
 				</p>
 			</div>
-            <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
+             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
        
        </div>
        </div>

@@ -76,7 +76,9 @@
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #212529;
+    background-color:rgba(52,58,64,1.00);
+    background: rgba(52,58,64,0.8);
+	filter: alpha(opacity=30);
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
