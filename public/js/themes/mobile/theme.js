@@ -4,7 +4,7 @@
  * For LGPL see License.txt in the project root for license information.
  * For commercial licenses see https://www.tiny.cloud/
  *
- * Version: 5.0.3 (2019-03-19)
+ * Version: 5.0.2 (2019-03-05)
  */
 (function () {
 var mobile = (function (exports, domGlobals) {
@@ -968,7 +968,7 @@ var mobile = (function (exports, domGlobals) {
       };
     };
 
-    var Global = typeof domGlobals.window !== 'undefined' ? domGlobals.window : Function('return this;')();
+    var Global = typeof window !== 'undefined' ? window : Function('return this;')();
 
     var path = function (parts, scope) {
       var o = scope !== undefined && scope !== null ? scope : Global;
@@ -1208,13 +1208,6 @@ var mobile = (function (exports, domGlobals) {
         guiSystem.getByDom(child).each(fireAttaching);
       });
     };
-    var detachSystem = function (guiSystem) {
-      var children$1 = children(guiSystem.element());
-      each$1(children$1, function (child) {
-        guiSystem.getByDom(child).each(fireDetaching);
-      });
-      remove(guiSystem.element());
-    };
 
     var value = function (o) {
       var is = function (v) {
@@ -1372,7 +1365,7 @@ var mobile = (function (exports, domGlobals) {
             },
             match: match,
             log: function (label) {
-              domGlobals.console.log(label, {
+              console.log(label, {
                 constructors: constructors,
                 constructor: key,
                 params: args
@@ -9867,8 +9860,6 @@ var mobile = (function (exports, domGlobals) {
       return capture(element, event, filter$1, handler);
     };
 
-    var global$2 = tinymce.util.Tools.resolve('tinymce.util.Delay');
-
     var INTERVAL = 50;
     var INSURANCE = 1000 / INTERVAL;
     var get$a = function (outerWindow) {
@@ -9884,7 +9875,7 @@ var mobile = (function (exports, domGlobals) {
       var win = Element.fromDom(outerWindow);
       var poller = null;
       var change = function () {
-        global$2.clearInterval(poller);
+        clearInterval(poller);
         var orientation = get$a(outerWindow);
         listeners.onChange(orientation);
         onAdjustment(function () {
@@ -9893,15 +9884,15 @@ var mobile = (function (exports, domGlobals) {
       };
       var orientationHandle = bind$3(win, 'orientationchange', change);
       var onAdjustment = function (f) {
-        global$2.clearInterval(poller);
+        clearInterval(poller);
         var flag = outerWindow.innerHeight;
         var insurance = 0;
-        poller = global$2.setInterval(function () {
+        poller = setInterval(function () {
           if (flag !== outerWindow.innerHeight) {
-            global$2.clearInterval(poller);
+            clearInterval(poller);
             f(Option.some(outerWindow.innerHeight));
           } else if (insurance > INSURANCE) {
-            global$2.clearInterval(poller);
+            clearInterval(poller);
             f(Option.none());
           }
           insurance++;
@@ -10660,7 +10651,7 @@ var mobile = (function (exports, domGlobals) {
 
     var autocompleteHack = function () {
       return function (f) {
-        global$2.setTimeout(function () {
+        setTimeout(function () {
           f();
         }, 0);
       };
@@ -10966,7 +10957,7 @@ var mobile = (function (exports, domGlobals) {
       var timer = null;
       var cancel = function () {
         if (timer !== null) {
-          domGlobals.clearTimeout(timer);
+          clearTimeout(timer);
           timer = null;
         }
       };
@@ -10976,7 +10967,7 @@ var mobile = (function (exports, domGlobals) {
           args[_i] = arguments[_i];
         }
         if (timer === null) {
-          timer = domGlobals.setTimeout(function () {
+          timer = setTimeout(function () {
             fn.apply(null, args);
             timer = null;
           }, rate);
@@ -10991,7 +10982,7 @@ var mobile = (function (exports, domGlobals) {
       var timer = null;
       var cancel = function () {
         if (timer !== null) {
-          domGlobals.clearTimeout(timer);
+          clearTimeout(timer);
           timer = null;
         }
       };
@@ -11001,8 +10992,8 @@ var mobile = (function (exports, domGlobals) {
           args[_i] = arguments[_i];
         }
         if (timer !== null)
-          domGlobals.clearTimeout(timer);
-        timer = domGlobals.setTimeout(function () {
+          clearTimeout(timer);
+        timer = setTimeout(function () {
           fn.apply(null, args);
           timer = null;
         }, rate);
@@ -12183,7 +12174,7 @@ var mobile = (function (exports, domGlobals) {
       var start = input.dom().selectionStart;
       var end = input.dom().selectionEnd;
       var dir = input.dom().selectionDirection;
-      global$2.setTimeout(function () {
+      setTimeout(function () {
         input.dom().setSelectionRange(start, end, dir);
         focus$1(input);
       }, 50);
@@ -12460,7 +12451,7 @@ var mobile = (function (exports, domGlobals) {
       };
       var call = function (cb) {
         data.each(function (x) {
-          domGlobals.setTimeout(function () {
+          setTimeout(function () {
             cb(x);
           }, 0);
         });
@@ -12489,7 +12480,7 @@ var mobile = (function (exports, domGlobals) {
           args[_i] = arguments[_i];
         }
         var me = this;
-        domGlobals.setTimeout(function () {
+        setTimeout(function () {
           f.apply(me, args);
         }, 0);
       };
@@ -12569,22 +12560,22 @@ var mobile = (function (exports, domGlobals) {
           finished = true;
           doFinish(v);
         };
-        global$2.clearInterval(interval);
+        clearInterval(interval);
         var abort = function (v) {
-          global$2.clearInterval(interval);
+          clearInterval(interval);
           finish(v);
         };
-        interval = global$2.setInterval(function () {
+        interval = setInterval(function () {
           var value = getCurrent();
           adjust(value, destination, amount).fold(function () {
-            global$2.clearInterval(interval);
+            clearInterval(interval);
             finish(destination);
           }, function (s) {
             increment(s, abort);
             if (!finished) {
               var newValue = getCurrent();
               if (newValue !== s || Math.abs(newValue - destination) > Math.abs(value - destination)) {
-                global$2.clearInterval(interval);
+                clearInterval(interval);
                 finish(destination);
               }
             }
@@ -13313,11 +13304,11 @@ var mobile = (function (exports, domGlobals) {
       };
     }
 
-    var global$3 = tinymce.util.Tools.resolve('tinymce.EditorManager');
+    var global$2 = tinymce.util.Tools.resolve('tinymce.EditorManager');
 
     var derive$3 = function (editor) {
       var base = readOptFrom$1(editor.settings, 'skin_url').fold(function () {
-        return global$3.baseURL + '/skins/ui/oxide';
+        return global$2.baseURL + '/skins/ui/oxide';
       }, function (url) {
         return url;
       });
@@ -13549,14 +13540,6 @@ var mobile = (function (exports, domGlobals) {
             backToReadOnly: [backToReadOnlyGroup]
           });
           FormatChangers.init(realm, editor);
-        });
-        editor.on('remove', function () {
-          realm.exit();
-        });
-        editor.on('detach', function () {
-          detachSystem(realm.system());
-          realm.system().destroy();
-          remove(wrapper);
         });
         return {
           iframeContainer: realm.socket().element().dom(),

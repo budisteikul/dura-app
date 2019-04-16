@@ -50,7 +50,7 @@
     	
         <div class="col-lg-8 col-md-10 mx-auto">
     	<div class="site-heading text-center">
-        	<div class="transbox" style="min-height:285px; padding-top:35px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
+        	<div class="transbox" style="min-height:100px; padding-top:25px; padding-bottom:25px; padding-left:10px; padding-right:10px;">
 				<img class="img-circle" src="{{ $setting->gravatar }}">
 				<hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<p class="text-faded">

@@ -244,9 +244,9 @@ article{
 				
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <!-- h1 style="font-size:30px;">Terms and Cancellation Policy</h1 -->
-				<h1 id="title">Wonderful Experience</h1>
+				<h1 id="title">Yogyakarta Night Activity and Food Tour</h1>
 				<p class="text-faded">
-					Posted on August 24, 2019
+					By Vertikal Trip, Wonderful Experience
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -261,42 +261,328 @@ article{
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading">About This Tour</h3>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
 
-          <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+<!-- ############################################################################### -->
+<div class="form-group">
+	<label for="name">Name :</label>
+	<input type="text" id="name" name="name" class="form-control" placeholder="Name">
+</div>
+<div class="form-group">
+	<label for="name">Email :</label>
+	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
+</div>
+<div class="form-group">
+	<label for="name">Phone :</label>
+	<div class="form-row">
+    <div class="col-4">
+      <select class="form-control">
+  		
+		<option data-countryCode="DZ" value="213">Algeria (+213)</option>
+		<option data-countryCode="AD" value="376">Andorra (+376)</option>
+		<option data-countryCode="AO" value="244">Angola (+244)</option>
+		<option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+		<option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+		<option data-countryCode="AR" value="54">Argentina (+54)</option>
+		<option data-countryCode="AM" value="374">Armenia (+374)</option>
+		<option data-countryCode="AW" value="297">Aruba (+297)</option>
+		<option data-countryCode="AU" value="61">Australia (+61)</option>
+		<option data-countryCode="AT" value="43">Austria (+43)</option>
+		<option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+		<option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+		<option data-countryCode="BH" value="973">Bahrain (+973)</option>
+		<option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+		<option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+		<option data-countryCode="BY" value="375">Belarus (+375)</option>
+		<option data-countryCode="BE" value="32">Belgium (+32)</option>
+		<option data-countryCode="BZ" value="501">Belize (+501)</option>
+		<option data-countryCode="BJ" value="229">Benin (+229)</option>
+		<option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+		<option data-countryCode="BT" value="975">Bhutan (+975)</option>
+		<option data-countryCode="BO" value="591">Bolivia (+591)</option>
+		<option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+		<option data-countryCode="BW" value="267">Botswana (+267)</option>
+		<option data-countryCode="BR" value="55">Brazil (+55)</option>
+		<option data-countryCode="BN" value="673">Brunei (+673)</option>
+		<option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+		<option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+		<option data-countryCode="BI" value="257">Burundi (+257)</option>
+		<option data-countryCode="KH" value="855">Cambodia (+855)</option>
+		<option data-countryCode="CM" value="237">Cameroon (+237)</option>
+		<option data-countryCode="CA" value="1">Canada (+1)</option>
+		<option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+		<option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+		<option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+		<option data-countryCode="CL" value="56">Chile (+56)</option>
+		<option data-countryCode="CN" value="86">China (+86)</option>
+		<option data-countryCode="CO" value="57">Colombia (+57)</option>
+		<option data-countryCode="KM" value="269">Comoros (+269)</option>
+		<option data-countryCode="CG" value="242">Congo (+242)</option>
+		<option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+		<option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+		<option data-countryCode="HR" value="385">Croatia (+385)</option>
+		<option data-countryCode="CU" value="53">Cuba (+53)</option>
+		<option data-countryCode="CY" value="90392">Cyprus North (+90392)</option>
+		<option data-countryCode="CY" value="357">Cyprus South (+357)</option>
+		<option data-countryCode="CZ" value="42">Czech Republic (+42)</option>
+		<option data-countryCode="DK" value="45">Denmark (+45)</option>
+		<option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+		<option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+		<option data-countryCode="DO" value="1809">Dominican Republic (+1809)</option>
+		<option data-countryCode="EC" value="593">Ecuador (+593)</option>
+		<option data-countryCode="EG" value="20">Egypt (+20)</option>
+		<option data-countryCode="SV" value="503">El Salvador (+503)</option>
+		<option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+		<option data-countryCode="ER" value="291">Eritrea (+291)</option>
+		<option data-countryCode="EE" value="372">Estonia (+372)</option>
+		<option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+		<option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+		<option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+		<option data-countryCode="FJ" value="679">Fiji (+679)</option>
+		<option data-countryCode="FI" value="358">Finland (+358)</option>
+		<option data-countryCode="FR" value="33">France (+33)</option>
+		<option data-countryCode="GF" value="594">French Guiana (+594)</option>
+		<option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+		<option data-countryCode="GA" value="241">Gabon (+241)</option>
+		<option data-countryCode="GM" value="220">Gambia (+220)</option>
+		<option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+		<option data-countryCode="DE" value="49">Germany (+49)</option>
+		<option data-countryCode="GH" value="233">Ghana (+233)</option>
+		<option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+		<option data-countryCode="GR" value="30">Greece (+30)</option>
+		<option data-countryCode="GL" value="299">Greenland (+299)</option>
+		<option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+		<option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+		<option data-countryCode="GU" value="671">Guam (+671)</option>
+		<option data-countryCode="GT" value="502">Guatemala (+502)</option>
+		<option data-countryCode="GN" value="224">Guinea (+224)</option>
+		<option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+		<option data-countryCode="GY" value="592">Guyana (+592)</option>
+		<option data-countryCode="HT" value="509">Haiti (+509)</option>
+		<option data-countryCode="HN" value="504">Honduras (+504)</option>
+		<option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+		<option data-countryCode="HU" value="36">Hungary (+36)</option>
+		<option data-countryCode="IS" value="354">Iceland (+354)</option>
+		<option data-countryCode="IN" value="91">India (+91)</option>
+		<option data-countryCode="ID" value="62">Indonesia (+62)</option>
+		<option data-countryCode="IR" value="98">Iran (+98)</option>
+		<option data-countryCode="IQ" value="964">Iraq (+964)</option>
+		<option data-countryCode="IE" value="353">Ireland (+353)</option>
+		<option data-countryCode="IL" value="972">Israel (+972)</option>
+		<option data-countryCode="IT" value="39">Italy (+39)</option>
+		<option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+		<option data-countryCode="JP" value="81">Japan (+81)</option>
+		<option data-countryCode="JO" value="962">Jordan (+962)</option>
+		<option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+		<option data-countryCode="KE" value="254">Kenya (+254)</option>
+		<option data-countryCode="KI" value="686">Kiribati (+686)</option>
+		<option data-countryCode="KP" value="850">Korea North (+850)</option>
+		<option data-countryCode="KR" value="82">Korea South (+82)</option>
+		<option data-countryCode="KW" value="965">Kuwait (+965)</option>
+		<option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+		<option data-countryCode="LA" value="856">Laos (+856)</option>
+		<option data-countryCode="LV" value="371">Latvia (+371)</option>
+		<option data-countryCode="LB" value="961">Lebanon (+961)</option>
+		<option data-countryCode="LS" value="266">Lesotho (+266)</option>
+		<option data-countryCode="LR" value="231">Liberia (+231)</option>
+		<option data-countryCode="LY" value="218">Libya (+218)</option>
+		<option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+		<option data-countryCode="LT" value="370">Lithuania (+370)</option>
+		<option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+		<option data-countryCode="MO" value="853">Macao (+853)</option>
+		<option data-countryCode="MK" value="389">Macedonia (+389)</option>
+		<option data-countryCode="MG" value="261">Madagascar (+261)</option>
+		<option data-countryCode="MW" value="265">Malawi (+265)</option>
+		<option data-countryCode="MY" value="60">Malaysia (+60)</option>
+		<option data-countryCode="MV" value="960">Maldives (+960)</option>
+		<option data-countryCode="ML" value="223">Mali (+223)</option>
+		<option data-countryCode="MT" value="356">Malta (+356)</option>
+		<option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+		<option data-countryCode="MQ" value="596">Martinique (+596)</option>
+		<option data-countryCode="MR" value="222">Mauritania (+222)</option>
+		<option data-countryCode="YT" value="269">Mayotte (+269)</option>
+		<option data-countryCode="MX" value="52">Mexico (+52)</option>
+		<option data-countryCode="FM" value="691">Micronesia (+691)</option>
+		<option data-countryCode="MD" value="373">Moldova (+373)</option>
+		<option data-countryCode="MC" value="377">Monaco (+377)</option>
+		<option data-countryCode="MN" value="976">Mongolia (+976)</option>
+		<option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+		<option data-countryCode="MA" value="212">Morocco (+212)</option>
+		<option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+		<option data-countryCode="MN" value="95">Myanmar (+95)</option>
+		<option data-countryCode="NA" value="264">Namibia (+264)</option>
+		<option data-countryCode="NR" value="674">Nauru (+674)</option>
+		<option data-countryCode="NP" value="977">Nepal (+977)</option>
+		<option data-countryCode="NL" value="31">Netherlands (+31)</option>
+		<option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+		<option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+		<option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+		<option data-countryCode="NE" value="227">Niger (+227)</option>
+		<option data-countryCode="NG" value="234">Nigeria (+234)</option>
+		<option data-countryCode="NU" value="683">Niue (+683)</option>
+		<option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+		<option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+		<option data-countryCode="NO" value="47">Norway (+47)</option>
+		<option data-countryCode="OM" value="968">Oman (+968)</option>
+		<option data-countryCode="PW" value="680">Palau (+680)</option>
+		<option data-countryCode="PA" value="507">Panama (+507)</option>
+		<option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+		<option data-countryCode="PY" value="595">Paraguay (+595)</option>
+		<option data-countryCode="PE" value="51">Peru (+51)</option>
+		<option data-countryCode="PH" value="63">Philippines (+63)</option>
+		<option data-countryCode="PL" value="48">Poland (+48)</option>
+		<option data-countryCode="PT" value="351">Portugal (+351)</option>
+		<option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+		<option data-countryCode="QA" value="974">Qatar (+974)</option>
+		<option data-countryCode="RE" value="262">Reunion (+262)</option>
+		<option data-countryCode="RO" value="40">Romania (+40)</option>
+		<option data-countryCode="RU" value="7">Russia (+7)</option>
+		<option data-countryCode="RW" value="250">Rwanda (+250)</option>
+		<option data-countryCode="SM" value="378">San Marino (+378)</option>
+		<option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+		<option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+		<option data-countryCode="SN" value="221">Senegal (+221)</option>
+		<option data-countryCode="CS" value="381">Serbia (+381)</option>
+		<option data-countryCode="SC" value="248">Seychelles (+248)</option>
+		<option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+		<option data-countryCode="SG" value="65">Singapore (+65)</option>
+		<option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+		<option data-countryCode="SI" value="386">Slovenia (+386)</option>
+		<option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+		<option data-countryCode="SO" value="252">Somalia (+252)</option>
+		<option data-countryCode="ZA" value="27">South Africa (+27)</option>
+		<option data-countryCode="ES" value="34">Spain (+34)</option>
+		<option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+		<option data-countryCode="SH" value="290">St. Helena (+290)</option>
+		<option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+		<option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+		<option data-countryCode="SD" value="249">Sudan (+249)</option>
+		<option data-countryCode="SR" value="597">Suriname (+597)</option>
+		<option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+		<option data-countryCode="SE" value="46">Sweden (+46)</option>
+		<option data-countryCode="CH" value="41">Switzerland (+41)</option>
+		<option data-countryCode="SI" value="963">Syria (+963)</option>
+		<option data-countryCode="TW" value="886">Taiwan (+886)</option>
+		<option data-countryCode="TJ" value="7">Tajikstan (+7)</option>
+		<option data-countryCode="TH" value="66">Thailand (+66)</option>
+		<option data-countryCode="TG" value="228">Togo (+228)</option>
+		<option data-countryCode="TO" value="676">Tonga (+676)</option>
+		<option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+		<option data-countryCode="TN" value="216">Tunisia (+216)</option>
+		<option data-countryCode="TR" value="90">Turkey (+90)</option>
+		<option data-countryCode="TM" value="7">Turkmenistan (+7)</option>
+		<option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+		<option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+		<option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+		<option data-countryCode="UG" value="256">Uganda (+256)</option>
+		<option data-countryCode="GB" value="44">UK (+44)</option>
+		<option data-countryCode="UA" value="380">Ukraine (+380)</option>
+		<option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+		<option data-countryCode="UY" value="598">Uruguay (+598)</option>
+		<option data-countryCode="US" value="1" selected>USA (+1)</option>
+		<option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
+		<option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+		<option data-countryCode="VA" value="379">Vatican City (+379)</option>
+		<option data-countryCode="VE" value="58">Venezuela (+58)</option>
+		<option data-countryCode="VN" value="84">Vietnam (+84)</option>
+		<option data-countryCode="VG" value="84">Virgin Islands - British (+1284)</option>
+		<option data-countryCode="VI" value="84">Virgin Islands - US (+1340)</option>
+		<option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
+		<option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+		<option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+		<option data-countryCode="ZM" value="260">Zambia (+260)</option>
+		<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+	
+	  </select>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Phone">
+    </div>
+  	</div>
+</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<table>
+<tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control">
+	<option value="1 person">1 person $39,00 USD</option>
+	<option value="2 persons">2 persons $78,00 USD</option>
+	<option value="3 persons">3 persons $117,00 USD</option>
+	<option value="4 persons">4 persons $156,00 USD</option>
+	<option value="5 persons">5 persons $195,00 USD</option>
+	<option value="6 persons">6 persons $234,00 USD</option>
+	<option value="7 persons">7 persons $273,00 USD</option>
+	<option value="8 persons">8 persons $312,00 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+<br />
+<input type="image" src="https://www.vertikaltrip.com/assets/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<!-- ############################################################################### -->
 
-          <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+          <p>
+          <center>
+          <img class="img-fluid" src="/assets/garis-imajiner.jpg">
+          </center>
+          
+          
+          Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
 
-          <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+          
+		<p>
+          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
+		  
+<p>
+          <h2 class="section-heading">Inclusions</h2>
+			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
+			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
+ 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
+			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
+			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
+          </p>
+<style>
+.map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+</style>          
+<!--Google map-->
+<p>
+<h2 class="section-heading">Meeting Point</h2>
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<b>Duration :</b> 3 Hours start at 6.30 PM<br />
+<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
+</p>
+<!--Google Maps-->
 
-          <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-
-          <h2 class="section-heading">The Final Frontier</h2>
-
-          <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-          <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-          <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-          <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-          <h2 class="section-heading">Reaching for the Stars</h2>
-
-          <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-          <a href="#">
-            <img class="img-fluid" src="devel/post-sample-image.jpg" alt="">
-          </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-          <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-          <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-          <p>Placeholder text by
-            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
-            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+          
+          
+          <p>
+          	<h2 class="section-heading">What else you should know</h2>
+          	- Please be hungry, because a lot of food in this tour.<br />
+			- Wear comfortable and relax clothing.<br />
+			- And don't forget to bring your camera to take some nice pictures.<br />
+          </p>
         </div>
       </div>
     </div>
@@ -304,7 +590,7 @@ article{
 
 <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; 2019 Yogyakarta Night Activity and Food Tour By Vertikal Trip</p>
     </div>
     <!-- /.container -->
   </footer>
