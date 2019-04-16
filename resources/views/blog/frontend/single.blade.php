@@ -655,7 +655,11 @@ position:absolute;
 
 <footer class="py-5 bg-dark">
     <div class="container">
-    	<p class="m-0 text-center text-white">Copyright &copy; 2019 Yogyakarta Night Activity and Food Tour By Vertikal Trip</p>
+    	<p class="m-0 text-center text-white">
+        Copyright &copy; 2019 Yogyakarta Night Activity and Food Tour By Vertikal Trip
+        <br>
+        Email : guide@vertikaltrip.com<br>Phone : +6285743112112
+        </p>
       
     </div>
     <!-- /.container -->
