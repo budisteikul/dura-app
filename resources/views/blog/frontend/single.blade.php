@@ -1,6 +1,6 @@
 @inject('blog', 'App\Classes\Blog\BlogClass')
 @extends('layouts.timeline')
-@section('title', 'Ratna Wahyu')
+@section('title', 'Yogyakarta Food Tour | Vertikal Trip')
 @section('content')
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -217,11 +217,11 @@ article{
         <ul class="navbar-nav text-uppercase ml-auto">
           
           <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="https://www.facebook.com/ratna.wahyu.54"><i class="fa fa-facebook-square"></i> Facebook</a>
+          	<a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           
           <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="https://instagram.com/ratna_diknana"><i class="fa fa-instagram"></i> Instagram</a>
+          	<a class="nav-link js-scroll-trigger" href="#booking">Booking</a>
           </li>
           
           {!! Auth::check() ? '
@@ -257,7 +257,7 @@ article{
    
 <!-- ################################################################### -->
  <!-- Post Content -->
-  <article>
+  <article id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -310,7 +310,7 @@ position:absolute;
 <p>
 <h2 class="section-heading">Meeting Point</h2>
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+  <iframe src="https://maps.google.com/maps?q=Yogyakarta+Food+Tour&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
     style="border:0" allowfullscreen></iframe>
 </div>
 <b>Duration :</b> 3 Hours start at 6.30 PM<br />
@@ -331,7 +331,7 @@ position:absolute;
     </div>
   </article>
 
-<section style="background-color:#f7f8f9">
+<section id="booking" style="background-color:#f7f8f9">
 <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
