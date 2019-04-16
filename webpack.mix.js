@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-
+/*
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -36,10 +36,11 @@ mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 
-
+*/
 
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
+	'resources/assets/frontend/moment/moment.js',
 	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
 	'resources/assets/frontend/jquery-easing/jquery.easing.min.js',
 	'resources/assets/frontend/jquery-infinite-scroll/jquery.infinitescroll.min.js',
@@ -47,6 +48,7 @@ mix.scripts([
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
@@ -57,7 +59,8 @@ mix.styles([
 	'resources/assets/frontend/photoset-grid/css/main.css',
 	'resources/assets/frontend/back-to-top/css/style.css',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
-	'resources/assets/frontend/timeline/timeline.css'
+	'resources/assets/frontend/timeline/timeline.css',
+	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 	],'public/css/ratnawahyu.css');
 
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');

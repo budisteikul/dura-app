@@ -269,10 +269,86 @@ article{
           </div>
         </div>
 
-<!-- ############################################################################### -->
+
+
+          <p>
+          <center>
+          <img class="img-fluid" src="/assets/garis-imajiner.jpg">
+          </center>
+          
+          
+          Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
+
+          
+		<p>
+          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
+		  
+<p>
+          <h2 class="section-heading">Inclusions</h2>
+			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
+			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
+ 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
+			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
+			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
+          </p>
+<style>
+.map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+</style>          
+<!--Google map-->
+<p>
+<h2 class="section-heading">Meeting Point</h2>
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<b>Duration :</b> 3 Hours start at 6.30 PM<br />
+<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
+</p>
+<!--Google Maps-->
+
+          
+          
+          <p>
+          	<h2 class="section-heading">What else you should know</h2>
+          	- Please be hungry, because a lot of food in this tour.<br />
+			- Wear comfortable and relax clothing.<br />
+			- And don't forget to bring your camera to take some nice pictures.<br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<section style="background-color:#f7f8f9">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading">Booking This Tour</h3>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
+        
+        <!-- ############################################################################### -->
 <div class="form-group">
-	<label for="name">Name :</label>
-	<input type="text" id="name" name="name" class="form-control" placeholder="Name">
+	<h2 class="section-heading">Contact Person</h2>
+</div>
+<div class="form-group">
+	<label for="name">Full name :</label>
+	<input type="text" id="name" name="name" class="form-control" placeholder="Full name">
 </div>
 <div class="form-group">
 	<label for="name">Email :</label>
@@ -506,10 +582,49 @@ article{
     </div>
   	</div>
 </div>
+<div class="form-group">
+	<h2 class="section-heading">Select Date and Travelers</h2>
+</div>
+<div class="form-group">   
+				 <label for="datetimepicker1">Date :</label>           
+                <div class='input-group' id='datetimepicker1'>
+                    <input type="text" id="date" name="date" value="" class="form-control bg-white" readonly>
+                    <div class="input-group-append input-group-addon text-muted">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                    
+                </div>
+                <small class="form-text text-muted">Date format YYYY-MM-DD</small>
+ 		<script type="text/javascript">
+            <?php
+			$defaultTimes = '18:30:00';
+			$disabledDates = array('2019-04-16','2019-04-17','2019-04-20','2019-04-21');
+			$defaultDates = date('Y-m-d');
+			
+			while(in_array($defaultDates, $disabledDates))
+			{
+				$defaultDates = date('Y-m-d',strtotime($defaultDates . "+1 days"));
+			}
+			
+			
+			?>
+			$(function () {
+                $('#date').datetimepicker({
+					minDate:'<?= $defaultDates ?>',
+					disabledDates: [<?= "'" . implode("','", $disabledDates) . "'" ?>],
+					format: 'YYYY-MM-DD <?= $defaultTimes ?>',
+					showTodayButton: true,
+					showClose: true,
+					ignoreReadonly: true,
+					defaultDate: '<?= $defaultDates ?>'
+				});
+            });
+        </script>    
+</div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
-<tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control">
+<tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control" id="os0">
 	<option value="1 person">1 person $39,00 USD</option>
 	<option value="2 persons">2 persons $78,00 USD</option>
 	<option value="3 persons">3 persons $117,00 USD</option>
@@ -523,70 +638,29 @@ article{
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
 <br />
-<input type="image" src="https://www.vertikaltrip.com/assets/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	<div class="form-group">
+	<div class="form-row">
+    <div class="col-2">
+    <input type="image" src="https://www.vertikaltrip.com/assets/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </div>
+    <div class="col">
+    <span class="align-middle">
+    <img src="https://www.vertikaltrip.com/assets/logo-paypal.jpg" border="0">
+    </span>
+    </div>
+    </div>
+    </div>
+
 </form>
 <!-- ############################################################################### -->
-
-          <p>
-          <center>
-          <img class="img-fluid" src="/assets/garis-imajiner.jpg">
-          </center>
-          
-          
-          Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
-
-          
-		<p>
-          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
-		  
-<p>
-          <h2 class="section-heading">Inclusions</h2>
-			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
-			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
- 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
-			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
-			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
-          </p>
-<style>
-.map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-</style>          
-<!--Google map-->
-<p>
-<h2 class="section-heading">Meeting Point</h2>
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0" allowfullscreen></iframe>
-</div>
-<b>Duration :</b> 3 Hours start at 6.30 PM<br />
-<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
-</p>
-<!--Google Maps-->
-
-          
-          
-          <p>
-          	<h2 class="section-heading">What else you should know</h2>
-          	- Please be hungry, because a lot of food in this tour.<br />
-			- Wear comfortable and relax clothing.<br />
-			- And don't forget to bring your camera to take some nice pictures.<br />
-          </p>
+        <div style="height:100px;"></div>
+        
         </div>
       </div>
-    </div>
-  </article>
+      </div>
+</section>
+
 
 <footer class="py-5 bg-dark">
     <div class="container">
