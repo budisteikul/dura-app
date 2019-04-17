@@ -220,6 +220,10 @@ article{
           	<a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           
+           <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
+          </li>
+          
           <li class="nav-item">
           	<a class="nav-link js-scroll-trigger" href="#booking">Booking</a>
           </li>
@@ -240,7 +244,7 @@ article{
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:25px; padding-bottom:25px; padding-left:10px; padding-right:10px;">
-            	<img class="img-circle" src="http://placehold.it/150x150">
+            	<img class="img-circle" src="https://placehold.it/150x150">
 				
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <!-- h1 style="font-size:30px;">Terms and Cancellation Policy</h1 -->
@@ -273,7 +277,7 @@ article{
 
           <p>
           <center>
-          <img class="img-fluid" src="/assets/garis-imajiner.jpg">
+          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
           </center>
           
           
@@ -331,6 +335,33 @@ position:absolute;
     </div>
   </article>
 
+<section id="gallery" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/1.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/2.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/3.jpg">
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/4.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/5.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/6.jpg">
+        </div>
+        
+      </div>
+</div>
+</section>
+
 <section id="booking" style="background-color:#f7f8f9">
 <div class="container">
       <div class="row">
@@ -338,7 +369,7 @@ position:absolute;
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading">Booking This Tour</h3>
-            <h4 class="section-subheading text-muted">using <img src="https://www.vertikaltrip.com/assets/logo-paypal.jpg"></h4>
+            <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -640,7 +671,7 @@ position:absolute;
 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
 <br />
 	
-    <input type="image" src="https://www.vertikaltrip.com/assets/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
  
 </form>
