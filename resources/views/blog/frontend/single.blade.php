@@ -104,7 +104,6 @@
     border-radius: 50%;
 }
 .intro-header {
-  background-color: #000000;
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
@@ -202,6 +201,21 @@ article{
 		font-size:1.8em;
 	}
 }
+
+.map-container{
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+.map-container iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
 </style>
 @endpush
     
@@ -217,15 +231,19 @@ article{
         <ul class="navbar-nav text-uppercase ml-auto">
           
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#about">About</a>
+          	<a class="nav-link js-scroll-trigger" href="#about">About The Tour</a>
           </li>
           
-           <li class="nav-item">
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#meetingpoint">Meeting Point</a>
+          </li>
+          
+          <li class="nav-item">
           	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
           </li>
           
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#booking">Booking</a>
+          	<a class="nav-link js-scroll-trigger" href="#booking">Booking This Tour</a>
           </li>
           
           {!! Auth::check() ? '
@@ -239,15 +257,14 @@ article{
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu.jpg'); background-color: #B0B0B0">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:25px; padding-bottom:25px; padding-left:10px; padding-right:10px;">
-            	<img class="img-circle" src="https://placehold.it/150x150">
+            	<img class="img-circle" src="/assets/foodtour/logo.jpg">
 				
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-                <!-- h1 style="font-size:30px;">Terms and Cancellation Policy</h1 -->
 				<h1 id="title">Yogyakarta Night Activity and Food Tour</h1>
 				<p class="text-faded">
 					By Vertikal Trip, Wonderful Experience
@@ -267,7 +284,7 @@ article{
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading">About This Tour</h3>
+            <h3 class="section-heading">About The Tour</h3>
             <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
@@ -280,6 +297,13 @@ article{
           <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
           </center>
           
+          <div>
+          <strong>Name :</strong> Yogyakarta Night Activity and Food Tour<br />
+          <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
+          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
+          <strong>Price :</strong> 39 USD / person<br />
+          <br />
+          </div>
           
           Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
 
@@ -295,24 +319,38 @@ article{
 			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
 			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
           </p>
-<style>
-.map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-</style>          
+          
+           <p>
+          	<h2 class="section-heading">What else you should know</h2>
+          	- Please be hungry, because a lot of food in this tour.<br />
+			- Wear comfortable and relax clothing.<br />
+			- And don't forget to bring your camera to take some nice pictures.<br />
+          </p>
+		</div>
+      </div>
+    </div>
+</article> 
+
+
+
+<section id="meetingpoint" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        	<div class="row" style="padding-bottom:0px;">
+          		<div class="col-lg-12 text-center">
+            		<h3 class="section-heading">Meeting Point</h3>
+                    <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          		</div>
+        	</div>
+  
+  
+  
+      
+   
 <!--Google map-->
 <p>
-<h2 class="section-heading">Meeting Point</h2>
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
   <iframe src="https://maps.google.com/maps?q=Yogyakarta+Food+Tour&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
     style="border:0" allowfullscreen></iframe>
@@ -321,24 +359,40 @@ position:absolute;
 <b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
 </p>
 <!--Google Maps-->
+      
+      
+      
+      
+      
+      </div>
+      </div>
+ </div>
+ </section>
+ 
+          
+
 
           
           
-          <p>
-          	<h2 class="section-heading">What else you should know</h2>
-          	- Please be hungry, because a lot of food in this tour.<br />
-			- Wear comfortable and relax clothing.<br />
-			- And don't forget to bring your camera to take some nice pictures.<br />
-          </p>
-        </div>
-      </div>
-    </div>
-  </article>
+         
+        
 
 <section id="gallery" style="background-color:#ffffff">
 <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading">Gallery</h3>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+      <div class="row">
+		<div class="col-lg-4 col-sm-6">
         	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/1.jpg">
         </div>
         <div class="col-lg-4 col-sm-6">
@@ -356,8 +410,7 @@ position:absolute;
         </div>
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/6.jpg">
-        </div>
-        
+        </div>  
       </div>
 </div>
 </section>
@@ -374,7 +427,41 @@ position:absolute;
           </div>
         </div>
         
-        <!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<script language="javascript">
+
+
+function BOOKING()
+{
+	//$('#submit').prop('disabled', true);
+	//$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
+	
+	$.ajax({
+			data: {
+        		"_token": '{{ csrf_token() }}',
+				'name': $('#name').val(),
+				'country': $('#country').val(),
+				'os0': $('#os0').val(),
+				'phone': $('#phone').val(),
+				'email': $('#email').val(),
+				'date': $('#date').val(),
+        	},
+			type: 'POST',
+			url: '/booking'
+			}).done(function( data ) {
+			if(data.id=="1")
+			{
+				
+			}
+			else
+			{
+				return false;	
+			}
+		});
+}
+</script>
+
+
 <div class="form-group">
 	<h2 class="section-heading">Contact Person</h2>
 </div>
@@ -390,7 +477,7 @@ position:absolute;
 	<label for="name">Phone :</label>
 	<div class="form-row">
     <div class="col-4">
-      <select class="form-control">
+      <select class="form-control" id="country">
   		
 		<option data-countryCode="DZ" value="213">Algeria (+213)</option>
 		<option data-countryCode="AD" value="376">Andorra (+376)</option>
@@ -610,7 +697,7 @@ position:absolute;
 	  </select>
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Phone">
+      <input type="text" class="form-control" placeholder="Phone" id="phone">
     </div>
   	</div>
 </div>
@@ -653,7 +740,7 @@ position:absolute;
             });
         </script>    
 </div>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="BOOKING();">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
 <tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control" id="os0">
@@ -673,8 +760,14 @@ position:absolute;
 	
     <input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
- 
+<br />
+<small class="form-text text-muted">After payment received, we will contact you immediately</small>
 </form>
+<div class="form-group">
+	<h2 class="section-heading">Also available at</h2>
+    <input type="image" onClick="window.open('https://www.airbnb.com/experiences/434368', '_blank').focus();" src="/assets/foodtour/airbnb.jpg" border="0" alt="Yogyakarta Night Activity and Food Tour on AirBNB">
+    <input type="image" onClick="window.open('https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2', '_blank').focus();" src="/assets/foodtour/viator.jpg" border="0" alt="Yogyakarta Night Activity and Food Tour on Viator">
+</div>
 <!-- ############################################################################### -->
         <div style="height:100px;"></div>
         
@@ -685,17 +778,28 @@ position:absolute;
 
 
 <footer class="py-5 bg-dark">
-    <div class="container">
-    	<p class="m-0 text-center text-white">
+<div class="container">
+      <div class="row">
+		<div class="col-lg-12 col-sm-6">
+        <p class="m-0 text-center text-white">
+        Need help? Contact us<br />
+        <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
+        <span class="fa fa-phone"></span> +62 857 43 112 112 <br />
+        
+        
+        
+        
+        
         Copyright &copy; 2019 Yogyakarta Night Activity and Food Tour By Vertikal Trip
-        <br>
-        Email : guide@vertikaltrip.com<br>Phone : +6285743112112
         </p>
-      
-    </div>
+        </div>
+       </div>
+</div>
+
+   
     <!-- /.container -->
   </footer>
-<a href="#page-top" class="cd-top js-scroll-trigger">Top</a>
+
 <script>
 
 

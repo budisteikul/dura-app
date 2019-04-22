@@ -14,12 +14,16 @@
 
 
 
+Route::domain('www.vertikaltrip.com')->group(function () {
+    Route::get('/', function () {
+        return redirect('/yogyakarta-food-tour');
+    });
+	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
+	Route::post('/booking', 'Blog\Frontend\BookingController@store');
+});
 
 
 Route::get('/', 'Blog\Frontend\TimelineController@index');
-
-
-
 
 Route::get('/landing', 'Blog\Frontend\LandingController@index');
 Route::get('/blog', 'Blog\Frontend\BlogController@index');
