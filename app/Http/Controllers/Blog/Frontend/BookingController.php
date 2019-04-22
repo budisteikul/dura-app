@@ -48,7 +48,7 @@ class BookingController extends Controller
 		
 		Mail::send('layouts.mail.booking', ['content' => $content], function ($message) use ($title)
         {
-            $message->from('postmaster@vertikaltrip.com', 'Postmaster');
+            //$message->from('postmaster@vertikaltrip.com', 'Postmaster');
             $message->to('guide@vertikaltrip.com');
 			$message->subject($title);
         });

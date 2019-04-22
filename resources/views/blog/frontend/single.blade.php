@@ -7,6 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
 #mainNav {
   	border-color: rgba(34,34,34,.05);
@@ -246,10 +247,9 @@ article{
           	<a class="nav-link js-scroll-trigger" href="#booking">Booking This Tour</a>
           </li>
           
-          {!! Auth::check() ? '
           <li class="nav-item">
-          	<a class="nav-link" href="/blog/photo"><i class="fa fa-user"></i> Admin</a>
-          </li>' : '' !!}
+          	<a class="nav-link js-scroll-trigger" href="#contactus">Contact Us</a>
+          </li>
           
         </ul>
       </div>
@@ -436,6 +436,48 @@ function BOOKING()
 	//$('#submit').prop('disabled', true);
 	//$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
 	
+	if($('#name').val()=="")
+	{
+		swal({
+  			title: "Warning",
+  			text: "The name field is required",
+  			icon: "warning",
+  			dangerMode: true,
+			}).then((value) => {
+  				$('#name').focus();
+				
+			});
+		return false;	
+	}
+	
+	if($('#email').val()=="")
+	{
+		swal({
+  			title: "Warning",
+  			text: "The email field is required",
+  			icon: "warning",
+  			dangerMode: true,
+			}).then((value) => {
+  				$('#email').focus();
+				
+			});
+		return false;
+	}
+	
+	if($('#phone').val()=="")
+	{
+		swal({
+  			title: "Warning",
+  			text: "The phone field is required",
+  			icon: "warning",
+  			dangerMode: true,
+			}).then((value) => {
+  				$('#phone').focus();
+				
+			});
+		return false;	
+	}
+	
 	$.ajax({
 			data: {
         		"_token": '{{ csrf_token() }}',
@@ -477,7 +519,7 @@ function BOOKING()
 	<label for="name">Phone :</label>
 	<div class="form-row">
     <div class="col-4">
-      <select class="form-control" id="country">
+      <select class="form-control" id="country" name="country">
   		
 		<option data-countryCode="DZ" value="213">Algeria (+213)</option>
 		<option data-countryCode="AD" value="376">Andorra (+376)</option>
@@ -740,7 +782,7 @@ function BOOKING()
             });
         </script>    
 </div>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="BOOKING();">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
 <tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control" id="os0">
@@ -777,20 +819,27 @@ function BOOKING()
 </section>
 
 
-<footer class="py-5 bg-dark">
+<footer id="contactus" class="py-5 bg-dark">
 <div class="container">
       <div class="row">
-		<div class="col-lg-12 col-sm-6">
+		<div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading text-white">NEED HELP? FEEL FREE TO CONTACT US</h3>
+            <h4 class="section-subheading text-white">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
         <p class="m-0 text-center text-white">
-        Need help? Contact us<br />
         <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
-        <span class="fa fa-phone"></span> +62 857 43 112 112 <br />
+        <span class="fa fa-phone"></span> +62 857 43 112 112 (Whatsapp only)<br />
+        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br />
         
         
+        <br>
+        <br><br>
         
         
-        
-        Copyright &copy; 2019 Yogyakarta Night Activity and Food Tour By Vertikal Trip
         </p>
         </div>
        </div>
