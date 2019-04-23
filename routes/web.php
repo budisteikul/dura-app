@@ -22,6 +22,22 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::post('/booking', 'Blog\Frontend\BookingController@store');
 });
 
+Route::domain('heroku1.vertikaltrip.com')->group(function () {
+    Route::get('/', function () {
+        return redirect('/yogyakarta-food-tour');
+    });
+	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
+	Route::post('/booking', 'Blog\Frontend\BookingController@store');
+});
+
+Route::domain('heroku2.vertikaltrip.com')->group(function () {
+    Route::get('/', function () {
+        return redirect('/yogyakarta-food-tour');
+    });
+	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
+	Route::post('/booking', 'Blog\Frontend\BookingController@store');
+});
+
 Route::domain('vertikal.herokuapp.com')->group(function () {
     Route::get('/', function () {
         return redirect('/yogyakarta-food-tour');
