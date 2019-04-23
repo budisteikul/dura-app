@@ -22,7 +22,7 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::post('/booking', 'Blog\Frontend\BookingController@store');
 });
 
-Route::domain('vertikaltrip.herokuapp.com')->group(function () {
+Route::domain('vertikal.herokuapp.com')->group(function () {
     Route::get('/', function () {
         return redirect('/yogyakarta-food-tour');
     });
