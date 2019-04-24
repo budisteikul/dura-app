@@ -7,7 +7,6 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
 #mainNav {
   	border-color: rgba(34,34,34,.05);
@@ -139,11 +138,12 @@
     margin: 20px;
 	border-radius: 10px;
 	color: #ffffff;
-    background-color: #000000;
+    background-color: #FFFFFF;
     border: 0px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.6);
 	filter: alpha(opacity=30);
 	padding-bottom:2px;  
+	
 }
 
 .tldate {
@@ -224,7 +224,7 @@ article{
    <!-- Navigation -->
   <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Vetikal Trip</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Vertikal Trip</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -251,21 +251,23 @@ article{
           	<a class="nav-link js-scroll-trigger" href="#contactus">Contact Us</a>
           </li>
           
+          
+          
         </ul>
       </div>
     </div>
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu.jpg'); background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:25px; padding-bottom:25px; padding-left:10px; padding-right:10px;">
+        	<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:40px; padding-left:10px; padding-right:10px;">
             	<img class="img-circle" src="/assets/foodtour/logo.jpg">
 				
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<h1 id="title">Yogyakarta Night Activity and Food Tour</h1>
+				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Activity and Food Tour</h1>
 				<p class="text-faded">
 					By Vertikal Trip, Wonderful Experience
 				</p>
@@ -284,7 +286,7 @@ article{
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading">About The Tour</h3>
+            <h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
             <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
@@ -301,7 +303,7 @@ article{
           <strong>Name :</strong> Yogyakarta Night Activity and Food Tour<br />
           <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
           <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
-          <strong>Price :</strong> 39 USD / person<br />
+          <strong>Price :</strong> $37 USD / person<br />
           <br />
           </div>
           
@@ -339,7 +341,7 @@ article{
         <div class="col-lg-8 col-md-10 mx-auto">
         	<div class="row" style="padding-bottom:0px;">
           		<div class="col-lg-12 text-center">
-            		<h3 class="section-heading">Meeting Point</h3>
+            		<h3 class="section-heading" style="margin-top:0px;">Meeting Point</h3>
                     <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
             		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           		</div>
@@ -383,7 +385,7 @@ article{
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading">Gallery</h3>
+            <h3 class="section-heading" style="margin-top:50px;">Gallery</h3>
             <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
@@ -421,7 +423,7 @@ article{
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading">Booking This Tour</h3>
+            <h3 class="section-heading" style="margin-top:50px;">Booking This Tour</h3>
             <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
@@ -500,6 +502,7 @@ function BOOKING()
 				return false;	
 			}
 		});
+	
 }
 </script>
 
@@ -783,21 +786,22 @@ function BOOKING()
         </script>    
 </div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
+<!-- form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="BOOKING(); return false;" -->
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
 <tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control" id="os0">
-	<option value="1 person">1 person $39,00 USD</option>
-	<option value="2 persons">2 persons $78,00 USD</option>
-	<option value="3 persons">3 persons $117,00 USD</option>
-	<option value="4 persons">4 persons $156,00 USD</option>
-	<option value="5 persons">5 persons $195,00 USD</option>
-	<option value="6 persons">6 persons $234,00 USD</option>
-	<option value="7 persons">7 persons $273,00 USD</option>
-	<option value="8 persons">8 persons $312,00 USD</option>
+	<option value="1 person">1 person $37,00 USD</option>
+	<option value="2 persons">2 persons $74,00 USD</option>
+	<option value="3 persons">3 persons $111,00 USD</option>
+	<option value="4 persons">4 persons $148,00 USD</option>
+	<option value="5 persons">5 persons $185,00 USD</option>
+	<option value="6 persons">6 persons $222,00 USD</option>
+	<option value="7 persons">7 persons $259,00 USD</option>
+	<option value="8 persons">8 persons $296,00 USD</option>
 </select> </td></tr>
 </table>
 <input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
 <br />
 	
     <input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -805,11 +809,11 @@ function BOOKING()
 <br />
 <small class="form-text text-muted">After payment received, we will contact you immediately</small>
 </form>
-<div class="form-group">
-	<h2 class="section-heading">Also available at</h2>
-    <input type="image" onClick="window.open('https://www.airbnb.com/experiences/434368', '_blank').focus();" src="/assets/foodtour/airbnb.jpg" border="0" alt="Yogyakarta Night Activity and Food Tour on AirBNB">
-    <input type="image" onClick="window.open('https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2', '_blank').focus();" src="/assets/foodtour/viator.jpg" border="0" alt="Yogyakarta Night Activity and Food Tour on Viator">
-</div>
+<div id="bookingexternal" class="form-group">
+	<h2 class="section-heading">Or booking via :</h2>
+    <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book Yogyakarta Night Activity and Food Tour via AirBNB" style="margin-bottom:10px;"></a>
+    <a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Activity_and_Food_Tour-Yogyakarta_Region_Java.html?" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book Yogyakarta Night Activity and Food Tour via TripAdvisor" style="margin-bottom:10px;"></a>
+    
 <!-- ############################################################################### -->
         <div style="height:100px;"></div>
         
@@ -825,16 +829,18 @@ function BOOKING()
 		<div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading text-white">NEED HELP? FEEL FREE TO CONTACT US</h3>
+            <h3 class="section-heading text-white" style="margin-top:100px;">NEED HELP? FEEL FREE TO CONTACT US</h3>
             <h4 class="section-subheading text-white">Yogyakarta Night Activity and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
+        <br><br>
         <p class="m-0 text-center text-white">
         <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
         <span class="fa fa-phone"></span> +62 857 43 112 112 (Whatsapp only)<br />
-        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br />
-        
+        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br /><br><br><br>
+        Copyright &copy; 2019 Vertikal Trip All Right Reserved
+        <br>
         
         <br>
         <br><br>

@@ -18,40 +18,18 @@ Route::domain('www.vertikaltrip.com')->group(function () {
     Route::get('/', function () {
         return redirect('/yogyakarta-food-tour');
     });
-	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
-	Route::post('/booking', 'Blog\Frontend\BookingController@store');
+	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
+	Route::post('/booking', 'Blog\Frontend\BlogController@booking');
 });
 
-Route::domain('heroku1.vertikaltrip.com')->group(function () {
-    Route::get('/', function () {
-        return redirect('/yogyakarta-food-tour');
-    });
-	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
-	Route::post('/booking', 'Blog\Frontend\BookingController@store');
+Route::domain('www.jogjafoodtour.com')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+	Route::post('/booking', 'Blog\Frontend\BlogController@booking');
 });
 
-Route::domain('heroku2.vertikaltrip.com')->group(function () {
-    Route::get('/', function () {
-        return redirect('/yogyakarta-food-tour');
-    });
-	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
-	Route::post('/booking', 'Blog\Frontend\BookingController@store');
-});
-
-Route::domain('vertikal.herokuapp.com')->group(function () {
-    Route::get('/', function () {
-        return redirect('/yogyakarta-food-tour');
-    });
-	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@single');
-	Route::post('/booking', 'Blog\Frontend\BookingController@store');
-});
 
 
 Route::get('/', 'Blog\Frontend\TimelineController@index');
-
-Route::get('/landing', 'Blog\Frontend\LandingController@index');
-Route::get('/blog', 'Blog\Frontend\BlogController@index');
-Route::get('/single', 'Blog\Frontend\BlogController@single');
 
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);

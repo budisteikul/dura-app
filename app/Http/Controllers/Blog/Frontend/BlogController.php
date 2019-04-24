@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Blog\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Mail;
+use App\Mail\Blog\Frontend\BookingTour;
 
 class BlogController extends Controller
 {
@@ -17,9 +19,25 @@ class BlogController extends Controller
         return view('blog.frontend.blog');
     }
 	
-	 public function single()
+	public function foodtour()
     {
-        return view('blog.frontend.single');
+        return view('blog.frontend.foodtour');
+    }
+	
+	public function booking(Request $request)
+    {
+        $name =  $request->input('name');
+		$email =  $request->input('email');
+		$os0 =  $request->input('os0');
+		$country =  $request->input('country');
+		$phone =  $request->input('phone');
+		$date =  $request->input('date');
+		
+		$tour = "Yogyakarta Night Activity and Food Tour";
+		$phone = "+". $country ." ". $phone;
+		
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($tour,$name,$email,$phone,$date,$os0));
+		
     }
 
     /**

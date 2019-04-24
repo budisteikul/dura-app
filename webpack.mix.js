@@ -48,7 +48,8 @@ mix.scripts([
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+	'resources/assets/frontend/sweetalert/dist/sweetalert.min.js'
 	],'public/js/ratnawahyu.js');
 
 mix.styles([
