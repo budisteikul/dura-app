@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mail;
 use App\Mail\Blog\Frontend\BookingTour;
+use Illuminate\Support\Facades\Request as Http;
 
 class BlogController extends Controller
 {
@@ -21,7 +22,13 @@ class BlogController extends Controller
 	
 	public function foodtour()
     {
-        return view('blog.frontend.foodtour');
+		$app_name = "Vertikal Trip";
+		$domain = preg_replace('#^https?://#', '', Http::root());
+		if($domain=="vertikaltrip.com") $app_name = "Vertikal Trip";
+		if($domain=="www.vertikaltrip.com") $app_name = "Vertikal Trip";
+		if($domain=="jogjafoodtour.com") $app_name = "Jogja Food Tour";
+		if($domain=="www.jogjafoodtour.com") $app_name = "Jogja Food Tour";
+        return view('blog.frontend.foodtour')->with('app_name',$app_name);
     }
 	
 	public function booking(Request $request)

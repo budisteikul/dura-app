@@ -1,6 +1,6 @@
 @inject('blog', 'App\Classes\Blog\BlogClass')
 @extends('layouts.timeline')
-@section('title', 'Yogyakarta Food Tour | Vertikal Trip')
+@section('title', 'Yogyakarta Food Tour | '. $app_name)
 @section('content')
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -188,7 +188,7 @@ article{
 	background-color:#FFFFFF;
 	padding-top:50px;
 	padding-bottom:50px;
-	font-size:16px;
+	font-size:18px;
 }
 
 #title
@@ -218,218 +218,6 @@ article{
 }
 
 </style>
-@endpush
-    
-   <!-- ################################################################### -->
-   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Vertikal Trip</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#about">About The Tour</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#meetingpoint">Meeting Point</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#booking">Booking This Tour</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#contactus">Contact Us</a>
-          </li>
-          
-          
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
-    	
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:40px; padding-left:10px; padding-right:10px;">
-            	<img class="img-circle" src="/assets/foodtour/logo.jpg">
-				
-                <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Activity and Food Tour</h1>
-				<p class="text-faded">
-					By Vertikal Trip, Wonderful Experience
-				</p>
-			</div>
-            <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
-       
-       </div>
-       </div>
-    </header>
-   
-<!-- ################################################################### -->
- <!-- Post Content -->
-  <article id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
-            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-
-
-
-          <p>
-          <center>
-          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
-          </center>
-          
-          <div>
-          <strong>Name :</strong> Yogyakarta Night Activity and Food Tour<br />
-          <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
-          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
-          <strong>Price :</strong> $37 USD / person<br />
-          <br />
-          </div>
-          
-          Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
-
-          
-		<p>
-          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
-		  
-<p>
-          <h2 class="section-heading">Inclusions</h2>
-			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
-			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
- 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
-			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
-			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
-          </p>
-          
-           <p>
-          	<h2 class="section-heading">What else you should know</h2>
-          	- Please be hungry, because a lot of food in this tour.<br />
-			- Wear comfortable and relax clothing.<br />
-			- And don't forget to bring your camera to take some nice pictures.<br />
-          </p>
-		</div>
-      </div>
-    </div>
-</article> 
-
-
-
-<section id="meetingpoint" style="background-color:#ffffff">
-<div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        	<div class="row" style="padding-bottom:0px;">
-          		<div class="col-lg-12 text-center">
-            		<h3 class="section-heading" style="margin-top:0px;">Meeting Point</h3>
-                    <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
-            		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          		</div>
-        	</div>
-  
-  
-  
-      
-   
-<!--Google map-->
-<p>
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="https://maps.google.com/maps?q=Yogyakarta+Food+Tour&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0" allowfullscreen></iframe>
-</div>
-<b>Duration :</b> 3 Hours start at 6.30 PM<br />
-<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
-</p>
-<!--Google Maps-->
-      
-      
-      
-      
-      
-      </div>
-      </div>
- </div>
- </section>
- 
-          
-
-
-          
-          
-         
-        
-
-<section id="gallery" style="background-color:#ffffff">
-<div class="container">
-      <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Gallery</h3>
-            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-      </div>
-</div>
-<div class="container">
-      <div class="row">
-		<div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/1.jpg">
-        </div>
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/2.jpg">
-        </div>
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/3.jpg">
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/4.jpg">
-        </div>
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/5.jpg">
-        </div>
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/6.jpg">
-        </div>  
-      </div>
-</div>
-</section>
-
-<section id="booking" style="background-color:#f7f8f9">
-<div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Booking This Tour</h3>
-            <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-        
-<!-- ############################################################################### -->
 <script language="javascript">
 
 
@@ -505,6 +293,214 @@ function BOOKING()
 	
 }
 </script>
+@endpush
+    
+   <!-- ################################################################### -->
+   <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">{{$app_name}}</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#about">About The Tour</a>
+          </li>
+          
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#meetingpoint">Meeting Point</a>
+          </li>
+          
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
+          </li>
+          
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#booking">Booking This Tour</a>
+          </li>
+          
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#contactus">Contact Us</a>
+          </li>
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- ################################################################### -->
+    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
+    	
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading text-center">
+        	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:40px; padding-left:10px; padding-right:10px;">
+            	<img class="img-circle" src="/assets/foodtour/logo.jpg">
+				
+                <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
+				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Activity and Food Tour</h1>
+				<p class="text-faded">
+					Hi we are {{ $app_name }} team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experience and tradition.
+				</p>
+			</div>
+            <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
+       
+       </div>
+       </div>
+    </header>
+   
+<!-- ################################################################### -->
+ <!-- Post Content -->
+  <article id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
+
+
+
+          <p>
+          <center>
+          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
+          </center>
+          <br>
+
+          <div>
+          <strong>Name :</strong> Yogyakarta Night Activity and Food Tour<br />
+          <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
+          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
+          <strong>Price :</strong> $37 USD / person<br />
+          <br />
+          </div>
+          
+          Yogyakarta’s Mystical Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. This imaginary line is famous because have a mystical story. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
+
+          
+		<p>
+          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
+		  
+<p>
+          <h2 class="section-heading">Inclusions</h2>
+			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
+			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
+ 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
+			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
+			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
+          </p>
+          
+           <p>
+          	<h2 class="section-heading">What else you should know</h2>
+          	- Please be hungry, because a lot of food in this tour.<br />
+			- Wear comfortable and relax clothing.<br />
+			- And don't forget to bring your camera to take some nice pictures.<br />
+          </p>
+		</div>
+      </div>
+    </div>
+</article> 
+
+
+
+<section id="meetingpoint" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        	<div class="row" style="padding-bottom:0px;">
+          		<div class="col-lg-12 text-center">
+            		<h3 class="section-heading" style="margin-top:0px;">Meeting Point</h3>
+                    <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          		</div>
+        	</div>
+  
+  
+  
+      
+   
+<!--Google map-->
+<p>
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=Yogyakarta+Food+Tour&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<br />
+<b>Duration :</b> 3 Hours start at 6.30 PM<br />
+<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
+</p>
+<!--Google Maps-->
+      
+      
+      
+      
+      
+      </div>
+      </div>
+ </div>
+ </section>
+ 
+   
+<section id="gallery" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading" style="margin-top:50px;">Gallery</h3>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+      <div class="row">
+		<div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/1.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/2.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/3.jpg">
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/4.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/5.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/6.jpg">
+        </div>  
+      </div>
+</div>
+</section>
+
+<section id="booking" style="background-color:#f7f8f9">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading" style="margin-top:50px;">Booking This Tour</h3>
+            <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+        </div>
+        
+<!-- ############################################################################### -->
+
 
 
 <div class="form-group">
@@ -823,28 +819,38 @@ function BOOKING()
 </section>
 
 
-<footer id="contactus" class="py-5 bg-dark">
+<section id="contactus" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading" style="margin-top:50px;">Need help? Feel free to contact us</h3>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+         
+        </div>
+        <p class="m-0 text-center">
+        <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
+        <span class="fa fa-phone"></span> +62 857 43 112 112 (Whatsapp only)<br />
+        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</p><br>
+<br>
+      </div>
+</div>
+
+</section>
+
+<footer class="py-5 bg-dark">
 <div class="container">
       <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading text-white" style="margin-top:100px;">NEED HELP? FEEL FREE TO CONTACT US</h3>
-            <h4 class="section-subheading text-white">Yogyakarta Night Activity and Food Tour</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-        <br><br>
+        
+        
         <p class="m-0 text-center text-white">
-        <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
-        <span class="fa fa-phone"></span> +62 857 43 112 112 (Whatsapp only)<br />
-        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br /><br><br><br>
-        Copyright &copy; 2019 Vertikal Trip All Right Reserved
-        <br>
-        
-        <br>
-        <br><br>
-        
+       
+        &copy; {{$app_name}} Experiences
+      
         
         </p>
         </div>
