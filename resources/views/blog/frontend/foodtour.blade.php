@@ -338,13 +338,16 @@ function BOOKING()
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:40px; padding-left:10px; padding-right:10px;">
+        	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
+            	@if ($app_name == "Jogja Food Tour")
+                <img class="img-circle" src="/assets/foodtour/jogja-food-tour-logo.jpg">
+                @else
             	<img class="img-circle" src="/assets/foodtour/logo.jpg">
-				
+				@endif
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Activity and Food Tour</h1>
 				<p class="text-faded">
-					Hi we are {{ $app_name }} team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experience and tradition.
+					Hi we are from the {{ $app_name }} team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -417,7 +420,7 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         	<div class="row" style="padding-bottom:0px;">
           		<div class="col-lg-12 text-center">
-            		<h3 class="section-heading" style="margin-top:0px;">Meeting Point</h3>
+            		<h3 class="section-heading" style="margin-top:50px;">Meeting Point</h3>
                     <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
             		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           		</div>
@@ -464,25 +467,38 @@ function BOOKING()
 </div>
 <div class="container">
       <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row" style="padding-bottom:0px;">
 		<div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/1.jpg">
+        	<img class="img-fluid mb-4 rounded" alt="Gudeg | Yogyakarta Food Tour" src="/assets/foodtour/gudeg.jpg">
         </div>
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/2.jpg">
+        	<img class="img-fluid mb-4 rounded" alt="Alun - alun kidul | Yogyakarta Food Tour" src="/assets/foodtour/alkid.jpg">
         </div>
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/3.jpg">
+        	<img class="img-fluid mb-4 rounded" alt="Malioboro | Yogyakarta Food Tour" src="/assets/foodtour/malioboro.jpg">
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/4.jpg">
+        	<img class="img-fluid mb-4 rounded" alt="Customer | Yogyakarta Food Tour" src="/assets/foodtour/customer1.jpg">
         </div>
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/5.jpg">
+        	<img class="img-fluid mb-4 rounded" alt="Customer | Yogyakarta Food Tour" src="/assets/foodtour/customer2.jpg">
         </div>
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid mb-4 rounded" src="/assets/foodtour/6.jpg">
-        </div>  
+        	<img class="img-fluid mb-4 rounded" alt="Customer | Yogyakarta Food Tour" src="/assets/foodtour/customer3.jpg">
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" alt="Bakmie Jawa | Yogyakarta Food Tour" src="/assets/foodtour/bakmie-jawa.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" alt="Kopi Jos | Yogyakarta Food Tour" src="/assets/foodtour/coffee.jpg">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+        	<img class="img-fluid mb-4 rounded" alt="Nasi kucing | Yogyakarta Food Tour" src="/assets/foodtour/cat-rice.jpg">
+        </div>
+      </div></div>
       </div>
 </div>
 </section>
@@ -507,15 +523,15 @@ function BOOKING()
 	<h2 class="section-heading">Contact Person</h2>
 </div>
 <div class="form-group">
-	<label for="name">Full name :</label>
+	<label for="name"><strong>Full name :</strong></label>
 	<input type="text" id="name" name="name" class="form-control" placeholder="Full name">
 </div>
 <div class="form-group">
-	<label for="name">Email :</label>
+	<label for="name"><strong>Email :</strong></label>
 	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
 </div>
 <div class="form-group">
-	<label for="name">Phone :</label>
+	<label for="name"><strong>Phone :</strong></label>
 	<div class="form-row">
     <div class="col-4">
       <select class="form-control" id="country" name="country">
@@ -746,7 +762,7 @@ function BOOKING()
 	<h2 class="section-heading">Select Date and Travelers</h2>
 </div>
 <div class="form-group">   
-				 <label for="datetimepicker1">Date :</label>           
+				 <label for="datetimepicker1"><strong>Date :</strong></label>           
                 <div class='input-group' id='datetimepicker1'>
                     <input type="text" id="date" name="date" value="" class="form-control bg-white" readonly>
                     <div class="input-group-append input-group-addon text-muted">
@@ -785,7 +801,7 @@ function BOOKING()
 <!-- form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="BOOKING(); return false;" -->
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
-<tr><td><input type="hidden" name="on0" value="Number of travelers">Number of travelers :</td></tr><tr><td><select name="os0" class="form-control" id="os0">
+<tr><td><input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
 	<option value="1 person">1 person $37,00 USD</option>
 	<option value="2 persons">2 persons $74,00 USD</option>
 	<option value="3 persons">3 persons $111,00 USD</option>
@@ -832,8 +848,8 @@ function BOOKING()
          
         </div>
         <p class="m-0 text-center">
-        <span class="fa fa-envelope"></span> guide@vertikaltrip.com <br />
-        <span class="fa fa-phone"></span> +62 857 43 112 112 (Whatsapp only)<br />
+        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp-button.jpg"></a>
+        <br /><br />
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</p><br>
 <br>
       </div>
@@ -849,7 +865,7 @@ function BOOKING()
         
         <p class="m-0 text-center text-white">
        
-        &copy; {{$app_name}} Experiences
+        &copy; {{ date('Y') }} {{$app_name}} Experiences
       
         
         </p>
