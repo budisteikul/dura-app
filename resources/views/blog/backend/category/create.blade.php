@@ -58,8 +58,8 @@ function STORE()
 	<div class="card-header">Add category</div>
 	<div class="card-body">
 				
-<form onSubmit="STORE(); return false;">
-
+<form action="{{ route('blog_category.store') }}" method="post" onSubmit="STORE(); return false;">
+@csrf
 <div id="result"></div>
 
 <div class="form-group">
