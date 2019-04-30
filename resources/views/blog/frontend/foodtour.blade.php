@@ -1,5 +1,4 @@
-@inject('blog', 'App\Classes\Blog\BlogClass')
-@extends('layouts.timeline')
+@extends('layouts.index')
 @section('title', 'Yogyakarta Food Tour | '. $app_name)
 @section('content')
 @push('scripts')

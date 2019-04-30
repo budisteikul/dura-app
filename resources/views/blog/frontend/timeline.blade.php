@@ -1,5 +1,5 @@
 @inject('blog', 'App\Classes\Blog\BlogClass')
-@extends('layouts.timeline')
+@extends('layouts.index')
 @section('title', $setting->title)
 @section('content')
 @push('scripts')

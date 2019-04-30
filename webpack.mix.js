@@ -61,7 +61,7 @@ mix.styles([
 	'resources/assets/frontend/back-to-top/css/style.css',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/timeline/timeline.css',
-	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 	],'public/css/ratnawahyu.css');
 
 mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
