@@ -28,7 +28,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 });
 
 
-
+Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/', 'Blog\Frontend\TimelineController@index');
 
 Auth::routes(['verify' => true]);
