@@ -271,6 +271,14 @@ function openFancyBox(id,index,animated_id)
 				 $('.timeline').infinitescroll('resume');
 				 $("#loading").removeAttr("style")
 			 })
+		  $('.photoset-grid').imagesLoaded()
+  		  .fail( function( instance, image ) {
+				 photogrid();
+     			 $('.image-photo').removeAttr('height');
+				 $('.image-photo').removeAttr('width');
+				 $('.timeline').infinitescroll('resume');
+				 $("#loading").removeAttr("style")
+			 })
          }
        );
 	  
