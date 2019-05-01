@@ -20,6 +20,7 @@ Route::domain('www.vertikaltrip.com')->group(function () {
     });
 	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 	Route::post('/booking', 'Blog\Frontend\BlogController@booking');
+	Route::get('/nana', 'Blog\Frontend\TimelineController@index');
 });
 
 Route::domain('www.jogjafoodtour.com')->group(function () {
