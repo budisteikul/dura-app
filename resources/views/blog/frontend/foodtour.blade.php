@@ -131,7 +131,7 @@ function BOOKING()
             	<img class="img-circle" src="/assets/foodtour/logo.jpg">
 				@endif
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Activity and Food Tour</h1>
+				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Acitvities and Food Tour</h1>
 				<p class="text-faded">
 					Hi we are from the {{ $app_name }} team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
 				</p>
@@ -151,7 +151,7 @@ function BOOKING()
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
-            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Acitvities and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -207,7 +207,7 @@ function BOOKING()
         	<div class="row" style="padding-bottom:0px;">
           		<div class="col-lg-12 text-center">
             		<h3 class="section-heading" style="margin-top:50px;">Meeting Point</h3>
-                    <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+                    <h4 class="section-subheading text-muted">Yogyakarta Night Acitvities and Food Tour</h4>
             		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           		</div>
         	</div>
@@ -245,7 +245,7 @@ function BOOKING()
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading" style="margin-top:50px;">Gallery</h3>
-            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Acitvities and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -609,8 +609,8 @@ function BOOKING()
 </form>
 <div id="bookingexternal" class="form-group">
 	<h2 class="section-heading">Or booking via :</h2>
-    <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book Yogyakarta Night Activity and Food Tour via AirBNB" style="margin-bottom:10px;"></a>
-    <a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Activity_and_Food_Tour-Yogyakarta_Region_Java.html?" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book Yogyakarta Night Activity and Food Tour via TripAdvisor" style="margin-bottom:10px;"></a>
+    <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book Yogyakarta Night Acitvities and Food Tour via AirBNB" style="margin-bottom:10px;"></a>
+    <a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book Yogyakarta Night Acitvities and Food Tour via TripAdvisor" style="margin-bottom:10px;"></a>
     
 <!-- ############################################################################### -->
         <div style="height:100px;"></div>
@@ -628,7 +628,7 @@ function BOOKING()
         <div class="row">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading" style="margin-top:50px;">Need help? Feel free to contact us</h3>
-            <h4 class="section-subheading text-muted">Yogyakarta Night Activity and Food Tour</h4>
+            <h4 class="section-subheading text-muted">Yogyakarta Night Acitvities and Food Tour</h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
          
