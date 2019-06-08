@@ -7,6 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
+
 <script language="javascript">
 
 function BOOKING()
@@ -87,245 +88,10 @@ function BOOKING()
 @endpush
     
    <!-- ################################################################### -->
-   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">{{$app_name}}</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span> <span style="font-size:16px">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse stroke" id="navbarResponsive" >
-        <ul class="navbar-nav text-uppercase ml-auto">
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#about">About The Tour</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#meetingpoint">Meeting Point</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#booking">Book Now</a>
-          </li>
-          
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#contactus">Enquire</a>
-          </li>
-          
-          
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
-    	
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
-            	
-                <img class="img-circle" src="{{ $logo_name }}">
-               
-                <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
-				<p class="text-faded">
-					Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
-				</p>
-			</div>
-            <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
-       
-       </div>
-       </div>
-    </header>
    
 <!-- ################################################################### -->
- <!-- Post Content -->
-  <article id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
-            <h4 class="section-subheading text-muted">{{ $act_name }}</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-
-
-
-          <p>
-          
-          <br>
-
-          <div>
-          
-          <strong>Name :</strong> {{ $act_name }}<br />
-          <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
-          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
-		  <strong>Tour mode(s) :</strong> Walking and pedicab<br />
-		  <strong>Theme(s) :</strong> Night Walking and Food Tours<br />
-          <strong>Type :</strong> Open Trip<br />
-          <strong>Language :</strong> English<br />
-		  <strong>Price :</strong> 
-		  {!! $price !!}
-		  <br><br>
-		 
-         <div class="alert alert-secondary"><b>Attention</b><br>Yogyakarta is too crowded and too many  traffic jam in 7-12 June. But we will try our best for you.<br><br>Booking for today? No problem!
-         <br>
-         Because we start the tour every day at 6.30 pm.
-         <br>
-		 And our meeting point is Tugu Yogyakarta Monument ( open google maps and search 'Vertikal Trip' )
-         </div>
-          
-          </div>
-          
-          
-          <h2 class="section-heading">Yogyakarta Night Walking and Food Tours Through Historical Route</h2>
-          Yogyakarta’s Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games at Southern City Square (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
-
-          <center>
-          <br>
-          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
-          <span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
-          <br>
-          </center>
-          
-		<p>
-          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
-		  
-<p>
-          <h2 class="section-heading">Inclusions</h2>
-			- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
-			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
-			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
- 			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
-			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
-			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
-          </p>
-          
-           <p>
-          	<h2 class="section-heading">What else you should know</h2>
-          	- Please be hungry, because a lot of food in this tour.<br />
-			- Wear comfortable and relax clothing.<br />
-			- And don't forget to bring your camera to take some nice pictures.<br />
-          </p>
-		</div>
-      </div>
-    </div>
-</article> 
-
-
-
-<section id="meetingpoint" style="background-color:#f7f8f9">
-<div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        	<div class="row" style="padding-bottom:0px;">
-          		<div class="col-lg-12 text-center">
-            		<h3 class="section-heading" style="margin-top:50px;">Meeting Point</h3>
-                    <h4 class="section-subheading text-muted">{{ $act_name }}</h4>
-            		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          		</div>
-        	</div>
-  
-  
-  
-      
-   
-<!--Google map-->
-<p>
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0" allowfullscreen></iframe>
-</div>
-<br />
-<b>Duration :</b> 3 Hours start at 6.30 PM<br />
-<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
-</p>
-<!--Google Maps-->
-      
-      
-      
-      
-      
-      </div>
-      </div>
- </div>
- </section>
- 
-   
-<section id="gallery" style="background-color:#ffffff">
-<div class="container">
-      <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Gallery</h3>
-            <h4 class="section-subheading text-muted">{{ $act_name }}</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
-      </div>
-</div>
-<div class="container">
-      <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row text-center" style="padding-bottom:0px;">
-        
-		<div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
-            <br />
-            <span class="caption text-muted">Becak (Traditional public transport)</span>
-            <div class="mb-4"></div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
-            <br />
-            <span class="caption text-muted">Paddle car at Southern city square</span>
-            <div class="mb-4"></div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
-        	<br />
-            <span class="caption text-muted">Masangin. Traditional games</span>
-            <div class="mb-4"></div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer2.jpg">
-        	<br />
-            <span class="caption text-muted">Herbal drink. Healthy ways in traditional way</span>
-            <div class="mb-4"></div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer3.jpg">
-        	<br />
-            <span class="caption text-muted">Gudeg Jogja</span>
-            <div class="mb-4"></div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/small-groups.jpg">
-            <br />
-            <span class="caption text-muted">Traditional street snacks.</span>
-            <div class="mb-4"></div>
-        </div>
-        
-      </div></div>
-      </div>
-</div>
-</section>
+    
+<!-- ################################################################### -->
 
 <section id="booking" style="background-color:#f7f8f9">
 <div class="container">
@@ -333,8 +99,8 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Booking This Tour</h3>
-            <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
+            <h3 class="section-heading" style="margin-top:50px;">Booking Form</h3>
+            <h4 class="section-subheading text-muted"><img src="/assets/foodtour/checkout.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -343,9 +109,7 @@ function BOOKING()
 
 
 
-<div class="form-group">
-	<h2 class="section-heading">Contact Person</h2>
-</div>
+
 <div class="form-group">
 	<label for="name"><strong>Full name :</strong></label>
 	<input type="text" id="name" name="name" class="form-control" placeholder="Full name">
@@ -582,9 +346,7 @@ function BOOKING()
     </div>
   	</div>
 </div>
-<div class="form-group">
-	<h2 class="section-heading">Select Date and Travelers</h2>
-</div>
+
 <div class="form-group">   
 				 <label for="datetimepicker1"><strong>Date :</strong></label>           
                 <div class='input-group' id='datetimepicker1'>
@@ -628,9 +390,7 @@ function BOOKING()
 <table>
 <tr><td>
 
-{!! $price !!}
 
-<br>
 
 <input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
 	{!! $option_button !!}
@@ -647,15 +407,13 @@ function BOOKING()
 <!-- input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 <br />
-<small class="form-text text-muted">After payment received, we will contact you immediately</small>
+
 </form>
 <div id="bookingexternal" class="form-group">
-	<h2 class="section-heading">Or booking via :</h2>
-    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
-    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:10px;"></a>
+	
     
 <!-- ############################################################################### -->
-        <div style="height:100px;"></div>
+        <div style="height:60px;"></div>
         
         </div>
       </div>
@@ -663,110 +421,8 @@ function BOOKING()
 </section>
 
 
-<section id="contactus" style="background-color:#ffffff">
-<div class="container">
-      <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Make Your Enquiry</h3>
-            <h4 class="section-subheading text-muted">Feel free to contact us</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-         
-        </div>
-        <p class="m-0 text-center">
-        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.jpg"></a>
-        <br /><br />
-        
-        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-        <span class="fa fa-phone"></span> +62 857-4311-2112 | USA +1 505-585-2112<br />
-        <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
-        </p>
-<br><br>
-      </div>
-</div>
-
-</section>
-
-<footer class="py-5 bg-dark">
-<div class="container">
-      <div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-        
-        
-        <p class="m-0 text-center text-white">
-       
-        &copy; {{ date('Y') }} {{$app_name}} Experiences <br /> {{ $act_name }}
-      	
-        <br><br>
-        <img src="/assets/foodtour/payment.png">
-        </p>
-        </div>
-       </div>
-</div>
-
-   
-    <!-- /.container -->
-  </footer>
-
-<script>
 
 
-(function($) {
-        
-		
-	
-  "use strict"; // Start of use strict
-
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 54)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
-
- 
- // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 75
-  });
- 
- // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
-  };
-  
-  // Collapse now if page is not at top
-  navbarCollapse();
-  
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
-  
-  
-  
-  
-  
-})(jQuery);
-
-</script>
 
 
 @endsection

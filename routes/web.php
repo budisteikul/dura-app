@@ -16,21 +16,30 @@
 
 Route::domain('www.vertikaltrip.com')->group(function () {
     Route::get('/', function () {
-        return redirect('/yogyakarta-food-tour');
+        return redirect('/jogja-food-tour');
     });
-	Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
-	Route::post('/booking', 'Blog\Frontend\BlogController@booking');
-	Route::get('/nana', 'Blog\Frontend\TimelineController@index');
 });
 
-Route::domain('www.jogjafoodtour.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@foodtour');
-	Route::post('/booking', 'Blog\Frontend\BlogController@booking');
-});
-
-
+Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
-Route::get('/', 'Blog\Frontend\TimelineController@index');
+Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
+
+Route::get('/cancel', function () {
+        return redirect('/');
+    });
+Route::get('/success', 'Blog\Frontend\BlogController@success');
+Route::get('/order', 'Blog\Frontend\BlogController@book');
+Route::post('/order', 'Blog\Frontend\BlogController@order');
+Route::post('/ipn', 'Blog\Frontend\BlogController@ipn');
+Route::get('/airbnb', function () {
+        return redirect('https://www.airbnb.com/experiences/434368');
+});
+Route::get('/tripadvisor', function () {
+		return redirect('https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Region_Java.html');
+});
+	
+
+//Route::get('/', 'Blog\Frontend\TimelineController@index');
 
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);

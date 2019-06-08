@@ -225,8 +225,11 @@
               <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-cell">
-                    <p class="sub center">Canvas Labs, Inc. <br />
-                    325 9th St, San Francisco, CA 94103 </p>
+                    <p class="sub center">Vertikal Trip <br />
+                    Tugu Yogyakarta Monument<br />
+                    Gowongan, Jetis, Yogyakarta 55233<br />
+                    Indonesia
+                    </p>
                   </td>
                 </tr>
               </table>

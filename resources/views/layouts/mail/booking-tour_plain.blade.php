@@ -9,7 +9,9 @@ Date : {{$date}}
 Number of travelers : {{$os0}}
 
 Thanks,
-Canvas Labs, Inc. and the Canvas Team
+Vertikal Trip Team
 
-Canvas Labs, Inc.
-325 9th St, San Francisco, CA 94103
+Vertikal Trip
+Tugu Yogyakarta Monument
+Gowongan, Jetis, Yogyakarta 55233
+Indonesia
