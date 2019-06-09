@@ -27,10 +27,11 @@ Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/cancel', function () {
         return redirect('/');
     });
+	
 Route::get('/success', 'Blog\Frontend\BlogController@success');
 Route::get('/order', 'Blog\Frontend\BlogController@book');
-Route::post('/order', 'Blog\Frontend\BlogController@order');
-Route::post('/ipn', 'Blog\Frontend\BlogController@ipn');
+
+
 Route::get('/airbnb', function () {
         return redirect('https://www.airbnb.com/experiences/434368');
 });
@@ -44,13 +45,19 @@ Route::get('/tripadvisor', function () {
 	
 
 //Route::get('/', 'Blog\Frontend\TimelineController@index');
-
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
+
+
+Route::post('/order', 'Rev\OrderController@order');
+Route::resource('/rev/order','Rev\OrderController',[ 'names' => 'rev_order' ])
+	->middleware(['auth', 'verified']);
 
 //========================================================================
 // Blog App Route
 //========================================================================
+
+	
 Route::resource('/blog/photo','Blog\Backend\PhotoController',[ 'names' => 'blog_photo' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/blog/category','Blog\Backend\CategoryController',[ 'names' => 'blog_category' ])

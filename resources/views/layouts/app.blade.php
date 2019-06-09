@@ -53,6 +53,9 @@
                                 </li>
                             @endif
                         @else
+                        	<li class="nav-item">
+                                <a class="nav-link" href="/rev/order"><i class="fa fa-list"></i> {{ __('Orders') }}</a>
+                            </li>
                         	@if(env("APP_ENV")=="local")
                             <li class="nav-item">
                                 <a class="nav-link" href="/blog/category"><i class="fa fa-list"></i> {{ __('Categories') }}</a>

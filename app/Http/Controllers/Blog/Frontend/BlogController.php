@@ -131,13 +131,7 @@ class BlogController extends Controller
     }
 	
 	
-	public function ipn(Request $request)
-    {
-		$uuid =  $request->input('custom');
-		DB::table('orders')->where('id',$uuid)->update([
-			'status' => '2'
-			]);
-	}
+	
 	
 	public function order(Request $request)
     {
@@ -153,19 +147,20 @@ class BlogController extends Controller
 		$domain = preg_replace('#^https?://#', '', Http::root());
 		$phone = "+". $country ." ". $phone;
 		
+		$from = explode(" ",$os0);
 		
-		DB::table('orders')->insert([
+		DB::table('rev_orders')->insert([
 			'id' => $uuid,
 			'product' => $product,
 			'name' => $name,
 			'email' => $email,
 			'phone' => $phone,
-			'amount' => $os0,
+			'traveller' => $from[0],
 			'date' => $date,
-			'referer' => $domain
+			'from' => $domain
 			]);
 		
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date,$os0));
+		//Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date,$os0));
 		
     }
 
