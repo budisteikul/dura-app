@@ -59,7 +59,7 @@ class OrderController extends Controller
         $user = Auth::user();
 		if($request->ajax())
 		{
-			$orders = rev_orders::where('id','<>','');
+			$orders = rev_orders::query();
 			return Datatables::eloquent($orders)
 				->addIndexColumn()
 				->addColumn('action', function ($order) {
