@@ -9,8 +9,6 @@ use App\Mail\Blog\Frontend\BookingTour;
 use Illuminate\Support\Facades\Request as Http;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Uuid as Generator;
-use DB;
-
 
 class BlogController extends Controller
 {
@@ -133,36 +131,7 @@ class BlogController extends Controller
 	
 	
 	
-	public function order(Request $request)
-    {
-        $name =  $request->input('name');
-		$email =  $request->input('email');
-		$os0 =  $request->input('os0');
-		$country =  $request->input('country');
-		$phone =  $request->input('phone');
-		$date =  $request->input('date');
-		$uuid =  $request->input('uuid');
-		$product =  $request->input('product');
-		
-		$domain = preg_replace('#^https?://#', '', Http::root());
-		$phone = "+". $country ." ". $phone;
-		
-		$from = explode(" ",$os0);
-		
-		DB::table('rev_orders')->insert([
-			'id' => $uuid,
-			'product' => $product,
-			'name' => $name,
-			'email' => $email,
-			'phone' => $phone,
-			'traveller' => $from[0],
-			'date' => $date,
-			'from' => $domain
-			]);
-		
-		//Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date,$os0));
-		
-    }
+	
 
     /**
      * Show the form for creating a new resource.
