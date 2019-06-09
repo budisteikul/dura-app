@@ -11,6 +11,7 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Uuid as Generator;
 use DB;
 
+
 class BlogController extends Controller
 {
     /**
@@ -27,7 +28,11 @@ class BlogController extends Controller
 	{
 		$app_name = "Vertikal Trip";
 		$act_name = "Yogyakarta Night Walking and Food Tours";
-		$logo_name = "/assets/foodtour/logo.jpg";
+		$logo_name = "/assets/foodtour/logo-full.png";
+		
+		$disabledDates = array('2019-06-09','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
+		
+		if((int)date('YmdHis')>=(int)date('Ymd183000')) array_push($disabledDates,date('Y-m-d'));
 		
 		$option_button = '
 	<option value="1 person">1 person $37,00 USD</option>
@@ -51,7 +56,8 @@ class BlogController extends Controller
 		->with('logo_name',$logo_name)
 		->with('option_button',$option_button)
 		->with('hosted_button_id',$hosted_button_id)
-		->with('google_analytics',$google_analytics);
+		->with('google_analytics',$google_analytics)
+		->with('disabledDates',$disabledDates);
 	}
 	
 	public function success()
@@ -77,9 +83,15 @@ class BlogController extends Controller
 		
 		$app_name = "Vertikal Trip";
 		$act_name = "Yogyakarta Night Walking and Food Tours";
-		$logo_name = "/assets/foodtour/logo.jpg";
+		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$price = '<div class="style-4">
+		$disabledDates = array('2019-06-09','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
+		
+		if((int)date('YmdHis')>=(int)date('Ymd183000')) array_push($disabledDates,date('Y-m-d'));
+		
+		$price = '
+<span class="badge badge-danger">Special Offer</span>
+<div class="style-4">
   <del>
     <span class="amount">48 USD</span>
   </del>
@@ -88,7 +100,7 @@ class BlogController extends Controller
   </ins>
   / person
 </div>
-<small class="form-text text-danger"><b>Try it first, get 23% off for a limited time</b></small>';
+<small class="form-text text-danger"><b>Book by August 4 to save 23% off our previously offered price!</b></small>';
 		
 		$option_button = '
 	<option value="1 person">1 person $&#x336;4&#x336;8&#x336;,0&#x336;0&#x336; $37,00 USD</option>
@@ -114,7 +126,8 @@ class BlogController extends Controller
 		->with('option_button',$option_button)
 		->with('hosted_button_id',$hosted_button_id)
 		->with('price',$price)
-		->with('google_analytics',$google_analytics);
+		->with('google_analytics',$google_analytics)
+		->with('disabledDates',$disabledDates);
     }
 	
 	

@@ -360,7 +360,6 @@ function BOOKING()
  		<script type="text/javascript">
             <?php
 			$defaultTimes = '18:30:00';
-			$disabledDates = array('2019-06-04','2019-06-05','2019-06-06','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 			$defaultDates = date('Y-m-d');
 			
 			while(in_array($defaultDates, $disabledDates))

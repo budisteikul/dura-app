@@ -114,7 +114,7 @@ function BOOKING()
           </li>
           
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#contactus">Enquire</a>
+          	<a class="nav-link js-scroll-trigger" href="#contactus">Enquiry</a>
           </li>
           
           
@@ -136,7 +136,12 @@ function BOOKING()
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
-					Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
+					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
+                    Booking for today? No problem!
+         			<br>
+         			Because we start the tour daily at 6.30 pm.
+         			<br>
+		 			And our meeting point is Tugu Yogyakarta Monument.
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -174,15 +179,11 @@ function BOOKING()
 		  <strong>Theme(s) :</strong> Night Walking and Food Tours<br />
           <strong>Type :</strong> Open Trip<br />
           <strong>Language :</strong> English<br />
-		  <strong>Price :</strong> 
+		  <strong>Price :</strong><br />
 		  {!! $price !!}
 		  <br><br>
 		 
-         <div class="alert alert-secondary"><b>Attention</b><br>Yogyakarta is too crowded and too many  traffic jam in 7-12 June. But we will try our best for you.<br><br>Booking for today? No problem!
-         <br>
-         Because we start the tour every day at 6.30 pm.
-         <br>
-		 And our meeting point is Tugu Yogyakarta Monument ( open google maps and search 'Vertikal Trip' )
+         <div class="alert alert-secondary"><b>Attention</b><br>Yogyakarta is too crowded and too many  traffic jam in 7-12 June. But we will try our best for you.
          </div>
           
           </div>
@@ -598,7 +599,6 @@ function BOOKING()
  		<script type="text/javascript">
             <?php
 			$defaultTimes = '18:30:00';
-			$disabledDates = array('2019-06-04','2019-06-05','2019-06-06','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 			$defaultDates = date('Y-m-d');
 			
 			while(in_array($defaultDates, $disabledDates))

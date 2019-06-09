@@ -34,6 +34,10 @@ Route::post('/ipn', 'Blog\Frontend\BlogController@ipn');
 Route::get('/airbnb', function () {
         return redirect('https://www.airbnb.com/experiences/434368');
 });
+Route::get('/volcano', function () {
+        return redirect('https://m.viator.com/tours/Yogyakarta/Culture-and-Nature-Journey-at-The-Slope-of-Merapi-Mountain/d22560-110844P3');
+});
+
 Route::get('/tripadvisor', function () {
 		return redirect('https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Region_Java.html');
 });
