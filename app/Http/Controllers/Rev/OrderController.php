@@ -91,7 +91,6 @@ class OrderController extends Controller
     {
         $validator = Validator::make($request->all(), [
           	'name' => ['required', 'string', 'max:255'],
-			'email' => ['required', 'string', 'max:255'],
 			'phone' => ['required', 'string', 'max:255'],
        	]);
         
@@ -159,7 +158,6 @@ class OrderController extends Controller
     {
 		$validator = Validator::make($request->all(), [
           	'name' => ['required', 'string', 'max:255'],
-			'email' => ['required', 'string', 'max:255'],
 			'phone' => ['required', 'string', 'max:255'],
        	]);
         
