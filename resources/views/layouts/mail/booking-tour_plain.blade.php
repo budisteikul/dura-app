@@ -1,4 +1,5 @@
-
+Hi {{$name}},
+Thank you for booking our tour. {{ $tour }} will start at {{ $date }}. Our meeting point is Tugu Yogyakarta Monument
 
 Product : {{$tour}}
 Name : {{$name}}

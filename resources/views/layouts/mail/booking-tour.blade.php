@@ -195,6 +195,9 @@
                 <tr>
                   <td class="content-cell">
                     
+                    <h1>Hi {{$name}},</h1>
+                    <p>Thank you for booking our tour. {{ $tour }} will start at {{ $date }}. Our meeting point is Tugu Yogyakarta Monument</p>
+                    <!-- Action -->
                     
                     <!-- Sub copy -->
                     

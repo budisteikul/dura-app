@@ -38,6 +38,7 @@ class OrderController extends Controller
 		
 		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
 		
+		DB::table('rev_orders')->where('id',$uuid)->delete();
 		DB::table('rev_orders')->insert([
 			'id' => $uuid,
 			'product' => $product,
@@ -78,7 +79,7 @@ class OrderController extends Controller
 					}
 					else
 					{
-						return $date;
+						return '<span class="badge badge-success">'. $date .'</span>';
 					}
 				})
 				->addColumn('email_phone', function ($order) {
