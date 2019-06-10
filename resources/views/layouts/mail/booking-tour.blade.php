@@ -194,23 +194,21 @@
                 <!-- Body content -->
                 <tr>
                   <td class="content-cell">
-                    <h1>New booking from {{$name}},</h1>
-                    <table class="body-action" width="100%" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td><strong>{{$tour}}</strong></td>
-                      </tr>
-                    </table>
-
+                    
+                    
                     <!-- Sub copy -->
                     
                     <table class="body-sub" width="100%">
                       <tr>
                         <td>
-                          <p><strong>Name : </strong>{{$name}}<br />
+                          <p>
+                          <strong>Product : </strong>{{$tour}}<br />
+                          <strong>Name : </strong>{{$name}}<br />
                             <strong>Email :</strong> {{$email}}<br />
                             <strong>Phone :</strong> {{$phone}}<br />
                             <strong>Date :</strong> {{$date}}<br />
-                          <strong>Number of travelers :</strong> {{$os0}} </p>
+                          <strong>Number of travelers :</strong> {{$os0}} 
+                          </p>
                           
                         </td>
                       </tr>

@@ -19,14 +19,13 @@
 						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
-				"order": [[ 0, "desc" ]],
+				"order": [[ 6, "desc" ]],
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
 					{data: 'product', name: 'product', className: 'auto'},
 					{data: 'name', name: 'name', className: 'auto'},
-					{data: 'email', name: 'email', className: 'auto'},
-					{data: 'phone', name: 'phone', className: 'auto'},
+					{data: 'email_phone', name: 'email_phone', className: 'auto'},
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
 					{data: 'from', name: 'from', className: 'auto'},
@@ -124,18 +123,18 @@
       
       	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add order</button>
         <hr>
+        
 		<table class="table table-hover table-striped" id="dataTables-example" style="width:100%">
 			<thead>
 				<tr>
                 	<th></th>
                 	<th style="width:20px">No</th>
 					<th>Product</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Traveller</th>
+                    <th>Lead Traveller</th>
+                    <th>Email/Phone</th>
+                    <th>Number Traveller</th>
                     <th>Date</th>
-                    <th>From</th>
+                    <th>Source</th>
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
@@ -144,7 +143,6 @@
             <tfoot style="visibility:hidden">
             	<tr>
      				<td></td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

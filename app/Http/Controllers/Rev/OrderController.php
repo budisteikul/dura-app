@@ -13,6 +13,7 @@ use App\Mail\Rev\BookingTour;
 use Illuminate\Support\Facades\Request as Http;
 use DB;
 use Mail;
+use Carbon\Carbon; 
 
 class OrderController extends Controller
 {
@@ -33,6 +34,9 @@ class OrderController extends Controller
 		$phone = "+". $country ." ". $phone;
 		
 		$from = explode(" ",$os0);
+		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
+		
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
 		
 		DB::table('rev_orders')->insert([
 			'id' => $uuid,
@@ -44,8 +48,6 @@ class OrderController extends Controller
 			'date' => $date,
 			'from' => $domain
 			]);
-		
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date,$os0));
 		
     }
 	
@@ -62,10 +64,30 @@ class OrderController extends Controller
 			$orders = rev_orders::query();
 			return Datatables::eloquent($orders)
 				->addIndexColumn()
+				->editColumn('date', function ($order) {
+					$dateint = str_ireplace("-","",$order->date);
+					$dateint = str_ireplace(":","",$dateint);
+					$dateint = str_ireplace(" ","",$dateint);
+					
+					$st1 = date('YmdHis');
+					$st2 = $dateint;
+					$date = Carbon::parse($order->date)->formatLocalized('%d %b %Y %I:%M %p');
+					if($st2 >= $st1)
+					{
+						return '<span class="badge badge-danger">'. $date .'</span>';
+					}
+					else
+					{
+						return $date;
+					}
+				})
+				->addColumn('email_phone', function ($order) {
+					return $order->phone.'<br>'. $order->email;
+				})
 				->addColumn('action', function ($order) {
 					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$order->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $order->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
 				})
-				->rawColumns(['action'])
+				->rawColumns(['action','email_phone','date'])
 				->toJson();
 		}
         return view('rev.order.index');

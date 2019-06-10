@@ -28,9 +28,11 @@ class BlogController extends Controller
 		$act_name = "Yogyakarta Night Walking and Food Tours";
 		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$disabledDates = array('2019-06-09','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
+		$disabledDates = array('2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 		
-		if((int)date('YmdHis')>=(int)date('Ymd183000')) array_push($disabledDates,date('Y-m-d'));
+		$str1 = date('YmdHis');
+		$str2 = date('Ymd173000');
+		if($str1>=$str2) array_push($disabledDates,date('Y-m-d'));
 		
 		$option_button = '
 	<option value="1 person">1 person $37,00 USD</option>
@@ -85,7 +87,9 @@ class BlogController extends Controller
 		
 		$disabledDates = array('2019-06-09','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 		
-		if((int)date('YmdHis')>=(int)date('Ymd183000')) array_push($disabledDates,date('Y-m-d'));
+		$str1 = date('YmdHis');
+		$str2 = date('Ymd173000');
+		if($str1>=$str2) array_push($disabledDates,date('Y-m-d'));
 		
 		$price = '
 <span class="badge badge-danger">Special Offer</span>

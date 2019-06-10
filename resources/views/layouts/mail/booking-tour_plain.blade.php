@@ -1,7 +1,6 @@
-New booking from {{$name}},
 
-{{$tour}}
 
+Product : {{$tour}}
 Name : {{$name}}
 Email : {{$email}}
 Phone : {{$phone}}
