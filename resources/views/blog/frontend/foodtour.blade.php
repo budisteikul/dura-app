@@ -650,6 +650,10 @@ function BOOKING()
 <small class="form-text text-muted">After payment received, we will contact you immediately</small>
 </form>
 <div id="bookingexternal" class="form-group">
+
+
+
+
 	<h2 class="section-heading">Or booking via :</h2>
     <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
     <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:10px;"></a>
