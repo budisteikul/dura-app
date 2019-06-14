@@ -90,7 +90,7 @@ function BOOKING()
    <!-- Navigation -->
   <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">{{$app_name}}</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Yogyakarta Food Tour</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span> <span style="font-size:16px">Menu</span>
       </button>
@@ -114,7 +114,7 @@ function BOOKING()
           </li>
           
           <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#contactus">Enquiry</a>
+          	<a class="nav-link js-scroll-trigger" href="#contactus">Reservation</a>
           </li>
           
           
@@ -181,10 +181,9 @@ function BOOKING()
           <strong>Language :</strong> English<br />
 		  <strong>Price :</strong><br />
 		  {!! $price !!}
-		  <br><br>
+		  
 		 
-         <div class="alert alert-secondary"><b>Attention</b><br>Yogyakarta is too crowded and too many  traffic jam in 7-12 June. But we will try our best for you.
-         </div>
+         
           
           </div>
           
@@ -320,6 +319,7 @@ function BOOKING()
         	<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/small-groups.jpg">
             <br />
             <span class="caption text-muted">Traditional street snacks.</span>
+
             <div class="mb-4"></div>
         </div>
         
@@ -654,12 +654,14 @@ function BOOKING()
 
 
 
-	<h2 class="section-heading">Or booking via :</h2>
+	<h2 class="section-heading">Available at AirBNB and TripAdvisor</h2>
+    <!--a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-foodtour.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
+    
+    <br / -->
     <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
     <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:10px;"></a>
-    
 <!-- ############################################################################### -->
-        <div style="height:100px;"></div>
+        <div style="height:50px;"></div>
         
         </div>
       </div>
@@ -684,7 +686,7 @@ function BOOKING()
         <br /><br />
         
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-        <span class="fa fa-phone"></span> +62 857-4311-2112 | USA +1 505-585-2112<br />
+        <span class="fa fa-phone"></span> +62 857-4311-2112 <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
         <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
         </p>
 <br><br>
