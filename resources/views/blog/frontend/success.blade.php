@@ -221,7 +221,7 @@ function BOOKING()
         <br /><br />
         
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-        <!-- span class="fa fa-phone"></span> +62 857-4311-2112<br / -->
+        <span class="fa fa-phone"></span> +62 857-4311-2112 <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
         <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
         </p>
 <br><br>
