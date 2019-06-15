@@ -215,7 +215,8 @@ function BOOKING()
          
         </div>
         <p class="m-0 text-center">
-        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.jpg"></a>
+        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.png"></a>
+        <a href="https://t.me/vertikaltrip"><img src="/assets/foodtour/telegram.png"></a>
         <br /><br />
         
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
