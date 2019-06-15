@@ -100,7 +100,7 @@ function BOOKING()
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading" style="margin-top:50px;">Booking Form</h3>
-            <h4 class="section-subheading text-muted"><img src="/assets/foodtour/checkout.jpg"></h4>
+            <h4 class="section-subheading text-muted">Secure payment by <img src="/assets/foodtour/logo-paypal.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>

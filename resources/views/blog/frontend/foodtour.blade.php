@@ -137,7 +137,7 @@ function BOOKING()
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
 					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
-                    Booking for today? No problem!
+                    BOOK FOR TODAY? IT'S OK!
          			<br>
          			Because we start the tour daily at 6.30 pm.
          			<br>
@@ -334,8 +334,8 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Booking This Tour</h3>
-            <h4 class="section-subheading text-muted">using <img src="/assets/foodtour/logo-paypal.jpg"></h4>
+            <h3 class="section-heading" style="margin-top:50px;">Book This Tour</h3>
+            <h4 class="section-subheading text-muted">Secure payment by <img src="/assets/foodtour/logo-paypal.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -345,7 +345,7 @@ function BOOKING()
 
 
 <div class="form-group">
-	<h2 class="section-heading">Contact Person</h2>
+	<h2 class="section-heading">Lead Traveller Contact</h2>
 </div>
 <div class="form-group">
 	<label for="name"><strong>Full name :</strong></label>
@@ -654,7 +654,7 @@ function BOOKING()
 
 
 
-	<h2 class="section-heading">Available at AirBNB and TripAdvisor</h2>
+	<h2 class="section-heading">Also Available at</h2>
     <!--a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-foodtour.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
     
     <br / -->
