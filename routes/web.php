@@ -14,11 +14,7 @@
 
 
 
-Route::domain('www.vertikaltrip.com')->group(function () {
-    Route::get('/', function () {
-        return redirect('/jogja-food-tour');
-    });
-});
+
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/order', 'Blog\Frontend\BlogController@book');
