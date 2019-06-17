@@ -28,7 +28,7 @@ class BlogController extends Controller
 		$act_name = "Yogyakarta Night Walking and Food Tours";
 		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$disabledDates = array('2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
+		$disabledDates = array('2019-06-16','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 		
 		$str1 = date('YmdHis');
 		$str2 = date('Ymd173000');
@@ -85,7 +85,7 @@ class BlogController extends Controller
 		$act_name = "Yogyakarta Night Walking and Food Tours";
 		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$disabledDates = array('2019-06-09','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
+		$disabledDates = array('2019-06-16','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
 		
 		$str1 = date('YmdHis');
 		$str2 = date('Ymd173000');
