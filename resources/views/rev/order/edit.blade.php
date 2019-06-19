@@ -21,6 +21,7 @@ function UPDATE()
 			"phone": $('#phone').val(),
 			"from": $('#from').val(),
 			"date": $('#date').val(),
+			"status": $('#status').val(),
         	"traveller": $('#traveller').val()
         },
 		type: 'PUT',
@@ -134,9 +135,17 @@ function UPDATE()
       <option value="www.jogjafoodtour.com" {{ ($order->from=='www.jogjafoodtour.com') ? 'selected' : '' }}>www.jogjafoodtour.com</option>
       <option value="www.airbnb.com" {{ ($order->from=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
       <option value="www.tripadvisor.com" {{ ($order->from=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
+      <option value="www.telegram.com" {{ ($order->from=='www.telegram.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
 	</select>
 </div>
-       
+<div class="form-group">
+	<label for="name">Status :</label>
+    <select class="form-control" id="status">
+    
+      <option value="1" {{ ($order->status=='1') ? 'selected' : '' }}>Pending</option>
+      <option value="2" {{ ($order->status=='2') ? 'selected' : '' }}>Confirmed</option>
+	</select>
+</div>       
      
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

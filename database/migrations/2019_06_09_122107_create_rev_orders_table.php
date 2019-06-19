@@ -23,6 +23,8 @@ class CreateRevOrdersTable extends Migration
 			$table->integer('traveller')->default(1);
 			$table->dateTime('date')->nullable();
 			$table->string('from')->nullable();
+			$table->string('telegram_chat_id')->nullable();
+			$table->string('telegram_user_id')->nullable();
 			$table->tinyInteger('status')->default(1);
 			
 			$table->timestamps();

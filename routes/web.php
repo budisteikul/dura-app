@@ -13,16 +13,25 @@
 
 
 
-
+Route::post('/bot/telegram', 'Rev\Bot@telegram');
+Route::post('/bot/order', 'Rev\Bot@order');
+Route::get('/bot/order', 'Rev\Bot@index');
+Route::get('/bot/success', 'Rev\Bot@success');
 
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/order', 'Blog\Frontend\BlogController@book');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
+
+Route::get('/tourhq', function () {
+        return redirect('https://www.tourhq.com/id60620/tours/3Hours-private--tour-itinerary-yogyakarta/yogyakarta-night-walking-and-food-tours');
+});
+
 Route::get('/airbnb', function () {
         return redirect('https://www.airbnb.com/experiences/434368');
 });
+
 Route::get('/volcano', function () {
         return redirect('https://m.viator.com/tours/Yogyakarta/Culture-and-Nature-Journey-at-The-Slope-of-Merapi-Mountain/d22560-110844P3');
 });

@@ -30,6 +30,7 @@ class OrderController extends Controller
 		$uuid =  $request->input('uuid');
 		$product =  $request->input('product');
 		
+		
 		$domain = preg_replace('#^https?://#', '', Http::root());
 		$phone = "+". $country ." ". $phone;
 		
@@ -196,6 +197,7 @@ class OrderController extends Controller
 		$date = $request->input('date');
 		$from = $request->input('from');
 		$traveller = $request->input('traveller');
+		$status = $request->input('status');
 		
 		$rev_orders = rev_orders::findOrFail($id);
 		$rev_orders->product = $product;
@@ -205,6 +207,7 @@ class OrderController extends Controller
 		$rev_orders->date = $date;
 		$rev_orders->from = $from;
 		$rev_orders->traveller = $traveller;
+		$rev_orders->status = $status;
 		$rev_orders->save();
 		
 		return response()->json([
