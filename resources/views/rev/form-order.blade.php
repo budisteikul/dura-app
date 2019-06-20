@@ -78,7 +78,7 @@ function BOOKING()
 				'uuid': '<?= \Ramsey\Uuid\Uuid::uuid4()->toString();?>',
 				'product': '{{ $act_name }}',
 				'from': 'www.telegram.com',
-				'telegram_chat_id': '{{ $telegram_chat_id }}',
+				'<?= md5('telegram_chat_id') ?>': '{{ $telegram_chat_id }}',
         	},
 			type: 'POST',
 			url: '/bot/order'

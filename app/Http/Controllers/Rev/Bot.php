@@ -40,7 +40,7 @@ class Bot extends Controller
 		
 		
 		$telegram_chat_id = NULL;
-		if(isset($_GET['telegram_chat_id'])) $telegram_chat_id = $_GET['telegram_chat_id'];
+		if(isset($_GET[md5('telegram_chat_id')])) $telegram_chat_id = $_GET[md5('telegram_chat_id')];
 		
 		if($telegram_chat_id=="") return redirect('https://t.me/VertikalTrip_Bot');
 		$orders = rev_orders::where('telegram_chat_id',$telegram_chat_id)->get();
@@ -90,12 +90,14 @@ class Bot extends Controller
 		$date =  $request->input('date');
 		$uuid =  $request->input('uuid');
 		$product =  $request->input('product');
-		$telegram_chat_id =  $request->input('telegram_chat_id');
+		$telegram_chat_id =  base64_decode($request->input(md5('telegram_chat_id')));
 		$from =  $request->input('from');
 		
 		$phone = "+". $country ." ". $phone;
 		$traveller = explode(" ",$os0);
 		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
+		
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
 		
 		DB::table('rev_orders')->where('id',$uuid)->delete();
 		DB::table('rev_orders')->insert([
@@ -148,20 +150,26 @@ class Bot extends Controller
 				switch($action[0])
 				{
 					case 'delOrder':
-					$sendto = 'https://api.telegram.org/bot'. env("TELEGRAM_BOT_TOKEN") .'/answerCallbackQuery?callback_query_id='.$callback_query_id;
-					file_get_contents($sendto);
+						$sendto = 'https://api.telegram.org/bot'. env("TELEGRAM_BOT_TOKEN") .'/answerCallbackQuery?callback_query_id='.$callback_query_id;
+						file_get_contents($sendto);
 					
-					/*
+						/*
 						Telegram::answerCallbackQuery([
 							'callback_query_id' => $callback_query_id,
 							'text' => 'Success'
 						]);
-					*/
+						*/
+						
 						Telegram::sendMessage([
 							'chat_id' => $chat_id, 
 							'text' => 'Okay I will remove that order.'
 						]);
+						
+						$sendto = 'https://api.telegram.org/bot'. env("TELEGRAM_BOT_TOKEN") .'/deleteMessage?message_id='.$message_id .'&chat_id='. $chat_id;
+						file_get_contents($sendto);
+						
 						rev_orders::where('telegram_chat_id', $chat_id)->where('id',$action[1])->delete();
+						
 						$command = '/view_order';
 					break;	
 				}
@@ -186,6 +194,7 @@ class Bot extends Controller
 		
 		if($text=='Who\'s my tour guide?') $command = '/tour_guide';
 		if($text=="Where is the meeting point?") $command = '/meeting_point';
+		if($text=="Chat with cust. service.") $command = '/cust_service';
 		
 		if($text=="New order") $command = '/new_order';
 		if($text=="View my order") $command = '/view_order';
@@ -222,12 +231,59 @@ class Bot extends Controller
 		//===============================================================
 		switch($command)
 		{
-			case '/tour_guide':
-			
-			$keyboard = [
+			case '/cust_service':
+				$keyboard = [
     				['View my order'],
 					['Who\'s my tour guide?'],
 					['Where is the meeting point?'],
+					['Chat with cust. service.'],
+					['Tell me about the tour!'],
+				];
+		
+				$reply_markup = Telegram::replyKeyboardMarkup([
+					'keyboard' => $keyboard, 
+					'resize_keyboard' => true, 
+					'one_time_keyboard' => true
+				]);
+				
+				$inline_keyboard = [
+    						'inline_keyboard' => [
+        					[
+								['text' => 'Open chat', 'url' => 'https://t.me/vertikaltrip']
+            					
+       						]
+   				 			]
+						];
+				$inline_keyboard = json_encode($inline_keyboard);
+						
+				$response = Telegram::sendChatAction([
+					'chat_id' => $chat_id,
+					'action' => 'typing'
+				]);
+				
+				$response = Telegram::sendMessage([
+					'chat_id' => $chat_id, 
+					'text' => 'Connecting with cust. service.', 
+					'reply_markup' => $inline_keyboard,
+					'parse_mode' => 'HTML'
+				]);
+				
+				$response = Telegram::sendMessage([
+					'chat_id' => $chat_id, 
+					'text' => 'Click open chat to chat with our human cust. service.', 
+					'reply_markup' => $reply_markup,
+					'parse_mode' => 'HTML'
+				]);
+				
+			break;
+			
+			case '/tour_guide':
+			
+				$keyboard = [
+    				['View my order'],
+					['Who\'s my tour guide?'],
+					['Where is the meeting point?'],
+					['Chat with cust. service.'],
 					['Tell me about the tour!'],
 				];
 		
@@ -260,6 +316,7 @@ class Bot extends Controller
     				['View my order'],
 					['Who\'s my tour guide?'],
 					['Where is the meeting point?'],
+					['Chat with cust. service.'],
 					['Tell me about the tour!'],
 				];
 		
@@ -299,6 +356,7 @@ class Bot extends Controller
     				['View my order'],
 					['Who\'s my tour guide?'],
 					['Where is the meeting point?'],
+					['Chat with cust. service.'],
 					['Tell me about the tour!'],
 				];
 		
@@ -335,7 +393,7 @@ $text = '
 						$inline_keyboard = [
     						'inline_keyboard' => [
         					[
-								['text' => 'Cancel', 'callback_data' => 'delOrder_'. $order->id]
+								['text' => 'Cancel order', 'callback_data' => 'delOrder_'. $order->id]
             					
        						]
    				 			]
@@ -435,7 +493,7 @@ $text = '
 			$inline_keyboard = [
     			'inline_keyboard' => [
         			[
-            			['text' => 'Open booking form', 'url' => 'https://www.vertikaltrip.com/bot/order?telegram_chat_id='. $chat_id]
+            			['text' => 'Open booking form', 'url' => 'https://www.vertikaltrip.com/bot/order?'.md5('telegram_chat_id').'='. base64_encode($chat_id)]
        				]
    				 ]
 			];
@@ -468,6 +526,7 @@ $text = '
     				['View my order'],
 					['Who\'s my tour guide?'],
 					['Where is the meeting point?'],
+					['Chat with cust. service.'],
 					['Tell me about the tour!'],
 				];
 		
@@ -577,6 +636,28 @@ Select <b>New order</b> to create order',
 				'chat_id' => $chat_id,
 				'photo' => 'https://www.vertikaltrip.com/assets/foodtour/becak.jpg',
 				'caption' => 'Travel on Becak'
+			]);
+			
+			$response = Telegram::sendChatAction([
+				'chat_id' => $chat_id,
+				'action' => 'upload_photo'
+			]);
+			
+			$response = Telegram::sendPhoto([
+				'chat_id' => $chat_id,
+				'photo' => 'https://www.vertikaltrip.com/assets/foodtour/paddle-car.jpg',
+				'caption' => 'Play paddle car at Night park'
+			]);
+			
+			$response = Telegram::sendChatAction([
+				'chat_id' => $chat_id,
+				'action' => 'upload_photo'
+			]);
+			
+			$response = Telegram::sendPhoto([
+				'chat_id' => $chat_id,
+				'photo' => 'https://www.vertikaltrip.com/assets/foodtour/small-groups.jpg',
+				'caption' => 'Try delicious local snacks'
 			]);
 			
 			$response = Telegram::sendMessage([
