@@ -148,9 +148,9 @@ class Bot extends Controller
 				switch($action[0])
 				{
 					case 'delOrder':
-					$sendto ='https://api.telegram.org/bot'. env("TELEGRAM_BOT_TOKEN") .'/answerCallbackQuery?callback_query_id='.$callback_query_id;
+					$sendto = 'https://api.telegram.org/bot'. env("TELEGRAM_BOT_TOKEN") .'/answerCallbackQuery?callback_query_id='.$callback_query_id;
 					file_get_contents($sendto);
-					// https://api.telegram.org/bot744341057:AAGX3oZ-g29xafY9-PQ2NvteNEG0e8BKCxE/answerCallbackQuery?callback_query_id=$callback_query_id
+					
 					/*
 						Telegram::answerCallbackQuery([
 							'callback_query_id' => $callback_query_id,
