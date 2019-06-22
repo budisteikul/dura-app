@@ -121,7 +121,7 @@ function BOOKING()
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/malioboro-3.jpg'); background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
