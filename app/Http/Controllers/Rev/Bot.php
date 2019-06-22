@@ -672,7 +672,7 @@ Select <b>New order</b> to create order',
 			case '/location':
 
 $text3 = "
-From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)
+From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
 ";
 				
 				$response = Telegram::sendChatAction([
@@ -716,12 +716,11 @@ $text1 = "<b>Name :</b> Yogyakarta Night Walking and Food Tours
 ";
 
 $text2 = "
-<b>Yogyakarta Night Walking and Food Tours Through Historical Route</b>
-Yogyakarta’s Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games at Southern City Square (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.
+Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 ";
 
 $text3 = "
-From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)
+From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
 ";
 
 $text4 = "
@@ -735,8 +734,8 @@ $text4 = "
 ";
 
 $text5 = "
-<b>What else you should know</b>
-- Please be hungry, because a lot of food in this tour.
+<b>What to bring</b>
+- Please be hungry, because a lot of food is to be tried out during this tour.
 - Wear comfortable and relax clothing.
 - And don't forget to bring your camera to take some nice pictures.";
 // =========================================================================================================

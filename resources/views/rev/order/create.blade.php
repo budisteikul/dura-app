@@ -22,6 +22,7 @@ function STORE()
 			"phone": $('#phone').val(),
 			"from": $('#from').val(),
 			"date": $('#date').val(),
+			"status": $('#status').val(),
         	"traveller": $('#traveller').val()
         },
 		type: 'POST',
@@ -138,9 +139,18 @@ function STORE()
       <option value="www.jogjafoodtour.com">www.jogjafoodtour.com</option>
       <option value="www.airbnb.com">www.airbnb.com</option>
       <option value="www.tripadvisor.com">www.tripadvisor.com</option>
+      <option value="www.telegram.com">www.telegram.com</option>
+      <option value="www.tourhq.com">www.tourhq.com</option>
 	</select>
 </div>
-
+<div class="form-group">
+	<label for="name">Status :</label>
+    <select class="form-control" id="status">
+    
+      <option value="1">Pending</option>
+      <option value="2">Confirmed</option>
+	</select>
+</div>   
        
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 	<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

@@ -102,6 +102,10 @@ function BOOKING()
           </li>
           
           <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#meetingpoint">Meeting Point</a>
+          </li>
+          
+          <li class="nav-item">
           	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
           </li>
           
@@ -182,10 +186,10 @@ function BOOKING()
          
           
           </div>
-          <br><br>
           
-          Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
-</p>
+          
+          <h2 class="section-heading">Yogyakarta Night Walking and Food Tours Through Historical Route</h2>
+          Yogyakarta’s Imaginary Line, Is An imaginary straight line drawn from the southern beach is Parang Kusumo with Mount Merapi. Through part of the imaginary line, from Tugu Yogyakarta Monument to Southern City Square (Alun - Alun Kidul), we invite you to join an experience to try some Javanese authentic dishes (gudeg, Javanese noodle, traditional herbal drink, charcoal coffee, etc), play some traditional games at Southern City Square (masangin, paddle car, etc), travel on a becak, learn interesting fun facts about this city, interact with locals, and many more.</p>
 
           <center>
           <br>
@@ -195,7 +199,7 @@ function BOOKING()
           </center>
           
 		<p>
-          From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).</p>
+          From our meeting point Tugu Yogyakarta Monument. We go to the south through part of the Yogyakarta's imaginary line ( Malioboro Road, Yogyakarta Palace, East Fortess Corner, etc), and along the journey we will enjoying the nighttime atmosphere of Yogyakarta, and discover a variety of activities and food. Until we reach at Southern City Square (Alun - Alun Kidul)</p>
 		  
 <p>
           <h2 class="section-heading">Inclusions</h2>
@@ -208,8 +212,8 @@ function BOOKING()
           </p>
           
            <p>
-          	<h2 class="section-heading">What to bring</h2>
-          	- Please be hungry, because a lot of food is to be tried out during this tour.<br />
+          	<h2 class="section-heading">What else you should know</h2>
+          	- Please be hungry, because a lot of food in this tour.<br />
 			- Wear comfortable and relax clothing.<br />
 			- And don't forget to bring your camera to take some nice pictures.<br />
           </p>
@@ -220,6 +224,44 @@ function BOOKING()
 
 
 
+<section id="meetingpoint" style="background-color:#f7f8f9">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        	<div class="row" style="padding-bottom:0px;">
+          		<div class="col-lg-12 text-center">
+            		<h3 class="section-heading" style="margin-top:50px;">Meeting Point</h3>
+                    <h4 class="section-subheading text-muted">{{ $act_name }}</h4>
+            		<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          		</div>
+        	</div>
+  
+  
+  
+      
+   
+<!--Google map-->
+<p>
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=Vertikal+Trip&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<br />
+<b>Duration :</b> 3 Hours start at 6.30 PM<br />
+<b>Meeting Point :</b> Tugu Yogyakarta Monument<br /><span class="text-muted">Gowongan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233</span>
+</p>
+<!--Google Maps-->
+      
+      
+      
+      
+      
+      </div>
+      </div>
+ </div>
+ </section>
+ 
+   
 <section id="gallery" style="background-color:#ffffff">
 <div class="container">
       <div class="row">
@@ -612,7 +654,7 @@ function BOOKING()
 
 
 
-	<h2 class="section-heading">We also available at</h2>
+	<h2 class="section-heading">Also available at</h2>
     <!--a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-foodtour.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
     
     <br / -->

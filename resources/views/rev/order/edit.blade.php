@@ -135,7 +135,8 @@ function UPDATE()
       <option value="www.jogjafoodtour.com" {{ ($order->from=='www.jogjafoodtour.com') ? 'selected' : '' }}>www.jogjafoodtour.com</option>
       <option value="www.airbnb.com" {{ ($order->from=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
       <option value="www.tripadvisor.com" {{ ($order->from=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
-      <option value="www.telegram.com" {{ ($order->from=='www.telegram.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
+      <option value="www.telegram.com" {{ ($order->from=='www.telegram.com') ? 'selected' : '' }}>www.telegram.com</option>
+      <option value="www.tourhq.com" {{ ($order->from=='www.tourhq.com') ? 'selected' : '' }}>www.tourhq.com</option>
 	</select>
 </div>
 <div class="form-group">
