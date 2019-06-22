@@ -171,11 +171,10 @@ function BOOKING()
           
           <strong>Name :</strong> {{ $act_name }}<br />
           <strong>Duration :</strong> 3 hours start at 6.30 pm<br />
-          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />
-		  <strong>Tour mode(s) :</strong> Walking and pedicab<br />
-		  <strong>Theme(s) :</strong> Night Walking and Food Tours<br />
           <strong>Type :</strong> Open Trip<br />
-          <strong>Language :</strong> English<br />
+          <strong>Language :</strong> Offered in English<br />
+          <strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />	
+          Gowongan, Jetis, Yogyakarta 55233<br />	
 		  <strong>Price :</strong><br />
 		  {!! $price !!}
 		  
@@ -188,15 +187,7 @@ function BOOKING()
           Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 </p>
 
-          <center>
-          <br>
-          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
-          <span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
-          <br>
-          </center>
           
-		<p>
-          From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).</p>
 		  
 <p>
           <h2 class="section-heading">Inclusions</h2>
@@ -214,6 +205,16 @@ function BOOKING()
 			- Wear comfortable and relax clothing.<br />
 			- And don't forget to bring your camera to take some nice pictures.<br />
           </p>
+          
+          <center>
+          <br>
+          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
+          <span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
+          <br>
+          </center>
+          
+		<p>
+          From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).</p>
 		</div>
       </div>
     </div>
