@@ -126,8 +126,8 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
-            	
-                <img class="img-circle" src="{{ $logo_name }}">
+            	<br>
+                <img src="/assets/foodtour/logo-jogja-istimewa-png-4.png">
                
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
