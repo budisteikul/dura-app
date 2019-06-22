@@ -121,7 +121,7 @@ function BOOKING()
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/malioboro-3.jpg'); background-color: #B0B0B0">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
@@ -241,42 +241,42 @@ function BOOKING()
 		<div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
             <br />
-            <span class="caption text-muted">Becak (Traditional public transport)</span>
+            <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
             <br />
-            <span class="caption text-muted">Paddle car at Southern city square</span>
+            <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
         	<br />
-            <span class="caption text-muted">Masangin. Traditional games</span>
+            <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer2.jpg">
         	<br />
-            <span class="caption text-muted">Herbal drink. Healthy ways in traditional way</span>
+            <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer3.jpg">
         	<br />
-            <span class="caption text-muted">Gudeg Jogja</span>
+            <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
         	<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/small-groups.jpg">
             <br />
-            <span class="caption text-muted">Traditional street snacks.</span>
+            <span class="caption text-muted"></span>
 
             <div class="mb-4"></div>
         </div>
