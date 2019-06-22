@@ -126,10 +126,11 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
-            	<br>
+            	
                 <img src="/assets/foodtour/logo-jogja-istimewa-png-4.png">
                
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
+                <br>
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
 					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
