@@ -130,6 +130,7 @@ class OrderController extends Controller
 		$date = $request->input('date');
 		$from = $request->input('from');
 		$traveller = $request->input('traveller');
+		$status = $request->input('status');
 		
 		$rev_orders = new rev_orders();
 		$rev_orders->product = $product;
@@ -139,7 +140,7 @@ class OrderController extends Controller
 		$rev_orders->date = $date;
 		$rev_orders->from = $from;
 		$rev_orders->traveller = $traveller;
-		$rev_orders->status = 1;
+		$rev_orders->status = $status;
 		$rev_orders->save();
 		
 		return response()->json([

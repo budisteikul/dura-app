@@ -24,6 +24,9 @@ Route::get('/order', 'Blog\Frontend\BlogController@book');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
 
+Route::get('/expedia', function () {
+        return redirect('https://www.expedia.com/things-to-do/yogyakarta-night-walking-and-food-tours.a669776.activity-details');
+});
 Route::get('/tourhq', function () {
         return redirect('https://www.tourhq.com/id60620/tours/3Hours-private--tour-itinerary-yogyakarta/yogyakarta-night-walking-and-food-tours');
 });
@@ -31,7 +34,6 @@ Route::get('/tourhq', function () {
 Route::get('/airbnb', function () {
         return redirect('https://www.airbnb.com/experiences/434368');
 });
-
 Route::get('/volcano', function () {
         return redirect('https://m.viator.com/tours/Yogyakarta/Culture-and-Nature-Journey-at-The-Slope-of-Merapi-Mountain/d22560-110844P3');
 });

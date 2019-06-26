@@ -182,8 +182,8 @@ function BOOKING()
          
           
           </div>
-          <br><br>
           
+          <h2 class="section-heading">Overview</h2>
           Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 </p>
 
@@ -214,6 +214,7 @@ function BOOKING()
           </center>
           
 		<p>
+          <b>Tugu Yogyakarta Monument - Southern City Square</b><br />
           From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).</p>
 		</div>
       </div>
@@ -611,15 +612,19 @@ function BOOKING()
 </form>
 <div id="bookingexternal" class="form-group">
 
-
-
+	<div style="height:50px;"></div>
+	<hr>
 
 	<h2 class="section-heading">We also available at</h2>
     <!--a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-foodtour.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
     
     <br / -->
-    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
-    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:10px;"></a>
+    <div class="d-flex flex-wrap justify-content-left">
+    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/expedia" target="_blank"><img src="/assets/foodtour/expedia-button.jpg" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <!-- a href="/tourhq" target="_blank"><img src="/assets/foodtour/tourhq-button.jpg" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
+   </div>
 <!-- ############################################################################### -->
  
         
@@ -648,12 +653,13 @@ function BOOKING()
           </div>
          
         </div>
-        <p class="m-0 text-center">
         <br>
-        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.png" style="margin-bottom:5px;"></a>
-        <a href="https://t.me/vertikaltrip"><img src="/assets/foodtour/telegram.png" style="margin-bottom:5px;"></a>
-        <br /><br />
-        
+        <div class="d-flex flex-wrap justify-content-center">
+        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.png" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+        <a href="https://t.me/vertikaltrip"><img src="/assets/foodtour/telegram.png" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+        </div>
+        <br><br>
+        <p class="m-0 text-center">
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
         <span class="fa fa-phone"></span> +62 857-4311-2112 <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
         <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
