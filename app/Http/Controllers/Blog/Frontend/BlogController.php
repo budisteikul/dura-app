@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mail;
 use App\Mail\Blog\Frontend\BookingTour;
+use App\Models\Rev\rev_availability;
 use Illuminate\Support\Facades\Request as Http;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Uuid as Generator;
@@ -28,8 +29,12 @@ class BlogController extends Controller
 		$act_name = "Yogyakarta Night Walking and Food Tours";
 		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$disabledDates = array('2019-06-16','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
-		
+		$disabledDates = array();
+		$rev_availability = rev_availability::get();
+		foreach($rev_availability as $avalaibility)
+		{
+			array_push($disabledDates,$avalaibility->date);
+		}
 		$str1 = date('YmdHis');
 		$str2 = date('Ymd173000');
 		if($str1>=$str2) array_push($disabledDates,date('Y-m-d'));
@@ -85,8 +90,12 @@ class BlogController extends Controller
 		$act_name = "Yogyakarta Night Walking and Food Tours";
 		$logo_name = "/assets/foodtour/logo-full.png";
 		
-		$disabledDates = array('2019-06-16','2019-06-11','2019-07-20','2019-07-21','2019-07-22','2019-07-23','2019-07-24','2019-10-08','2019-10-09','2019-10-10','2019-10-11');
-		
+		$disabledDates = array();
+		$rev_availability = rev_availability::get();
+		foreach($rev_availability as $avalaibility)
+		{
+			array_push($disabledDates,$avalaibility->date);
+		}
 		$str1 = date('YmdHis');
 		$str2 = date('Ymd173000');
 		if($str1>=$str2) array_push($disabledDates,date('Y-m-d'));

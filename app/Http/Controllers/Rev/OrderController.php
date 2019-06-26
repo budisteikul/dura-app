@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Rev;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Rev\rev_orders;
 use Illuminate\Support\Facades\Validator;
 
@@ -60,7 +59,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $user = Auth::user();
+        
 		if($request->ajax())
 		{
 			$orders = rev_orders::query();

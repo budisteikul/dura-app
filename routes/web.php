@@ -48,8 +48,12 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 
 //========================================================================
 Route::post('/order', 'Rev\OrderController@order');
+
 Route::resource('/rev/order','Rev\OrderController',[ 'names' => 'rev_order' ])
 	->middleware(['auth', 'verified']);
+Route::resource('/rev/availability','Rev\AvailabilityController',[ 'names' => 'rev_availability' ])
+	->middleware(['auth', 'verified']);
+	
 Route::get('/cancel', function () {
         return redirect('/');
     });

@@ -58,6 +58,9 @@
                         	<li class="nav-item">
                                 <a class="nav-link" href="/rev/order"><i class="fa fa-ticket-alt"></i> {{ __('Orders') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>
+                            </li>
                             @else
                             <li class="nav-item">
                                 <a class="nav-link" href="/blog/category"><i class="fa fa-list"></i> {{ __('Categories') }}</a>
