@@ -127,7 +127,7 @@ function BOOKING()
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	
-                <img src="{{ $logo_name }}">
+                <img src="{{ $logo_name }}" width="250">
                
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <br>
