@@ -137,7 +137,7 @@ function BOOKING()
                     Book for tonight? It's Ok!
          			<br>
          			Because we can start the tour every day at 6.30 pm.
-         			<br>
+         			
 		 			And our meeting point is Tugu Yogyakarta Monument.
                     
 				</p>
