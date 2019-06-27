@@ -17,6 +17,7 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"date": $('#date').val(),
+			"date2": $('#date2').val(),
         },
 		type: 'POST',
 		url: '{{ route('rev_availability.store') }}'
@@ -34,7 +35,9 @@ function STORE()
 					$('#'+ index).addClass('is-invalid');
 						if(value!="")
 						{
-							$('#'+ index).after('<span id="span-'+ index  +'" class="invalid-feedback" role="alert"><strong>'+ value +'</strong></span>');
+								$('#'+ index).after('<span id="span-'+ index  +'" class="invalid-feedback" role="alert"><strong>'+ value +'</strong></span>');
+							
+							
 						}
 					});
 				$("#submit").attr("disabled", false);
@@ -62,8 +65,9 @@ function STORE()
 
 
 
-<div class="form-group">   
-				 <label for="datetimepicker1">Date :</label>           
+<div class="form-group ">   
+				 <label for="datetimepicker1">Date :</label>    
+<div id="form-inline" class="form-inline">     
                 <div class='input-group' id='datetimepicker1'>
                     <input type="text" id="date" name="date" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
                     <div class="input-group-append input-group-addon text-muted">
@@ -88,7 +92,37 @@ function STORE()
 				});
             });
         </script>    
+&nbsp;
+<div class='input-group' id='datetimepicker2'>
+                    <input type="text" id="date2" name="date2" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
+                    <div class="input-group-append input-group-addon text-muted">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                    
+                </div>
+ 		<script type="text/javascript">
+            $(function () {
+                $('#date2').datetimepicker({
+					format: 'YYYY-MM-DD',
+					showTodayButton: true,
+					showClose: true,
+					ignoreReadonly: true,
+					icons: {
+                    	time: "fa fa-clock"
+                	},
+					widgetPositioning: {
+            			horizontal: 'left',
+            			vertical: 'bottom'
+        			}
+				});
+            });
+        </script>  
 </div>
+
+</div>
+
+  
+
        
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 	<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

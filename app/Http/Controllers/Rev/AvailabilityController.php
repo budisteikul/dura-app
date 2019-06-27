@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_availability;
 use Illuminate\Support\Facades\Validator;
-use Carbon\Carbon; 
+use Carbon\Carbon;
+use Illuminate\Support\MessageBag;
 
 class AvailabilityController extends Controller
 {
@@ -56,22 +57,45 @@ class AvailabilityController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-          	'date' => ['required', 'string', 'max:255'],
+			'date'    => 'required|date',
+    		'date2'      => 'required|date|after_or_equal:date',
        	]);
         
+		
+	
+		
        	if ($validator->fails()) {
             $errors = $validator->errors();
 			return response()->json($errors);
        	}
 		
+		
+
 		$date = $request->input('date');
+		$date2 = $request->input('date2');
 		
-		$rev_availability = rev_availability::where('date',$date);
-		$rev_availability->delete();
 		
-		$rev_availability = new rev_availability();
-		$rev_availability->date = $date;
-		$rev_availability->save();
+		// Specify the start date. This date can be any English textual format  
+		$date_from = $date;   
+		$date_from = strtotime($date_from); // Convert date to a UNIX timestamp  
+  
+		// Specify the end date. This date can be any English textual format  
+		$date_to = $date2;  
+		$date_to = strtotime($date_to); // Convert date to a UNIX timestamp  
+  
+		// Loop from the start date to end date and output all dates inbetween  
+		for ($i=$date_from; $i<=$date_to; $i+=86400) {
+			  
+			$rev_availability = rev_availability::where('date',date("Y-m-d", $i));
+			$rev_availability->delete();
+		
+			$rev_availability = new rev_availability();
+			$rev_availability->date = date("Y-m-d", $i);
+			$rev_availability->save();
+			
+		} 
+		
+		
 		
 		return response()->json([
 					"id" => "1",
