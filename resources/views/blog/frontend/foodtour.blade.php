@@ -127,7 +127,7 @@ function BOOKING()
         <div class="site-heading text-center">
         	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
             	
-                <img src="/assets/foodtour/logo-jogja-istimewa-png-4.png">
+                <img src="{{ $logo_name }}">
                
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <br>
@@ -182,6 +182,12 @@ function BOOKING()
          
           
           </div>
+          <h2 class="section-heading">Highlights</h2>
+          - If you like food and want to experience Jogja culture <br />
+          - The walking tour part was a good introduction to the city <br />
+          - Travel on a becak (Traditional Public Transportation) <br />
+          - Learn interesting fun facts about Yogyakarta <br />
+          - Enjoying the nighttime atmosphere of Yogyakarta <br />
           
           <h2 class="section-heading">Overview</h2>
           Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
