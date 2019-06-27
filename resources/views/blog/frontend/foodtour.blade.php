@@ -125,7 +125,7 @@ function BOOKING()
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
-        	<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:10px;">
+        	<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	
                 <img src="{{ $logo_name }}">
                
@@ -136,9 +136,10 @@ function BOOKING()
 					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
                     BOOK FOR TODAY? IT'S OK!
          			<br>
-         			Because we start the tour daily at 6.30 pm.
+         			Because we can start the tour every day at 6.30 pm.
          			<br>
 		 			And our meeting point is Tugu Yogyakarta Monument.
+                    
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
