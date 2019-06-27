@@ -134,7 +134,7 @@ function BOOKING()
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
 					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
-                    BOOK FOR TODAY? IT'S OK!
+                    Book for tonight? It's Ok!
          			<br>
          			Because we can start the tour every day at 6.30 pm.
          			<br>
