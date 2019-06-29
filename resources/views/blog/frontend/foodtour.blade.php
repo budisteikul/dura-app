@@ -288,6 +288,7 @@ function BOOKING()
         <img class="mx-auto rounded-circle" src="/assets/foodtour/tour-guide.jpg" >
         <h4>Kalika Ratna</h4>
             <p class="text-muted">Hi! I'm Kalika, I was born and still live in Jogja. I am a very adventurous person, I like music, movies, travelling and starting adventures with new friend</p>
+            <br><br>
         </div>
         </div>
       </div>
