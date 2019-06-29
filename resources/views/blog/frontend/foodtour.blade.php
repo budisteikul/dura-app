@@ -243,7 +243,7 @@ function BOOKING()
 			- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
 			- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket"></span><br />
  			- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
-			- Raincoat, if the weather is rainy <span class="fa fa-briefcase"></span><br />
+			- Raincoat, if it's rain <span class="fa fa-briefcase"></span><br />
 			- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
           </p>
           
