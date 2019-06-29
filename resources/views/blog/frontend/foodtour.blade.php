@@ -679,7 +679,7 @@ function BOOKING()
 <br />
 <small class="form-text text-muted">After payment received, we will contact you immediately</small>
 </form>
-
+<div style="height:50px;"></div>
       </div>
       </div>
 </section>
