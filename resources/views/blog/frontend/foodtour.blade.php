@@ -102,6 +102,10 @@ function BOOKING()
           </li>
           
           <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#guide">Our Tour Guide</a>
+          </li>
+          
+          <li class="nav-item">
           	<a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
           </li>
           
@@ -147,47 +151,13 @@ function BOOKING()
        </div>
        </div>
     </header>
- 
-<!-- section style="background-color:#ffffff">
-
-<div class="container">
-      <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
-        
-        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
-  		<img class="img-fluid" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
-  		<div class="card-body">
-    	<h5 class="card-title">Book on AirBNB</h5>
-    	<a href="#" class="btn btn-primary">Book Now</a>
-  		</div>
-		</div>
-        
-        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
-  		<img class="img-fluid" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
-  		<div class="card-body">
-    	<h5 class="card-title">Book on TripAdvisor</h5>
-    	<a href="#" class="btn btn-primary">Book Now</a>
-  		</div>
-		</div>
-        
-        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
-  		<img class="img-fluid" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
-  		<div class="card-body">
-    	<h5 class="card-title">Book on Expedia</h5>
-    	<a href="#" class="btn btn-primary">Book Now</a>
-  		</div>
-		</div>
-        
-        
-        
-        
-       
-      </div>
-      </div>
     
-</div>
-</section -->
+
+
+</section>
+  
+  
+
 
 <!-- ################################################################### -->
  <!-- Post Content -->
@@ -270,6 +240,60 @@ function BOOKING()
 </article> 
 
 
+<!-- Team -->
+<style>
+.team-member {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 225px;
+  height: 225px;
+  border: 7px solid rgba(0, 0, 0, 0.1);
+  
+}
+
+.team-member h4 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-transform: none;
+}
+
+.team-member p {
+  margin-top: 0;
+}
+</style>
+<section id="guide" style="background-color:#ffffff">
+<div class="container">
+      <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-heading" style="margin-top:50px;">Tour Guide On Duty</h3>
+            <h4 class="section-subheading text-muted">{{ $act_name }}</h4>
+            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+          </div>
+         
+        </div>
+        <br>
+        <div class="d-flex flex-wrap justify-content-center">
+        
+        <!-- div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+        <a href="https://wa.me/+6285743112112"><img class="mx-auto rounded-circle" src="/assets/foodtour/becak.jpg" ></a>
+        <h4>Budi</h4>
+            <p class="text-muted">Digital Marketing</p>
+        </div -->
+        
+        <div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+        <img class="mx-auto rounded-circle" src="/assets/foodtour/tour-guide.jpg" >
+        <h4>Kalika Ratna</h4>
+            <!-- p class="text-muted">Tour Guide</p -->
+        </div>
+        </div>
+      </div>
+</div>
+</div></section>
 
 <section id="gallery" style="background-color:#ffffff">
 <div class="container">
