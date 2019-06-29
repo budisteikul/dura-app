@@ -148,6 +148,68 @@ function BOOKING()
        </div>
     </header>
  
+<!-- section style="background-color:#ffffff">
+
+<div class="container">
+      <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
+        
+        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
+  		<img class="img-fluid" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
+  		<div class="card-body">
+    	<h5 class="card-title">Book on AirBNB</h5>
+    	<a href="#" class="btn btn-primary">Book Now</a>
+  		</div>
+		</div>
+        
+        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
+  		<img class="img-fluid" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
+  		<div class="card-body">
+    	<h5 class="card-title">Book on TripAdvisor</h5>
+    	<a href="#" class="btn btn-primary">Book Now</a>
+  		</div>
+		</div>
+        
+        <div class="card col-lg-3 col-sm-6 m-2 p-0" style="width: 18rem;">
+  		<img class="img-fluid" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
+  		<div class="card-body">
+    	<h5 class="card-title">Book on Expedia</h5>
+    	<a href="#" class="btn btn-primary">Book Now</a>
+  		</div>
+		</div>
+        
+        
+        
+        
+       
+      </div>
+      </div>
+    
+</div>
+</section -->
+<section style="background-color:#f7f8f9">
+<div class="container">
+<div style="height:50px;"></div>
+      <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
+        
+        
+        <div class="d-flex flex-wrap justify-content-left">
+        
+    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/expedia" target="_blank"><img src="/assets/foodtour/expedia-button.jpg" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/viator" target="_blank"><img src="/assets/foodtour/viator-button.jpg" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/tourhq" target="_blank"><img src="/assets/foodtour/tourhq-button.jpg" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+   </div>
+      </div>
+      <div style="height:50px;"></div>
+      </div>
+ 
+</div>
+</section>
 <!-- ################################################################### -->
  <!-- Post Content -->
   <article id="about">
@@ -617,29 +679,7 @@ function BOOKING()
 <br />
 <small class="form-text text-muted">After payment received, we will contact you immediately</small>
 </form>
-<div id="bookingexternal" class="form-group">
 
-	<div style="height:50px;"></div>
-	<hr>
-
-	<h2 class="section-heading">We also available at</h2>
-    <!--a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-foodtour.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:10px;"></a>
-    
-    <br / -->
-    <div class="d-flex flex-wrap justify-content-left">
-    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-    <a href="/expedia" target="_blank"><img src="/assets/foodtour/expedia-button.jpg" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-    <!-- a href="/tourhq" target="_blank"><img src="/assets/foodtour/tourhq-button.jpg" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-   </div>
-<!-- ############################################################################### -->
- 
-        
-        
-        
-        <div style="height:50px;"></div>
-        
-        </div>
       </div>
       </div>
 </section>

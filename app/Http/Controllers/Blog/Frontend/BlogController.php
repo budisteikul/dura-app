@@ -90,10 +90,11 @@ class BlogController extends Controller
 		->with('app_name',$this->app_name)
 		->with('act_name',$this->act_name)
 		->with('logo_name',$this->logo_name)
-		->with('option_button',$this->option_button)
+		->with('option_button',$this->option_button_2)
 		->with('hosted_button_id',$this->hosted_button_id)
 		->with('google_analytics',$this->google_analytics)
-		->with('disabledDates',$this->disabledDates);
+		->with('disabledDates',$this->disabledDates)
+		->with('price',$this->price);
 	}
 	
 	public function success()

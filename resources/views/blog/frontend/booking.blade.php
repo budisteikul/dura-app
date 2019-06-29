@@ -392,7 +392,9 @@ function BOOKING()
 <table>
 <tr><td>
 
+{!! $price !!}
 
+<br>
 
 <input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
 	{!! $option_button !!}
