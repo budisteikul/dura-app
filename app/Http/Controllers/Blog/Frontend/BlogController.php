@@ -49,7 +49,7 @@ class BlogController extends Controller
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-danger"><b>Book by August 4 to save 23% off our previously offered price!</b></small>';
+			<small class="form-text text-danger"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
 		
 		$this->option_button_2 = '
 			<option value="1 person">1 person $&#x336;4&#x336;8&#x336;,0&#x336;0&#x336; $37,00 USD</option>
