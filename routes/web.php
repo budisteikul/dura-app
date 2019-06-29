@@ -31,6 +31,10 @@ Route::get('/tourhq', function () {
         return redirect('https://www.tourhq.com/id60620/tours/3Hours-private--tour-itinerary-yogyakarta/yogyakarta-night-walking-and-food-tours');
 });
 
+Route::get('/viator', function () {
+        return redirect('https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2');
+});
+
 Route::get('/airbnb', function () {
         return redirect('https://www.airbnb.com/experiences/434368');
 });
