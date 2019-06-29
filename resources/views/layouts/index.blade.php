@@ -9,7 +9,7 @@
     <meta name="robots" content="all,index,follow">
 	<meta name="theme-color" content="#000000">
     <link rel="icon" href="favicon.gif" type="image/gif" sizes="32x32">
-    <title>Night Walk and Food Tours | By Locals in Yogyakarta</title>
+    <title>Yogyakarta Food Tour</title>
     
      @stack('scripts')
    
