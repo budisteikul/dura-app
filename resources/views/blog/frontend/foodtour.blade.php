@@ -128,9 +128,7 @@ function BOOKING()
           	<a class="nav-link js-scroll-trigger" href="#booking">Book Now</a>
           </li>
           
-          <li class="nav-item">
-          	<a class="nav-link js-scroll-trigger" href="#contactus">Reservation</a>
-          </li>
+         
           
           
           
@@ -704,67 +702,7 @@ function BOOKING()
 
 
 
-     
-
-<section id="contactus" style="background-color:#ffffff">
-<div class="container">
-      <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Make Your Enquiry</h3>
-            <h4 class="section-subheading text-muted">Feel free to contact us</h4>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-         
-        </div>
-        <br>
-        <div class="d-flex flex-wrap justify-content-center">
-        <a href="https://wa.me/+6285743112112"><img src="/assets/foodtour/whatsapp.png" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-        <a href="https://t.me/vertikaltrip"><img src="/assets/foodtour/telegram.png" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-        </div>
-        <br><br>
-        <p class="m-0 text-center">
-        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-        <span class="fa fa-phone"></span> +62 857-4311-2112 <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
-        <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
-        </p>
-<br><br>
-      </div>
-</div>
-
-</section>
-
-<!-- section style="background-color:#f7f8f9">
-
-<div class="container">
-<div style="height:50px;"></div>
-      <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <div class="row text-center" style="padding-bottom:0px;">
-        
-		<div class="col-lg-4">
-        	<a href="/airbnb" target="_blank"><img src="/assets/foodtour/logo/airbnb.png" alt="Book {{ $act_name }} via AirBNB" ></a>
-          
-        </div>
-        
-        <div class="col-lg-4">
-        	<a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/logo/tripadvisor.png" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-            
-        </div>
-        
-        <div class="col-lg-4">
-        	<a href="/tourhq" target="_blank"><img src="/assets/foodtour/logo/tourhq.png" alt="Book {{ $act_name }} via TourHQ" ></a>
-           
-        </div>
-        
-      </div></div>
-      </div>
-</div>
-<div style="height:50px;"></div>
-</section --> 
-
-<section style="background-color:#f7f8f9">
+<section style="background-color:#ffffff">
 <div class="container">
 <div style="height:50px;"></div>
       <div class="row">
@@ -793,11 +731,14 @@ function BOOKING()
 		<div class="col-lg-8 col-md-10 mx-auto">
         
         
-        <p class="m-0 text-center text-white">
+        
        
-        &copy; {{ date('Y') }} {{$app_name}} Experiences <br /> {{ $act_name }}
-      	
-        <br><br>
+        <p class="m-0 text-center text-white">
+        <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
+        Whatsapp : <a href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
+        <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
+        
+        <br>
         <img src="/assets/foodtour/payment.png">
         </p>
         </div>
