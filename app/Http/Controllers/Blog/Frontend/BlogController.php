@@ -20,7 +20,7 @@ class BlogController extends Controller
 	{
 		$this->app_name = "Vertikal Trip";
 		$this->act_name = "Yogyakarta Night Walking and Food Tours";
-		$this->logo_name = "/assets/foodtour/logo-jogja-istimewa-png-4.png";
+		$this->logo_name = "https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png";
 		
 		$this->option_button = '
 			<option value="1 person">1 person $37,00 USD</option>

@@ -5,8 +5,8 @@
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="/js/ratnawahyu.js"></script>
-<link href="/css/ratnawahyu.css" rel="stylesheet">
+<script src="https://static.budi.my.id/js/ratnawahyu.js"></script>
+<link href="https://static.budi.my.id/css/ratnawahyu.css" rel="stylesheet">
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -138,7 +138,7 @@ function BOOKING()
   </nav>
 
 <!-- ################################################################### -->
-    <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
+    <header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading text-center">
@@ -239,7 +239,7 @@ function BOOKING()
           
           <center>
           <br>
-          <img class="img-fluid" src="/assets/foodtour/garis-imajiner.jpg">
+          <img class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
           <span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
           <br>
           </center>
@@ -268,7 +268,7 @@ function BOOKING()
         <div class="d-flex flex-wrap justify-content-center">
         
         <div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-        <img class="mx-auto rounded-circle" width="200" src="/assets/foodtour/tour-guide.jpg" >
+        <img class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/tour-guide.jpg" >
         <h4>Kalika Ratna</h4>
             <p class="text-muted">Hi! My name is Kalika, I was born and still live in Jogja. I am a very adventurous person, I like music, movies, travelling and starting adventures with new friend</p>
             <br><br>
@@ -297,42 +297,42 @@ function BOOKING()
         <div class="row text-center" style="padding-bottom:0px;">
         
 		<div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
+        	<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/becak.jpg">
             <br />
             <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
+        	<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/paddle-car.jpg">
             <br />
             <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
+        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/masangin.jpg">
         	<br />
             <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer2.jpg">
+        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer2.jpg">
         	<br />
             <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer3.jpg">
+        	<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer3.jpg">
         	<br />
             <span class="caption text-muted"></span>
             <div class="mb-4"></div>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-        	<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/small-groups.jpg">
+        	<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/small-groups.jpg">
             <br />
             <span class="caption text-muted"></span>
 
@@ -351,7 +351,7 @@ function BOOKING()
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
             <h3 class="section-heading" style="margin-top:50px;">Book This Tour</h3>
-            <h4 class="section-subheading text-muted">Secure payment by <img src="/assets/foodtour/logo-paypal.jpg"></h4>
+            <h4 class="section-subheading text-muted">Secure payment by <img src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
         </div>
@@ -660,7 +660,7 @@ function BOOKING()
 <br />
 
 <button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket"></i> Book Now</button>	
-<!-- input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
+
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 <br />
 <small class="form-text text-muted">After payment received, we will contact you immediately</small>
@@ -682,15 +682,15 @@ function BOOKING()
         
         <div class="d-flex flex-wrap justify-content-left">
         
-    <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
     
-    <a href="/expedia" target="_blank"><img src="/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
     
-    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
     
-    <a href="/viator" target="_blank"><img src="/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
     
-    <a href="/tourhq" target="_blank"><img src="/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    <a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
     
    </div>
       </div>
@@ -714,7 +714,7 @@ function BOOKING()
         <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
         
         <br>
-        <img src="/assets/foodtour/payment.png">
+        <img src="https://static.budi.my.id/assets/foodtour/payment.png">
         <br><br>
         </p>
         </div>
