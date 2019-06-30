@@ -252,30 +252,6 @@ function BOOKING()
     </div>
 </article> 
 
-
-<!-- Team -->
-<style>
-.team-member {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.team-member img {
-  width: 225px;
-  height: 225px;
-  border: 7px solid rgba(0, 0, 0, 0.1);
-  
-}
-
-.team-member h4 {
-  margin-top: 20px;
-  text-transform: none;
-}
-
-.team-member p {
-  margin-top: 0;
-}
-</style>
 <section id="guide" style="background-color:#f7f8f9">
 <div class="container">
       <div class="row">
@@ -290,12 +266,6 @@ function BOOKING()
         </div>
         <br>
         <div class="d-flex flex-wrap justify-content-center">
-        
-        <!-- div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-        <a href="https://wa.me/+6285743112112"><img class="mx-auto rounded-circle" src="/assets/foodtour/becak.jpg" ></a>
-        <h4>Budi</h4>
-            <p class="text-muted">Digital Marketing</p>
-        </div -->
         
         <div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
         <img class="mx-auto rounded-circle" src="/assets/foodtour/tour-guide.jpg" >
@@ -740,7 +710,7 @@ function BOOKING()
        
         <p class="m-0 text-center text-white">
         <span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-        Whatsapp : <a href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
+        Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
         <span class="fa fa-envelope"></span> guide@vertikatrip.com<br />
         
         <br>
