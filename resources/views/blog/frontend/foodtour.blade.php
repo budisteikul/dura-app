@@ -745,6 +745,7 @@ function BOOKING()
         
         <br>
         <img src="/assets/foodtour/payment.png">
+        <br><br>
         </p>
         </div>
        </div>
