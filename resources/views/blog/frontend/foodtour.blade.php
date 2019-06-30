@@ -713,10 +713,15 @@ function BOOKING()
         <div class="d-flex flex-wrap justify-content-left">
         
     <a href="/airbnb" target="_blank"><img src="/assets/foodtour/airbnb-button.jpg" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    
     <a href="/expedia" target="_blank"><img src="/assets/foodtour/expedia-button.jpg" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    
+    <a href="/tripadvisor" target="_blank"><img src="/assets/foodtour/tripadvisor-button.jpg" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    
     <a href="/viator" target="_blank"><img src="/assets/foodtour/viator-button.jpg" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    
     <a href="/tourhq" target="_blank"><img src="/assets/foodtour/tourhq-button.jpg" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+    
    </div>
       </div>
       <div style="height:50px;"></div>
