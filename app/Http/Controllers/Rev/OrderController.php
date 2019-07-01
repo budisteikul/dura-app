@@ -62,6 +62,11 @@ class OrderController extends Controller
 		*/
 			
 		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
+		
+		return response()->json([
+					"id" => "1",
+					"message" => 'Success'
+				]);
     }
 	
     /**
