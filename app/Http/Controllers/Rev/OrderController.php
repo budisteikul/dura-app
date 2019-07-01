@@ -36,8 +36,18 @@ class OrderController extends Controller
 		$from = explode(" ",$os0);
 		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
 		
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
+		$rev_orders = new rev_orders();
+		$rev_orders->product = $product;
+		$rev_orders->name = $name;
+		$rev_orders->email = $email;
+		$rev_orders->phone = $phone;
+		$rev_orders->date = $date;
+		$rev_orders->from = $domain;
+		$rev_orders->traveller = $from[0];
+		$rev_orders->status = 1;
+		$rev_orders->save();
 		
+		/*
 		DB::table('rev_orders')->where('id',$uuid)->delete();
 		DB::table('rev_orders')->insert([
 			'id' => $uuid,
@@ -49,7 +59,9 @@ class OrderController extends Controller
 			'date' => $date,
 			'from' => $domain
 			]);
-		
+		*/
+			
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
     }
 	
     /**
