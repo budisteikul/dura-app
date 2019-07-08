@@ -367,6 +367,7 @@ function BOOKING()
 			
 			while(in_array($defaultDates, $disabledDates))
 			{
+				
 				$defaultDates = date('Y-m-d',strtotime($defaultDates . "+1 days"));
 			}
 			

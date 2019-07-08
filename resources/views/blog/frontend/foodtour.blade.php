@@ -614,11 +614,12 @@ function BOOKING()
  		<script type="text/javascript">
             <?php
 			$defaultTimes = '18:30:00';
-			$defaultDates = date('Y-m-d');
+			$defaultDates = date('Y-m-d') .' 00:00:00';
+			
 			
 			while(in_array($defaultDates, $disabledDates))
 			{
-				$defaultDates = date('Y-m-d',strtotime($defaultDates . "+1 days"));
+				$defaultDates = date('Y-m-d 00:00:00',strtotime($defaultDates . "+1 days"));
 			}
 			
 			

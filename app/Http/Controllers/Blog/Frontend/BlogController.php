@@ -69,7 +69,7 @@ class BlogController extends Controller
 		}
 		$str1 = date('YmdHis');
 		$str2 = date('Ymd173000');
-		if($str1>=$str2) array_push($this->disabledDates,date('Y-m-d'));
+		if($str1>=$str2) array_push($this->disabledDates,date('Y-m-d 00:00:00'));
 		
 	}
 	
