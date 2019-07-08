@@ -95,7 +95,6 @@ function BOOKING()
 				return false;	
 			}
 		});
-	
 }
 </script>
 

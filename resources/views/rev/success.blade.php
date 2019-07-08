@@ -37,7 +37,7 @@
         <p class="m-0 text-center">
        <br>
         
-        <a href="https://t.me/vertikaltrip_bot">Back to telegram</a>
+        
         <br /><br />
         
         

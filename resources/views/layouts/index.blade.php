@@ -9,7 +9,7 @@
     <meta name="robots" content="all,index,follow">
 	<meta name="theme-color" content="#000000">
     <link rel="icon" href="https://static.budi.my.id/favicon.gif" type="image/gif" sizes="32x32">
-    <title>Yogyakarta Food Tour | By Locals in Yogyakarta</title>
+    <title>Yogyakarta Food Tour | By Vertikal Trip team</title>
     
      @stack('scripts')
    

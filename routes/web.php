@@ -12,6 +12,10 @@
 */
 
 
+Route::domain('www.ratnawahyu.com')->group(function () {
+    Route::get('/', 'Blog\Frontend\TimelineController@index');
+});
+
 
 Route::post('/bot/telegram', 'Rev\Bot@telegram');
 Route::post('/bot/order', 'Rev\Bot@order');
@@ -20,6 +24,7 @@ Route::get('/bot/success', 'Rev\Bot@success');
 
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+Route::post('/order', 'Rev\OrderController@order');
 Route::get('/order', 'Blog\Frontend\BlogController@book');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
@@ -45,13 +50,17 @@ Route::get('/tripadvisor', function () {
 		return redirect('https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Region_Java.html');
 });
 	
+Route::get('/order', function () {
+		return redirect('https://www.vertikaltrip.com/bot/order?33bc682dce65a329fe99e8f14a02e856=NjcyNzYzOTk4');
+});
+
 
 //Route::get('/', 'Blog\Frontend\TimelineController@index');
 Auth::routes(['verify' => true]);
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 
 //========================================================================
-Route::post('/order', 'Rev\OrderController@order');
+
 
 Route::resource('/rev/order','Rev\OrderController',[ 'names' => 'rev_order' ])
 	->middleware(['auth', 'verified']);
