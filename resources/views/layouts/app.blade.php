@@ -54,14 +54,6 @@
                             @endif
                         @else
                         	
-                            @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
-                        	<li class="nav-item">
-                                <a class="nav-link" href="/rev/order"><i class="fa fa-ticket-alt"></i> {{ __('Orders') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>
-                            </li>
-                            @else
                             <li class="nav-item">
                                 <a class="nav-link" href="/blog/category"><i class="fa fa-list"></i> {{ __('Categories') }}</a>
                             </li>
@@ -75,7 +67,12 @@
 							<li class="nav-item">
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-cog"></i> {{ __('Setting') }}</a>
                             </li>
-                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rev/order"><i class="fa fa-ticket-alt"></i> {{ __('Orders') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>
+                            </li>
                         	
                             
                             <li class="nav-item dropdown">
