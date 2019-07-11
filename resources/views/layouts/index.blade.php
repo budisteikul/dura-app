@@ -11,7 +11,7 @@
     <link rel="icon" href="https://static.budi.my.id/favicon.gif" type="image/gif" sizes="32x32">
     <title>Yogyakarta Food Tour | By Vertikal Trip team</title>
     
-     @stack('scripts')
+    @stack('scripts')
    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,12 +26,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', '@yield('google_analytics')');
 </script>
-
-     
-     
 </head>
 <body>
 <div style="background-color:#d7e4ed">

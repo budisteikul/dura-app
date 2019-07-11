@@ -7,7 +7,6 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/ratnawahyu.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet">
-
 <script language="javascript">
 
 function BOOKING()
@@ -392,9 +391,6 @@ function BOOKING()
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
 <tr><td>
-
-{!! $price !!}
-
 <br>
 
 <input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">

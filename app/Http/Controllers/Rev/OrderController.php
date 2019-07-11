@@ -103,7 +103,23 @@ class OrderController extends Controller
 					return $order->phone.'<br>'. $order->email;
 				})
 				->addColumn('action', function ($order) {
-					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$order->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $order->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
+					if($order->status==1)
+					{
+						$label = ""	;
+						$status = 2;
+						$button = "btn-primary";
+						$icon = "fa-toggle-off";
+						$text = " Pending";
+					}
+					else
+					{
+						$label = "";
+						$status = 1;
+						$button = "btn-primary";
+						$icon = "fa-toggle-on";
+						$text = " Confirmed";
+					}
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$order->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $order->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $order->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 				})
 				->rawColumns(['action','email_phone','date'])
 				->toJson();
@@ -197,6 +213,27 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
+		
+		if($request->input('status')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'status' => 'in:1,2'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+				
+			$rev_orders = rev_orders::find($id);
+			$rev_orders->status = $request->input('status');
+			$rev_orders->save();
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+		}
+		
 		$validator = Validator::make($request->all(), [
           	'name' => ['required', 'string', 'max:255'],
 			'phone' => ['required', 'string', 'max:255'],

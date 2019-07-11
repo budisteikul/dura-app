@@ -33,6 +33,9 @@ Route::get('/cancel', function () {
         return redirect('/');
     });
 Route::get('/success', 'Blog\Frontend\BlogController@success');
+
+Route::get('/book', 'Rev\OrderController@book');
+Route::post('/book', 'Rev\OrderController@book');
 // Reservation --------------------------------------------------------------------------
 
 // Reservation Admin --------------------------------------------------------------------------
