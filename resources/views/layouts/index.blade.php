@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="AtDcFU1Yadtr8qSpQQL86nxPnXGXAgveC60d4oZq0U0" />
     <meta name="description" content="Yogyakarta Night Walking and Food Tours. Book Online Now & Get 23% Discount This Month!">
     <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">

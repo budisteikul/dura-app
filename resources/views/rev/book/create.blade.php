@@ -16,17 +16,17 @@ function STORE()
 	$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
-			"product": $('#product').val(),
+			"post_id": $('#post_id').val(),
 			"name": $('#name').val(),
 			"email": $('#email').val(),
 			"phone": $('#phone').val(),
-			"from": $('#from').val(),
+			"source": $('#source').val(),
 			"date": $('#date').val(),
 			"status": $('#status').val(),
         	"traveller": $('#traveller').val()
         },
 		type: 'POST',
-		url: '{{ route('rev_order.store') }}'
+		url: '{{ route('rev_book.store') }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -63,15 +63,16 @@ function STORE()
 	<div class="card-header">Add order</div>
 	<div class="card-body">
 				
-<form action="{{ route('rev_order.store') }}" method="post" onSubmit="STORE(); return false;">
-@csrf
+<form action="{{ route('rev_book.store') }}" method="post" onSubmit="STORE(); return false;">
+
 <div id="result"></div>
 
 <div class="form-group">
-	<label for="name">Product :</label>
-    <select class="form-control" id="product">
-      <option value="Yogyakarta Night Walking and Food Tours">Yogyakarta Night Walking and Food Tours</option>
-      <option value="Culture & Merapi Volcano Tours">Culture & Merapi Volcano Tours</option>
+	<label for="post_id">Product :</label>
+    <select class="form-control" id="post_id">
+       @foreach($blog_post as $post)
+       	<option value="{{ $post->id }}">{{ $post->title }}</option>
+       @endforeach
 	</select>
 </div>
 
@@ -133,8 +134,8 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="from">Traveller :</label>
-    <select class="form-control" id="from">
+	<label for="source">Source :</label>
+    <select class="form-control" id="source">
       <option value="www.vertikaltrip.com">www.vertikaltrip.com</option>
       <option value="www.jogjafoodtour.com">www.jogjafoodtour.com</option>
       <option value="www.airbnb.com">www.airbnb.com</option>

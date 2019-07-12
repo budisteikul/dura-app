@@ -25,6 +25,7 @@ Route::get('/bot/success', 'Rev\Bot@success');
 
 // Reservation --------------------------------------------------------------------------
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+Route::post('/book', 'Rev\BookController@book');
 Route::post('/order', 'Rev\OrderController@order');
 Route::get('/order', 'Blog\Frontend\BlogController@book');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
@@ -34,8 +35,7 @@ Route::get('/cancel', function () {
     });
 Route::get('/success', 'Blog\Frontend\BlogController@success');
 
-Route::get('/book', 'Rev\OrderController@book');
-Route::post('/book', 'Rev\OrderController@book');
+
 // Reservation --------------------------------------------------------------------------
 
 // Reservation Admin --------------------------------------------------------------------------
@@ -43,6 +43,8 @@ Route::resource('/rev/order','Rev\OrderController',[ 'names' => 'rev_order' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/availability','Rev\AvailabilityController',[ 'names' => 'rev_availability' ])
 	->middleware(['auth', 'verified']);
+Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
+	->middleware(['auth', 'verified']);	
 // Reservation Admin --------------------------------------------------------------------------
 
 // Link --------------------------------------------------------------------------

@@ -80,11 +80,10 @@ function BOOKING()
 				'phone': $('#phone').val(),
 				'email': $('#email').val(),
 				'date': $('#date').val(),
-				'uuid': $('#custom').val(),
-				'product': $('#product').val(),
+				'post_id': $('#post_id').val(),
         	},
 			type: 'POST',
-			url: '/order'
+			url: '/book'
 			}).done(function( data ) {
 			if(data.id=="1")
 			{
@@ -236,7 +235,7 @@ function BOOKING()
 			<div class="d-flex flex-wrap justify-content-center">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/tour-guide.jpg" >
-					<h4>Kalika Ratna</h4>
+					<h4>Kalika</h4>
 					<p class="text-muted">Hi! My name is Kalika, I was born and still live in Jogja. I am a very adventurous person, I like music, movies, travelling and starting adventures with new friend</p>
 					<br><br>
 				</div>
@@ -601,7 +600,7 @@ function BOOKING()
 				</script>    
 			</div>
 			
-			<input id="product" type="hidden" name="product" value="{!! $act_name !!}">
+			<input id="post_id" type="hidden" name="post_id" value="7d435e1b-3fa8-470b-aaaf-f43a4b6fe947">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
 			<input id="custom" type="hidden" name="custom" value="<?= \Ramsey\Uuid\Uuid::uuid4()->toString();?>">
 			<input type="hidden" name="cmd" value="_s-xclick">

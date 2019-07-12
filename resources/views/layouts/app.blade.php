@@ -67,8 +67,9 @@
 							<li class="nav-item">
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-cog"></i> {{ __('Setting') }}</a>
                             </li>
+                            
                             <li class="nav-item">
-                                <a class="nav-link" href="/rev/order"><i class="fa fa-ticket-alt"></i> {{ __('Orders') }}</a>
+                                <a class="nav-link" href="/rev/book"><i class="fa fa-ticket-alt"></i> {{ __('Booking') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>

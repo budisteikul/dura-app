@@ -4,21 +4,20 @@ namespace App\Http\Controllers\Rev;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Yajra\DataTables\Facades\DataTables;
-use App\Models\Rev\rev_orders;
-use Illuminate\Support\Facades\Validator;
 
+use Yajra\DataTables\Facades\DataTables;
+use App\Models\Rev\rev_books;
+use App\Models\Blog\blog_posts;
+use Illuminate\Support\Facades\Validator;
 use App\Mail\Rev\BookingTour;
 use Illuminate\Support\Facades\Request as Http;
-use DB;
 use Mail;
-use Carbon\Carbon; 
+use Carbon\Carbon;
+use Auth;
 
-class OrderController extends Controller
+class BookController extends Controller
 {
-	
-	
-	public function order(Request $request)
+	public function book(Request $request)
     {
         $name =  $request->input('name');
 		$email =  $request->input('email');
@@ -26,8 +25,7 @@ class OrderController extends Controller
 		$country =  $request->input('country');
 		$phone =  $request->input('phone');
 		$date =  $request->input('date');
-		$uuid =  $request->input('uuid');
-		$product =  $request->input('product');
+		$post_id =  $request->input('post_id');
 		
 		
 		$domain = preg_replace('#^https?://#', '', Http::root());
@@ -36,39 +34,26 @@ class OrderController extends Controller
 		$from = explode(" ",$os0);
 		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
 		
-		$rev_orders = new rev_orders();
-		$rev_orders->product = $product;
-		$rev_orders->name = $name;
-		$rev_orders->email = $email;
-		$rev_orders->phone = $phone;
-		$rev_orders->date = $date;
-		$rev_orders->from = $domain;
-		$rev_orders->traveller = $from[0];
-		$rev_orders->status = 1;
-		$rev_orders->save();
+		$rev_books = new rev_books();
+		$rev_books->post_id = $post_id;
+		$rev_books->name = $name;
+		$rev_books->email = $email;
+		$rev_books->phone = $phone;
+		$rev_books->date = $date;
+		$rev_books->source = $domain;
+		$rev_books->traveller = $from[0];
+		$rev_books->status = 1;
+		$rev_books->save();
 		
-		/*
-		DB::table('rev_orders')->where('id',$uuid)->delete();
-		DB::table('rev_orders')->insert([
-			'id' => $uuid,
-			'product' => $product,
-			'name' => $name,
-			'email' => $email,
-			'phone' => $phone,
-			'traveller' => $from[0],
-			'date' => $date,
-			'from' => $domain
-			]);
-		*/
+		$post = blog_posts::find($post_id);
 			
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($product,$name,$email,$phone,$date1,$os0));
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($post->title,$name,$email,$phone,$date1,$os0));
 		
 		return response()->json([
 					"id" => "1",
 					"message" => 'Success'
 				]);
     }
-	
     /**
      * Display a listing of the resource.
      *
@@ -76,20 +61,19 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        
-		if($request->ajax())
+        if($request->ajax())
 		{
-			$orders = rev_orders::query();
-			return Datatables::eloquent($orders)
+			$books = rev_books::query();
+			return Datatables::eloquent($books)
 				->addIndexColumn()
-				->editColumn('date', function ($order) {
-					$dateint = str_ireplace("-","",$order->date);
+				->editColumn('date', function ($book) {
+					$dateint = str_ireplace("-","",$book->date);
 					$dateint = str_ireplace(":","",$dateint);
 					$dateint = str_ireplace(" ","",$dateint);
 					
 					$st1 = date('YmdHis');
 					$st2 = $dateint;
-					$date = Carbon::parse($order->date)->formatLocalized('%d %b %Y %I:%M %p');
+					$date = Carbon::parse($book->date)->formatLocalized('%d %b %Y %I:%M %p');
 					if($st2 >= $st1)
 					{
 						return '<span class="badge badge-danger">'. $date .'</span>';
@@ -99,11 +83,15 @@ class OrderController extends Controller
 						return '<span class="badge badge-success">'. $date .'</span>';
 					}
 				})
-				->addColumn('email_phone', function ($order) {
-					return $order->phone.'<br>'. $order->email;
+				->addColumn('email_phone', function ($book) {
+					return $book->phone.'<br>'. $book->email;
 				})
-				->addColumn('action', function ($order) {
-					if($order->status==1)
+				->addColumn('product', function ($book) {
+					$post = blog_posts::find($book->post_id);
+					return $post->title;
+				})
+				->addColumn('action', function ($book) {
+					if($book->status==1)
 					{
 						$label = ""	;
 						$status = 2;
@@ -121,12 +109,12 @@ class OrderController extends Controller
 						$text = " Confirmed";
 						$disabled = "disabled";
 					}
-					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$order->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $order->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $order->id .'\',\''. $status .'\')" class="btn '.$button.'" '. $disabled .'><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'" '. $disabled .'><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 				})
 				->rawColumns(['action','email_phone','date'])
 				->toJson();
 		}
-        return view('rev.order.index');
+        return view('rev.book.index');
     }
 
     /**
@@ -136,7 +124,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('rev.order.create');
+		$blog_post = blog_posts::where('user_id', Auth::user()->id)->get();
+        return view('rev.book.create',['blog_post'=>$blog_post]);
     }
 
     /**
@@ -157,25 +146,25 @@ class OrderController extends Controller
 			return response()->json($errors);
        	}
 		
-		$product = $request->input('product');
+		$post_id = $request->input('post_id');
 		$name = $request->input('name');
 		$email = $request->input('email');
 		$phone = $request->input('phone');
 		$date = $request->input('date');
-		$from = $request->input('from');
+		$source = $request->input('source');
 		$traveller = $request->input('traveller');
 		$status = $request->input('status');
 		
-		$rev_orders = new rev_orders();
-		$rev_orders->product = $product;
-		$rev_orders->name = $name;
-		$rev_orders->email = $email;
-		$rev_orders->phone = $phone;
-		$rev_orders->date = $date;
-		$rev_orders->from = $from;
-		$rev_orders->traveller = $traveller;
-		$rev_orders->status = $status;
-		$rev_orders->save();
+		$rev_books = new rev_books();
+		$rev_books->post_id = $post_id;
+		$rev_books->name = $name;
+		$rev_books->email = $email;
+		$rev_books->phone = $phone;
+		$rev_books->date = $date;
+		$rev_books->source = $source;
+		$rev_books->traveller = $traveller;
+		$rev_books->status = $status;
+		$rev_books->save();
 		
 		return response()->json([
 					"id" => "1",
@@ -202,8 +191,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-		$order = rev_orders::findOrFail($id);
-        return view('rev.order.edit')->with('order',$order);
+        $book = rev_books::findOrFail($id);
+		$blog_post = blog_posts::where('user_id', Auth::user()->id)->get();
+        return view('rev.book.edit',['book'=>$book,'blog_post'=>$blog_post]);
     }
 
     /**
@@ -216,10 +206,10 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
 		
-		if($request->input('status')!="")
+        if($request->input('update')!="")
 		{
 			$validator = Validator::make($request->all(), [
-          			'status' => 'in:1,2'
+          			'update' => 'in:1,2'
        		]);
 				
 			if ($validator->fails()) {
@@ -227,14 +217,15 @@ class OrderController extends Controller
 				return response()->json($errors);
        		}
 				
-			$rev_orders = rev_orders::find($id);
-			$rev_orders->status = $request->input('status');
-			$rev_orders->save();
+			$rev_books = rev_books::find($id);
+			$rev_books->status = $request->input('update');
+			$rev_books->save();
 			return response()->json([
 					"id"=>"1",
 					"message"=>'success'
 					]);
 		}
+		
 		
 		$validator = Validator::make($request->all(), [
           	'name' => ['required', 'string', 'max:255'],
@@ -246,25 +237,25 @@ class OrderController extends Controller
 			return response()->json($errors);
        	}
 		
-		$product = $request->input('product');
+		$post_id = $request->input('post_id');
 		$name = $request->input('name');
 		$email = $request->input('email');
 		$phone = $request->input('phone');
 		$date = $request->input('date');
-		$from = $request->input('from');
+		$source = $request->input('source');
 		$traveller = $request->input('traveller');
 		$status = $request->input('status');
 		
-		$rev_orders = rev_orders::findOrFail($id);
-		$rev_orders->product = $product;
-		$rev_orders->name = $name;
-		$rev_orders->email = $email;
-		$rev_orders->phone = $phone;
-		$rev_orders->date = $date;
-		$rev_orders->from = $from;
-		$rev_orders->traveller = $traveller;
-		$rev_orders->status = $status;
-		$rev_orders->save();
+		$rev_books = rev_books::findOrFail($id);
+		$rev_books->post_id = $post_id;
+		$rev_books->name = $name;
+		$rev_books->email = $email;
+		$rev_books->phone = $phone;
+		$rev_books->date = $date;
+		$rev_books->source = $source;
+		$rev_books->traveller = $traveller;
+		$rev_books->status = $status;
+		$rev_books->save();
 		
 		return response()->json([
 					"id" => "1",
@@ -280,7 +271,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        $rev_orders = rev_orders::find($id);
-		$rev_orders->delete();
+        $rev_books = rev_books::find($id);
+		$rev_books->delete();
     }
 }
