@@ -129,12 +129,12 @@ function BOOKING()
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img src="{{ $logo_name }}" width="250">
+            	<img src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 <br>
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
-					<!-- Helloo! We are from the {{ $app_name }} team yeaaay!!!, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions. -->
+					
                     Book for tonight? It's Ok!
          			<br>
          			Because we can start the tour every day at 6.30 pm.
@@ -600,9 +600,8 @@ function BOOKING()
 				</script>    
 			</div>
 			
-			<input id="post_id" type="hidden" name="post_id" value="7d435e1b-3fa8-470b-aaaf-f43a4b6fe947">
+			<input id="post_id" type="hidden" name="post_id" value="{{ $post_id }}">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
-			<input id="custom" type="hidden" name="custom" value="<?= \Ramsey\Uuid\Uuid::uuid4()->toString();?>">
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<table>
 				<tr><td>
