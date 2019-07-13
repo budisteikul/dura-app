@@ -5,7 +5,7 @@ function STORE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["name"];
+	var input = ["name","date2_a"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -16,6 +16,7 @@ function STORE()
 	$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
+			"post_id": $('#post_id').val(),
 			"date": $('#date').val(),
 			"date2": $('#date2').val(),
         },
@@ -35,8 +36,14 @@ function STORE()
 					$('#'+ index).addClass('is-invalid');
 						if(value!="")
 						{
-								$('#'+ index).after('<span id="span-'+ index  +'" class="invalid-feedback" role="alert"><strong>'+ value +'</strong></span>');
-							
+								if(index=='date2')
+								{
+									$('#'+ index +'_a').after('<span id="span-'+ index  +'" class="invalid-feedback" role="alert"><strong>'+ value +'</strong></span>');
+								}
+								else
+								{
+									$('#'+ index).after('<span id="span-'+ index  +'" class="invalid-feedback" role="alert"><strong>'+ value +'</strong></span>');
+								}
 							
 						}
 					});
@@ -63,18 +70,26 @@ function STORE()
 @csrf
 <div id="result"></div>
 
-
+<div class="form-group">
+	<label for="post_id">Product :</label>
+    <select class="form-control" id="post_id">
+       @foreach($blog_posts as $blog_post)
+       	<option value="{{ $blog_post->id }}">{{ $blog_post->title }}</option>
+       @endforeach
+	</select>
+</div>
 
 <div class="form-group ">   
-				 <label for="datetimepicker1">Date :</label>    
-<div id="form-inline" class="form-inline">     
-                <div class='input-group' id='datetimepicker1'>
-                    <input type="text" id="date" name="date" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
-                    <div class="input-group-append input-group-addon text-muted">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
+	<label for="datetimepicker1">Date :</label>    
+	<div id="form-inline" class="form-inline d-flex align-items-start">     
+		
+        <div class='input-group' id='datetimepicker1'>
+			<input type="text" id="date" name="date" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
+				<div class="input-group-append input-group-addon text-muted">
+					<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+				</div>
                     
-                </div>
+        </div>
  		<script type="text/javascript">
             $(function () {
                 $('#date').datetimepicker({
@@ -92,14 +107,14 @@ function STORE()
 				});
             });
         </script>    
-&nbsp;
-<div class='input-group' id='datetimepicker2'>
-                    <input type="text" id="date2" name="date2" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
-                    <div class="input-group-append input-group-addon text-muted">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
-                    
-                </div>
+		&nbsp;&nbsp;-&nbsp;&nbsp;
+		<div class='input-group' id='datetimepicker2'>
+			<input type="text" id="date2" name="date2" value="<?= date('Y-m-d') ?>" class="form-control bg-white" readonly>
+			<div id="date2_a" class="input-group-append input-group-addon text-muted">
+				<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+			
+		</div>
  		<script type="text/javascript">
             $(function () {
                 $('#date2').datetimepicker({

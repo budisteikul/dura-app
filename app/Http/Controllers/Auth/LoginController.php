@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\Request as Http;
+//use Illuminate\Support\Facades\Request as Http;
 
 class LoginController extends Controller
 {
@@ -65,8 +65,8 @@ class LoginController extends Controller
 		$remember = ($remember == "true" ? true : false);
 		$url = $request->input('url');
 		
-		$domain = preg_replace('#^https?://#', '', Http::root());
-		if($domain=="www.vertikaltrip.com") $url = 'https://www.vertikaltrip.com/rev/order';
+		//$domain = preg_replace('#^https?://#', '', Http::root());
+		//if($domain=="www.vertikaltrip.com") $url = 'https://www.vertikaltrip.com/rev/order';
 
 		if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
     		return response()->json([

@@ -7,9 +7,11 @@ use App\Http\Controllers\Controller;
 
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_availability;
+use App\Models\Blog\blog_posts;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use Illuminate\Support\MessageBag;
+use Auth;
 
 class AvailabilityController extends Controller
 {
@@ -29,6 +31,10 @@ class AvailabilityController extends Controller
 				->editColumn('date', function ($order) {
 					return Carbon::parse($order->date)->formatLocalized('%d %B %Y');
 				})
+				->addColumn('product', function ($order) {
+					$post = blog_posts::find($order->post_id);
+					return $post->title;
+				})
 				->addColumn('action', function ($e) {
 					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-del" type="button" onClick="DELETE(\''. $e->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
 				})
@@ -43,9 +49,10 @@ class AvailabilityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-		return view('rev.availability.create');
+		$blog_posts = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
+		return view('rev.availability.create',['blog_posts'=>$blog_posts]);
     }
 
     /**
@@ -57,6 +64,7 @@ class AvailabilityController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+			'post_id'    => 'required',
 			'date'    => 'required|date',
     		'date2'      => 'required|date|after_or_equal:date',
        	]);
@@ -70,7 +78,7 @@ class AvailabilityController extends Controller
        	}
 		
 		
-
+		$post_id = $request->input('post_id');
 		$date = $request->input('date');
 		$date2 = $request->input('date2');
 		
@@ -90,6 +98,7 @@ class AvailabilityController extends Controller
 			$rev_availability->delete();
 		
 			$rev_availability = new rev_availability();
+			$rev_availability->post_id = $post_id;
 			$rev_availability->date = date("Y-m-d", $i);
 			$rev_availability->save();
 			

@@ -128,10 +128,10 @@ function BOOKING()
 <header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
-			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
+			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<img src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-                <br>
+                
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
 					
@@ -318,7 +318,7 @@ function BOOKING()
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">Book This Tour</h3>
+					<h3 class="section-heading" style="margin-top:50px;">Instant Booking</h3>
 					<h4 class="section-subheading text-muted">Secure payment by <img src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>

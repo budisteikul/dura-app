@@ -19,9 +19,10 @@
 						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
-				"order": [[ 1, "desc" ]],
+				"order": [[ 2, "desc" ]],
 				"columns": [
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
+					{data: 'product', name: 'product', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
@@ -107,6 +108,7 @@
 			<thead>
 				<tr>
                 	<th style="width:20px">No</th>
+                    <th>Product</th>
 					<th>Date</th>
 					<th style="width:280px"></th>
 				</tr>

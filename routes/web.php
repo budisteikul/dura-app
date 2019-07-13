@@ -48,7 +48,7 @@ Route::get('/expedia', function () {
         return redirect('https://www.expedia.com/things-to-do/yogyakarta-night-walking-and-food-tours.a669776.activity-details');
 });
 Route::get('/tourhq', function () {
-        return redirect('https://www.tourhq.com/id60620/tours/3Hours-private--tour-itinerary-yogyakarta/yogyakarta-night-walking-and-food-tours');
+        return redirect('https://www.tourhq.com/id60620/tours/3Hours-private--tour-itinerary-yogyakarta/travel-through-jogja-citys-mystical-imaginary-line');
 });
 Route::get('/viator', function () {
         return redirect('https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2');

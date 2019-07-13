@@ -15,7 +15,11 @@ class CreateRevAvailabilityTable extends Migration
     {
         Schema::create('rev_availability', function (Blueprint $table) {
             $table->uuid('id')->primary();
-			
+			$table->uuid('post_id');
+			$table->foreign('post_id')
+      			->references('id')->on('blog_posts')
+      			->onDelete('cascade')->onUpdate('cascade');
+				
 			$table->dateTime('date')->nullable();
 			
             $table->timestamps();
@@ -30,6 +34,9 @@ class CreateRevAvailabilityTable extends Migration
      */
     public function down()
     {
+		Schema::table('rev_availability', function (Blueprint $table) {
+             $table->dropForeign('rev_availability_post_id_foreign');
+        });
         Schema::dropIfExists('rev_availability');
     }
 }

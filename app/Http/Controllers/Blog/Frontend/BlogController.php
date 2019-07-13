@@ -55,7 +55,7 @@ class BlogController extends Controller
 		
 	
 		$this->disabledDates = array();
-		$rev_availability = rev_availability::get();
+		$rev_availability = rev_availability::where('post_id',$this->post_id)->get();
 		foreach($rev_availability as $avalaibility)
 		{
 			array_push($this->disabledDates,$avalaibility->date);

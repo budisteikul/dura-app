@@ -91,25 +91,33 @@ class BookController extends Controller
 					return $post->title;
 				})
 				->addColumn('action', function ($book) {
-					if($book->status==1)
+					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$book->post_id)->first();
+					if(isset($check))
 					{
-						$label = ""	;
-						$status = 2;
-						$button = "btn-primary";
-						$icon = "fa-toggle-off";
-						$text = " Pending";
-						$disabled = "";
+						if($book->status==1)
+						{
+							$label = ""	;
+							$status = 2;
+							$button = "btn-primary";
+							$icon = "fa-toggle-off";
+							$text = " Pending";
+							$disabled = "";
+						}
+						else
+						{
+							$label = "";
+							$status = 1;
+							$button = "btn-primary";
+							$icon = "fa-toggle-on";
+							$text = " Confirmed";
+							$disabled = "disabled";
+						}
+						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'" '. $disabled .'><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 					}
 					else
 					{
-						$label = "";
-						$status = 1;
-						$button = "btn-primary";
-						$icon = "fa-toggle-on";
-						$text = " Confirmed";
-						$disabled = "disabled";
+						return '';	
 					}
-					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'" '. $disabled .'><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 				})
 				->rawColumns(['action','email_phone','date'])
 				->toJson();
@@ -124,7 +132,7 @@ class BookController extends Controller
      */
     public function create()
     {
-		$blog_post = blog_posts::where('user_id', Auth::user()->id)->get();
+		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
         return view('rev.book.create',['blog_post'=>$blog_post]);
     }
 
@@ -137,6 +145,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+			'post_id' => ['required'],
           	'name' => ['required', 'string', 'max:255'],
 			'phone' => ['required', 'string', 'max:255'],
        	]);
@@ -192,7 +201,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = rev_books::findOrFail($id);
-		$blog_post = blog_posts::where('user_id', Auth::user()->id)->get();
+		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
         return view('rev.book.edit',['book'=>$book,'blog_post'=>$blog_post]);
     }
 
@@ -228,6 +237,7 @@ class BookController extends Controller
 		
 		
 		$validator = Validator::make($request->all(), [
+			'post_id' => ['required'],
           	'name' => ['required', 'string', 'max:255'],
 			'phone' => ['required', 'string', 'max:255'],
        	]);
