@@ -7,6 +7,10 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use App\Models\Rev\rev_books;
+use App\Models\Blog\blog_posts;
+use Carbon\Carbon;
+
 class BookingTour extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,14 +20,9 @@ class BookingTour extends Mailable
      *
      * @return void
      */
-    public function __construct($tour, $name, $email, $phone, $date, $os0)
+    public function __construct($id)
     {
-        $this->tour = $tour;
-		 $this->name = $name;
-		  $this->email = $email;
-		   $this->phone = $phone;
-		    $this->date = $date;
-			 $this->os0 = $os0;
+        $this->id = $id;
     }
 
     /**
@@ -33,14 +32,18 @@ class BookingTour extends Mailable
      */
     public function build()
     {
+		$rev_books = rev_books::find($this->id);
+		$blog_posts = blog_posts::find($rev_books->post_id);
+		
         return $this->view('layouts.mail.booking-tour')
                     ->text('layouts.mail.booking-tour_plain')
-				    ->subject('New booking from '.$this->name )
-					->with('tour',$this->tour)
-					->with('name',$this->name)
-					->with('email',$this->email)
-					->with('phone',$this->phone)
-					->with('date',$this->date)
-					->with('os0',$this->os0);
+					->from('guide@vertikaltrip.com','Vertikal Trip Support')
+				    ->subject('Thank you for booking')
+					->with('tour',$blog_posts->title)
+					->with('name',$rev_books->name)
+					->with('email',$rev_books->email)
+					->with('phone',$rev_books->phone)
+					->with('date',Carbon::parse($rev_books->date)->formatLocalized('%d %b %Y %I:%M %p'))
+					->with('os0',$rev_books->traveller);
     }
 }

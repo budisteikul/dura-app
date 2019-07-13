@@ -45,9 +45,7 @@ class BookController extends Controller
 		$rev_books->status = 1;
 		$rev_books->save();
 		
-		$post = blog_posts::find($post_id);
-			
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($post->title,$name,$email,$phone,$date1,$os0));
+		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($rev_books->id));	
 		
 		return response()->json([
 					"id" => "1",
@@ -229,6 +227,11 @@ class BookController extends Controller
 			$rev_books = rev_books::find($id);
 			$rev_books->status = $request->input('update');
 			$rev_books->save();
+			
+			if($rev_books->email!="")
+			{
+				Mail::to($rev_books->email)->send(new BookingTour($id));
+			}
 			return response()->json([
 					"id"=>"1",
 					"message"=>'success'
