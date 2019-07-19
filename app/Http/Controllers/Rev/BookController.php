@@ -8,15 +8,31 @@ use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_books;
 use App\Models\Blog\blog_posts;
+use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\Rev\BookingTour;
 use Illuminate\Support\Facades\Request as Http;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
+	
+	public function ticket($id)
+	{
+		$rev_books = rev_books::where('ticket',strtoupper($id))->first();
+		if(isset($rev_books))
+		{
+			$blog_posts = blog_posts::find($rev_books->post_id);
+			return view('rev.ticket.view',['rev_books'=>$rev_books,'blog_posts'=>$blog_posts]);
+		}
+		else
+		{
+			return view('rev.ticket.index');
+		}
+	}
+	
 	public function book(Request $request)
     {
         $name =  $request->input('name');
@@ -34,6 +50,8 @@ class BookController extends Controller
 		$from = explode(" ",$os0);
 		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
 		
+		$ticket = BookClass::ticket();
+		
 		$rev_books = new rev_books();
 		$rev_books->post_id = $post_id;
 		$rev_books->name = $name;
@@ -43,6 +61,7 @@ class BookController extends Controller
 		$rev_books->source = $domain;
 		$rev_books->traveller = $from[0];
 		$rev_books->status = 1;
+		$rev_books->ticket = $ticket;
 		$rev_books->save();
 		
 		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($rev_books->id));	
@@ -88,6 +107,9 @@ class BookController extends Controller
 					$post = blog_posts::find($book->post_id);
 					return $post->title;
 				})
+				->editColumn('ticket', function ($book) {
+					return '<button type="button" onClick="VIEW(\''. $book->ticket .'\')" class="btn btn-link">'. $book->ticket .'</button>';
+				})
 				->addColumn('action', function ($book) {
 					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$book->post_id)->first();
 					if(isset($check))
@@ -117,7 +139,7 @@ class BookController extends Controller
 						return '';	
 					}
 				})
-				->rawColumns(['action','email_phone','date'])
+				->rawColumns(['action','email_phone','date','ticket'])
 				->toJson();
 		}
         return view('rev.book.index');
@@ -160,7 +182,10 @@ class BookController extends Controller
 		$date = $request->input('date');
 		$source = $request->input('source');
 		$traveller = $request->input('traveller');
+		$ticket = $request->input('ticket');
 		$status = $request->input('status');
+		
+		if($ticket=="") $ticket = BookClass::ticket();
 		
 		$rev_books = new rev_books();
 		$rev_books->post_id = $post_id;
@@ -170,6 +195,7 @@ class BookController extends Controller
 		$rev_books->date = $date;
 		$rev_books->source = $source;
 		$rev_books->traveller = $traveller;
+		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
 		
@@ -257,7 +283,10 @@ class BookController extends Controller
 		$date = $request->input('date');
 		$source = $request->input('source');
 		$traveller = $request->input('traveller');
+		$ticket = $request->input('ticket');
 		$status = $request->input('status');
+		
+		if($ticket=="") $ticket = BookClass::ticket();
 		
 		$rev_books = rev_books::findOrFail($id);
 		$rev_books->post_id = $post_id;
@@ -267,6 +296,7 @@ class BookController extends Controller
 		$rev_books->date = $date;
 		$rev_books->source = $source;
 		$rev_books->traveller = $traveller;
+		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
 		

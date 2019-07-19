@@ -1,6 +1,4 @@
 @extends('layouts.index')
-@section('title', $act_name .' | '. $app_name)
-@section('google_analytics', $google_analytics)
 @section('content')
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -11,8 +9,7 @@
 
 function BOOKING()
 {
-	//$('#submit').prop('disabled', true);
-	//$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
+	
 	
 	if($('#name').val()=="")
 	{
@@ -65,15 +62,14 @@ function BOOKING()
 				'phone': $('#phone').val(),
 				'email': $('#email').val(),
 				'date': $('#date').val(),
-				'uuid': $('#custom').val(),
-				'product': $('#product').val(),
+				'post_id': '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947',
         	},
 			type: 'POST',
-			url: '/order'
+			url: '/book'
 			}).done(function( data ) {
 			if(data.id=="1")
 			{
-				
+				window.location.href="/success";
 			}
 			else
 			{
@@ -110,7 +106,7 @@ function BOOKING()
 <!-- ############################################################################### -->
 
 
-
+<form onSubmit="BOOKING(); return false;">
 
 <div class="form-group">
 	<label for="name"><strong>Full name :</strong></label>
@@ -385,25 +381,36 @@ function BOOKING()
             });
         </script>    
 </div>
-<input id="product" type="hidden" name="product" value="{!! $act_name !!}">
-<form action="/success" method="get" target="_top" onSubmit="return BOOKING();">
-<input id="custom" type="hidden" name="custom" value="<?= \Ramsey\Uuid\Uuid::uuid4()->toString();?>">
-<input type="hidden" name="cmd" value="_s-xclick">
 <table>
 <tr><td>
 <br>
+<span class="badge badge-danger">Special Offer</span>
+				<div class="style-4">
+  					<del>
+    					<span class="amount">42 EUR</span>
+  					</del>
+  				<ins>
+    				<span class="amount">34 EUR</span>
+  				</ins>
+				  / person
+				</div>
+			<small class="form-text text-danger"><b>Book by August 31 to save 23% off our previously offered price!</b></small>
+<br>
 
 <input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
-	{!! $option_button !!}
+			<option value="1 person">1 person 34 EUR</option>
+			<option value="2 persons">2 persons 68 EUR</option>
+			<option value="3 persons">3 persons 102 EUR</option>
+			<option value="4 persons">4 persons 136 EUR</option>
+			<option value="5 persons">5 persons 170 EUR</option>
+			<option value="6 persons">6 persons 204 EUR</option>
+			<option value="7 persons">7 persons 238 EUR</option>
+			<option value="8 persons">8 persons 272 EUR</option>
 </select>
 <!-- style 1 -->
-
+<br>
 </td></tr>
 </table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
-<br />
-
 <button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket"></i> Book Now</button>	
 <!-- input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
@@ -414,9 +421,36 @@ function BOOKING()
 	
     
 <!-- ############################################################################### -->
-        <div style="height:60px;"></div>
-        
-        </div>
+      <div style="height:60px;"></div>
+        <p><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+          Vertikal Trip <br>
+Yogyakarta Night Walking and Food Tours<br>
+17 July 2019, 6.30 pm.
+  <br>
+          Meeting Point : Tugu Yogyakarta Monument.
+  <br>
+1. Sam Joe (Australia) <br>
+2. Nimai Ethridge (Australia)<br>
+3. Hayleigh Niterl (Australia)<br>
+4. Marcella Alfonso (Australia)<br>
+5. (empty)<br>
+6. (empty)<br>
+7. (empty)<br>
+8. (empty)
+          
+          
+  <br>
+  <br>
+          Just booked! Get your spot before its to late.<br>
+          4 of 8 spots left
+</p>
+        <p>www.vertikaltrip.com </p>
+</div>
       </div>
       </div>
 </section>

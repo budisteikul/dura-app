@@ -23,6 +23,7 @@ function UPDATE()
 			"date": $('#date').val(),
 			"status": $('#status').val(),
         	"traveller": $('#traveller').val(),
+			"ticket": $('#ticket').val(),
         },
 		type: 'PUT',
 		url: '{{ route('rev_book.update',['book'=>$book->id]) }}'
@@ -130,16 +131,22 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="source">Traveller :</label>
+	<label for="source">Source :</label>
     <select class="form-control" name="source" id="source">
-      <option value="www.vertikaltrip.com" {{ ($book->from=='www.vertikaltrip.com') ? 'selected' : '' }}>www.vertikaltrip.com</option>
-      <option value="www.jogjafoodtour.com" {{ ($book->from=='www.jogjafoodtour.com') ? 'selected' : '' }}>www.jogjafoodtour.com</option>
-      <option value="www.airbnb.com" {{ ($book->from=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
-      <option value="www.tripadvisor.com" {{ ($book->from=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
-      <option value="www.telegram.com" {{ ($book->from=='www.telegram.com') ? 'selected' : '' }}>www.telegram.com</option>
-      <option value="www.tourhq.com" {{ ($book->from=='www.tourhq.com') ? 'selected' : '' }}>www.tourhq.com</option>
+      <option value="www.vertikaltrip.com" {{ ($book->source=='www.vertikaltrip.com') ? 'selected' : '' }}>www.vertikaltrip.com</option>
+      <option value="www.jogjafoodtour.com" {{ ($book->source=='www.jogjafoodtour.com') ? 'selected' : '' }}>www.jogjafoodtour.com</option>
+      <option value="www.airbnb.com" {{ ($book->source=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
+      <option value="www.tripadvisor.com" {{ ($book->source=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
+      <option value="www.telegram.com" {{ ($book->source=='www.telegram.com') ? 'selected' : '' }}>www.telegram.com</option>
+      <option value="www.tourhq.com" {{ ($book->source=='www.tourhq.com') ? 'selected' : '' }}>www.tourhq.com</option>
 	</select>
 </div>
+
+<div class="form-group">
+	<label for="ticket">Ticket :</label>
+	<input type="text" id="ticket" name="ticket" class="form-control" value="{{ $book->ticket }}" placeholder="Ticket">
+</div>
+
 <div class="form-group">
 	<label for="status">Status :</label>
     <select class="form-control" name="status" id="status">

@@ -21,17 +21,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
      
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=@yield('google_analytics')"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '@yield('google_analytics')');
-</script>
+
 </head>
 <body>
-<div style="background-color:#d7e4ed">
+<div>
 	@yield('content')
 </div>
 </body>

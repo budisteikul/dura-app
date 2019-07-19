@@ -23,7 +23,8 @@ function STORE()
 			"source": $('#source').val(),
 			"date": $('#date').val(),
 			"status": $('#status').val(),
-        	"traveller": $('#traveller').val()
+        	"traveller": $('#traveller').val(),
+			"ticket": $('#ticket').val(),
         },
 		type: 'POST',
 		url: '{{ route('rev_book.store') }}'
@@ -144,6 +145,12 @@ function STORE()
       <option value="www.tourhq.com">www.tourhq.com</option>
 	</select>
 </div>
+
+<div class="form-group">
+	<label for="ticket">Ticket :</label>
+	<input type="text" id="ticket" name="ticket" class="form-control" placeholder="Ticket">
+</div>
+
 <div class="form-group">
 	<label for="status">Status :</label>
     <select class="form-control" id="status">

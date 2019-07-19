@@ -19,16 +19,17 @@
 						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
-				"order": [[ 6, "desc" ]],
+				"order": [[ 5, "desc" ]],
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
-					{data: 'product', name: 'product', className: 'auto'},
+					
 					{data: 'name', name: 'name', className: 'auto'},
 					{data: 'email_phone', name: 'email_phone', className: 'auto'},
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
 					{data: 'source', name: 'source', className: 'auto'},
+					{data: 'ticket', name: 'ticket', className: 'auto'},
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
 				
@@ -95,6 +96,16 @@
 		
 	}
 	
+	function VIEW(id)
+	{
+		$.fancybox.open({
+        	type: 'ajax',
+       	 	src: '/ticket/'+ id,
+			touch: false,
+   		});
+		
+	}
+	
 	function STATUS(id, status)
 	{
 		var table = $('#dataTables-example').DataTable();
@@ -129,12 +140,13 @@
 				<tr>
                 	<th></th>
                 	<th style="width:20px">No</th>
-					<th>Product</th>
+					
                     <th>Lead Traveller</th>
                     <th>Email/Phone</th>
                     <th>Number Traveller</th>
                     <th>Date</th>
                     <th>Source</th>
+                    <th>Ticket</th>
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
@@ -142,7 +154,8 @@
 			</tbody>
             <tfoot style="visibility:hidden">
             	<tr>
-     				<td></td>
+     				
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -159,5 +172,5 @@
         </div>
     </div>
 </div>       
-        
+
 @endsection

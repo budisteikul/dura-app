@@ -43,6 +43,7 @@ class BookingTour extends Mailable
 					->with('name',$rev_books->name)
 					->with('email',$rev_books->email)
 					->with('phone',$rev_books->phone)
+					->with('ticket',$rev_books->ticket)
 					->with('date',Carbon::parse($rev_books->date)->formatLocalized('%d %b %Y %I:%M %p'))
 					->with('os0',$rev_books->traveller);
     }

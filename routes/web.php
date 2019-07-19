@@ -16,16 +16,14 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
-// Bot --------------------------------------------------------------------------
-Route::post('/bot/telegram', 'Rev\Bot@telegram');
-Route::post('/bot/order', 'Rev\Bot@order');
-Route::get('/bot/order', 'Rev\Bot@index');
-Route::get('/bot/success', 'Rev\Bot@success');
-// Bot --------------------------------------------------------------------------
-
 // Reservation --------------------------------------------------------------------------
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+Route::get('/ticket', function () {
+        return view('rev.ticket.index');
+    });
+Route::get('/ticket/{id}', 'Rev\BookController@ticket');
 Route::post('/book', 'Rev\BookController@book');
+Route::get('/order', 'Blog\Frontend\BlogController@index');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/cancel', function () {

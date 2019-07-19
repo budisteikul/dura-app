@@ -211,7 +211,9 @@
                             <strong>Phone :</strong> {{$phone}}<br />
                             <strong>Date :</strong> {{$date}}<br />
                           <strong>Number of travelers :</strong> {{$os0}} 
-                          </p>
+                          <br />
+                          <strong>Ticket : </strong> <a href="https://www.vertikaltrip.com/ticket/{{$ticket}}">{{$ticket}}</a>
+						  </p>
                           
                         </td>
                       </tr>

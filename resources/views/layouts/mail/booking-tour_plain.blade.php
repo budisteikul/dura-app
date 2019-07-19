@@ -7,6 +7,7 @@ Email : {{$email}}
 Phone : {{$phone}}
 Date : {{$date}}
 Number of travelers : {{$os0}}
+Ticket : {{$ticket}}
 
 Thanks,
 Vertikal Trip Team

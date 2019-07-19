@@ -1,6 +1,5 @@
 @extends('layouts.index')
 @section('title', $act_name .' | '. $app_name)
-@section('google_analytics', $google_analytics)
 @section('content')
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -96,7 +95,14 @@ function BOOKING()
 		});
 }
 </script>
-
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ $google_analytics }}');
+</script>
 @endpush
     
 <!-- Navigation -->
@@ -109,10 +115,10 @@ function BOOKING()
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive" >
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#about">About The Tour</a>
+					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#guide">Our Tour Guide</a>
+					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
@@ -129,7 +135,7 @@ function BOOKING()
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
+            	<img alt="{{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
                 
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
@@ -205,7 +211,7 @@ function BOOKING()
           
 			<center>
 				<br>
-				<img class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
+				<img alt="Yogyakarta Imaginary | {{ $act_name }}" class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
 				<span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
 				<br>
 			</center>
@@ -234,7 +240,7 @@ function BOOKING()
 			<br>
 			<div class="d-flex flex-wrap justify-content-center">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/tour-guide.jpg" >
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/tour-guide.jpg" >
 					<h4>Kalika</h4>
 					<p class="text-muted">Hi! My name is Kalika, I was born and still live in Jogja. I am a very adventurous person, I like music, movies, travelling and starting adventures with new friend</p>
 					<br><br>
@@ -319,7 +325,7 @@ function BOOKING()
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Instant Booking</h3>
-					<h4 class="section-subheading text-muted">Secure payment by <img src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
+					<h4 class="section-subheading text-muted">Secure payment by <img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
 					<p class="caption text-muted" style="margin-top:3px;">As fast as lightning <br />Just click book and our tour guide will be waiting for you at meeting point</p>
 					
@@ -621,8 +627,8 @@ function BOOKING()
 			<input type="hidden" name="currency_code" value="USD">
 			<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
 			<br />
-			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket"></i> Book Now</button>	
-			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-paypal"></i> Book and Pay Now</button>	
+			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br />
 			<small class="form-text text-muted">After payment received, we will contact you immediately</small>
 			</form>
@@ -632,7 +638,27 @@ function BOOKING()
 </div>
 </section>
 
-
+<!-- section style="background-color:#f7f8f9">
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        	<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
+            <br><br>
+            Contact us, if you prefer to pay with another payment system
+        	<strong>We accept bank transfer but with following criteria</strong>
+            <ul>
+            	<li>Only SEPA (European Local Bank)</li>
+            	<li>Prices is 34 EURO per person</li>
+            	<li>Transfer must be in EURO currency, other currency automatically rejected</li>
+                <li>Wire transfers are not supported</li>
+                <li>It takes 1-2 business days</li>
+                <li><a href="https://wa.me/+6285743112112" target="_blank">Contact us</a> to request IBAN info</li>
+            </ul>
+            <div style="height:50px;"></div>
+        </div>
+      </div>
+</div>
+</section -->
 
 <section style="background-color:#ffffff">
 <div class="container">
@@ -665,7 +691,7 @@ function BOOKING()
 				Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
 				<span class="fa fa-envelope"></span> <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikatrip.com</a><br />
 				<br>
-				<img src="https://static.budi.my.id/assets/foodtour/payment.png">
+				<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
 				<br><br>
 			</p>
         </div>
