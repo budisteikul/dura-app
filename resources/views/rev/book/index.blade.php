@@ -101,6 +101,7 @@
 		$.fancybox.open({
         	type: 'ajax',
        	 	src: '/ticket/'+ id,
+			//src: '/ticket/',
 			touch: false,
    		});
 		

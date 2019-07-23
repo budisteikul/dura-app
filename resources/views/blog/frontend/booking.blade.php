@@ -97,7 +97,7 @@ function BOOKING()
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="row" style="padding-bottom:0px;">
           <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Booking Form</h3>
+            <h3 class="section-heading" style="margin-top:50px;">Book Appointment</h3>
             <!-- h4 class="section-subheading text-muted">Secure payment by <img src="/assets/foodtour/logo-paypal.jpg"></h4 -->
             <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
           </div>
@@ -421,35 +421,7 @@ function BOOKING()
 	
     
 <!-- ############################################################################### -->
-      <div style="height:60px;"></div>
-        <p><br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-          Vertikal Trip <br>
-Yogyakarta Night Walking and Food Tours<br>
-17 July 2019, 6.30 pm.
-  <br>
-          Meeting Point : Tugu Yogyakarta Monument.
-  <br>
-1. Sam Joe (Australia) <br>
-2. Nimai Ethridge (Australia)<br>
-3. Hayleigh Niterl (Australia)<br>
-4. Marcella Alfonso (Australia)<br>
-5. (empty)<br>
-6. (empty)<br>
-7. (empty)<br>
-8. (empty)
-          
-          
-  <br>
-  <br>
-          Just booked! Get your spot before its to late.<br>
-          4 of 8 spots left
-</p>
-        <p>www.vertikaltrip.com </p>
+     
 </div>
       </div>
       </div>

@@ -1,13 +1,10 @@
 @extends('layouts.index')
 @section('content')
+<script src="https://static.budi.my.id/js/ratnawahyu.js"></script>
+<link href="https://static.budi.my.id/css/ratnawahyu.css" rel="stylesheet">
+<center>
+<h3>Ticket not found</h3>
+</center>
 
-<div class="card">
-  <div class="card-header">
-    Ticket
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Not Found</h5>
-  </div>
-</div>
 
 @endsection

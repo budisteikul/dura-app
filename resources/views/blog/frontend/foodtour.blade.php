@@ -94,6 +94,30 @@ function BOOKING()
 			}
 		});
 }
+
+function VIEW()
+	{
+		if($('#ticket').val()=="")
+		{
+		swal({
+  			title: "Warning",
+  			text: "Ticket ID cannot be blank!",
+  			icon: "warning",
+  			dangerMode: true,
+			}).then((value) => {
+  				$('#ticket').focus();
+				
+			});
+		return false;	
+		}
+	
+		$.fancybox.open({
+        	type: 'iframe',
+       	 	src: '/ticket/'+ $('#ticket').val(),
+   		});
+		$('#ticket').val('');
+	}
+	
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytics }}"></script>
@@ -125,6 +149,9 @@ function BOOKING()
 				</li>
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#booking">Book Now</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#ticket-checker">Ticket Checker</a>
 				</li>
 			</ul>
 		</div>
@@ -232,21 +259,40 @@ function BOOKING()
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Tour Guide On Duty</h3>
+				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Team</h3>
 				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
 				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 			</div>
 			<br>
-			<div class="d-flex flex-wrap justify-content-center">
+		</div>
+        
+     </div>
+     <div class="row justify-content-center"> 
+     <div class="row col-8">          
+                
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/tour-guide.jpg" >
-					<h4>Kalika</h4>
-					<p class="text-muted">Hi! My name is Kalika, I was born and still live in Jogja. I am a very adventurous person, I like music, movies, travelling and starting adventures with new friend</p>
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
+					<h4>Kalika Ratna</h4>
+					<p class="text-muted">Tour Guide</p>
 					<br><br>
 				</div>
 			</div>
-		</div>
+            
+            
+            
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
+					<h4>Vella Sekar</h4>
+					<p class="text-muted">Tour Guide</p>
+					<br><br>
+				</div>
+			</div>
+        
+        </div></div>
+        
 	</div>
 </div>
 </section>
@@ -638,27 +684,31 @@ function BOOKING()
 </div>
 </section>
 
-<!-- section style="background-color:#f7f8f9">
+<section id="ticket-checker" style="background-color:#f7f8f9">
 <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
         	<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
             <br><br>
-            Contact us, if you prefer to pay with another payment system
-        	<strong>We accept bank transfer but with following criteria</strong>
-            <ul>
-            	<li>Only SEPA (European Local Bank)</li>
-            	<li>Prices is 34 EURO per person</li>
-            	<li>Transfer must be in EURO currency, other currency automatically rejected</li>
-                <li>Wire transfers are not supported</li>
-                <li>It takes 1-2 business days</li>
-                <li><a href="https://wa.me/+6285743112112" target="_blank">Contact us</a> to request IBAN info</li>
-            </ul>
+            
+<form onSubmit="VIEW(); return false;">        
+<div class="card">
+  <h5 class="card-header"><i class="fa fa-ticket"></i> Check my ticket</h5>
+  <div class="card-body">
+    <div class="form-group">
+	<label for="ticket">You can also check your ticket status by submiting your ticket ID</label>
+	<input autocomplete="off" type="text" id="ticket" name="ticket" class="form-control" placeholder="Ticket ID">
+	</div>
+    <button id="submit" type="submit" class="btn btn-danger">Check <i class="fa fa-arrow-circle-right"></i></button>
+    
+  </div>
+</div>
+</form>
             <div style="height:50px;"></div>
         </div>
       </div>
 </div>
-</section -->
+</section>
 
 <section style="background-color:#ffffff">
 <div class="container">
@@ -671,7 +721,8 @@ function BOOKING()
 					<a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 					<a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
+                    <a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 				</div>
 			</div>
 			<div style="height:50px;"></div>
@@ -687,7 +738,7 @@ function BOOKING()
 			<p class="m-0 text-center text-white">
 				Vertikal Trip
 				<br>
-				<span class="fa fa-location-arrow"></span> Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
+				<span class="fa fa-location-arrow"></span> Meeting point : Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
 				Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
 				<span class="fa fa-envelope"></span> <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikatrip.com</a><br />
 				<br>

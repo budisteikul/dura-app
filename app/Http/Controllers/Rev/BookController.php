@@ -21,7 +21,15 @@ class BookController extends Controller
 	
 	public function ticket($id)
 	{
-		$rev_books = rev_books::where('ticket',strtoupper($id))->first();
+		if($id=="")
+		{
+			return redirect("/");	
+		}
+		
+		$id = strtoupper($id);
+		$id = str_ireplace("BR-","",$id);
+		
+		$rev_books = rev_books::where('ticket',$id)->first();
 		if(isset($rev_books))
 		{
 			$blog_posts = blog_posts::find($rev_books->post_id);
@@ -68,7 +76,7 @@ class BookController extends Controller
 		
 		return response()->json([
 					"id" => "1",
-					"message" => 'Success'
+					"message" => $ticket
 				]);
     }
     /**

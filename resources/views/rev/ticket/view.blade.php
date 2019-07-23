@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('content')
-@push('scripts')
+
 <style>
 div_body {
   background: #d7e4ed;
@@ -18,14 +18,14 @@ h2 {
   color: #FFF;
   opacity: 0.5;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin: 0px;
 }
 h3 {
   color: #FFF;
   opacity: 0.8;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin: 0px;
 }
 .tickets_wrapper {
@@ -287,7 +287,10 @@ h3 {
   border-top: 5px solid #da251d;
 }
 </style>
-@endpush
+
+
+
+
 
 
 
@@ -370,7 +373,8 @@ h3 {
             </div>
         </div>
     </div>
-		
 </div>
+
 </div>
+
 @endsection

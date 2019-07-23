@@ -19,9 +19,10 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 // Reservation --------------------------------------------------------------------------
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/ticket', function () {
-        return view('rev.ticket.index');
+        return redirect('/');
     });
 Route::get('/ticket/{id}', 'Rev\BookController@ticket');
+
 Route::post('/book', 'Rev\BookController@book');
 Route::get('/order', 'Blog\Frontend\BlogController@index');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
@@ -42,6 +43,11 @@ Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 // Reservation Admin --------------------------------------------------------------------------
 
 // Link --------------------------------------------------------------------------
+// Tugu Pal Putih
+//https://www.google.com/maps/reserve/v/ttd/c/v1m16zP9SuA?source=pa&hl=id-ID&gei=2lc2XZSqMsT-9QOXy62oBg&sourceurl=https://www.google.com/search?q%3Dtugu%2Bpal%2Bputih%26oq%3Dtugu%2Bpal%2Bputih%26aqs%3Dchrome.0.69i59j0l5.1431j0j7%26sourceid%3Dchrome%26ie%3DUTF-8
+Route::get('/facebook', function () {
+        return redirect('https://www.facebook.com/events/2283084325275232/');
+});
 Route::get('/expedia', function () {
         return redirect('https://www.expedia.com/things-to-do/yogyakarta-night-walking-and-food-tours.a669776.activity-details');
 });
@@ -59,6 +65,9 @@ Route::get('/volcano', function () {
 });
 Route::get('/tripadvisor', function () {
 		return redirect('https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Region_Java.html');
+});
+Route::get('/eventbrite', function () {
+		return redirect('https://jogjafoodtour.eventbrite.com');
 });
 // Link --------------------------------------------------------------------------
 
