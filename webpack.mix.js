@@ -50,11 +50,11 @@ mix.scripts([
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 	'resources/assets/frontend/sweetalert/dist/sweetalert.min.js'
-	],'public/js/ratnawahyu.js');
+	],'public/js/vertikaltrip.js');
 
 mix.styles([
 	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
-	'resources/assets/frontend/font-awesome/css/font-awesome.min.css',
+	'resources/assets/frontend/fontawesome-free-5.9.0-web/css/all.css',
 	'resources/assets/frontend/animate.css/animate.min.css',
 	'resources/assets/frontend/jquery-infinite-scroll/main.css',
 	'resources/assets/frontend/photoset-grid/css/main.css',
@@ -62,8 +62,8 @@ mix.styles([
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/timeline/timeline.css',
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/ratnawahyu.css');
+	],'public/css/vertikaltrip.css');
 
-mix.copyDirectory('resources/assets/frontend/font-awesome/fonts', 'public/fonts');
+mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
