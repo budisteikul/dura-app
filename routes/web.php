@@ -45,6 +45,8 @@ Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 // Link --------------------------------------------------------------------------
 // Tugu Pal Putih
 //https://www.google.com/maps/reserve/v/ttd/c/v1m16zP9SuA?source=pa&hl=id-ID&gei=2lc2XZSqMsT-9QOXy62oBg&sourceurl=https://www.google.com/search?q%3Dtugu%2Bpal%2Bputih%26oq%3Dtugu%2Bpal%2Bputih%26aqs%3Dchrome.0.69i59j0l5.1431j0j7%26sourceid%3Dchrome%26ie%3DUTF-8
+// Vertikal Trip
+//https://www.google.com/maps/reserve/v/ttd/c/pIOOLeN8cZQ?source=pa&hl=id-ID&gei=tAQ3XeWxGPXWz7sP__OKsAw&sourceurl=https://www.google.com/search?q%3Dvertikal%2Btrip%26oq%3Dvert%26aqs%3Dchrome.1.69i60j69i59j0j69i60l2j69i57.2623j0j4%26sourceid%3Dchrome%26ie%3DUTF-8
 Route::get('/facebook', function () {
         return redirect('https://www.facebook.com/events/2283084325275232/');
 });

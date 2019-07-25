@@ -2,7 +2,7 @@
 @section('title', $act_name .' | '. $app_name)
 @section('content')
 @push('scripts')
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="https://static.budi.my.id/js/ratnawahyu.js"></script>
 <link href="https://static.budi.my.id/css/ratnawahyu.css" rel="stylesheet">
@@ -136,23 +136,23 @@ function VIEW()
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span> <span style="font-size:16px">Menu</span>
 		</button>
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive" >
+		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#booking">Book Now</a>
 				</li>
-                <li class="nav-item">
+                <!-- li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#ticket-checker">Ticket Checker</a>
-				</li>
+				</li -->
 			</ul>
 		</div>
     </div>
@@ -202,8 +202,8 @@ function VIEW()
 					<strong>Duration :</strong> 3 hours start at 6.30 pm<br />
 					<strong>Type :</strong> Open Trip<br />
 					<strong>Language :</strong> Offered in English<br />
-					<strong>Meeting point :</strong> Tugu Yogyakarta Monument<br />	
-					Gowongan, Jetis, Yogyakarta 55233<br />	
+					<strong>Meeting point :</strong> <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />	
+					Gowongan, Jetis, Yogyakarta 55233</a><br />	
 					<strong>Price :</strong><br />
 					{!! $price !!}
 				</div>
@@ -253,49 +253,6 @@ function VIEW()
 </div>
 </article> 
 
-<section id="guide" style="background-color:#f7f8f9">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Team</h3>
-				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
-				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-				</div>
-			</div>
-			<br>
-		</div>
-        
-     </div>
-     <div class="row justify-content-center"> 
-     <div class="row col-8">          
-                
-        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
-				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
-					<h4>Kalika Ratna</h4>
-					<p class="text-muted">Tour Guide</p>
-					<br><br>
-				</div>
-			</div>
-            
-            
-            
-            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
-				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
-					<h4>Vella Sekar</h4>
-					<p class="text-muted">Tour Guide</p>
-					<br><br>
-				</div>
-			</div>
-        
-        </div></div>
-        
-	</div>
-</div>
-</section>
 
 <section id="gallery" style="background-color:#ffffff">
 <div class="container">
@@ -363,6 +320,54 @@ function VIEW()
 	</div>
 </div>
 </section>
+
+
+
+<section id="guide" style="background-color:#f7f8f9">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Team</h3>
+				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
+				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+			<br>
+		</div>
+        
+     </div>
+     <div class="row justify-content-center"> 
+     <div class="row col-8">          
+                
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
+					<h4>Kalika Ratna</h4>
+					<p class="text-muted">Tour Guide</p>
+					<br><br>
+				</div>
+			</div>
+            
+            
+            
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
+					<h4>Vella Sekar</h4>
+					<p class="text-muted">Tour Guide</p>
+					<br><br>
+				</div>
+			</div>
+        
+        </div></div>
+        
+	</div>
+</div>
+</section>
+
+
 
 <section id="booking" style="background-color:#f7f8f9">
 <div class="container">
@@ -673,7 +678,7 @@ function VIEW()
 			<input type="hidden" name="currency_code" value="USD">
 			<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
 			<br />
-			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-paypal"></i> Book and Pay Now</button>	
+			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket"></i> Book Now</button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br />
 			<small class="form-text text-muted">After payment received, we will contact you immediately</small>
@@ -684,7 +689,7 @@ function VIEW()
 </div>
 </section>
 
-<section id="ticket-checker" style="background-color:#f7f8f9">
+<!-- section id="ticket-checker" style="background-color:#f7f8f9">
 <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -708,7 +713,7 @@ function VIEW()
         </div>
       </div>
 </div>
-</section>
+</section -->
 
 <section style="background-color:#ffffff">
 <div class="container">
@@ -718,9 +723,9 @@ function VIEW()
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
 				<div class="d-flex flex-wrap justify-content-left">
 					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<!-- a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<!-- a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
                     <a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 				</div>
@@ -738,8 +743,8 @@ function VIEW()
 			<p class="m-0 text-center text-white">
 				Vertikal Trip
 				<br>
-				<span class="fa fa-location-arrow"></span> Meeting point : Tugu Yogyakarta Monument<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br>
-				Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
+				<span class="fa fa-location-arrow"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br>
+				<span class="fa fa-whatsapp-square"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fa fa-instagram"></span> <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fa fa-facebook"></span> <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
 				<span class="fa fa-envelope"></span> <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikatrip.com</a><br />
 				<br>
 				<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
