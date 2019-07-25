@@ -222,7 +222,7 @@ function VIEW()
 			<p>
 				<h2 class="section-heading">Inclusions</h2>
 				- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
-				- Mineral water 600 ml <span class="fa fa-coffee"></span><br />
+				- Mineral water 600 ml <span class="fa fa-prescription-bottle"></span><br />
 				- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket-alt"></span><br />
 				- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
 				- Raincoat, if it's rain <span class="fa fa-briefcase"></span><br />
