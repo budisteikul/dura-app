@@ -226,7 +226,7 @@ function VIEW()
 				- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket-alt"></span><br />
 				- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
 				- Raincoat, if it's rain <span class="fa fa-briefcase"></span><br />
-				- Many types of Javanese authentic snack, food and drink <span class="fa fa-cutlery"></span><br />
+				- Many types of Javanese authentic snack, food and drink <span class="fa fa-utensils"></span><br />
 			</p>
           
 			<p>
