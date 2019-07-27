@@ -727,7 +727,10 @@ function VIEW()
 					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 					<!-- a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-                    <a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+                    <!-- a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
+                    
+                    <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+                    
 				</div>
 			</div>
 			<div style="height:50px;"></div>
