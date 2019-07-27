@@ -198,13 +198,13 @@ function VIEW()
 			<p>
 				<br>
 				<div>
-					<strong>Name :</strong> {{ $act_name }}<br />
-					<strong>Duration :</strong> 3 hours start at 6.30 pm<br />
-					<strong>Type :</strong> Open Trip<br />
-					<strong>Language :</strong> Offered in English<br />
-					<strong>Meeting point :</strong> <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />	
+					<span style="width:20px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
+					<span style="width:20px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
+					<span style="width:20px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
+					<span style="width:20px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
+					<span style="width:20px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong> <a class="text-success" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />	
 					Gowongan, Jetis, Yogyakarta 55233</a><br />	
-					<strong>Price :</strong><br />
+					<span style="width:20px;" class="fa fa-tags"></span><strong> Price :</strong><br />
 					{!! $price !!}
 				</div>
 			
@@ -743,7 +743,7 @@ function VIEW()
 			<p class="m-0 text-center text-white">
 				Vertikal Trip
 				<br>
-				<span class="fa fa-map-marked"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br>
+				<span class="fa fa-map-marked-alt"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikatrip.com</a><br />
 				<br>

@@ -1,10 +1,10 @@
 @extends('layouts.index')
 @section('content')
 @push('scripts')
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="/js/ratnawahyu.js"></script>
-<link href="/css/ratnawahyu.css" rel="stylesheet">
+<script src="https://static.budi.my.id/js/vertikaltrip.js"></script>
+<link href="https://static.budi.my.id/css/vertikaltrip.css" rel="stylesheet">
 @endpush
     
    <!-- ################################################################### -->
