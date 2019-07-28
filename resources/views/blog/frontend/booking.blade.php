@@ -384,7 +384,7 @@ function BOOKING()
 <table>
 <tr><td>
 <br>
-<span class="badge badge-danger">Special Offer</span>
+<span class="badge badge-success">Special Offer</span>
 				<div class="style-4">
   					<del>
     					<span class="amount">42 EUR</span>
@@ -394,7 +394,7 @@ function BOOKING()
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-danger"><b>Book by August 31 to save 23% off our previously offered price!</b></small>
+			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>
 <br>
 
 <input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
@@ -417,7 +417,7 @@ function BOOKING()
 <br />
 
 </form>
-<div id="bookingexternal" class="form-group">
+<div id="bookingexternal" class="form-group" style="height:50px;">
 	
     
 <!-- ############################################################################### -->
@@ -426,10 +426,4 @@ function BOOKING()
       </div>
       </div>
 </section>
-
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.06490221521!2d110.36486611410946!3d-7.782943694391066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58373fffffff%3A0xffb2d5ffd8a9bd10!2sTugu+Pal+Putih!5e0!3m2!1sen!2sid!4v1564073717527!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
-
 @endsection

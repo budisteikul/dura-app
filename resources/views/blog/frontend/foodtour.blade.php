@@ -202,8 +202,9 @@ function VIEW()
 					<span style="width:20px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:20px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:20px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-					<span style="width:20px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong> <a class="text-success" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />	
-					Gowongan, Jetis, Yogyakarta 55233</a><br />	
+					<span style="width:20px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
+					<br /><a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />	
 					<span style="width:20px;" class="fa fa-tags"></span><strong> Price :</strong><br />
 					{!! $price !!}
 				</div>
@@ -720,16 +721,21 @@ function VIEW()
 	<div style="height:50px;"></div>
     <div class="row">
 		<div class="col-md-12 mx-auto">
+			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:10px;">
+				<div class="d-flex flex-wrap justify-content-left">
+					<strong class="text-muted">Book on external sites</strong>
+				</div>
+			</div>
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
 				<div class="d-flex flex-wrap justify-content-left">
 					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+                    
 					<!-- a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 					<!-- a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
                     <!-- a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-                    
-                    <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
                     
 				</div>
 			</div>
@@ -746,9 +752,11 @@ function VIEW()
 			<p class="m-0 text-center text-white">
 				Vertikal Trip
 				<br>
-				<span class="fa fa-map-marked-alt"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih Jogja)<br />Gowongan, Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br>
+				<span class="fa fa-map-marked-alt"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
+				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
+				</a><br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikatrip.com</a><br />
+				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikaltrip.com</a><br />
 				<br>
 				<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
 				<br><br>

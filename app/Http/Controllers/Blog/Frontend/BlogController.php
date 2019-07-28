@@ -40,7 +40,7 @@ class BlogController extends Controller
 		if($domain=="www.jogjafoodtour.com") $this->google_analytics = 'UA-141588873-2';
 		
 		$this->price = '
-			<span class="badge badge-info">Special Offer</span>
+			<span class="badge badge-success">Special Offer</span>
 				<div class="style-4">
   					<del>
     					<span class="amount">48 USD</span>
@@ -50,7 +50,7 @@ class BlogController extends Controller
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-info"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
+			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
 		
 		
 	
