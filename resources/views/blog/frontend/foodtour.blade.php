@@ -132,7 +132,7 @@ function VIEW()
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">Yogyakarta Food Tour</a>
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">Vertikal Trip</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span> <span style="font-size:16px">Menu</span>
 		</button>
@@ -198,14 +198,14 @@ function VIEW()
 			<p>
 				<br>
 				<div>
-					<span style="width:20px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
-					<span style="width:20px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
-					<span style="width:20px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
-					<span style="width:20px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-					<span style="width:20px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
-					<br /><a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
+					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
+					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
+					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
+					<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
+					<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
 					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />	
-					<span style="width:20px;" class="fa fa-tags"></span><strong> Price :</strong><br />
+					<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong><br />
 					{!! $price !!}
 				</div>
 			
@@ -752,7 +752,7 @@ function VIEW()
 			<p class="m-0 text-center text-white">
 				Vertikal Trip
 				<br>
-				<span class="fa fa-map-marked-alt"></span> Meeting point : <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
+				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
 				</a><br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
