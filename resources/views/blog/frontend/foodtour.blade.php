@@ -676,7 +676,7 @@ function VIEW()
 				</td></tr>
 			</table>
 
-			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="currency_code" value="{!! $currency_code !!}">
 			<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
 			<br />
 			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	

@@ -22,7 +22,12 @@ class BlogController extends Controller
 		$this->app_name = config('APP_NAME');
 		$this->act_name = $blog_posts->title;
 		
-		$this->option_button = '
+		
+		$this->currency = 'EUR';
+		
+		if($this->currency=='USD')
+		{
+			$this->option_button = '
 			<option value="1 person">1 person $&#x336;4&#x336;8&#x336;,0&#x336;0&#x336; $37,00 USD</option>
 			<option value="2 persons">2 persons $&#x336;9&#x336;6&#x336;,0&#x336;0&#x336; $74,00 USD</option>
 			<option value="3 persons">3 persons $&#x336;1&#x336;4&#x336;4&#x336;,0&#x336;0&#x336; $111,00 USD</option>
@@ -31,27 +36,57 @@ class BlogController extends Controller
 			<option value="6 persons">6 persons $&#x336;2&#x336;8&#x336;8&#x336;,0&#x336;0&#x336; $222,00 USD</option>
 			<option value="7 persons">7 persons $&#x336;3&#x336;3&#x336;6&#x336;,0&#x336;0&#x336; $259,00 USD</option>
 			<option value="8 persons">8 persons $&#x336;3&#x336;8&#x336;4&#x336;,0&#x336;0&#x336; $296,00 USD</option>';
+			
+			$this->hosted_button_id = 'JM5KAR8MDQEBA';
+			
+			$this->price = '
+			<span class="badge badge-success">Special Offer</span>
+				<div class="style-4">
+  					<del>
+    					<span class="amount">$48 USD</span>
+  					</del>
+  				<ins>
+    				<span class="amount">$37 USD</span>
+  				</ins>
+				  / person
+				</div>
+			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
+		}
+		else
+		{
+			$this->option_button = '
+			<option value="1 person">1 person €&#x336;4&#x336;2&#x336;,0&#x336;0&#x336; €34,00 EUR</option>
+			<option value="2 persons">2 persons €&#x336;8&#x336;4&#x336;,0&#x336;0&#x336; €68,00 EUR</option>
+			<option value="3 persons">3 persons €&#x336;1&#x336;2&#x336;6&#x336;,0&#x336;0&#x336; €102,00 EUR</option>
+			<option value="4 persons">4 persons €&#x336;1&#x336;6&#x336;8&#x336;,0&#x336;0&#x336; €136,00 EUR</option>
+			<option value="5 persons">5 persons €&#x336;2&#x336;1&#x336;0&#x336;,0&#x336;0&#x336; €170,00 EUR</option>
+			<option value="6 persons">6 persons €&#x336;2&#x336;5&#x336;2&#x336;,0&#x336;0&#x336; €204,00 EUR</option>
+			<option value="7 persons">7 persons €&#x336;2&#x336;9&#x336;4&#x336;,0&#x336;0&#x336; €238,00 EUR</option>
+			<option value="8 persons">8 persons €&#x336;3&#x336;3&#x336;6&#x336;,0&#x336;0&#x336; €272,00 EUR</option>';
+			
+			$this->hosted_button_id = 'K63UB645GTUE4';
+			
+			$this->price = '
+			<span class="badge badge-success">Special Offer</span>
+				<div class="style-4">
+  					<del>
+    					<span class="amount">€42 EUR</span>
+  					</del>
+  				<ins>
+    				<span class="amount">€34 EUR</span>
+  				</ins>
+				  / person
+				</div>
+			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
+		}
 		
-		$this->hosted_button_id = 'JM5KAR8MDQEBA';
+		
+		
 		$this->google_analytics = 'UA-141588873-1';
 		
 		$domain = preg_replace('#^https?://#', '', Http::root());
 		if($domain=="www.vertikaltrip.com") $this->google_analytics = 'UA-141588873-1';
 		if($domain=="www.jogjafoodtour.com") $this->google_analytics = 'UA-141588873-2';
-		
-		$this->price = '
-			<span class="badge badge-success">Special Offer</span>
-				<div class="style-4">
-  					<del>
-    					<span class="amount">48 USD</span>
-  					</del>
-  				<ins>
-    				<span class="amount">37 USD</span>
-  				</ins>
-				  / person
-				</div>
-			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
-		
 		
 	
 		$this->disabledDates = array();
@@ -97,6 +132,7 @@ class BlogController extends Controller
 		->with('option_button',$this->option_button)
 		->with('hosted_button_id',$this->hosted_button_id)
 		->with('price',$this->price)
+		->with('currency_code',$this->currency)
 		->with('google_analytics',$this->google_analytics)
 		->with('disabledDates',$this->disabledDates);
     }
