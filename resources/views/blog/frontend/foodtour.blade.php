@@ -681,7 +681,7 @@ function VIEW()
 			<br />
 			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-			<br />
+			<br /><br />
 			<small class="form-text text-muted">After payment received, we will contact you immediately</small>
 			</form>
 			<div style="height:50px;"></div>
@@ -750,7 +750,7 @@ function VIEW()
     <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:24px">Vertikal Trip</span>
+				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px">Vertikal Trip</span>
 				<br>
 				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
