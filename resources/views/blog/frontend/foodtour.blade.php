@@ -385,7 +385,65 @@ function VIEW()
 			</div>
         
 			<!-- ############################################################################### -->
+			
 			<div class="form-group">
+				<h2 class="section-heading">Select Date and Travelers</h2>
+			</div>
+			<div class="form-group">   
+				<label for="datetimepicker1"><strong>Date :</strong></label>           
+                <div class='input-group' id='datetimepicker1'>
+					<input type="text" id="date" name="date" value="" class="form-control bg-white" readonly>
+                    <div class="input-group-append input-group-addon text-muted">
+						<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+                <small class="form-text text-muted">Date format YYYY-MM-DD</small>
+				<script type="text/javascript">
+				<?php
+				$defaultTimes = '18:30:00';
+				$defaultDates = date('Y-m-d') .' 00:00:00';
+			
+			
+				while(in_array($defaultDates, $disabledDates))
+				{
+					$defaultDates = date('Y-m-d 00:00:00',strtotime($defaultDates . "+1 days"));
+				}
+			
+			
+				?>
+			$(function () {
+                $('#date').datetimepicker({
+					minDate:'<?= $defaultDates ?>',
+					disabledDates: [<?= "'" . implode("','", $disabledDates) . "'" ?>],
+					format: 'YYYY-MM-DD <?= $defaultTimes ?>',
+					showTodayButton: true,
+					showClose: true,
+					ignoreReadonly: true,
+					defaultDate: '<?= $defaultDates ?>'
+				});
+            });
+				</script>    
+			</div>
+			
+            
+            
+			<input id="post_id" type="hidden" name="post_id" value="{{ $post_id }}">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<table>
+				<tr><td>
+				{!! $price !!}
+				<br>
+				<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong>
+				</td></tr>
+				<tr><td>
+				<select name="os0" class="form-control" id="os0">
+				{!! $option_button !!}
+				</select>
+				</td></tr>
+			</table>
+			
+            <div class="form-group">
 				<h2 class="section-heading">Lead Traveller Contact</h2>
 			</div>
 			<div class="form-group">
@@ -621,61 +679,7 @@ function VIEW()
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<h2 class="section-heading">Select Date and Travelers</h2>
-			</div>
-			<div class="form-group">   
-				<label for="datetimepicker1"><strong>Date :</strong></label>           
-                <div class='input-group' id='datetimepicker1'>
-					<input type="text" id="date" name="date" value="" class="form-control bg-white" readonly>
-                    <div class="input-group-append input-group-addon text-muted">
-						<div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
-                </div>
-                <small class="form-text text-muted">Date format YYYY-MM-DD</small>
-				<script type="text/javascript">
-				<?php
-				$defaultTimes = '18:30:00';
-				$defaultDates = date('Y-m-d') .' 00:00:00';
-			
-			
-				while(in_array($defaultDates, $disabledDates))
-				{
-					$defaultDates = date('Y-m-d 00:00:00',strtotime($defaultDates . "+1 days"));
-				}
-			
-			
-				?>
-			$(function () {
-                $('#date').datetimepicker({
-					minDate:'<?= $defaultDates ?>',
-					disabledDates: [<?= "'" . implode("','", $disabledDates) . "'" ?>],
-					format: 'YYYY-MM-DD <?= $defaultTimes ?>',
-					showTodayButton: true,
-					showClose: true,
-					ignoreReadonly: true,
-					defaultDate: '<?= $defaultDates ?>'
-				});
-            });
-				</script>    
-			</div>
-			
-			<input id="post_id" type="hidden" name="post_id" value="{{ $post_id }}">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
-			<input type="hidden" name="cmd" value="_s-xclick">
-			<table>
-				<tr><td>
-				{!! $price !!}
-				<br>
-				<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong>
-				</td></tr>
-				<tr><td>
-				<select name="os0" class="form-control" id="os0">
-				{!! $option_button !!}
-				</select>
-				</td></tr>
-			</table>
-
+            
 			<input type="hidden" name="currency_code" value="{!! $currency_code !!}">
 			<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
 			<br />
