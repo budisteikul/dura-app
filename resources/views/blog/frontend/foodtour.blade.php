@@ -4,8 +4,8 @@
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="https://static.budi.my.id/js/vertikaltrip.js"></script>
-<link href="https://static.budi.my.id/css/vertikaltrip.css" rel="stylesheet">
+<script src="https://static.budi.my.id/js/vertikaltrip-1.0.0.js"></script>
+<link href="https://static.budi.my.id/css/vertikaltrip-1.0.0.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
