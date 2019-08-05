@@ -23,7 +23,7 @@ class BlogController extends Controller
 		$this->act_name = $blog_posts->title;
 		
 		
-		$this->currency = 'EUR';
+		$this->currency = 'USD';
 		
 		if($this->currency=='USD')
 		{

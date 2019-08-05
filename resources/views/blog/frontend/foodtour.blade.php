@@ -6,7 +6,6 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="https://static.budi.my.id/js/vertikaltrip-1.0.0.js"></script>
 <link href="https://static.budi.my.id/css/vertikaltrip-1.0.0.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -196,9 +195,9 @@ function VIEW()
 				</div>
 			</div>
 			
-			<p class="wow slideInUp">
+			<p>
 				<br>
-				<div>
+				<div class="wow fadeInUp">
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
@@ -210,20 +209,25 @@ function VIEW()
 					{!! $price !!}
 				</div>
 			</p>
-            <p class="wow slideInUp">
+            <p>
+            	<div class="wow fadeInUp">
 				<h2 class="section-heading">Highlights</h2>
 				- If you like food and want to experience Jogja culture <br />
 				- The walking tour part was a good introduction to the city <br />
 				- Travel on a becak (Traditional Public Transportation) <br />
 				- Learn interesting fun facts about Yogyakarta <br />
 				- Enjoying the nighttime atmosphere of Yogyakarta <br />
+                </div>
 			</p>
-            <p class="wow slideInUp">
+            <p>
+            	<div class="wow fadeInUp">
 				<h2 class="section-heading">Overview</h2>
 				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
+                </div>
 			</p>
 
-			<p class="wow slideInUp">
+			<p>
+            	<div class="wow fadeInUp">
 				<h2 class="section-heading">Inclusions</h2>
 				- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
 				- Mineral water 600 ml <span class="fa fa-prescription-bottle"></span><br />
@@ -231,25 +235,32 @@ function VIEW()
 				- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
 				- Raincoat, if it's rain <span class="fa fa-briefcase"></span><br />
 				- Many types of Javanese authentic snack, food and drink <span class="fa fa-utensils"></span><br />
+                </div>
 			</p>
           
-			<p class="wow slideInUp">
+			<p>
+            	<div class="wow fadeInUp">
 				<h2 class="section-heading">What to bring</h2>
 				- Please be hungry, because a lot of food is to be tried out during this tour.<br />
 				- Wear comfortable and relax clothing.<br />
 				- And don't forget to bring your camera to take some nice pictures.<br />
+                </div>
 			</p>
-          
+          	
+            <div class="wow fadeInUp">
 			<center>
 				<br>
 				<img alt="Yogyakarta Imaginary | {{ $act_name }}" class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
 				<span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
 				<br>
 			</center>
+            </div>
           
 			<p>
+            	<div class="wow fadeInUp">
 				<b>Tugu Yogyakarta Monument - Southern City Square</b><br />
 				From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
+                </div>
 			</p>
 			
 		</div>
@@ -276,49 +287,51 @@ function VIEW()
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row text-center" style="padding-bottom:0px;">
-					
-				<div class="col-lg-4 col-sm-6">
+				
+                	
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/becak.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/paddle-car.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/masangin.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer2.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer3.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6 wow fadeInUp">
 					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/small-groups.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
-        
+        		
+               
 			</div>
 		</div>
 	</div>
@@ -346,7 +359,7 @@ function VIEW()
      <div class="row col-8">       
         
             
-        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow slideInLeft">
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow fadeInUp">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Ratna</h4>
@@ -357,7 +370,7 @@ function VIEW()
            
             
             
-            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow slideInRight">
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow fadeInUp">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
 					<h4>Vella Sekar</h4>
