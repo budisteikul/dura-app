@@ -6,7 +6,7 @@
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="https://static.budi.my.id/js/vertikaltrip.js"></script>
 <link href="https://static.budi.my.id/css/vertikaltrip.css" rel="stylesheet">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -22,6 +22,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 <script language="javascript">
+new WOW().init();
 
 function BOOKING()
 {
@@ -195,7 +196,7 @@ function VIEW()
 				</div>
 			</div>
 			
-			<p>
+			<p class="wow slideInUp">
 				<br>
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
@@ -203,24 +204,26 @@ function VIEW()
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
 					<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
-					<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+					<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
 					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />	
 					<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong><br />
 					{!! $price !!}
 				</div>
-			
+			</p>
+            <p class="wow slideInUp">
 				<h2 class="section-heading">Highlights</h2>
 				- If you like food and want to experience Jogja culture <br />
 				- The walking tour part was a good introduction to the city <br />
 				- Travel on a becak (Traditional Public Transportation) <br />
 				- Learn interesting fun facts about Yogyakarta <br />
 				- Enjoying the nighttime atmosphere of Yogyakarta <br />
-			
+			</p>
+            <p class="wow slideInUp">
 				<h2 class="section-heading">Overview</h2>
 				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 			</p>
 
-			<p>
+			<p class="wow slideInUp">
 				<h2 class="section-heading">Inclusions</h2>
 				- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
 				- Mineral water 600 ml <span class="fa fa-prescription-bottle"></span><br />
@@ -230,7 +233,7 @@ function VIEW()
 				- Many types of Javanese authentic snack, food and drink <span class="fa fa-utensils"></span><br />
 			</p>
           
-			<p>
+			<p class="wow slideInUp">
 				<h2 class="section-heading">What to bring</h2>
 				- Please be hungry, because a lot of food is to be tried out during this tour.<br />
 				- Wear comfortable and relax clothing.<br />
@@ -340,9 +343,10 @@ function VIEW()
         
      </div>
      <div class="row justify-content-center"> 
-     <div class="row col-8">          
-                
-        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+     <div class="row col-8">       
+        
+            
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow slideInLeft">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Ratna</h4>
@@ -350,10 +354,10 @@ function VIEW()
 					<br><br>
 				</div>
 			</div>
+           
             
             
-            
-            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow slideInRight">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
 					<h4>Vella Sekar</h4>
@@ -361,7 +365,9 @@ function VIEW()
 					<br><br>
 				</div>
 			</div>
-        
+        	
+            
+            
         </div></div>
         
 	</div>
@@ -733,7 +739,7 @@ function VIEW()
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
 				<div class="d-flex flex-wrap justify-content-left">
 					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
                     
 					<!-- a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
@@ -756,10 +762,10 @@ function VIEW()
 			<p class="m-0 text-center text-white">
 				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px">Vertikal Trip</span>
 				<br>
-				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46" target="_blank">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
+				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
 				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br />
+				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <!-- span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br / -->
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikaltrip.com</a><br />
 				<br>
 				<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">

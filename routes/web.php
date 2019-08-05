@@ -71,6 +71,10 @@ Route::get('/tripadvisor', function () {
 Route::get('/eventbrite', function () {
 		return redirect('https://jogjafoodtour.eventbrite.com');
 });
+Route::get('/maps', function () {
+		return redirect('maps://www.google.com/maps/search/?api=1&query=tugu+pal+putih');
+});
+
 // Link --------------------------------------------------------------------------
 
 // Auth Laravel --------------------------------------------------------------------------

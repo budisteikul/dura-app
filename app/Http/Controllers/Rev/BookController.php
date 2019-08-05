@@ -27,7 +27,7 @@ class BookController extends Controller
 		}
 		
 		$id = strtoupper($id);
-		$id = str_ireplace("BR-","",$id);
+		//$id = str_ireplace("BR-","",$id);
 		
 		$rev_books = rev_books::where('ticket',$id)->first();
 		if(isset($rev_books))
