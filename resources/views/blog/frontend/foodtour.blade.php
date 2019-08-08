@@ -197,7 +197,7 @@ function VIEW()
 			
 			<p>
 				<br>
-				<div class="wow fadeInUp">
+				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
@@ -210,7 +210,7 @@ function VIEW()
 				</div>
 			</p>
             <p>
-            	<div class="wow fadeInUp">
+            	<div>
 				<h2 class="section-heading">Highlights</h2>
 				- If you like food and want to experience Jogja culture <br />
 				- The walking tour part was a good introduction to the city <br />
@@ -220,14 +220,14 @@ function VIEW()
                 </div>
 			</p>
             <p>
-            	<div class="wow fadeInUp">
+            	<div>
 				<h2 class="section-heading">Overview</h2>
 				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
                 </div>
 			</p>
 
 			<p>
-            	<div class="wow fadeInUp">
+            	<div>
 				<h2 class="section-heading">Inclusions</h2>
 				- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
 				- Mineral water 600 ml <span class="fa fa-prescription-bottle"></span><br />
@@ -239,7 +239,7 @@ function VIEW()
 			</p>
           
 			<p>
-            	<div class="wow fadeInUp">
+            	<div>
 				<h2 class="section-heading">What to bring</h2>
 				- Please be hungry, because a lot of food is to be tried out during this tour.<br />
 				- Wear comfortable and relax clothing.<br />
@@ -247,7 +247,7 @@ function VIEW()
                 </div>
 			</p>
           	
-            <div class="wow fadeInUp">
+            <div>
 			<center>
 				<br>
 				<img alt="Yogyakarta Imaginary | {{ $act_name }}" class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
@@ -257,7 +257,7 @@ function VIEW()
             </div>
           
 			<p>
-            	<div class="wow fadeInUp">
+            	<div>
 				<b>Tugu Yogyakarta Monument - Southern City Square</b><br />
 				From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
                 </div>
@@ -289,42 +289,42 @@ function VIEW()
 			<div class="row text-center" style="padding-bottom:0px;">
 				
                 	
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/becak.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/paddle-car.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/masangin.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer2.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer3.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
-				<div class="col-lg-4 col-sm-6 wow fadeInUp">
+				<div class="col-lg-4 col-sm-6">
 					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/small-groups.jpg">
 					<br />
 					<span class="caption text-muted"></span>
@@ -359,7 +359,7 @@ function VIEW()
      <div class="row col-8">       
         
             
-        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow fadeInUp">
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Ratna</h4>
@@ -370,7 +370,7 @@ function VIEW()
            
             
             
-            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto wow fadeInUp">
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
 					<h4>Vella Sekar</h4>
@@ -398,7 +398,7 @@ function VIEW()
 					<h3 class="section-heading" style="margin-top:50px;">Instant Booking</h3>
 					<h4 class="section-subheading text-muted">Secure payment by <img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
-					<p class="caption text-muted" style="margin-top:3px;">As fast as lightning <br />Just click book and our tour guide will be waiting for you at meeting point</p>
+					<!-- p class="caption text-muted" style="margin-top:3px;">As fast as lightning <br />Just click book and our tour guide will be waiting for you at meeting point</p -->
 					
 				</div>
 			</div>
