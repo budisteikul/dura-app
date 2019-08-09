@@ -19,14 +19,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    
-    
+    @stack('scripts')
     
 	
 </head>
 <body>
     <div id="app">
+    
+    
+    
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ str_ireplace("www.","",$_SERVER['HTTP_HOST']) }}
                 </a>
@@ -98,9 +101,13 @@
                 </div>
             </div>
         </nav>
-
+	
+    
+    
         <main class="py-4">
+         <div class="container-fluid">
             @yield('content')
+         </div>
         </main>
     </div>
 </body>

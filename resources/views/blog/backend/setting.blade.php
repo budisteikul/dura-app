@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@push('scripts')
 <script language="javascript">
 function UPDATE()
 {
@@ -49,10 +50,10 @@ function UPDATE()
 	return false;
 }
 </script>
-
+@endpush
 
     
-<div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -172,7 +173,7 @@ function UPDATE()
             </div>
         </div>
     </div>
-</div>
+
                   
 @endsection
                                      

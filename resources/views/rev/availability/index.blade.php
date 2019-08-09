@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+@push('scripts')
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {	
      		//$.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
@@ -93,8 +93,8 @@
 	
 	
 	</script>  
-   
- <div class="container">
+ @endpush  
+
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -122,6 +122,6 @@
             </div>
         </div>
     </div>
-</div>       
+       
         
 @endsection
