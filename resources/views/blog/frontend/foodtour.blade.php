@@ -200,11 +200,7 @@ function VIEW()
 			</div>
 			
 			<p>
-            	<div>
-				<br />
-				{!! $price !!}
-                <br /><br />
-                </div>
+            	
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
                     <span itemprop="name">{{ $act_name }}</span><br />
@@ -221,14 +217,23 @@ function VIEW()
     					<link itemprop="availability" href="http://schema.org/InStock" />In stock
                     </div>
                     
-                    <span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong><br>
+                    <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
+                    
+                    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
 		    		<span class="text-warning">
-		        		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(4.98)</span>
+                    	<meta itemprop="worstRating" content = "1"/>
+		        		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(<span itemprop="ratingValue">4.98</span>)</span>
+                        <meta itemprop="worstbestRatingRating" content = "5"/>
 		    		</span>‎
-                    <br>Reviewed by a AirBNB &amp; TripAdvisor user
-                    <br>
+                    </div>
+                    
                     <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
 					<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
+                    <br><span class="text-success">Reviewed by a AirBNB &amp; TripAdvisor user</span>
+                    </div>
+                    
+                    
 				</div>
 			</p>
             <p>
