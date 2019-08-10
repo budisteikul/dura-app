@@ -187,6 +187,10 @@ function VIEW()
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
+        
+        
+        <div itemscope itemtype="http://schema.org/Product">
+        
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
@@ -196,17 +200,26 @@ function VIEW()
 			</div>
 			
 			<p>
-				<br>
+            	<div>
+				<br />
+				{!! $price !!}
+                <br /><br />
+                </div>
 				<div>
-					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> {{ $act_name }}<br />
+					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
+                    <span itemprop="name">{{ $act_name }}</span><br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
 					<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 					<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
-					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />	
-					<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong><br />
-					{!! $price !!}
+					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />
+                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
+                    	<span itemprop="priceCurrency" content="USD">$</span>
+                    	<span itemprop="price" content="37.00">37.00</span>
+    					<link itemprop="availability" href="http://schema.org/InStock" />In stock
+                    </div>
 				</div>
 			</p>
             <p>
@@ -263,7 +276,12 @@ function VIEW()
                 </div>
 			</p>
 			
-		</div>
+		
+        </div>
+        
+        
+        
+        </div>
     </div>
 </div>
 </article> 
