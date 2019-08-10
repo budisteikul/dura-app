@@ -207,9 +207,6 @@ function VIEW()
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-					<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
-					<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
-					Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
                     	<span itemprop="priceCurrency" content="USD">$</span>
@@ -217,23 +214,28 @@ function VIEW()
     					<link itemprop="availability" href="http://schema.org/InStock" />/ person
                     </div>
                     
+                    
                     <div itemprop="review" itemscope itemtype="http://schema.org/Review">
-                    
-                    
-                    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-		    		<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
-                    <span class="text-warning">
-                    	<meta itemprop="worstRating" content = "1"/>
-		        		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(<span itemprop="ratingValue">4.98</span>)</span>
-                        <meta itemprop="worstbestRatingRating" content = "5"/>
-		    		</span>‎
+                    	<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+		    			<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
+                    	<span class="text-warning">
+                    		<meta itemprop="worstRating" content = "1"/>
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(<span itemprop="ratingValue">4.98</span>)</span>
+                        	<meta itemprop="worstbestRatingRating" content = "5"/>
+		    			</span>‎
+                    	</div>
+                    	<a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
+						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
+                    	<br><span class="text-success">Reviewed by a AirBNB &amp; TripAdvisor user</span>
                     </div>
                     
-                    <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
-					<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-                    <br><span class="text-success">Reviewed by a AirBNB &amp; TripAdvisor user</span>
+                    <div>
+						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
+						<br /><a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a><br />
+                    	<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+<span class="text-success">You can also buy tickets dirrect on Google Maps</span>
                     </div>
-                    
                     
 				</div>
 			</p>
@@ -770,7 +772,7 @@ function VIEW()
 </div>
 </section -->
 
-<section style="background-color:#ffffff">
+<!-- section style="background-color:#ffffff">
 <div class="container">
 	<div style="height:50px;"></div>
     <div class="row">
@@ -782,14 +784,14 @@ function VIEW()
 			</div>
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
 				<div class="d-flex flex-wrap justify-content-left">
-					<!-- a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
+					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
 					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
                     
-					<!-- a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-					<!-- a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-					<!-- a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-                    <!-- a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
+					<a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+                    <a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
                     
 				</div>
 			</div>
@@ -797,7 +799,7 @@ function VIEW()
 		</div>
 	</div>
 </div>
-</section>
+</section -->
 
 <footer class="py-5 bg-dark">
 <div class="container">
