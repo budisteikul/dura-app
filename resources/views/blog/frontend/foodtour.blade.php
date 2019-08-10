@@ -220,6 +220,15 @@ function VIEW()
                     	<span itemprop="price" content="37.00">37.00</span>
     					<link itemprop="availability" href="http://schema.org/InStock" />In stock
                     </div>
+                    
+                    <span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong><br>
+		    		<span class="text-warning">
+		        		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(4.98)</span>
+		    		</span>‎
+                    <br>Reviewed by a AirBNB &amp; TripAdvisor user
+                    <br>
+                    <a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
+					<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
 				</div>
 			</p>
             <p>
@@ -762,16 +771,16 @@ function VIEW()
 		<div class="col-md-12 mx-auto">
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:10px;">
 				<div class="d-flex flex-wrap justify-content-left">
-					<strong class="text-muted">Book on external sites</strong>
+					<strong class="text-muted">You can also buy tickets dirrect on the Google Maps</strong>
 				</div>
 			</div>
 			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
 				<div class="d-flex flex-wrap justify-content-left">
-					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<!-- a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
                     
 					<!-- a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
-					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
+					<!-- a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<!-- a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
 					<!-- a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
                     <!-- a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a -->
