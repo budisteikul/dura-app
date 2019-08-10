@@ -214,7 +214,7 @@ function VIEW()
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
                     	<span itemprop="priceCurrency" content="USD">$</span>
                     	<span itemprop="price" content="37.00">37.00</span>
-    					<link itemprop="availability" href="http://schema.org/InStock" />In stock
+    					<link itemprop="availability" href="http://schema.org/InStock" />/ person
                     </div>
                     
                     <div itemprop="review" itemscope itemtype="http://schema.org/Review">
