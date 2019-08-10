@@ -218,10 +218,11 @@ function VIEW()
                     </div>
                     
                     <div itemprop="review" itemscope itemtype="http://schema.org/Review">
-                    <span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
+                    
                     
                     <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-		    		<span class="text-warning">
+		    		<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
+                    <span class="text-warning">
                     	<meta itemprop="worstRating" content = "1"/>
 		        		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(<span itemprop="ratingValue">4.98</span>)</span>
                         <meta itemprop="worstbestRatingRating" content = "5"/>
