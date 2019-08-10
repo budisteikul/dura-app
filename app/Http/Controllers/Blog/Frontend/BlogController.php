@@ -28,14 +28,14 @@ class BlogController extends Controller
 		if($this->currency=='USD')
 		{
 			$this->option_button = '
-			<option value="1 person">1 person $&#x336;4&#x336;8&#x336;,0&#x336;0&#x336; $37,00 USD</option>
-			<option value="2 persons">2 persons $&#x336;9&#x336;6&#x336;,0&#x336;0&#x336; $74,00 USD</option>
-			<option value="3 persons">3 persons $&#x336;1&#x336;4&#x336;4&#x336;,0&#x336;0&#x336; $111,00 USD</option>
-			<option value="4 persons">4 persons $&#x336;1&#x336;9&#x336;2&#x336;,0&#x336;0&#x336; $148,00 USD</option>
-			<option value="5 persons">5 persons $&#x336;2&#x336;4&#x336;0&#x336;,0&#x336;0&#x336; $185,00 USD</option>
-			<option value="6 persons">6 persons $&#x336;2&#x336;8&#x336;8&#x336;,0&#x336;0&#x336; $222,00 USD</option>
-			<option value="7 persons">7 persons $&#x336;3&#x336;3&#x336;6&#x336;,0&#x336;0&#x336; $259,00 USD</option>
-			<option value="8 persons">8 persons $&#x336;3&#x336;8&#x336;4&#x336;,0&#x336;0&#x336; $296,00 USD</option>';
+			<option value="1 person">1 person $37,00 USD</option>
+			<option value="2 persons">2 persons $74,00 USD</option>
+			<option value="3 persons">3 persons $111,00 USD</option>
+			<option value="4 persons">4 persons $148,00 USD</option>
+			<option value="5 persons">5 persons $185,00 USD</option>
+			<option value="6 persons">6 persons $222,00 USD</option>
+			<option value="7 persons">7 persons $259,00 USD</option>
+			<option value="8 persons">8 persons $296,00 USD</option>';
 			
 			$this->hosted_button_id = 'JM5KAR8MDQEBA';
 			
@@ -55,14 +55,14 @@ class BlogController extends Controller
 		else
 		{
 			$this->option_button = '
-			<option value="1 person">1 person €&#x336;4&#x336;2&#x336;,0&#x336;0&#x336; €34,00 EUR</option>
-			<option value="2 persons">2 persons €&#x336;8&#x336;4&#x336;,0&#x336;0&#x336; €68,00 EUR</option>
-			<option value="3 persons">3 persons €&#x336;1&#x336;2&#x336;6&#x336;,0&#x336;0&#x336; €102,00 EUR</option>
-			<option value="4 persons">4 persons €&#x336;1&#x336;6&#x336;8&#x336;,0&#x336;0&#x336; €136,00 EUR</option>
-			<option value="5 persons">5 persons €&#x336;2&#x336;1&#x336;0&#x336;,0&#x336;0&#x336; €170,00 EUR</option>
-			<option value="6 persons">6 persons €&#x336;2&#x336;5&#x336;2&#x336;,0&#x336;0&#x336; €204,00 EUR</option>
-			<option value="7 persons">7 persons €&#x336;2&#x336;9&#x336;4&#x336;,0&#x336;0&#x336; €238,00 EUR</option>
-			<option value="8 persons">8 persons €&#x336;3&#x336;3&#x336;6&#x336;,0&#x336;0&#x336; €272,00 EUR</option>';
+			<option value="1 person">1 person €34,00 EUR</option>
+			<option value="2 persons">2 persons €68,00 EUR</option>
+			<option value="3 persons">3 persons €102,00 EUR</option>
+			<option value="4 persons">4 persons €136,00 EUR</option>
+			<option value="5 persons">5 persons €170,00 EUR</option>
+			<option value="6 persons">6 persons €204,00 EUR</option>
+			<option value="7 persons">7 persons €238,00 EUR</option>
+			<option value="8 persons">8 persons €272,00 EUR</option>';
 			
 			$this->hosted_button_id = 'K63UB645GTUE4';
 			

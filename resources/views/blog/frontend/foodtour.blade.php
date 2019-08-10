@@ -451,8 +451,6 @@ function VIEW()
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<table>
 				<tr><td>
-				{!! $price !!}
-				<br>
 				<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong>
 				</td></tr>
 				<tr><td>
