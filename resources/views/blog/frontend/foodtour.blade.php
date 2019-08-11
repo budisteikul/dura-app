@@ -4,8 +4,11 @@
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="https://static.budi.my.id/js/vertikaltrip-1.0.0.js"></script>
-<link href="https://static.budi.my.id/css/vertikaltrip-1.0.0.css" rel="stylesheet">
+<script src="https://static.budi.my.id/js/vertikaltrip-1.0.1.js"></script>
+<link href="https://static.budi.my.id/css/vertikaltrip-1.0.1.css" rel="stylesheet">
+
+
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -158,7 +161,7 @@ function VIEW()
     </div>
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/tugu-dark.jpg'); background-color: #B0B0B0">
+<header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/tugu-dark-1.0.1.jpg'); background-color: #B0B0B0">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">

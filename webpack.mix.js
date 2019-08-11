@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-
+/*
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -36,7 +36,7 @@ mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 
-
+*/
 
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
@@ -51,7 +51,7 @@ mix.scripts([
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 	'resources/assets/frontend/sweetalert/dist/sweetalert.min.js',
 	'resources/assets/frontend/wowjs/dist/wow.min.js'
-	],'public/js/vertikaltrip-1.0.0.js');
+	],'public/js/vertikaltrip-1.0.1.js');
 
 mix.styles([
 	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
@@ -63,7 +63,7 @@ mix.styles([
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/timeline/timeline.css',
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/vertikaltrip-1.0.0.css');
+	],'public/css/vertikaltrip-1.0.1.css');
 
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
