@@ -228,7 +228,7 @@ function VIEW()
 						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
                     	<br><small class="form-text text-muted">Reviewed by a AirBNB &amp; TripAdvisor users</small>
                     <br>
-                    <br>
+                    
                     <div>
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
@@ -435,9 +435,9 @@ Tugu Pal Putih<br />
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Instant Booking</h3>
-					<h4 class="section-subheading text-muted">Secure payment by <img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-paypal.jpg"></h4>
+					<h4 class="section-subheading text-muted"><!-- PayPal Logo --><a href="https://www.paypal.com/webapps/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" /></a><!-- PayPal Logo --></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
-					<!-- p class="caption text-muted" style="margin-top:3px;">As fast as lightning <br />Just click book and our tour guide will be waiting for you at meeting point</p -->
+					
 					
 				</div>
 			</div>
@@ -742,7 +742,8 @@ Tugu Pal Putih<br />
 			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br /><br />
-			<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
+			
+            <!-- PayPal Logo --><a href="https://www.paypal.com/webapps/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /></a><!-- PayPal Logo -->
 			</form>
 			<div style="height:50px;"></div>
 		</div>
@@ -750,72 +751,17 @@ Tugu Pal Putih<br />
 </div>
 </section>
 
-<!-- section id="ticket-checker" style="background-color:#f7f8f9">
-<div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        	<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
-            <br><br>
-            
-<form onSubmit="VIEW(); return false;">        
-<div class="card">
-  <h5 class="card-header"><i class="fa fa-ticket"></i> Check my ticket</h5>
-  <div class="card-body">
-    <div class="form-group">
-	<label for="ticket">You can also check your ticket status by submiting your ticket ID</label>
-	<input autocomplete="off" type="text" id="ticket" name="ticket" class="form-control" placeholder="Ticket ID">
-	</div>
-    <button id="submit" type="submit" class="btn btn-danger">Check <i class="fa fa-arrow-circle-right"></i></button>
-    
-  </div>
-</div>
-</form>
-            <div style="height:50px;"></div>
-        </div>
-      </div>
-</div>
-</section -->
-
-<!-- section style="background-color:#ffffff">
-<div class="container">
-	<div style="height:50px;"></div>
-    <div class="row">
-		<div class="col-md-12 mx-auto">
-			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:10px;">
-				<div class="d-flex flex-wrap justify-content-left">
-					<strong class="text-muted">You can also buy tickets dirrect on the Google Maps</strong>
-				</div>
-			</div>
-			<div class="d-flex flex-wrap justify-content-center" style="padding-bottom:0px;">
-				<div class="d-flex flex-wrap justify-content-left">
-					<a href="/airbnb" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-                    
-					<a href="/expedia" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/expedia-button.jpg" height="45" alt="Book {{ $act_name }} via Expedia" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/tripadvisor" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/viator" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/viator-button.jpg" height="45" alt="Book {{ $act_name }} via Viator" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-					<a href="/tourhq" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tourhq-button.jpg" height="45" alt="Book {{ $act_name }} via Tour HQ" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-                    <a href="/eventbrite" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/eventbrite-button.jpg" height="45" alt="Book {{ $act_name }} via Eventbrite" style="margin-bottom:5px; margin-left:5px; margin-right:5px;"></a>
-                    
-				</div>
-			</div>
-			<div style="height:50px;"></div>
-		</div>
-	</div>
-</div>
-</section -->
-
 <footer class="py-5 bg-dark">
 <div class="container">
     <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white" style="font-size:14px">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:24px" class="text-danger">Vertikal Trip</span>
+			<p class="m-0 text-center text-white">
+				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
 				<br>
 				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Pal Putih<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
 				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <!-- span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br / -->
+				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
 				<br>
  <script type="text/javascript"> //<![CDATA[
