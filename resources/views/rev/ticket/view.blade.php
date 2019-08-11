@@ -308,15 +308,16 @@ h3 {
 					<div class="ticket_logo">
 						<img style="margin-top:5px;margin-bottom:5px" src="https://static.budi.my.id/assets/foodtour/logo.jpg" class="airasia">
 					</div>
-					<img src="https://static.budi.my.id/assets/foodtour/8c.jpg" />
+					<!-- img src="https://static.budi.my.id/assets/foodtour/8c.jpg" / -->
+                    <div style="height:50px;"></div>
 					<div class="ticket_divider">
-            <div class="divider_left divider_hole">
-            </div>
-            <div class="divider">
-            </div>
-            <div class="divider_right divider_hole">
-            </div>
-        </div>
+            			<div class="divider_left divider_hole">
+            			</div>
+            			<div class="divider">
+            			</div>
+            			<div class="divider_right divider_hole">
+            			</div>
+        			</div>
 					<h2>VERTIKAL TRIP TICKET</h2>
         </div>
         <div class="ticket_trip">

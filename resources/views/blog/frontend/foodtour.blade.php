@@ -215,28 +215,30 @@ function VIEW()
                     </div>
                     
                     
-                    <div itemprop="review" itemscope itemtype="http://schema.org/Review">
-                    	<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                    
+                    	
 		    			<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
                     	<span class="text-warning">
                     		<meta itemprop="worstRating" content = "1"/>
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-success">(<span itemprop="ratingValue">4.98</span>)</span>
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> <span class="text-danger">(<span itemprop="ratingValue">4.9</span>)</span>
                         	<meta itemprop="worstbestRatingRating" content = "5"/>
 		    			</span>‎
-                    	</div>
+                    	<br>
                     	<a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
 						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-                    	<br><span class="text-success">Reviewed by a AirBNB &amp; TripAdvisor user</span>
-                    </div>
-                    
+                    	<br><small class="form-text text-muted">Reviewed by a AirBNB &amp; TripAdvisor users</small>
+                    <br>
+                    <br>
                     <div>
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
                         <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
-                        <a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+                        <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
+                        
+Tugu Pal Putih<br />	
 						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
                     	<br>
-<span class="text-success">You can also buy tickets dirrect on Google Maps</span>
+						<small class="form-text text-muted">You can also buy tickets through on Google Maps</small>
                     </div>
                     
 				</div>
@@ -740,7 +742,7 @@ function VIEW()
 			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br /><br />
-			<small class="form-text text-muted">After payment received, we will contact you immediately</small>
+			<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
 			</form>
 			<div style="height:50px;"></div>
 		</div>
@@ -807,17 +809,15 @@ function VIEW()
 <div class="container">
     <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px">Vertikal Trip</span>
+			<p class="m-0 text-center text-white" style="font-size:14px">
+				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:24px" class="text-danger">Vertikal Trip</span>
 				<br>
-				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
-				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
+				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Pal Putih<br />
+				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
 				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <!-- span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br / -->
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-danger" target="_blank">guide@vertikaltrip.com</a><br />
+				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br> <!-- span class="fab fa-instagram"></span> IG : <a class="text-danger" href="https://www.instagram.com/vertikaltrip" target="_blank">@vertikaltrip</a> | <span class="fab fa-facebook"></span> FB : <a class="text-danger" href="https://www.facebook.com/vertikaltrip" target="_blank">Vertikal Trip</a><br / -->
+				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
 				<br>
-				<img alt="Payment | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/payment.png">
-				<br><br>
  <script type="text/javascript"> //<![CDATA[
   var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
   document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
