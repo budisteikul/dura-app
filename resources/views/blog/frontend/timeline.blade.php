@@ -22,17 +22,17 @@
           
           {!! $setting->facebook!="" ? '
           <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->facebook .'"><i class="fa fa-facebook-square"></i> Facebook</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->facebook .'"><i class="fab fa-facebook-square"></i> Facebook</a>
           </li>' : '' !!}
           
            {!! $setting->twitter!="" ? '
           <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->twitter .'"><i class="fa fa-twitter-square"></i> Twitter</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->twitter .'"><i class="fab fa-twitter-square"></i> Twitter</a>
           </li>' : '' !!}
           
            {!! $setting->instagram!="" ? '
           <li class="nav-item">
-          	<a class="nav-link" target="_blank" href="'. $setting->instagram .'"><i class="fa fa-instagram"></i> Instagram</a>
+          	<a class="nav-link" target="_blank" href="'. $setting->instagram .'"><i class="fab fa-instagram"></i> Instagram</a>
           </li>' : '' !!}
           
           {!! Auth::check() ? '
