@@ -3,53 +3,8 @@
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="https://static.budi.my.id/js/vertikaltrip-1.0.1.js"></script>
-<link href="https://static.budi.my.id/css/vertikaltrip-1.0.1.css" rel="stylesheet">
-
-<style>
-#mainNav {
-	padding-top: 0;
-    padding-bottom: 0;
-  	border-color: rgba(34,34,34,.05);
-    font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,1.00);
-	filter: alpha(opacity=30);
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
-#mainNav .navbar-brand {
-  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  color: #ccd0d5;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-  font-size: 1.25em;
-  padding: 12px 0;
-}
-
-@media(min-width:768px) {
-  #mainNav {
-    border-color: rgba(34,34,34,.05);
-    font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,1.00);
-	filter: alpha(opacity=30);
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-	
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-}
-
-</style>
-
+<script src="https://static.budi.my.id/js/vertikaltrip-1.0.2.js"></script>
+<link href="https://static.budi.my.id/css/vertikaltrip-1.0.2.css" rel="stylesheet">
 <script language="javascript">
 
 function BOOKING()
@@ -129,24 +84,24 @@ function BOOKING()
     
 <!-- ################################################################### -->
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back</a>
 	</div>
 </nav>   
-<!-- ################################################################### -->
-<div  style="height:50px;"></div>
+<div style="height:50px;"></div>
+<!-- Navigation -->
 <!-- ################################################################### -->
 <section id="booking" style="background-color:#f7f8f9">
 <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="row" style="padding-bottom:0px;">
-          <div class="col-lg-12 text-center">
-            <h3 class="section-heading" style="margin-top:50px;">Make Appointment</h3>
-            <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-          </div>
-        </div>
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">Make Appointment</h3>
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
         
 <!-- ############################################################################### -->
 
