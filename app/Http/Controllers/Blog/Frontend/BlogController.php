@@ -108,6 +108,16 @@ class BlogController extends Controller
      */
     public function index()
     {
+		$this->option_button = '
+			<option value="1 person">1 person €34,00 EUR</option>
+			<option value="2 persons">2 persons €68,00 EUR</option>
+			<option value="3 persons">3 persons €102,00 EUR</option>
+			<option value="4 persons">4 persons €136,00 EUR</option>
+			<option value="5 persons">5 persons €170,00 EUR</option>
+			<option value="6 persons">6 persons €204,00 EUR</option>
+			<option value="7 persons">7 persons €238,00 EUR</option>
+			<option value="8 persons">8 persons €272,00 EUR</option>';
+			
         return view('blog.frontend.booking')
 		->with('disabledDates',$this->disabledDates)
 		->with('option_button',$this->option_button);
