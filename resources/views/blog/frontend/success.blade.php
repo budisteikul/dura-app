@@ -1,7 +1,5 @@
 @extends('layouts.frontend')
-@section('content')
-
-    
+@section('content') 
 <!-- ################################################################### -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
@@ -34,9 +32,7 @@
 						Our meeting point is Tugu Yogyakarta Monument.<br>
 						We will contact you immediately.<br>
 <br>
-<br>
-<br>
-<span class="caption text-muted">If you not using payment gateway, we will send you invoice to your email address.</span>
+<span class="caption text-muted">For SEPA transfer, we will send you invoice to your email address.</span>
          		</div>
              </div>
           </div>
@@ -47,29 +43,5 @@
 </section>
 
 
-<footer class="py-5 bg-dark">
-<div class="container">
-    <div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
-				<br>
-				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
-				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
-				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
-				<br>
- <script type="text/javascript"> //<![CDATA[
-  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-//]]></script>
-<script language="JavaScript" type="text/javascript">
-  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
-</script>              
-			</p>
-        </div>
-    </div>
-</div>
-</footer>
+
 @endsection

@@ -87,8 +87,56 @@ function BOOKING()
 </nav>   
 <div style="height:50px;"></div>
 <!-- Navigation -->
+<section id="booking" style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+                	<h3 class="section-heading" style="margin-top:50px;"></h3>
+                	<img src="/assets/foodtour/sepa.jpg">
+					<h3 class="section-heading" style="margin-top:50px;"></h3>
+				</div>
+                
+                <br>
+
+                <div class="card" style="margin-left:5px; margin-right:5px;">
+                <div class="card-body">
+                <h5 class="card-title">Guidelines</h5>
+                <p class="card-text">
+                <ul>
+                	<li>Only SEPA (European local bank) transfers in EUR can be accepted</li>
+					<li>Transfers in USD will be automatically rejected</li>
+					<li>Wire transfers are not supported</li>
+                    <li>We will send you invoice to your email address after appointment received</li>
+                </ul>
+                </p>
+                </div>
+                </div>
+				
+                <div class="card" style="margin-left:5px; margin-right:5px; margin-top:20px;">
+                <div class="card-body">
+                <h5 class="card-title">European Bank Account</h5>
+                <p class="card-text">
+                <strong>Beneficiary Name :</strong> VERTIKAL TRIP<br>
+                <strong>BIC :</strong> WIREDEMM<br>
+                <strong>IBAN :</strong> DE85 5123 080065 05310686<br>
+                <strong>Bank Name :</strong> Wirecard Bank AG<br>
+                <strong>Bank Address :</strong> Einsteinring 35 85609 Aschheim, Germany<br>
+                </p>
+                </div>
+                </div>
+                
+			</div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
 <!-- ################################################################### -->
-<section id="booking" style="background-color:#f7f8f9">
+<section id="booking" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -399,29 +447,5 @@ function BOOKING()
 </section>
 
 
-<footer class="py-5 bg-dark">
-<div class="container">
-    <div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
-				<br>
-				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
-				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
-				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
-				<br>
- <script type="text/javascript"> //<![CDATA[
-  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-//]]></script>
-<script language="JavaScript" type="text/javascript">
-  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
-</script>              
-			</p>
-        </div>
-    </div>
-</div>
-</footer>
+
 @endsection

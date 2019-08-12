@@ -2,23 +2,7 @@
 @section('title', $act_name .' | '. $app_name)
 @section('content')
 @push('scripts')
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d1810cb22d70e36c2a3697f/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
 <script language="javascript">
-new WOW().init();
 
 function BOOKING()
 {
@@ -432,7 +416,10 @@ function VIEW()
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Instant Booking</h3>
-					<h4 class="section-subheading text-muted"><!-- PayPal Logo --><a href="https://www.paypal.com/webapps/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" /></a><!-- PayPal Logo --></h4>
+					<h4 class="section-subheading text-muted">
+                    <!-- PayPal Logo -->
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" />
+                    <!-- PayPal Logo --></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
 					
 					
@@ -740,39 +727,20 @@ function VIEW()
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br /><br />
 			
-            <!-- PayPal Logo --><a href="https://www.paypal.com/webapps/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /></a><!-- PayPal Logo -->
+            <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /><!-- PayPal Logo -->
 			</form>
-			<div style="height:50px;"></div>
+            <div style="height:50px;"></div>
+            <small>
+            <b>Another payment methods </b><br>
+            <a href="/order" class="text-danger" target="_blank"><li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</a>
+			</small>
+            <div style="height:50px;"></div>
 		</div>
     </div>
 </div>
 </section>
 
-<footer class="py-5 bg-dark">
-<div class="container">
-    <div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
-				<br>
-				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
-				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
-				</a><br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
-				<br>
- <script type="text/javascript"> //<![CDATA[
-  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-//]]></script>
-<script language="JavaScript" type="text/javascript">
-  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
-</script>              
-			</p>
-        </div>
-    </div>
-</div>
-</footer>
+
 
 <script>
 
