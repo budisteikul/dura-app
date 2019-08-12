@@ -1,7 +1,7 @@
 #mainNav {
   	border-color: rgba(34,34,34,.05);
     font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:#000000;
+    background-color:rgba(52,58,64,1.00);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;

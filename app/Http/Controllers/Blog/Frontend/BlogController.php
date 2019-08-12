@@ -109,7 +109,8 @@ class BlogController extends Controller
     public function index()
     {
         return view('blog.frontend.booking')
-		->with('disabledDates',$this->disabledDates);
+		->with('disabledDates',$this->disabledDates)
+		->with('option_button',$this->option_button);
     }
 	
 	

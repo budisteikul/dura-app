@@ -381,37 +381,12 @@ function BOOKING()
             });
         </script>    
 </div>
-<table>
-<tr><td>
-<br>
-<span class="badge badge-success">Special Offer</span>
-				<div class="style-4">
-  					<del>
-    					<span class="amount">42 EUR</span>
-  					</del>
-  				<ins>
-    				<span class="amount">34 EUR</span>
-  				</ins>
-				  / person
-				</div>
-			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>
+<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
+			{!! $option_button !!}
+</select>
 <br>
 
-<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong></td></tr><tr><td><select name="os0" class="form-control" id="os0">
-			<option value="1 person">1 person 34 EUR</option>
-			<option value="2 persons">2 persons 68 EUR</option>
-			<option value="3 persons">3 persons 102 EUR</option>
-			<option value="4 persons">4 persons 136 EUR</option>
-			<option value="5 persons">5 persons 170 EUR</option>
-			<option value="6 persons">6 persons 204 EUR</option>
-			<option value="7 persons">7 persons 238 EUR</option>
-			<option value="8 persons">8 persons 272 EUR</option>
-</select>
-<!-- style 1 -->
-<br>
-</td></tr>
-</table>
-<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket"></i> Book Now</button>	
+<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
 <!-- input type="image" src="/assets/foodtour/book-button.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" -->
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 <br />
@@ -426,4 +401,31 @@ function BOOKING()
       </div>
       </div>
 </section>
+
+
+<footer class="py-5 bg-dark">
+<div class="container">
+    <div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<p class="m-0 text-center text-white">
+				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
+				<br>
+				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
+				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
+				</a><br>
+				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a><br />
+				<br>
+ <script type="text/javascript"> //<![CDATA[
+  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]></script>
+<script language="JavaScript" type="text/javascript">
+  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
+</script>              
+			</p>
+        </div>
+    </div>
+</div>
+</footer>
 @endsection
