@@ -730,12 +730,14 @@ function VIEW()
             <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /><!-- PayPal Logo -->
 			</form>
             <div style="height:80px;"></div>
-            <small>
-            <b>Another payment methods </b><br>
-            <a href="/order" class="text-danger">
-            <img src="https://static.budi.my.id/assets/foodtour/sepa.jpg" style="margin-top:5px;"><br>
-            <li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</a>
-			</small>
+            <strong>Another Payment Methods</strong>
+            <div class="bd-callout bd-callout-danger w-100" style="margin-top:5px;">
+                 <a href="/order" class="text-danger">
+            	 	<img src="https://static.budi.my.id/assets/foodtour/sepa.jpg" style="margin-top:5px;"><br>
+            	 	<small><li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</small>
+                 </a>
+            </div>
+            
             <div style="height:50px;"></div>
 		</div>
     </div>
