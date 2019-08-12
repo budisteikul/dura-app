@@ -238,7 +238,7 @@ function VIEW()
                         <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
                         <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
                         
-Tugu Pal Putih<br />	
+						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
 						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
                     	<br>
 						<small class="form-text text-muted">You can also buy tickets through on Google Maps</small>
@@ -761,7 +761,7 @@ Tugu Pal Putih<br />
 			<p class="m-0 text-center text-white">
 				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px" class="text-danger">Vertikal Trip</span>
 				<br>
-				<span class="fa fa-map-marked-alt"></span> Meeting point : <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Pal Putih<br />
+				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
 				</a><br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
