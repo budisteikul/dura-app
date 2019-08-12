@@ -732,7 +732,7 @@ function VIEW()
             <div style="height:80px;"></div>
             <small>
             <b>Another payment methods </b><br>
-            <a href="/order" class="text-danger" target="_blank">
+            <a href="/order" class="text-danger">
             <img src="https://static.budi.my.id/assets/foodtour/sepa.jpg" style="margin-top:5px;"><br>
             <li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</a>
 			</small>
