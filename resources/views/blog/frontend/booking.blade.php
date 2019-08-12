@@ -76,6 +76,57 @@ function BOOKING()
 }
 </script>
 
+<style>
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem
+}
+
+.bd-callout h4 {
+    margin-top: 0;
+    margin-bottom: .25rem
+}
+
+.bd-callout p:last-child {
+    margin-bottom: 0
+}
+
+.bd-callout code {
+    border-radius: .25rem
+}
+
+.bd-callout+.bd-callout {
+    margin-top: -.25rem
+}
+
+.bd-callout-info {
+    border-left-color: #5bc0de
+}
+
+.bd-callout-info h4 {
+    color: #5bc0de
+}
+
+.bd-callout-warning {
+    border-left-color: #f0ad4e
+}
+
+.bd-callout-warning h4 {
+    color: #f0ad4e
+}
+
+.bd-callout-danger {
+    border-left-color: #d9534f
+}
+
+.bd-callout-danger h4 {
+    color: #d9534f
+}
+</style>
 @endpush
     
 <!-- ################################################################### -->
@@ -94,37 +145,30 @@ function BOOKING()
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
                 	<h3 class="section-heading" style="margin-top:50px;"></h3>
-                	<img src="/assets/foodtour/sepa.jpg">
+                	<img src="https://static.budi.my.id/assets/foodtour/sepa.jpg">
 					<h3 class="section-heading" style="margin-top:50px;"></h3>
 				</div>
                 
                 <br>
 
-                <div class="card" style="margin-left:5px; margin-right:5px;">
-                <div class="card-body">
-                <h5 class="card-title">Guidelines</h5>
-                <p class="card-text">
+                <div class="bd-callout bd-callout-danger w-100" style="margin-left:5px; margin-right:5px;">
+                <h4>Guidelines</h4>
                 <ul>
                 	<li>Only SEPA (European local bank) transfers in EUR can be accepted</li>
 					<li>Transfers in USD will be automatically rejected</li>
 					<li>Wire transfers are not supported</li>
                     <li>We will send you invoice to your email address after appointment received</li>
+                    <li>It will take 1 business day</li>
                 </ul>
-                </p>
                 </div>
-                </div>
-				
-                <div class="card" style="margin-left:5px; margin-right:5px; margin-top:20px;">
-                <div class="card-body">
-                <h5 class="card-title">European Bank Account</h5>
-                <p class="card-text">
-                <strong>Beneficiary Name :</strong> VERTIKAL TRIP<br>
-                <strong>BIC :</strong> WIREDEMM<br>
-                <strong>IBAN :</strong> DE85 5123 080065 05310686<br>
-                <strong>Bank Name :</strong> Wirecard Bank AG<br>
-                <strong>Bank Address :</strong> Einsteinring 35 85609 Aschheim, Germany<br>
-                </p>
-                </div>
+                
+                <div class="bd-callout bd-callout-danger w-100" style="margin-left:5px; margin-right:5px; margin-top:20px;">
+                	<h4>European Bank Account</h4>
+                    <strong>Beneficiary Name :</strong> VERTIKAL TRIP<br>
+                	<strong>BIC :</strong> WIREDEMM<br>
+                	<strong>IBAN :</strong> DE85 5123 080065 05310686<br>
+                	<strong>Bank Name :</strong> Wirecard Bank AG<br>
+                	<strong>Bank Address :</strong> Einsteinring 35 85609 Aschheim, Germany<br>
                 </div>
                 
 			</div>
@@ -132,8 +176,6 @@ function BOOKING()
     </div>
 </div>
 </section>
-
-
 
 <!-- ################################################################### -->
 <section id="booking" style="background-color:#ffffff">

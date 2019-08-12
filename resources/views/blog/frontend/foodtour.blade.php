@@ -360,7 +360,7 @@ function VIEW()
 
 
 
-<section id="guide" style="background-color:#ffffff">
+<section id="guide" style="background-color:#f7f8f9">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -409,7 +409,7 @@ function VIEW()
 
 
 
-<section id="booking" style="background-color:#f7f8f9">
+<section id="booking" style="background-color:#fffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -729,10 +729,12 @@ function VIEW()
 			
             <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /><!-- PayPal Logo -->
 			</form>
-            <div style="height:50px;"></div>
+            <div style="height:80px;"></div>
             <small>
             <b>Another payment methods </b><br>
-            <a href="/order" class="text-danger" target="_blank"><li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</a>
+            <a href="/order" class="text-danger" target="_blank">
+            <img src="https://static.budi.my.id/assets/foodtour/sepa.jpg" style="margin-top:5px;"><br>
+            <li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</a>
 			</small>
             <div style="height:50px;"></div>
 		</div>
