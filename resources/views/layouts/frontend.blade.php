@@ -8,7 +8,7 @@
     <meta name="description" content="Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.">
     <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">
-	<meta name="theme-color" content="#343A40">
+	
     <link rel="icon" href="https://static.budi.my.id/favicon.gif" type="image/gif" sizes="32x32">
     <title>Yogyakarta Night Walking and Food Tours | By Vertikal Trip team</title>
     
