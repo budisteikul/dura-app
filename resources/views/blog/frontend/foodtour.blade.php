@@ -163,6 +163,40 @@ function VIEW()
     </div>
 </header>
 
+
+<script data-n-head="true" type="application/ld+json">
+	{
+		"@context":"http://schema.org/",
+		"@type":"Product",
+			"name":"Yogyakarta Night Walking and Food Tours",
+			"image":"https://www.vertikaltrip.com/assets/foodtour/malioboro-street.jpg",
+			"description":"Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more..",
+			"brand":{
+				"@type":"Organization",
+				"name":"Vertikal Trip",
+				"url":"https://www.vertikaltrip.com",
+				"sameAs":["https://www.facebook.com/vertikaltrip",
+				"https://instagram.com/vertikaltrip"],
+				"contactPoint":[{
+					"telephone":"+62-857-4311-2112",
+					"contactType":"Customer Service"}]
+				},
+			"offers":{
+				"@type":"Offer",
+				"price":37,
+				"priceCurrency":"USD",
+				"availability":"http://schema.org/InStock"
+				},
+			"url":"https://www.vertikaltrip.com",
+			"aggregateRating":{
+				"@type":"AggregateRating",
+				"ratingValue":5,
+				"worstRating":4,
+				"bestRating":5,
+				"reviewCount":27
+				}
+	}
+</script>
  <!-- Post Content -->
 <article id="about">
 <div class="container">
@@ -184,25 +218,27 @@ function VIEW()
             	
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
-                    <span itemprop="name">{{ $act_name }}</span><br />
+                    <span >{{ $act_name }}</span><br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div>
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
-                    	<span itemprop="priceCurrency" content="USD">$</span>
-                    	<span itemprop="price" content="37.00">37.00</span>
-    					<link itemprop="availability" href="http://schema.org/InStock" />/ person
+                    	$
+                    	37.00
+    					/ person
+                        
                     </div>
                     
+                   
                     
                     
                     	
 		    			<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
                     	<span class="text-warning">
-                    		<meta itemprop="worstRating" content = "1"/>
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> <span class="text-danger">(<span itemprop="ratingValue">4.9</span>)</span>
-                        	<meta itemprop="worstbestRatingRating" content = "5"/>
+                    		
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> <span class="text-danger">(4.9)</span>
+                        	
 		    			</span>‎
                     	<br>
                     	<a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
