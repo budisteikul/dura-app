@@ -23,7 +23,6 @@
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
-					
 					{data: 'name', name: 'name', className: 'auto'},
 					{data: 'email_phone', name: 'email_phone', className: 'auto'},
 					{data: 'traveller', name: 'traveller', className: 'auto'},

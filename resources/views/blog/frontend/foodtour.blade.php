@@ -113,7 +113,7 @@ function VIEW()
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">Vertikal Trip</a>
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">Vertikal Trip Team</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span> <span style="font-size:16px">Menu</span>
 		</button>
@@ -153,7 +153,7 @@ function VIEW()
          			<br>
          			Because we can start the tour every day at 6.30 pm.
          			
-		 			And our meeting point is Tugu Yogyakarta Monument.
+		 			And our meeting point is Tugu Yogyakarta Monument (Tugu Pal Putih).
                     
 				</p>
 			</div>
@@ -164,47 +164,15 @@ function VIEW()
 </header>
 
 
-<script data-n-head="true" type="application/ld+json">
-	{
-		"@context":"http://schema.org/",
-		"@type":"Product",
-			"name":"Yogyakarta Night Walking and Food Tours",
-			"image":"https://www.vertikaltrip.com/assets/foodtour/malioboro-street.jpg",
-			"description":"Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more..",
-			"brand":{
-				"@type":"Organization",
-				"name":"Vertikal Trip",
-				"url":"https://www.vertikaltrip.com",
-				"sameAs":["https://www.facebook.com/vertikaltrip",
-				"https://instagram.com/vertikaltrip"],
-				"contactPoint":[{
-					"telephone":"+62-857-4311-2112",
-					"contactType":"Customer Service"}]
-				},
-			"offers":{
-				"@type":"Offer",
-				"price":37,
-				"priceCurrency":"USD",
-				"availability":"http://schema.org/InStock"
-				},
-			"url":"https://www.vertikaltrip.com",
-			"aggregateRating":{
-				"@type":"AggregateRating",
-				"ratingValue":5,
-				"worstRating":4,
-				"bestRating":5,
-				"reviewCount":27
-				}
-	}
-</script>
+
  <!-- Post Content -->
 <article id="about">
-<div class="container">
+<div class="container" itemscope itemtype="http://schema.org/Product">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
         
         
-        <div itemscope itemtype="http://schema.org/Product">
+        <div>
         
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
@@ -218,34 +186,49 @@ function VIEW()
             	
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
-                    <span >{{ $act_name }}</span><br />
+                    <span itemprop="name" content="{{ $act_name }}">{{ $act_name }}</span><br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-                    <div>
+                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
-                    	$
-                    	37.00
-    					/ person
-                        
-                    </div>
+                    	<span itemprop="priceCurrency" content="USD">$</span>
+                    	<span itemprop="price" content="37.00">37.00</span>
+    					<link itemprop="availability" href="http://schema.org/InStock" /> / person
+                        <meta itemprop="priceValidUntil" content="2020-11-05" />
+                        <link itemprop="url" href="https://www.vertikaltrip.com" />
+                	</div>
                     
                    
+                    <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+      					<meta itemprop="name" content="VERTIKAL TRIP" />
+    				</div>
                     
-                    
-                    	
+                    <div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
                     	<span class="text-warning">
                     		
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> <span class="text-danger">(4.9)</span>
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
                         	
 		    			</span>‎
                     	<br>
                     	<a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
 						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-                    	<br><small class="form-text text-muted">Reviewed by a AirBNB &amp; TripAdvisor users</small>
-                    <br>
+                    	<br><small class="form-text text-muted">Based on <span itemprop="reviewCount">27</span> AirBNB &amp; TripAdvisor customer reviews</small>
+                    	<br>
+                    </div>
                     
+                    <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
+      					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+       						 <meta itemprop="name" content="Airbnb and TripAdvisor" />
+      					</div>
+      					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+        					<meta itemprop="ratingValue" content="5" />
+        					<meta itemprop="bestRating" content="5" />
+      					</div>
+    				</div>
+                    <meta itemprop="sku" content="15055852112" />
+                    <meta itemprop="mpn" content="15055852112" />
                     <div>
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
@@ -273,7 +256,7 @@ function VIEW()
             <p>
             	<div>
 				<h2 class="section-heading">Overview</h2>
-				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
+				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. <span itemprop="description"> Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.</span>
                 </div>
 			</p>
 
@@ -301,8 +284,8 @@ function VIEW()
             <div>
 			<center>
 				<br>
-				<img alt="Yogyakarta Imaginary | {{ $act_name }}" class="img-fluid" src="https://static.budi.my.id/assets/foodtour/garis-imajiner.jpg">
-				<span class="caption text-muted">Yogyakarta’s Imaginary Line</span>
+				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://www.vertikaltrip.com/assets/foodtour/malioboro-street.jpg">
+				<span class="caption text-muted">Malioboro Street</span>
 				<br>
 			</center>
             </div>
@@ -325,7 +308,7 @@ function VIEW()
 </article> 
 
 
-<section id="gallery" style="background-color:#ffffff">
+<section id="gallery" style="background-color:#f7f8f9">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -396,7 +379,7 @@ function VIEW()
 
 
 
-<section id="guide" style="background-color:#f7f8f9">
+<section id="guide" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -445,7 +428,7 @@ function VIEW()
 
 
 
-<section id="booking" style="background-color:#fffffff">
+<section id="booking" style="background-color:#f7f8f9">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -508,16 +491,14 @@ function VIEW()
 			<input id="post_id" type="hidden" name="post_id" value="{{ $post_id }}">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onSubmit="return BOOKING();">
 			<input type="hidden" name="cmd" value="_s-xclick">
-			<table>
-				<tr><td>
-				<input type="hidden" name="on0" value="Number of travelers"><strong>Number of travelers :</strong>
-				</td></tr>
-				<tr><td>
+			
+			<div class="form-group">
+				<input type="hidden" name="on0" value="Number of travelers">
+                <label for="os0"><strong>Number of travelers :</strong></label>
 				<select name="os0" class="form-control" id="os0">
 				{!! $option_button !!}
 				</select>
-				</td></tr>
-			</table>
+			</div>	
 			
             <div class="form-group">
 				<h2 class="section-heading">Lead Traveller Contact</h2>
@@ -766,15 +747,15 @@ function VIEW()
             <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /><!-- PayPal Logo -->
 			</form>
             <div style="height:80px;"></div>
-            <strong>Another Payment Methods</strong>
-            <div class="bd-callout bd-callout-danger w-100" style="margin-top:5px;">
+            <!-- strong>Another Payment Methods</strong>
+            <div class="bd-callout bd-callout-danger w-100" style="margin-top:5px; background-color:#ffffff">
                  <a href="/order" class="text-danger">
             	 	<img src="https://static.budi.my.id/assets/foodtour/sepa.jpg" style="margin-top:5px;"><br>
             	 	<small><li class="fa fa-angle-double-right"></li> Click here for SEPA transfer</small>
                  </a>
             </div>
             
-            <div style="height:50px;"></div>
+            <div style="height:50px;"></div -->
 		</div>
     </div>
 </div>

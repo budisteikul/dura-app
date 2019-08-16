@@ -83,7 +83,7 @@ function BOOKING()
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back</a>
+		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back to home</a>
 	</div>
 </nav>   
 <div style="height:50px;"></div>
@@ -107,8 +107,7 @@ function BOOKING()
                 	<li>Only SEPA (European local bank) transfers in EUR can be accepted</li>
 					<li>Transfers in USD will be automatically rejected</li>
 					<li>Wire transfers are not supported</li>
-                    <li>We will send you invoice to your email address after appointment received</li>
-                    <li>It will take 1 business day</li>
+                    <li>It will take max 1 business day</li>
                 </ul>
                 </div>
                 
