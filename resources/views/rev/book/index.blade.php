@@ -152,19 +152,7 @@
 			</thead>
 			<tbody>           
 			</tbody>
-            <tfoot style="visibility:hidden">
-            	<tr>
-     				
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-    			</tr>
-            </tfoot>
+            
 		</table>
 		
                 </div>
