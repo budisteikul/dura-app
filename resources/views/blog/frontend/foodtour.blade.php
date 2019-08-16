@@ -131,9 +131,6 @@ function VIEW()
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#booking">Book Now</a>
 				</li>
-                <!-- li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#ticket-checker">Ticket Checker</a>
-				</li -->
 			</ul>
 		</div>
     </div>
@@ -145,16 +142,12 @@ function VIEW()
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<img alt="{{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-                
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
-					
                     Book for tonight? It's Ok!
          			<br>
          			Because we can start the tour every day at 6.30 pm.
-         			
 		 			And our meeting point is Tugu Yogyakarta Monument (Tugu Pal Putih).
-                    
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -256,7 +249,7 @@ function VIEW()
             <p>
             	<div>
 				<h2 class="section-heading">Overview</h2>
-				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. <span itemprop="description"> Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.</span>
+				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. <span itemprop="description"> Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.</span>
                 </div>
 			</p>
 
@@ -284,7 +277,7 @@ function VIEW()
             <div>
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://www.vertikaltrip.com/assets/foodtour/malioboro-street.jpg">
+				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/malioboro-street.jpg">
 				<span class="caption text-muted">Malioboro Street</span>
 				<br>
 			</center>
@@ -402,7 +395,8 @@ function VIEW()
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Ratna</h4>
-					<p class="text-muted">Tour Guide</p>
+					<p class="text-muted">Tour Guide <br /><span class="text-danger">On duty</span></p>
+                    
 					<br><br>
 				</div>
 			</div>
