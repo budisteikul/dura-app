@@ -9,13 +9,14 @@
     <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">
 	<meta name="theme-color" content="#2e3237">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="https://static.budi.my.id/favicon.gif" type="image/gif" sizes="32x32">
     <title>Yogyakarta Night Walking and Food Tours</title>
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.4.js"></script>
-	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.4.css" rel="stylesheet">
+	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.5.js"></script>
+	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.5.css" rel="stylesheet">
     @stack('scripts')
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
