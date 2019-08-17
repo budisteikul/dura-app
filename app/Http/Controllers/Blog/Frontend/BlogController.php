@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Rev\rev_availability;
 use App\Models\Blog\blog_posts;
+use App\Models\Rev\rev_reviews;
 use Illuminate\Support\Facades\Request as Http;
+use Yajra\DataTables\Facades\DataTables;
+use Carbon\Carbon;
 
 class BlogController extends Controller
 {
@@ -133,9 +136,42 @@ class BlogController extends Controller
 		->with('google_analytics',$this->google_analytics);
 	}
 	
-	public function foodtour()
+	public function foodtour(Request $request)
     {
-		
+		if($request->ajax())
+		{
+			$resources = rev_reviews::query();
+			return Datatables::eloquent($resources)
+				->addColumn('style', function ($resource) {
+					$source = $resource->source;
+					switch($source)
+					{
+						case 'www.airbnb.com':
+							$link = 'https://www.airbnb.com/experiences/434368';
+						break;
+						case 'www.tripadvisor.com':
+							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
+						break;
+						case 'www.viator.com':
+							$link = 'https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2';
+						break;
+						default:
+							$link ='#';	
+					}
+					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
+					$output = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small>
+							  <br>
+							  <span class="text-warning">
+		        			 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+		    				</span>‎
+							  <br>'.
+							  $resource->text
+							  .'<br><small><strong>Source</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
+					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
+				})
+				->rawColumns(['style'])
+				->toJson();
+		}
         return view('blog.frontend.foodtour')
 		->with('post_id',$this->post_id)
 		->with('app_name',$this->app_name)

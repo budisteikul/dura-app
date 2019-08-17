@@ -2,7 +2,38 @@
 @section('title', $act_name .' | '. $app_name)
 @section('content')
 @push('scripts')
-
+<script type="text/javascript">
+			jQuery(document).ready(function($) {	
+     		//$.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
+			var table = $('#dataTables-example').DataTable(
+			{
+				
+				"processing": true,
+       			"serverSide": true,
+        		"ajax": '/',
+				"scrollX": true,
+				"language": {
+    				"paginate": {
+      					"previous": "<i class='fa fa-step-backward'></i>",
+						"next": "<i class='fa fa-step-forward'></i>",
+						"first": "<i class='fa fa-fast-backward'></i>",
+						"last": "<i class='fa fa-fast-forward'></i>"
+    				}
+  				},
+				"pageLength": 5,
+				"order": [[ 0, "desc" ]],
+				"columns": [
+					{data: 'date', name: 'date', orderable: true, searchable: false, visible: false},
+					{data: 'style', name: 'style', className: 'auto', orderable: false},
+        		],
+				"dom": 'rtp',
+				"pagingType": "full_numbers",
+				"fnDrawCallback": function () {
+					
+				}
+			});
+			});
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytics }}"></script>
 <script>
@@ -24,6 +55,9 @@
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
@@ -203,6 +237,60 @@
 </div>
 </article> 
 
+<style>
+@media screen and (max-width: 767px) {
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    text-align: center;
+	justify-content:center;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+	div.dataTables_wrapper div.dataTables_paginate {
+		float:none;
+		text-align:center;
+		}
+	
+	li.paginate_button.previous {
+        display: inline;
+    }
+ 
+    li.paginate_button.next {
+        display: inline;
+    }
+ 
+    li.paginate_button {
+        display: none;
+    }
+}
+</style>
+
+<section id="review" style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+    
+    	<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">New Friend Reviews</h3>
+					<h4 class="section-subheading text-muted">They are not guests, they are our new friends</h4>
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+		</div>
+        
+    <div class="col-lg-8 col-md-10 mx-auto">
+    <table id="dataTables-example" style="width:100%">
+			<tbody>           
+			</tbody>
+	</table>
+    </div>
+    
+    </div>
+</div>
+<div style="height:50px;"></div>
+</section>
 
 <section id="gallery" style="background-color:#f7f8f9">
 <div class="container">
