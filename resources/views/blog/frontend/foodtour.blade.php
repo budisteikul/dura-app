@@ -409,7 +409,7 @@
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Ratna</h4>
-					<p class="text-muted">Tour Guide <br /><span class="text-danger">On duty</span></p>
+					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
 					<br><br>
 				</div>
@@ -421,7 +421,7 @@
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
 					<h4>Vella Sekar</h4>
-					<p class="text-muted">Tour Guide</p>
+					<p class="text-muted">Your Local Friend</p>
 					<br><br>
 				</div>
 			</div>
