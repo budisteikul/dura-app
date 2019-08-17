@@ -4,6 +4,7 @@
 @push('scripts')
 <script type="text/javascript">
 			jQuery(document).ready(function($) {	
+			
      		//$.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
 			var table = $('#dataTables-example').DataTable(
 			{
@@ -32,7 +33,22 @@
 					
 				}
 			});
+			
+			var table = $('#dataTables-example').DataTable();
+			$('#dataTables-example').on('page.dt', function(){
+    			var target = $('#review');
+      			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      			if (target.length) {
+        			$('html, body').animate({
+          				scrollTop: (target.offset().top - 54)
+        			}, 1000, "easeInOutExpo");
+        			return false;
+      			}
 			});
+			
+			});
+			
+			
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytics }}"></script>
@@ -117,8 +133,9 @@
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
                     <span itemprop="name" content="{{ $act_name }}">{{ $act_name }}</span><br />
+                    <span style="width:30px;" class="fa fa-walking"></span><strong> Tour Mode :</strong> Walk and Trishaw<br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
-					<span style="width:30px;" class="fa fa-walking"></span><strong> Type :</strong> Open Trip<br />
+					<span style="width:30px;" class="fa fa-bars"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
@@ -134,6 +151,8 @@
       					<meta itemprop="name" content="VERTIKAL TRIP" />
     				</div>
                     
+                    <br>
+                    
                     <div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<span style="width:30px;" class="fa fa-star"></span><strong> Rating :</strong>
                     	<span class="text-warning">
@@ -144,7 +163,7 @@
                     	<br>
                     	<a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
 						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-                    	<br><small class="form-text text-muted">Based on <span itemprop="reviewCount">27</span> AirBNB &amp; TripAdvisor customer reviews</small>
+                    	<br><small class="form-text text-muted">Based on <span itemprop="reviewCount">27</span> AirBNB &amp; TripAdvisor guest reviews</small>
                     	<br>
                     </div>
                     
@@ -159,7 +178,7 @@
     				</div>
                     <meta itemprop="sku" content="15055852112" />
                     <meta itemprop="mpn" content="15055852112" />
-                    <div>
+                    <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
                         <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
@@ -168,7 +187,7 @@
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
 						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
                     	<br>
-						<small class="form-text text-muted">You can also buy tickets through on Google Maps</small>
+						<small class="form-text text-muted">You can also buy tickets through on Google Maps. Click to open Map</small>
                     </div>
                     
 				</div>
@@ -196,7 +215,7 @@
 				- Local Guide (English Speaking) <span class="fa fa-user"></span><br>
 				- Mineral water 600 ml <span class="fa fa-prescription-bottle"></span><br />
 				- Fee of all activities at Alun - Alun Kidul (masangin, paddle car, etc) <span class="fa fa-ticket-alt"></span><br />
-				- Becak (Yogyakarta traditional rickshaw) <span class="fa fa-car"></span><br />
+				- Becak (Yogyakarta traditional trishaw) <span class="fa fa-car"></span><br />
 				- Raincoat, if it's rain <span class="fa fa-briefcase"></span><br />
 				- Many types of Javanese authentic snack, food and drink <span class="fa fa-utensils"></span><br />
                 </div>
@@ -264,6 +283,10 @@
         display: none;
     }
 }
+table.dataTable a {
+  color: red;
+}
+
 </style>
 
 <section id="review" style="background-color:#ffffff">
