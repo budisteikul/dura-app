@@ -287,10 +287,6 @@
         display: none;
     }
 }
-table.dataTable a {
-  color: red;
-}
-
 </style>
 
 <section id="review" style="background-color:#ffffff">
