@@ -187,7 +187,11 @@
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
 						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
                     	<br>
-						<small class="form-text text-muted">You can also buy tickets through on Google Maps. Click to open Map</small>
+						<small class="form-text text-muted">
+                        <a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
+                        You can also buy tickets through on Google Maps. Click to open Map
+                        </a>
+                        </small>
                     </div>
                     
 				</div>
