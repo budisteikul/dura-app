@@ -143,6 +143,30 @@ class BlogController extends Controller
 			$resources = rev_reviews::query();
 			return Datatables::eloquent($resources)
 				->addColumn('style', function ($resource) {
+					
+					$rating = $resource->rating;
+					switch($rating)
+					{
+						case '1':
+							$star ='<i class="fa fa-star"></i>';	
+						break;
+						case '2':
+							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i>';	
+						break;
+						case '3':
+							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
+						break;
+						case '4':
+							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
+						break;
+						case '5':
+							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
+						break;
+						default:
+							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
+					}
+					
+					
 					$source = $resource->source;
 					switch($source)
 					{
@@ -162,7 +186,7 @@ class BlogController extends Controller
 					$output = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small>
 							  <br>
 							  <span class="text-warning">
-		        			 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+		        			 '. $star .'
 		    				</span>‎
 							  <br>'.
 							  $resource->text
