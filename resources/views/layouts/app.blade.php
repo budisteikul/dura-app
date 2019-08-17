@@ -75,6 +75,9 @@
                                 <a class="nav-link" href="/rev/book"><i class="fa fa-ticket-alt"></i> {{ __('Booking') }}</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/rev/review"><i class="fa fa-ticket-alt"></i> {{ __('Review') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>
                             </li>
                         	

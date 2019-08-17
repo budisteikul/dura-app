@@ -31,14 +31,14 @@ Route::get('/cancel', function () {
         return redirect('/');
     });
 Route::get('/success', 'Blog\Frontend\BlogController@success');
-
-
 // Reservation --------------------------------------------------------------------------
 
 // Reservation Admin --------------------------------------------------------------------------
 Route::resource('/rev/availability','Rev\AvailabilityController',[ 'names' => 'rev_availability' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
+	->middleware(['auth', 'verified']);
+Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ])
 	->middleware(['auth', 'verified']);	
 // Reservation Admin --------------------------------------------------------------------------
 
