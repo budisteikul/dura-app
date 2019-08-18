@@ -15,7 +15,7 @@
 <div style="height:25px;"></div>
 <!-- Navigation -->
 <section id="booking" >
-<div class="container">
+<div class="container" style="background-color:#FFFFFF">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
 <div style="height:50px;"></div>			
