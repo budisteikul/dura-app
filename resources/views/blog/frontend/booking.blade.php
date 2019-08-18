@@ -15,8 +15,7 @@
 <div style="height:50px;"></div>
 <!-- Navigation -->
 <section id="booking" >
-<div class="container">
-	<div class="row">
+
 		
 <div style="height:50px;"></div>			
 <div id="eventbrite-widget-container-66047863939" style="background-color:#ffffff"></div>
@@ -39,8 +38,7 @@
 </script>     
 <div style="height:50px;"></div>			
         
-    </div>
-</div>
+
 </section>
 
 
