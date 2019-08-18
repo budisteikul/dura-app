@@ -40,7 +40,7 @@ s0.parentNode.insertBefore(s1,s0);
      
 
 </head>
-<body>
+<body class=" bg-dark">
 <div>
 	@yield('content')
 
