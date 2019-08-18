@@ -33,7 +33,7 @@
         iframeContainerId: 'eventbrite-widget-container-66047863939',
 
         // Optional
-        iframeContainerHeight: 500,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>     
