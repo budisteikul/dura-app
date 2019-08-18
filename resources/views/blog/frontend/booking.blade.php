@@ -37,6 +37,8 @@
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>     
+<div style="height:50px;"></div>
+<div style="height:50px;"></div>
 <div style="height:50px;"></div>			
         </div>
     </div>
