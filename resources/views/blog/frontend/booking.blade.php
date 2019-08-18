@@ -18,7 +18,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-<div style="height:50px;"></div>			
+<div style="height:100px;"></div>			
 <div id="eventbrite-widget-container-66047863939" style="background-color:#ffffff"></div>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
@@ -37,9 +37,7 @@
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>     
-<div style="height:50px;"></div>
-<div style="height:50px;"></div>
-<div style="height:50px;"></div>			
+<div style="height:150px;"></div>		
         </div>
     </div>
 </div>
