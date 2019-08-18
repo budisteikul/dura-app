@@ -12,7 +12,7 @@
 		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back to home</a>
 	</div>
 </nav>   
-<div style="height:50px;"></div>
+<div style="height:25px;"></div>
 <!-- Navigation -->
 <section id="booking" >
 <div class="container">
@@ -37,7 +37,7 @@
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>     
-<div style="height:200px;"></div>		
+<div style="height:225px;"></div>		
         </div>
     </div>
 </div>
