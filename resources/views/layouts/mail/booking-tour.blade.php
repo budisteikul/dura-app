@@ -213,7 +213,10 @@
                           <strong>Number of travelers :</strong> {{$os0}} 
                           <br />
                           <strong>Ticket : </strong> <a href="https://www.vertikaltrip.com/ticket/{{$ticket}}">{{$ticket}}</a>
-						  </p>
+						  <br />
+                          <strong>Meeting point :</strong> <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
+Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 55233</a>
+                          </p>
                           
                         </td>
                       </tr>
@@ -229,9 +232,8 @@
                 <tr>
                   <td class="content-cell">
                     <p class="sub center">Vertikal Trip <br />
-                    Tugu Yogyakarta Monument<br />
-                    Gowongan, Jetis, Yogyakarta 55233<br />
-                    Indonesia
+                    Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
+Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 55233
                     </p>
                   </td>
                 </tr>

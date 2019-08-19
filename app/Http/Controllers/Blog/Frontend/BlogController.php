@@ -111,19 +111,44 @@ class BlogController extends Controller
      */
     public function index()
     {
-		$this->option_button = '
-			<option value="1 person">1 person €34,00 EUR</option>
-			<option value="2 persons">2 persons €68,00 EUR</option>
-			<option value="3 persons">3 persons €102,00 EUR</option>
-			<option value="4 persons">4 persons €136,00 EUR</option>
-			<option value="5 persons">5 persons €170,00 EUR</option>
-			<option value="6 persons">6 persons €204,00 EUR</option>
-			<option value="7 persons">7 persons €238,00 EUR</option>
-			<option value="8 persons">8 persons €272,00 EUR</option>';
-			
-        return view('blog.frontend.booking')
-		->with('disabledDates',$this->disabledDates)
-		->with('option_button',$this->option_button);
+        return view('blog.frontend.eventbrite')
+		->with('post_id',$this->post_id)
+		->with('app_name',$this->app_name)
+		->with('act_name',$this->act_name)
+		->with('option_button',$this->option_button)
+		->with('hosted_button_id',$this->hosted_button_id)
+		->with('price',$this->price)
+		->with('currency_code',$this->currency)
+		->with('google_analytics',$this->google_analytics)
+		->with('disabledDates',$this->disabledDates);
+    }
+	
+	public function eventbrite()
+    {
+        return view('blog.frontend.eventbrite')
+		->with('post_id',$this->post_id)
+		->with('app_name',$this->app_name)
+		->with('act_name',$this->act_name)
+		->with('option_button',$this->option_button)
+		->with('hosted_button_id',$this->hosted_button_id)
+		->with('price',$this->price)
+		->with('currency_code',$this->currency)
+		->with('google_analytics',$this->google_analytics)
+		->with('disabledDates',$this->disabledDates);
+    }
+	
+	public function paypal()
+    {
+        return view('blog.frontend.paypal')
+		->with('post_id',$this->post_id)
+		->with('app_name',$this->app_name)
+		->with('act_name',$this->act_name)
+		->with('option_button',$this->option_button)
+		->with('hosted_button_id',$this->hosted_button_id)
+		->with('price',$this->price)
+		->with('currency_code',$this->currency)
+		->with('google_analytics',$this->google_analytics)
+		->with('disabledDates',$this->disabledDates);
     }
 	
 	
@@ -183,14 +208,12 @@ class BlogController extends Controller
 							$link ='#';	
 					}
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
-					$output = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small>
-							  <br>
-							  <span class="text-warning">
-		        			 '. $star .'
-		    				</span>‎
-							  <br>'.
-							  $resource->text
-							  .'<br><small><strong>Source</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
+					
+					$user = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
+					$text = $resource->text .'<br>';
+					$from = '<small><strong>Source</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
+					$output = $user . $rating . $text;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
 				->rawColumns(['style'])

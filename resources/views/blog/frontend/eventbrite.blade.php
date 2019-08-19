@@ -15,11 +15,20 @@
 <div style="height:25px;"></div>
 <!-- Navigation -->
 <section id="booking" >
-<div class="container" style="background-color:#FFFFFF">
+<div class="container">
 	<div class="row">
+    	<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;"><span class="fa fa-bolt"></span> Instant Book</h3>
+					<!-- h4 class="section-subheading text-muted">Vertikal Trip does not store any of your payment details<br />Card payments are securely transacted </h4 -->
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+		</div>
 		<div class="col-lg-12 col-md-12 mx-auto">
-<div style="height:50px;"></div>			
-<div id="eventbrite-widget-container-66047863939" style="background-color:#ffffff"></div>
+<div style="height:5px;"></div>			
+<div id="eventbrite-widget-container-66047863939" style="background-color:#ffffff;height:425px;"></div>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
     var exampleCallback = function() {

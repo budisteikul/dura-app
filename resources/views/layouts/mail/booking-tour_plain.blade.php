@@ -13,6 +13,6 @@ Thanks,
 Vertikal Trip Team
 
 Vertikal Trip
-Tugu Yogyakarta Monument
-Gowongan, Jetis, Yogyakarta 55233
-Indonesia
+Tugu Yogyakarta Monument (Tugu Pal Putih)
+Cokrodiningratan, Kec. Jetis, Kota Yogyakarta
+Daerah Istimewa Yogyakarta 55233
