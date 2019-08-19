@@ -157,7 +157,7 @@
                     <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="https://static.budi.my.id/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
                         <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
                         
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
