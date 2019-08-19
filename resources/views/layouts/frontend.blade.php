@@ -15,8 +15,8 @@
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.6.js"></script>
-	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.6.css" rel="stylesheet">
+	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.7.js"></script>
+	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.7.css" rel="stylesheet">
     @stack('scripts')
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

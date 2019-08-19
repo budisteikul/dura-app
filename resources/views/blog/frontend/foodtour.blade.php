@@ -236,35 +236,6 @@
 </div>
 </article> 
 
-<style>
-@media screen and (max-width: 767px) {
-  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    text-align: center;
-	justify-content:center;
-  }
-}
-
-
-@media screen and (max-width: 767px) {
-	div.dataTables_wrapper div.dataTables_paginate {
-		float:none;
-		text-align:center;
-		}
-	
-	li.paginate_button.previous {
-        display: inline;
-    }
- 
-    li.paginate_button.next {
-        display: inline;
-    }
- 
-    li.paginate_button {
-        display: none;
-    }
-}
-</style>
-
 <section id="review" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
