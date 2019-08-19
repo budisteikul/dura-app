@@ -161,6 +161,26 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
   div.dataTables_wrapper div.dataTables_paginate {
     text-align: center;
   }
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    text-align: center;
+	justify-content:center;
+  }
+  div.dataTables_wrapper div.dataTables_paginate {
+		float:none;
+		text-align:center;
+		}
+	
+	li.paginate_button.previous {
+        display: inline;
+    }
+ 
+    li.paginate_button.next {
+        display: inline;
+    }
+ 
+    li.paginate_button {
+        display: none;
+    }
 }
 table.dataTable.table-sm > thead > tr > th {
   padding-right: 20px;

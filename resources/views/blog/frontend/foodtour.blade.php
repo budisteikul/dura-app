@@ -295,7 +295,7 @@
                     
                     <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
       					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-       						 <meta itemprop="name" content="Airbnb and TripAdvisor" />
+       						 <meta itemprop="name" content="New friends" />
       					</div>
       					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
         					<meta itemprop="ratingValue" content="5" />

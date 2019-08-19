@@ -66,7 +66,7 @@ mix.styles([
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/timeline/timeline.css',
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.min.css'
+	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css'
 	],'public/css/vertikaltrip-1.0.6.css');
 
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
