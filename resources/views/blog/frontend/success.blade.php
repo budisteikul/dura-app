@@ -28,6 +28,7 @@
 				<div class="col-lg-12 text-center">
          			Yogyakarta Night Walking and Food Tours will start at 6.30pm.<br>
 						Our meeting point is Tugu Yogyakarta Monument.<br>
+                        
          		</div>
              </div>
           </div>

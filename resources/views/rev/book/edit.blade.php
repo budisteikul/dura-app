@@ -137,8 +137,8 @@ function UPDATE()
       <option value="www.jogjafoodtour.com" {{ ($book->source=='www.jogjafoodtour.com') ? 'selected' : '' }}>www.jogjafoodtour.com</option>
       <option value="www.airbnb.com" {{ ($book->source=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
       <option value="www.tripadvisor.com" {{ ($book->source=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
-      <option value="www.telegram.com" {{ ($book->source=='www.telegram.com') ? 'selected' : '' }}>www.telegram.com</option>
-      <option value="www.tourhq.com" {{ ($book->source=='www.tourhq.com') ? 'selected' : '' }}>www.tourhq.com</option>
+      <option value="www.viator.com" {{ ($book->source=='www.viator.com') ? 'selected' : '' }}>www.viator.com</option>
+      <option value="www.expedia.com" {{ ($book->source=='www.expedia.com') ? 'selected' : '' }}>www.expedia.com</option>
 	</select>
 </div>
 

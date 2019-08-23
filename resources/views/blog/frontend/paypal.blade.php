@@ -14,7 +14,7 @@
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;"><span class="fa fa-bolt"></span> Instant Book</h3>
+					<h3 class="section-heading" style="margin-top:50px;"><span class="fa fa-ticket-alt"></span> Instant Book</h3>
 					<h4 class="section-subheading text-muted">
                     <!-- PayPal Logo -->
                     <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" />

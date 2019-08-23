@@ -207,19 +207,30 @@ class BlogController extends Controller
 						default:
 							$link ='#';	
 					}
+					
+					$title = "";
+					if(isset($resource->title))
+					{
+						$title = '<b>'.$resource->title.'</b><br>';
+					}
+					
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
 					
-					$user = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$user = '<a href="'.$link.'" target="_blank" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = $resource->text .'<br>';
-					$from = '<small><strong>Source</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
-					$output = $user . $rating . $text;
+					$from = '<small><strong>From</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
+					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
 				->rawColumns(['style'])
 				->toJson();
 		}
+		
+		$count = rev_reviews::count();
+		
         return view('blog.frontend.foodtour')
+		->with('count',$count)
 		->with('post_id',$this->post_id)
 		->with('app_name',$this->app_name)
 		->with('act_name',$this->act_name)

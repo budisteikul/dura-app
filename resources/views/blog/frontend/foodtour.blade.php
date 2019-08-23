@@ -63,7 +63,8 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
-		<a class="btn btn-danger" href="/order"><i class="fa fa-bolt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
+    	<a class="btn btn-danger" href="/order"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
+    	<!--button class="btn btn-danger" id="eventbrite-widget-modal-trigger-66047863939" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Get Tickets</strong></span></button -->
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -137,7 +138,7 @@
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
                     	<span itemprop="priceCurrency" content="USD">$</span>
-                    	<span itemprop="price" content="37.70">37.70</span>
+                    	<span itemprop="price" content="37.00">37.00</span>
     					<link itemprop="availability" href="http://schema.org/InStock" /> / person
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.vertikaltrip.com" />
@@ -244,25 +245,19 @@
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">New Friend Reviews</h3>
-					<h4 class="section-subheading text-muted">They are not guests, they are our new friends</h4>
-					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-				</div>
-			</div>
-		</div>
-    
-    	<div class="col-lg-8 col-md-10 mx-auto">
-        
-    				<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
+                    
+<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<strong> Rating :</strong>
                     	<span class="text-warning">
 		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
 		    			</span>‎
                     	<br>
-                    	<!-- a href="https://www.airbnb.com/experiences/434368" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/airbnb-button.jpg" height="45" alt="Book {{ $act_name }} via AirBNB" ></a>
-						<a href="https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html" target="_blank"><img src="https://static.budi.my.id/assets/foodtour/tripadvisor-button.jpg" height="45" alt="Book {{ $act_name }} via TripAdvisor" ></a>
-                    	<br --><small class="form-text text-muted">Based on <span itemprop="reviewCount">27</span> our new friend reviews</small>
-                    	<br>
+                    	<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+                    	
                     </div>
+					
+                    
+                    
                     
                     <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
       					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
@@ -274,13 +269,23 @@
       					</div>
     				</div>
                     
-    </div>
-        
+                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+					
+
+                    
+				</div>
+			</div>
+		</div>
+    
     <div class="col-lg-8 col-md-10 mx-auto">
+    <br>
     <table id="dataTables-example" style="width:100%">
 			<tbody>           
 			</tbody>
 	</table>
+    
+    
+    
     </div>
     
     </div>

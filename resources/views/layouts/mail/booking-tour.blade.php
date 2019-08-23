@@ -232,6 +232,7 @@ Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 5
                 <tr>
                   <td class="content-cell">
                     <p class="sub center">Vertikal Trip <br />
+                    Whatsapp : +6285743112112<br />
                     Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
 Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 55233
                     </p>

@@ -119,11 +119,11 @@ function UPDATE()
 <div class="form-group">
 	<label for="rating">Rating :</label>
     <select class="form-control" id="rating">
-      <option value="1" {{ ($review->rating=='1') ? 'selected' : '' }}>1</option>
-      <option value="2" {{ ($review->rating=='2') ? 'selected' : '' }}>2</option>
-      <option value="3" {{ ($review->rating=='3') ? 'selected' : '' }}>3</option>
-      <option value="4" {{ ($review->rating=='4') ? 'selected' : '' }}>4</option>
       <option value="5" {{ ($review->rating=='5') ? 'selected' : '' }}>5</option>
+      <option value="4" {{ ($review->rating=='4') ? 'selected' : '' }}>4</option>
+      <option value="3" {{ ($review->rating=='3') ? 'selected' : '' }}>3</option>
+      <option value="2" {{ ($review->rating=='2') ? 'selected' : '' }}>2</option>
+      <option value="1" {{ ($review->rating=='1') ? 'selected' : '' }}>1</option>
 	</select>
 </div>
 
@@ -133,6 +133,7 @@ function UPDATE()
       <option value="www.airbnb.com" {{ ($review->source=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
       <option value="www.tripadvisor.com" {{ ($review->source=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
       <option value="www.viator.com" {{ ($review->source=='www.viator.com') ? 'selected' : '' }}>www.viator.com</option>
+      <option value="www.expedia.com" {{ ($review->source=='www.expedia.com') ? 'selected' : '' }}>www.expedia.com</option>
 	</select>
 </div>
      

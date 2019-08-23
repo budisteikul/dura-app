@@ -140,8 +140,8 @@ function STORE()
       <option value="www.jogjafoodtour.com">www.jogjafoodtour.com</option>
       <option value="www.airbnb.com">www.airbnb.com</option>
       <option value="www.tripadvisor.com">www.tripadvisor.com</option>
-      <option value="www.telegram.com">www.telegram.com</option>
-      <option value="www.tourhq.com">www.tourhq.com</option>
+      <option value="www.viator.com">www.viator.com</option>
+      <option value="www.expedia.com">www.expedia.com</option>
 	</select>
 </div>
 
