@@ -4,8 +4,6 @@
 @push('scripts')
 <script type="text/javascript">
 			jQuery(document).ready(function($) {	
-			
-     		//$.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
 			var table = $('#dataTables-example').DataTable(
 			{
 				
@@ -19,7 +17,15 @@
 						"next": "<i class='fa fa-step-forward'></i>",
 						"first": "<i class='fa fa-fast-backward'></i>",
 						"last": "<i class='fa fa-fast-forward'></i>"
-    				}
+    				},
+					"aria": {
+            			"paginate": {
+                			"first":    'First',
+                			"previous": 'Previous',
+                			"next":     'Next',
+                			"last":     'Last'
+            			}
+        			}
   				},
 				"pageLength": 5,
 				"order": [[ 0, "desc" ]],
@@ -64,7 +70,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
     	<a class="btn btn-danger" href="/order"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
-    	<!--button class="btn btn-danger" id="eventbrite-widget-modal-trigger-66047863939" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Get Tickets</strong></span></button -->
+    	
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -87,11 +93,11 @@
     </div>
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/tugu-dark-1.0.1.jpg'); background-color: #B0B0B0">
+<header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/webp/tugu-dark-1.0.1_1.webp'); background-color: #B0B0B0">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img alt="{{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
+            	<img alt="{{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/logo-jogja-istimewa-png-4.webp" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
@@ -158,7 +164,7 @@
                     <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="https://static.budi.my.id/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="https://static.budi.my.id/assets/foodtour/webp/google-maps.webp" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
                         <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
                         
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
@@ -214,7 +220,7 @@
             <div>
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/malioboro-street.jpg">
+				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/webp/malioboro-street.webp">
 				<span class="caption text-muted">Malioboro Street</span>
 				<br>
 			</center>
@@ -244,7 +250,7 @@
     	<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">New Friend Reviews</h3>
+					<h3 class="section-heading" style="margin-top:50px;">Our New Friend Reviews</h3>
                     
 <div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<strong> Rating :</strong>
@@ -293,7 +299,7 @@
 <div style="height:50px;"></div>
 </section>
 
-<section id="gallery" style="background-color:#f7f8f9">
+<section id="gallery" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -314,42 +320,42 @@
 				
                 	
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/becak.jpg">
+					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/becak.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/paddle-car.jpg">
+					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/paddle-car.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/masangin.jpg">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/masangin.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer2.jpg">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/customer2.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/customer3.jpg">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/customer3.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/small-groups.jpg">
+					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/small-groups.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
@@ -385,7 +391,7 @@
             
         	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/ratna.jpg" >
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/webp/ratna.webp" >
 					<h4>Kalika Ratna</h4>
 					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
@@ -397,7 +403,7 @@
             
             <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/vella.jpg" >
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/webp/vella.webp" >
 					<h4>Vella Sekar</h4>
 					<p class="text-muted">Your Local Friend</p>
 					<br><br>

@@ -216,10 +216,10 @@ class BlogController extends Controller
 					
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
 					
-					$user = '<a href="'.$link.'" target="_blank" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$user = '<a href="'.$link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = $resource->text .'<br>';
-					$from = '<small><strong>From</strong> : <a href="'. $link .'" target="_blank">'.$link.'</a></small>';
+					$from = '<small><strong>From</strong> : <a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$link.'</a></small>';
 					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
