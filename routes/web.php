@@ -24,14 +24,10 @@ Route::get('/ticket', function () {
 Route::get('/ticket/{id}', 'Rev\BookController@ticket');
 
 Route::post('/book', 'Rev\BookController@book');
-Route::get('/order', function () {
-        return redirect('/payment/paypal');
-    });
 Route::get('/review/tripadvisor', function () {
         return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
     });
-Route::get('/payment/eventbrite', 'Blog\Frontend\BlogController@eventbrite');
-Route::get('/payment/paypal', 'Blog\Frontend\BlogController@paypal');
+Route::get('/order', 'Blog\Frontend\BlogController@paypal');
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/cancel', function () {

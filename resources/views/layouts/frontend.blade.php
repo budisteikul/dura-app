@@ -21,8 +21,8 @@
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.0.7.js"></script>
-	<link href="/css/vertikaltrip-1.0.7.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-1.0.8.js"></script>
+	<link href="/css/vertikaltrip-1.0.8.css" rel="stylesheet" media="screen,handheld">
     
 <script>
           if ('serviceWorker' in navigator ) {
