@@ -9,11 +9,11 @@
     <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://static.budi.my.id/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://static.budi.my.id/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://static.budi.my.id/favicon-16x16.png">
-	<link rel="manifest" href="https://static.budi.my.id/site.webmanifest">
-	<link rel="mask-icon" href="https://static.budi.my.id/safari-pinned-tab.svg" color="#2e3237">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2e3237">
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
     
@@ -21,8 +21,23 @@
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.7.js"></script>
-	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.7.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-1.0.7.js"></script>
+	<link href="/css/vertikaltrip-1.0.7.css" rel="stylesheet" media="screen,handheld">
+    
+<script>
+          if ('serviceWorker' in navigator ) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+</script>    
+    
     @stack('scripts')
 	
 <!--Start of Tawk.to Script-->
