@@ -1,9 +1,10 @@
 {
-  "short_name": "vertikal trip",
-  "name": "vertikal trip",
+  "short_name": "VertikalTrip",
+  "name": "Vertikal Trip",
   "theme_color": "#2e3237",
   "background_color": "#ffffff",
   "display": "standalone",
+  "scope" : "./",
   "icons": [
         {
             "src": "./android-chrome-192x192.png",
@@ -16,6 +17,6 @@
             "type": "image/png"
         }
     ],
-  "start_url": "https://www.jogjafoodtour.com/",
+  "start_url": "/",
   "orientation": "portrait"
 }
