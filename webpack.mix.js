@@ -101,6 +101,10 @@ mix.webpackConfig({
 			{
                 urlPattern: /^https:\/\/static\.budi\.my.id\//,
                 handler: 'cacheFirst'
+            },
+			{
+                urlPattern: /^https:\/\/www\.paypalobjects\.com\//,
+                handler: 'cacheFirst'
             }
         ],
        

@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://static.budi.my.id/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="https://static.budi.my.id/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="https://static.budi.my.id/favicon-16x16.png">
-	<link rel="manifest" href="https://static.budi.my.id/manifest.json">
+	<link rel="manifest" href="/manifest.json">
 	<link rel="mask-icon" href="https://static.budi.my.id/safari-pinned-tab.svg" color="#2e3237">
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
