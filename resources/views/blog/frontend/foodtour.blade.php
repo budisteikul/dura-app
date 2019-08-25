@@ -93,11 +93,11 @@
     </div>
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/webp/tugu-dark-1.0.1_1.webp'); background-color: #B0B0B0">
+<header id="page-top" class="intro-header" style="background-image: url('https://static.budi.my.id/assets/foodtour/webp/tugu-dark-1.0.1_1.webp'); background-color: #B0B0B0">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img alt="{{ $act_name }}" src="/assets/foodtour/webp/logo-jogja-istimewa-png-4.webp" width="250">
+            	<img alt="{{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/logo-jogja-istimewa-png-4.webp" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
 				<p class="text-faded">
@@ -164,7 +164,7 @@
                     <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
 						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
 						<br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/webp/google-maps.webp" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="https://static.budi.my.id/assets/foodtour/webp/google-maps.webp" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
                         <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
                         
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
@@ -220,7 +220,7 @@
             <div>
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="/assets/foodtour/webp/malioboro-street.webp">
+				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/webp/malioboro-street.webp">
 				<span class="caption text-muted">Malioboro Street</span>
 				<br>
 			</center>
@@ -320,42 +320,42 @@
 				
                 	
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="/assets/foodtour/webp/becak.webp">
+					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/becak.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/webp/paddle-car.webp">
+					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/paddle-car.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/webp/masangin.webp">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/masangin.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/webp/customer2.webp">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/customer2.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/webp/customer3.webp">
+					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/customer3.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/webp/small-groups.webp">
+					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="https://static.budi.my.id/assets/foodtour/webp/small-groups.webp">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
@@ -391,7 +391,7 @@
             
         	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/ratna.webp" >
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/webp/ratna.webp" >
 					<h4>Kalika Ratna</h4>
 					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
@@ -403,7 +403,7 @@
             
             <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/vella.webp" >
+					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="https://static.budi.my.id/assets/foodtour/webp/vella.webp" >
 					<h4>Vella Sekar</h4>
 					<p class="text-muted">Your Local Friend</p>
 					<br><br>
