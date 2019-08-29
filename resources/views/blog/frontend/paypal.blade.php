@@ -40,29 +40,32 @@
                 </div>
                 <small class="form-text text-muted">Date format YYYY-MM-DD</small>
 				<script type="text/javascript">
-				<?php
-				$defaultTimes = '18:30:00';
-				$defaultDates = date('Y-m-d') .' 00:00:00';
+				
+		$(function () {
+				
+		$.ajax({
+		type: 'GET',
+		url: '/availability'
+		}).done(function( data ) {
+			//==============================================
 			
-			
-				while(in_array($defaultDates, $disabledDates))
-				{
-					$defaultDates = date('Y-m-d 00:00:00',strtotime($defaultDates . "+1 days"));
-				}
-			
-			
-				?>
-			$(function () {
-                $('#date').datetimepicker({
-					minDate:'<?= $defaultDates ?>',
-					disabledDates: [<?= "'" . implode("','", $disabledDates) . "'" ?>],
-					format: 'YYYY-MM-DD <?= $defaultTimes ?>',
+				$('#date').datetimepicker({
+					minDate:data.defaultDates,
+					disabledDates: data.disabledDates,
+					format: 'YYYY-MM-DD '+ data.defaultTimes,
 					showTodayButton: true,
 					showClose: true,
 					ignoreReadonly: true,
-					defaultDate: '<?= $defaultDates ?>'
+					defaultDate: data.defaultDates
 				});
-            });
+				$('#os0').append(data.option_button);
+				$('#hosted_button_id').val(data.hosted_button_id);
+				$('#currency_code').val(data.currency_code);
+			//==============================================
+		});
+				
+                
+        });
 				</script>    
 			</div>
 			
@@ -76,7 +79,7 @@
 				<input type="hidden" name="on0" value="Number of travelers">
                 <label for="os0"><strong>Number of travelers :</strong></label>
 				<select name="os0" class="form-control" id="os0">
-				{!! $option_button !!}
+				
 				</select>
 			</div>	
 			
@@ -317,8 +320,8 @@
 				</div>
 			</div>
             
-			<input type="hidden" name="currency_code" value="{!! $currency_code !!}">
-			<input type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
+			<input id="currency_code" type="hidden" name="currency_code" value="{!! $currency_code !!}">
+			<input id="hosted_button_id" type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
 			<br />
 			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
