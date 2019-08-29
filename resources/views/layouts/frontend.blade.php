@@ -24,7 +24,7 @@
 	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.8.js"></script>
 	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.8.css" rel="stylesheet" media="screen,handheld">
     
-<script>
+<!-- script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
@@ -36,7 +36,7 @@
                 });
             });
         }
-</script>    
+</script -->    
     
     @stack('scripts')
 	
@@ -72,7 +72,7 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<p class="m-0 text-center text-white">
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:32px; color:#c03b44">Vertikal Trip Team</span>
+				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px;">Vertikal Trip Team</span>
 				<br>
 				<span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233

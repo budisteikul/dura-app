@@ -31,16 +31,16 @@ class BlogController extends Controller
 		if($this->currency=='USD')
 		{
 			$this->option_button = '
-			<option value="1 person">1 person $37,00 USD</option>
-			<option value="2 persons">2 persons $74,00 USD</option>
-			<option value="3 persons">3 persons $111,00 USD</option>
-			<option value="4 persons">4 persons $148,00 USD</option>
-			<option value="5 persons">5 persons $185,00 USD</option>
-			<option value="6 persons">6 persons $222,00 USD</option>
-			<option value="7 persons">7 persons $259,00 USD</option>
-			<option value="8 persons">8 persons $296,00 USD</option>';
+			<option value="1 person">1 person $38,40 USD</option>
+	<option value="2 persons">2 persons $76,80 USD</option>
+	<option value="3 persons">3 persons $115,20 USD</option>
+	<option value="4 persons">4 persons $153,60 USD</option>
+	<option value="5 persons">5 persons $192,00 USD</option>
+	<option value="6 persons">6 persons $230,40 USD</option>
+	<option value="7 persons">7 persons $268,80 USD</option>
+	<option value="8 persons">8 persons $307,20 USD</option>';
 			
-			$this->hosted_button_id = 'JM5KAR8MDQEBA';
+			$this->hosted_button_id = '2BE57XRPLVX2N';
 			
 			$this->price = '
 			<span class="badge badge-success">Special Offer</span>
@@ -49,11 +49,11 @@ class BlogController extends Controller
     					<span class="amount">$48 USD</span>
   					</del>
   				<ins>
-    				<span class="amount">$37 USD</span>
+    				<span class="amount">$38.40 USD</span>
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
+			<small class="form-text text-success"><b>Book by August 31 to save 20% off our previously offered price!</b></small>';
 		}
 		else
 		{
@@ -80,7 +80,7 @@ class BlogController extends Controller
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Book by August 31 to save 23% off our previously offered price!</b></small>';
+			<small class="form-text text-success"><b>Book by August 31 to save 20% off our previously offered price!</b></small>';
 		}
 		
 		

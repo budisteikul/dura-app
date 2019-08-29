@@ -15,7 +15,28 @@ use Auth;
 
 class AvailabilityController extends Controller
 {
-	
+	public function getAvailability()
+	{
+		$post_id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
+		$disDates = array();
+		$rev_availability = rev_availability::where('post_id',$post_id)->get();
+		foreach($rev_availability as $avalaibility)
+		{
+			array_push($disDates,$avalaibility->date);
+		}
+		$str1 = date('YmdHis');
+		$str2 = date('Ymd173000');
+		if($str1>=$str2) array_push($disDates,date('Y-m-d 00:00:00'));
+		
+		$defaultTimes = '18:30:00';
+		$defaultDates = date('Y-m-d') .' 00:00:00';
+		while(in_array($defaultDates, $disDates))
+		{
+			$defaultDates = date('Y-m-d 00:00:00',strtotime($defaultDates . "+1 days"));
+		}
+		$disabledDates = "'" . implode("','", $disDates) . "'";
+		return response()->json(["defaultDates" => $defaultDates,"disabledDates" => $disabledDates,"defaultTimes" => $defaultTimes]);
+	}
     /**
      * Display a listing of the resource.
      *
