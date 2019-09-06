@@ -28,7 +28,7 @@
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
 					{data: 'source', name: 'source', className: 'auto'},
-					{data: 'ticket', name: 'ticket', className: 'auto'},
+					/* {data: 'ticket', name: 'ticket', className: 'auto'}, */
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
 				
@@ -141,12 +141,12 @@
                 	<th></th>
                 	<th style="width:20px">No</th>
 					
-                    <th>Lead Traveller</th>
-                    <th>Email/Phone</th>
-                    <th>Number Traveller</th>
+                    <th>Lead</th>
+                    <th>Contact</th>
+                    <th>Qty</th>
                     <th>Date</th>
-                    <th>Source</th>
-                    <th>Ticket</th>
+                    <th>Supplier</th>
+                    <!-- th>Ticket</th -->
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
