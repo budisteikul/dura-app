@@ -90,6 +90,7 @@ mix.webpackConfig({
                //and have full support for offline first (example below)
             '/': ['resources/views/blog/frontend/foodtour.blade.php'],
             '/order': ['resources/views/blog/frontend/paypal.blade.php'],
+			'/success': ['resources/views/blog/frontend/success.blade.php'],
         },
         staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /service-worker\.js$/],
         navigateFallback: '/',
