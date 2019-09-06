@@ -64,7 +64,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 </head>
 <body class=" bg-dark">
-<div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF">
+
 	@yield('content')
 
 <footer class="py-5 bg-dark">

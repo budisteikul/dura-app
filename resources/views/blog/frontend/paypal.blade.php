@@ -48,7 +48,6 @@
 		url: '/availability'
 		}).done(function( data ) {
 			//==============================================
-			
 				$('#date').datetimepicker({
 					minDate:data.defaultDates,
 					disabledDates: data.disabledDates,
@@ -61,6 +60,7 @@
 				$('#os0').append(data.option_button);
 				$('#hosted_button_id').val(data.hosted_button_id);
 				$('#currency_code').val(data.currency_code);
+				$('meta[name="csrf-token"]').attr('content',data.meta_token );
 			//==============================================
 		});
 				

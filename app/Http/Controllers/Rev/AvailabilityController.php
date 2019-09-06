@@ -49,7 +49,7 @@ class AvailabilityController extends Controller
 		$hosted_button_id = '2BE57XRPLVX2N';
 		$currency_code = 'USD';
 		
-		return response()->json(["defaultDates" => $defaultDates,"disabledDates" => $disabledDates,"defaultTimes" => $defaultTimes,'option_button'=>$option_button,'hosted_button_id'=>$hosted_button_id,'currency_code'=>$currency_code]);
+		return response()->json(["defaultDates" => $defaultDates,"disabledDates" => $disabledDates,"defaultTimes" => $defaultTimes,'option_button'=>$option_button,'hosted_button_id'=>$hosted_button_id,'currency_code'=>$currency_code,'meta_token'=>csrf_token()]);
 	}
     /**
      * Display a listing of the resource.

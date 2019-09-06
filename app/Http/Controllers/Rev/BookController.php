@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 class BookController extends Controller
 {
 	
+	
+	
 	public function ticket($id)
 	{
 		if($id=="")
@@ -43,6 +45,8 @@ class BookController extends Controller
 	
 	public function book(Request $request)
     {
+		
+		
         $name =  $request->input('name');
 		$email =  $request->input('email');
 		$os0 =  $request->input('os0');
