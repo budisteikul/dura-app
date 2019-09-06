@@ -40,6 +40,42 @@
                 </div>
                 <small class="form-text text-muted">Date format YYYY-MM-DD</small>
 				<script type="text/javascript">
+		function change_label()
+		{
+			if($('#os0').val()=="1 person")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$38.40</strong>');
+			}
+			if($('#os0').val()=="2 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$76.80</strong>');
+			}
+			if($('#os0').val()=="3 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$115.20</strong>');
+			}
+			if($('#os0').val()=="4 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$153.60</strong>');
+			}
+			if($('#os0').val()=="5 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$192.00</strong>');
+			}
+			if($('#os0').val()=="6 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$230.40</strong>');
+			}
+			if($('#os0').val()=="7 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$268.80</strong>');
+			}
+			if($('#os0').val()=="8 persons")
+			{
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$307.20</strong>');
+			}
+		}
+		
 				
 		$(function () {
 				
@@ -61,6 +97,7 @@
 				$('#hosted_button_id').val(data.hosted_button_id);
 				$('#currency_code').val(data.currency_code);
 				$('meta[name="csrf-token"]').attr('content',data.meta_token );
+				$('#submit').html('<i class="fab fa-paypal"></i> Pay: <strong>$38.40</strong>');
 			//==============================================
 		});
 				
@@ -78,7 +115,7 @@
 			<div class="form-group">
 				<input type="hidden" name="on0" value="Number of travelers">
                 <label for="os0"><strong>Number of travelers :</strong></label>
-				<select name="os0" class="form-control" id="os0">
+				<select name="os0" class="form-control" id="os0" onChange="change_label()">
 				
 				</select>
 			</div>	
@@ -322,8 +359,9 @@
             
 			<input id="currency_code" type="hidden" name="currency_code" value="{!! $currency_code !!}">
 			<input id="hosted_button_id" type="hidden" name="hosted_button_id" value="{!! $hosted_button_id !!}">
-			<br />
-			<button id="submit" type="submit" class="btn btn-danger"><i class="fa fa-ticket-alt"></i> Book Now</button>	
+			<small class="text-muted">Click the button below to go to our secure payment partner to finalize the payment</small>
+            <br /><br />
+			<button id="submit" type="submit" class="btn btn-danger"></button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			<br /><br />
 			
