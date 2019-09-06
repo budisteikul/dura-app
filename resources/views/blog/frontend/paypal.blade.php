@@ -363,9 +363,9 @@
             <br /><br />
 			<button id="submit" type="submit" class="btn btn-danger"></button>	
 			<img alt="Paypal | {{ $act_name }}" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-			<br /><br />
 			
-            <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" /><!-- PayPal Logo -->
+			
+            <!-- PayPal Logo --><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal" height="25" /><!-- PayPal Logo -->
 			</form>
             <div style="height:80px;"></div>
             <!-- strong>Another Payment Methods</strong>
