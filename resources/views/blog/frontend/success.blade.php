@@ -7,7 +7,7 @@
 		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back to home</a>
 	</div>
 </nav>   
-<div style="height:25px;"></div>
+<div style="height:55px;"></div>
 <section id="success" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
