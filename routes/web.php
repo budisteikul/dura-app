@@ -35,8 +35,8 @@ Route::get('/review/tripadvisor', function () {
 //Route::get('/order', 'Blog\Frontend\BlogController@paypal');
 
 Route::get('/order', function () {
-        //return redirect('/tour/yogyakarta-night-walking-and-food-tours');
-		return redirect('/payment/bokun');
+        return redirect('/tour/yogyakarta-night-walking-and-food-tours');
+		//return redirect('/payment/bokun');
     });
 
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
