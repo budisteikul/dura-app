@@ -161,7 +161,7 @@
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
                     	<span itemprop="priceCurrency" content="USD">$</span>
-                    	<span itemprop="price" content="40.00">40.00</span>
+                    	<span itemprop="price" content="38.40">38.40</span>
     					<link itemprop="availability" href="http://schema.org/InStock" /> / person
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
