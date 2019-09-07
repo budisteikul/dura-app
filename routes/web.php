@@ -24,11 +24,21 @@ Route::get('/ticket', function () {
 Route::get('/ticket/{id}', 'Rev\BookController@ticket');
 
 Route::post('/book', 'Rev\BookController@book');
+
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
+Route::get('/payment/bokun', 'Blog\Frontend\BlogController@bokun');
+
 Route::get('/review/tripadvisor', function () {
         return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
     });
-Route::get('/order', 'Blog\Frontend\BlogController@paypal');
+
+//Route::get('/order', 'Blog\Frontend\BlogController@paypal');
+
+Route::get('/order', function () {
+        //return redirect('/tour/yogyakarta-night-walking-and-food-tours');
+		return redirect('/payment/bokun');
+    });
+
 Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
 Route::get('/cancel', function () {

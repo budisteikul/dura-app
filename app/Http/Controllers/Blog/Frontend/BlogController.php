@@ -110,6 +110,11 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['post'=>$post]);
     }
 	
+	public function bokun()
+    {
+        return view('blog.frontend.bokun');
+    }
+	
 	
     /**
      * Display a listing of the resource.

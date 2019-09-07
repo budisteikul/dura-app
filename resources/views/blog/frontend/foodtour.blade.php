@@ -86,7 +86,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
-    	<a class="btn btn-danger" href="/order"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
+    	<a class="btn btn-success" href="/order"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
     	
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -161,7 +161,7 @@
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
                     	<span itemprop="priceCurrency" content="USD">$</span>
-                    	<span itemprop="price" content="38.40">38.40</span>
+                    	<span itemprop="price" content="40.00">40.00</span>
     					<link itemprop="availability" href="http://schema.org/InStock" /> / person
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
