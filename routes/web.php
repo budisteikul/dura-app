@@ -12,7 +12,11 @@
 */
 
 Route::domain('localhost')->group(function () {
-    Route::get('/', 'Blog\Frontend\TimelineController@index');
+    Route::get('/', 'Blog\Frontend\BlogController@index');
+});
+
+Route::domain('192.168.0.2')->group(function () {
+    Route::get('/', 'Blog\Frontend\BlogController@index');
 });
 
 Route::domain('www.ratnawahyu.com')->group(function () {
@@ -20,7 +24,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 });
 
 Route::domain('www.vertikaltrip.com')->group(function () {
-    Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+    Route::get('/', 'Blog\Frontend\BlogController@index');
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');

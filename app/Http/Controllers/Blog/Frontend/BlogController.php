@@ -123,16 +123,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog.frontend.eventbrite')
-		->with('post_id',$this->post_id)
-		->with('app_name',$this->app_name)
-		->with('act_name',$this->act_name)
-		->with('option_button',$this->option_button)
-		->with('hosted_button_id',$this->hosted_button_id)
-		->with('price',$this->price)
-		->with('currency_code',$this->currency)
-		->with('google_analytics',$this->google_analytics)
-		->with('disabledDates',$this->disabledDates);
+        return view('blog.frontend.index');
     }
 	
 	public function eventbrite()
