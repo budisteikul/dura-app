@@ -43,7 +43,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
-	Route::get('/book', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/book', 'Blog\Frontend\BlogController@bokun');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 	Route::get('/order', function () {
         return redirect('/tour/yogyakarta-night-walking-and-food-tours');
