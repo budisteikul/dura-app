@@ -11,42 +11,42 @@
 |
 */
 
+Route::domain('localhost')->group(function () {
+    Route::get('/', 'Blog\Frontend\TimelineController@index');
+});
 
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
-// Reservation --------------------------------------------------------------------------
-Route::get('/', 'Blog\Frontend\BlogController@foodtour');
-Route::get('/ticket', function () {
-        return redirect('/');
-    });
-Route::get('/ticket/{id}', 'Rev\BookController@ticket');
-
-Route::post('/book', 'Rev\BookController@book');
-
-Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
-Route::get('/payment/bokun', 'Blog\Frontend\BlogController@bokun');
-
-Route::get('/review/tripadvisor', function () {
-        return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
-    });
-
-//Route::get('/order', 'Blog\Frontend\BlogController@paypal');
-
-Route::get('/order', function () {
+Route::domain('www.vertikaltrip.com')->group(function () {
+    Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+	Route::get('/success', 'Blog\Frontend\BlogController@success');
+	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
+	Route::post('/book', 'Rev\BookController@book');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
+	Route::get('/order', function () {
         return redirect('/tour/yogyakarta-night-walking-and-food-tours');
-		//return redirect('/payment/bokun');
     });
-
-Route::get('/yogyakarta-food-tour', 'Blog\Frontend\BlogController@foodtour');
-Route::get('/jogja-food-tour', 'Blog\Frontend\BlogController@foodtour');
-Route::get('/cancel', function () {
+	Route::get('/payment/bokun', 'Blog\Frontend\BlogController@bokun');
+	Route::get('/cancel', function () {
         return redirect('/');
     });
-Route::get('/success', 'Blog\Frontend\BlogController@success');
-Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
-// Reservation --------------------------------------------------------------------------
+});
+
+Route::domain('www.jogjafoodtour.com')->group(function () {
+    Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+	Route::get('/success', 'Blog\Frontend\BlogController@success');
+	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
+	Route::post('/book', 'Rev\BookController@book');
+	Route::get('/order', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/cancel', function () {
+        return redirect('/');
+    });
+});
+
+
+
 
 // Reservation Admin --------------------------------------------------------------------------
 Route::resource('/rev/availability','Rev\AvailabilityController',[ 'names' => 'rev_availability' ])
@@ -58,10 +58,6 @@ Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ]
 // Reservation Admin --------------------------------------------------------------------------
 
 // Link --------------------------------------------------------------------------
-// Tugu Pal Putih
-//https://www.google.com/maps/reserve/v/ttd/c/v1m16zP9SuA?source=pa&hl=id-ID&gei=2lc2XZSqMsT-9QOXy62oBg&sourceurl=https://www.google.com/search?q%3Dtugu%2Bpal%2Bputih%26oq%3Dtugu%2Bpal%2Bputih%26aqs%3Dchrome.0.69i59j0l5.1431j0j7%26sourceid%3Dchrome%26ie%3DUTF-8
-// Vertikal Trip
-//https://www.google.com/maps/reserve/v/ttd/c/pIOOLeN8cZQ?source=pa&hl=id-ID&gei=tAQ3XeWxGPXWz7sP__OKsAw&sourceurl=https://www.google.com/search?q%3Dvertikal%2Btrip%26oq%3Dvert%26aqs%3Dchrome.1.69i60j69i59j0j69i60l2j69i57.2623j0j4%26sourceid%3Dchrome%26ie%3DUTF-8
 Route::get('/facebook', function () {
         return redirect('https://www.facebook.com/events/2283084325275232/');
 });
@@ -89,7 +85,6 @@ Route::get('/eventbrite', function () {
 Route::get('/maps', function () {
 		return redirect('maps://www.google.com/maps/search/?api=1&query=tugu+pal+putih');
 });
-
 // Link --------------------------------------------------------------------------
 
 // Auth Laravel --------------------------------------------------------------------------
