@@ -17,7 +17,7 @@
 					<h3 class="section-heading" style="margin-top:50px;"><span class="fa fa-ticket-alt"></span> Instant Book</h3>
 					<h4 class="section-subheading text-muted">
                     <!-- PayPal Logo -->
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" />
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" alt="How PayPal Works" height="45" />
                     <!-- PayPal Logo --></h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;margin-bottom:2px;">
 					
