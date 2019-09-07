@@ -24,6 +24,7 @@ Route::get('/ticket', function () {
 Route::get('/ticket/{id}', 'Rev\BookController@ticket');
 
 Route::post('/book', 'Rev\BookController@book');
+Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 Route::get('/review/tripadvisor', function () {
         return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
     });

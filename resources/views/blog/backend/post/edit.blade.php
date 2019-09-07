@@ -1,4 +1,4 @@
-<script>
+<!-- script>
 $( document ).ready(function() {
     	tinymce.init({
   		selector: 'textarea.tinymce',
@@ -16,7 +16,7 @@ $( document ).ready(function() {
   		]
 		});	
 });
-</script>
+</script -->
 <script language="javascript">
 function close_window()
 {

@@ -104,6 +104,13 @@ class BlogController extends Controller
 		
 	}
 	
+	public function tour($id)
+    {
+		$post = blog_posts::where('slug',$id)->first();
+        return view('blog.frontend.product')->with(['post'=>$post]);
+    }
+	
+	
     /**
      * Display a listing of the resource.
      *
