@@ -123,7 +123,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog.frontend.index');
+        $post = blog_posts::where('slug','yogyakarta-night-walking-and-food-tours')->first();
+        return view('blog.frontend.product')->with(['post'=>$post]);
     }
 	
 	public function eventbrite()
