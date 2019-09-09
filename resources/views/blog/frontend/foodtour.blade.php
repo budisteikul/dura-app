@@ -86,7 +86,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 	<div class="container">
-    	<a class="btn btn-danger" href="/book"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Instant Book</strong></span></a>
+    	<a class="btn btn-danger" href="/payment/stripe"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
     	
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -122,6 +122,7 @@
          			<br>
          			Because we can start the tour every day at 6.30 pm.
 		 			And our meeting point is Tugu Yogyakarta Monument (Tugu Pal Putih).
+                
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -242,8 +243,8 @@
             <div>
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Malioboro Street | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/malioboro-street.jpg">
-				<span class="caption text-muted">Malioboro Street</span>
+				<img width="400" itemprop="image" alt="Gudeg Jogja | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/gudeg.jpg">
+				<span class="caption text-muted">Gudeg Jogja</span>
 				<br>
 			</center>
             </div>

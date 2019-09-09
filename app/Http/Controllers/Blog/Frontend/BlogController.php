@@ -110,9 +110,9 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['post'=>$post]);
     }
 	
-	public function bokun()
+	public function stripe()
     {
-        return view('blog.frontend.bokun');
+        return view('blog.frontend.stripe');
     }
 	
 	
@@ -123,36 +123,17 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $post = blog_posts::where('slug','yogyakarta-night-walking-and-food-tours')->first();
-        return view('blog.frontend.product')->with(['post'=>$post]);
-    }
-	
-	public function eventbrite()
-    {
-        return view('blog.frontend.eventbrite')
-		->with('post_id',$this->post_id)
-		->with('app_name',$this->app_name)
-		->with('act_name',$this->act_name)
-		->with('option_button',$this->option_button)
-		->with('hosted_button_id',$this->hosted_button_id)
-		->with('price',$this->price)
-		->with('currency_code',$this->currency)
-		->with('google_analytics',$this->google_analytics)
-		->with('disabledDates',$this->disabledDates);
+        return view('blog.frontend.index');
     }
 	
 	public function paypal()
     {
-        return view('blog.frontend.paypal')
-		->with('post_id',$this->post_id)
-		->with('app_name',$this->app_name)
-		->with('act_name',$this->act_name)
-		->with('option_button',$this->option_button)
-		->with('hosted_button_id',$this->hosted_button_id)
-		->with('price',$this->price)
-		->with('currency_code',$this->currency)
-		->with('google_analytics',$this->google_analytics)
-		->with('disabledDates',$this->disabledDates);
+        return view('blog.frontend.paypal');
+    }
+	
+	public function payment()
+    {
+        return view('blog.frontend.payment');
     }
 	
 	

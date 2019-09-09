@@ -9,7 +9,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
 	<div class="container">
-		<span class="navbar-brand">Vertikal Trip</span> 
+		<a class="navbar-brand js-scroll-trigger" href="/">Vertikal Trip</a> 
 	</div>
 </nav>   
 <div style="height:25px;"></div>

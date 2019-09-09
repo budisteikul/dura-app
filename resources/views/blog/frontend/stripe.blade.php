@@ -9,7 +9,8 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="/"><span class="fa fa-angle-double-left"></span> Back to home</a>
+
+		<a class="navbar-brand js-scroll-trigger" href="/">Vertikal Trip</a>
 	</div>
 </nav>   
 <div style="height:25px;"></div>
@@ -23,17 +24,17 @@
 				<div class="col-lg-12 text-center">
 				<div style="height:45px;"></div>	
                 
-<div id="bokun-w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad">Loading...</div><script type="text/javascript">
-var w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad;
+<div id="bokun-w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1">Loading...</div><script type="text/javascript">
+var w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1;
 (function(d, t) {
   var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/75082?bookingChannelUUID=aabd5865-3245-433a-80fa-5a31f4687d72&amp;activityId=208273&amp;lang=en&amp;ccy=USD&amp;hash=w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': false, 'cookieLifetime': 43200 };
+  var frameUrl = 'https://' + host + '/widgets/75082?bookingChannelUUID=607cb4b6-0e0e-4946-98b0-6c1902dcfe84&amp;activityId=208273&amp;lang=en&amp;ccy=USD&amp;hash=w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
   s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
     try { 
-      w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad = new BokunWidgetEmbedder(); w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad.initialize(options); w75082_bde95193_ecbd_4ae2_8f1a_d8557c80bcad.display();
+      w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1 = new BokunWidgetEmbedder(); w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1.initialize(options); w75082_2fe88bbf_fcf7_47bf_b15d_6e7b1ffd50a1.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
