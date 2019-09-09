@@ -23,6 +23,24 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
+Route::domain('vertikaltrip.herokuapp.com')->group(function () {
+    Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+	Route::get('/success', 'Blog\Frontend\BlogController@success');
+	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
+	Route::post('/book', 'Rev\BookController@book');
+	Route::get('/book', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
+	Route::get('/payment/paypal', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
+	Route::get('/order', function () {
+        return redirect('/tour/yogyakarta-night-walking-and-food-tours');
+    });
+	Route::get('/cancel', function () {
+        return redirect('/');
+    });
+	Route::get('/index', 'Blog\Frontend\BlogController@index');
+});
+
 Route::domain('www.vertikaltrip.com')->group(function () {
     Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
