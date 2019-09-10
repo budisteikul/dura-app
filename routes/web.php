@@ -28,6 +28,11 @@ Route::domain('vertikaltrip.herokuapp.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
+	
+	Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
+	Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
+	Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
+	
 	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
 	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
@@ -49,6 +54,12 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
+	
+	Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
+	Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
+	Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
+	
+	
 	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
 	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
@@ -70,6 +81,12 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
+	
+	Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
+	Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
+	Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
+	
+	
 	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
 	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');

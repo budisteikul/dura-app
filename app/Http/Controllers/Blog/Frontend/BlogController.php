@@ -110,6 +110,22 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['post'=>$post]);
     }
 	
+	//====================================================================================
+	public function timeselector_stripe()
+    {
+        return view('blog.frontend.timeselector-stripe');
+    }
+	public function checkout_stripe()
+    {
+        return view('blog.frontend.checkout-stripe');
+    }
+	public function receipt_stripe()
+    {
+        return view('blog.frontend.receipt-stripe');
+    }
+	//====================================================================================
+	
+	
 	public function stripe()
     {
         return view('blog.frontend.stripe');
