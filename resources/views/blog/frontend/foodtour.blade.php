@@ -252,7 +252,7 @@
           
 			<p>
             	<div>
-				<b>Itinerary</b><br />
+				<h2 class="section-heading">Itinerary</h2>
 				From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
                 </div>
 			</p>

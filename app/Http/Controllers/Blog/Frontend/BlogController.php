@@ -126,46 +126,12 @@ class BlogController extends Controller
 	//====================================================================================
 	
 	
-	public function stripe()
-    {
-        return view('blog.frontend.stripe');
-    }
-
-public function shoppingcart()
-    {
-        return view('blog.frontend.shoppingcart');
-    }
-
-public function paypal_checkout()
-    {
-        return view('blog.frontend.paypal-checkout');
-    }
-
-	public function stripe_checkout()
-    {
-        return view('blog.frontend.stripe-checkout');
-    }
-	
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('blog.frontend.index');
-    }
-	
-	public function paypal()
-    {
-        return view('blog.frontend.paypal');
-    }
-	
-	public function payment()
-    {
-        return view('blog.frontend.payment');
-    }
-	
+   
 	
 	public function success()
 	{
@@ -239,7 +205,7 @@ $name_link = '';
 					//$user = '<b class="text-danger">'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = nl2br($resource->text) .'<br>';
-					$from = '<small><strong>From</strong> : <a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$name_link.'</a></small>';
+					$from = '<small><strong>From</strong> : <a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$link.'</a></small>';
 					//$from = '';
 					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
