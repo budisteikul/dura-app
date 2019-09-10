@@ -89,8 +89,9 @@ mix.webpackConfig({
 			//you should add the path to your blade files here so they can be cached
             //and have full support for offline first (example below)
             '/': ['resources/views/blog/frontend/foodtour.blade.php'],
-            '/payment/stripe': ['resources/views/blog/frontend/stripe.blade.php'],
-			'/payment/paypal': ['resources/views/blog/frontend/paypal.blade.php'],
+            '/book': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
+			'/book/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
+			'/book/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
 			'/order': ['resources/views/blog/frontend/product.blade.php'],
 			'/tour/yogyakarta-night-walking-and-food-tours': ['resources/views/blog/frontend/product.blade.php'],
         },
@@ -103,10 +104,6 @@ mix.webpackConfig({
             },
 			{
                 urlPattern: /^https:\/\/static\.budi\.my.id\//,
-                handler: 'cacheFirst'
-            },
-			{
-                urlPattern: /^https:\/\/www\.paypalobjects\.com\//,
                 handler: 'cacheFirst'
             }
         ],
