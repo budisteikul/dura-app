@@ -114,7 +114,21 @@ class BlogController extends Controller
     {
         return view('blog.frontend.stripe');
     }
-	
+
+public function shoppingcart()
+    {
+        return view('blog.frontend.shoppingcart');
+    }
+
+public function paypal_checkout()
+    {
+        return view('blog.frontend.paypal-checkout');
+    }
+
+	public function stripe_checkout()
+    {
+        return view('blog.frontend.stripe-checkout');
+    }
 	
     /**
      * Display a listing of the resource.

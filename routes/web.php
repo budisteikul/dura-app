@@ -28,9 +28,12 @@ Route::domain('vertikaltrip.herokuapp.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
-	Route::get('/book', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
+	Route::get('/payment/stripe/checkout', 'Blog\Frontend\BlogController@stripe_checkout');
 	Route::get('/payment/paypal', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/payment/paypal/checkout', 'Blog\Frontend\BlogController@paypal_checkout');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 	Route::get('/order', function () {
         return redirect('/tour/yogyakarta-night-walking-and-food-tours');
@@ -46,9 +49,12 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
-	Route::get('/book', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
+	Route::get('/payment/stripe/checkout', 'Blog\Frontend\BlogController@stripe_checkout');
 	Route::get('/payment/paypal', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/payment/paypal/checkout', 'Blog\Frontend\BlogController@paypal_checkout');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 	Route::get('/order', function () {
         return redirect('/tour/yogyakarta-night-walking-and-food-tours');
@@ -64,9 +70,12 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/success', 'Blog\Frontend\BlogController@success');
 	Route::get('/availability', 'Rev\AvailabilityController@getAvailability');
 	Route::post('/book', 'Rev\BookController@book');
-	Route::get('/book', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment', 'Blog\Frontend\BlogController@payment');
+	Route::get('/payment/shoppingcart', 'Blog\Frontend\BlogController@shoppingcart');
 	Route::get('/payment/stripe', 'Blog\Frontend\BlogController@stripe');
+	Route::get('/payment/stripe/checkout', 'Blog\Frontend\BlogController@stripe_checkout');
 	Route::get('/payment/paypal', 'Blog\Frontend\BlogController@paypal');
+	Route::get('/payment/paypal/checkout', 'Blog\Frontend\BlogController@paypal_checkout');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 	Route::get('/order', function () {
         return redirect('/tour/yogyakarta-night-walking-and-food-tours');
