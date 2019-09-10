@@ -21,6 +21,9 @@
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
+    
+    
+    
 	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.8.js"></script>
 	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.8.css" rel="stylesheet" media="screen,handheld">
     

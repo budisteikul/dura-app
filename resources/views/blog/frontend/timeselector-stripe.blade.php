@@ -21,7 +21,7 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-				<div style="height:45px;"></div>	
+				<div style="height:70px;"></div>	
                 
 <div id="bokun-w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727">Loading...</div>
 <script type="text/javascript">
