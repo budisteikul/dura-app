@@ -83,8 +83,8 @@ s0.parentNode.insertBefore(s1,s0);
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
 				<br><br>
-             	<i class="fab fa-cc-stripe fa-3x"></i> <i class="fab fa-cc-mastercard fa-3x"></i> <i class="fab fa-cc-visa fa-3x"></i> <i class="fab fa-cc-discover fa-3x"></i> <i class="fab fa-cc-amex fa-3x"></i>
-            	<br>
+             	<i class="fab fa-cc-mastercard fa-3x"></i> <i class="fab fa-cc-visa fa-3x"></i> <i class="fab fa-cc-discover fa-3x"></i> <i class="fab fa-cc-amex fa-3x"></i> <i class="fab fa-cc-diners-club fa-3x"></i>
+            	<br><br><br>
 			</p>
         </div>
     </div>

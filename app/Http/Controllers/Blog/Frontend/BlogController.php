@@ -181,7 +181,7 @@ class BlogController extends Controller
 							$link = 'https://www.airbnb.com/experiences/434368';
 						break;
 						case 'www.tripadvisor.com':
-$name_link = 'TripAdvisor';
+$name_link = 'Trip Advisor';
 							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
 						break;
 						case 'www.viator.com':

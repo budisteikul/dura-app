@@ -19,9 +19,19 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+
 Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
 Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
 Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
+
+Route::get('/book/paypal', 'Blog\Frontend\BlogController@timeselector_paypal');
+Route::get('/book/paypal/checkout', 'Blog\Frontend\BlogController@checkout_paypal');
+Route::get('/book/paypal/checkout/receipt', 'Blog\Frontend\BlogController@receipt_paypal');
+
+Route::get('/book/stripe', 'Blog\Frontend\BlogController@timeselector_stripe');
+Route::get('/book/stripe/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
+Route::get('/book/stripe/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
+
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 Route::get('/order', function () {
 	return redirect('/tour/yogyakarta-night-walking-and-food-tours');
