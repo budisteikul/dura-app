@@ -42,13 +42,13 @@
 					
 					
 					<div class="bd-callout bd-callout-danger text-left text-secondary w-100 shadow p-3 mb-5 bg-white rounded" style="margin-right:5px;">
-                    	<div style="margin-bottom:5px;">
+                    	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> Credit Card</strong>
 						</div>
-                        <div style="margin-bottom:5px;">
+                        <div style="margin-bottom:8px;">
 						<i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i>
                         </div>
-                        <div style="margin-bottom:5px;">
+                        <div style="margin-bottom:8px;">
                         <a class="btn btn-danger" href="/book/stripe"><i class="fa fa-credit-card"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Credit Card Payment</strong></span></a>
                         </div>
 					</div>
@@ -56,13 +56,13 @@
 					
 					
 					<div class="bd-callout bd-callout-danger text-left text-secondary w-100 shadow p-3 mb-5 bg-white rounded" style="margin-right:5px;">
-                    	<div style="margin-bottom:5px;">
+                    	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> PayPal</strong>
 						</div>
-                        <div style="margin-bottom:5px;">
+                        <div style="margin-bottom:8px;">
 						<i class="fab fa-cc-paypal fa-2x"></i>
                         </div>
-                        <div style="margin-bottom:5px;">
+                        <div style="margin-bottom:8px;">
                         <a class="btn btn-danger" href="/book/paypal"><i class="fab fa-paypal"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>PayPal Payment</strong></span></a>
                         </div>
                     </div>
