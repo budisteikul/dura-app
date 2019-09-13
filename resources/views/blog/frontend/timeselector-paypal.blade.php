@@ -23,18 +23,17 @@
 				<div class="col-lg-12 text-center">
 				<div style="height:70px;"></div>	
                 
-<div id="bokun-w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727">Loading...</div>
-<script type="text/javascript">
-var w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727;
+<div id="bokun-w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab">Loading...</div><script type="text/javascript">
+var w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab;
 (function(d, t) {
   var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/79312?bookingChannelUUID=35a387d2-81a7-4216-a53c-19df335afba9&amp;activityId=208273&amp;lang=en&amp;ccy=USD&amp;hash=w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  var frameUrl = 'https://' + host + '/widgets/79919?bookingChannelUUID=af09519a-6eee-4a10-b127-5bd5edb0f3ce&amp;activityId=208273&amp;lang=en&amp;ccy=USD&amp;hash=w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
   s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
     try { 
-      w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727 = new BokunWidgetEmbedder(); w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727.initialize(options); w79312_d37b1543_3ba9_4aa9_8624_7a4fdbafe727.display();
+      w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab = new BokunWidgetEmbedder(); w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab.initialize(options); w79919_3e6ab8a5_5a9e_4853_b9a9_e4342bf878ab.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);

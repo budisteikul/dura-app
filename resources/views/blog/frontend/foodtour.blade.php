@@ -120,8 +120,8 @@
 				<p class="text-faded">
                     Book for tonight? It's Ok!
          			<br>
-         			Because we can start the tour every day at 6.30 pm.
-		 			And our meeting point is Tugu Yogyakarta Monument (Tugu Pal Putih).
+         			We can start the tour every day.
+		 			<br> Use promotional code SEPTEMBERSALE to get 10% discount.
                 
 				</p>
 			</div>
@@ -161,9 +161,11 @@
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
-                    	<span itemprop="priceCurrency" content="USD">$</span>
-                    	<span itemprop="price" content="40.00">40.00</span>
-    					<link itemprop="availability" href="http://schema.org/InStock" /> / person
+						<br>
+                    	<span itemprop="priceCurrency" content="USD"></span>
+                    	<span itemprop="price" content="40.00"></span>
+						{!! $price !!}
+    					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
                 	</div>
@@ -244,7 +246,7 @@
             <div>
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Gudeg Jogja | {{ $act_name }}" class="img-fluid rounded" src="https://static.budi.my.id/assets/foodtour/gudeg.jpg">
+				<img width="400" itemprop="image" alt="Gudeg Jogja | {{ $act_name }}" class="img-fluid rounded" src="/assets/foodtour/gudeg.jpg">
 				<span class="caption text-muted">Gudeg Jogja</span>
 				<br>
 			</center>
@@ -291,7 +293,7 @@
                     
                     <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
       					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-       						 <meta itemprop="name" content="New friends" />
+       						 <meta itemprop="name" content="Airbnb and Trip Advisor user" />
       					</div>
       					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
         					<meta itemprop="ratingValue" content="5" />

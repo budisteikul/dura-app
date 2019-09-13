@@ -24,6 +24,8 @@ Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
 Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
 Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
 
+Route::get('/book/payment', 'Blog\Frontend\BlogController@payment');
+
 Route::get('/book/paypal', 'Blog\Frontend\BlogController@timeselector_paypal');
 Route::get('/book/paypal/checkout', 'Blog\Frontend\BlogController@checkout_paypal');
 Route::get('/book/paypal/checkout/receipt', 'Blog\Frontend\BlogController@receipt_paypal');

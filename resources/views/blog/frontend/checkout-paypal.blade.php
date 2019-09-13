@@ -24,18 +24,17 @@
 				<div class="col-lg-12 text-center">
 				<div style="height:70px;"></div>	
                 
-<div id="bokun-w79313_1d2907fb_86d3_494b_98a8_4886ce95433b">Loading...</div>
-<script type="text/javascript">
-var w79313_1d2907fb_86d3_494b_98a8_4886ce95433b;
+<div id="bokun-w79920_f287cc70_572c_4f85_a31d_2237e6718885">Loading...</div><script type="text/javascript">
+var w79920_f287cc70_572c_4f85_a31d_2237e6718885;
 (function(d, t) {
   var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/79313?bookingChannelUUID=35a387d2-81a7-4216-a53c-19df335afba9&amp;lang=en&amp;ccy=USD&amp;hash=w79313_1d2907fb_86d3_494b_98a8_4886ce95433b';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w79313_1d2907fb_86d3_494b_98a8_4886ce95433b', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  var frameUrl = 'https://' + host + '/widgets/79920?bookingChannelUUID=af09519a-6eee-4a10-b127-5bd5edb0f3ce&amp;lang=en&amp;ccy=USD&amp;hash=w79920_f287cc70_572c_4f85_a31d_2237e6718885';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w79920_f287cc70_572c_4f85_a31d_2237e6718885', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
   s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
     try { 
-      w79313_1d2907fb_86d3_494b_98a8_4886ce95433b = new BokunWidgetEmbedder(); w79313_1d2907fb_86d3_494b_98a8_4886ce95433b.initialize(options); w79313_1d2907fb_86d3_494b_98a8_4886ce95433b.display();
+      w79920_f287cc70_572c_4f85_a31d_2237e6718885 = new BokunWidgetEmbedder(); w79920_f287cc70_572c_4f85_a31d_2237e6718885.initialize(options); w79920_f287cc70_572c_4f85_a31d_2237e6718885.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);

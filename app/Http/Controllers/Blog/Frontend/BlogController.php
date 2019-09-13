@@ -46,14 +46,14 @@ class BlogController extends Controller
 			<span class="badge badge-success">Special Offer</span>
 				<div class="style-4">
   					<del>
-    					<span class="amount">$48 USD</span>
+    					<span class="amount">$40 USD</span>
   					</del>
   				<ins>
-    				<span class="amount">$38.40 USD</span>
+    				<span class="amount">$36 USD</span>
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Book by August 31 to save 20% off our previously offered price!</b></small>';
+			<small class="form-text text-success"><b>Use promotional code SEPTEMBERSALE to save 10% off our previously offered price!</b></small>';
 		}
 		else
 		{
@@ -111,6 +111,10 @@ class BlogController extends Controller
     }
 	
 	//====================================================================================
+	public function payment()
+    {
+        return view('blog.frontend.payment');
+    }
 	public function timeselector_stripe()
     {
         return view('blog.frontend.timeselector-stripe');
@@ -122,6 +126,19 @@ class BlogController extends Controller
 	public function receipt_stripe()
     {
         return view('blog.frontend.receipt-stripe');
+    }
+	
+	public function timeselector_paypal()
+    {
+        return view('blog.frontend.timeselector-paypal');
+    }
+	public function checkout_paypal()
+    {
+        return view('blog.frontend.checkout-paypal');
+    }
+	public function receipt_paypal()
+    {
+        return view('blog.frontend.receipt-paypal');
     }
 	//====================================================================================
 	
