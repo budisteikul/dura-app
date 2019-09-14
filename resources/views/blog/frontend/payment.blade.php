@@ -36,12 +36,12 @@
 				
 					
 					
-					<div class="row">
-					<div class="col-10 mx-auto">
+					<div class="row justify-content-center">
+					<div>
 					
 					
 					
-					<div class="bd-callout bd-callout-danger text-left text-secondary w-100 shadow p-3 mb-5 bg-white rounded" style="margin-right:5px;">
+					<div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; width:330px;">
                     	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> Credit Card</strong>
 						</div>
@@ -55,7 +55,7 @@
 					
 					
 					
-					<div class="bd-callout bd-callout-danger text-left text-secondary w-100 shadow p-3 mb-5 bg-white rounded" style="margin-right:5px;">
+					<div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; width:330px;">
                     	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> PayPal</strong>
 						</div>
