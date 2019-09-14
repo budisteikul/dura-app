@@ -277,7 +277,7 @@
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Our New Friend Reviews</h3>
-                    <h4 class="section-subheading text-muted">Review us on Trip Advisor</h4>
+                    <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReview-g12872450-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Sleman_District_Yogyakarta_Region_Java.html" target="_blank">Review us on Trip Advisor</a></h4>
 <div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<strong> Rating :</strong>
                     	<span class="text-warning">
