@@ -19,15 +19,15 @@
 						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
-				"order": [[ 5, "desc" ]],
+				"order": [[ 4, "desc" ]],
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
 					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
 					{data: 'name', name: 'name', className: 'auto'},
-					{data: 'email_phone', name: 'email_phone', className: 'auto'},
+					/* {data: 'email_phone', name: 'email_phone', className: 'auto'}, */
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
-					{data: 'source', name: 'source', className: 'auto'},
+					/* {data: 'source', name: 'source', className: 'auto'}, */
 					/* {data: 'ticket', name: 'ticket', className: 'auto'}, */
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
@@ -140,13 +140,9 @@
 				<tr>
                 	<th></th>
                 	<th style="width:20px">No</th>
-					
                     <th>Lead</th>
-                    <th>Contact</th>
                     <th>Qty</th>
                     <th>Date</th>
-                    <th>Supplier</th>
-                    <!-- th>Ticket</th -->
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
