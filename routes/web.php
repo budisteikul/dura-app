@@ -38,7 +38,7 @@ Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
 Route::get('/order', function () {
 	return redirect('/tour/yogyakarta-night-walking-and-food-tours');
 });
-Route::get('/success', 'Blog\Frontend\BlogController@success');
+
 Route::get('/timeout', function () {
 	return redirect('/');
 });
