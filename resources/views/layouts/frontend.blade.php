@@ -78,7 +78,9 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<p class="m-0 text-center text-white">
-            	
+            	<br>
+                <img src="/assets/foodtour/0x0.png" height="45">
+                <br>
 				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px;">Vertikal Trip</span>
 				<br><span class="fa fa-map-marked-alt"></span> <a class="text-white" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument <br />(Tugu Pal Putih)<br />
 				Cokrodiningratan, Kec. Jetis, Kota Yogyakarta<br /> Daerah Istimewa Yogyakarta 55233
