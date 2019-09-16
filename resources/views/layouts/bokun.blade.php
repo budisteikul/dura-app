@@ -95,8 +95,8 @@ $(window).on('load', function(){
 		position: fixed;
 		left: 0px;
 		top: 0px;
-		width: 100%;
-		height: 100%;
+		width: 90%;
+		height: 90%;
 		z-index: 9999;
 		background: url(/img/LoadingMountains.svg) center no-repeat #fff;
 		background-size: 50% 50%;
