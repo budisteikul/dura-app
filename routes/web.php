@@ -35,10 +35,13 @@ Route::get('/book/stripe/checkout', 'Blog\Frontend\BlogController@checkout_strip
 Route::get('/book/stripe/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
 
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@tour');
+
+Route::post('/mails/webhook', function () {
+	return redirect('https://mail.vertikaltrip.com/mails/webhook');
+});
 Route::get('/order', function () {
 	return redirect('/tour/yogyakarta-night-walking-and-food-tours');
 });
-
 Route::get('/timeout', function () {
 	return redirect('/');
 });
