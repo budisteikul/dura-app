@@ -95,11 +95,11 @@ $(window).on('load', function(){
 		position: fixed;
 		left: 0px;
 		top: 0px;
-		width: 90%;
-		height: 90%;
+		width: 100%;
+		height: 100%;
 		z-index: 9999;
 		background: url(/img/LoadingMountains.svg) center no-repeat #fff;
-		background-size: 50% 50%;
+		background-size: 40% 40%;
 	}
 }
 </style>
