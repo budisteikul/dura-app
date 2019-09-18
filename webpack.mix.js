@@ -89,9 +89,16 @@ mix.webpackConfig({
 			//you should add the path to your blade files here so they can be cached
             //and have full support for offline first (example below)
             '/': ['resources/views/blog/frontend/foodtour.blade.php'],
-            '/book': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
+			'/payment': ['resources/views/blog/frontend/payment.blade.php'],
+			'/book': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
 			'/book/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
 			'/book/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
+			'/book/stripe': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
+			'/book/stripe/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
+			'/book/stripe/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
+			'/book/paypal': ['resources/views/blog/frontend/timeselector-paypal.blade.php'],
+			'/book/paypal/checkout': ['resources/views/blog/frontend/checkout-paypal.blade.php'],
+			'/book/paypal/checkout/receipt': ['resources/views/blog/frontend/receipt-paypal.blade.php'],
 			'/order': ['resources/views/blog/frontend/product.blade.php'],
 			'/tour/yogyakarta-night-walking-and-food-tours': ['resources/views/blog/frontend/product.blade.php'],
         },
@@ -103,7 +110,7 @@ mix.webpackConfig({
                 handler: 'cacheFirst'
             },
 			{
-                urlPattern: /^https:\/\/static\.budi\.my.id\//,
+                urlPattern: /^https:\/\/static\.vertikaltrip\.com\//,
                 handler: 'cacheFirst'
             }
         ],
