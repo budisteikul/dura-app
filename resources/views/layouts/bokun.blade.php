@@ -69,7 +69,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 </head>
 <body class=" bg-dark">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 <script>
 $(window).on('load', function(){
 	$(".se-pre-con").fadeOut("slow");
