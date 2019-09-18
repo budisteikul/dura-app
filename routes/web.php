@@ -19,6 +19,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
+Route::get('/review', 'Rev\ReviewController@get_review');
 
 Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
 Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');

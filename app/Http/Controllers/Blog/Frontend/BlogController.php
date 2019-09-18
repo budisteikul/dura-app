@@ -159,77 +159,12 @@ class BlogController extends Controller
 		->with('google_analytics',$this->google_analytics);
 	}
 	
-	public function foodtour(Request $request)
+	
+	
+	
+	public function foodtour()
     {
-		if($request->ajax())
-		{
-			$resources = rev_reviews::query();
-			return Datatables::eloquent($resources)
-				->addColumn('style', function ($resource) {
-					
-					$rating = $resource->rating;
-					switch($rating)
-					{
-						case '1':
-							$star ='<i class="fa fa-star"></i>';	
-						break;
-						case '2':
-							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i>';	
-						break;
-						case '3':
-							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
-						break;
-						case '4':
-							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
-						break;
-						case '5':
-							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
-						break;
-						default:
-							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
-					}
-					
-					
-					$source = $resource->source;
-					switch($source)
-					{
-						case 'www.airbnb.com':
-             $name_link = 'AirBNB';
-							$link = 'https://www.airbnb.com/experiences/434368';
-						break;
-						case 'www.tripadvisor.com':
-$name_link = 'Trip Advisor';
-							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
-						break;
-						case 'www.viator.com':
-$name_link = 'Viator';
-							$link = 'https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2';
-						break;
-						default:
-$name_link = '';
-							$link ='#';	
-					}
-					
-					$title = "";
-					if(isset($resource->title))
-					{
-						$title = '<b>'.$resource->title.'</b><br>';
-					}
-					
-					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
-					
-					$user = '<a href="'.$link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
-					//$user = '<b class="text-danger">'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
-					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
-					$text = nl2br($resource->text) .'<br>';
-					$from = '<small><strong>From</strong> : <a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$link.'</a></small>';
-					//$from = '';
-					$output = $user.$rating.$title.$text.$from;
-					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
-				})
-				->rawColumns(['style'])
-				->toJson();
-		}
+		
 		
 		$count = rev_reviews::count();
 		

@@ -24,7 +24,7 @@
 				
 				"processing": true,
        			"serverSide": true,
-        		"ajax": '/',
+        		"ajax": '/review',
 				"scrollX": true,
 				"language": {
     				"paginate": {

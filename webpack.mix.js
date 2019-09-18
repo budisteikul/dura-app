@@ -89,7 +89,8 @@ mix.webpackConfig({
 			//you should add the path to your blade files here so they can be cached
             //and have full support for offline first (example below)
             '/': ['resources/views/blog/frontend/foodtour.blade.php'],
-			'/payment': ['resources/views/blog/frontend/payment.blade.php'],
+			'/review': [],
+			'/book/payment': ['resources/views/blog/frontend/payment.blade.php'],
 			'/book': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
 			'/book/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
 			'/book/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
@@ -104,6 +105,7 @@ mix.webpackConfig({
         },
         staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /service-worker\.js$/],
         navigateFallback: '/',
+		ignoreUrlParametersMatching: [/./],
         runtimeCaching: [
             {
                 urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
