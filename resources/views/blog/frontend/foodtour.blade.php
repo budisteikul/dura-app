@@ -156,7 +156,7 @@
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
                     <span itemprop="name" content="{{ $act_name }}">{{ $act_name }}</span><br />
                     <span style="width:30px;" class="fa fa-walking"></span><strong> Tour Mode :</strong> Walk and Trishaw<br />
-					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 hours start at 6.30 pm<br />
+					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 ~ 4 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-bars"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
