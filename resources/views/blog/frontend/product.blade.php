@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.bokun')
 @section('content')
 @push('scripts')
 
