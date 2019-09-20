@@ -36,12 +36,13 @@
 					
                     <div class="row col-md-8  mx-auto">
     <div class="col-sm-6 first-column">
-      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px;">
+      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; height:180px">
                     	<div style="margin-bottom:8px;">
-						<strong class="text-danger"> Credit Card</strong>
+						<i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i>
 						</div>
                         <div style="margin-bottom:8px;">
-						<i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i>
+						<!-- i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i -->
+                        <img src="/assets/foodtour/3dsecure.jpg" height="50">
                         </div>
                         <div style="margin-bottom:8px;">
                         <a class="btn btn-danger" href="/book/stripe"><i class="fa fa-credit-card"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Use Credit Card Payment</strong></span></a>
@@ -49,12 +50,12 @@
 					</div>
     </div>
     <div class="col-sm-6 second-column">
-      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px;">
+      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; height:180px">
                     	<div style="margin-bottom:8px;">
-						<strong class="text-danger"> PayPal</strong>
+						<i class="fab fa-cc-paypal fa-2x"></i>
 						</div>
                         <div style="margin-bottom:8px;">
-						<i class="fab fa-cc-paypal fa-2x"></i>
+						<!-- i class="fab fa-cc-paypal fa-2x"></i --><img src="/assets/foodtour/logo-paypal.png" height="50">
                         </div>
                         <div style="margin-bottom:8px;">
                         <a class="btn btn-danger" href="/book/paypal"><i class="fab fa-paypal"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Use PayPal Payment</strong></span></a>
