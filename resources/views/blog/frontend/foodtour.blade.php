@@ -24,7 +24,10 @@
 				
 				"processing": true,
        			"serverSide": true,
-        		"ajax": '/review',
+        		"ajax": {
+            			"url": "/review",
+            			"type": "POST"
+        			},
 				"scrollX": true,
 				"language": {
     				"paginate": {
