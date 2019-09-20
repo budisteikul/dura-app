@@ -79,15 +79,16 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<p class="m-0 text-center text-white">
             	
-                <br>
+                <!-- br>
 				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px;">Vertikal Trip, Inc.</span>
 				<br>
                 2035 Sunset Lake Road<br>
 				Suite B-2, Newark, DE 19702, US<br>
 				<i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
+                <br -->
+                <b>Vertikal Trip Team</b>
                 <br>
-                <br>
-                Customer Support
+                <b>Customer Support</b>
                 <br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>

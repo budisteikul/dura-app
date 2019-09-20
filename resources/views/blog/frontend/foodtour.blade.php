@@ -182,8 +182,13 @@
                     <meta itemprop="sku" content="15055852112" />
                     <meta itemprop="mpn" content="15055852112" />
                     <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
-						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting point :</strong>
+						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting/Redemption  point :</strong>
+                        <br>
+                        - You will receive a confirmation email and voucher instantly after booking
 						<br>
+                        - You can present a mobile voucher for this activity to our tour guide
+                        <br>
+<br>
                         <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
                         
                         <br>
@@ -398,7 +403,7 @@
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Team</h3>
+				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Tour Guide</h3>
 				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
 				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
