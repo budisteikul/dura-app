@@ -33,15 +33,10 @@
 							<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 						</div>
 					</div>
-				
 					
-					
-					<div class="row justify-content-center">
-					<div>
-					
-					
-					
-					<div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; width:330px;">
+                    <div class="row col-md-8  mx-auto">
+    <div class="col-sm-6 first-column">
+      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px;">
                     	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> Credit Card</strong>
 						</div>
@@ -52,10 +47,9 @@
                         <a class="btn btn-danger" href="/book/stripe"><i class="fa fa-credit-card"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Use Credit Card Payment</strong></span></a>
                         </div>
 					</div>
-					
-					
-					
-					<div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px; width:330px;">
+    </div>
+    <div class="col-sm-6 second-column">
+      <div class="bd-callout bd-callout-danger text-left text-secondary shadow p-3 bg-white rounded" style="margin-right:5px;">
                     	<div style="margin-bottom:8px;">
 						<strong class="text-danger"> PayPal</strong>
 						</div>
@@ -66,10 +60,11 @@
                         <a class="btn btn-danger" href="/book/paypal"><i class="fab fa-paypal"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Use PayPal Payment</strong></span></a>
                         </div>
                     </div>
-					
+    </div> 
+  </div>
                     
 					
-					</div></div>
+					
 					
 					
 				<div style="height:45px;"></div>		
