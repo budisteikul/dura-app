@@ -99,12 +99,15 @@
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
 				</li>
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
-				</li>
+                
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
 				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
+				</li>
+                
                 <li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
@@ -251,20 +254,19 @@
                 </div>
 			</p>
           	
-            <div>
+            
 			<center>
 				<br>
 				<img width="400" itemprop="image" alt="Gudeg Jogja | {{ $act_name }}" class="img-fluid rounded" src="/assets/foodtour/gudeg.jpg">
 				<span class="caption text-muted">Gudeg Jogja</span>
-				<br>
 			</center>
-            </div>
+            
           
 			<p>
-            	<div>
+            	
 				<h2 class="section-heading">Itinerary</h2>
 				From our meeting point Tugu Yogyakarta Monument, we go to the south through a part of the Yogyakarta's imaginary line ( Malioboro Road, Nirboyo Gate, Yogyakarta Palace, East Fortess Corner etc). Along the journey, we will enjoying the nighttime atmosphere of Yogyakarta and discover a variety of activities and food until we reach the Southern City Square ( Alun - Alun Kidul ).
-                </div>
+                
 			</p>
 			
 		
@@ -277,59 +279,9 @@
 </div>
 </article> 
 
-<section id="review" style="background-color:#ffffff">
-<div class="container">
-	<div class="row">
-    
-    	<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="row" style="padding-bottom:0px;">
-				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">Our New Friend Reviews</h3>
-                    <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReview-g12872450-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Sleman_District_Yogyakarta_Region_Java.html" target="_blank" class="text-danger">Review us on Trip Advisor</a></h4>
-<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
-		    			<strong> Rating :</strong>
-                    	<span class="text-warning">
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
-		    			</span>‎
-                    	<br>
-                    	<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
-                    	
-                    </div>
-					
-                    
-                    
-                    
-                    <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
-      					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-       						 <meta itemprop="name" content="Airbnb and Trip Advisor user" />
-      					</div>
-      					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-        					<meta itemprop="ratingValue" content="5" />
-        					<meta itemprop="bestRating" content="5" />
-      					</div>
-    				</div>
-                    
-                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-					
 
-                    
-				</div>
-			</div>
-		</div>
-    
-    <div class="col-lg-8 col-md-10 mx-auto">
-    <br>
-    <table id="dataTables-example" style="width:100%">
-			<tbody>           
-			</tbody>
-	</table>
-    </div>
-    </div>
-</div>
-<div style="height:50px;"></div>
-</section>
 
-<section id="gallery" style="background-color:#ffffff">
+<section id="gallery" style="background-color:#f2f2f2">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
@@ -398,9 +350,59 @@
 </div>
 </section>
 
+<section id="review" style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+    
+    	<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">Our New Friend Reviews</h3>
+                    <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReview-g12872450-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Sleman_District_Yogyakarta_Region_Java.html" target="_blank" class="text-danger">Review us on Trip Advisor</a></h4>
+<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
+		    			<strong> Rating :</strong>
+                    	<span class="text-warning">
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+		    			</span>‎
+                    	<br>
+                    	<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+                    	
+                    </div>
+					
+                    
+                    
+                    
+                    <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
+      					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+       						 <meta itemprop="name" content="Airbnb and Trip Advisor user" />
+      					</div>
+      					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+        					<meta itemprop="ratingValue" content="5" />
+        					<meta itemprop="bestRating" content="5" />
+      					</div>
+    				</div>
+                    
+                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+					
 
+                    
+				</div>
+			</div>
+		</div>
+    
+    <div class="col-lg-8 col-md-10 mx-auto">
+    <br>
+    <table id="dataTables-example" style="width:100%">
+			<tbody>           
+			</tbody>
+	</table>
+    </div>
+    </div>
+</div>
+<div style="height:50px;"></div>
+</section>
 
-<section id="guide" style="background-color:#ffffff">
+<section id="guide" style="background-color:#f2f2f2">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
