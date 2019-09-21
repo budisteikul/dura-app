@@ -81,7 +81,7 @@ $logo='';
 					//$user = '<b class="text-danger">'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = nl2br($resource->text) .'<br>';
-					$from = '<a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer"><b>'.$logo .'</b> small> '. $link.'</small></a>';
+					$from = '<a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer"><b>'.$logo .'</b>  <small> '. $link.'</small></a>';
 					//$from = '';
 					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
