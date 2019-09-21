@@ -40,7 +40,7 @@
                     	<div style="margin-bottom:8px;">
 						<i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i>
 						</div>
-                        <div style="margin-bottom:8px;">
+                        <div style="margin-bottom:8px; height:50px;">
 						<!-- i class="fab fa-cc-mastercard fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-discover fa-2x"></i> <i class="fab fa-cc-amex fa-2x"></i> <i class="fab fa-cc-diners-club fa-2x"></i -->
                         <img src="/assets/foodtour/3dsecure.jpg" height="50">
                         </div>
@@ -54,8 +54,8 @@
                     	<div style="margin-bottom:8px;">
 						<i class="fab fa-cc-paypal fa-2x"></i>
 						</div>
-                        <div style="margin-bottom:8px;">
-						<!-- i class="fab fa-cc-paypal fa-2x"></i --><img src="/assets/foodtour/logo-paypal.png" height="50">
+                        <div style="margin-bottom:8px; height:50px;">
+						<!-- i class="fab fa-cc-paypal fa-2x"></i --><img src="/assets/foodtour/logo-paypal.png" height="40">
                         </div>
                         <div style="margin-bottom:8px;">
                         <a class="btn btn-danger" href="/book/paypal"><i class="fab fa-paypal"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Use PayPal Payment</strong></span></a>
