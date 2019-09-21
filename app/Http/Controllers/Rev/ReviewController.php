@@ -49,19 +49,19 @@ class ReviewController extends Controller
 					switch($source)
 					{
 						case 'www.airbnb.com':
-             $name_link = 'AirBNB';
+             				$name_link = 'AirBNB';
 							$link = 'https://www.airbnb.com/experiences/434368';
 						break;
 						case 'www.tripadvisor.com':
-$name_link = 'Trip Advisor';
+							$name_link = 'Trip Advisor';
 							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
 						break;
 						case 'www.viator.com':
-$name_link = 'Viator';
+							$name_link = 'Viator';
 							$link = 'https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2';
 						break;
 						default:
-$name_link = '';
+							$name_link = '';
 							$link ='#';	
 					}
 					
@@ -77,7 +77,7 @@ $name_link = '';
 					//$user = '<b class="text-danger">'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = nl2br($resource->text) .'<br>';
-					$from = '<small><strong>From</strong> : <a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$link.'</a></small>';
+					$from = '<a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer"><b>'.$name_link.'</b></a>';
 					//$from = '';
 					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
