@@ -49,11 +49,11 @@ class ReviewController extends Controller
 					switch($source)
 					{
 						case 'www.airbnb.com':
-             				$name_link = 'AirBNB';
+             				$name_link = '<i class="fab fa-airbnb" aria-hidden="true"></i> AirBNB';
 							$link = 'https://www.airbnb.com/experiences/434368';
 						break;
 						case 'www.tripadvisor.com':
-							$name_link = 'Trip Advisor';
+							$name_link = '<i class="fab fa-tripadvisor" aria-hidden="true"></i> Trip Advisor';
 							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
 						break;
 						case 'www.viator.com':
