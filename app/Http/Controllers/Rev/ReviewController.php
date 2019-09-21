@@ -50,12 +50,12 @@ class ReviewController extends Controller
 					{
 						case 'www.airbnb.com':
              				$name_link = 'AirBNB';
-$logo = "<i class="fab fa-airbnb" aria-hidden="true"></i>";
+$logo = '<i class="fab fa-airbnb" aria-hidden="true"></i>';
 							$link = 'https://www.airbnb.com/experiences/434368';
 						break;
 						case 'www.tripadvisor.com':
 							$name_link = 'Trip Advisor';
-$logo = "<i class="fab fa-tripadvisor" aria-hidden="true"></i>";
+$logo = '<i class="fab fa-tripadvisor" aria-hidden="true"></i>';
 							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
 						break;
 						case 'www.viator.com':
