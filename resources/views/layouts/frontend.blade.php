@@ -17,7 +17,7 @@
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
     
-    <title>Yogyakarta Night Walking and Food Tours</title>
+    <title>Yogyakarta Night Walking and Food Tours - Vertikal Trip</title>
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
