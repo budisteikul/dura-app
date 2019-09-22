@@ -187,32 +187,7 @@
                     
                     <meta itemprop="sku" content="15055852112" />
                     <meta itemprop="mpn" content="15055852112" />
-                    <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
-						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting/Redemption  point :</strong>
-                        <br>
-                        - You will receive a confirmation email and voucher instantly after booking
-						<br>
-                        - You can present a mobile voucher for this activity to our tour guide
-                        <br>
-<br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
-                        
-                        <br>
-                        <div class="map-responsive">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0649523361567!2d110.36486611421002!3d-7.7829383793810685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58373fffffff%3A0xffb2d5ffd8a9bd10!2sTugu%20Pal%20Putih!5e0!3m2!1sen!2sid!4v1566909137586!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-						</div>
-                        
-                        <br>
-                        <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
-						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
-						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
-                    	<br>
-						<!-- small class="form-text text-muted">
-                        <a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
-                        You can also buy tickets through on Google Maps via Google Reservation. Click to open Map
-                        </a>
-                        </small -->
-                    </div>
+                    
                     
 				</div>
 			</p>
@@ -270,6 +245,33 @@
 			</p>
 			
 		
+        	<br>
+            <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
+						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting/Redemption  point :</strong>
+                        <br>
+                        - You will receive a confirmation email and voucher instantly after booking
+						<br>
+                        - You can present a mobile voucher for this activity to our tour guide
+                        <br>
+<br>
+                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+                        
+                        <br>
+                        <div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0649523361567!2d110.36486611421002!3d-7.7829383793810685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58373fffffff%3A0xffb2d5ffd8a9bd10!2sTugu%20Pal%20Putih!5e0!3m2!1sen!2sid!4v1566909137586!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						</div>
+                        
+                        <br>
+                        <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
+						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
+						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
+                    	<br>
+						<!-- small class="form-text text-muted">
+                        <a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
+                        You can also buy tickets through on Google Maps via Google Reservation. Click to open Map
+                        </a>
+                        </small -->
+                    </div>
         </div>
         
         
