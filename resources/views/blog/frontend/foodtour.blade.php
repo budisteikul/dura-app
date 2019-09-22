@@ -97,6 +97,10 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+				</li>
+                
+                <li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
 				</li>
                 
@@ -139,6 +143,59 @@
 
 
 
+<!-- Services -->
+  <section class="page-section" id="services" style="background-color:#f2f2f2">
+    <div class="container">
+      
+        	<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">Why Vertikal Trip Team?</h3>
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+      
+      <div class="row text-center">
+        <div class="col-md-4">
+        <br>
+          <span class="fa-stack fa-3x">
+            <i class="fas fa-circle fa-stack-2x text-danger"></i>
+            <i class="fas fa-thumbs-up fa-stack-1x fa-inverse"></i>
+          </span>
+          <br><br>
+          <h4 class="service-heading">Great Local Food</h4>
+          <p class="text-muted">Too many options &amp; afraid of tourist traps? We only take you to good places where locals go!</p>
+        </div>
+        <div class="col-md-4">
+        <br>
+          <span class="fa-stack fa-3x">
+            <i class="fas fa-circle fa-stack-2x text-danger"></i>
+            <i class="fas fa-hiking fa-stack-1x fa-inverse"></i>
+          </span>
+          <br><br>
+          <h4 class="service-heading">Expertise in Food &amp; Culture</h4>
+          <p class="text-muted">We own and run this tour. Our experienced guides introduce you to the local culture.</p>
+        </div>
+        <div class="col-md-4">
+        <br>
+          <span class="fa-stack fa-3x">
+            <i class="fas fa-circle fa-stack-2x text-danger"></i>
+            <i class="fas fa-money-bill-alt fa-stack-1x fa-inverse"></i>
+          </span>
+          <br><br>
+          <h4 class="service-heading">Accessible to Anyone</h4>
+          <p class="text-muted">Our tours are reasonably priced &amp; you can save money for other activities.</p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </section>
+
+
+
+
+
+
+
  <!-- Post Content -->
 <article id="about">
 <div class="container">
@@ -150,7 +207,7 @@
         
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:0px;">About The Tour</h3>
+					<h3 class="section-heading" style="margin-top:0px;">Explore Indonesia through our Jogja Food Tour</h3>
 					<h4 class="section-subheading text-muted">And So Our Adventure Begins</h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
@@ -359,7 +416,7 @@
     	<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">Our New Friend Reviews</h3>
+					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
                     <!-- h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReview-g12872450-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Sleman_District_Yogyakarta_Region_Java.html" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4 -->
 <div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
 		    			<strong> Rating :</strong>
