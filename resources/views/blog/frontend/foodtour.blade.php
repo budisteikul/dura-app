@@ -89,7 +89,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
-    	<a class="btn btn-outline-light" href="/book/payment"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
+    	<a class="btn btn-danger text-white" href="/book/payment"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
        
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -162,18 +162,18 @@
             <i class="fas fa-thumbs-up fa-stack-1x fa-inverse"></i>
           </span>
           <br><br>
-          <h4 class="service-heading">Great Local Food</h4>
+          <h4 class="service-heading">Great Local Food & Activity</h4>
           <p class="text-muted">Too many options &amp; afraid of tourist traps? We only take you to good places where locals go!</p>
         </div>
         <div class="col-md-4">
         <br>
           <span class="fa-stack fa-3x">
             <i class="fas fa-circle fa-stack-2x text-danger"></i>
-            <i class="fas fa-hiking fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-atlas fa-stack-1x fa-inverse"></i>
           </span>
           <br><br>
           <h4 class="service-heading">Expertise in Food &amp; Culture</h4>
-          <p class="text-muted">We own and run this tour. Our experienced guides introduce you to the local culture.</p>
+          <p class="text-muted">We own and run this tour. Our experienced guides will introduce you to the local culture.</p>
         </div>
         <div class="col-md-4">
         <br>
@@ -183,7 +183,7 @@
           </span>
           <br><br>
           <h4 class="service-heading">Accessible to Anyone</h4>
-          <p class="text-muted">Our tours are reasonably priced &amp; you can save money for other activities.</p>
+          <p class="text-muted">Our tours are reasonably priced, there is not only food tour, but fushion with local activities, where young local people have fun.</p>
         </div>
       </div>
     </div>

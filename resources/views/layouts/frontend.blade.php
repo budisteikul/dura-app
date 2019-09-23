@@ -27,6 +27,9 @@
 	<script src="/js/vertikaltrip-1.0.8.js"></script>
 	<link href="/css/vertikaltrip-1.0.8.css" rel="stylesheet" media="screen,handheld">
     
+    
+  
+    
 <script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
