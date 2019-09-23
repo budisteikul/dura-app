@@ -18,7 +18,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 });
 
 Route::domain('vertikaltrip.herokuapp.com')->group(function () {
-    Route::post('/', function () {
+    Route::get('/', function () {
 		return redirect('/rev/book');
 	});
 });
