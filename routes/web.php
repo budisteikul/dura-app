@@ -17,6 +17,12 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
+Route::domain('vertikaltrip.herokuapp.com')->group(function () {
+    Route::post('/', function () {
+		return redirect('/rev/book');
+	});
+});
+
 
 Route::get('/', 'Blog\Frontend\BlogController@foodtour');
 Route::post('/review', 'Rev\ReviewController@get_review');
