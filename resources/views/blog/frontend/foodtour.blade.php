@@ -183,7 +183,7 @@
           </span>
           <br><br>
           <h4 class="service-heading">Accessible to Anyone</h4>
-          <p class="text-muted">Our tours are reasonably priced, there is not only food tour, but fushion with local activities, where young local people have fun.</p>
+          <p class="text-muted">Our tours are reasonably priced, this is not only food tour, but fushion with local activities, where young local people have fun.</p>
         </div>
       </div>
     </div>
