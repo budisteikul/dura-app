@@ -96,8 +96,17 @@ s0.parentNode.insertBefore(s1,s0);
                 Lewes, Delaware 19958
                 <br>
                 <br>
+				Indonesia Office
+				<br>
+				Perum. Guwosari Blok XII
+				<br>
+				Jalan Abiyoso VII No.190
+				<br>
+				Bantul, Yogyakarta, 55751
+				<br>
+				<br>
                 <b>Customer Support</b>
-                <br>
+				<br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
 				<br><br>
