@@ -98,7 +98,7 @@ s0.parentNode.insertBefore(s1,s0);
 <i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
                 <br>
                 <br>
-				<b>Vertikal Trip Team</b>
+				<b>Jogja Food Tour Team</b>
 				<br>
 				Perum. Guwosari Blok XII
 				<br>
