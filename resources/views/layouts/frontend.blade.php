@@ -92,7 +92,7 @@ s0.parentNode.insertBefore(s1,s0);
                 <br -->
                 <b>VERTIKAL TRIP LLC</b>
                 <br>
-                16192 Coastal Highway, Lewes, DE 19958
+                16192 Coastal Highway, Lewes, DE 19958 USA
 <br>
 <i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
                 <br>
