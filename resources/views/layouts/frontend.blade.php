@@ -92,7 +92,8 @@ s0.parentNode.insertBefore(s1,s0);
                 <br -->
                 <b>VERTIKAL TRIP LLC</b>
                 <br>
-                16192 Coastal Highway, Lewes, DE 19958 USA
+                16192 Coastal Highway
+<br>Lewes, DE 19958 USA
 <br>
 <i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
                 <br>
@@ -101,7 +102,7 @@ s0.parentNode.insertBefore(s1,s0);
 				<br>
 				Perum. Guwosari Blok XII
 				<br>
-				Jalan Abiyoso VII No.190, Bantul, 55751 INDONESIA
+				Jalan Abiyoso VII No.190, Bantul, 55751<br> INDONESIA
 				<br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
