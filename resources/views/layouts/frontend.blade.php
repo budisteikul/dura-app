@@ -33,6 +33,7 @@
 <script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
+				caches.delete('sw-precache-v3-pwa-');
                 navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
                     // Registration was successful
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
@@ -100,7 +101,7 @@ s0.parentNode.insertBefore(s1,s0);
 				<br>
 				Perum. Guwosari Blok XII
 				<br>
-				Jalan Abiyoso VII No.190, Bantul, Yogyakarta, 55751
+				Jalan Abiyoso VII No.190, Bantul, 55751
 				<br>
 				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
