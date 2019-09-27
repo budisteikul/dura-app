@@ -1,10 +1,12 @@
+
+
 <script language="javascript">
 function STORE()
 {
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["name","phone"];
+	var input = ["name"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -21,9 +23,8 @@ function STORE()
 			"phone": $('#phone').val(),
 			"source": $('#source').val(),
 			"date": $('#date').val(),
-			"status": $('#status').val(),
-        	"traveller": $('#traveller').val(),
-			"ticket": $('#ticket').val(),
+			"status": '2',
+        	"traveller": $('#traveller').val()
         },
 		type: 'POST',
 		url: '{{ route('rev_book.store') }}'
@@ -67,14 +68,7 @@ function STORE()
 
 <div id="result"></div>
 
-<div class="form-group">
-	<label for="post_id">Product :</label>
-    <select class="form-control" id="post_id">
-       @foreach($blog_post as $post)
-       	<option value="{{ $post->id }}">{{ $post->title }}</option>
-       @endforeach
-	</select>
-</div>
+
 
 <div class="form-group">   
 				 <label for="datetimepicker1">Date :</label>           
@@ -105,18 +99,23 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="name">Name :</label>
-	<input type="text" id="name" name="name" class="form-control" placeholder="Name">
+	<label for="post_id">Product :</label>
+    <select class="form-control" id="post_id">
+       @foreach($blog_post as $post)
+       	<option value="{{ $post->id }}">{{ $post->title }}</option>
+       @endforeach
+	</select>
+    
 </div>
 
 <div class="form-group">
-	<label for="email">Email :</label>
-	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
-</div>
-
-<div class="form-group">
-	<label for="phone">Phone :</label>
-	<input type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
+	<label for="source">Channel :</label>
+    <select class="form-control" id="source">
+       @foreach($rev_resellers as $rev_reseller)
+       	<option value="{{ $rev_reseller->id }}">{{ $rev_reseller->name }}</option>
+       @endforeach
+	</select>
+    
 </div>
 
 <div class="form-group">
@@ -134,30 +133,21 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="source">Source :</label>
-    <select class="form-control" id="source">
-      <option value="www.vertikaltrip.com">www.vertikaltrip.com</option>
-      <option value="www.jogjafoodtour.com">www.jogjafoodtour.com</option>
-      <option value="www.airbnb.com">www.airbnb.com</option>
-      <option value="www.tripadvisor.com">www.tripadvisor.com</option>
-      <option value="www.viator.com">www.viator.com</option>
-      <option value="www.expedia.com">www.expedia.com</option>
-	</select>
+	<label for="name">Name :</label>
+	<input type="text" id="name" name="name" class="form-control" placeholder="Name">
 </div>
 
 <div class="form-group">
-	<label for="ticket">Ticket :</label>
-	<input type="text" id="ticket" name="ticket" class="form-control" placeholder="Ticket">
+	<label for="email">Email :</label>
+	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
 </div>
 
 <div class="form-group">
-	<label for="status">Status :</label>
-    <select class="form-control" id="status">
-    
-      <option value="1">Pending</option>
-      <option value="2">Confirmed</option>
-	</select>
-</div>   
+	<label for="phone">Phone :</label>
+	<input type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
+</div>
+
+
        
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 	<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

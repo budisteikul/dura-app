@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
@@ -112,15 +113,16 @@ class BookController extends Controller
 						return '<span class="badge badge-success">'. $date .'</span>';
 					}
 				})
-				->addColumn('email_phone', function ($book) {
-					return $book->phone.'<br>'. $book->email;
+				->editColumn('source', function ($book) {
+					$rev_resellers = rev_resellers::find($book->source);
+					return $rev_resellers->name;
 				})
 				->addColumn('product', function ($book) {
 					$post = blog_posts::find($book->post_id);
 					return $post->title;
 				})
-				->editColumn('ticket', function ($book) {
-					return '<button type="button" onClick="VIEW(\''. $book->ticket .'\')" class="btn btn-link">'. $book->ticket .'</button>';
+				->editColumn('name', function ($book) {
+					return $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
 				})
 				->addColumn('action', function ($book) {
 					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$book->post_id)->first();
@@ -144,14 +146,14 @@ class BookController extends Controller
 							$text = " Confirmed";
 							$disabled = "disabled";
 						}
-						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'" '. $disabled .'><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
+						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
 					}
 					else
 					{
 						return '';	
 					}
 				})
-				->rawColumns(['action','email_phone','date','ticket'])
+				->rawColumns(['action','name','date','ticket'])
 				->toJson();
 		}
         return view('rev.book.index');
@@ -164,8 +166,9 @@ class BookController extends Controller
      */
     public function create()
     {
+		$rev_resellers = rev_resellers::orderBy('name')->get();
 		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
-        return view('rev.book.create',['blog_post'=>$blog_post]);
+        return view('rev.book.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
     /**
@@ -179,7 +182,7 @@ class BookController extends Controller
         $validator = Validator::make($request->all(), [
 			'post_id' => ['required'],
           	'name' => ['required', 'string', 'max:255'],
-			'phone' => ['required', 'string', 'max:255'],
+			'source' => ['required'],
        	]);
         
        	if ($validator->fails()) {
@@ -237,8 +240,9 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = rev_books::findOrFail($id);
+		$rev_resellers = rev_resellers::orderBy('name')->get();
 		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
-        return view('rev.book.edit',['book'=>$book,'blog_post'=>$blog_post]);
+        return view('rev.book.edit',['book'=>$book,'blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
     /**
@@ -280,7 +284,7 @@ class BookController extends Controller
 		$validator = Validator::make($request->all(), [
 			'post_id' => ['required'],
           	'name' => ['required', 'string', 'max:255'],
-			'phone' => ['required', 'string', 'max:255'],
+			'source' => ['required'],
        	]);
         
        	if ($validator->fails()) {

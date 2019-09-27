@@ -27,7 +27,7 @@
 					/* {data: 'email_phone', name: 'email_phone', className: 'auto'}, */
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
-					/* {data: 'source', name: 'source', className: 'auto'}, */
+					{data: 'source', name: 'source', className: 'auto'},
 					/* {data: 'ticket', name: 'ticket', className: 'auto'}, */
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
@@ -81,6 +81,7 @@
        	 	src: '{{ route('rev_book.create') }}',
 			touch: false,
 			modal: true,
+			autoFocus:false,
    		});	
 	}
 	
@@ -91,6 +92,7 @@
        	 	src: '{{ route('rev_book.index') }}/'+ id +'/edit',
 			touch: false,
 			modal: true,
+			autoFocus:false,
    		});
 		
 	}
@@ -143,6 +145,7 @@
                     <th>Lead</th>
                     <th>Qty</th>
                     <th>Date</th>
+                    <th>Channel</th>
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
