@@ -73,6 +73,8 @@ Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ])
 	->middleware(['auth', 'verified']);	
+Route::resource('/rev/reselles','Rev\ResellerController',[ 'names' => 'reselles' ])
+	->middleware(['auth', 'verified']);	
 // Reservation Admin --------------------------------------------------------------------------
 
 
