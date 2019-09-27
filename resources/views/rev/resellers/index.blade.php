@@ -69,7 +69,7 @@
       	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add resellers</button>
         <hr>
         
-		{!! $dataTable->table(['class'=>'table table-hover table-striped', 'style'=>'width:100%']) !!}
+		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive', 'style'=>'width:100%']) !!}
 		
                 </div>
             </div>
