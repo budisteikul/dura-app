@@ -1,3 +1,4 @@
+
 <script language="javascript">
 function STORE()
 {
@@ -49,7 +50,7 @@ function STORE()
 </script>
  
 <div class="h-100" style="width:99%">		
- <div class="container">
+ 
     <div class="row justify-content-center">
         <div class="col-md-12 pr-0 pl-0 pt-0 pb-0">
              <div class="card">
@@ -88,5 +89,5 @@ function STORE()
         		
         </div>
     </div>
-</div>
+
 </div>

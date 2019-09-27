@@ -45,7 +45,8 @@
 		$.fancybox.open({
         	type: 'ajax',
        	 	src: '{{ route('resellers.create') }}',
-			touch: false
+			touch: false,
+			modal: true,
    		});	
 	}
 	
@@ -53,7 +54,8 @@
 	{
 		$.fancybox.open({
         	type: 'ajax',
-       	 	src: '{{ route('resellers.index') }}/'+ id +'/edit'
+       	 	src: '{{ route('resellers.index') }}/'+ id +'/edit',
+			modal: true,
    		});
 		
 	}
@@ -62,10 +64,10 @@
 <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">resellers</div>
+                <div class="card-header">channel</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add resellers</button>
+      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add channel</button>
         <hr>
         
 		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}
