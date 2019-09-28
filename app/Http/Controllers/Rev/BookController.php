@@ -125,9 +125,7 @@ class BookController extends Controller
 					return '['.$book->ticket .'] '. $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
 				})
 				->addColumn('action', function ($book) {
-					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$book->post_id)->first();
-					if(isset($check))
-					{
+					
 						if($book->status==1)
 						{
 							$label = ""	;
@@ -147,11 +145,7 @@ class BookController extends Controller
 							$disabled = "disabled";
 						}
 						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
-					}
-					else
-					{
-						return '';	
-					}
+					
 				})
 				->rawColumns(['action','name','date','ticket'])
 				->toJson();

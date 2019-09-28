@@ -114,15 +114,9 @@ $logo='';
 					return $post->title;
 				})
 				->addColumn('action', function ($resource) {
-					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$resource->post_id)->first();
-					if(isset($check))
-					{
+					
 						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$resource->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $resource->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
-					}
-					else
-					{
-						return '';	
-					}
+					
 				})
 				->rawColumns(['action','date'])
 				->toJson();
