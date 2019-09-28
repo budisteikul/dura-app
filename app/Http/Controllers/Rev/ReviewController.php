@@ -86,6 +86,10 @@ class ReviewController extends Controller
 				->editColumn('text', function ($resource) {
 					return str_limit($resource->text,100);
 				})
+				->editColumn('source', function ($resource) {
+					$rev_resellers = rev_resellers::findOrFail($resource->source);
+					return $rev_resellers->name;
+				})
 				->addColumn('product', function ($resource) {
 					$post = blog_posts::find($resource->post_id);
 					return $post->title;
