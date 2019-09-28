@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_reviews;
+use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
@@ -45,29 +46,7 @@ class ReviewController extends Controller
 					}
 					
 					
-					$source = $resource->source;
-					switch($source)
-					{
-						case 'www.airbnb.com':
-             				$name_link = 'AirBNB';
-$logo = '<i class="fab fa-airbnb" aria-hidden="true"></i>';
-							$link = 'https://www.airbnb.com/experiences/434368';
-						break;
-						case 'www.tripadvisor.com':
-							$name_link = 'Trip Advisor';
-$logo = '<i class="fab fa-tripadvisor" aria-hidden="true"></i>';
-							$link = 'https://www.tripadvisor.com/AttractionProductDetail-g294230-d15646790.html';
-						break;
-						case 'www.viator.com':
-							$name_link = 'Viator';
-$logo='';
-							$link = 'https://www.viator.com/tours/Yogyakarta/Food-Journey-in-Yogyakarta-at-Night/d22560-110844P2';
-						break;
-						default:
-							$name_link = '';
-$logo='';
-							$link ='#';	
-					}
+					$rev_resellers = rev_resellers::findOrFail($resource->source);
 					
 					$title = "";
 					if(isset($resource->title))
@@ -77,12 +56,10 @@ $logo='';
 					
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
 					
-					$user = '<a href="'.$link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
-					//$user = '<b class="text-danger">'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$user = '<a href="'.$rev_resellers->link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$text = nl2br($resource->text) .'<br>';
-					$from = '<a href="'. $link .'" class="text-danger" target="_blank" rel="noreferrer">'.$logo .'  <small> '. $link.'</small></a>';
-					//$from = '';
+					$from = '<a href="'. $rev_resellers->link .'" class="text-danger" target="_blank" rel="noreferrer">  <small> '. $rev_resellers->link .'</small></a>';
 					$output = $user.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
