@@ -108,8 +108,9 @@ class ReviewController extends Controller
      */
     public function create()
     {
+		$rev_resellers = rev_resellers::orderBy('name')->get();
         $blog_post = blog_posts::where('content_type','standard')->orderBy('created_at')->get();
-        return view('rev.review.create',['blog_post'=>$blog_post]);
+        return view('rev.review.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
     /**
@@ -173,8 +174,9 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = rev_reviews::findOrFail($id);
+		$rev_resellers = rev_resellers::orderBy('name')->get();
 		$blog_post = blog_posts::where('content_type','standard')->orderBy('created_at')->get();
-        return view('rev.review.edit',['review'=>$review,'blog_post'=>$blog_post]);
+        return view('rev.review.edit',['review'=>$review,'blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
     /**

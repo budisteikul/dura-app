@@ -128,13 +128,13 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="source">Source :</label>
+	<label for="source">Chennel :</label>
     <select class="form-control" id="source">
-      <option value="www.airbnb.com" {{ ($review->source=='www.airbnb.com') ? 'selected' : '' }}>www.airbnb.com</option>
-      <option value="www.tripadvisor.com" {{ ($review->source=='www.tripadvisor.com') ? 'selected' : '' }}>www.tripadvisor.com</option>
-      <option value="www.viator.com" {{ ($review->source=='www.viator.com') ? 'selected' : '' }}>www.viator.com</option>
-      <option value="www.expedia.com" {{ ($review->source=='www.expedia.com') ? 'selected' : '' }}>www.expedia.com</option>
+       @foreach($rev_resellers as $rev_reseller)
+       	<option value="{{ $rev_reseller->id }}" {{ ($rev_reseller->id==$review->source) ? 'selected' : '' }}>{{ $rev_reseller->name }}</option>
+       @endforeach
 	</select>
+    
 </div>
      
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
