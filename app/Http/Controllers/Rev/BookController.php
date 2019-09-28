@@ -122,7 +122,7 @@ class BookController extends Controller
 					return $post->title;
 				})
 				->editColumn('name', function ($book) {
-					return $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
+					return '['.$book->ticket .'] '. $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
 				})
 				->addColumn('action', function ($book) {
 					$check = blog_posts::where('user_id',Auth::user()->id)->where('id',$book->post_id)->first();
