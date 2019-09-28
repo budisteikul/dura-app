@@ -23,13 +23,12 @@ Route::domain('vertikaltrip.herokuapp.com')->group(function () {
 	});
 });
 
-
-Route::get('/', 'Blog\Frontend\BlogController@foodtour');
-Route::post('/review', 'Rev\ReviewController@get_review');
-
 Route::get('/blank', function () {
 	return view('blog.frontend.blank');
 });
+
+Route::get('/', 'Blog\Frontend\BlogController@index');
+Route::post('/review', 'Rev\ReviewController@get_review');
 
 Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
 Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');

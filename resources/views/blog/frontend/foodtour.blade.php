@@ -1,5 +1,4 @@
 @extends('layouts.frontend')
-@section('title', $act_name .' | '. $app_name)
 @section('content')
 @push('scripts')
 <style>
@@ -74,14 +73,7 @@
 			
 			
 </script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytics }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ $google_analytics }}');
-</script>
+
 @endpush
   
  <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 
@@ -124,9 +116,9 @@
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img alt="{{ $act_name }}" src="/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
+            	<img alt="Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/logo-jogja-istimewa-png-4.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
-				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $act_name }}</h1>
+				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<p class="text-faded">
                     Book for tonight? It's Ok!
          			<br>
@@ -217,7 +209,7 @@
             	
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
-                    <span itemprop="name" content="{{ $act_name }}">{{ $act_name }}</span><br />
+                    <span itemprop="name" content="Yogyakarta Night Walking and Food Tours">Yogyakarta Night Walking and Food Tours</span><br />
                     <span style="width:30px;" class="fa fa-walking"></span><strong> Tour Mode :</strong> Walk and Trishaw<br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 ~ 4 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-bars"></span><strong> Type :</strong> Open Trip<br />
@@ -227,7 +219,17 @@
 						<br>
                     	<span itemprop="priceCurrency" content="USD"></span>
                     	<span itemprop="price" content="40.00"></span>
-						{!! $price !!}
+						<span class="badge badge-success">Special Offer</span>
+				<div class="style-4">
+  					<del>
+    					<span class="amount">$40 USD</span>
+  					</del>
+  				<ins>
+    				<span class="amount">$36 USD</span>
+  				</ins>
+				  / person
+				</div>
+			<small class="form-text text-success"><b>Use promotional code SEPTEMBERSALE to save 10% off our previously offered price!</b></small>
     					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
@@ -289,7 +291,7 @@
             
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Gudeg Jogja | {{ $act_name }}" class="img-fluid rounded" src="/assets/foodtour/gudeg.jpg">
+				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/gudeg.jpg">
 				<span class="caption text-muted">Gudeg Jogja</span>
 			</center>
             
@@ -311,7 +313,7 @@
                         - You can present a mobile voucher for this activity to our tour guide
                         <br>
 <br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book {{ $act_name }} via Google Maps"></a><br>
+                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book Yogyakarta Night Walking and Food Tours via Google Maps"></a><br>
                         
                         <br>
                         <div class="map-responsive">
@@ -361,42 +363,42 @@
 				
                 	
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Becak | {{ $act_name }}" src="/assets/foodtour/becak.jpg">
+					<img class="img-fluid rounded" alt="Becak | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/becak.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Alun - alun kidul | {{ $act_name }}" src="/assets/foodtour/paddle-car.jpg">
+					<img class="img-fluid rounded" alt="Alun - alun kidul | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/paddle-car.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/masangin.jpg">
+					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/masangin.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer2.jpg">
+					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/customer2.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | {{ $act_name }}" src="/assets/foodtour/customer3.jpg">
+					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/customer3.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Small Groups | {{ $act_name }}" src="/assets/foodtour/small-groups.jpg">
+					<img class="img-fluid rounded" alt="Small Groups | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/small-groups.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
@@ -482,7 +484,7 @@
             
         	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/ratna.jpg" >
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/ratna.jpg" >
 					<h4>Kalika Prajna</h4>
 					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
@@ -494,7 +496,7 @@
             
             <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | {{ $act_name }}" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/vella.jpg" >
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/vella.jpg" >
 					<h4>Vella Sekar</h4>
 					<p class="text-muted">Your Local Friend</p>
 					<br><br>
