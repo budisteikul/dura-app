@@ -66,8 +66,6 @@ Route::get('/cancel', function () {
 
 
 // Reservation Admin --------------------------------------------------------------------------
-Route::resource('/rev/availability','Rev\AvailabilityController',[ 'names' => 'rev_availability' ])
-	->middleware(['auth', 'verified']);
 Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ])
