@@ -161,7 +161,7 @@ class BookController extends Controller
     public function create()
     {
 		$rev_resellers = rev_resellers::orderBy('name')->get();
-		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
+		$blog_post = blog_posts::where('content_type','standard')->orderBy('created_at')->get();
         return view('rev.book.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
@@ -235,7 +235,7 @@ class BookController extends Controller
     {
         $book = rev_books::findOrFail($id);
 		$rev_resellers = rev_resellers::orderBy('name')->get();
-		$blog_post = blog_posts::where('content_type','standard')->where('user_id', Auth::user()->id)->orderBy('created_at')->get();
+		$blog_post = blog_posts::where('content_type','standard')->orderBy('created_at')->get();
         return view('rev.book.edit',['book'=>$book,'blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
