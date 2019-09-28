@@ -56,15 +56,26 @@
                                 </li>
                             @endif
                         @else
-                        	 <li class="nav-item">
-                                <a class="nav-link" href="/rev/resellers"><i class="fa fa-list"></i> {{ __('Channel') }}</a>
+                        	<li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-list"></i> Tour <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/rev/book"><i class="fa fa-ticket-alt"></i> {{ __('Booking') }}</a>
+                                    <a class="dropdown-item" href="/rev/resellers"><i class="fa fa-ticket-alt"></i> {{ __('Channel') }}</a>
+                                    
+                                    <a class="dropdown-item" href="/rev/review"><i class="fa fa-ticket-alt"></i> {{ __('Review') }}</a>
+                                    <a class="dropdown-item" href="/blog/post"><i class="fa fa-ticket-alt"></i> {{ __('Posts') }}</a>
+                                    <a class="dropdown-item" href="/rev/availability"><i class="fa fa-ticket-alt"></i> {{ __('Availability') }}</a>
+
+                                   
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog/category"><i class="fa fa-list"></i> {{ __('Categories') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog/post"><i class="fa fa-newspaper"></i> {{ __('Posts') }}</a>
-                            </li>
+                            
+                        	
+                            
+                           
                             
                         	<li class="nav-item">
                                 <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Galleries') }}</a>
@@ -73,15 +84,8 @@
                                 <a class="nav-link" href="/blog/setting/{{ Auth::user()->id }}/edit"><i class="fa fa-cog"></i> {{ __('Setting') }}</a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="/rev/book"><i class="fa fa-ticket-alt"></i> {{ __('Booking') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/rev/review"><i class="fa fa-ticket-alt"></i> {{ __('Review') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/rev/availability"><i class="fa fa-calendar"></i> {{ __('Availability') }}</a>
-                            </li>
+                            
+                           
                         	
                             
                             <li class="nav-item dropdown">
