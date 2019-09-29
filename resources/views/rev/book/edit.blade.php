@@ -132,14 +132,16 @@ function UPDATE()
 </div>
 
 <div class="form-group">
+	<label for="phone">Phone :</label>
+	<input type="text" id="phone" name="phone" class="form-control" value="{{ $book->phone }}" placeholder="Phone">
+</div>
+
+<div class="form-group">
 	<label for="email">Email :</label>
 	<input type="email" id="email" name="email" class="form-control" value="{{ $book->email }}" placeholder="Email">
 </div>
 
-<div class="form-group">
-	<label for="phone">Phone :</label>
-	<input type="text" id="phone" name="phone" class="form-control" value="{{ $book->phone }}" placeholder="Phone">
-</div>
+
 
 
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>

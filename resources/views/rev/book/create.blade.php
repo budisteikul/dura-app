@@ -138,14 +138,16 @@ function STORE()
 </div>
 
 <div class="form-group">
+	<label for="phone">Phone :</label>
+	<input type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
+</div>
+
+<div class="form-group">
 	<label for="email">Email :</label>
 	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
 </div>
 
-<div class="form-group">
-	<label for="phone">Phone :</label>
-	<input type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
-</div>
+
 
 
        
