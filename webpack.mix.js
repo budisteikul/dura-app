@@ -14,7 +14,7 @@ var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
  |
  */
 
-/*
+
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -39,7 +39,7 @@ mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 
-*/
+
 
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
