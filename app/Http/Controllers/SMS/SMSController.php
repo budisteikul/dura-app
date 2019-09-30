@@ -37,7 +37,7 @@ class SMSController extends Controller
 				curl_setopt_array($ch = curl_init(), array(
   				CURLOPT_URL => "https://api.pushover.net/1/messages.json",
   				CURLOPT_POSTFIELDS => array(
-    			"token" => 'atxiBScSa8NiXkebduvgqLhUPyjecE',
+    			"token" => 'afDgcjDe5pnQRXY9oMxyj77Rkbt6go',
     			"user" => 'uTxTwZoiLin9vLZJkP3rRPf32xghXu',
 				"title" => $msisdn,
     			"message" => $text,
