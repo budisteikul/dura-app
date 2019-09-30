@@ -20,7 +20,7 @@ function UPDATE()
         	"description": $('#description').val()
         },
 		type: 'PUT',
-		url: '{{ route('blog_category.update',['category'=>$category->id]) }}'
+		url: '{{ route('blog_category.update',$category->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")

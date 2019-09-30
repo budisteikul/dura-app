@@ -58,8 +58,8 @@ function STORE()
 	<div class="card-header">Add review</div>
 	<div class="card-body">
 				
-<form action="{{ route('resellers.store') }}" method="post" onSubmit="STORE(); return false;">
-@csrf
+<form onSubmit="STORE(); return false;">
+
 <div id="result"></div>
 
 <div class="form-group">

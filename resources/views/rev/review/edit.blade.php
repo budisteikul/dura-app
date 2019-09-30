@@ -25,7 +25,7 @@ function UPDATE()
 			"source": $('#source').val(),
         },
 		type: 'PUT',
-		url: '{{ route('rev_review.update',['review'=>$review->id]) }}'
+		url: '{{ route('rev_review.update',$review->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -59,7 +59,7 @@ function UPDATE()
                 <div class="card-header">Edit review</div>
                 <div class="card-body">
 				
-<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('rev_review.update',['review'=>$review->id]) }}">
+<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('rev_review.update',$review->id) }}">
 @csrf
 @method('PUT')
 <div id="result"></div>

@@ -60,7 +60,7 @@ function UPDATE()
 			"key": '{{ $setting->key }}'
         },
 		type: 'PUT',
-		url: "{{ route('blog_post.index') }}/{{ $result->id }}"
+		url: "{{ route('blog_post.update',$result->id) }}"
 		}).done(function( data ) {
 			
 			if(data.id=="1")

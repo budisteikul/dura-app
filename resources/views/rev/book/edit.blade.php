@@ -25,7 +25,7 @@ function UPDATE()
         	"traveller": $('#traveller').val(),
         },
 		type: 'PUT',
-		url: '{{ route('rev_book.update',['book'=>$book->id]) }}'
+		url: '{{ route('rev_book.update',$book->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")

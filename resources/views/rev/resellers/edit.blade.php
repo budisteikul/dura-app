@@ -20,7 +20,7 @@ function UPDATE()
 			"commission": $('#commission').val()
         },
 		type: 'PUT',
-		url: '{{ route('resellers.update',['rev_resellers'=>$rev_resellers->id]) }}'
+		url: '{{ route('resellers.update',$rev_resellers->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -54,8 +54,7 @@ function UPDATE()
                 <div class="card-header">Edit resellers</div>
                 <div class="card-body">
 				
-<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('resellers.update',['rev_resellers'=>$rev_resellers->id]) }}">
-@csrf
+<form onSubmit="UPDATE(); return false;">
 <div id="result"></div>
 
 <div class="form-group">
