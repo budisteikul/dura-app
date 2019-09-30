@@ -5,7 +5,7 @@ function UPDATE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["category_id","date","cost"];
+	var input = ["category_id","date","amount"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -17,7 +17,7 @@ function UPDATE()
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"date": $('#date').val(),
 			"category_id": $('#category_id').val(),
-			"cost": $('#cost').val()
+			"amount": $('#amount').val()
         },
 		type: 'PUT',
 		url: '{{ route('route_transactions.update',$fin_transactions->id) }}'
@@ -94,8 +94,8 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="cost">cost :</label>
-	<input type="number" step="0.01" id="cost" name="cost" class="form-control" value="{{ $fin_transactions->cost }}" placeholder="cost">
+	<label for="amount">amount :</label>
+	<input type="number" step="0.01" id="amount" name="amount" class="form-control" value="{{ $fin_transactions->amount }}" placeholder="amount">
 </div>
 
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>

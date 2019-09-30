@@ -81,7 +81,7 @@ class TransactionsDataTable extends DataTable
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "category_id", "title" => "Name", "data" => "category_id"],
 			["name" => "date", "title" => "Date", "data" => "date"],
-			["name" => "cost", "title" => "Cost", "data" => "cost"]
+			["name" => "amount", "title" => "amount", "data" => "amount"]
         ];
     }
 

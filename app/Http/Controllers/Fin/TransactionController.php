@@ -44,7 +44,7 @@ class TransactionController extends Controller
         $validator = Validator::make($request->all(), [
           	'category_id' => 'required',
 			'date' => 'required',
-			'cost' => 'required',
+			'amount' => 'required',
        	]);
         
        	if ($validator->fails()) {
@@ -54,12 +54,12 @@ class TransactionController extends Controller
 		
 		$category_id =  $request->input('category_id');
 		$date =  $request->input('date');
-		$cost =  $request->input('cost');
+		$amount =  $request->input('amount');
 		
 		$fin_transactions = new fin_transactions();
 		$fin_transactions->category_id = $category_id;
 		$fin_transactions->date = $date;
-		$fin_transactions->cost = $cost;
+		$fin_transactions->amount = $amount;
 		$fin_transactions->save();
 		
 		return response()->json([
@@ -104,7 +104,7 @@ class TransactionController extends Controller
         $validator = Validator::make($request->all(), [
           	'category_id' => 'required',
 			'date' => 'required',
-			'cost' => 'required',
+			'amount' => 'required',
        	]);
         
        	if ($validator->fails()) {
@@ -114,12 +114,12 @@ class TransactionController extends Controller
 		
 		$category_id =  $request->input('category_id');
 		$date =  $request->input('date');
-		$cost =  $request->input('cost');
+		$amount =  $request->input('amount');
 		
 		$fin_transactions = fin_transactions::findOrFail($id);
 		$fin_transactions->category_id = $category_id;
 		$fin_transactions->date = $date;
-		$fin_transactions->cost = $cost;
+		$fin_transactions->amount = $amount;
 		$fin_transactions->save();
 		
 		return response()->json([

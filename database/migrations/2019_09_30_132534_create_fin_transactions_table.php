@@ -22,7 +22,7 @@ class CreateFinTransactionsTable extends Migration
       			->references('id')->on('fin_categories')
       			->onDelete('cascade')->onUpdate('cascade');
 			$table->date('date');
-			$table->float('cost');
+			$table->float('amount', 8, 2);
 			
             $table->timestamps();
 			$table->softDeletes();
