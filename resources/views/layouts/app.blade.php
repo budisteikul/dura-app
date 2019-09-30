@@ -62,12 +62,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/rev/book"><i class="fa fa-ticket-alt"></i> {{ __('Booking') }}</a>
-                                    <a class="dropdown-item" href="/rev/resellers"><i class="fa fa-ticket-alt"></i> {{ __('Channel') }}</a>
+                                    <a class="dropdown-item" href="/rev/book"><i class="far fa-circle"></i> {{ __('Booking') }}</a>
+                                    <a class="dropdown-item" href="/rev/resellers"><i class="far fa-circle"></i> {{ __('Channel') }}</a>
                                     
-                                    <a class="dropdown-item" href="/rev/review"><i class="fa fa-ticket-alt"></i> {{ __('Review') }}</a>
-                                    <a class="dropdown-item" href="/blog/post"><i class="fa fa-ticket-alt"></i> {{ __('Posts') }}</a>
-                                    <a class="dropdown-item" href="/blog/category"><i class="fa fa-ticket-alt"></i> {{ __('Categories') }}</a>
+                                    <a class="dropdown-item" href="/rev/review"><i class="far fa-circle"></i> {{ __('Review') }}</a>
+                                    <a class="dropdown-item" href="/blog/post"><i class="far fa-circle"></i> {{ __('Posts') }}</a>
+                                    <a class="dropdown-item" href="/blog/category"><i class="far fa-circle"></i> {{ __('Categories') }}</a>
                                     
 
                                    
