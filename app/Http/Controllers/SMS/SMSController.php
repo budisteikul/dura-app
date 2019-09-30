@@ -32,6 +32,19 @@ class SMSController extends Controller
 		$sms->keyword = $keyword;
 		$sms->message_timestamp = $message_timestamp;
 		$sms->save();
+		
+		
+				curl_setopt_array($ch = curl_init(), array(
+  				CURLOPT_URL => "https://api.pushover.net/1/messages.json",
+  				CURLOPT_POSTFIELDS => array(
+    			"token" => 'atxiBScSa8NiXkebduvgqLhUPyjecE',
+    			"user" => 'uTxTwZoiLin9vLZJkP3rRPf32xghXu',
+				"title" => '+'. $msisdn,
+    			"message" => $text,
+  				),
+				));
+				curl_exec($ch);
+				curl_close($ch);
     }
 
     /**
