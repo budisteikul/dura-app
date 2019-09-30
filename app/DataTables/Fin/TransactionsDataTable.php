@@ -65,7 +65,7 @@ class TransactionsDataTable extends DataTable
 							],
 						'pagingType' => 'full_numbers',
 						'responsive' => true,
-						'order' => [2,'desc']
+						'order' => [3,'desc']
                     ]);
     }
 
