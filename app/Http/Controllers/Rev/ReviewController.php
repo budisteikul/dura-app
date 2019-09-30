@@ -13,6 +13,7 @@ use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ReviewController extends Controller
 {
@@ -84,7 +85,7 @@ class ReviewController extends Controller
 					return '<span class="badge badge-success">'. $date .'</span>';
 				})
 				->editColumn('text', function ($resource) {
-					return str_limit($resource->text,100);
+					return Str::limit($resource->text,100);
 				})
 				->editColumn('source', function ($resource) {
 					$rev_resellers = rev_resellers::findOrFail($resource->source);

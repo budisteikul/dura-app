@@ -9,6 +9,7 @@ use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
 use App\Models\Blog\blog_categories;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BlogClass {
 
@@ -179,7 +180,7 @@ class BlogClass {
 	public static function makeSlug($string,$user_id,$id="")
 		{
 			
-			$string = str_slug($string,"-");
+			$string = Str::slug($string,"-");
 			$cek = 1;
 			$string_test = $string;
 			$i = 2;
@@ -210,7 +211,7 @@ class BlogClass {
 	public static function makeSlugCat($string,$user_id,$id="")
 		{
 			
-			$string = str_slug($string,"-");
+			$string = Str::slug($string,"-");
 			$cek = 1;
 			$string_test = $string;
 			$i = 2;
