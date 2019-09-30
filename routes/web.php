@@ -11,7 +11,10 @@
 |
 */
 
-
+// Auth Laravel --------------------------------------------------------------------------
+Auth::routes(['verify' => true]);
+Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
+// Auth Laravel --------------------------------------------------------------------------
 
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
@@ -61,10 +64,6 @@ Route::get('/cancel', function () {
 
 
 
-
-
-
-
 // Reservation Admin --------------------------------------------------------------------------
 Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 	->middleware(['auth', 'verified']);
@@ -73,13 +72,6 @@ Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ]
 Route::resource('/rev/resellers','Rev\ResellerController',[ 'names' => 'resellers' ])
 	->middleware(['auth', 'verified']);
 // Reservation Admin --------------------------------------------------------------------------
-
-
-// Auth Laravel --------------------------------------------------------------------------
-Auth::routes(['verify' => true]);
-Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
-// Auth Laravel --------------------------------------------------------------------------
-
 
 //========================================================================
 // Blog App Route
