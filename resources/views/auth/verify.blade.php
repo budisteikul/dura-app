@@ -7,7 +7,10 @@ function AUTH_RESEND()
 	$('#submit').remove();
 	$('#form').prepend('<span id="span">{{ __('click here to request another') }}</span>');
 	$.ajax({
-		type: 'GET',
+		type: 'POST',
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content")
+        },
 		url: '{{ route('verification.resend') }}'
 		}).done(function( data ) {
 			if(data.id==1)

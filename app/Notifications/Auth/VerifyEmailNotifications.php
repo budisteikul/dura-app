@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use App\Mail\Auth\VerifyEmailMail;
 
+
 class VerifyEmailNotifications extends Notification
 {
     use Queueable;

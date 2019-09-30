@@ -77,6 +77,7 @@ class VerificationController extends Controller
         }
 
 		$request->user()->notify(new VerifyEmailNotifications($request->user()));
+		
         return response()->json([
     		'id' => '1',
     		'message' => 'A fresh verification link has been sent to your email address.'
