@@ -94,4 +94,6 @@ Route::resource('/blog/file', 'Blog\Backend\FileController',[ 'names' => 'blog_f
 Route::resource('/blog/setting','Blog\Backend\SettingController',[ 'names' => 'blog_setting' ])
 	->only('edit','update')
 	->middleware(['auth', 'verified']);
-	
+
+
+Route::post('/sms/webhook', 'SMS\SMSController@index');
