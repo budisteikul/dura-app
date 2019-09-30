@@ -63,6 +63,10 @@ Route::get('/cancel', function () {
 });
 
 
+// Financial Admin --------------------------------------------------------------------------
+Route::resource('/fin/categories','Fin\CategoryController',[ 'names' => 'route_categories' ])
+	->middleware(['auth', 'verified']);
+// Reservation Admin --------------------------------------------------------------------------
 
 // Reservation Admin --------------------------------------------------------------------------
 Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
