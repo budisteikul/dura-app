@@ -127,6 +127,9 @@ class ReviewController extends Controller
     {
         $validator = Validator::make($request->all(), [
           	'user' => ['required', 'string', 'max:255'],
+			'post_id' => ['required'],
+			'source' => ['required'],
+			'text' => ['required'],
        	]);
         
        	if ($validator->fails()) {
@@ -195,6 +198,9 @@ class ReviewController extends Controller
         
 		$validator = Validator::make($request->all(), [
           	'user' => ['required', 'string', 'max:255'],
+			'post_id' => ['required'],
+			'source' => ['required'],
+			'text' => ['required'],
        	]);
         
        	if ($validator->fails()) {

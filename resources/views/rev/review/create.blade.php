@@ -4,7 +4,7 @@ function STORE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["user"];
+	var input = ["user","post_id","source","text"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -103,6 +103,17 @@ function STORE()
 </div>
 
 <div class="form-group">
+	<label for="rating">Rating :</label>
+    <select class="form-control" id="rating">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+	</select>
+</div>
+
+<div class="form-group">
 	<label for="user">User :</label>
 	<input type="text" id="user" name="user" class="form-control" placeholder="User">
 </div>
@@ -115,17 +126,6 @@ function STORE()
 <div class="form-group">
 	<label for="text">Text :</label>
     <textarea class="form-control" id="text" name="text" rows="5" placeholder="Text"></textarea>
-</div>
-
-<div class="form-group">
-	<label for="rating">Rating :</label>
-    <select class="form-control" id="rating">
-      <option value="5">5</option>
-      <option value="4">4</option>
-      <option value="3">3</option>
-      <option value="2">2</option>
-      <option value="1">1</option>
-	</select>
 </div>
 
 <div class="form-group">

@@ -5,7 +5,7 @@ function UPDATE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["user"];
+	var input = ["user","post_id","source","text"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -102,6 +102,17 @@ function UPDATE()
 </div>
 
 <div class="form-group">
+	<label for="rating">Rating :</label>
+    <select class="form-control" id="rating">
+      <option value="5" {{ ($review->rating=='5') ? 'selected' : '' }}>5</option>
+      <option value="4" {{ ($review->rating=='4') ? 'selected' : '' }}>4</option>
+      <option value="3" {{ ($review->rating=='3') ? 'selected' : '' }}>3</option>
+      <option value="2" {{ ($review->rating=='2') ? 'selected' : '' }}>2</option>
+      <option value="1" {{ ($review->rating=='1') ? 'selected' : '' }}>1</option>
+	</select>
+</div>
+
+<div class="form-group">
 	<label for="user">User :</label>
 	<input type="text" id="user" name="user" class="form-control" placeholder="User" value="{{ $review->user }}">
 </div>
@@ -116,16 +127,7 @@ function UPDATE()
     <textarea class="form-control" id="text" name="text" rows="5" placeholder="Text">{{ $review->text }}</textarea>
 </div>
 
-<div class="form-group">
-	<label for="rating">Rating :</label>
-    <select class="form-control" id="rating">
-      <option value="5" {{ ($review->rating=='5') ? 'selected' : '' }}>5</option>
-      <option value="4" {{ ($review->rating=='4') ? 'selected' : '' }}>4</option>
-      <option value="3" {{ ($review->rating=='3') ? 'selected' : '' }}>3</option>
-      <option value="2" {{ ($review->rating=='2') ? 'selected' : '' }}>2</option>
-      <option value="1" {{ ($review->rating=='1') ? 'selected' : '' }}>1</option>
-	</select>
-</div>
+
 
 <div class="form-group">
 	<label for="source">Chennel :</label>
