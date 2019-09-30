@@ -39,7 +39,7 @@ class SMSController extends Controller
   				CURLOPT_POSTFIELDS => array(
     			"token" => 'atxiBScSa8NiXkebduvgqLhUPyjecE',
     			"user" => 'uTxTwZoiLin9vLZJkP3rRPf32xghXu',
-				"title" => '+'. $msisdn,
+				"title" => $msisdn,
     			"message" => $text,
   				),
 				));
