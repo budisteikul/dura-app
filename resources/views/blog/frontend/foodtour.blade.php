@@ -123,7 +123,7 @@
                     Book for tonight? It's Ok!
          			<br>
          			We can start the tour every day.
-		 			<br> Use promotional code SEPTEMBERSALE to get 10% discount.
+		 			<br> Use promotional code OCTOBERSALE to get 10% discount.
                 
 				</p>
 			</div>
@@ -229,7 +229,7 @@
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Use promotional code SEPTEMBERSALE to save 10% off our previously offered price!</b></small>
+			<small class="form-text text-success"><b>Use promotional code OCTOBERSALE to save 10% off our previously offered price!</b></small>
     					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
