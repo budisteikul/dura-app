@@ -44,10 +44,17 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_revenue->name }}</td>
+      @php
+      		$fin_categories_revenue_subtotal = 0;
+      @endphp
       @for($i=1; $i<=12; $i++)
-      <td>{{ $fin::total_per_month($fin_categories_revenue->id,'2019',$i) }}</td>
+      	@php
+        	$fin_categories_revenue_per = $fin::total_per_month($fin_categories_revenue->id,'2019',$i) * -1;
+            $fin_categories_revenue_subtotal += $fin_categories_revenue_per;
+        @endphp
+      	<td>{{ $fin_categories_revenue_per }}</td>
       @endfor
-      <td>&nbsp;</td>
+      <td>{{ $fin_categories_revenue_subtotal }}</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -207,10 +214,17 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_expense->name }}</td>
+      @php
+      		$fin_categories_expense_subtotal = 0;
+      @endphp
       @for($i=1; $i<=12; $i++)
-      <td>{{ $fin::total_per_month($fin_categories_expense->id,'2019',$i) }}</td>
+      	@php
+        	$fin_categories_expense_per = $fin::total_per_month($fin_categories_expense->id,'2019',$i) * -1;
+            $fin_categories_expense_subtotal += $fin_categories_expense_per;
+        @endphp
+      	<td>{{ $fin_categories_expense_per }}</td>
       @endfor
-      <td>&nbsp;</td>
+      <td>{{ $fin_categories_expense_subtotal }}</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
