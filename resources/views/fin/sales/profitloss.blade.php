@@ -118,7 +118,7 @@
       <td>&nbsp;</td>
       <td>{{ $fin_categories_cog->name }}</td>
       @for($i=1; $i<=12; $i++)
-      <td>{{ $fin::total_per_month($fin_categories_cog->id,'2019',$i) }}</td>
+      <td>({{ $fin::total_per_month($fin_categories_cog->id,'2019',$i) * -1 }})</td>
       @endfor
       <td>&nbsp;</td>
       <td>&nbsp;</td>
