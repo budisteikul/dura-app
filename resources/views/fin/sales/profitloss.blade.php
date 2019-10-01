@@ -39,6 +39,7 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
+    
     @foreach($fin_categories_revenues as $fin_categories_revenue)
     <tr>
       <td>&nbsp;</td>
