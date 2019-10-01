@@ -117,10 +117,17 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_cog->name }}</td>
+      @php
+      		$fin_categories_cog_subtotal = 0;
+      @endphp
       @for($i=1; $i<=12; $i++)
-      <td>({{ $fin::total_per_month($fin_categories_cog->id,'2019',$i) * -1 }})</td>
+      	@php
+        	$fin_categories_cog_per = $fin::total_per_month($fin_categories_cog->id,'2019',$i) * -1;
+            $fin_categories_cog_subtotal += $fin_categories_cog_per;
+        @endphp
+      	<td>{{ $fin_categories_cog_per }}</td>
       @endfor
-      <td>&nbsp;</td>
+      <td>{{ $fin_categories_cog_subtotal }}</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
