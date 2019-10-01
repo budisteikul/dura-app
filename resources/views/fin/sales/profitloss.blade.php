@@ -307,7 +307,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><strong>Total profit (loss)</strong></td>
+      <td><strong>Total Profit (Loss)</strong></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
