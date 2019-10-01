@@ -3,7 +3,7 @@
 @push('scripts')
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {	
-     $.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
+     
 			var table = $('#dataTables-example').DataTable(
 			{
 				
