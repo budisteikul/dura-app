@@ -8,6 +8,8 @@ use App\Models\Fin\fin_transactions;
 use App\Models\Fin\fin_categories;
 use Illuminate\Database\Eloquent\Builder;
 
+use App\Classes\Fin\FinClass;
+
 class SalesController extends Controller
 {
     public function profitloss()

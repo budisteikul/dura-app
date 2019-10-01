@@ -1,26 +1,16 @@
+@inject('fin', 'App\Classes\Fin\FinClass')
 @extends('layouts.app')
 @section('content')
-<table width="100%" border="0" cellspacing="1" cellpadding="2" class="table table-bordered" >
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="table table-bordered table-striped " >
   <tbody>
     <tr>
       <td colspan="18">&nbsp;</td>
     </tr>
     <tr>
-      <td><strong>2019</strong></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><strong>Jan</strong></td>
-      <td><strong>Feb</strong></td>
-      <td><strong>Mar</strong></td>
-      <td><strong>Apr</strong></td>
-      <td><strong>May</strong></td>
-      <td><strong>Jun</strong></td>
-      <td><strong>Jul</strong></td>
-      <td><strong>Aug</strong></td>
-      <td><strong>Sep</strong></td>
-      <td><strong>Oct</strong></td>
-      <td><strong>Nov</strong></td>
-      <td><strong>Des</strong></td>
+      <td colspan="3"><strong>2019</strong></td>
+      @for($i=1; $i<=12; $i++)
+      <td><strong>{{ Carbon\Carbon::createFromFormat('m', $i)->formatLocalized('%b') }}</strong></td>
+      @endfor
       <td><strong>Total YTD</strong></td>
       <td><strong>Growth Rate</strong></td>
       <td><strong>Projected</strong></td>
@@ -54,18 +44,9 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_revenue->name }}</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      @for($i=1; $i<=12; $i++)
+      <td>{{ $fin::total_per_month($fin_categories_revenue->id,'2019',$i) }}</td>
+      @endfor
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -136,18 +117,9 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_cog->name }}</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      @for($i=1; $i<=12; $i++)
+      <td>{{ $fin::total_per_month($fin_categories_cog->id,'2019',$i) }}</td>
+      @endfor
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -221,41 +193,16 @@
     </tr>
     <tr>
       <td><strong>Expenses</strong></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td colspan="17">&nbsp;</td>
     </tr>
      @foreach($fin_categories_expenses as $fin_categories_expense)
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>{{ $fin_categories_expense->name }}</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      @for($i=1; $i<=12; $i++)
+      <td>{{ $fin::total_per_month($fin_categories_expense->id,'2019',$i) }}</td>
+      @endfor
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
