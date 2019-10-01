@@ -49,7 +49,7 @@
       @endphp
       @for($i=1; $i<=12; $i++)
       	@php
-        	$fin_categories_revenue_per = $fin::total_per_month($fin_categories_revenue->id,'2019',$i) * -1;
+        	$fin_categories_revenue_per = $fin::total_per_month($fin_categories_revenue->id,'2019',$i);
             $fin_categories_revenue_subtotal += $fin_categories_revenue_per;
         @endphp
       	<td>{{ $fin_categories_revenue_per }}</td>
