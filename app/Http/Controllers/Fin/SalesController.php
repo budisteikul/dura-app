@@ -20,13 +20,13 @@ class SalesController extends Controller
 		
 		$fin_categories_revenues = fin_categories::where('type','Revenue')->whereHas('transactions', function (Builder $query) use ($tahun) {
     			$query->whereYear('date',$tahun);
-		})->get();
+		})->orderBy('name')->get();
 		$fin_categories_expenses = fin_categories::where('type','Expenses')->whereHas('transactions', function (Builder $query) use ($tahun) {
     			$query->whereYear('date',$tahun);
-		})->get();
+		})->orderBy('name')->get();
         $fin_categories_cogs = fin_categories::where('type','Cost of Goods Sold')->whereHas('transactions', function (Builder $query) use ($tahun) {
     			$query->whereYear('date',$tahun);
-		})->get();
+		})->orderBy('name')->get();
 		
 		
 		return view('fin.sales.profitloss',
