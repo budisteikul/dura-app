@@ -68,6 +68,7 @@ Route::resource('/fin/categories','Fin\CategoryController',[ 'names' => 'route_c
 	->middleware(['auth', 'verified']);
 Route::resource('/fin/transactions','Fin\TransactionController',[ 'names' => 'route_transactions' ])
 	->middleware(['auth', 'verified']);
+Route::get('/fin/profitloss', 'Fin\SalesController@profitloss')->middleware(['auth', 'verified']);
 // Reservation Admin --------------------------------------------------------------------------
 
 // Reservation Admin --------------------------------------------------------------------------

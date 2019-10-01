@@ -14,8 +14,10 @@ class fin_transactions extends Model
 	protected $table = 'fin_transactions';
 	public $incrementing = false;
 	
+	
 	public function categories()
     {
-        return $this->belongsTo('App\Models\Fin\fin_categories','category_id');
+        return $this->belongsTo('App\Models\Fin\fin_categories','id');
     }
+	
 }

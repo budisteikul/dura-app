@@ -13,4 +13,9 @@ class fin_categories extends Model
 	
 	protected $table = 'fin_categories';
 	public $incrementing = false;
+	
+	public function transactions()
+    {
+        return $this->hasMany('App\Models\Fin\fin_transactions','category_id','id');
+    }
 }
