@@ -179,7 +179,6 @@ class BlogClass {
 		
 	public static function makeSlug($string,$user_id,$id="")
 		{
-			
 			$string = Str::slug($string,"-");
 			$cek = 1;
 			$string_test = $string;
