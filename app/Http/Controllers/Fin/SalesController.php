@@ -12,9 +12,11 @@ use App\Classes\Fin\FinClass;
 
 class SalesController extends Controller
 {
-    public function profitloss()
+    public function profitloss(Request $request)
     {
-		$tahun = 2019;
+		$tahun = date("Y");
+		$tahun = $request->input('year');
+		if($tahun=="") $tahun = date("Y");
 		
 		$fin_categories_revenues = fin_categories::where('type','Revenue')->whereHas('transactions', function (Builder $query) use ($tahun) {
     			$query->whereYear('date',$tahun);

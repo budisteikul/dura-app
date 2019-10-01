@@ -1,11 +1,18 @@
 @inject('fin', 'App\Classes\Fin\FinClass')
 @extends('layouts.app')
 @section('content')
+<div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Profit &amp; Loss</div>
+                <div class="card-body">
+                
+                
+                
+                
 <table border="0" cellspacing="1" cellpadding="2" class="table table-borderless table-responsive" >
   <tbody>
-    <tr>
-      <td colspan="18">&nbsp;</td>
-    </tr>
+    
     <tr class="table-active">
       <th colspan="3">{{ $tahun }}</th>
       @for($i=1; $i<=12; $i++)
@@ -275,4 +282,11 @@
     </tr>
   </tbody>
 </table>
+
+
+
+ </div>
+            </div>
+        </div>
+    </div>
 @endsection
