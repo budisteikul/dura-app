@@ -13,4 +13,5 @@ class sms extends Model
 	
 	protected $table = 'sms';
 	public $incrementing = false;
+	protected $keyType = 'string';
 }

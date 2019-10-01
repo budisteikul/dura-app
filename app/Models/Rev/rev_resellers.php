@@ -13,4 +13,5 @@ class rev_resellers extends Model
 	
 	protected $table = 'rev_resellers';
 	public $incrementing = false;
+	protected $keyType = 'string';
 }

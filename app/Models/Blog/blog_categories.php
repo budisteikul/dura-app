@@ -13,6 +13,7 @@ class blog_categories extends Model
 	
 	protected $table = 'blog_categories';
 	public $incrementing = false;
+	protected $keyType = 'string';
 	
 	public function users()
     {

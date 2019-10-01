@@ -13,6 +13,7 @@ class blog_tmp extends Model
 	
 	protected $table = 'blog_tmp';
     public $incrementing = false;
+	protected $keyType = 'string';
 	
 	public function users()
     {

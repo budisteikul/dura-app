@@ -13,4 +13,5 @@ class rev_reviews extends Model
 	
 	protected $table = 'rev_reviews';
 	public $incrementing = false;
+	protected $keyType = 'string';
 }

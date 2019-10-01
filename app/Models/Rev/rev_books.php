@@ -13,4 +13,5 @@ class rev_books extends Model
 	
 	protected $table = 'rev_books';
 	public $incrementing = false;
+	protected $keyType = 'string';
 }

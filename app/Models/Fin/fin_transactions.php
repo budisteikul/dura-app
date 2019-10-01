@@ -13,7 +13,7 @@ class fin_transactions extends Model
 	
 	protected $table = 'fin_transactions';
 	public $incrementing = false;
-	
+	protected $keyType = 'string';
 	
 	public function categories()
     {
