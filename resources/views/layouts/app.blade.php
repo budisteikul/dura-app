@@ -81,8 +81,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/fin/profitloss"><i class="far fa-circle"></i> {{ __('Profit (Loss)') }}</a>
+                                    
                                     <a class="dropdown-item" href="/fin/transactions"><i class="far fa-circle"></i> {{ __('Transactions') }}</a>
-                                    <a class="dropdown-item" href="/fin/profitloss"><i class="far fa-circle"></i> {{ __('Profit (Loss) YTD') }}</a>
+                                    
                                     <a class="dropdown-item" href="/fin/categories"><i class="far fa-circle"></i> {{ __('Categories') }}</a>
                                 </div>
                             </li>

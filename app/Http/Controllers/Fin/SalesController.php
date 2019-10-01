@@ -14,17 +14,26 @@ class SalesController extends Controller
 {
     public function profitloss()
     {
-		$fin_categories_revenues = fin_categories::where('type','Revenue')->whereHas('transactions', function (Builder $query) {
-    			$query->whereYear('date','2019');
+		$tahun = 2019;
+		
+		$fin_categories_revenues = fin_categories::where('type','Revenue')->whereHas('transactions', function (Builder $query) use ($tahun) {
+    			$query->whereYear('date',$tahun);
 		})->get();
-		$fin_categories_expenses = fin_categories::where('type','Expenses')->whereHas('transactions', function (Builder $query) {
-    			$query->whereYear('date','2019');
+		$fin_categories_expenses = fin_categories::where('type','Expenses')->whereHas('transactions', function (Builder $query) use ($tahun) {
+    			$query->whereYear('date',$tahun);
 		})->get();
-        $fin_categories_cogs = fin_categories::where('type','Cost of Goods Sold')->whereHas('transactions', function (Builder $query) {
-    			$query->whereYear('date','2019');
+        $fin_categories_cogs = fin_categories::where('type','Cost of Goods Sold')->whereHas('transactions', function (Builder $query) use ($tahun) {
+    			$query->whereYear('date',$tahun);
 		})->get();
 		
-		return view('fin.sales.profitloss',['fin_categories_revenues'=>$fin_categories_revenues,'fin_categories_expenses'=>$fin_categories_expenses,'fin_categories_cogs'=>$fin_categories_cogs]);
+		
+		return view('fin.sales.profitloss',
+			[
+				'fin_categories_revenues'=>$fin_categories_revenues,
+				'fin_categories_expenses'=>$fin_categories_expenses,
+				'fin_categories_cogs'=>$fin_categories_cogs,
+				'tahun'=>$tahun
+			]);
     }
 	
 	/**
