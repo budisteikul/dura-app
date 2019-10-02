@@ -8,7 +8,7 @@ class BookClass {
 		$cek = 1;
 		while($cek==1)
 			{
-				$ticket = strtoupper('VT'.Str::random(6));
+				$ticket = strtoupper('VT-'.Str::random(6));
 				$results = rev_books::where('ticket',$ticket)->count();
 				if($results==0)
 				{
