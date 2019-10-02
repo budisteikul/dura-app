@@ -16,11 +16,11 @@
     <tr class="table-active">
       <th colspan="3" class="font-weight-bolder">{{ $tahun }}</th>
       @for($i=1; $i<=12; $i++)
-      <td class="font-weight-bolder">{{ Carbon\Carbon::createFromFormat('m', $i)->formatLocalized('%b') }}</td>
+      <td align="center" class="font-weight-bolder">{{ Carbon\Carbon::createFromFormat('m', $i)->formatLocalized('%b') }}</td>
       @endfor
-      <td class="font-weight-bolder"><i>Total YTD</i></td>
-      <td class="font-weight-bolder">Growth Rate</td>
-      <td class="font-weight-bolder">Projected</td>
+      <td align="center" class="font-weight-bolder"><i>Total YTD</i></td>
+      <td align="center" class="font-weight-bolder">Growth Rate</td>
+      <td align="center" class="font-weight-bolder">Projected</td>
     </tr>
     <tr>
       <td colspan="18" class="font-weight-bolder">
