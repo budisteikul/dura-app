@@ -83,23 +83,20 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<p class="m-0 text-center text-white">
             	
-                <!-- br>
-				<span style="font-family:'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size:22px;">Vertikal Trip, Inc.</span>
-				<br>
-                2035 Sunset Lake Road<br>
-				Suite B-2, Newark, DE 19702, US<br>
-				<i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
-                <br -->
                 <b>VERTIKAL TRIP LLC</b>
+                <br>
+                MANAGEMENT OFFICE
                 <br>
                 16192 Coastal Highway
 <br>Lewes, DE 19958 USA
 <br>
-<!-- i class="fa fa-phone-square"></i> Phone : +1 505-585-2112
-                <br -->
+<i class="fa fa-phone-square"></i> +1 302-486-7777
+                <br>
                 <br>
 				<b>Jogja Food Tour Team</b>
 				<br>
+                CUSTOMER SUPPORT
+                <br>
 				Perum. Guwosari Blok XII
 				<br>
 				Jalan Abiyoso VII No.190, Bantul, 55751<br> INDONESIA
