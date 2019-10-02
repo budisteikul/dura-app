@@ -14,16 +14,16 @@
   <tbody>
     
     <tr class="table-active">
-      <th colspan="3">{{ $tahun }}</th>
+      <th colspan="3" class="font-weight-bolder">{{ $tahun }}</th>
       @for($i=1; $i<=12; $i++)
-      <td>{{ Carbon\Carbon::createFromFormat('m', $i)->formatLocalized('%b') }}</td>
+      <td class="font-weight-bolder">{{ Carbon\Carbon::createFromFormat('m', $i)->formatLocalized('%b') }}</td>
       @endfor
-      <td>Total YTD</td>
-      <td>Growth Rate</td>
-      <td>Projected</td>
+      <td class="font-weight-bolder"><i>Total YTD</i></td>
+      <td class="font-weight-bolder">Growth Rate</td>
+      <td class="font-weight-bolder">Projected</td>
     </tr>
     <tr>
-      <td colspan="18">
+      <td colspan="18" class="font-weight-bolder">
       <hr>
       Income
       <hr>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>Revenue</td>
+      <td class="font-weight-bolder">Revenue</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -63,9 +63,9 @@
         	$fin_categories_revenue_per = $fin::total_per_month($fin_categories_revenue->id,$tahun,$i);
             $fin_categories_revenue_subtotal += $fin_categories_revenue_per;
         @endphp
-      	<td>{{ $fin_categories_revenue_per }}</td>
+      	<td style="background-color:#FEFEEF">{{ $fin_categories_revenue_per }}</td>
       @endfor
-      <td>{{ $fin_categories_revenue_subtotal }}</td>
+      <td class="font-weight-bolder"><i>{{ $fin_categories_revenue_subtotal }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -78,7 +78,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>Total Sales</td>
+      <td class="font-weight-bolder">Total Sales</td>
       @php
       	$revenue_subtotal = 0;
       @endphp
@@ -87,15 +87,15 @@
       		$revenue_per = $fin::total_per_month_by_type('Revenue',$tahun,$i);
             $revenue_subtotal += $revenue_per;
       	@endphp
-      	<td>{{ $revenue_per }}</td>
+      	<td style="background-color:#FEFEEF">{{ $revenue_per }}</td>
       @endfor
-      <td>{{ $revenue_subtotal }}</td>
+      <td class="font-weight-bolder"><i>{{ $revenue_subtotal }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>Cost of sales</td>
+      <td class="font-weight-bolder">Cost of sales</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -126,9 +126,9 @@
         	$fin_categories_cog_per = $fin::total_per_month($fin_categories_cog->id,$tahun,$i) * -1;
             $fin_categories_cog_subtotal += $fin_categories_cog_per;
         @endphp
-      	<td>{{ $fin_categories_cog_per }}</td>
+      	<td style="background-color:#FEFEEF">{{ $fin_categories_cog_per }}</td>
       @endfor
-      <td>{{ $fin_categories_cog_subtotal }}</td>
+      <td class="font-weight-bolder"><i>{{ $fin_categories_cog_subtotal }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -141,7 +141,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>Total cost of sales</td>
+      <td class="font-weight-bolder">Total cost of sales</td>
       @php
       	$cogs_subtotal = 0;
       @endphp
@@ -150,9 +150,9 @@
       		$cogs_per = $fin::total_per_month_by_type('Cost of Goods Sold',$tahun,$i);
             $cogs_subtotal += $cogs_per;
       	@endphp
-      	<td>{{ $cogs_per*-1 }}</td>
+      	<td style="background-color:#FEFEEF">{{ $cogs_per*-1 }}</td>
       @endfor
-      <td>{{ $cogs_subtotal*-1 }}</td>
+      <td class="font-weight-bolder"><i>{{ $cogs_subtotal*-1 }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -161,7 +161,7 @@
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>Gross Margin</td>
+      <td class="font-weight-bolder">Gross Margin</td>
       <td>&nbsp;</td>
       @php
       	$gross_margin_total = 0;
@@ -179,13 +179,13 @@
         if($gross_margin<0) $gross_margin_print = '('. $gross_margin*-1 .')';
         
       @endphp
-      <td>{{ $gross_margin_print }}</td>
+      <td class="font-weight-bolder" style="background-color:#FEFEEF">{{ $gross_margin_print }}</td>
       @endfor
       @php
       	$gross_margin_total_print = $gross_margin_total;
         if($gross_margin_total<0) $gross_margin_total_print = '('. $gross_margin_total*-1 .')';
       @endphp
-      <td>{{ $gross_margin_total_print }}</td>
+      <td class="font-weight-bolder"><i>{{ $gross_margin_total_print }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -193,7 +193,7 @@
       <td colspan="18">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="18">
+      <td colspan="18" class="font-weight-bolder">
       <hr>
       Expenses
       <hr>
@@ -212,9 +212,9 @@
         	$fin_categories_expense_per = $fin::total_per_month($fin_categories_expense->id,$tahun,$i) * -1;
             $fin_categories_expense_subtotal += $fin_categories_expense_per;
         @endphp
-      	<td>{{ $fin_categories_expense_per }}</td>
+      	<td style="background-color:#FEFEEF">{{ $fin_categories_expense_per }}</td>
       @endfor
-      <td>{{ $fin_categories_expense_subtotal }}</td>
+      <td class="font-weight-bolder"><i>{{ $fin_categories_expense_subtotal }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -227,7 +227,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>Total expenses</td>
+      <td class="font-weight-bolder">Total expenses</td>
       @php
       	$expenses_subtotal = 0;
       @endphp
@@ -236,9 +236,9 @@
       		$expenses_per = $fin::total_per_month_by_type('Expenses',$tahun,$i);
             $expenses_subtotal += $expenses_per;
       	@endphp
-      	<td>{{ $expenses_per*-1 }}</td>
+      	<td class="font-weight-bolder" style="background-color:#FEFEEF">{{ $expenses_per*-1 }}</td>
       @endfor
-      <td>{{ $expenses_subtotal*-1 }}</td>
+      <td class="font-weight-bolder"><i>{{ $expenses_subtotal*-1 }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
@@ -248,7 +248,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>Total Profit (Loss)</td>
+      <td class="font-weight-bolder">Total Profit (Loss)</td>
       @php
       	$profit_loss_total = 0;
       @endphp
@@ -267,13 +267,13 @@
         $profit_loss_print = $profit_loss;
         if($profit_loss<0) $profit_loss_print = '('. $profit_loss*-1 .')';
       @endphp
-      <td>{{ $profit_loss_print }}</td>
+      <td class="font-weight-bolder" style="background-color:#FEFEEF">{{ $profit_loss_print }}</td>
       @endfor
       @php
       	$profit_loss_total_print = $profit_loss_total;
         if($profit_loss_total<0) $profit_loss_total_print = '('. $profit_loss_total*-1 .')';
       @endphp
-      <td>{{ $profit_loss_total_print }}</td>
+      <td class="font-weight-bolder"><i>{{ $profit_loss_total_print }}</i></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
