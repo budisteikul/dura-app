@@ -83,7 +83,7 @@ function STORE()
  		<script type="text/javascript">
             $(function () {
                 $('#date').datetimepicker({
-					format: 'YYYY-MM-DD HH:mm:00',
+					format: 'YYYY-MM-DD',
 					showTodayButton: true,
 					showClose: true,
 					ignoreReadonly: true,

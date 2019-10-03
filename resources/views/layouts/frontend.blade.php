@@ -80,33 +80,39 @@ s0.parentNode.insertBefore(s1,s0);
 <footer class="py-5 bg-dark">
 <div class="container">
     <div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<p class="m-0 text-center text-white">
-            	
-                <b>VERTIKAL TRIP LLC</b>
-                <br>
-                Corporate Office
-                <br>
-                16192 Coastal Highway
-<br>Lewes, DE 19958 USA
-<br>
-<i class="fa fa-phone-square"></i> +1 302-486-7777
-                <br>
-                <br>
-				<b>Jogja Food Tour Team</b>
-				<br>
-                Customer Support and Operation Office
-                <br>
-				Perum. Guwosari Blok XII
-				<br>
-				Jalan Abiyoso VII No.190, Bantul, 55751<br> INDONESIA
-				<br>
-				<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-				<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
-				<br><br>
-             	<i class="fab fa-cc-mastercard fa-3x"></i> <i class="fab fa-cc-visa fa-3x"></i> <i class="fab fa-cc-discover fa-3x"></i> <i class="fab fa-cc-amex fa-3x"></i> <i class="fab fa-cc-diners-club fa-3x"></i>
-            	<br><br><br>
-			</p>
+		<div class="row col-md-8">
+            	<div class="col-sm-6 first-column mb-4">
+                	<p class="m-0 text-left text-white">
+                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
+                		<br>
+                		Corporate Office
+                		<br>
+                		16192 Coastal Highway
+						<br>Lewes, DE 19958
+                        <br>
+                        United States
+						<br>
+						<i class="fa fa-phone-square"></i> +1 302-486-7777
+                		<br>
+                    </p>
+                </div>
+                <div class="col-sm-6 second-column">
+                	<p class="m-0 text-left text-white">
+                    	<b class="text-danger">Jogja Food Tour Team</b>
+						<br>
+                		Customer Support and Operation Office
+                		<br>
+						Perum. Guwosari Blok XII
+						<br>
+						Jalan Abiyoso VII No.190, Bantul, 55751<br> Indonesia
+						<br>
+						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
+						<br>
+                        
+                    </p>
+                </div>
+			
         </div>
     </div>
 </div>
