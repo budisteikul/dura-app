@@ -85,7 +85,7 @@ s0.parentNode.insertBefore(s1,s0);
             	
                 <b>VERTIKAL TRIP LLC</b>
                 <br>
-                MANAGEMENT OFFICE
+                Corporate Office
                 <br>
                 16192 Coastal Highway
 <br>Lewes, DE 19958 USA
@@ -95,7 +95,7 @@ s0.parentNode.insertBefore(s1,s0);
                 <br>
 				<b>Jogja Food Tour Team</b>
 				<br>
-                CUSTOMER SUPPORT
+                Customer Support and Operation Office
                 <br>
 				Perum. Guwosari Blok XII
 				<br>
