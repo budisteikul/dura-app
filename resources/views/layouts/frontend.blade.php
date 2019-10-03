@@ -81,7 +81,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="container">
     <div class="row">
 		<div class="row col-md-8">
-            	<div class="col-sm-6 first-column mb-4">
+            	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-white">
                     	<b class="text-danger">VERTIKAL TRIP LLC</b>
                 		<br>
@@ -96,7 +96,7 @@ s0.parentNode.insertBefore(s1,s0);
                 		<br>
                     </p>
                 </div>
-                <div class="col-sm-6 second-column">
+                <div class="col-sm-8 second-column">
                 	<p class="m-0 text-left text-white">
                     	<b class="text-danger">Jogja Food Tour Team</b>
 						<br>
