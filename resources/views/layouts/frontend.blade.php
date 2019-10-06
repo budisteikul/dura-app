@@ -90,7 +90,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
                         United States
 						<br>
-						<br>
+						
                     </p>
                 </div>
                 <div class="col-sm-8 second-column">
