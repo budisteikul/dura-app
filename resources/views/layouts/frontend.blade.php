@@ -81,19 +81,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="container">
     <div class="row">
 		<div class="row col-md-8">
-            	<div class="col-sm-4 first-column mb-4">
-                	<p class="m-0 text-left text-white">
-                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
-                		<br>
-                		16192 Coastal Highway
-						<br>Lewes, DE 19958
-                        <br>
-                        United States
-						<br>
-						
-                    </p>
-                </div>
-                <div class="col-sm-8 second-column">
+            	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
                     	<b class="text-danger">JOGJA FOOD TOUR TEAM</b>
 						<br>
@@ -107,6 +95,19 @@ s0.parentNode.insertBefore(s1,s0);
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
 						<br>
                         
+						
+                    </p>
+                </div>
+                <div class="col-sm-4 second-column">
+                	<p class="m-0 text-left text-white">
+                    	
+                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
+                		<br>
+                		16192 Coastal Highway
+						<br>Lewes, DE 19958
+                        <br>
+                        United States
+						<br>
                     </p>
                 </div>
 			

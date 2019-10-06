@@ -7,7 +7,7 @@
 @endpush 
 <!-- ################################################################### -->
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="/">Jogja Food Tour</a>
 	</div>
