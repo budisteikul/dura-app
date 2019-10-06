@@ -53,7 +53,7 @@ Route::post('/mails/webhook', function () {
 	return redirect('https://mail.vertikaltrip.com/mails/webhook');
 });
 Route::get('/order', function () {
-	return redirect('/tour/yogyakarta-night-walking-and-food-tours');
+	return redirect('/');
 });
 Route::get('/timeout', function () {
 	return redirect('/');

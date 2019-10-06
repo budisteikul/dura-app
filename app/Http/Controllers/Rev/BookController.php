@@ -99,7 +99,7 @@ class BookController extends Controller
 					return $post->title;
 				})
 				->editColumn('name', function ($book) {
-					return '['.$book->ticket .'] '. $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
+					return  $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
 				})
 				->addColumn('action', function ($book) {
 					
