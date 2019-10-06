@@ -85,20 +85,17 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-white">
                     	<b class="text-danger">VERTIKAL TRIP LLC</b>
                 		<br>
-                		Corporate Office
-                		<br>
                 		16192 Coastal Highway
 						<br>Lewes, DE 19958
                         <br>
                         United States
 						<br>
-						<i class="fa fa-phone-square"></i> +1 302-486-7777
-                		<br>
+						<br>
                     </p>
                 </div>
                 <div class="col-sm-8 second-column">
                 	<p class="m-0 text-left text-white">
-                    	<b class="text-danger">Jogja Food Tour Team</b>
+                    	<b class="text-danger">JOGJA FOOD TOUR TEAM</b>
 						<br>
                 		Customer Support and Operation Office
                 		<br>
