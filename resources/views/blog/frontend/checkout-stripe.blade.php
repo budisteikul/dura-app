@@ -8,7 +8,7 @@
 <!-- ################################################################### -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav-back">
-	<div class="container" style="height:48px;">
+	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="/">Jogja Food Tour</a>
 	</div>
 </nav>   
