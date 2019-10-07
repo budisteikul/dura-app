@@ -87,9 +87,11 @@ s0.parentNode.insertBefore(s1,s0);
 						<br>
                 		Customer Support and Operation Office
                 		<br>
-						Perum. Guwosari Blok XII
-						<br>
-						Jalan Abiyoso VII No.190, Bantul, 55751<br> Indonesia
+						Jalan Abiyoso VII No.190
+                        <br>
+                        Bantul, DIY 55751
+                        <br>
+						Indonesia
 						<br>
 						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="text-white" target="_blank">guide@vertikaltrip.com</a>
