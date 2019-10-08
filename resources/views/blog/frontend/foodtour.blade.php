@@ -306,14 +306,14 @@
 		
         	<br>
             <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
-						<span style="width:30px;" class="fa fa-map-marked-alt"></span><strong> Meeting/Redemption  point :</strong>
+						<span style="width:30px;" class="fa fa-map-marked-alt text-danger"></span><strong class="text-danger"> Meeting/Redemption  point</strong><br>
                         <br>
                         - You will receive a confirmation email and voucher instantly after booking
 						<br>
                         - You can present a mobile voucher for this activity to our tour guide
                         <br>
 <br>
-                        <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46"><img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book Yogyakarta Night Walking and Food Tours via Google Maps"></a><br>
+                        <img src="/assets/foodtour/google-maps.jpg" height="45" alt="Book Yogyakarta Night Walking and Food Tours via Google Maps"><br>
                         
                         <br>
                         <div class="map-responsive">
@@ -321,9 +321,9 @@
 						</div>
                         
                         <br>
-                        <a class="text-danger" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
+                        
 						Tugu Yogyakarta Monument (Tugu Pal Putih)<br />	
-						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233</a>
+						Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
                     	<br>
 						<!-- small class="form-text text-muted">
                         <a class="text-muted" href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">
