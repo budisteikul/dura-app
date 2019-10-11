@@ -32,6 +32,7 @@ class BlogController extends Controller
     {
         return view('blog.frontend.payment');
     }
+	
 	public function timeselector_stripe()
     {
         return view('blog.frontend.timeselector-stripe');

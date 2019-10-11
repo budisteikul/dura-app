@@ -30,6 +30,10 @@ Route::get('/blank', function () {
 	return view('blog.frontend.blank');
 });
 
+Route::get('/waiver', function () {
+	return view('blog.frontend.waiver-liability');
+});
+
 Route::get('/', 'Blog\Frontend\BlogController@index');
 Route::post('/review', 'Rev\ReviewController@get_review');
 

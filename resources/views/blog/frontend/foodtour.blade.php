@@ -123,7 +123,8 @@
                     Book for tonight? It's Ok!
          			<br>
          			We can start the tour every day.
-		 			<br> Use promotional code OCTOBERSALE to get 10% discount.
+                    
+		 			<br> Book on this site and use promotional code OCTOBERSALE on checkout to get 10% discount.
                 
 				</p>
 			</div>
@@ -229,7 +230,7 @@
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Use promotional code OCTOBERSALE to save 10% off our previously offered price!</b></small>
+			<small class="form-text text-success"><b>Book on this site and use promotional code OCTOBERSALE on checkout to save 10% off our previously offered price!</b></small>
     					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
@@ -291,7 +292,7 @@
             
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/gudeg.jpg">
+				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/gudeg-jogja.jpg">
 				<span class="caption text-muted">Gudeg Jogja</span>
 			</center>
             
