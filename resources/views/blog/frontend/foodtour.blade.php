@@ -1,21 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
 @push('scripts')
-<style>
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-}
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-</style>
 <script type="text/javascript">
 			jQuery(document).ready(function($) {	
 			var table = $('#dataTables-example').DataTable(

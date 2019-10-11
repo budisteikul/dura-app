@@ -1,7 +1,8 @@
+
 const mix = require('laravel-mix');
-
+/*
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-
+*/
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
  |
  */
 
-
+/*
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -38,7 +39,7 @@ mix.styles([
 mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-
+*/
 
 
 mix.scripts([
@@ -56,8 +57,7 @@ mix.scripts([
 	'resources/assets/frontend/wowjs/dist/wow.min.js',
 	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
 	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-	'resources/assets/frontend/custom/booking.js'
-	],'public/js/vertikaltrip-1.0.8.js');
+	],'public/js/vertikaltrip-1.0.9.js');
 
 mix.styles([
 	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
@@ -67,15 +67,17 @@ mix.styles([
 	'resources/assets/frontend/photoset-grid/css/main.css',
 	'resources/assets/frontend/back-to-top/css/style.css',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
-	'resources/assets/frontend/timeline/timeline.css',
+	'resources/assets/frontend/custom/nav.css',
+	'resources/assets/frontend/custom/custom.css',
 	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
 	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css'
-	],'public/css/vertikaltrip-1.0.8.css');
+	],'public/css/vertikaltrip-1.0.9.css');
 
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
 
+/*
 mix.webpackConfig({
     plugins: [
     new SWPrecacheWebpackPlugin({
@@ -119,3 +121,4 @@ mix.webpackConfig({
     })
     ]
 });
+*/
