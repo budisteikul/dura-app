@@ -66,7 +66,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
-    	<a class="btn btn-danger text-white" href="/book/payment"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
+    	<a class="btn btn-danger text-white" href="/book/paypal"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
        
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -109,7 +109,7 @@
          			<br>
          			We can start the tour every day.
                     
-		 			<br> Book on this site and use promotional code OCTOBERSALE on checkout to get 10% discount.
+		 			<br> Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> on checkout to get <span class="text-danger">{{ $promo->value }}</span> discount.
                 
 				</p>
 			</div>
@@ -215,7 +215,7 @@
   				</ins>
 				  / person
 				</div>
-			<small class="form-text text-success"><b>Book on this site and use promotional code OCTOBERSALE on checkout to save 10% off our previously offered price!</b></small>
+			<small class="form-text text-success"><b>Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> on checkout to save <span class="text-danger">{{ $promo->value }}</span> off our previously offered price!</b></small>
     					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />

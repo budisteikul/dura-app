@@ -71,8 +71,11 @@ class BlogController extends Controller
 	public function index()
     {
 		$count = rev_reviews::count();
+		$promo = new \stdClass();
+		$promo->code = 'COLUMBUSDAY';
+		$promo->value = '10%';
         return view('blog.frontend.foodtour')
-		->with('count',$count);
+		->with('count',$count)->with('promo',$promo);
     }
 	
     /**
