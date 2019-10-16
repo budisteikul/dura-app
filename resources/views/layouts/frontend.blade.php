@@ -110,6 +110,9 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
                         United States
 						<br>
+                        <!-- PayPal Logo -->
+                        <a href="https://www.paypal.com/id/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/id/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/PP_AcceptanceMarkTray-NoDiscover_243x40.png" alt="Buy now with PayPal"  style="margin-top:10px;"  /></a>
+                        <!-- PayPal Logo -->
                     </p>
                 </div>
 			

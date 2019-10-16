@@ -10,6 +10,40 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="/">Jogja Food Tour</a>
+        
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
+			<ul class="navbar-nav text-uppercase ml-auto">
+            	<li class="nav-item">
+					<a class="nav-link" href="/">Home</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link" href="/#services">Services</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#about">The Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link" href="/#gallery">Snapshot</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#review">Reviews</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#guide">Tour Guide</a>
+				</li>
+			</ul>
+		</div>
+        
+        
 	</div>
 </nav>   
 <div style="height:25px;"></div>
