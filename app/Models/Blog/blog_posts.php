@@ -32,7 +32,7 @@ class blog_posts extends Model
 	
 	public function widgets()
     {
-        return $this->hasMany('App\Models\Rev\rev_widgets','post_id');
+        return $this->hasOne('App\Models\Rev\rev_widgets','post_id');
     }
 }
 

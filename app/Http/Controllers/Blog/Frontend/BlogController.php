@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Rev\rev_availability;
 use App\Models\Blog\blog_posts;
+use App\Models\Rev\rev_widgets;
 use App\Models\Rev\rev_reviews;
 use Illuminate\Support\Facades\Request as Http;
 use Yajra\DataTables\Facades\DataTables;
@@ -21,10 +22,28 @@ class BlogController extends Controller
 		
 	}
 	
-	public function tour($id)
+	public function product($id)
     {
 		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post]);
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->product]);
+    }
+	
+	public function time_selector($id)
+    {
+		$post = blog_posts::where('slug',$id)->first();
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->time_selector]);
+    }
+	
+	public function checkout($id)
+    {
+		$post = blog_posts::where('slug',$id)->first();
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->checkout]);
+    }
+	
+	public function receipt($id)
+    {
+		$post = blog_posts::where('slug',$id)->first();
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->receipt]);
     }
 	
 	//====================================================================================
