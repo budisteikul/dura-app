@@ -105,9 +105,7 @@
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<p class="text-faded">
-                    Book for tonight? It's Ok!
-         			<br>
-         			We can start the tour every day.
+                    Book for tonight? It's Ok! We can start the tour every day.
                     
 		 			<br> Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> on checkout to get <span class="text-danger">{{ $promo->value }}</span> discount.
                 
