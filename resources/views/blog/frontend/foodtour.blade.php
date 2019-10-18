@@ -66,7 +66,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
-    	<a class="btn btn-danger text-white" href="/book/paypal"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
+    	<a class="btn btn-danger text-white" href="/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Now</strong></span></a>
        
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
