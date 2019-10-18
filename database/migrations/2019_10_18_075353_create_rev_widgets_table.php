@@ -20,10 +20,10 @@ class CreateRevWidgetsTable extends Migration
       			->references('id')->on('blog_posts')
       			->onDelete('cascade')->onUpdate('cascade');
 			
-			$table->string('product')->nullable();
-			$table->string('time_selector')->nullable();
-			$table->string('checkout')->nullable();
-			$table->string('receipt')->nullable();
+			$table->longText('product')->nullable();
+			$table->longText('time_selector')->nullable();
+			$table->longText('checkout')->nullable();
+			$table->longText('receipt')->nullable();
 			
 				
 			$table->timestamps();
