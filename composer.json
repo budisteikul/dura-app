@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "simplesoftwareio/simple-qrcode": "^2.0",
         "yajra/laravel-datatables-buttons": "^4.8",
-        "yajra/laravel-datatables-oracle": "^9.0"
+        "yajra/laravel-datatables-oracle": "^9.0",
+		"cloudinary/cloudinary_php": "^1.13"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
