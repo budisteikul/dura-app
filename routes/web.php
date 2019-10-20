@@ -101,10 +101,13 @@ Route::resource('/blog/setting','Blog\Backend\SettingController',[ 'names' => 'b
 	->only('edit','update')
 	->middleware(['auth', 'verified']);
 
+
+Route::get('/profiles/{id}/{setting}/{token}', 'Auth\ProfileController@index')->name('profiles.index')->middleware(['auth', 'verified']);
+Route::resource('profiles','Auth\ProfileController',[ 'names' => 'profiles' ])->only(['show','update','store'])->middleware(['auth', 'verified']);
+
 Route::resource('/mails/webhook','Mail\WebhookController',[ 'names' => 'mail_webhooks' ])->only(['store','index']);
 Route::resource('/mails/settings','Mail\SettingController',[ 'names' => 'mail_settings' ])->middleware(['auth', 'verified']);
 Route::resource('/mails/attachments','Mail\AttachmentController',[ 'names' => 'mail_attachments' ])->only(['show'])->middleware(['auth', 'verified']);
-
 Route::resource('/mails','Mail\MailController',[ 'names' => 'mails' ])->middleware(['auth', 'verified']);
 Route::get('/mails/{id}/{view}', 'Mail\MailController@show')->name('mails.show')->middleware(['auth', 'verified']);
 
