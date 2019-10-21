@@ -93,7 +93,9 @@
                         	
                             
                            
-                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/mails"><i class="fa fa-envelope"></i> {{ __('Mails') }}</a>
+                            </li>
                         	<li class="nav-item">
                                 <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Galleries') }}</a>
                             </li>
