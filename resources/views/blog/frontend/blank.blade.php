@@ -160,7 +160,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
-<section id="booking" style="background-color:#ffffff;height:500px">
+<section id="booking" style="background-color:#ffffff;">
 
 
 
