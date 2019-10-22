@@ -93,28 +93,12 @@ s0.parentNode.insertBefore(s1,s0);
 <nav class="navbar navbar-default navbar-expand-lg navbar-light  bg-light fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
     
-       
-<!-- Noscript content for added SEO -->
-<noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
-<!-- You can customize this button any way you like -->
-<button id="eventbrite-widget-modal-trigger-77732854059" type="button" class="btn btn-danger">Buy Tickets</button>
-<noscript></a>Buy Tickets on Eventbrite</noscript>
 
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=63652e4f-478e-47b6-8e0e-6e019f4072e0" async></script>
+      <style> #bokun_d81c3320_52b8_4216_868e_f35035a50868 { display: inline-block; padding: 10px 20px; background: #408C3D; border-radius: 5px; box-shadow: none; font-weight: 600; font-size: 16px; text-decoration: none; text-align: center; color: #FFFFFF; font-family: sans-serif; cursor: pointer; } #bokun_d81c3320_52b8_4216_868e_f35035a50868:hover{ background: #285726; } #bokun_d81c3320_52b8_4216_868e_f35035a50868:active{ background: #30682e; } </style> <button class="bokunButton" disabled id=bokun_d81c3320_52b8_4216_868e_f35035a50868 data-src="https://widgets.bokun.io/online-sales/63652e4f-478e-47b6-8e0e-6e019f4072e0/experience-calendar/234927?partialView=1" > Book now </button> 
 
-<script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
 
-    window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: '77732854059',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-77732854059',
-        onOrderComplete: exampleCallback
-    });
-</script>
+
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -161,12 +145,6 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 <section id="booking" style="background-color:#ffffff;">
-
-
-
-<?php phpinfo(); ?>
-
-
 
 </section>
 
