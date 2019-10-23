@@ -66,7 +66,8 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
-    	<!-- Noscript content for added SEO -->
+
+<!-- Noscript content for added SEO -->
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
 <!-- You can customize this button any way you like -->
 <button id="eventbrite-widget-modal-trigger-77732854059" class="btn btn-danger" type="button"><i class='fa fa-ticket-alt'></i> Book now</button>
