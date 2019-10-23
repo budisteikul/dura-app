@@ -69,7 +69,7 @@
     	<!-- Noscript content for added SEO -->
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
 <!-- You can customize this button any way you like -->
-<button id="eventbrite-widget-modal-trigger-77732854059" class="btn btn-danger" type="button">Book now</button>
+<button id="eventbrite-widget-modal-trigger-77732854059" class="btn btn-danger" type="button"><i class='fa fa-ticket-alt'></i> Book now</button>
 <noscript></a>Book now on Eventbrite</noscript>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
