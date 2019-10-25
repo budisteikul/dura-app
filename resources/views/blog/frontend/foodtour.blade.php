@@ -130,7 +130,7 @@
 				<p class="text-faded">
                     Book for tonight? It's Ok! We can start the tour every day.
                     
-		 			<br> Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> on checkout to get <span class="text-danger">{{ $promo->value }}</span> discount.
+		 			
                 
 				</p>
 			</div>
