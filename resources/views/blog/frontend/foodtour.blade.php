@@ -157,6 +157,7 @@
         
         <div class="col-md-8 mx-auto">
         <img src="/assets/foodtour/silkwinds.jpg" class="img-fluid rounded">
+        <span class="caption text-muted">Silkwinds Magazine</span>
         </div>
         
         
