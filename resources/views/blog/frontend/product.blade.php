@@ -23,7 +23,7 @@
 				</li>
                 
 				<li class="nav-item">
-					<a class="nav-link" href="/#services">Services</a>
+					<a class="nav-link" href="/#services">Why Jogja Food Tour?</a>
 				</li>
                 
                 <li class="nav-item">
