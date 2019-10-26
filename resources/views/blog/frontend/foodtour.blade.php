@@ -154,36 +154,12 @@
 			</div>
       
       <div class="row text-center">
-        <div class="col-md-4">
-        <br>
-          <span class="fa-stack fa-3x">
-            <i class="fas fa-circle fa-stack-2x text-danger"></i>
-            <i class="fas fa-thumbs-up fa-stack-1x fa-inverse"></i>
-          </span>
-          <br><br>
-          <h4 class="service-heading">Great Local Food & Activity</h4>
-          <p class="text-muted">Too many options &amp; afraid of tourist traps? We only take you to good places where locals go!</p>
+        
+        <div class="col-md-8 mx-auto">
+        <img src="/assets/foodtour/silkwinds.jpg" class="img-fluid rounded">
         </div>
-        <div class="col-md-4">
-        <br>
-          <span class="fa-stack fa-3x">
-            <i class="fas fa-circle fa-stack-2x text-danger"></i>
-            <i class="fas fa-atlas fa-stack-1x fa-inverse"></i>
-          </span>
-          <br><br>
-          <h4 class="service-heading">Expertise in Food &amp; Culture</h4>
-          <p class="text-muted">We own and run this tour. Our experienced guides will introduce you to the local culture.</p>
-        </div>
-        <div class="col-md-4">
-        <br>
-          <span class="fa-stack fa-3x">
-            <i class="fas fa-circle fa-stack-2x text-danger"></i>
-            <i class="fas fa-money-bill-alt fa-stack-1x fa-inverse"></i>
-          </span>
-          <br><br>
-          <h4 class="service-heading">Accessible to Anyone</h4>
-          <p class="text-muted">Our tours are reasonably priced, this is not only food tour, but fushion with local activities, where young local people have fun.</p>
-        </div>
+        
+        
       </div>
     </div>
     <br><br>
