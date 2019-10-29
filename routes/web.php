@@ -37,8 +37,11 @@ Route::get('/blank', function () {
 	return view('blog.frontend.blank');
 });
 
-Route::get('/waiver', function () {
+Route::get('/page/waiver-and-release', function () {
 	return view('blog.frontend.waiver-liability');
+});
+Route::get('/page/terms-and-conditions', function () {
+	return view('blog.frontend.terms-and-conditions');
 });
 
 Route::get('/', 'Blog\Frontend\BlogController@index');
