@@ -286,6 +286,17 @@
 				See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.
                 
 			</p>
+            
+            <p>
+            	<div>
+				<h2 class="section-heading">Aditional Info</h2>
+				- Free for infant (Age under 5 years old) and must be accompanied by adult <br />
+				- Not wheelchair accessible <br />
+				- No minimum booking number of person <br />
+				- This tour/activity will have a maximum of 8 travelers <br />
+				- Most travelers can participate <br />
+                </div>
+			</p>
 			
 		
         	<br>

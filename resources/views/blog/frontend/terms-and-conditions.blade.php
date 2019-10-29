@@ -10,6 +10,35 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="/">Jogja Food Tour</a>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
+			<ul class="navbar-nav text-uppercase ml-auto">
+            	
+                
+				<li class="nav-item">
+					<a class="nav-link" href="/#services">Why Jogja Food Tour?</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#about">The Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link" href="/#gallery">Snapshot</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#review">Reviews</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link" href="/#guide">Tour Guide</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>   
 <div style="height:25px;"></div>
@@ -36,16 +65,17 @@
                     <div class="row col-md-8  mx-auto text-left">
     
 					<ul>
-						<li>We use PayPal (paypal.com) as payment gateway to securely transact payments using their respective payment systems.</li>
-						<li>If a booking is canceled 24 hours prior to the tour, we will refund the booking minus administration of payment gateway approximate 10% of booking fee. Refunds cannot be given for cancellations less than 24 hours in advance or no-shows.</li>
-						<li>No-shows will be charged the full price. </li>
-						<li>Customers will provide a full refund (100%) or reschedule in case of operator cancellation due to weather or other unforeseen circumstances. </li>
+						<li>We use <a class="text-danger" target="_blank" href="https://www.eventbrite.com">Eventbrite</a> as payment gateway to securely transact payments using their respective payment systems.</li>
+						<li><strong>Non-refundable</strong></li>
+						<li><strong>No-shows</strong> will be charged the full price. </li>
+						<li>Customers will provide a <strong>full refund</strong> (100%) or <strong>re-schedule</strong> in case of operator cancellation due to weather or other unforeseen circumstances. </li>
 						<li>By purchasing ticket, I have read and understood the Company’s <a class="text-danger" href="/page/waiver-and-release">Waiver and Release</a> of Claims.</li>
 					</ul>
 	
                     </div>
     </div> 
   </div>
+                    
                     
 					
 					
