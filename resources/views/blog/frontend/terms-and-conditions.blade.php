@@ -11,7 +11,7 @@
 	<div class="container">
 		<noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
 
-<button style="margin-top:4px; margin-bottom:4px;" class="btn btn-danger text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
+<button style="margin-top:6px; margin-bottom:6px;" class="btn btn-danger text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
 <noscript></a>Book now on Eventbrite</noscript>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
