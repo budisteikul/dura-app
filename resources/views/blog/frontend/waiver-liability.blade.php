@@ -112,11 +112,16 @@
   <br><br>
                       </p>
                       
-                      <div class="col-md-12 text-right">
-                      <p>
-                      Yogyakarta, 29 October 2019<br>
-                      <img style="margin-top:10px; margin-right:20px;" height="135" src="/assets/foodtour/digital-seal-VERTIKAL-TRIP-LLC.jpg">
-					  </p>
+                      <div class="col-md-12 text-center">
+                      <div class="row">
+                      	<div class="col-md-8"></div>
+                        <div class="col-md-4">
+                        
+                       
+                      <img height="130" src="/assets/foodtour/digital-seal-VERTIKAL-TRIP-LLC.jpg">
+                        </div>
+                      </div>
+                      
                       </div>
                       
                     </div>
