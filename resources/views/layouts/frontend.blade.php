@@ -24,8 +24,8 @@
     
     
     
-	<script src="https://static.budi.my.id/js/vertikaltrip-1.0.9.js"></script>
-	<link href="https://static.budi.my.id/css/vertikaltrip-1.0.9.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-1.0.9.js"></script>
+	<link href="/css/vertikaltrip-1.0.9.css" rel="stylesheet" media="screen,handheld">
     
     
   
