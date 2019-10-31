@@ -200,10 +200,10 @@
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
-						<!-- br>
+						
                     	<span itemprop="priceCurrency" content="USD"></span>
                     	<span itemprop="price" content="40.00"></span>
-						<span class="badge badge-success">Special Offer</span>
+						<!-- span class="badge badge-success">Special Offer</span>
 				<div class="style-4">
   					<del>
     					<span class="amount">$40 USD</span>
