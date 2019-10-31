@@ -212,8 +212,8 @@
     				<span class="amount">$36 USD</span>
   				</ins -->
 				 40 USD / person
-				</div>
-			<!-- small class="form-text text-success"><b>Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> to save <span class="text-danger">{{ $promo->value }}</span> off our previously offered price!</b></small -->
+				<!-- /div>
+			<small class="form-text text-success"><b>Book on this site and use promotional code <span class="text-danger">{{ $promo->code }}</span> to save <span class="text-danger">{{ $promo->value }}</span> off our previously offered price!</b></small -->
     					<link itemprop="availability" href="http://schema.org/InStock" />
                         <meta itemprop="priceValidUntil" content="2020-11-05" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
