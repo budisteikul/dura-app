@@ -120,7 +120,7 @@
     </div>
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark-1.0.1.jpg'); background-color: #B0B0B0">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark-1.0.1.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
@@ -130,7 +130,7 @@
 				<p class="text-faded">
                     Book for tonight? It's Ok! We can start the tour every day.
                     
-		 			
+		 			<br><br><br>
                 
 				</p>
 			</div>
