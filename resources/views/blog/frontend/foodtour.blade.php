@@ -129,9 +129,8 @@
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<p class="text-faded">
                     Book for tonight? It's Ok! We can start the tour every day.
-                    
-		 			<br><br><br>
-                
+		 			<br>
+                    Use promotional code <span class="badge badge-danger">NOVEMBERRAIN</span> to save <span class="badge badge-danger">10%</span> off our previously offered price!
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
