@@ -93,8 +93,8 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
 						Indonesia
 						<br>
-						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="text-white" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="text-white" target="_blank">guide@jogjafoodtour.com</a>
+						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
 						<br>
                         
 						
