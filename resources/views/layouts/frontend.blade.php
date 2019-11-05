@@ -115,7 +115,9 @@ s0.parentNode.insertBefore(s1,s0);
                         <!-- a href="https://www.paypal.com/id/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/id/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" --><img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  /><!-- /a -->
                         <!-- PayPal Logo -->
                         <br>
-                        <small><a class="text-white" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a></small>
+                        <small>
+                        	<a class="text-white" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a>
+                        </small>
                     </p>
                 </div>
 			
