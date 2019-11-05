@@ -81,6 +81,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="container">
     <div class="row">
 		<div class="row col-md-8">
+           	
             	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
                     	<b class="text-danger">JOGJA FOOD TOUR TEAM</b>
@@ -100,16 +101,15 @@ s0.parentNode.insertBefore(s1,s0);
 						
                     </p>
                 </div>
+                
                 <div class="col-sm-5 second-column">
                 	<p class="m-0 text-left text-white">
-                    	
                     	<b class="text-danger">VERTIKAL TRIP LLC</b>
                 		<br>
                 		16192 Coastal Highway
 						<br>Lewes, DE 19958
                         <br>
                         United States
-                        
 						<br>
                         <!-- PayPal Logo -->
                         <!-- a href="https://www.paypal.com/id/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/id/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" --><img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  /><!-- /a -->
@@ -123,13 +123,7 @@ s0.parentNode.insertBefore(s1,s0);
 			
         </div>
         
-        <div class="row col-md-8 mx-auto">
-        <div class="col-sm-12 mt-8">
-                	<p class="m-0 text-center text-white">
-                    
-                    </p>
-                    </div>
-        </div>
+       
         
     </div>
 </div>
