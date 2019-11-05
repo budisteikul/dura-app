@@ -21,9 +21,6 @@
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-    
-    
-    
 	<script src="/js/vertikaltrip-1.0.9.js"></script>
 	<link href="/css/vertikaltrip-1.0.9.css" rel="stylesheet" media="screen,handheld">
     
@@ -130,7 +127,7 @@ s0.parentNode.insertBefore(s1,s0);
     </div>
 </div>
 </footer>
-</div>
+
 
 </body>
 </html>
