@@ -117,6 +117,8 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
                         <small>
                         	<a class="text-white" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a>
+                        	<br>
+                        	<span class="text-white">&copy; 2019 Jogja Food Tour Division under VERTIKAL TRIP LLC</span>
                         </small>
                     </p>
                 </div>
