@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Rev\rev_widgets;
 use App\Models\Blog\blog_posts;
 
+use Illuminate\Support\Facades\Auth;
+
 class WidgetController extends Controller
 {
     /**
@@ -29,7 +31,8 @@ class WidgetController extends Controller
      */
     public function create()
     {
-		$blog_post = blog_posts::doesnthave('widgets')->where('content_type','standard')->orderBy('title')->get();
+		$user = Auth::user();
+		$blog_post = blog_posts::doesnthave('widgets')->where('content_type','standard')->where('user_id',$user->id)->orderBy('title')->get();
         return view('rev.widgets.create',['blog_post'=>$blog_post]);
     }
 
@@ -89,8 +92,9 @@ class WidgetController extends Controller
      */
     public function edit($id)
     {
+		$user = Auth::user();
         $rev_widgets = rev_widgets::findOrFail($id);
-		$blog_post = blog_posts::doesnthave('widgets')->orWhere('id',$rev_widgets->post_id)->where('content_type','standard')->orderBy('title')->get();
+		$blog_post = blog_posts::doesnthave('widgets')->orWhere('id',$rev_widgets->post_id)->where('content_type','standard')->where('user_id',$user->id)->orderBy('title')->get();
         return view('rev.widgets.edit',['rev_widgets'=>$rev_widgets,'blog_post'=>$blog_post]);
     }
 
