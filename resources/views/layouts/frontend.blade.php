@@ -114,7 +114,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
                         <small>
                         
-                        	<span class="text-white">Contact us for bank transfer (ACH or SEPA)</span>
+                        	<span class="text-white">Contact us for another payment</span>
                         </small>
                     </p>
                 </div>
