@@ -113,8 +113,9 @@ s0.parentNode.insertBefore(s1,s0);
                         <!-- PayPal Logo -->
                         <br>
                         <small>
-                        
-                        	<span class="text-white">Contact us for another payment</span>
+                        	<span class="text-white">
+                            	Contact us for another type of payments
+                            </span>
                         </small>
                     </p>
                 </div>
