@@ -244,7 +244,8 @@
             <p>
             	<div>
 				<h2 class="section-heading">Overview</h2>
-				Yogyakarta’s Imaginary Line is an imaginary straight line drawn from the southern beach Parang Kusumo with Mount Merapi. Journey through a part of the city's imaginary line, from Tugu Yogyakarta Monument to Southern City Square. <span itemprop="description"> Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.</span>
+				See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.
+                <meta itemprop="description" content="Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more." />
                 </div>
 			</p>
 
@@ -269,21 +270,6 @@
                 </div>
 			</p>
           	
-            
-			<center>
-				<br>
-				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/gudeg-jogja.jpg">
-				<span class="caption text-muted">Gudeg Jogja</span>
-			</center>
-            
-          
-			<p>
-            	
-				<h2 class="section-heading">Itinerary</h2>
-				See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.
-                
-			</p>
-            
             <p>
             	<div>
 				<h2 class="section-heading">Aditional Info</h2>
@@ -294,7 +280,13 @@
 				- Most travelers can participate <br />
                 </div>
 			</p>
-			
+            
+			<center>
+				<br>
+				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/gudeg-jogja.jpg">
+				<span class="caption text-muted">Gudeg Jogja</span>
+			</center>
+            
 		
         	<br>
             <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
