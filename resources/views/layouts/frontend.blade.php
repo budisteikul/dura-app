@@ -114,9 +114,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
                         <small>
                         	<span class="text-white">
-                            	Contact us for another type of payments
-                                <br>
-                                Bank transfer ACH, SEPA, BACS and Faster Payments Service
+                            	
                             </span>
                         </small>
                     </p>
