@@ -63,8 +63,16 @@ class LoginController extends Controller
 		$password = $request->input('password');
 		$remember = $request->input('remember');
 		$remember = ($remember == "true" ? true : false);
-		$url = "/rev/book";
-		//$url = $request->input('url');
+		
+		$url = $request->input('url');
+		if($url=="https://www.jogjafoodtour.com")
+		{
+			$url = "/rev/book";
+		}
+		else if($url=="https://www.vertikaltrip.com")
+		{
+			$url = "/rev/book";
+		}
 		
 		//$domain = preg_replace('#^https?://#', '', Http::root());
 		//if($domain=="www.vertikaltrip.com") $url = 'https://www.vertikaltrip.com/rev/order';
