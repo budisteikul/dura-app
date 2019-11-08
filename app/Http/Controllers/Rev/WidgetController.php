@@ -94,7 +94,7 @@ class WidgetController extends Controller
     {
 		$user = Auth::user();
         $rev_widgets = rev_widgets::findOrFail($id);
-		$blog_post = blog_posts::doesnthave('widgets')->orWhere('id',$rev_widgets->post_id)->where('content_type','standard')->where('user_id',$user->id)->orderBy('title')->get();
+		$blog_post = blog_posts::doesnthave('widgets')->where('user_id',$user->id)->orWhere('id',$rev_widgets->post_id)->where('content_type','standard')->orderBy('title')->get();
         return view('rev.widgets.edit',['rev_widgets'=>$rev_widgets,'blog_post'=>$blog_post]);
     }
 
