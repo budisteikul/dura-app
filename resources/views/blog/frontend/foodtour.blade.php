@@ -347,42 +347,63 @@
 				
                 	
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Becak | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/becak.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/becak.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Alun - alun kidul | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/paddle-car.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/5.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/masangin.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/masangin.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/customer2.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/1.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Customer | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/customer3.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/4.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid rounded" alt="Small Groups | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/small-groups.jpg">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/small-groups.jpg">
+					<br />
+					<span class="caption text-muted"></span>
+					<div class="mb-4"></div>
+				</div>
+                
+                <div class="col-lg-4 col-sm-6">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/2.jpg">
+					<br />
+					<span class="caption text-muted"></span>
+					<div class="mb-4"></div>
+				</div>
+                
+                <div class="col-lg-4 col-sm-6">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/6.jpg">
+					<br />
+					<span class="caption text-muted"></span>
+					<div class="mb-4"></div>
+				</div>
+                
+                <div class="col-lg-4 col-sm-6">
+					<img class="img-fluid rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/3.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
