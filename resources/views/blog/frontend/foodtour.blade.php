@@ -332,7 +332,7 @@
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">A Snapshot of Happiness</h3>
+					<h3 class="section-heading" style="margin-top:50px;">The Snapshot of Happiness</h3>
 					<h4 class="section-subheading text-muted">Enjoy the Little Things</h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
