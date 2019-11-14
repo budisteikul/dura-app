@@ -67,8 +67,11 @@ Route::get('/tour/{id}/checkout', 'Blog\Frontend\BlogController@checkout');
 Route::get('/tour/{id}/receipt', 'Blog\Frontend\BlogController@receipt');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product');
 
-Route::post('/mails/webhook', function () {
-	return redirect('https://mail.vertikaltrip.com/mails/webhook');
+Route::get('/map', function () {
+	return redirect('https://goo.gl/maps/rn49UP7E8RiwDyCT8');
+});
+Route::get('/maps', function () {
+	return redirect('https://goo.gl/maps/rn49UP7E8RiwDyCT8');
 });
 Route::get('/order', function () {
 	return redirect('/');
