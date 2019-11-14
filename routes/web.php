@@ -68,10 +68,10 @@ Route::get('/tour/{id}/receipt', 'Blog\Frontend\BlogController@receipt');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product');
 
 Route::get('/map', function () {
-	return redirect('https://goo.gl/maps/rn49UP7E8RiwDyCT8');
+	return redirect('https://goo.gl/maps/noCZwng3FBtCVruj9');
 });
 Route::get('/maps', function () {
-	return redirect('https://goo.gl/maps/rn49UP7E8RiwDyCT8');
+	return redirect('https://goo.gl/maps/noCZwng3FBtCVruj9');
 });
 Route::get('/order', function () {
 	return redirect('/');
