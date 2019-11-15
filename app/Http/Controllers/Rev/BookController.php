@@ -103,28 +103,37 @@ class BookController extends Controller
 				})
 				->addColumn('action', function ($book) {
 					
-						if($book->status==1)
+						if($book->status==3)
 						{
 							$label = ""	;
-							$status = 2;
-							$button = "btn-primary";
+							$status = 1;
+							$button = "btn-danger";
 							$icon = "fa-toggle-off";
-							$text = " Pending";
+							$text = " Cancelled";
 							$disabled = "";
 						}
-						else
+						else if($book->status==2)
 						{
 							$label = "";
-							$status = 1;
-							$button = "btn-primary";
+							$status = 3;
+							$button = "btn-success";
 							$icon = "fa-toggle-on";
 							$text = " Confirmed";
 							$disabled = "disabled";
 						}
-						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div></div>';
+						else
+						{
+							$label = ""	;
+							$status = 2;
+							$button = "btn-warning";
+							$icon = "fa-toggle-off";
+							$text = " Pending";
+							$disabled = "";
+						}
+						return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div></div>';
 					
 				})
-				->rawColumns(['action','name','date','ticket'])
+				->rawColumns(['action','name','date','status'])
 				->toJson();
 		}
         return view('rev.book.index');
@@ -229,7 +238,7 @@ class BookController extends Controller
         if($request->input('update')!="")
 		{
 			$validator = Validator::make($request->all(), [
-          			'update' => 'in:1,2'
+          			'update' => 'in:1,2,3'
        		]);
 				
 			if ($validator->fails()) {

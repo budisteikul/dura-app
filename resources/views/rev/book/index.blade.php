@@ -28,7 +28,6 @@
 					{data: 'traveller', name: 'traveller', className: 'auto'},
 					{data: 'date', name: 'date', className: 'auto'},
 					{data: 'source', name: 'source', className: 'auto'},
-					/* {data: 'ticket', name: 'ticket', className: 'auto'}, */
 					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
         		],
 				
