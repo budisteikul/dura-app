@@ -45,6 +45,9 @@ Route::get('/page/terms-and-conditions', function () {
 });
 
 Route::get('/', 'Blog\Frontend\BlogController@index');
+Route::get('/review', function () {
+	return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
+});
 Route::post('/review', 'Rev\ReviewController@get_review');
 
 Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
