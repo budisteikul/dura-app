@@ -81,9 +81,9 @@ s0.parentNode.insertBefore(s1,s0);
            	
             	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
-                    	<b class="text-danger">JOGJA FOOD TOUR TEAM</b>
+                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
 						<br>
-                		Customer Support and Operation Office
+                		Jogja Food Tour Team
                 		<br>
 						Jalan Abiyoso VII No.190
                         <br>
