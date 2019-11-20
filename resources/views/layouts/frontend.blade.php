@@ -87,36 +87,20 @@ s0.parentNode.insertBefore(s1,s0);
                 		<br>
 						Jalan Abiyoso VII No.190
                         <br>
-                        Bantul, DIY 55751
-                        <br>
-						Indonesia
+                        Bantul, DIY 55751 Indonesia
 						<br>
 						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
 						<br>
-                        
+                        <img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  />
+                        <br>
 						
                     </p>
                 </div>
                 
                 <div class="col-sm-5 second-column">
                 	<p class="m-0 text-left text-white">
-                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
-                		<br>
-                		16192 Coastal Highway
-						<br>Lewes, DE 19958
-                        <br>
-                        United States
-						<br>
-                        <!-- PayPal Logo -->
-                        <!-- a href="https://www.paypal.com/id/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/id/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" --><img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  /><!-- /a -->
-                        <!-- PayPal Logo -->
-                        <br>
-                        <small>
-                        	<span class="text-white">
-                            	
-                            </span>
-                        </small>
+                    	
                     </p>
                 </div>
 			
