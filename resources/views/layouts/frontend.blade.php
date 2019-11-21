@@ -76,7 +76,29 @@ s0.parentNode.insertBefore(s1,s0);
 
 <footer class="py-5 bg-dark">
 <div class="container">
-    <div class="row">
+<div class="row">
+	<div class="row mx-auto">
+    				<p class="m-0 text-center text-white">
+                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
+						<br>
+                		Operation Office and Customer Support
+                        <br>
+                		Jogja Food Tour Team
+                		<br>
+						Jalan Abiyoso VII No.190
+                        <br>
+                        Bantul, DIY 55751 Indonesia
+						<br>
+						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
+						<br>
+                        <img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  />
+                        <br>
+						
+                    </p>
+    </div>
+</div>
+    <!-- div class="row">
 		<div class="row col-md-8">
            	
             	<div class="col-sm-6 first-column mb-4">
@@ -108,7 +130,7 @@ s0.parentNode.insertBefore(s1,s0);
         
        
         
-    </div>
+    </div -->
 </div>
 </footer>
 
