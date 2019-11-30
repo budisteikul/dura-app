@@ -134,7 +134,7 @@
 				<p class="text-faded">
                     Book for tonight? It's Ok! We can start the tour every day.
 		 			<br>
-                    Use promotional code <span class="badge badge-danger">NOVEMBERRAIN</span> to save <span class="badge badge-danger">10%</span> off our previously offered price!
+                    Use promotional code <span class="badge badge-danger">HAPPYNIGHT</span> to save <span class="badge badge-danger">10%</span> off our previously offered price!
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
@@ -150,8 +150,11 @@
     <div class="container">
       
         	<div class="row" style="padding-bottom:0px;">
-				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">Why Jogja Food Tour?</h3>
+				<div class="col-lg-8 text-center mx-auto">
+					<h3 class="section-heading" style="margin-top:50px;">Yogyakarta: The way to this city’s heart is through its food</h3>
+                    Perhaps better known for being a bastion of history and culture,<br>
+Yogyakarta is also the unofficial culinary capital of Indonesia
+        <br>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 			</div>
@@ -159,8 +162,9 @@
       <div class="row text-center">
         
         <div class="col-md-8 mx-auto">
+        
         <img src="/assets/foodtour/silkwinds.jpg" class="img-fluid rounded">
-        <span class="caption text-muted">Silkwinds Magazine</span>
+        <span class="caption text-muted"><a class="text-muted"  target="_blank" href="https://www.silverkris.com/yogyakarta-the-way-to-this-citys-heart-is-through-its-food/">Silkwinds Magazine</a></span>
         </div>
         
         
