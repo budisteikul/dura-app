@@ -92,7 +92,14 @@ s0.parentNode.insertBefore(s1,s0);
 						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
 						<br>
-                        <img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  />
+						<br>
+						
+						<i class="fab fa-cc-paypal fa-2x"></i>
+						<i class="fab fa-cc-mastercard fa-2x"></i>
+						<i class="fab fa-cc-visa fa-2x"></i>
+						<i class="fab fa-cc-amex fa-2x"></i>
+						<i class="fab fa-cc-discover fa-2x"></i>
+                        <!-- img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  / -->
                         <br>
 						
                     </p>
