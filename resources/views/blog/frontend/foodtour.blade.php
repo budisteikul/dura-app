@@ -12,7 +12,7 @@
             			"url": "/review",
             			"type": "POST"
         			},
-				"scrollX": true,
+				"scrollX": true,
 				"language": {
     				"paginate": {
       					"previous": "<i class='fa fa-step-backward'></i>",
