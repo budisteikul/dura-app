@@ -41,6 +41,10 @@
                 <li class="nav-item">
 					<a class="nav-link" href="/#guide">Tour Guide</a>
 				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/other">Other Tour Package</a>
+				</li>
 			</ul>
 		</div>
         
