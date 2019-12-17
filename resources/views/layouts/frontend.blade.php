@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="google-site-verification" content="AtDcFU1Yadtr8qSpQQL86nxPnXGXAgveC60d4oZq0U0" />
     <meta name="description" content="Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.">
-    <meta name="author" content="Vertikal Trip">
+    <meta name="author" content="Vertikal Trip LLC">
     <meta name="robots" content="all,index,follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

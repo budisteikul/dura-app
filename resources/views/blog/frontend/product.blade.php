@@ -43,7 +43,7 @@
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/other">Other Tour Package</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/experience">Other Tour Package</a>
 				</li>
 			</ul>
 		</div>
