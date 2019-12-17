@@ -67,7 +67,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
 
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="ratnawahyu.com")
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
 <button class="btn btn-danger text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
 <noscript></a>Book now on Eventbrite</noscript>
@@ -120,9 +120,7 @@
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/other">Other Tour Package</a>
-				</li>
+				
 			</ul>
 		</div>
     </div>
