@@ -22,6 +22,12 @@ class BlogController extends Controller
 		
 	}
 	
+	public function index_product()
+	{
+		$post = blog_posts::where('slug','experience')->first();
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->product]);
+	}
+	
 	public function product($id)
     {
 		$post = blog_posts::where('slug',$id)->first();

@@ -17,7 +17,13 @@
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
     
-    <title>Yogyakarta Night Walking and Food Tours</title>
+    <title>
+	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+		Yogyakarta Night Walking and Food Tours
+	@else
+		Amazing things to do in Yogyakarta | Book Online Now
+	@endif
+	</title>
     
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
