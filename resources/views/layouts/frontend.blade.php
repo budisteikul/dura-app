@@ -85,7 +85,8 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="row">
 	<div class="row mx-auto">
     				<p class="m-0 text-center text-white">
-                    	<b class="text-danger">VERTIKAL TRIP LLC</b>
+					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+						<b class="text-danger">VERTIKAL TRIP LLC</b>
 						<br>
                 		Operation Office and Customer Support
                         <br>
@@ -105,7 +106,23 @@ s0.parentNode.insertBefore(s1,s0);
 						<i class="fab fa-cc-visa fa-2x"></i>
 						<i class="fab fa-cc-amex fa-2x"></i>
 						<i class="fab fa-cc-discover fa-2x"></i>
-                        <!-- img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;"  / -->
+					@else
+						<b class="text-danger">VERTIKAL TRIP LLC</b>
+						
+                		<br>
+						Jalan Abiyoso VII No.190
+                        <br>
+                        Bantul, DIY 55751 Indonesia
+						<br>
+						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
+						
+						<br>
+						
+						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
+					@endif
+                    	
+                        
                         <br>
 						
                     </p>
