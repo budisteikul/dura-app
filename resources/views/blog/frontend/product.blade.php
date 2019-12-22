@@ -21,30 +21,6 @@
             	<li class="nav-item">
 					<a class="nav-link" href="/">Home</a>
 				</li>
-                
-				<li class="nav-item">
-					<a class="nav-link" href="/#services">Why Jogja Food Tour?</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link" href="/#about">The Tour</a>
-				</li>
-                
-				<li class="nav-item">
-					<a class="nav-link" href="/#gallery">Snapshot</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link" href="/#review">Reviews</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link" href="/#guide">Tour Guide</a>
-				</li>
-				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/experience">Other Tour Package</a>
-				</li>
 			</ul>
 		</div>
         
