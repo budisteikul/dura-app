@@ -271,7 +271,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             	<div>
 				<h2 class="section-heading">What to bring</h2>
 				- Please be hungry, because a lot of food is to be tried out during this tour.<br />
-				- Wear comfortable and relax clothing.<br />
+				- Wear comfortable shoes and relax clothing.<br />
 				- And don't forget to bring your camera to take some nice pictures.<br />
                 </div>
 			</p>
