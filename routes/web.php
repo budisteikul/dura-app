@@ -37,6 +37,11 @@ Route::domain('www.vertikaltrip.com')->group(function () {
     
 });
 
+Route::domain('localhost')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@index_product');
+    
+});
+
 
 Route::get('/blank', function () {
 	return view('blog.frontend.blank');
