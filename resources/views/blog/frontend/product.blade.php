@@ -19,7 +19,7 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link" href="/">Home</a>
+					<a class="nav-link" target="_blank" href="https://www.jogjafoodtour.com">Yogyakarta Night Walking and Food Tours</a>
 				</li>
 			</ul>
 		</div>
