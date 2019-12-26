@@ -13,7 +13,7 @@
 		<a href="/"><img class="rounded" style="margin-top:5px; margin-bottom:5px;" src="/logo.png" alt="How PayPal Works" height="40" /></a>
         
         
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
@@ -22,7 +22,7 @@
 					<a class="nav-link" target="_blank" href="https://www.jogjafoodtour.com">Yogyakarta Night Walking and Food Tours</a>
 				</li>
 			</ul>
-		</div>
+		</div -->
         
         
 	</div>
