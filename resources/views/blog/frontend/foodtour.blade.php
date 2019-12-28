@@ -86,7 +86,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white" href="/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
+<a class="btn btn-danger text-white" href="/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book Food Tour Now</strong></span></a>
 @endif
 
 
@@ -140,6 +140,8 @@
                     Book for tonight? It's Ok! We can start the tour every day.
 		 			<br>
                     Use promotional code <span class="badge badge-danger">HAPPYNIGHT</span> to save <span class="badge badge-danger">10%</span> off our previously offered price!
+					<br>
+					Valid for Yogyakarta Night Walking and Food Tours
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
