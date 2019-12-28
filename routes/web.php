@@ -32,10 +32,10 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
-Route::domain('www.vertikaltrip.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index_product');
+//Route::domain('www.vertikaltrip.com')->group(function () {
+	//Route::get('/', 'Blog\Frontend\BlogController@index_product');
     
-});
+//});
 
 Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index_product');

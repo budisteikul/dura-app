@@ -67,7 +67,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
 
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="ratnawahyu.com")
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
 <button class="btn btn-danger text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
 <noscript></a>Book now on Eventbrite</noscript>
@@ -120,6 +120,9 @@
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#another">Another Tour</a>
+				</li>
 				
 			</ul>
 		</div>
@@ -521,6 +524,53 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 	</div>
 </div>
 </section>
+
+
+
+<section id="another" style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+    
+    	<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">Another Tour</h3>
+					<h4 class="section-subheading text-muted">Let's Check it Out Another Our Tour</h4>
+                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+					
+
+                    
+				</div>
+			</div>
+		</div>
+    
+    <div class="col-lg-12 col-md-10 mx-auto">
+   
+   
+   <div id="bokun-w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db">Loading...</div><script type="text/javascript">
+var w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db;
+(function(d, t) {
+  var host = 'widgets.bokun.io';
+  var frameUrl = 'https://' + host + '/widgets/98904?bookingChannelUUID=0b17d17f-9551-42e2-b39b-1c076ea5ccf6&amp;lang=en&amp;ccy=USD&amp;hash=w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+    try {
+      w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db = new BokunWidgetEmbedder(); w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db.initialize(options); w98904_c65931f1_fa73_467b_8ec7_0c58e5bb76db.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
+   
+    </div>
+    </div>
+</div>
+<div style="height:50px;"></div>
+</section>
+
+
 
 </div>
 

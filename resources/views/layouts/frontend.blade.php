@@ -100,12 +100,13 @@ s0.parentNode.insertBefore(s1,s0);
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
 						<br>
 						<br>
-						
-						<i class="fab fa-cc-paypal fa-2x"></i>
+						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
+					
+						<!-- i class="fab fa-cc-paypal fa-2x"></i>
 						<i class="fab fa-cc-mastercard fa-2x"></i>
 						<i class="fab fa-cc-visa fa-2x"></i>
 						<i class="fab fa-cc-amex fa-2x"></i>
-						<i class="fab fa-cc-discover fa-2x"></i>
+						<i class="fab fa-cc-discover fa-2x"></i -->
 					@else
 						<b class="text-danger">VERTIKAL TRIP LLC</b>
 						

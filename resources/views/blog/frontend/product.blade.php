@@ -13,16 +13,36 @@
 		<a href="/"><img class="rounded" style="margin-top:5px; margin-bottom:5px;" src="/logo.png" alt="How PayPal Works" height="40" /></a>
         
         
-        <!-- button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://www.jogjafoodtour.com">Yogyakarta Night Walking and Food Tours</a>
+					<a class="nav-link js-scroll-trigger" href="/#services">Why Jogja Food Tour?</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/#about">The Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/#gallery">Snapshot</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/#guide">Tour Guide</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/#another">Another Tour</a>
 				</li>
 			</ul>
-		</div -->
+		</div>
         
         
 	</div>
