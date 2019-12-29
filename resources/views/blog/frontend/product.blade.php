@@ -26,7 +26,7 @@
 		<div class="stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/">LIST PRODUCT</a>
+					<a class="nav-link js-scroll-trigger" href="/"><i class="fas fa-list"></i>&nbsp;&nbsp;LIST TOUR</a>
 				</li>
 			</ul>
 		</div>
