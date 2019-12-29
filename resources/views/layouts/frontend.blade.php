@@ -94,7 +94,7 @@ s0.parentNode.insertBefore(s1,s0);
                         Bantul, DIY 55751 Indonesia
 						<br>
 						<br>
-						<b>INFO AND RESERVATION</b>
+						INFO AND RESERVATION
 						<br>
 						<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 						<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
@@ -104,7 +104,7 @@ s0.parentNode.insertBefore(s1,s0);
                 
                 <div class="col-sm-5 second-column">
                 	<p class="m-0 text-left text-white">
-                    	<b>PAYMENT CHANNEL</b>
+                    	PAYMENT CHANNEL
 						
 						<br>
 						<img src="/assets/foodtour/bdg_secured_by_pp_2line.png" style="margin-top:5px;" alt="Secured by Paypal" height="30">
