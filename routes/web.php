@@ -34,7 +34,9 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 
 Route::domain('www.vertikaltrip.com')->group(function () {
 	//Route::get('/', 'Blog\Frontend\BlogController@index_product');
-	return redirect('https://foodtours.website.bokun.io');
+	Route::get('/', function () {
+		return redirect('https://foodtours.website.bokun.io');
+	});
 });
 
 Route::domain('localhost')->group(function () {
