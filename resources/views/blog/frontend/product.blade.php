@@ -9,17 +9,24 @@
 <!-- ################################################################### -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
+	
+	
+	
 	<div class="container">
-		<a href="/"><img class="rounded" style="margin-top:5px; margin-bottom:5px;" src="/logo.png" alt="How PayPal Works" height="40" /></a>
+		<ul class="navbar-nav text-uppercase">
+            	<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="https://www.jogjafoodtour.com"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back to Jogja Food Tour</a>
+				</li>
+		</ul>
+		
         
-        
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
+		</button -->
+		<div class="stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="https://www.jogjafoodtour.com">Back to Jogja Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/">Home</a>
 				</li>
 			</ul>
 		</div>
