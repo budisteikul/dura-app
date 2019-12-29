@@ -76,7 +76,9 @@ Route::get('/book/stripe', 'Blog\Frontend\BlogController@timeselector_stripe');
 Route::get('/book/stripe/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
 Route::get('/book/stripe/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
 
-
+Route::get('/tour/{id}/search', function () {
+	return view('blog.frontend.search');
+});
 Route::get('/tour/{id}/time_selector', 'Blog\Frontend\BlogController@time_selector');
 Route::get('/tour/{id}/checkout', 'Blog\Frontend\BlogController@checkout');
 Route::get('/tour/{id}/receipt', 'Blog\Frontend\BlogController@receipt');

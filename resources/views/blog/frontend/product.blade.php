@@ -19,27 +19,7 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#services">Why Jogja Food Tour?</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#about">The Tour</a>
-				</li>
-                
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#gallery">Snapshot</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#guide">Tour Guide</a>
-				</li>
-				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" target="_blank" href="https://www.vertikaltrip.com">Another Tour</a>
+					<a class="nav-link js-scroll-trigger" href="https://www.jogjafoodtour.com">Back to Jogja Food Tour</a>
 				</li>
 			</ul>
 		</div>
