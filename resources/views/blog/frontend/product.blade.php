@@ -16,7 +16,7 @@
 		<ul class="navbar-nav text-uppercase">
             	<li class="nav-item">
 					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-						<span class="nav-link js-scroll-trigger" ><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;YOGYAKARTA NIGHT WALKING AND FOOD TOURS</span>
+						<a class="nav-link js-scroll-trigger"  href="/"><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;YOGYAKARTA NIGHT WALKING AND FOOD TOURS</a>
 					@else
 						<a class="nav-link js-scroll-trigger" href="/"><i class="fas fa-home"></i>&nbsp;&nbsp;VERTIKAL TRIP</a>
 					@endif
