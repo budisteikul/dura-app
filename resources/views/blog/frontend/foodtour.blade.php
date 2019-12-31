@@ -120,9 +120,7 @@
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="https://www.vertikaltrip.com">Another Tour</a>
-				</li>
+				
 				
 			</ul>
 		</div>

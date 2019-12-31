@@ -15,7 +15,12 @@
 	<div class="container">
 		<ul class="navbar-nav text-uppercase">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="https://www.jogjafoodtour.com"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back to Jogja Food Tour</a>
+					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+						<span class="nav-link js-scroll-trigger" ><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;YOGYAKARTA NIGHT WALKING AND FOOD TOURS</span>
+					@else
+						<a class="nav-link js-scroll-trigger" href="/"><i class="fas fa-home"></i>&nbsp;&nbsp;VERTIKAL TRIP</a>
+					@endif
+					
 				</li>
 		</ul>
 		
@@ -23,13 +28,13 @@
         <!-- button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button -->
-		<div class="stroke" id="navbarResponsive">
+		<!-- div class="stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="https://www.vertikaltrip.com/"><i class="fas fa-list"></i>&nbsp;&nbsp;LIST TOUR</a>
 				</li>
 			</ul>
-		</div>
+		</div -->
         
         
 	</div>
