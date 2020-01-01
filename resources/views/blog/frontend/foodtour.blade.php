@@ -138,8 +138,7 @@
                     Book for tonight? It's Ok! We can start the tour every day.
 		 			<br>
                     Use promotional code <span class="badge badge-danger">HAPPYNIGHT</span> to save <span class="badge badge-danger">10%</span> off our previously offered price!
-					<br>
-					Valid for Yogyakarta Night Walking and Food Tours
+					
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
