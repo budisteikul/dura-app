@@ -5,21 +5,24 @@
 
 
 @endpush
-    
+
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="budi.my.id")
+						
+					@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+						
+					@else   
 <!-- ################################################################### -->
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5">
 	
 	
 	
 	<div class="container">
 		<ul class="navbar-nav text-uppercase">
             	<li class="nav-item">
-					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-						<a class="nav-link js-scroll-trigger"  href="/"><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;YOGYAKARTA NIGHT WALKING AND FOOD TOURS</a>
-					@else
+					
 						<a class="nav-link js-scroll-trigger" href="/"><i class="fas fa-home"></i>&nbsp;&nbsp;VERTIKAL TRIP</a>
-					@endif
+					
 					
 				</li>
 		</ul>
@@ -38,8 +41,9 @@
         
         
 	</div>
-</nav>   
-<div style="height:25px;"></div>
+</nav>
+@endif 
+<div style="height:15px;"></div>
 
 
 <section id="booking" style="background-color:#ffffff">
