@@ -28,16 +28,32 @@
 		</ul>
 		
         
-        <!-- button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button -->
-		<!-- div class="stroke" id="navbarResponsive">
+		</button>
+		<div class="stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="https://www.vertikaltrip.com/"><i class="fas fa-list"></i>&nbsp;&nbsp;LIST TOUR</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/yogyakarta-food-tour/">Yogyakarta Food Tour</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/bordeaux-food-tour/">Bordeaux Food Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/lyon-food-tour/">Lyon Food Tour</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/nice-food-tour/">Nice Food Tour</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/paris-food-tour/">Paris Food Tour</a>
 				</li>
 			</ul>
-		</div -->
+		</div>
         
         
 	</div>
