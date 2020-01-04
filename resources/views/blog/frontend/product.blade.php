@@ -18,14 +18,8 @@
 	
 	
 	<div class="container">
-		<ul class="navbar-nav text-uppercase">
-            	<li class="nav-item">
-					
-						<a class="nav-link js-scroll-trigger" href="/"><i class="fas fa-home"></i>&nbsp;&nbsp;VERTIKAL TRIP</a>
-					
-					
-				</li>
-		</ul>
+		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"></a>
+
 		
         
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
