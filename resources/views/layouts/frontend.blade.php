@@ -94,11 +94,8 @@ s0.parentNode.insertBefore(s1,s0);
             	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
                     	<img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50">
-						<br>
-						Jalan Abiyoso VII No.190
-                        <br>
-                        Bantul, DIY 55751 Indonesia
-						<br>
+					
+						
 						<br>
 						INFO AND RESERVATION
 						<br>
