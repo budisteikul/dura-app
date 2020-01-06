@@ -37,23 +37,15 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/yogyakarta-food-tour/">Yogyakarta Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia Food Tour</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/bordeaux-food-tour/">Bordeaux Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan Food Tour</a>
 				</li>
                 
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/lyon-food-tour/">Lyon Food Tour</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/nice-food-tour/">Nice Food Tour</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/paris-food-tour/">Paris Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France Food Tour</a>
 				</li>
 				
 				<li class="nav-item">
