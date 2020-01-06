@@ -27,7 +27,7 @@
 	
 	
 	<div class="container">
-		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"></a>
+		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 
 		
         
