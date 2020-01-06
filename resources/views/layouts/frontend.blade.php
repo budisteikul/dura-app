@@ -9,7 +9,7 @@
 	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 	Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 	@else
-		Vertikal Trip connects travelers with local food tour operators from all around the world
+		Vertikal Trip connects travelers with local tour operators from all around the world
 	@endif
 	">
     <meta name="author" content="Vertikal Trip LLC">
@@ -93,10 +93,10 @@ s0.parentNode.insertBefore(s1,s0);
            	
             	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
-                    	<img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50">
+                    	<!-- img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50" -->
 					
 						
-						<br>
+						
 						INFO AND RESERVATION
 						<br>
 						We're happy to help
@@ -111,8 +111,6 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-white">
                     	PAYMENT CHANNEL
 						
-						<br>
-						<img src="/assets/foodtour/bdg_secured_by_pp_2line.png" style="margin-top:5px;" alt="Secured by Paypal" height="30">
 						
 						<br>
 						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">

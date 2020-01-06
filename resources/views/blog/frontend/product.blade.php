@@ -7,10 +7,19 @@
 @endpush
 
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="budi.my.id")
-						
-					@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-						
-					@else   
+
+					
+@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
+	
+	
+	
+	<div class="container">
+		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50" style="margin-top:2px;margin-bottom:2px;"></a>
+
+	</div>
+</nav>							
+@else   
 <!-- ################################################################### -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
