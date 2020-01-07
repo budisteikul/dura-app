@@ -96,8 +96,10 @@ s0.parentNode.insertBefore(s1,s0);
            	
             	<div class="col-sm-6 first-column mb-4">
                 	<p class="m-0 text-left text-white">
-                    	<!-- img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50" -->
-					
+						@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+                    	<img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50">
+						<br>
+						@endif
 						
 						
 						INFO AND RESERVATION
@@ -119,7 +121,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
 					
                     </p>
-					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour")
+					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 					<p class="m-0 text-left text-white">
 					<small> <a class="text-danger" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
 					</p>
