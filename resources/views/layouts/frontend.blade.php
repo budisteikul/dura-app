@@ -120,6 +120,9 @@ s0.parentNode.insertBefore(s1,s0);
 					
                     </p>
 					<p class="m-0 text-left text-white">
+					<small> <a class="text-danger" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
+					</p>
+					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC </small>
 					</p>
                 </div>
