@@ -119,9 +119,11 @@ s0.parentNode.insertBefore(s1,s0);
 						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
 					
                     </p>
+					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour")
 					<p class="m-0 text-left text-white">
 					<small> <a class="text-danger" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
 					</p>
+					@endif
 					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC </small>
 					</p>
