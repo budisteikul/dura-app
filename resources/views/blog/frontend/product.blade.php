@@ -49,6 +49,10 @@
 				</li>
 				
 				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico Food Tour</a>
+				</li>
+				
+				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-and-tobago-food-tour/">Trinidad and Tobago Food Tour</a>
 				</li>
 				
