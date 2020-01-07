@@ -123,7 +123,7 @@ s0.parentNode.insertBefore(s1,s0);
                     </p>
 					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 					<p class="m-0 text-left text-white">
-					<small> <a class="text-danger" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
+					<small> <a class="text-white" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
 					</p>
 					@endif
 					<p class="m-0 text-left text-white">
