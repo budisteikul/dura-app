@@ -9,7 +9,7 @@
 	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 	Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 	@else
-		Vertikal Trip connects travelers with local tour operators from all around the world
+		Connecting you with food tour operators from all around the world.
 	@endif
 	">
     <meta name="author" content="Vertikal Trip LLC">
