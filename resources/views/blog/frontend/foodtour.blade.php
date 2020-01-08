@@ -89,15 +89,11 @@
 <a class="btn btn-danger text-white" href="https://www.vertikaltrip.com/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
 @endif
 
-
-
-
-
-
-       
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
@@ -119,11 +115,37 @@
                 <li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
-				
-				
-				
 			</ul>
 		</div>
+		@else
+		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
+			<ul class="navbar-nav text-uppercase ml-auto">
+            	<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia Food Tour</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan Food Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France Food Tour</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico Food Tour</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad Food Tour</a>
+				</li>
+				
+			</ul>
+		</div>	
+		@endif
+		
+		
+		
     </div>
   </nav>
 
