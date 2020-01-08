@@ -37,7 +37,7 @@
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-and-tobago-food-tour/">Trinidad and Tobago Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad Food Tour</a>
 				</li>
 				
 			</ul>
