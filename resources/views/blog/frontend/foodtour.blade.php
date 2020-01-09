@@ -86,7 +86,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white" href="https://www.vertikaltrip.com/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
+<a class="btn btn-danger text-white" href="/tour/yogyakarta-night-walking-and-food-tours/time_selector"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
 @endif
 
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
