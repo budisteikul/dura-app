@@ -21,23 +21,23 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan</a>
 				</li>
                 
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad Food Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad</a>
 				</li>
 				
 			</ul>
