@@ -40,6 +40,14 @@
 					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad</a>
 				</li>
 				
+
+
+	<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/india-food-tour/">India</a>
+				</li>
+
+
+
 			</ul>
 		</div>
         
