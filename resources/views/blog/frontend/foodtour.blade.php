@@ -532,9 +532,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Food Tour From Our Partner</h3>
-					<h4 class="section-subheading text-muted">
-						Book directly to their reservation system.
-					</h4>
+					<h4 class="section-subheading text-muted">Book directly to their reservation system</h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 			</div>
