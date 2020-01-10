@@ -26,27 +26,27 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#services">Why Jogja Food Tour?</a>
+					<a class="nav-link js-scroll-trigger" href="/#services">Why Jogja Food Tour?</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/#about">The Tour</a>
 				</li>
                 
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
+					<a class="nav-link js-scroll-trigger" href="/#gallery">Snapshot</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
+					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
+					<a class="nav-link js-scroll-trigger" href="/#guide">Tour Guide</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#partner">Another Tour</a>
+					<a class="nav-link js-scroll-trigger" href="/#partner">Another Tour</a>
 				</li>
 				
 			</ul>
