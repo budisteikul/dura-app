@@ -17,6 +17,47 @@
 		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 
 		
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
+			<ul class="navbar-nav text-uppercase ml-auto">
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#services">Why Jogja Food Tour?</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#about">The Tour</a>
+				</li>
+                
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#gallery">Snapshot</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
+				</li>
+                
+                <li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#partner">Another Tour</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+
+@else
+
+
+
         
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -52,7 +93,8 @@
 			</ul>
 		</div>
         
-        
+        @endif
+
 	</div>
 </nav>
 
