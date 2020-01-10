@@ -543,17 +543,17 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
 		
-		<div id="bokun-w100443_def32085_ae28_4615_ae03_9956d504432f">Loading...</div><script type="text/javascript">
-var w100443_def32085_ae28_4615_ae03_9956d504432f;
+<div id="bokun-w100443_a1f8b052_b653_4c05_ad92_e475f524c569">Loading...</div><script type="text/javascript">
+var w100443_a1f8b052_b653_4c05_ad92_e475f524c569;
 (function(d, t) {
   var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/100443?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100443_def32085_ae28_4615_ae03_9956d504432f';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w100443_def32085_ae28_4615_ae03_9956d504432f', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  var frameUrl = 'https://' + host + '/widgets/100443?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100443_a1f8b052_b653_4c05_ad92_e475f524c569';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w100443_a1f8b052_b653_4c05_ad92_e475f524c569', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
   s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
     try {
-      w100443_def32085_ae28_4615_ae03_9956d504432f = new BokunWidgetEmbedder(); w100443_def32085_ae28_4615_ae03_9956d504432f.initialize(options); w100443_def32085_ae28_4615_ae03_9956d504432f.display();
+      w100443_a1f8b052_b653_4c05_ad92_e475f524c569 = new BokunWidgetEmbedder(); w100443_a1f8b052_b653_4c05_ad92_e475f524c569.initialize(options); w100443_a1f8b052_b653_4c05_ad92_e475f524c569.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
