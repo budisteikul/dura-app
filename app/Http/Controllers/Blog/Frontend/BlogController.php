@@ -46,47 +46,16 @@ class BlogController extends Controller
     {
 		$activityId = $request->input('activityId');
 		
-		switch($activityId)
-		{
-			case "284167":
-				$product = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+		$first = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
      
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/284167"></div>
+    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/';
+	
+		$last = '"></div>
     <noscript>Please enable javascript in your browser to book</noscript>
 ';
-			break;
-			case "76562":
-				$product = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/76562"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-			break;
-			case "173745":
-				$product = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/173745"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-			break;
-			case "119664":
-				$product = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/119664"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-			break;
-			case "27476":
-				$product = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/27476"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-			break;
-			default:
-				$product = "";
-		}
-        return view('blog.frontend.product')->with(['post'=>$product]);
+		
+		
+        return view('blog.frontend.product')->with(['post'=>$first.$activityId.$last]);
     }
 	
 	public function checkout($id)
