@@ -93,7 +93,6 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
@@ -115,34 +114,14 @@
                 <li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#partner">Another Tour</a>
+				</li>
+				
 			</ul>
 		</div>
-		@else
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
-			<ul class="navbar-nav text-uppercase ml-auto">
-            	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia Food Tour</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan Food Tour</a>
-				</li>
-                
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France Food Tour</a>
-				</li>
-				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico Food Tour</a>
-				</li>
-				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad Food Tour</a>
-				</li>
-				
-			</ul>
-		</div>	
-		@endif
+		
 		
 		
 		
@@ -543,6 +522,61 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 	</div>
 </div>
 </section>
+
+
+
+<section id="partner" style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row" style="padding-bottom:0px;">
+				<div class="col-lg-12 text-center">
+					<h3 class="section-heading" style="margin-top:50px;">Food Tour From Our Partner</h3>
+					<!-- h4 class="section-subheading text-muted">Enjoy the Little Things</h4 -->
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 mx-auto">
+		
+		<div id="bokun-w100443_def32085_ae28_4615_ae03_9956d504432f">Loading...</div><script type="text/javascript">
+var w100443_def32085_ae28_4615_ae03_9956d504432f;
+(function(d, t) {
+  var host = 'widgets.bokun.io';
+  var frameUrl = 'https://' + host + '/widgets/100443?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100443_def32085_ae28_4615_ae03_9956d504432f';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w100443_def32085_ae28_4615_ae03_9956d504432f', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+    try {
+      w100443_def32085_ae28_4615_ae03_9956d504432f = new BokunWidgetEmbedder(); w100443_def32085_ae28_4615_ae03_9956d504432f.initialize(options); w100443_def32085_ae28_4615_ae03_9956d504432f.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
+		
+		
+		
+		</div>
+	</div>
+</div>
+</section>
+
+                           					
+
+
+
+
+
+
+
+
+
 
 
 
