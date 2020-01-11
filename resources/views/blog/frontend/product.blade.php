@@ -65,28 +65,28 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
             	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/indonesia-food-tour/">Indonesia</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/indonesia/"><i class="fa fa-map-marker-alt"></i>  Indonesia</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/japan-food-tour/">Japan</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/japan/"><i class="fa fa-map-marker-alt"></i> Japan</a>
 				</li>
                 
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/france-food-tour/">France</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/france/"><i class="fa fa-map-marker-alt"></i> France</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/mexico-food-tour/">Mexico</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/mexico/"><i class="fa fa-map-marker-alt"></i> Mexico</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad</a>
+					<a class="nav-link js-scroll-trigger" href="/tour/trinidad/"><i class="fa fa-map-marker-alt"></i> Trinidad</a>
 				</li>
 
 
-	<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tour/india-food-tour/">India</a>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="/tour/india/"><i class="fa fa-map-marker-alt"></i> India</a>
 				</li>
 
 				
