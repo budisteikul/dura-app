@@ -115,9 +115,7 @@
 					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
 				
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#partner">Another Tour</a>
-				</li>
+				
 				
 			</ul>
 		</div>
@@ -522,66 +520,6 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 	</div>
 </div>
 </section>
-
-
-
-<section id="partner" style="background-color:#ffffff">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12 col-md-10 mx-auto">
-			<div class="row" style="padding-bottom:0px;">
-				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">Food Tour From Our Partner</h3>
-					<p class="text-muted">Book with real time availability and best price <br> Ninja Food Tours - Original Food Tours Paris - Cancun Food Tours - India Food Tours - Trinidad Food Tours</p>
-					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12 col-md-12 mx-auto">
-		
-<div id="bokun-w100443_a1f8b052_b653_4c05_ad92_e475f524c569">Loading...</div><script type="text/javascript">
-var w100443_a1f8b052_b653_4c05_ad92_e475f524c569;
-(function(d, t) {
-  var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/100443?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100443_a1f8b052_b653_4c05_ad92_e475f524c569';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w100443_a1f8b052_b653_4c05_ad92_e475f524c569', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
-  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-    try {
-      w100443_a1f8b052_b653_4c05_ad92_e475f524c569 = new BokunWidgetEmbedder(); w100443_a1f8b052_b653_4c05_ad92_e475f524c569.initialize(options); w100443_a1f8b052_b653_4c05_ad92_e475f524c569.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');
-</script>
-
-		
-		
-		
-		</div>
-	</div>
-</div>
-</section>
-
-                           					
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

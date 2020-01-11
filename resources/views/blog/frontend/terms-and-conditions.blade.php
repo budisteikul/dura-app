@@ -39,10 +39,8 @@
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="/tour/trinidad-food-tour/">Trinidad</a>
 				</li>
-				
 
-
-	<li class="nav-item">
+				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="/tour/india-food-tour/">India</a>
 				</li>
 
@@ -77,7 +75,7 @@
 					
                     <div class="row col-md-8  mx-auto text-left">
 					<div class="textwidget">
-                           <p>&nbsp;</p>
+                    <p>&nbsp;</p>
 <p>These terms and conditions contain legal obligations and we encourage you to read through them carefully. Unless otherwise stated, any purchases made through VertikalTrip.com are subject to these terms and conditions.</p>
 <p>&nbsp;</p>
 <p><strong>1. Our contract</strong></p>
