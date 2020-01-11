@@ -528,11 +528,11 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 <section id="partner" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="col-lg-12 col-md-10 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">Food Tour From Our Partner</h3>
-					<!-- h4 class="section-subheading text-muted">Book directly to their reservation system</h4 -->
+					<p class="text-muted">Book with real time availability and best price <br> Ninja Food Tours - Original Food Tours Paris - Cancun Food Tours - India Food Tours - Trinidad Food Tours</p>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 			</div>
