@@ -37,13 +37,16 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 });
 
 Route::domain('www.budi.my.id')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index_product');
+	Route::get('/', 'Blog\Frontend\BlogController@product_tour');
 });
 
 Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index_product');
     
 });
+
+
+
 
 
 Route::get('/blank', function () {
@@ -80,6 +83,9 @@ Route::get('/book/stripe/checkout/receipt', 'Blog\Frontend\BlogController@receip
 Route::get('/tour/{id}/search', function () {
 	return view('blog.frontend.search');
 });
+
+
+
 Route::get('/tour/{id}/time_selector', 'Blog\Frontend\BlogController@time_selector');
 Route::get('/tour/{id}/checkout', 'Blog\Frontend\BlogController@checkout');
 Route::get('/tour/{id}/receipt', 'Blog\Frontend\BlogController@receipt');
@@ -149,3 +155,10 @@ Route::get('/mails/{id}/{view}', 'Mail\MailController@show')->name('mails.show')
 
 
 Route::post('/sms/webhook', 'SMS\SMSController@index');
+
+
+
+
+// ================================================================================
+Route::get('/tour', 'Blog\Frontend\BlogController@product_tour');
+// ================================================================================

@@ -58,6 +58,43 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['post'=>$first.$activityId.$last]);
     }
 	
+
+    public function product_tour(Request $request)
+    {
+        $activityId = $request->input('activityId');
+        $first = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/';
+        $last = '"></div><noscript>Please enable javascript in your browser to book</noscript>';
+       
+        if(empty($activityId))
+        {
+            $render = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script><div id="bokun-w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99">Loading...</div><script type="text/javascript">
+var w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99;
+(function(d, t) {
+  var host = \'widgets.bokun.io\';
+  var frameUrl = \'https://\' + host + \'/widgets/100659?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99 = new BokunWidgetEmbedder(); w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99.initialize(options); w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+        }
+        else
+        {
+            $render = $first.$activityId.$last;
+        }
+
+
+        
+        return view('blog.frontend.product')->with(['post'=>$render]);
+    }
+
 	public function checkout($id)
     {
 		$post = blog_posts::where('slug',$id)->first();

@@ -20,8 +20,16 @@ class WidgetsDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->addColumn('post', function ($resource) {
+
 					$post = blog_posts::find($resource->post_id);
-					return $post->title;
+                    if(!isset($post)){
+                        $title = "";
+                    }
+                    else
+                    {
+                        $title = $post->title;
+                    }
+					return $title;
 				})
 			->editColumn('product', function ($resource) {
 					return Str::limit($resource->product,10);
