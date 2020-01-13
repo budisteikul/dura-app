@@ -22,16 +22,11 @@ class BlogController extends Controller
 		
 	}
 	
-	public function index_product()
-	{
-		$post = blog_posts::where('slug','experience')->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->product]);
-	}
 	
 	public function product($id)
     {
 		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->product]);
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->product_id]);
     }
 	
 
@@ -72,7 +67,9 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
 
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
-            $render = $first.$activityId.$last.$first2.$widget->calendar_id.$last2;
+            if(isset($widget->calendar_id)){
+                $render = $first.$activityId.$last.$first2.$widget->calendar_id.$last2;
+            }
         }
         
         return view('blog.frontend.product')->with(['post'=>$render]);
