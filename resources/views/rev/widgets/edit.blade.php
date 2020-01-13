@@ -16,8 +16,8 @@ function UPDATE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"post_id": $('#post_id').val(),
-			"product": $('#product').val(),
-			"time_selector": $('#time_selector').val(),
+			"product_id": $('#product_id').val(),
+			"calendar_id": $('#calendar_id').val(),
 			"checkout": $('#checkout').val(),
 			"receipt": $('#receipt').val()
         },
@@ -62,7 +62,7 @@ function UPDATE()
 <div id="result"></div>
 
 <div class="form-group">
-	<label for="post_id">Product :</label>
+	<label for="post_id">product_id :</label>
     <select class="form-control" name="post_id" id="post_id">
        @foreach($blog_post as $post)
         <option value="{{ $post->id }}" {{ ($post->id==$rev_widgets->post_id) ? 'selected' : '' }}>{{ $post->title }}</option>
@@ -71,24 +71,15 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="product">product :</label>
-    <textarea class="form-control tinymce" id="product" name="product" rows="8" placeholder="product">{{ $rev_widgets->product }}</textarea>
+	<label for="product_id">product_id :</label>
+    <textarea class="form-control tinymce" id="product_id" name="product_id" rows="8" placeholder="product_id">{{ $rev_widgets->product_id }}</textarea>
 </div>
 
 <div class="form-group">
-	<label for="time_selector">time_selector :</label>
-    <textarea class="form-control tinymce" id="time_selector" name="time_selector" rows="8" placeholder="time_selector">{{ $rev_widgets->time_selector }}</textarea>
+	<label for="calendar_id">calendar_id :</label>
+    <textarea class="form-control tinymce" id="calendar_id" name="calendar_id" rows="8" placeholder="calendar_id">{{ $rev_widgets->calendar_id }}</textarea>
 </div>
 
-<div class="form-group">
-	<label for="checkout">checkout :</label>
-    <textarea class="form-control tinymce" id="checkout" name="checkout" rows="8" placeholder="checkout">{{ $rev_widgets->checkout }}</textarea>
-</div>
-
-<div class="form-group">
-	<label for="receipt">receipt :</label>
-    <textarea class="form-control tinymce" id="receipt" name="receipt" rows="8" placeholder="receipt">{{ $rev_widgets->receipt }}</textarea>
-</div>
      
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

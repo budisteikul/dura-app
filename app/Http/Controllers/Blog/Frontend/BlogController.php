@@ -79,17 +79,17 @@ class BlogController extends Controller
        
         if(empty($activityId))
         {
-            $render = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script><div id="bokun-w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99">Loading...</div><script type="text/javascript">
-var w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99;
+            $render = '<div id="bokun-w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d">Loading...</div><script type="text/javascript">
+var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/100659?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  var frameUrl = \'https://\' + host + \'/widgets/98904?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
     try {
-      w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99 = new BokunWidgetEmbedder(); w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99.initialize(options); w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99.display();
+      w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d = new BokunWidgetEmbedder(); w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d.initialize(options); w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);

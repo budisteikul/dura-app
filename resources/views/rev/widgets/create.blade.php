@@ -17,10 +17,8 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"post_id": $('#post_id').val(),
-			"product": $('#product').val(),
-			"time_selector": $('#time_selector').val(),
-			"checkout": $('#checkout').val(),
-			"receipt": $('#receipt').val()
+			"product_id": $('#product_id').val(),
+			"calendar_id": $('#calendar_id').val(),
         },
 		type: 'POST',
 		url: '{{ route('widgets.store') }}'
@@ -66,7 +64,7 @@ function STORE()
 
 
 <div class="form-group">
-	<label for="post_id">Product :</label>
+	<label for="post_id">product_id :</label>
     <select class="form-control" id="post_id" name="post_id">
        @foreach($blog_post as $post)
        	<option value="{{ $post->id }}">{{ $post->title }}</option>
@@ -75,25 +73,14 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="product">product :</label>
-    <textarea class="form-control tinymce" id="product" name="product" rows="8" placeholder="product"></textarea>
+	<label for="product_id">product_id :</label>
+    <textarea class="form-control tinymce" id="product_id" name="product_id" rows="8" placeholder="product_id"></textarea>
 </div>
 
 <div class="form-group">
-	<label for="time_selector">time_selector :</label>
-    <textarea class="form-control tinymce" id="time_selector" name="time_selector" rows="8" placeholder="time_selector"></textarea>
+	<label for="calendar_id">calendar_id :</label>
+    <textarea class="form-control tinymce" id="calendar_id" name="calendar_id" rows="8" placeholder="calendar_id"></textarea>
 </div>
-
-<div class="form-group">
-	<label for="checkout">checkout :</label>
-    <textarea class="form-control tinymce" id="checkout" name="checkout" rows="8" placeholder="checkout"></textarea>
-</div>
-
-<div class="form-group">
-	<label for="receipt">receipt :</label>
-    <textarea class="form-control tinymce" id="receipt" name="receipt" rows="8" placeholder="receipt"></textarea>
-</div>
-
 
        
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
