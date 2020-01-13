@@ -54,8 +54,15 @@ class BlogController extends Controller
     <noscript>Please enable javascript in your browser to book</noscript>
 ';
 		
+		$first2 = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+     
+    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/';
+	
+		$last2 = '"></div>
+    <noscript>Please enable javascript in your browser to book</noscript>
+';
 		
-        return view('blog.frontend.product')->with(['post'=>$first.$activityId.$last]);
+        return view('blog.frontend.product')->with(['post'=>$first.$activityId.$last.$first2.$activityId.$last2]);
     }
 	
 
@@ -65,6 +72,10 @@ class BlogController extends Controller
         $first = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
             <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/';
         $last = '"></div><noscript>Please enable javascript in your browser to book</noscript>';
+		
+		$first2 = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/';
+        $last2 = '"></div><noscript>Please enable javascript in your browser to book</noscript>';
        
         if(empty($activityId))
         {
@@ -87,7 +98,7 @@ var w100659_44fcc98c_8ebf_47e1_8279_68a88eaebb99;
         }
         else
         {
-            $render = $first.$activityId.$last;
+            $render = $first.$activityId.$last.$first2.$activityId.$last2;
         }
 
 
