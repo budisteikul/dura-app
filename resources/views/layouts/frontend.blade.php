@@ -27,7 +27,7 @@
 	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 		Yogyakarta Night Walking and Food Tours
 	@else
-		Amazing Food Tour in The World | Book Online Now
+		Amazing Things to do in The World | Book Online Now
 	@endif
 	</title>
     
