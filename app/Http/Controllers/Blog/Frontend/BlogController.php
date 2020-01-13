@@ -34,37 +34,6 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['post'=>$post->widgets->product]);
     }
 	
-	/*
-	public function time_selector($id)
-    {
-		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->time_selector]);
-    }
-	*/
-	
-	public function time_selector($id,Request $request)
-    {
-		$activityId = $request->input('activityId');
-		
-		$first = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/';
-	
-		$last = '"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-		
-		$first2 = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/';
-	
-		$last2 = '"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
-		
-        return view('blog.frontend.product')->with(['post'=>$first.$activityId.$last.$first2.$activityId.$last2]);
-    }
-	
 
     public function product_tour(Request $request)
     {
@@ -101,22 +70,14 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
             $render = $first.$activityId.$last.$first2.$activityId.$last2;
         }
 
-
+        $widget = rev_widgets::where('product_id',$activityId)->first();
+        if(isset($widget)){
+            $render = $first.$activityId.$last.$first2.$widget->calendar_id.$last2;
+        }
         
         return view('blog.frontend.product')->with(['post'=>$render]);
     }
 
-	public function checkout($id)
-    {
-		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->checkout]);
-    }
-	
-	public function receipt($id)
-    {
-		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->receipt]);
-    }
 	
 	//====================================================================================
 	public function payment()
