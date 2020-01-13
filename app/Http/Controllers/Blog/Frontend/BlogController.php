@@ -33,11 +33,11 @@ class BlogController extends Controller
     public function product_tour(Request $request)
     {
         $activityId = $request->input('activityId');
-        $first = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+        $first = '
             <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/';
         $last = '"></div><noscript>Please enable javascript in your browser to book</noscript>';
 		
-		$first2 = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+		$first2 = '
             <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/';
         $last2 = '"></div><noscript>Please enable javascript in your browser to book</noscript>';
        

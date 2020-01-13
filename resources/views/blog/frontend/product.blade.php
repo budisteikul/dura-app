@@ -7,7 +7,9 @@
 @endpush
 
 
+
 <!-- ################################################################### -->
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	
@@ -101,6 +103,10 @@
 <div style="height:15px;"></div>
 
 
+
+
+
+
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
@@ -108,8 +114,8 @@
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 				<div style="height:70px;"></div>	
-                
-{!! $post !!}
+                <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+				{!! $post !!}
 					
 				<div style="height:45px;"></div>		
 				</div>
