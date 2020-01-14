@@ -16,8 +16,11 @@
 	
 	
 	<div class="container">
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
-
+		@else
+		<a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img height="40" style="margin-top:9px;margin-bottom:9px;" src="/assets/foodtour/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal"></a>
+		@endif
 		
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="a.com")
 
@@ -100,7 +103,7 @@
 	</div>
 </nav>
 
-<div style="height:15px;"></div>
+<div style="height:20px;"></div>
 
 
 
@@ -117,7 +120,7 @@
                 <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
 				{!! $post !!}
 					
-				<div style="height:45px;"></div>		
+				<div style="height:35px;"></div>		
 				</div>
 			</div>
         </div>

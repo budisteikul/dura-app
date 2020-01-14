@@ -65,7 +65,8 @@
     
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
-	<div class="container">
+	
+<div class="container">
 
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="aaa.com")
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
@@ -86,7 +87,8 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white" href="/tour/yogyakarta-night-walking-and-food-tours/"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
+<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>	
+
 @endif
 
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,6 +126,7 @@
 		
 		
     </div>
+	
   </nav>
 
 <header id="page-top" class="intro-header" style="background-image: url('/assets/foodtour/tugu-dark-1.0.1.jpg'); background-color: #000000">
