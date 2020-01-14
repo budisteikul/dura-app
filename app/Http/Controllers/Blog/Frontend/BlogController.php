@@ -26,7 +26,7 @@ class BlogController extends Controller
 	public function product($id)
     {
 		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['post'=>$post->widgets->product_id]);
+        return view('blog.frontend.product')->with(['post'=>$post->widgets->time_selector]);
     }
 	
 
@@ -118,38 +118,6 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
         return view('blog.frontend.product')->with(['post'=>$render]);
     }
 
-	//====================================================================================
-	public function payment()
-    {
-        return view('blog.frontend.payment');
-    }
-	
-	public function timeselector_stripe()
-    {
-        return view('blog.frontend.timeselector-stripe');
-    }
-	public function checkout_stripe()
-    {
-        return view('blog.frontend.checkout-stripe');
-    }
-	public function receipt_stripe()
-    {
-        return view('blog.frontend.receipt-stripe');
-    }
-	
-	public function timeselector_paypal()
-    {
-        return view('blog.frontend.timeselector-paypal');
-    }
-	public function checkout_paypal()
-    {
-        return view('blog.frontend.checkout-paypal');
-    }
-	public function receipt_paypal()
-    {
-        return view('blog.frontend.receipt-paypal');
-    }
-	//====================================================================================
 	
 	
     /**

@@ -37,6 +37,9 @@ class WidgetsDataTable extends DataTable
 			->editColumn('calendar_id', function ($resource) {
 					return Str::limit($resource->calendar_id,10);
 				})
+            ->editColumn('time_selector', function ($resource) {
+                    return Str::limit($resource->calendar_id,10);
+                })
 			->addColumn('action', function ($id) {
 				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
             })
@@ -94,7 +97,7 @@ class WidgetsDataTable extends DataTable
 			["name" => "post", "title" => "post", "data" => "post"],
 			["name" => "product_id", "title" => "product_id", "data" => "product_id"],
 			["name" => "calendar_id", "title" => "calendar_id", "data" => "calendar_id"],
-			
+			["name" => "time_selector", "title" => "time_selector", "data" => "time_selector"],
         ];
     }
 

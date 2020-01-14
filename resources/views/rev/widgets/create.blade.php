@@ -19,6 +19,7 @@ function STORE()
 			"post_id": $('#post_id').val(),
 			"product_id": $('#product_id').val(),
 			"calendar_id": $('#calendar_id').val(),
+			"time_selector": $('#time_selector').val(),
         },
 		type: 'POST',
 		url: '{{ route('widgets.store') }}'
@@ -80,6 +81,11 @@ function STORE()
 <div class="form-group">
 	<label for="calendar_id">calendar_id :</label>
     <textarea class="form-control tinymce" id="calendar_id" name="calendar_id" rows="8" placeholder="calendar_id"></textarea>
+</div>
+
+<div class="form-group">
+	<label for="time_selector">time_selector :</label>
+    <textarea class="form-control tinymce" id="time_selector" name="time_selector" rows="8" placeholder="time_selector"></textarea>
 </div>
 
        
