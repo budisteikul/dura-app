@@ -34,6 +34,9 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@product_tour');
+	Route::get('/ninjafoodtours', function () {
+			return redirect('https://www.vertikaltrip.com/tour?activityId=284167');
+	});
 });
 
 Route::domain('www.budi.my.id')->group(function () {
