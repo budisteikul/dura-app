@@ -75,24 +75,10 @@ Route::get('/review', function () {
 });
 Route::post('/review', 'Rev\ReviewController@get_review');
 
-Route::get('/book', 'Blog\Frontend\BlogController@timeselector_stripe');
-Route::get('/book/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
-Route::get('/book/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
 
-Route::get('/book/payment', 'Blog\Frontend\BlogController@payment');
-
-Route::get('/book/paypal', 'Blog\Frontend\BlogController@timeselector_paypal');
-Route::get('/book/paypal/checkout', 'Blog\Frontend\BlogController@checkout_paypal');
-Route::get('/book/paypal/checkout/receipt', 'Blog\Frontend\BlogController@receipt_paypal');
-
-Route::get('/book/stripe', 'Blog\Frontend\BlogController@timeselector_stripe');
-Route::get('/book/stripe/checkout', 'Blog\Frontend\BlogController@checkout_stripe');
-Route::get('/book/stripe/checkout/receipt', 'Blog\Frontend\BlogController@receipt_stripe');
-
-
-Route::get('/tour/checkout', 'Blog\Frontend\BlogController@checkout');
-Route::get('/tour/receipt', 'Blog\Frontend\BlogController@receipt');
-Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product');
+Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout');
+Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt');
+Route::get('/booking/{id}', 'Blog\Frontend\BlogController@product');
 
 Route::get('/map', function () {
 	return redirect('https://goo.gl/maps/noCZwng3FBtCVruj9');
