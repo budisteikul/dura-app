@@ -43,7 +43,9 @@ class BlogController extends Controller
        
         if(empty($activityId))
         {
-            $render = '<div id="bokun-w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d">Loading...</div><script type="text/javascript">
+            $render = '
+            <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+            <div id="bokun-w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d">Loading...</div><script type="text/javascript">
 var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
@@ -62,13 +64,13 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
         }
         else
         {
-            $render = $first.$activityId.$last.$first2.$activityId.$last2;
+            $render = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>'.$first.$activityId.$last.$first2.$activityId.$last2;
         }
 
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
             if(isset($widget->calendar_id)){
-                $render = $first.$activityId.$last.$first2.$widget->calendar_id.$last2;
+                $render = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>'.$first.$activityId.$last.$first2.$widget->calendar_id.$last2;
             }
         }
         

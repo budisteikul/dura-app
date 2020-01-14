@@ -117,7 +117,7 @@
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 				<div style="height:70px;"></div>	
-                <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+                
 				{!! $post !!}
 					
 				<div style="height:35px;"></div>		
