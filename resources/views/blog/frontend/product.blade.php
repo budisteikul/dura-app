@@ -110,16 +110,18 @@
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-    	<div style="height:70px;"></div>
+  	
+    <div class="col-sm-8 col-sm-auto">
+    	<div style="height:60px;"></div>
       		{!! $product !!}
     </div>
-    <div class="col-md-auto">
+    <div class="col-sm-4">
     	<div style="height:54px;"></div>
+    	<h4>Book Now</h4>
      		{!! $calendar !!}
         <div style="height:35px;"></div>
     </div>
-   
+    
   </div>
 </div>
 </section>
