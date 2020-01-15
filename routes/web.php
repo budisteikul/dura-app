@@ -76,8 +76,8 @@ Route::get('/review', function () {
 Route::post('/review', 'Rev\ReviewController@get_review');
 
 
-Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout');
-Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt');
+Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout_tmt');
+Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt_tmt');
 Route::get('/booking/{id}', 'Blog\Frontend\BlogController@product');
 
 Route::get('/map', function () {
