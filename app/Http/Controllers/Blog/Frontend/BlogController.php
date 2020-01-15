@@ -35,13 +35,14 @@ class BlogController extends Controller
         $activityId = $request->input('activityId');
         
         $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
-        $product_page = '';
+        $product = '';
         $calendar = '';
-
+        $product_page = true;
        
         if(empty($activityId))
         {
-            $product_page = '
+            $product_page = false;
+            $product = '
             <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
             <div id="bokun-w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d">Loading...</div><script type="text/javascript">
 var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
@@ -65,7 +66,7 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
               
 
 
-              $product_page = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+              $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 
               $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 
@@ -78,7 +79,7 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
             }
         }
         
-        return view('blog.frontend.product')->with(['jscript'=>$jscript,'product_page'=>$product_page,'calendar'=>$calendar]);
+        return view('blog.frontend.product')->with(['jscript'=>$jscript,'product'=>$product,'calendar'=>$calendar,'product_page'=>$product_page]);
     }
 
 	

@@ -106,13 +106,13 @@
 <div style="height:25px;"></div>
 
 
+@if($product_page)
 <section id="booking" style="background-color:#ffffff">
-	
 <div class="container">
   <div class="row">
     <div class="col-md-8">
     	<div style="height:70px;"></div>
-      		{!! $product_page !!}
+      		{!! $product !!}
     </div>
     <div class="col-md-auto">
     	<div style="height:54px;"></div>
@@ -123,10 +123,8 @@
   </div>
 </div>
 </section>
-
-
-
-<!-- section id="booking" style="background-color:#ffffff">
+@else
+<section id="booking" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
@@ -134,7 +132,7 @@
 				<div class="col-lg-12 text-center">
 				<div style="height:70px;"></div>	
            
-				
+				{!! $product !!}
 				
 					
 				<div style="height:35px;"></div>		
@@ -143,7 +141,8 @@
         </div>
 	</div>
 </div>
-</section -->
+</section>
+@endif
 
 
 
