@@ -112,13 +112,18 @@
   <div class="row">
   	
     <div class="col-sm-8 col-sm-auto">
-    	<div style="height:60px;"></div>
+    	<div style="height:56px;"></div>
       		{!! $product !!}
     </div>
     <div class="col-sm-4">
     	<div style="height:54px;"></div>
-    	<h4>Book Now</h4>
-     		{!! $calendar !!}
+    	<div class="card mb-4 shadow p-2">
+  			<div class="card-header text-white bg-danger"><h5>BOOK HERE</h5></div>
+ 				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
+    				{!! $calendar !!}
+  				</div>
+			</div>
+     		
         <div style="height:35px;"></div>
     </div>
     
