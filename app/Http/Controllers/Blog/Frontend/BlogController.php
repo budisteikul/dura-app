@@ -48,7 +48,7 @@ class BlogController extends Controller
         if(empty($activityId))
         {
             $product_page = false;
-			$cat = blog_categories::where('slug','front-page')->first();
+			      $cat = blog_categories::where('slug','front-page')->first();
             $product = $cat->description;
         }
         else
