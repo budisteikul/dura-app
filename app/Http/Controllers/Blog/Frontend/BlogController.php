@@ -25,7 +25,7 @@ class BlogController extends Controller
 	
 	public function product($id)
     {
-		    $post = blog_posts::where('slug',$id)->first();
+		$post = blog_posts::where('slug',$id)->first();
         return view('blog.frontend.product')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
     }
 	
@@ -33,7 +33,6 @@ class BlogController extends Controller
     public function product_tour(Request $request)
     {
         $activityId = $request->input('activityId');
-        
         $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
         $product = '';
         $calendar = '';
@@ -63,12 +62,8 @@ var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
         }
         else
         {
-              
-
-
               $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-
-              $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 
         }
 
