@@ -28,7 +28,7 @@
 		</button>
 		
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
-			<div class="form-group has-search text-uppercase ml-auto">
+			<div class="form-group has-search text-uppercase ml-auto" style="padding-top:5px;">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</div>
