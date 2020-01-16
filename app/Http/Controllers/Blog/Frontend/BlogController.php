@@ -30,6 +30,12 @@ class BlogController extends Controller
         return view('blog.frontend.product')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
     }
 	
+	public function product_list($id)
+    {
+		$cat = blog_categories::where('slug',$id)->first();
+        return view('blog.frontend.product')->with(['product'=>$cat->description,'jscript'=>'','product_page'=>false]);
+    }
+	
 
     public function product_tour(Request $request)
     {

@@ -79,6 +79,7 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout');
 Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt');
 Route::get('/booking/{id}', 'Blog\Frontend\BlogController@product');
+Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@product_list');
 
 Route::get('/map', function () {
 	return redirect('https://goo.gl/maps/noCZwng3FBtCVruj9');
