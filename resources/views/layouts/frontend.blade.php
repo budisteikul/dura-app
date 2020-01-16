@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="google-site-verification" content="AtDcFU1Yadtr8qSpQQL86nxPnXGXAgveC60d4oZq0U0" />
     <meta name="description" content="
-	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-	Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
+	@hasSection('description')
+		@yield('description')
 	@else
-		Connecting you with tour operators from all around the world.
+			@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+				Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
+			@else
+				Connecting you with tour operators from all around the world.
+			@endif
 	@endif
 	">
     <meta name="author" content="Vertikal Trip LLC">
@@ -22,18 +26,17 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2e3237">
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
-    
     <title>
-	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-		Yogyakarta Night Walking and Food Tours
+	@hasSection('title')
+		@yield('title')
 	@else
-		Amazing Things to do in The World | Book Online Now
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+			Yogyakarta Night Walking and Food Tours
+		@else
+			Amazing Things to do in The World | Book Online Now
+		@endif
 	@endif
 	</title>
-    
-	
-	
-	
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
 	<script src="/js/vertikaltrip-1.0.9.js"></script>
