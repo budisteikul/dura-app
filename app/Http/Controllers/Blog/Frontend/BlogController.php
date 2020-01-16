@@ -27,7 +27,7 @@ class BlogController extends Controller
 	public function product($id)
     {
 		$post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
     }
 	
 	public function product_list($id)
@@ -88,7 +88,7 @@ var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.product')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
     }
 
     public function receipt()
@@ -109,7 +109,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.product')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
     }
 
 	 public function checkout_tmt()
@@ -130,7 +130,7 @@ var w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.product')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
     }
 	
 
@@ -152,7 +152,7 @@ var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.product')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
     }
 
     /**
