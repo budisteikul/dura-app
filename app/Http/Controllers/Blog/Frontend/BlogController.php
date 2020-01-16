@@ -42,7 +42,6 @@ class BlogController extends Controller
         {
             $product_page = false;
             $product = '
-            <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
             <div id="bokun-w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d">Loading...</div><script type="text/javascript">
 var w98904_0292896c_6db2_49e0_bfb4_7ea495c1527d;
 (function(d, t) {
