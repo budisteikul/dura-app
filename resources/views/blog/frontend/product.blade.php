@@ -1,5 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
+@section('title',$title)
 @include('layouts.loading')
 @push('scripts')
 {!! $jscript !!}
@@ -18,7 +19,7 @@
 		
 		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="budi.my.id" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 
-		<button class="navbar-toggler navbar-toggler-right border-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		<!-- button class="navbar-toggler navbar-toggler-right border-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="fa fa-search text-white"></span>
 		</button>
 		
@@ -26,7 +27,7 @@
 			<div class="form-group has-search text-uppercase ml-auto">
 				<input type="text" style="margin-top:15px;" class="form-control" placeholder="Search">
 			</div>
-		</div>
+		</div -->
 		
 		
 		@else

@@ -32,8 +32,9 @@ class BlogController extends Controller
 	
 	public function product_list($id)
     {
+      $title = '';
 		$cat = blog_categories::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['product'=>$cat->description,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.product')->with(['title'=>$title,'product'=>$cat->description,'jscript'=>'','product_page'=>false]);
     }
 	
 
@@ -42,6 +43,7 @@ class BlogController extends Controller
     public function product_tour(Request $request,$id="")
     {
         $activityId = "";
+        $title = '';
         if($id=="")
         {
             $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
@@ -52,7 +54,11 @@ class BlogController extends Controller
         else
         {
             $post = blog_posts::with('widgets')->where('slug',$id)->first();
-            if(isset($post)) $activityId = $post->widgets->product_id;
+            if(isset($post))
+              {
+                $activityId = $post->widgets->product_id;
+                $title = $post->title;
+              }
         }
         
         
@@ -81,7 +87,7 @@ $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-
             }
         }
         
-        return view('blog.frontend.product')->with(['jscript'=>$jscript,'product'=>$product,'calendar'=>$calendar,'product_page'=>$product_page]);
+        return view('blog.frontend.product')->with(['title'=>$title,'jscript'=>$jscript,'product'=>$product,'calendar'=>$calendar,'product_page'=>$product_page]);
     }
 
 	
