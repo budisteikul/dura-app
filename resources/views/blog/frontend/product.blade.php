@@ -85,7 +85,7 @@
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-white bg-danger"><h5>Book Now</h5></div>
+  			<div class="card-header text-white" style="background-color: #2c97de;"><h5>Book Now</h5></div>
  				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				{!! $calendar !!}
   				</div>
