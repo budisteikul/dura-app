@@ -46,6 +46,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 });
 
 Route::domain('www.budi.my.id')->group(function () {
+	//Route::get('/', 'Blog\Frontend\BlogController@index');
 	Route::get('/', 'Blog\Frontend\BlogController@product_tour');
 });
 
@@ -55,7 +56,10 @@ Route::domain('localhost')->group(function () {
 });
 
 
-
+// ================================================================================
+Route::get('/tour', 'Blog\Frontend\BlogController@product_tour');
+Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product_tour');
+// ================================================================================
 
 
 Route::get('/blank', function () {
@@ -149,6 +153,3 @@ Route::post('/sms/webhook', 'SMS\SMSController@index');
 
 
 
-// ================================================================================
-Route::get('/tour', 'Blog\Frontend\BlogController@product_tour');
-// ================================================================================

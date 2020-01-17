@@ -17,6 +17,6 @@ class rev_widgets extends Model
 	
 	public function posts()
     {
-        return $this->belongsTo('App\Models\Blog\blog_posts','id');
+        return $this->belongsTo('App\Models\Blog\blog_posts','post_id');
     }
 }

@@ -12,8 +12,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
-	
-	
+
 		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		
 		
@@ -126,26 +125,26 @@
 <div class="container">
   <div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-8 text-center mx-auto">
-					<h3 class="section-heading" style="margin-top:50px;">TOUR OPERATOR</h3>
+					<!-- h3 class="section-heading" style="margin-top:50px;">TOUR OPERATOR</h3 -->
                     
        
-					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+					<!-- hr style="max-width:50px;border-color:#e2433b;border-width:3px;" -->
 				</div>
   </div>
 
   <div class="row">
   	
-    <div class="col-sm-4 col-sm-auto  mb-4">
+    <div class="col-sm-6 col-sm-auto  mb-4">
     	<a href="/product-list/ninja-food-tours">
-    	<div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-  				 <img class="card-img-top" src="/assets/foodtour/partner/ninja-food-tours__.png" alt="Ninja Food Tours">
+    	<div class="card mb-6 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
+  				 <img class="card-img-top" src="/assets/foodtour/partner/ninja-food.png" alt="Ninja Food Tours">
 		</div>
 		</a>
     </div>
 
-    <div class="col-sm-4 col-sm-auto  mb-4">
+    <div class="col-sm-6 col-sm-auto  mb-4">
     	<a href="/product-list/original-food-tours-paris">
-    	<div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
+    	<div class="card mb-6 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
   				 <img class="card-img-top" src="/assets/foodtour/partner/original-food-tours____.jpg" alt="Original Food Tours">
 			</div>
 		</a>
@@ -175,14 +174,7 @@
 		</a>
     </div>
 
-    <div class="col-sm-4 col-sm-auto mb-4">
-    	<a href="/product-list/jogja-food-tour">
-    	<div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-  				 <img class="card-img-top" src="/assets/foodtour/partner/jogja.png" alt="Jogja Food Tour">
-		</div>
-		</a>
-    </div>
-    
+   
     
   </div>
   

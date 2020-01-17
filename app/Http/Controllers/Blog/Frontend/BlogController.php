@@ -37,9 +37,25 @@ class BlogController extends Controller
     }
 	
 
-    public function product_tour(Request $request)
+
+
+    public function product_tour(Request $request,$id="")
     {
-        $activityId = $request->input('activityId');
+        $activityId = "";
+        if($id=="")
+        {
+            $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
+            if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
+            $activityId = $request->input('activityId');
+
+        }
+        else
+        {
+            $post = blog_posts::with('widgets')->where('slug',$id)->first();
+            if(isset($post)) $activityId = $post->widgets->product_id;
+        }
+        
+        
         $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
         $product = '';
         $calendar = '';
