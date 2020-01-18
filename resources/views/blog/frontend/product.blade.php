@@ -122,7 +122,7 @@
 
 @endif
 
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="aaa.com")
 
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
