@@ -122,6 +122,8 @@
 
 @endif
 
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
   <div class="row" style="padding-bottom:0px;">
@@ -182,5 +184,6 @@
 </div>
 
 </section>
+@endif
 
 @endsection
