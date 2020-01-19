@@ -2,6 +2,7 @@
 @section('content')
 @section('title',$title)
 @section('description',$description)
+@include('layouts.loading')
 @push('scripts')
 {!! $jscript !!}
 @endpush
