@@ -33,7 +33,9 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 });
 
 Route::domain('www.vertikaltrip.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@product_tour');
+	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
 	Route::get('/shinjuku', function () {
 			return redirect('/tour?activityId=284167');
 	});
