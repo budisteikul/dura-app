@@ -190,6 +190,13 @@ var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
         return view('blog.frontend.foodtour')
 		->with('count',$count);
     }
+
+    public function index_shinjuku()
+    {
+		$count = rev_reviews::count();
+        return view('blog.frontend.foodtour_shinjuku')
+		->with('count',$count);
+    }
 	
     /**
      * Show the form for creating a new resource.
