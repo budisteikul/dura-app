@@ -112,15 +112,14 @@ s0.parentNode.insertBefore(s1,s0);
 						@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
-						@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="budi.my.id")
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:support@ninjafoodtours.com" class="badge badge-danger" target="_blank">support@ninjafoodtours.com</a>
+
 						@endif
 						
 						
                     </p>
                 </div>
                 
-                <div class="col-sm-5 second-column">
+                <div class="col-sm-6 second-column">
                 	<p class="m-0 text-left text-white">
                     	PAYMENT CHANNEL
 						
@@ -135,8 +134,13 @@ s0.parentNode.insertBefore(s1,s0);
 					<small> <a class="text-white" target="_blank" href="/page/terms-and-conditions">Terms and Conditions</a> </small>
 					</p -->
 					@endif
+					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 					<p class="m-0 text-left text-white">
-					<small> 2020 &copy; VERTIKAL TRIP LLC </small>
+					<small> 2020 &copy; VERTIKAL TRIP LLC & JOGJA FOOD TOUR</small>
+					@else
+					<p class="m-0 text-left text-white">
+					<small> 2020 &copy; VERTIKAL TRIP LLC & NINJA FOOD TOURS</small>
+					@endif
 					</p>
                 </div>
 			

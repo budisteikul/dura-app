@@ -26,7 +26,7 @@ class BlogController extends Controller
 	
 	public function product($id)
     {
-		$post = blog_posts::where('slug',$id)->first();
+		    $post = blog_posts::where('slug',$id)->first();
         return view('blog.frontend.booking')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
     }
 	
@@ -38,7 +38,64 @@ class BlogController extends Controller
     }
 	
 
+    public function index_shinjuku(Request $request,$id="")
+    {
+        $activityId = "";
+        $title = '';
+        $description = '';
 
+
+
+        if($id=="")
+        {
+            $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
+            if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
+            $activityId = $request->input('activityId');
+
+        }
+        else
+        {
+            $post = blog_posts::with('widgets')->where('slug',$id)->first();
+            if(isset($post))
+              {
+                $activityId = $post->widgets->product_id;
+                $title = $post->title;
+                $description = $post->content;
+              }
+        }
+
+        $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
+        $product = '';
+        $calendar = '';
+        
+        if(empty($activityId))
+        {
+           $activityId = '284167';
+           $title = 'Izakaya Food Tour in Shinjuku';
+           $description = 'Enjoy classic Japanese experience at our selected restaurants. Local food & drinks as we journey through Tokyo’s busiest area in Shinjuku.';
+        }
+
+        
+              $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+              $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+       
+
+        $widget = rev_widgets::where('product_id',$activityId)->first();
+        if(isset($widget)){
+            if(isset($widget->calendar_id)){
+               $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+            }
+        }
+        
+        return view('blog.frontend.foodtour_shinjuku')->with([
+          'title'=>$title,
+          'jscript'=>$jscript,
+          'product'=>$product,
+          'calendar'=>$calendar,
+          'description'=>$description,
+        ]);
+
+    }
 
     public function product_tour(Request $request,$id="")
     {
@@ -191,12 +248,7 @@ var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
 		->with('count',$count);
     }
 
-    public function index_shinjuku()
-    {
-		$count = rev_reviews::count();
-        return view('blog.frontend.foodtour_shinjuku')
-		->with('count',$count);
-    }
+    
 	
     /**
      * Show the form for creating a new resource.
