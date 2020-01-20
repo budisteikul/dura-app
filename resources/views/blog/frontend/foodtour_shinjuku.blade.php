@@ -45,7 +45,7 @@
 </section>
 
 @if($categories!="")
-<article id="explorer">
+<article id="explorer" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
@@ -64,7 +64,7 @@
 </article>
 @endif
 
-<section id="guide" style="background-color:#f2f2f2">
+<section id="guide" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">

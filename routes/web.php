@@ -32,7 +32,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
-Route::domain('www.vertikaltrip.com')->group(function () {
+Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
 	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
