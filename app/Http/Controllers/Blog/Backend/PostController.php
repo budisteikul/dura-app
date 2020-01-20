@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Classes\Blog\BlogClass;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -43,7 +44,7 @@ class PostController extends Controller
 					})
 				->addColumn('categories',function (blog_posts $blog_posts) {
 						return $blog_posts->categories->map(function($post) {
-                        	return str_limit($post->name, 30, '...');
+                        	return Str::words($post->name,10);
                     	})->implode(', ');
 					})
 				->addColumn('action', function ($post) {
