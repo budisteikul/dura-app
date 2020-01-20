@@ -33,7 +33,7 @@
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-white" style="background-color: #2c97de;"><h5>Book {{ $title }}</h5></div>
+  			<div class="card-header text-white" style="background-color: #2c97de;">Book {{ $title }}</div>
  			<div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				{!!$calendar!!}
 			</div>
@@ -52,7 +52,7 @@
         <div>
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:0px;">Explore Shinjuku Through our Ninja Food Tours</h3>
+					<h3 class="section-heading" style="margin-top:0px;">Explore Shinjuku Through our Food Tours</h3>
 					<h4 class="section-subheading text-muted">And So Our Adventure Begins</h4>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
@@ -70,7 +70,7 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Ninja Food Tours Guide</h3>
+				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Local Guide</h3>
 				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
 				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>

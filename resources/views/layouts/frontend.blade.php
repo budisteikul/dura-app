@@ -136,10 +136,10 @@ s0.parentNode.insertBefore(s1,s0);
 					@endif
 					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 					<p class="m-0 text-left text-white">
-					<small> 2020 &copy; VERTIKAL TRIP LLC & JOGJA FOOD TOUR</small>
+					<small> 2020 &copy; VERTIKAL TRIP LLC AND JOGJA FOOD TOUR</small>
 					@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com")
 					<p class="m-0 text-left text-white">
-					<small> 2020 &copy; VERTIKAL TRIP LLC & NINJA FOOD TOURS</small>
+					<small> 2020 &copy; VERTIKAL TRIP LLC AND NINJA FOOD TOURS</small>
 					@else
 					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC</small>
