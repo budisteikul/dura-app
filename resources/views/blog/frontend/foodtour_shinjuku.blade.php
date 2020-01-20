@@ -9,7 +9,7 @@
 <header id="page-top" class="intro-header" style="background-image: url('/assets/shinjuku-food-tour/shinjuku-at-night.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
-			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
+			<div class="transbox" style=" min-height:100px; padding-top:0px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<img alt="Shinjuku Night Walking and Food Tours" class="rounded" src="/assets/shinjuku-food-tour/shinjuku.png">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $title }}</h1>
