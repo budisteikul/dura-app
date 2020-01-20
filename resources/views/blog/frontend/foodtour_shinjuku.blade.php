@@ -127,7 +127,7 @@
 			
 			<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | Shinjuku Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/shinjuku-food-tour/public/assets/shinjuku-food-tour/Tokyo-Food-Tour-Guide-Info-200x200.jpg.jpg" >
+					<img alt="Tour Guide | Shinjuku Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/shinjuku-food-tour/Tokyo-Food-Tour-Guide-Info-200x200.jpg" >
 					<h4>Amanda</h4>
 					<p class="text-muted">Your Local Friend</p>
                     
