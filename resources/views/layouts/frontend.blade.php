@@ -108,10 +108,10 @@ s0.parentNode.insertBefore(s1,s0);
 						<br>
 						@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
+							<span class="fa fa-envelope"></span> Email : <a href="mailto:jogja@vertikaltrip.com" class="badge badge-danger" target="_blank">jogja@vertikaltrip.com</a>
 						@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com")
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+15055852112">+1 505-585-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
+							<span class="fa fa-envelope"></span> Email : <a href="mailto:shinjuku@vertikaltrip.com" class="badge badge-danger" target="_blank">shinjuku@vertikaltrip.com</a>
 @else
 		<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+15055852112">+1 505-585-2112</a> <br>
 							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
@@ -124,8 +124,6 @@ s0.parentNode.insertBefore(s1,s0);
                 <div class="col-sm-6 second-column">
                 	<p class="m-0 text-left text-white">
                     	PAYMENT CHANNEL
-						
-						
 						<br>
 						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
 					
@@ -139,9 +137,12 @@ s0.parentNode.insertBefore(s1,s0);
 					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC & JOGJA FOOD TOUR</small>
-					@else
+					@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com")
 					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC & NINJA FOOD TOURS</small>
+					@else
+					<p class="m-0 text-left text-white">
+					<small> 2020 &copy; VERTIKAL TRIP LLC</small>
 					@endif
 					</p>
                 </div>
