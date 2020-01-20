@@ -26,7 +26,6 @@
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
   <div class="row">
-  	
     <div class="col-sm-8 col-sm-auto">
     	<div style="height:66px;"></div>
       		{!! $product !!}
@@ -41,20 +40,16 @@
 		</div>
   	</div>
    </div>
-     		
         <div style="height:35px;"></div>
     </div>
 </section>
 
-<!-- Post Content -->
+@if($categories!="")
 <article id="explorer">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-        
-        
         <div>
-        
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:0px;">Explore Shinjuku Through our Ninja Food Tours</h3>
@@ -62,33 +57,12 @@
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 			</div>
-			
-			<div id="bokun-w101289_0ce31b80_d625_4740_84d3_107105eeb027">Loading...</div><script type="text/javascript">
-var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
-(function(d, t) {
-  var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/101289?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w101289_0ce31b80_d625_4740_84d3_107105eeb027';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w101289_0ce31b80_d625_4740_84d3_107105eeb027', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
-  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-    try {
-      w101289_0ce31b80_d625_4740_84d3_107105eeb027 = new BokunWidgetEmbedder(); w101289_0ce31b80_d625_4740_84d3_107105eeb027.initialize(options); w101289_0ce31b80_d625_4740_84d3_107105eeb027.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');
-</script>
-        </div>
-        
-        
-        
+			{!! $categories !!}
         </div>
     </div>
 </div>
-</article> 
-
-
+</article>
+@endif
 
 <section id="guide" style="background-color:#f2f2f2">
 <div class="container">
@@ -156,54 +130,4 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
 
 </div>
 
-<script>
-
-
-(function($) {
-        
-  "use strict"; // Start of use strict
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 54)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
-
- 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 75
-  });
- 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
-  };
-  
-  // Collapse now if page is not at top
-  navbarCollapse();
-  
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
-  
-  
-})(jQuery);
-</script>
 @endsection

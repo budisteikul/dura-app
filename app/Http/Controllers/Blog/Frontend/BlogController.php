@@ -43,9 +43,23 @@ class BlogController extends Controller
         $activityId = "";
         $title = '';
         $description = '';
-
-
-
+		$categories = '<div id="bokun-w101289_0ce31b80_d625_4740_84d3_107105eeb027">Loading...</div><script type="text/javascript">
+var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
+(function(d, t) {
+  var host = \'widgets.bokun.io\';
+  var frameUrl = \'https://\' + host + \'/widgets/101289?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w101289_0ce31b80_d625_4740_84d3_107105eeb027\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w101289_0ce31b80_d625_4740_84d3_107105eeb027\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w101289_0ce31b80_d625_4740_84d3_107105eeb027 = new BokunWidgetEmbedder(); w101289_0ce31b80_d625_4740_84d3_107105eeb027.initialize(options); w101289_0ce31b80_d625_4740_84d3_107105eeb027.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+		
         if($id=="")
         {
             $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
@@ -61,6 +75,8 @@ class BlogController extends Controller
                 $activityId = $post->widgets->product_id;
                 $title = $post->title;
                 $description = $post->content;
+				$cat = blog_posts::with('categories')->where('slug',$id)->first();
+				if(isset($cat)) $categories = $cat->categories[0]->description;
               }
         }
 
@@ -76,8 +92,8 @@ class BlogController extends Controller
         }
 
         
-              $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-              $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+        $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+        $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
        
 
         $widget = rev_widgets::where('product_id',$activityId)->first();
@@ -87,12 +103,15 @@ class BlogController extends Controller
             }
         }
         
+		
+		
         return view('blog.frontend.foodtour_shinjuku')->with([
           'title'=>$title,
           'jscript'=>$jscript,
           'product'=>$product,
           'calendar'=>$calendar,
           'description'=>$description,
+		  'categories'=>$categories,
         ]);
 
     }
