@@ -6,7 +6,7 @@
 @push('scripts')
 {!! $jscript !!}
 @endpush
-<header id="page-top" class="intro-header" style="background-image: url('/assets/shinjuku-food-tour/shinjuku-bg.jpg'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/shinjuku-food-tour/shinjuku-at-night.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">

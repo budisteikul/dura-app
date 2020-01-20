@@ -32,6 +32,15 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
+Route::domain('localhost')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/shinjuku', function () {
+			return redirect('/tour?activityId=284167');
+	});
+});
+
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
 	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
@@ -54,10 +63,7 @@ Route::domain('www.budi.my.id')->group(function () {
 	//Route::get('/', 'Blog\Frontend\BlogController@product_tour');
 });
 
-Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index_product');
-    
-});
+
 
 
 // ================================================================================
