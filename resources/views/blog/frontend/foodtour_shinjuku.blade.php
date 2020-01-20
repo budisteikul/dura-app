@@ -6,12 +6,11 @@
 @push('scripts')
 {!! $jscript !!}
 @endpush
-  <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 
 <header id="page-top" class="intro-header" style="background-image: url('/assets/shinjuku-food-tour/31145.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:10px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img alt="Shinjuku Night Walking and Food Tours" class="rounded" src="/assets/shinjuku-food-tour/ninja-food.png" width="250">
+            	<img alt="Shinjuku Night Walking and Food Tours" class="rounded" src="/assets/shinjuku-food-tour/shinjuku.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">{{ $title }}</h1>
 				<p class="text-faded">
@@ -36,19 +35,15 @@
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
   			<div class="card-header text-white" style="background-color: #2c97de;"><h5>Book {{ $title }} Now</h5></div>
- 				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
+ 			<div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				{!!$calendar!!}
-
-				  </div>
-					</div>
-  				</div>
 			</div>
+		</div>
+  	</div>
+   </div>
      		
         <div style="height:35px;"></div>
     </div>
-    
-  </div>
-</div>
 </section>
 
 
