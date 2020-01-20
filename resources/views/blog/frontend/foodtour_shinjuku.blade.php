@@ -6,11 +6,7 @@
 @push('scripts')
 {!! $jscript !!}
 @endpush
-  
- <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 
-    
-
-
+  <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 
 <header id="page-top" class="intro-header" style="background-image: url('/assets/shinjuku-food-tour/31145.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
@@ -28,8 +24,6 @@
     </div>
 </header>
 
-
-
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
   <div class="row">
@@ -45,17 +39,7 @@
  				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				{!!$calendar!!}
 
-    				<div id="text-4" class="widget widget_text">			<div class="textwidget"><p><center></p>
-<div id="TA_selfserveprop111" class="TA_selfserveprop">
-<ul id="pS2TkQ" class="TA_links fQJyxlU">
-<li id="n1tnNZKGR" class="4ahR8jB2qae">
-<a target="_blank" href="https://www.tripadvisor.com/" rel="noopener noreferrer"><noscript><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></noscript><img class="lazyload" src='https://cdn.shortpixel.ai/client/q_lqip,ret_wait/https://www.ninjafoodtours.com/wp-includes/js/tinymce/skins/lightgray/img/loader.gif' data-src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a>
-</li>
-</ul>
-</div>
-<p><script src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=111&amp;locationId=12231638&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=false&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2"></script></center></p>
-</div>
-		</div>				</div>
+				  </div>
 					</div>
   				</div>
 			</div>
