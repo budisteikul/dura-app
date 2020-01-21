@@ -41,7 +41,7 @@
                 </a>
 
                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="nav-link js-scroll-trigger text-dark ml-2" href="/product-list/ninja-food-tours/">Shinjuku</a>
+                                    <a class="nav-link js-scroll-trigger text-dark ml-2" href="https://www.shinjukufoodtour.com">Shinjuku</a>
                  </div>
                 </li>
             	
@@ -216,7 +216,7 @@
   <div class="row">
   	
     <div class="col-sm-4 col-sm-auto  mb-4">
-    	<a href="/product-list/ninja-food-tours">
+    	<a href="https://www.shinjukufoodtour.com">
     	<div class="card mb-4 shadow p-4 card-block d-table-cell align-middle">
   				 <img class="card-img-top" src="/assets/foodtour/supplier/ninja-food.png" alt="Ninja Food Tours">
 		</div>
