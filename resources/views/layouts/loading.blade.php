@@ -1,13 +1,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 <script>
-/*
+
 $(window).on('load', function(){
 	$(".se-pre-con").fadeOut("slow");
 });
-*/
+
+/*
 $("#productId").on( 'load', function() {
     $(".se-pre-con").fadeOut("slow");
 });
+*/
 </script>
 <style>
 .no-js #loader { display: none;  }
