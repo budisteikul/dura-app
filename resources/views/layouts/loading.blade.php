@@ -5,7 +5,7 @@ $(window).on('load', function(){
 	$(".se-pre-con").fadeOut("slow");
 });
 */
-$("#productId").ready(function (){
+$("#productId").on( 'load', function() {
     $(".se-pre-con").fadeOut("slow");
 });
 </script>
