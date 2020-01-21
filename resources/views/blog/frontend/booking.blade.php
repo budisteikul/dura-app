@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
-@include('layouts.loading')
+
 @push('scripts')
 {!! $jscript !!}
 @endpush
