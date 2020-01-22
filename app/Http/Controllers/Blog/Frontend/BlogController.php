@@ -46,7 +46,7 @@ class BlogController extends Controller
 		$categories = '<div id="bokun-w101289_0ce31b80_d625_4740_84d3_107105eeb027">Loading...</div><script type="text/javascript">
 var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'vertikaltrip.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/101289?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w101289_0ce31b80_d625_4740_84d3_107105eeb027\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w101289_0ce31b80_d625_4740_84d3_107105eeb027\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -80,7 +80,7 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
               }
         }
 
-        $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
+        $jscript = '<script type="text/javascript" src="https://vertikaltrip.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
         $product = '';
         $calendar = '';
         
@@ -92,14 +92,14 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
         }
 
         
-        $product = '<div id="productId" class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-        $calendar = '<div id="calendarId" class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+        $product = '<div id="productId" class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+        $calendar = '<div id="calendarId" class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
        
 
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
             if(isset($widget->calendar_id)){
-               $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+               $calendar = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
             }
         }
         
@@ -138,7 +138,7 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
         }
         
         
-        $jscript = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
+        $jscript = '<script type="text/javascript" src="https://vertikaltrip.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
         $product = '';
         $calendar = '';
         $product_page = true;
@@ -151,15 +151,15 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
         }
         else
         {
-              $product = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+              $product = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+$calendar = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 
         }
 
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
             if(isset($widget->calendar_id)){
-               $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+               $calendar = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
             }
         }
         
@@ -173,7 +173,7 @@ $calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-
         $render = '<div id="bokun-w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa">Loading...</div><script type="text/javascript">
 var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'vertikaltrip.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -194,7 +194,7 @@ var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
         $render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
 var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'vertikaltrip.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97536_f6820178_ae16_4095_b0ec_4c203e94f898\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_f6820178_ae16_4095_b0ec_4c203e94f898\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -215,7 +215,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
         $render = '<div id="bokun-w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213">Loading...</div><script type="text/javascript">
 var w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213;
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'vertikaltrip.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=bc161c64-7fa4-4143-8f98-c7f43ab806c1&amp;lang=en&amp;ccy=USD&amp;hash=w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -237,7 +237,7 @@ var w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213;
         $render = '<div id="bokun-w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b">Loading...</div><script type="text/javascript">
 var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'vertikaltrip.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=bc161c64-7fa4-4143-8f98-c7f43ab806c1&amp;lang=en&amp;ccy=USD&amp;hash=w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
