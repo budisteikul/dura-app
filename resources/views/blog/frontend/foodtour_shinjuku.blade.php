@@ -23,6 +23,65 @@
     </div>
 </header>
 
+<!-- section style="background-color:#ffffff">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 mx-auto">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+				<h3 class="section-heading" style="margin-top:50px;">Why Choose us?</h3>
+				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+			<br>
+		</div>
+        
+     </div>
+     <div class="row justify-content-center"> 
+     <div class="row col-10">       
+        
+            
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<i class="fas fa-4x fa-calendar-alt text-danger mb-2"></i>
+					<h4>Realtime Availability</h4>
+					<p class="text-muted"></p>
+                    
+					<br><br>
+				</div>
+			</div>
+            
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<i class="fas fa-4x fa-money-bill text-danger mb-2"></i>
+					<h4>Great local food</h4>
+					<p class="text-muted"></p>
+                    
+					<br><br>
+				</div>
+			</div>
+
+			<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<i class="fab fa-4x fa-paypal text-danger mb-2"></i>
+					<h4>Secure Payment</h4>
+					<p class="text-muted"></p>
+                    
+					<br><br>
+				</div>
+			</div>
+			
+			
+        	
+            
+            
+        </div></div>
+        
+	</div>
+</div>
+</section -->
+
+
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
   <div class="row">
