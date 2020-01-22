@@ -70,7 +70,7 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Local Guide</h3>
+				<h3 class="section-heading" style="margin-top:50px;">Amazing Shinjuku Local Guide</h3>
 				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
 				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>

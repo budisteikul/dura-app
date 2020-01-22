@@ -50,6 +50,15 @@ Route::domain('www.shinjukufoodtour.com')->group(function () {
 	});
 });
 
+Route::domain('192.168.0.3')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
+	Route::get('/shinjuku', function () {
+			return redirect('/tour?activityId=284167');
+	});
+});
+
 Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/shinjuku', function () {
 			return redirect('/tour?activityId=284167');
