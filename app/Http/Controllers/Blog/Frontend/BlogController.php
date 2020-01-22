@@ -12,6 +12,7 @@ use App\Models\Rev\rev_reviews;
 use Illuminate\Support\Facades\Request as Http;
 use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
+use GuzzleHttp\Client as GuzzleClient;
 
 class BlogController extends Controller
 {
@@ -23,6 +24,52 @@ class BlogController extends Controller
 		
 	}
 	
+	
+	public function blank()
+	{
+		
+
+		$endpoint = "https://api.bokun.io";
+		$path = '/activity.json/284167';
+		$method = 'GET';
+		$currency = 'USD';
+		$lang = "EN";
+		$date = date('Y-m-d H:i:s');
+		$accesskey = '6000f7966d6143f89c6b01695c438669';
+		$secretkey = '81e44ea323974473825bb8809180453d';
+		
+		// 2013-11-09 14:33:46de235a6a15c340b6b1e1cb5f3687d04aPOST/activity.json/search?lang=EN&currency=ISK
+		// 2020-01-22 13:48:106000f7966d6143f89c6b01695c438669GET/activity.json/284167?lang=EN¤cy=USD
+		
+		$string_signature = $date.$accesskey.$method.$path.'?lang=END&currency=USD';
+		
+		$sha1_signature =  hash_hmac("sha1",$string_signature, $secretkey, true);
+		$base64_signature = base64_encode($sha1_signature);
+		
+		//print($base64_signature);
+		//exit();
+		
+		$headers = [
+			'Accept' => 'application/json',
+			'X-Bokun-AccessKey' => $accesskey,
+			'X-Bokun-Date' => $date,
+			'X-Bokun-Signature' => $base64_signature,
+		];
+		
+		$client = new \GuzzleHttp\Client(['headers' => $headers]);
+		
+
+		$response = $client->request($method, $endpoint.$path);
+
+// url will be: http://my.domain.com/test.php?key1=5&key2=ABC;
+
+		$statusCode = $response->getStatusCode();
+		$content = $response->getBody();
+		
+		print_r($content);
+		
+		return view('blog.frontend.blank');
+	}
 	
 	public function product($id)
     {

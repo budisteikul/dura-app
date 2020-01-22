@@ -76,9 +76,7 @@ Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product_tour');
 // ================================================================================
 
 
-Route::get('/blank', function () {
-	return view('blog.frontend.blank');
-});
+Route::get('/blank', 'Blog\Frontend\BlogController@blank');
 
 Route::get('/page/waiver-and-release', function () {
 	return view('blog.frontend.waiver-liability');
