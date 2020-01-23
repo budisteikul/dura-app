@@ -123,7 +123,7 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
         if(empty($activityId))
         {
            $activityId = '284167';
-           $title = 'Izakaya Food Tour in Shinjuku';
+           $title = 'Shinjuku Night Walking and Food Tours';
            $description = 'Enjoy classic Japanese experience at our selected restaurants. Local food & drinks as we journey through Tokyo’s busiest area in Shinjuku.';
         }
 
