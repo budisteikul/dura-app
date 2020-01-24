@@ -220,10 +220,10 @@ Are ready to explore Shinjuku with us?
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
 						
                     	<span itemprop="priceCurrency" content="USD"></span>
-                    	<span itemprop="price" content="100.00"></span>
+                    	<span itemprop="price" content="99.00"></span>
 						
 				
-				 100 USD / person
+				 99 USD / person
 				
 			
     					<link itemprop="availability" href="http://schema.org/InStock" />
