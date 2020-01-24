@@ -125,23 +125,16 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-white">
                     	PAYMENT CHANNEL
                     	<br>
-                    	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+                    	@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
                     	<a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img height="40" style="margin-top:4px;" src="/assets/foodtour/9_bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal"></a>
 						<br>
 						@endif
 						<img src="/assets/foodtour/PP_AcceptanceMarkTray-NoDiscover_243x40.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
 					
                     </p>
-					@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-					<p class="m-0 text-left text-white">
-					<small> 2020 &copy; VERTIKAL TRIP LLC AND JOGJA FOOD TOUR</small>
-					@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com")
-					<p class="m-0 text-left text-white">
-					<small> 2020 &copy; VERTIKAL TRIP LLC AND NINJA FOOD TOURS</small>
-					@else
+					
 					<p class="m-0 text-left text-white">
 					<small> 2020 &copy; VERTIKAL TRIP LLC</small>
-					@endif
 					</p>
                 </div>
 			
