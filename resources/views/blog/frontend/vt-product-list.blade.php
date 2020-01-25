@@ -1,16 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
 @push('scripts')
-
-<style>
-html, body {
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-}
-.bg_primary
-{
-	background-color: #2C97DE;
-}
-</style>
 <script type="text/javascript" src="https://vertikaltrip.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
 @endpush
  <!-- ################################################################### -->

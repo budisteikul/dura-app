@@ -59,10 +59,99 @@ class BlogController extends Controller
     return view('blog.frontend.blank')->with(['contents'=>$contents]);
   }
 
+  public function vt_product_page(Request $request,$id="")
+    {
+        $activityId = "284167";
+        if($id=="")
+        {
+            $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
+            if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
+            $activityId = $request->input('activityId');
+
+        }
+        else
+        {
+            $post = blog_posts::with('widgets')->where('slug',$id)->first();
+            if(isset($post))
+              {
+                $activityId = $post->widgets->product_id;
+              }
+        }
+        
+        
+        $endpoint = "https://api.bokun.io";
+        $path = '/activity.json/'. $activityId;
+        $method = 'GET';
+        $currency = 'USD';
+        $lang = "EN";
+        $query = '?currency='.$currency.'&lang='.$lang;
+        $date = gmdate('Y-m-d H:i:s');
+        $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+        $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+    
+        $string_signature = $date.$bokun_accesskey.$method. $path .$query;
+        $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+        $base64_signature = base64_encode($sha1_signature);
+    
+        $headers = [
+          'Accept' => 'application/json',
+          'X-Bokun-AccessKey' => $bokun_accesskey,
+          'X-Bokun-Date' => $date,
+          'X-Bokun-Signature' => $base64_signature,
+        ];
+    
+        $client = new \GuzzleHttp\Client(['headers' => $headers]);
+        $response = $client->request($method, $endpoint.$path.$query);
+        $statusCode = $response->getStatusCode();
+        $contents = json_decode($response->getBody()->getContents());
+        
+        $pickup = '';
+        if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+        {
+        $endpoint = "https://api.bokun.io";
+        $path = '/activity.json/'. $activityId .'/pickup-places';
+        $method = 'GET';
+        $currency = 'USD';
+        $lang = "EN";
+        $query = '?currency='.$currency.'&lang='.$lang;
+        $date = gmdate('Y-m-d H:i:s');
+        $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+        $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+    
+        $string_signature = $date.$bokun_accesskey.$method. $path .$query;
+        $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+        $base64_signature = base64_encode($sha1_signature);
+    
+        $headers = [
+          'Accept' => 'application/json',
+          'X-Bokun-AccessKey' => $bokun_accesskey,
+          'X-Bokun-Date' => $date,
+          'X-Bokun-Signature' => $base64_signature,
+        ];
+    
+        $client = new \GuzzleHttp\Client(['headers' => $headers]);
+        $response = $client->request($method, $endpoint.$path.$query);
+        $statusCode = $response->getStatusCode();
+        $pickup = json_decode($response->getBody()->getContents());
+
+        }
+
+        $calendar = $contents->id;
+        $widget = rev_widgets::where('product_id',$activityId)->first();
+        if(isset($widget)){
+            if(isset($widget->calendar_id)){
+               $calendar = $widget->calendar_id;
+            }
+        }
+
+        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
+    }
+
+
 	public function vt_product_list(Request $request,$id="")
 	{
 		$default_id = '20041';
-    
+
     if($id=="")
     {
         $id = $default_id;
@@ -190,7 +279,7 @@ class BlogController extends Controller
 	public function bokun_product_page()
 	{
 		$endpoint = "https://api.bokun.io";
-		$path = '/activity.json/284167';
+		$path = '/activity.json/173745';
 		$method = 'GET';
 		$currency = 'USD';
 		$lang = "EN";
@@ -220,7 +309,7 @@ class BlogController extends Controller
 		
 		print_r(json_decode($content));
 		
-		return view('blog.frontend.blank');
+		//return view('blog.frontend.blank');
 	}
 
 	

@@ -160,6 +160,10 @@
   	
     <div class="col-sm-8 col-sm-auto">
     	<div style="height:66px;"></div>
+
+
+
+
       		{!! $product !!}
     </div>
     <div class="col-sm-4">
