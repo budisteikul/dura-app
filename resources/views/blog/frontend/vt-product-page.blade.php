@@ -30,8 +30,15 @@
     <div class="col-sm-8 col-sm-auto">
     	<div style="height:66px;"></div>
 
-
+@if($contents->keyPhoto!="")
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    @for($i=1;$i<count($contents->photos);$i++)
+    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"></li>
+    @endfor
+  </ol>
   <div class="carousel-inner">
     
     <div class="carousel-item active">
@@ -55,6 +62,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+@endif
+
 
 <h2 class="mt-4">{{ $contents->title }}</h2>
 <div class="text-muted mt-4 mb-4">
