@@ -86,7 +86,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white " href="/booking/Shinjuku-night-walking-and-food-tours/"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
+<a class="btn btn-danger text-white " href="/booking/izakaya-food-tour-in-shinjuku/"><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
 
 @endif
 
@@ -290,7 +290,6 @@ Please let us know if you have any food restrictions beforehand.
 - Infant seats available<br>
 - Most travelers can participate<br>
 - This experience requires good weather. If it’s canceled due to poor weather, you’ll be offered a different date or a full refund<br>
-- This experience requires a minimum number of travelers. If it’s canceled because the minimum isn’t met, you’ll be offered a different date experience or a full refund
                 </div>
 			</p>
           	

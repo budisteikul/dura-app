@@ -51,7 +51,8 @@ Route::domain('www.shinjukufoodtour.com')->group(function () {
 });
 
 Route::domain('192.168.0.3')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
+	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 });
 
 Route::domain('www.jogjafoodtour.com')->group(function () {
@@ -61,7 +62,8 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 });
 
 Route::domain('www.vertikaltrip.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@product_tour');
+	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 });
 
 Route::domain('www.budi.my.id')->group(function () {

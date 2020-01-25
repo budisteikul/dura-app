@@ -24,25 +24,80 @@ class BlogController extends Controller
 		
 	}
 	
-	
-	public function blank()
+  public function blank()
+  {
+    $endpoint = "https://api.bokun.io";
+    $path = '/product-list.json/20041';
+    $method = 'GET';
+    $currency = 'USD';
+    $lang = "EN";
+    $query = '?currency='.$currency.'&lang='.$lang;
+    $date = gmdate('Y-m-d H:i:s');
+    $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+    $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+    
+    $string_signature = $date.$bokun_accesskey.$method. $path .$query;
+    $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+    $base64_signature = base64_encode($sha1_signature);
+    
+    $headers = [
+      'Accept' => 'application/json',
+      'X-Bokun-AccessKey' => $bokun_accesskey,
+      'X-Bokun-Date' => $date,
+      'X-Bokun-Signature' => $base64_signature,
+    ];
+    
+    $client = new \GuzzleHttp\Client(['headers' => $headers]);
+    
+
+    $response = $client->request($method, $endpoint.$path.$query);
+
+    $statusCode = $response->getStatusCode();
+    $contents = json_decode($response->getBody()->getContents());
+    
+    
+    return view('blog.frontend.blank')->with(['contents'=>$contents]);
+  }
+
+	public function vt_product_list(Request $request,$id="")
 	{
-		$endpoint = "https://api.bokun.io";
-		$path = '/activity.json/284167';
+		$default_id = '20041';
+    
+    if($id=="")
+    {
+        $id = $default_id;
+    }
+    else
+    {
+        $cat = blog_categories::where('slug',$id)->first();
+        if(isset($cat))
+        {
+            $id = $cat->description;
+        }
+        else
+        {
+           $id = $default_id;
+        }
+    }
+    
+
+    $endpoint = "https://api.bokun.io";
+		$path = '/product-list.json/'. $id;
 		$method = 'GET';
 		$currency = 'USD';
 		$lang = "EN";
+		$query = '?currency='.$currency.'&lang='.$lang;
 		$date = gmdate('Y-m-d H:i:s');
-		$accesskey = '6000f7966d6143f89c6b01695c438669';
-		$secretkey = '81e44ea323974473825bb8809180453d';
+		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
 		
-		$string_signature = $date.$accesskey.'GET'. $path .'?currency='.$currency.'&lang='.$lang;
-		$sha1_signature =  hash_hmac("sha1",$string_signature, $secretkey, true);
+		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
 		$base64_signature = base64_encode($sha1_signature);
 		
 		$headers = [
 			'Accept' => 'application/json',
-			'X-Bokun-AccessKey' => $accesskey,
+			'X-Bokun-AccessKey' => $bokun_accesskey,
 			'X-Bokun-Date' => $date,
 			'X-Bokun-Signature' => $base64_signature,
 		];
@@ -50,7 +105,115 @@ class BlogController extends Controller
 		$client = new \GuzzleHttp\Client(['headers' => $headers]);
 		
 
-		$response = $client->request($method, $endpoint.$path.'?currency='.$currency.'&lang='.$lang);
+		$response = $client->request($method, $endpoint.$path.$query);
+
+		$statusCode = $response->getStatusCode();
+		$contents = json_decode($response->getBody()->getContents());
+		
+		
+		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+	}
+
+
+	public function bokun_product_list_by_id()
+	{
+		$endpoint = "https://api.bokun.io";
+		$path = '/product-list.json/20041';
+		$method = 'GET';
+		$currency = 'USD';
+		$lang = "EN";
+		$query = '?currency='.$currency.'&lang='.$lang;
+		$date = gmdate('Y-m-d H:i:s');
+		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		
+		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+		$base64_signature = base64_encode($sha1_signature);
+		
+		$headers = [
+			'Accept' => 'application/json',
+			'X-Bokun-AccessKey' => $bokun_accesskey,
+			'X-Bokun-Date' => $date,
+			'X-Bokun-Signature' => $base64_signature,
+		];
+		
+		$client = new \GuzzleHttp\Client(['headers' => $headers]);
+		
+
+		$response = $client->request($method, $endpoint.$path.$query);
+
+		$statusCode = $response->getStatusCode();
+		$content = json_decode($response->getBody()->getContents());
+		
+		print_r($content);
+		
+		//return view('blog.frontend.blank');
+	}
+
+	public function bokun_product_list()
+	{
+		$endpoint = "https://api.bokun.io";
+		$path = '/product-list.json/list';
+		$method = 'GET';
+		$currency = 'USD';
+		$lang = "EN";
+		$query = '?currency='.$currency.'&lang='.$lang;
+		$date = gmdate('Y-m-d H:i:s');
+		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		
+		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+		$base64_signature = base64_encode($sha1_signature);
+		
+		$headers = [
+			'Accept' => 'application/json',
+			'X-Bokun-AccessKey' => $bokun_accesskey,
+			'X-Bokun-Date' => $date,
+			'X-Bokun-Signature' => $base64_signature,
+		];
+		
+		$client = new \GuzzleHttp\Client(['headers' => $headers]);
+		
+
+		$response = $client->request($method, $endpoint.$path.$query);
+
+		$statusCode = $response->getStatusCode();
+		$content = json_decode($response->getBody()->getContents());
+		
+		print_r($content->activity->keyPhoto->derived);
+		
+		return view('blog.frontend.blank');
+	}
+
+	public function bokun_product_page()
+	{
+		$endpoint = "https://api.bokun.io";
+		$path = '/activity.json/284167';
+		$method = 'GET';
+		$currency = 'USD';
+		$lang = "EN";
+		$query = '?currency='.$currency.'&lang='.$lang;
+		$date = gmdate('Y-m-d H:i:s');
+		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
+		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		
+		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+		$base64_signature = base64_encode($sha1_signature);
+		
+		$headers = [
+			'Accept' => 'application/json',
+			'X-Bokun-AccessKey' => $bokun_accesskey,
+			'X-Bokun-Date' => $date,
+			'X-Bokun-Signature' => $base64_signature,
+		];
+		
+		$client = new \GuzzleHttp\Client(['headers' => $headers]);
+		
+
+		$response = $client->request($method, $endpoint.$path.$query);
 
 		$statusCode = $response->getStatusCode();
 		$content = $response->getBody()->getContents();
@@ -59,6 +222,8 @@ class BlogController extends Controller
 		
 		return view('blog.frontend.blank');
 	}
+
+	
 	
 	public function product($id)
     {
