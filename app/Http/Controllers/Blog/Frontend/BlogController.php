@@ -33,8 +33,8 @@ class BlogController extends Controller
     $lang = "EN";
     $query = '?currency='.$currency.'&lang='.$lang;
     $date = gmdate('Y-m-d H:i:s');
-    $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-    $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+    $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+    $bokun_secretkey = env("BOKUN_SECRETKEY", "");
     
     $string_signature = $date.$bokun_accesskey.$method. $path .$query;
     $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -86,8 +86,8 @@ class BlogController extends Controller
         $lang = "EN";
         $query = '?currency='.$currency.'&lang='.$lang;
         $date = gmdate('Y-m-d H:i:s');
-        $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-        $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+        $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+        $bokun_secretkey = env("BOKUN_SECRETKEY", "");
     
         $string_signature = $date.$bokun_accesskey.$method. $path .$query;
         $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -115,8 +115,8 @@ class BlogController extends Controller
         $lang = "EN";
         $query = '?currency='.$currency.'&lang='.$lang;
         $date = gmdate('Y-m-d H:i:s');
-        $bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-        $bokun_secretkey = '81e44ea323974473825bb8809180453d';
+        $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+        $bokun_secretkey = env("BOKUN_SECRETKEY", "");
     
         $string_signature = $date.$bokun_accesskey.$method. $path .$query;
         $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -177,8 +177,8 @@ class BlogController extends Controller
 		$lang = "EN";
 		$query = '?currency='.$currency.'&lang='.$lang;
 		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
 		
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
 		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -213,8 +213,8 @@ class BlogController extends Controller
 		$lang = "EN";
 		$query = '?currency='.$currency.'&lang='.$lang;
 		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
 		
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
 		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -249,8 +249,8 @@ class BlogController extends Controller
 		$lang = "EN";
 		$query = '?currency='.$currency.'&lang='.$lang;
 		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
 		
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
 		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -285,8 +285,8 @@ class BlogController extends Controller
 		$lang = "EN";
 		$query = '?currency='.$currency.'&lang='.$lang;
 		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = '6000f7966d6143f89c6b01695c438669';
-		$bokun_secretkey = '81e44ea323974473825bb8809180453d';
+		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
 		
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
 		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
