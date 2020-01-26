@@ -16,6 +16,11 @@ class BookClass {
 			$hasil = str_ireplace("_"," ",ucwords(strtolower($str)));
 			
 		}
+		if($type=='accessibility')
+		{
+			$hasil = str_ireplace("_"," ",ucwords(strtolower($str)));
+			
+		}
 		if($type=='type')
 		{
 			switch($str)

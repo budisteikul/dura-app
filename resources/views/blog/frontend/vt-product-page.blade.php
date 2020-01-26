@@ -141,6 +141,14 @@
               <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</span>
             @endif
           </div>
+          <!-- div>
+            @if(!empty($contents->supportedAccessibilityTypes))
+              <h5 class="mt-2">Supported accessibility</h5>
+              @for($i=0;$i<count($contents->supportedAccessibilityTypes);$i++)
+              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('accessibility',$contents->supportedAccessibilityTypes[$i])!!}</span>
+              @endfor
+            @endif
+          </div -->
       </div>
       <div class="col-md-6">
           <div>
