@@ -123,7 +123,10 @@ div {
 <div class="text-muted mt-4 mb-4">
   <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;
   @if($contents->difficultyLevel!="")
-  <i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
+  <i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!} &nbsp;&nbsp;
+  @endif
+  @if($contents->privateActivity)
+    <span class="badge badge-info">PRIVATE TOUR</span>
   @endif
 </div>
 <div class="text-muted mt-4 mb-4">
@@ -135,12 +138,12 @@ div {
   <li class="nav-item">
     <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><b>Description</b></a>
   </li>
-  @if(($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP') && !empty($contents->startPoints))
+  @if(!empty($contents->startPoints))
   <li class="nav-item">
     <a class="nav-link" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false"><b>Meeting point</b></a>
   </li>
   @endif
-  @if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+  @if(!empty($contents->pickupPlaces))
   <li class="nav-item">
     <a class="nav-link" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false"><b>Pick-up</b></a>
   </li>
@@ -189,7 +192,10 @@ div {
           <div>
             @if($contents->productCategory!="")
               <h3 class="mt-2">Experience type</h3>
-              {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}
+              {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
+            @endif
+            @if($contents->privateActivity)
+                <span class="badge badge-info">PRIVATE TOUR</span>
             @endif
           </div>
           <div>
@@ -252,7 +258,7 @@ div {
   </div>
 </div>
 </div>
-@if(($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP') && !empty($contents->startPoints))
+@if(!empty($contents->startPoints))
   <div class="tab-pane fade mt-4" id="meeting" role="tabpanel" aria-labelledby="meeting-tab">
   You can start this experience at the following places:
   <div>
@@ -264,7 +270,7 @@ div {
   </div>
 </div>
 @endif 
-@if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+@if(!empty($contents->pickupPlaces))
   <div class="tab-pane fade mt-4" id="pickup" role="tabpanel" aria-labelledby="pickup-tab">
   We offer pick-up to the following places for this experience:
   <br><br>
