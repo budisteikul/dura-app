@@ -4,18 +4,48 @@ use App\Models\Rev\rev_books;
 use Illuminate\Support\Str;
 
 class BookClass {
-	public static function ticket(){
-		$cek = 1;
-		while($cek==1)
+	public static function lang($type,$str){
+		$hasil = '';
+		if($type=='categories')
+		{
+			$hasil = str_ireplace("_"," ",ucwords(strtolower($str)));
+			
+		}
+		if($type=='dificulty')
+		{
+			$hasil = str_ireplace("_"," ",ucwords(strtolower($str)));
+			
+		}
+		if($type=='type')
+		{
+			switch($str)
 			{
-				$ticket = strtoupper('VT-'.Str::random(6));
-				$results = rev_books::where('ticket',$ticket)->count();
-				if($results==0)
-				{
-					$cek=0;	
-				}
+				case 'ACTIVITIES':
+					$hasil = 'Day tour/Activity';
+				break;
 			}
-		return $ticket;
+			
+		}
+		if($type=='language')
+		{
+			switch($str)
+			{
+				case 'ja':
+					$hasil = 'Japanese';
+				break;
+				case 'ja':
+					$hasil = 'Italian';
+				break;
+				case 'fr':
+					$hasil = 'French';
+				break;
+				case 'en':
+					$hasil = 'English';
+				break;
+			}
+			
+		}
+		return $hasil;
 	}
 }
 ?>

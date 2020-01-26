@@ -67,7 +67,7 @@
 
 <h2 class="mt-4">{{ $contents->title }}</h2>
 <div class="text-muted mt-4 mb-4">
-  <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;<i class="fas fa-signal"></i> {!!$contents->difficultyLevel!!}
+  <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;<i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
 </div>
 <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
@@ -120,13 +120,13 @@
           <div>
             @if($contents->productCategory!="")
               <h5 class="mt-2">Experience type</h5>
-              {!!$contents->productCategory!!}
+              {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}
             @endif
           </div>
           <div>
             @if($contents->bookingCutoffHours!="")
               <h5 class="mt-2">Booking in advance</h5>
-              Cut off: {!!$contents->bookingCutoffHours!!}
+              Cut off: {!!$contents->bookingCutoffHours!!} hours
             @endif
           </div>
           <div>
@@ -138,7 +138,7 @@
           <div>
             @if($contents->difficultyLevel!="")
               <h5 class="mt-2">Difficulty</h5>
-              {!!$contents->difficultyLevel!!}
+              {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
             @endif
           </div>
       </div>
@@ -148,12 +148,12 @@
               <h5 class="mt-2">Categories</h5>
               @if($contents->activityCategories!="")
               @for($i=0;$i<count($contents->activityCategories);$i++)
-                {!!$contents->activityCategories[$i]!!}
+                <span class="badge badge-light text-muted"> {!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!} </span>
               @endfor
               @endif
               @if($contents->activityAttributes!="")
               @for($i=0;$i<count($contents->activityAttributes);$i++)
-                {!!$contents->activityAttributes[$i]!!}
+                <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}</span>
               @endfor
               @endif
             @endif
@@ -163,7 +163,7 @@
             @if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
               <h5 class="mt-2">Live tour guide</h5>
               @for($i=0;$i<count($contents->guidanceTypes[0]->languages);$i++)
-                {!!$contents->guidanceTypes[0]->languages[$i]!!}
+                <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}</span>
               @endfor
             @endif
             @endif
