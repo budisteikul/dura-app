@@ -73,7 +73,7 @@
   <li class="nav-item">
     <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
   </li>
-  @if($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+  @if(($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP') && !empty($contents->startPoints))
   <li class="nav-item">
     <a class="nav-link" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false">Meeting point</a>
   </li>
@@ -175,7 +175,7 @@
   </div>
 </div>
 </div>
-@if($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+@if(($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP') && !empty($contents->startPoints))
   <div class="tab-pane fade mt-4" id="meeting" role="tabpanel" aria-labelledby="meeting-tab">
   You can start this experience at the following places:
   <div>
