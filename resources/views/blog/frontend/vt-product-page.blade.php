@@ -67,7 +67,10 @@
 
 <h2 class="mt-4">{{ $contents->title }}</h2>
 <div class="text-muted mt-4 mb-4">
-  <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;<i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
+  <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;
+  @if($contents->difficultyLevel!="")
+  <i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
+  @endif
 </div>
 <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
