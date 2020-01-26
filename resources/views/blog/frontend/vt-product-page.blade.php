@@ -183,7 +183,7 @@
     {{  $contents->startPoints[0]->address->addressLine1 }} {{  $contents->startPoints[0]->address->addressLine2 }} {{  $contents->startPoints[0]->address->addressLine3 }} {{  $contents->startPoints[0]->address->city }} {{  $contents->startPoints[0]->address->state }} {{  $contents->startPoints[0]->address->postalCode }} {{  $contents->startPoints[0]->address->countryCode }}
   </div>
   <div class="map-responsive mt-2">
-    <iframe src = "https://maps.google.com/maps?q={{  $contents->startPoints[0]->address->geoPoint->latitude }},{{  $contents->startPoints[0]->address->geoPoint->longitude }}&hl=en;z=13&amp;output=embed" frameborder="0" style="border:0;"></iframe>
+    <iframe src = "https://maps.google.com/maps?q={{  $contents->startPoints[0]->address->geoPoint->latitude }},{{  $contents->startPoints[0]->address->geoPoint->longitude }}&hl=en;z=13&amp;output=embed" width="600" height="450" frameborder="0" style="border:0;"></iframe>
   </div>
 </div>
 @endif 
