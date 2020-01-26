@@ -4,6 +4,60 @@
 
 @push('scripts')
 <script type="text/javascript" src="https://vertikaltrip.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+<style>
+html, body {
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+body {
+    background-color: transparent;
+    color: rgb(52, 64, 78);
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: normal;
+    touch-action: manipulation;
+    margin: 0px;
+    overflow: auto !important;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+div {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+}
+</style>
 @endpush
 
 
@@ -65,7 +119,7 @@
 @endif
 
 
-<h2 class="mt-4">{{ $contents->title }}</h2>
+<h1 class="mt-4">{{ $contents->title }}</h1>
 <div class="text-muted mt-4 mb-4">
   <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;
   @if($contents->difficultyLevel!="")
@@ -96,21 +150,21 @@
 
   <div>
         @if($contents->included!="")
-          <h5 class="mt-4">What's included?</h5>
+          <h3 class="mt-4">What's included?</h3>
           {!!$contents->included!!}
         @endif
   </div>
 
   <div>
         @if($contents->excluded!="")
-          <h5 class="mt-4">Exclusions</h5>
+          <h3 class="mt-4">Exclusions</h3>
           {!!$contents->excluded!!}
         @endif
   </div>
 
   <!-- div>
         @if($contents->attention!="")
-          <h5 class="mt-4">Please note</h5>
+          <h3 class="mt-4">Please note</h3>
           {!!$contents->attention!!}
         @endif
   </div -->
@@ -122,33 +176,33 @@
       <div class="col-md-6">
           <div>
             @if($contents->productCategory!="")
-              <h5 class="mt-2">Experience type</h5>
-              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}</span>
+              <h3 class="mt-2">Experience type</h3>
+              {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}
             @endif
           </div>
           <div>
             @if($contents->bookingCutoffHours!="")
-              <h5 class="mt-2">Booking in advance</h5>
-              <span class="badge badge-light text-muted">Cut off: {!!$contents->bookingCutoffHours!!} hours</span>
+              <h3 class="mt-2">Booking in advance</h3>
+              Cut off: {!!$contents->bookingCutoffHours!!} hours
             @endif
           </div>
           <div>
             @if($contents->durationText!="")
-              <h5 class="mt-2">Duration</h5>
-              <span class="badge badge-light text-muted">{!!$contents->durationText!!}</span>
+              <h3 class="mt-2">Duration</h3>
+              {!!$contents->durationText!!}
             @endif
           </div>
           <div>
             @if($contents->difficultyLevel!="")
-              <h5 class="mt-2">Difficulty</h5>
-              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</span>
+              <h3 class="mt-2">Difficulty</h3>
+              {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
             @endif
           </div>
           <!-- div>
             @if(!empty($contents->supportedAccessibilityTypes))
-              <h5 class="mt-2">Supported accessibility</h5>
+              <h3 class="mt-2">Supported accessibility</h3>
               @for($i=0;$i<count($contents->supportedAccessibilityTypes);$i++)
-              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('accessibility',$contents->supportedAccessibilityTypes[$i])!!}</span>
+             {!!\App\Classes\Rev\BookClass::lang('accessibility',$contents->supportedAccessibilityTypes[$i])!!}
               @endfor
             @endif
           </div -->
@@ -156,15 +210,15 @@
       <div class="col-md-6">
           <div>
             @if($contents->activityCategories!="" || $contents->activityAttributes!="")
-              <h5 class="mt-2">Categories</h5>
+              <h3 class="mt-2">Categories</h3>
               @if($contents->activityCategories!="")
               @for($i=0;$i<count($contents->activityCategories);$i++)
-                <span class="badge badge-light text-muted"> {!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!} </span>
+                {!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!}
               @endfor
               @endif
               @if($contents->activityAttributes!="")
               @for($i=0;$i<count($contents->activityAttributes);$i++)
-                <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}</span>
+                {!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}
               @endfor
               @endif
             @endif
@@ -172,9 +226,9 @@
           <div>
             @if(!empty($contents->guidanceTypes))
             @if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
-              <h5 class="mt-2">Live tour guide</h5>
+              <h3 class="mt-2">Live tour guide</h3>
               @for($i=0;$i<count($contents->guidanceTypes[0]->languages);$i++)
-                <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}</span>
+                {!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}
               @endfor
             @endif
             @endif
@@ -190,7 +244,7 @@
   <div class="tab-pane fade mt-4" id="meeting" role="tabpanel" aria-labelledby="meeting-tab">
   You can start this experience at the following places:
   <div>
-    <h5 class="mt-4 mb-0">{{ $contents->startPoints[0]->title }}</h5>
+    <h3 class="mt-4 mb-0">{{ $contents->startPoints[0]->title }}</h3>
     {{  $contents->startPoints[0]->address->addressLine1 }} {{  $contents->startPoints[0]->address->addressLine2 }} {{  $contents->startPoints[0]->address->addressLine3 }} {{  $contents->startPoints[0]->address->city }} {{  $contents->startPoints[0]->address->state }} {{  $contents->startPoints[0]->address->postalCode }} {{  $contents->startPoints[0]->address->countryCode }}
   </div>
   <div class="map-responsive mt-2">
@@ -228,7 +282,7 @@
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-white" style="background-color: #2c97de;"><h5>Book Now</h5></div>
+  			<div class="card-header text-white" style="background-color: #2c97de;"><h3>Book Now</h3></div>
  				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				
      
