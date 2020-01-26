@@ -167,6 +167,13 @@ div {
         @endif
   </div>
 
+  <div>
+        @if($contents->requirements!="")
+          <h3 class="mt-4">What do I need to bring?</h3>
+          {!!$contents->requirements!!}
+        @endif
+  </div>
+
   <!-- div>
         @if($contents->attention!="")
           <h3 class="mt-4">Please note</h3>
