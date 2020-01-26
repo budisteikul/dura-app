@@ -100,7 +100,7 @@ div {
                     @if($content->activity->excerpt!="")
                     <p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
                     @endif
-                    <p class="card-text text-left text-muted"><i class="far fa-clock"></i> {{ $content->activity->durationText }}</p>
+                    <p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
     								<p class="card-text text-right"><b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></p>
   								</div>
   								<div class="card-footer bg-primary p-0">
