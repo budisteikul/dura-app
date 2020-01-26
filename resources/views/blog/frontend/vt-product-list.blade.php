@@ -104,7 +104,7 @@ div {
     								<p class="card-text text-right"><b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></p>
   								</div>
   								<div class="card-footer bg-primary p-0">
-    								<a href="/tour?activityId={{ $content->activity->id }}" class="btn btn-primary btn-lg btn-block text-white" style=" cursor: pointer; background-color: #2C97DE; border-color: #2C97DE;">More info</a>
+    								<a href="/tour?activityId={{ $content->activity->id }}" class="btn btn-primary btn-lg btn-block text-white" style=" cursor: pointer; background-color: #2C97DE; border-color: #2C97DE;"><i class="fas fa-info-circle"></i> More info</a>
   								</div>
 							</div>
     				</div>
