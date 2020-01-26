@@ -120,25 +120,25 @@
           <div>
             @if($contents->productCategory!="")
               <h5 class="mt-2">Experience type</h5>
-              {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}
+              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!}</span>
             @endif
           </div>
           <div>
             @if($contents->bookingCutoffHours!="")
               <h5 class="mt-2">Booking in advance</h5>
-              Cut off: {!!$contents->bookingCutoffHours!!} hours
+              <span class="badge badge-light text-muted">Cut off: {!!$contents->bookingCutoffHours!!} hours</span>
             @endif
           </div>
           <div>
             @if($contents->durationText!="")
               <h5 class="mt-2">Duration</h5>
-              {!!$contents->durationText!!}
+              <span class="badge badge-light text-muted">{!!$contents->durationText!!}</span>
             @endif
           </div>
           <div>
             @if($contents->difficultyLevel!="")
               <h5 class="mt-2">Difficulty</h5>
-              {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
+              <span class="badge badge-light text-muted">{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</span>
             @endif
           </div>
       </div>
