@@ -126,18 +126,23 @@ div {
   <i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
   @endif
 </div>
+<div class="text-muted mt-4 mb-4">
+  @if($contents->excerpt!="")
+  {!!$contents->excerpt!!}
+  @endif
+</div>
 <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><b>Description</b></a>
   </li>
   @if(($contents->meetingType=='MEET_ON_LOCATION' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP') && !empty($contents->startPoints))
   <li class="nav-item">
-    <a class="nav-link" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false">Meeting point</a>
+    <a class="nav-link" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false"><b>Meeting point</b></a>
   </li>
   @endif
   @if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
   <li class="nav-item">
-    <a class="nav-link" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false">Pick-up</a>
+    <a class="nav-link" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false"><b>Pick-up</b></a>
   </li>
   @endif
 </ul>
@@ -282,7 +287,7 @@ div {
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-white" style="background-color: #2c97de;"><h3>Book Now</h3></div>
+  			<div class="card-header text-white" style="background-color: #2c97de;"><h3>Book {{ $contents->title }}</h3></div>
  				 <div class="card-body" style="padding-left:0px;padding-right:0px;padding-top:5px;padding-bottom:15px;">
     				
      
@@ -306,72 +311,5 @@ div {
 
 
 
-<section id="booking" style="background-color:#ffffff">
-<div class="container">
-  <div class="row" style="padding-bottom:0px;">
-        <div class="col-lg-8 text-center mx-auto">
-          <!-- h3 class="section-heading" style="margin-top:50px;">TOUR OPERATOR</h3 -->
-                    
-       
-          <!-- hr style="max-width:50px;border-color:#e2433b;border-width:3px;" -->
-        </div>
-  </div>
 
-  <div class="row">
-    
-    <div class="col-sm-4 col-sm-auto  mb-4">
-      <a href="/product-list/ninja-food-tours/">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle">
-           <img class="card-img-top" src="/assets/foodtour/supplier/ninja-food.png" alt="Ninja Food Tours">
-    </div>
-    </a>
-    </div>
-
-    <div class="col-sm-4 col-sm-auto  mb-4">
-      <a href="/product-list/original-food-tours-paris">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle">
-           <img class="card-img-top" src="/assets/foodtour/supplier/original-food-tours____.jpg" alt="Original Food Tours">
-      </div>
-    </a>
-    </div>
-
-    <div class="col-sm-4 col-sm-auto  mb-4">
-        <a href="/product-list/cancun-food-tours">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-           <img class="card-img-top" src="/assets/foodtour/supplier/cancun-food-tours.png" alt="Cancun Food Tours">
-      </div>
-      </a>
-    </div>
-
-    <div class="col-sm-4 col-sm-auto mb-4">
-      <a href="/product-list/india-food-tours">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-           <img class="card-img-top" src="/assets/foodtour/supplier/india-food-tours.jpg" alt="India Food Tours">
-    </div>
-    </a>
-    </div>
-
-    <div class="col-sm-4 col-sm-auto mb-4">
-      <a href="/product-list/trinidad-food-tours">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-           <img class="card-img-top" src="/assets/foodtour/supplier/trinidad.jpg" alt="Trinidad Food Tours">
-    </div>
-    </a>
-    </div>
-
-    <div class="col-sm-4 col-sm-auto mb-4">
-      <a href="/product-list/jogja-food-tour">
-      <div class="card mb-4 shadow p-4 card-block d-table-cell align-middle" style="height:200px;">
-           <img class="card-img-top" src="/assets/foodtour/supplier/jogja.png" alt="Jogja Food Tour">
-    </div>
-    </a>
-    </div>
-
-   
-    
-  </div>
-  
-</div>
-
-</section>
 @endsection
