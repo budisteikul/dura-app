@@ -174,12 +174,12 @@ div {
         @endif
   </div>
 
-  <!-- div>
+  <div>
         @if($contents->attention!="")
           <h3 class="mt-4">Please note</h3>
           {!!$contents->attention!!}
         @endif
-  </div -->
+  </div>
   
   <div class="card mt-4 w-100 bg-light">
   <div class="card-body">
