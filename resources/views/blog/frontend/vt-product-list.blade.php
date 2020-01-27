@@ -82,9 +82,22 @@ div {
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
+
+            <div class="row" style="padding-bottom:0px;">
+                <div class="col-lg-12 text-center">
+                    <div style="height:70px;"></div>
+                    
+                    <h3 class="section-heading" style="margin-top:0px;">Explore Yogyakarta Through our Tour Packages</h3>
+                    <h4 class="section-subheading text-muted">And So Our Adventure Begins</h4>
+                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+                    
+                    <div style="height:30px;"></div>
+                </div>
+            </div>
+
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
-				<div style="height:70px;"></div>	
+					
         		<div class="row">
 
         			@foreach($contents->items as $content)
