@@ -24,40 +24,7 @@ class BlogController extends Controller
 		
 	}
 	
-  public function blank()
-  {
-    $endpoint = "https://api.bokun.io";
-    $path = '/product-list.json/20041';
-    $method = 'GET';
-    $currency = 'USD';
-    $lang = "EN";
-    $query = '?currency='.$currency.'&lang='.$lang;
-    $date = gmdate('Y-m-d H:i:s');
-    $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-    $bokun_secretkey = env("BOKUN_SECRETKEY", "");
-    
-    $string_signature = $date.$bokun_accesskey.$method. $path .$query;
-    $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-    $base64_signature = base64_encode($sha1_signature);
-    
-    $headers = [
-      'Accept' => 'application/json',
-      'X-Bokun-AccessKey' => $bokun_accesskey,
-      'X-Bokun-Date' => $date,
-      'X-Bokun-Signature' => $base64_signature,
-    ];
-    
-    $client = new \GuzzleHttp\Client(['headers' => $headers]);
-    
-
-    $response = $client->request($method, $endpoint.$path.$query);
-
-    $statusCode = $response->getStatusCode();
-    $contents = json_decode($response->getBody()->getContents());
-    
-    
-    return view('blog.frontend.blank')->with(['contents'=>$contents]);
-  }
+  
 
   public function vt_product_page(Request $request,$id="")
     {
@@ -288,7 +255,17 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
     }
 
     
-
+	public function time_selector($id)
+	{
+		$render = '';
+		$widget = blog_posts::with('widgets')->where('slug',$id)->first();
+        if(isset($widget)){
+			if(isset($widget->widgets->time_selector)){
+               $render = $widget->widgets->time_selector;
+            }
+        }
+		return view('blog.frontend.booking')->with(['product'=>$render]);
+	}
 	
 
     public function checkout()
