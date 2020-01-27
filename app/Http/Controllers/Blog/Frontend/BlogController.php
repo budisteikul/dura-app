@@ -207,128 +207,6 @@ class BlogController extends Controller
 	}
 
 
-	public function bokun_product_list_by_id()
-	{
-		$endpoint = "https://api.bokun.io";
-		$path = '/product-list.json/20041';
-		$method = 'GET';
-		$currency = 'USD';
-		$lang = "EN";
-		$query = '?currency='.$currency.'&lang='.$lang;
-		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
-		
-		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
-		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-		$base64_signature = base64_encode($sha1_signature);
-		
-		$headers = [
-			'Accept' => 'application/json',
-			'X-Bokun-AccessKey' => $bokun_accesskey,
-			'X-Bokun-Date' => $date,
-			'X-Bokun-Signature' => $base64_signature,
-		];
-		
-		$client = new \GuzzleHttp\Client(['headers' => $headers]);
-		
-
-		$response = $client->request($method, $endpoint.$path.$query);
-
-		$statusCode = $response->getStatusCode();
-		$content = json_decode($response->getBody()->getContents());
-		
-		print_r($content);
-		
-		//return view('blog.frontend.blank');
-	}
-
-	public function bokun_product_list()
-	{
-		$endpoint = "https://api.bokun.io";
-		$path = '/product-list.json/list';
-		$method = 'GET';
-		$currency = 'USD';
-		$lang = "EN";
-		$query = '?currency='.$currency.'&lang='.$lang;
-		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
-		
-		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
-		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-		$base64_signature = base64_encode($sha1_signature);
-		
-		$headers = [
-			'Accept' => 'application/json',
-			'X-Bokun-AccessKey' => $bokun_accesskey,
-			'X-Bokun-Date' => $date,
-			'X-Bokun-Signature' => $base64_signature,
-		];
-		
-		$client = new \GuzzleHttp\Client(['headers' => $headers]);
-		
-
-		$response = $client->request($method, $endpoint.$path.$query);
-
-		$statusCode = $response->getStatusCode();
-		$content = json_decode($response->getBody()->getContents());
-		
-		print_r($content->activity->keyPhoto->derived);
-		
-		return view('blog.frontend.blank');
-	}
-
-	public function bokun_product_page()
-	{
-		$endpoint = "https://api.bokun.io";
-		$path = '/activity.json/173745';
-		$method = 'GET';
-		$currency = 'USD';
-		$lang = "EN";
-		$query = '?currency='.$currency.'&lang='.$lang;
-		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
-		
-		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
-		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-		$base64_signature = base64_encode($sha1_signature);
-		
-		$headers = [
-			'Accept' => 'application/json',
-			'X-Bokun-AccessKey' => $bokun_accesskey,
-			'X-Bokun-Date' => $date,
-			'X-Bokun-Signature' => $base64_signature,
-		];
-		
-		$client = new \GuzzleHttp\Client(['headers' => $headers]);
-		
-
-		$response = $client->request($method, $endpoint.$path.$query);
-
-		$statusCode = $response->getStatusCode();
-		$content = $response->getBody()->getContents();
-		
-		print_r(json_decode($content));
-		
-		//return view('blog.frontend.blank');
-	}
-
-	
-	
-	public function product($id)
-    {
-		    $post = blog_posts::where('slug',$id)->first();
-        return view('blog.frontend.booking')->with(['product'=>$post->widgets->time_selector,'jscript'=>'','product_page'=>false]);
-    }
-	
-	public function product_list($id)
-    {
-      $title = '';
-		$cat = blog_categories::where('slug',$id)->first();
-        return view('blog.frontend.product')->with(['title'=>$title,'product'=>$cat->description,'jscript'=>'','product_page'=>false]);
-    }
 	
 
     public function index_shinjuku(Request $request,$id="")
@@ -409,55 +287,7 @@ var w101289_0ce31b80_d625_4740_84d3_107105eeb027;
 
     }
 
-    public function product_tour(Request $request,$id="")
-    {
-        $activityId = "";
-        $title = '';
-        if($id=="")
-        {
-            $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
-            if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
-            $activityId = $request->input('activityId');
-
-        }
-        else
-        {
-            $post = blog_posts::with('widgets')->where('slug',$id)->first();
-            if(isset($post))
-              {
-                $activityId = $post->widgets->product_id;
-                $title = $post->title;
-              }
-        }
-        
-        
-        $jscript = '<script type="text/javascript" src="https://vertikaltrip.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>';
-        $product = '';
-        $calendar = '';
-        $product_page = true;
-       
-        if(empty($activityId))
-        {
-            $product_page = false;
-			      $cat = blog_categories::where('slug','front-page')->first();
-            $product = $cat->description;
-        }
-        else
-        {
-              $product = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-$calendar = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$activityId.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-
-        }
-
-        $widget = rev_widgets::where('product_id',$activityId)->first();
-        if(isset($widget)){
-            if(isset($widget->calendar_id)){
-               $calendar = '<div class="bokunWidget" data-src="https://vertikaltrip.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$widget->calendar_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
-            }
-        }
-        
-        return view('blog.frontend.product')->with(['title'=>$title,'jscript'=>$jscript,'product'=>$product,'calendar'=>$calendar,'product_page'=>$product_page]);
-    }
+    
 
 	
 
@@ -521,7 +351,7 @@ var w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 	
 
@@ -543,7 +373,7 @@ var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 
     /**
