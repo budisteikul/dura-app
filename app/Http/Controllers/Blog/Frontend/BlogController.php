@@ -479,7 +479,7 @@ var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 
     public function receipt()
@@ -500,7 +500,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.booking')->with(['product'=>$render,'jscript'=>'','product_page'=>false]);
+        return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 
 	 public function checkout_tmt()
