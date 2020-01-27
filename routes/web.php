@@ -73,10 +73,11 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 });
 
 Route::domain('www.budi.my.id')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
-	//Route::get('/', 'Blog\Frontend\BlogController@product_tour');
+	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
+	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
 
 
