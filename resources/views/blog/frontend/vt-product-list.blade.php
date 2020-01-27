@@ -95,15 +95,16 @@ div {
   				 				
   							<div class="card-header bg-white border-0 text-left h-100 pb-0">
         								<h2 class="mb-0">{{ $content->activity->title }}</h2>
-							<div class="pt-2">
-								 @if($content->activity->excerpt!="")
-									<p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
-								 @endif
-							</div>
       						</div>
-							
+								<div class="card-body pt-0 h-100">
+    								@if($content->activity->excerpt!="")
+									<p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
+									@endif
+  								</div>
+								<div class="card-body pt-0">
+    								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
+  								</div>
   								<div class="card-body pt-0">
-									<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
     								<p class="card-text text-right"><b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></p>
   								</div>
   								<div class="card-footer bg-primary p-0">
