@@ -139,8 +139,11 @@ class BlogController extends Controller
         $calendar = $contents->id;
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
-            if(isset($widget->calendar_id)){
-               $calendar = $widget->calendar_id;
+            //if(isset($widget->calendar_id)){
+               //$calendar = $widget->calendar_id;
+            //}
+			if(isset($widget->calendar_id)){
+               $calendar = $widget->time_selector;
             }
         }
 
