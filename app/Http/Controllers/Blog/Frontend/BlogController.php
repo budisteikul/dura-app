@@ -109,9 +109,18 @@ class BlogController extends Controller
             //if(isset($widget->calendar_id)){
                //$calendar = $widget->calendar_id;
             //}
-			if(isset($widget->time_selector)){
+			      if(isset($widget->time_selector)){
                $calendar = $widget->time_selector;
             }
+        }
+        else
+        {
+
+            $calendar = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+     
+    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.''"></div>
+    <noscript>Please enable javascript in your browser to book</noscript>
+';
         }
 
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
