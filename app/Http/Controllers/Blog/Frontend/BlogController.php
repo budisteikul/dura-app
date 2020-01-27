@@ -142,7 +142,7 @@ class BlogController extends Controller
             //if(isset($widget->calendar_id)){
                //$calendar = $widget->calendar_id;
             //}
-			if(isset($widget->calendar_id)){
+			if(isset($widget->time_selector)){
                $calendar = $widget->time_selector;
             }
         }
