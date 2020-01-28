@@ -32,6 +32,7 @@ class BookController extends Controller
 		$phone =  $request->input('phone');
 		$date =  $request->input('date');
 		$post_id =  $request->input('post_id');
+		$ticket =  $request->input('ticket');
 		
 		
 		$domain = preg_replace('#^https?://#', '', Http::root());
@@ -40,7 +41,7 @@ class BookController extends Controller
 		$from = explode(" ",$os0);
 		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
 		
-		$ticket = BookClass::ticket();
+		
 		
 		$rev_books = new rev_books();
 		$rev_books->post_id = $post_id;
@@ -180,7 +181,7 @@ class BookController extends Controller
 		$ticket = $request->input('ticket');
 		$status = $request->input('status');
 		
-		if($ticket=="") $ticket = BookClass::ticket();
+		
 		
 		$rev_books = new rev_books();
 		$rev_books->post_id = $post_id;
@@ -282,7 +283,7 @@ class BookController extends Controller
 		$ticket = $request->input('ticket');
 		$status = $request->input('status');
 		
-		if($ticket=="") $ticket = BookClass::ticket();
+		
 		
 		$rev_books = rev_books::findOrFail($id);
 		$rev_books->post_id = $post_id;
