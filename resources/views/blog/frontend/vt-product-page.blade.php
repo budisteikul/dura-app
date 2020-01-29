@@ -87,8 +87,8 @@ div {
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    @for($i=1;$i<count($contents->photos);$i++)
+    <!-- li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li -->
+    @for($i=0;$i<count($contents->photos);$i++)
     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"></li>
     @endfor
   </ol>
