@@ -106,16 +106,10 @@ s0.parentNode.insertBefore(s1,s0);
 						<br>
 						We're happy to help
 						<br>
-						@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
-						@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="shinjukufoodtour.com")
-							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+15055852112">+1 505-585-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@shinjukufoodtour.com" class="badge badge-danger" target="_blank">guide@shinjukufoodtour.com</a>
-						@else
+						
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+15055852112">+1 505-585-2112</a> <br>
 							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
-						@endif
+						
 						
 						
                     </p>
