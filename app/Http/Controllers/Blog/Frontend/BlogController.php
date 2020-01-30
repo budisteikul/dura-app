@@ -178,8 +178,8 @@ class BlogController extends Controller
 		$statusCode = $response->getStatusCode();
 		$contents = json_decode($response->getBody()->getContents());
 		
-		
-		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+		$count = rev_reviews::count();
+		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents,'count'=>$count]);
 	}
 
 
