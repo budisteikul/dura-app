@@ -33,12 +33,11 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 });
 
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/shinjuku', function () {
-			return redirect('/tour?activityId=284167');
-	});
+	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
+	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
+	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
 
 Route::domain('www.shinjukufoodtour.com')->group(function () {

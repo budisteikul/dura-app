@@ -1,62 +1,8 @@
 @extends('layouts.frontend')
 @section('content')
 @section('title',$contents->title)
-
 @push('scripts')
-<style>
-html, body {
-    font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-}
-body {
-    background-color: transparent;
-    color: rgb(52, 64, 78);
-    font-style: normal;
-    font-variant-ligatures: normal;
-    font-variant-caps: normal;
-    font-variant-numeric: normal;
-    font-variant-east-asian: normal;
-    font-weight: normal;
-    font-stretch: normal;
-    line-height: normal;
-    touch-action: manipulation;
-    margin: 0px;
-    overflow: auto !important;
-}
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
 
-div {
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.7);
-}
-</style>
 @endpush
 
 
