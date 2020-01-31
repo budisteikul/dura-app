@@ -31,7 +31,7 @@ class WebhookController extends Controller
 		$timestamp = $data['activityBookings'][0]['startDateTime'];
 		
 		$dt = new \DateTime(date('Y-m-d h:i:s', floor($timestamp / 1000)));
-		$dt->modify('+7 hours');
+		$dt->modify('+5 hours');
 		
 		
 		
