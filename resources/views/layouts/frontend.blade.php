@@ -44,7 +44,7 @@
     
   
     
-<!-- script>
+<script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
 				caches.delete('sw-precache-v3-pwa-');
@@ -57,7 +57,7 @@
                 });
             });
         }
-</script -->    
+</script>    
     
     @stack('scripts')
 	
