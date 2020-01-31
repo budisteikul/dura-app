@@ -73,6 +73,7 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 
 Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
+	
 	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
@@ -80,7 +81,8 @@ Route::domain('www.budi.my.id')->group(function () {
 });
 
 
-
+Route::post('/rev/webhook', 'Rev\WebhookController@store');
+Route::get('/rev/webhook', 'Rev\WebhookController@store');
 
 
 // ================================================================================
