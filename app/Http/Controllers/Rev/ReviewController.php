@@ -48,6 +48,7 @@ class ReviewController extends Controller
 					
 					
 					$rev_resellers = rev_resellers::findOrFail($resource->source);
+					$blog_posts = blog_posts::findOrFail($resource->post_id);
 					
 					$title = "";
 					if(isset($resource->title))
@@ -59,9 +60,10 @@ class ReviewController extends Controller
 					
 					$user = '<a href="'.$rev_resellers->link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
-					$text = nl2br($resource->text) .'<br>';
-					$from = '<a href="'. $rev_resellers->link .'" class="text-danger" target="_blank" rel="noreferrer">  <small> '. $rev_resellers->link .'</small></a>';
-					$output = $user.$rating.$title.$text.$from;
+					$post_title = 'Review of: '. $blog_posts->title.'<br>';
+					$text =  nl2br($resource->text) .'<br>';
+					$from = '<a href="'. $rev_resellers->link .'" class="text-danger" target="_blank" rel="noreferrer">'. $rev_resellers->name .'</a>';
+					$output = $user.$post_title.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
 				->rawColumns(['style'])
