@@ -24,17 +24,22 @@ class WebhookController extends Controller
 		//$time = date("Y-m-d H:i:s",$data['activityBookings'][0]['startDateTime']);
 		//print_r(date('Y-m-d',(int)'1582156800000'));
 		//$startTime =  $data['activityBookings'][0]['startTime'];
-		$time = strtotime('1582156800000');
-		$newformat = date('Y-m-d',$time);
-
-		echo $newformat;
-		exit();
-		/*
+		
+		//$date = 15821568000;
+		
+ 		
+		$timestamp = $data['activityBookings'][0]['startDateTime'];
+		
+		$dt = new \DateTime(date('Y-m-d h:i:s', floor($timestamp / 1000)));
+		$dt->modify('+29 hours');
+		
+		
+		
 		$post_id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
 		$name = $data['customer']['firstName'] .' '. $data['customer']['lastName'];
 		$email = $data['customer']['email'];
 		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
-		$date = $data['activityBookings']['startDateTime'];
+		$date = $dt->format('Y-m-d H:i:s');
 		$source = 'cfd05b44-9863-47fe-b88f-2453140fa276';
 		$traveller = '2';
 		$ticket = $data['confirmationCode'];
@@ -53,7 +58,7 @@ class WebhookController extends Controller
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
-		*/
+		
 		return response()->json([
 					"id" => "1",
 					"message" => 'Success'
