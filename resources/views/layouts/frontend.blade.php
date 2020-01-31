@@ -44,7 +44,7 @@
     
   
     
-<script>
+<!-- script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
 				caches.delete('sw-precache-v3-pwa-');
@@ -57,12 +57,12 @@
                 });
             });
         }
-</script>    
+</script -->    
     
     @stack('scripts')
 	
 <!--Start of Tawk.to Script-->
-<!-- script type="text/javascript">
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -74,7 +74,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 
 
-</script -->
+</script>
 <!--End of Tawk.to Script-->
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,7 +107,7 @@ s0.parentNode.insertBefore(s1,s0);
 						We're happy to help
 						<br>
 						
-							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+15055852112">+1 505-585-2112</a> <br>
+							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
 							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
 						
 						
