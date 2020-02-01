@@ -25,6 +25,7 @@ class CreateRevBooksTable extends Migration
 			$table->string('phone')->nullable();
 			$table->integer('traveller')->default(1);
 			$table->dateTime('date')->nullable();
+			$table->string('date_text')->nullable();
 			$table->string('source')->nullable();
 			$table->string('ticket')->nullable();
 			$table->tinyInteger('status')->default(1);
