@@ -33,18 +33,18 @@ class MailsDataTable extends DataTable
 				->addColumn('sender', function ($mail) {
 					$from = $mail->from;
 					if($from=="") $from = $mail->sender;
-					return '<a href="'. route('mails.show',[ 'id'=>$mail->id, 'view' => null ]) .'">'. $from .'</a>';
+					return '<a href="'. route('mails.show',[ $mail->id, '' ]) .'">'. $from .'</a>';
 					
 					
 				})
 				->editColumn('subject', function ($mail) {
 					if($mail->read>0)
 					{
-						return '<a href="'. route('mails.show',[ 'id'=>$mail->id, 'view' => null ]) .'" class="text-muted" >'. $mail->subject .' - <span>'. Str::words(strip_tags($mail->body_plain),10) .'</span></a>';
+						return '<a href="'. route('mails.show',[ $mail->id, '' ]) .'" class="text-muted" >'. $mail->subject .' - <span>'. Str::words(strip_tags($mail->body_plain),10) .'</span></a>';
 					}
 					else
 					{
-						return '<a href="'. route('mails.show',[ 'id'=>$mail->id, 'view' => null ]) .'" class="text-muted" ><b>'. $mail->subject .'</b> - <span>'. Str::words(strip_tags($mail->body_plain),10) .'</span></a>';
+						return '<a href="'. route('mails.show',[ $mail->id, '' ]) .'" class="text-muted" ><b>'. $mail->subject .'</b> - <span>'. Str::words(strip_tags($mail->body_plain),10) .'</span></a>';
 					}
 					
 				})

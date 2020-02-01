@@ -14,6 +14,9 @@
 // Auth Laravel --------------------------------------------------------------------------
 //Auth::routes(['verify' => true]);
 
+
+
+
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
