@@ -18,18 +18,15 @@ class WebhookController extends Controller
 	
 	public function store(Request $request)
     {
+		switch($request->input('action'))
+		{
+		case 'BOOKING_CONFIRMED':
 		$data = $request->all();
-		
-		//$product_id = BookClass::get_id(5355);
-		//print($product_id);
-		//exit();
 		
 		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
 		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
 		
-		
 		$post_id = $product_id;
-		
 		$name = $data['customer']['firstName'] .' '. $data['customer']['lastName'];
 		$email = $data['customer']['email'];
 		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
@@ -38,9 +35,7 @@ class WebhookController extends Controller
 		$traveller = $data['invoice']['productInvoices'][0]['lineItems'][0]['people'];
 		$ticket = $data['confirmationCode'];
 		$date_text = $data['invoice']['productInvoices'][0]['dates'];
-		$status = '1';
-		
-		
+		$status = '2';
 		
 		$rev_books = new rev_books();
 		$rev_books->post_id = $post_id;
@@ -54,7 +49,13 @@ class WebhookController extends Controller
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
-		
+		break;
+		case 'BOOKING_ITEM_CANCELLED':
+			$rev_books = rev_books::findOrFail($data['confirmationCode']);
+			$rev_books->status = 3;
+			$rev_books->save();
+		break;
+		}
 		
 		return response()->json([
 					"id" => "1",
