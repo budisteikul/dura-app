@@ -37,6 +37,7 @@ class WebhookController extends Controller
 		$source = 'cfd05b44-9863-47fe-b88f-2453140fa276';
 		$traveller = $data['invoice']['productInvoices'][0]['lineItems'][0]['people'];
 		$ticket = $data['confirmationCode'];
+		$date_text = $data['invoice']['productInvoices'][0]['dates'];
 		$status = '1';
 		
 		
@@ -49,6 +50,7 @@ class WebhookController extends Controller
 		$rev_books->date = $date;
 		$rev_books->source = $source;
 		$rev_books->traveller = $traveller;
+		$rev_books->date_text = $date_text;
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
