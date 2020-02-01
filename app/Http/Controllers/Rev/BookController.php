@@ -101,7 +101,9 @@ class BookController extends Controller
 					return $post->title;
 				})
 				->editColumn('name', function ($book) {
-					return  $book->ticket .'<br>'. $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email .'<br>Date : '. $book->date_text; 
+					$ticket = '';
+					if($book->ticket!='') $ticket =$book->ticket .'<br>';
+					return  $ticket . $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email .'<br>Date : '. $book->date_text; 
 				})
 				->addColumn('action', function ($book) {
 					
