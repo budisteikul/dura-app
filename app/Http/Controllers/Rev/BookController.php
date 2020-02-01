@@ -93,7 +93,8 @@ class BookController extends Controller
 				})
 				->editColumn('source', function ($book) {
 					$rev_resellers = rev_resellers::find($book->source);
-					return $rev_resellers->name;
+					if(isset($rev_resellers)) return $rev_resellers->name;
+					return '';
 				})
 				->addColumn('product', function ($book) {
 					$post = blog_posts::find($book->post_id);

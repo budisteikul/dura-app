@@ -17,6 +17,7 @@ function UPDATE()
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
 			"link": $('#link').val(),
+			"uuid": $('#uuid').val(),
 			"commission": $('#commission').val()
         },
 		type: 'PUT',
@@ -60,6 +61,11 @@ function UPDATE()
 <div class="form-group">
 	<label for="name">name :</label>
 	<input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{ $rev_resellers->name }}">
+</div>
+
+<div class="form-group">
+	<label for="name">uuid :</label>
+	<input type="text" id="uuid" name="uuid" class="form-control" placeholder="uuid" value="{{ $rev_resellers->id }}">
 </div>
 
 <div class="form-group">

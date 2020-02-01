@@ -99,6 +99,7 @@ class ResellerController extends Controller
     {
         $validator = Validator::make($request->all(), [
           	'name' => 'required|string|max:255',
+			'uuid' => 'required|string|max:255',
 			'commission' => 'required|numeric'
        	]);
         
@@ -110,8 +111,10 @@ class ResellerController extends Controller
 		$name =  $request->input('name');
 		$commission =  $request->input('commission');
 		$link =  $request->input('link');
+		$uuid =  $request->input('uuid');
 		
 		$rev_resellers = rev_resellers::findOrFail($id);
+		$rev_resellers->id = $uuid;
 		$rev_resellers->name = $name;
 		$rev_resellers->commission = $commission;
 		$rev_resellers->link = $link;
