@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Rev;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\Models\Rev\rev_books;
 use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
@@ -21,48 +20,17 @@ class WebhookController extends Controller
     {
 		$data = $request->all();
 		
-		$text = 'Wed 31.Jul 2019';
-		$text = explode('@',$text);
-		if(isset($text[1]))
-		{
-			$date = \DateTime::createFromFormat('D d.M Y ', $text[0]);
-			$time = \DateTime::createFromFormat(' H:i', $text[1]);
-			print($date->format('Y-m-d'));
-			print($time->format('H:i:00'));
-		}
-		else
-		{
-			$date = \DateTime::createFromFormat('D d.M Y', $text[0]);
-			print($date->format('Y-m-d'));
-			print('00:00:00');
-		}
+		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
+		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
 		
 		
-		/*
-		$books = rev_books::all();
-		foreach($books as $book)
-		{
-			$date = \DateTime::createFromFormat('Y-m-d H:i:s', $book->date);
-			$rev_books = rev_books::findOrFail($book->id);
-			$rev_books->date_text = $date->format('D d.M Y @ H:i');
-			$rev_books->save();
-			echo $date->format('D d.M Y @ H:i');
-		}
-		*/
-		
-		exit();
-		
-		
-		/*
-		
-		
-		$post_id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
+		$post_id = $product_id;
 		$name = $data['customer']['firstName'] .' '. $data['customer']['lastName'];
 		$email = $data['customer']['email'];
 		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
-		$date = $dt->format('Y-m-d H:i:s');
+		$date = $date;
 		$source = 'cfd05b44-9863-47fe-b88f-2453140fa276';
-		$traveller = '2';
+		$traveller = $data['invoice']['productInvoices'][0]['lineItems'][0]['people'];
 		$ticket = $data['confirmationCode'];
 		$status = '1';
 		
@@ -79,7 +47,7 @@ class WebhookController extends Controller
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
-		*/
+		
 		
 		return response()->json([
 					"id" => "1",

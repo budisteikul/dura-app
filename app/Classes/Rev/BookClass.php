@@ -6,6 +6,17 @@ use Illuminate\Support\Str;
 
 class BookClass {
 	
+	public static function get_id($product_id)
+	{
+		$id = '';
+		$slug = rev_widgets::with('posts')->where('product_id',$product_id)->first();
+		if(isset($slug))
+		{
+			$id = $slug->posts->id;	
+		}
+		return $id;
+	}
+	
 	public static function get_slug($id)
 	{
 		$slug = rev_widgets::with('posts')->where('product_id',$id)->first();
