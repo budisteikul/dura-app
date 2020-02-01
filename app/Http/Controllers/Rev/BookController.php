@@ -100,7 +100,7 @@ class BookController extends Controller
 					return $post->title;
 				})
 				->editColumn('name', function ($book) {
-					return  $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email; 
+					return  $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email .'<br>Date : '. $book->date_text; 
 				})
 				->addColumn('action', function ($book) {
 					
@@ -178,7 +178,6 @@ class BookController extends Controller
 		$date = $request->input('date');
 		$source = $request->input('source');
 		$traveller = $request->input('traveller');
-		$ticket = $request->input('ticket');
 		$status = $request->input('status');
 		
 		
@@ -191,8 +190,8 @@ class BookController extends Controller
 		$rev_books->date = $date;
 		$rev_books->source = $source;
 		$rev_books->traveller = $traveller;
-		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
+		$rev_books->date_text = BookClass::datetotext($date);
 		$rev_books->save();
 		
 		return response()->json([
@@ -280,7 +279,6 @@ class BookController extends Controller
 		$date = $request->input('date');
 		$source = $request->input('source');
 		$traveller = $request->input('traveller');
-		$ticket = $request->input('ticket');
 		$status = $request->input('status');
 		
 		
@@ -293,8 +291,8 @@ class BookController extends Controller
 		$rev_books->date = $date;
 		$rev_books->source = $source;
 		$rev_books->traveller = $traveller;
-		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
+		$rev_books->date_text = BookClass::datetotext($date);
 		$rev_books->save();
 		
 		return response()->json([
