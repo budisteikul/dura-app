@@ -123,8 +123,7 @@
   <section class="page-section" id="services" style="background-color:#FFFFFF">
     <div class="container">
     <div style="height:70px;"></div>
-      <h2 class="text-center mt-0">Why Choose us?</h2>
-      <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+      
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">

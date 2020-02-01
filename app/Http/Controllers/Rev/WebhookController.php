@@ -21,6 +21,8 @@ class WebhookController extends Controller
     {
 		$data = $request->all();
 		
+		
+		//1580495400000
 		//$time = date("Y-m-d H:i:s",$data['activityBookings'][0]['startDateTime']);
 		//print_r(date('Y-m-d',(int)'1582156800000'));
 		//$startTime =  $data['activityBookings'][0]['startTime'];
@@ -28,11 +30,13 @@ class WebhookController extends Controller
 		//$date = 15821568000;
 		
  		
-		$timestamp = $data['activityBookings'][0]['startDateTime'];
+		//$timestamp = $data['activityBookings'][0]['startDateTime'];
 		
-		$dt = new \DateTime(date('Y-m-d h:i:s', floor($timestamp / 1000)));
-		$dt->modify('+5 hours');
+		$date = \DateTime::createFromFormat('Y-m-d H:i:s', '2020-03-14 18:30:00');
 		
+		echo $date->format('D d.M Y @ H:i');
+		exit();
+		/*
 		
 		
 		$post_id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
@@ -58,6 +62,7 @@ class WebhookController extends Controller
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
+		*/
 		
 		return response()->json([
 					"id" => "1",
