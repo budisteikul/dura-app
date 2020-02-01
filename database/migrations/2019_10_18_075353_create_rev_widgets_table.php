@@ -22,7 +22,7 @@ class CreateRevWidgetsTable extends Migration
 			
 			$table->longText('product_id')->nullable();
 			$table->longText('calendar_id')->nullable();
-			
+			$table->longText('time_selector')->nullable();
 				
 			$table->timestamps();
 			$table->softDeletes();
