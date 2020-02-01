@@ -82,7 +82,7 @@ Route::domain('www.budi.my.id')->group(function () {
 
 
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
-Route::get('/rev/webhook', 'Rev\WebhookController@store');
+
 
 
 // ================================================================================
