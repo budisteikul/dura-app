@@ -46,8 +46,14 @@ class ReviewController extends Controller
 							$star ='<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';	
 					}
 					
-					
-					$rev_resellers = rev_resellers::findOrFail($resource->source);
+					$reseller_name = '';
+					$reseller_link = '#';
+					$rev_resellers = rev_resellers::find($resource->source);
+					if(isset($rev_resellers))
+					{
+						$reseller_name = $rev_resellers->name;
+						$reseller_link = $rev_resellers->link;
+					}
 					$blog_posts = blog_posts::findOrFail($resource->post_id);
 					
 					$title = "";
@@ -58,11 +64,11 @@ class ReviewController extends Controller
 					
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
 					
-					$user = '<a href="'.$rev_resellers->link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$user = '<a href="'.$reseller_link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
 					$post_title = 'Review of: '. $blog_posts->title.'<br>';
 					$text =  nl2br($resource->text) .'<br>';
-					$from = '<a href="'. $rev_resellers->link .'" class="text-danger" target="_blank" rel="noreferrer">'. $rev_resellers->name .'</a>';
+					$from = '<a href="'. $reseller_link .'" class="text-danger" target="_blank" rel="noreferrer">'. $reseller_name .'</a>';
 					$output = $user.$post_title.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})
@@ -90,8 +96,10 @@ class ReviewController extends Controller
 					return Str::limit($resource->text,100);
 				})
 				->editColumn('source', function ($resource) {
-					$rev_resellers = rev_resellers::findOrFail($resource->source);
-					return $rev_resellers->name;
+					$reseller_name = '';
+					$rev_resellers = rev_resellers::find($resource->source);
+					if(isset($rev_resellers)) $reseller_name = $rev_resellers->name;
+					return $reseller_name;
 				})
 				->addColumn('product', function ($resource) {
 					$post = blog_posts::find($resource->post_id);
