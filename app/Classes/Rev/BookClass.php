@@ -1,9 +1,24 @@
 <?php
 namespace App\Classes\Rev;
 use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_widgets;
 use Illuminate\Support\Str;
 
 class BookClass {
+	
+	public static function get_slug($id)
+	{
+		$slug = rev_widgets::with('posts')->where('product_id',$id)->first();
+		if(isset($slug))
+		{
+			$url = '/tour/'. $slug->posts->slug;	
+		}
+		else
+		{
+			$url = '/tour?activityId='.$id;	
+		}
+		return $url;
+	}
 	
 	public static function texttodate($str){
 		$text = $str;
