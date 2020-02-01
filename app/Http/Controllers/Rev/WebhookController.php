@@ -21,21 +21,38 @@ class WebhookController extends Controller
     {
 		$data = $request->all();
 		
+		$text = 'Wed 31.Jul 2019';
+		$text = explode('@',$text);
+		if(isset($text[1]))
+		{
+			$date = \DateTime::createFromFormat('D d.M Y ', $text[0]);
+			$time = \DateTime::createFromFormat(' H:i', $text[1]);
+			print($date->format('Y-m-d'));
+			print($time->format('H:i:00'));
+		}
+		else
+		{
+			$date = \DateTime::createFromFormat('D d.M Y', $text[0]);
+			print($date->format('Y-m-d'));
+			print('00:00:00');
+		}
 		
-		//1580495400000
-		//$time = date("Y-m-d H:i:s",$data['activityBookings'][0]['startDateTime']);
-		//print_r(date('Y-m-d',(int)'1582156800000'));
-		//$startTime =  $data['activityBookings'][0]['startTime'];
 		
-		//$date = 15821568000;
+		/*
+		$books = rev_books::all();
+		foreach($books as $book)
+		{
+			$date = \DateTime::createFromFormat('Y-m-d H:i:s', $book->date);
+			$rev_books = rev_books::findOrFail($book->id);
+			$rev_books->date_text = $date->format('D d.M Y @ H:i');
+			$rev_books->save();
+			echo $date->format('D d.M Y @ H:i');
+		}
+		*/
 		
- 		
-		//$timestamp = $data['activityBookings'][0]['startDateTime'];
-		
-		$date = \DateTime::createFromFormat('Y-m-d H:i:s', '2020-03-14 18:30:00');
-		
-		echo $date->format('D d.M Y @ H:i');
 		exit();
+		
+		
 		/*
 		
 		

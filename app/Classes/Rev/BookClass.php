@@ -4,6 +4,30 @@ use App\Models\Rev\rev_books;
 use Illuminate\Support\Str;
 
 class BookClass {
+	
+	public static function texttodate($str){
+		$text = $str;
+		$text = explode('@',$text);
+		if(isset($text[1]))
+		{
+			$date = \DateTime::createFromFormat('D d.M Y ', $text[0]);
+			$time = \DateTime::createFromFormat(' H:i', $text[1]);
+			$hasil = $date->format('Y-m-d') .' '. $time->format('H:i:00');
+		}
+		else
+		{
+			$date = \DateTime::createFromFormat('D d.M Y', $text[0]);
+			print($date->format('Y-m-d'));
+			$hasil = $date->format('Y-m-d') .' 00:00:00';
+		}
+		return $hasil;
+	}
+	
+	public static function datetotext($str){
+		$date = \DateTime::createFromFormat('Y-m-d H:i:s', $str);
+		return $date->format('D d.M Y @ H:i');
+	}
+	
 	public static function lang($type,$str){
 		$hasil = '';
 		if($type=='categories')
