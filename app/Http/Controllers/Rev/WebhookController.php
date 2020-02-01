@@ -18,10 +18,10 @@ class WebhookController extends Controller
 	
 	public function store(Request $request)
     {
+		$data = $request->all();
 		switch($request->input('action'))
 		{
 		case 'BOOKING_CONFIRMED':
-		$data = $request->all();
 		
 		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
 		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
@@ -51,9 +51,12 @@ class WebhookController extends Controller
 		$rev_books->save();
 		break;
 		case 'BOOKING_ITEM_CANCELLED':
-			$rev_books = rev_books::findOrFail($data['confirmationCode']);
-			$rev_books->status = 3;
-			$rev_books->save();
+			$rev_books = rev_books::where('ticket',$data['confirmationCode'])->first();
+			if(isset($rev_books))
+			{
+				$rev_books->status = 3;
+				$rev_books->save();
+			}
 		break;
 		}
 		
