@@ -8,7 +8,7 @@ class BookClass {
 	
 	public static function get_id($product_id)
 	{
-		$id = '';
+		$id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
 		$slug = rev_widgets::with('posts')->where('product_id',$product_id)->first();
 		if(isset($slug))
 		{

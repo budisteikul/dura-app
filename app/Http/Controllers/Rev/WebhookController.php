@@ -20,11 +20,16 @@ class WebhookController extends Controller
     {
 		$data = $request->all();
 		
+		//$product_id = BookClass::get_id(5355);
+		//print($product_id);
+		//exit();
+		
 		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
 		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
 		
 		
 		$post_id = $product_id;
+		
 		$name = $data['customer']['firstName'] .' '. $data['customer']['lastName'];
 		$email = $data['customer']['email'];
 		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
