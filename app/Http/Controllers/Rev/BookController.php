@@ -102,8 +102,18 @@ class BookController extends Controller
 				})
 				->editColumn('name', function ($book) {
 					$ticket = '';
-					if($book->ticket!='') $ticket =$book->ticket .'<br>';
-					return  $ticket . $book->name .'<br>Phone : '. $book->phone .'<br>Email : '. $book->email .'<br>Date : '. $book->date_text; 
+					$name = '';
+					$phone = '';
+					$email = '';
+					$date_text = '';
+					
+					if($book->ticket!='') $ticket = $book->ticket .'<br>';
+					if($book->name!='') $name = 'Name : '. $book->name .'<br>';
+					if($book->phone!='') $phone = 'Phone : '.$book->phone .'<br>';
+					if($book->email!='') $email = 'Email : '.$book->email .'<br>';
+					if($book->date_text!='') $date_text = 'Date : '.$book->date_text .'<br>';
+					
+					return  $ticket . $name . $phone . $email . $date_text; 
 				})
 				->addColumn('action', function ($book) {
 					
