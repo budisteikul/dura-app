@@ -134,14 +134,14 @@
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-danger mb-4"></i>
+            <i class="fas fa-4x fa-phone-alt text-danger mb-4"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
             <p class="text-muted mb-0">Whatsapp : +62 857 4311 2112</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-danger mb-4"></i>
+            <i class="fas fa-4x fa-history text-danger mb-4"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
             <p class="text-muted mb-0">You can cancel the booking up to 24 hours in advance!</p>
           </div>

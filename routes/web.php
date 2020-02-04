@@ -83,7 +83,10 @@ Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
 
-
+Route::post('/booking/check', 'Rev\CancellationController@index');
+Route::get('/cancellation', function(){
+	return view('blog.frontend.cancellation');
+});
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
 
 
