@@ -106,14 +106,18 @@ class BookController extends Controller
 					$phone = '';
 					$email = '';
 					$date_text = '';
+					$traveller = 'People : '. $book->traveller .'<br>';
+					$channel = '';
 					
 					if($book->ticket!='') $ticket = $book->ticket .'<br>';
 					if($book->name!='') $name = 'Name : '. $book->name .'<br>';
 					if($book->phone!='') $phone = 'Phone : '.$book->phone .'<br>';
 					if($book->email!='') $email = 'Email : '.$book->email .'<br>';
 					if($book->date_text!='') $date_text = 'Date : '.$book->date_text .'<br>';
+					$rev_resellers = rev_resellers::find($book->source);
+					if(isset($rev_resellers)) $channel = 'Channel : '. $rev_resellers->name .'<br>';
 					
-					return  $ticket . $name . $phone . $email . $date_text; 
+					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel; 
 				})
 				->addColumn('action', function ($book) {
 					
