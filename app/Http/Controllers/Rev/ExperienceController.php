@@ -67,7 +67,7 @@ class ExperienceController extends Controller
 		$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
 		$blog_posts->date = date('Y-m-d H:i:s');
 		$blog_posts->user_id = $user->id;
-		$blog_posts->content_type = 'standard';
+		$blog_posts->content_type = 'experience';
 		$blog_posts->post_type = 'post';
 		$blog_posts->status = 1;
 		$blog_posts->save();
@@ -148,7 +148,7 @@ class ExperienceController extends Controller
 		$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
 		$blog_posts->date = date('Y-m-d H:i:s');
 		$blog_posts->user_id = $user->id;
-		$blog_posts->content_type = 'standard';
+		$blog_posts->content_type = 'experience';
 		$blog_posts->post_type = 'post';
 		$blog_posts->status = 1;
 		$blog_posts->save();
