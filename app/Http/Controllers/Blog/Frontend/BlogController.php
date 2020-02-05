@@ -169,63 +169,6 @@ class BlogController extends Controller
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents,'count'=>$count]);
 	}
 
-    
-
-    
-	public function time_selector($id)
-	{
-		$render = '';
-		$widget = blog_posts::with('widgets')->where('slug',$id)->first();
-        if(isset($widget)){
-			if(isset($widget->widgets->time_selector)){
-               $render = $widget->widgets->time_selector;
-            }
-        }
-		return view('blog.frontend.booking')->with(['product'=>$render]);
-	}
-	
-
-    public function checkout()
-    {
-        $render = '<div id="bokun-w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa">Loading...</div><script type="text/javascript">
-var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
-(function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa = new BokunWidgetEmbedder(); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.initialize(options); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
-
-    public function receipt()
-    {
-        $render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
-var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
-(function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97536_f6820178_ae16_4095_b0ec_4c203e94f898\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_f6820178_ae16_4095_b0ec_4c203e94f898\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w97536_f6820178_ae16_4095_b0ec_4c203e94f898 = new BokunWidgetEmbedder(); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.initialize(options); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
 
 	public function index()
     {

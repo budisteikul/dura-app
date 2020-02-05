@@ -69,9 +69,9 @@ Route::get('/page/terms-and-conditions', function () {
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout');
-Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt');
-Route::get('/booking/{id}', 'Blog\Frontend\BlogController@time_selector');
+Route::get('/booking/checkout', 'Rev\BookController@checkout');
+Route::get('/booking/receipt', 'Rev\BookController@receipt');
+Route::get('/booking/{id}', 'Rev\BookController@time_selector');
 //========================================================================
 // Redirect Page
 //========================================================================
