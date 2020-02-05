@@ -24,7 +24,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
+// Home Routes...
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 //========================================================================
 // Custom domain
@@ -32,25 +32,21 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
-
 Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 });
-
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
-	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
 });
-
 Route::domain('192.168.0.3')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 });
-
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 });
-
+Route::domain('www.jogjafoodtour.com')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@index');
+});
 Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
 });

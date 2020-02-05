@@ -34,15 +34,14 @@ class BlogController extends Controller
             $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
             if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
             $activityId = $request->input('activityId');
-
         }
         else
         {
             $post = blog_posts::with('widgets')->where('slug',$id)->first();
             if(isset($post))
-              {
+            {
                 $activityId = $post->widgets->product_id;
-              }
+            }
         }
         
         
@@ -75,52 +74,44 @@ class BlogController extends Controller
         $pickup = '';
         if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
         {
-        $endpoint = "https://api.bokun.io";
-        $path = '/activity.json/'. $activityId .'/pickup-places';
-        $method = 'GET';
-        $currency = 'USD';
-        $lang = "EN";
-        $query = '?currency='.$currency.'&lang='.$lang;
-        $date = gmdate('Y-m-d H:i:s');
-        $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-        $bokun_secretkey = env("BOKUN_SECRETKEY", "");
+			$endpoint = "https://api.bokun.io";
+			$path = '/activity.json/'. $activityId .'/pickup-places';
+			$method = 'GET';
+			$currency = 'USD';
+			$lang = "EN";
+			$query = '?currency='.$currency.'&lang='.$lang;
+			$date = gmdate('Y-m-d H:i:s');
+			$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
+			$bokun_secretkey = env("BOKUN_SECRETKEY", "");
     
-        $string_signature = $date.$bokun_accesskey.$method. $path .$query;
-        $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-        $base64_signature = base64_encode($sha1_signature);
+			$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+			$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
+			$base64_signature = base64_encode($sha1_signature);
     
-        $headers = [
-          'Accept' => 'application/json',
-          'X-Bokun-AccessKey' => $bokun_accesskey,
-          'X-Bokun-Date' => $date,
-          'X-Bokun-Signature' => $base64_signature,
-        ];
+			$headers = [
+				'Accept' => 'application/json',
+				'X-Bokun-AccessKey' => $bokun_accesskey,
+				'X-Bokun-Date' => $date,
+				'X-Bokun-Signature' => $base64_signature,
+			];
     
-        $client = new \GuzzleHttp\Client(['headers' => $headers]);
-        $response = $client->request($method, $endpoint.$path.$query);
-        $statusCode = $response->getStatusCode();
-        $pickup = json_decode($response->getBody()->getContents());
+			$client = new \GuzzleHttp\Client(['headers' => $headers]);
+			$response = $client->request($method, $endpoint.$path.$query);
+			$statusCode = $response->getStatusCode();
+			$pickup = json_decode($response->getBody()->getContents());
 
         }
 
-        $calendar = $contents->id;
+        $calendar = '
+				<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+				<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
+				<noscript>Please enable javascript in your browser to book</noscript>
+				';
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
-            //if(isset($widget->calendar_id)){
-               //$calendar = $widget->calendar_id;
-            //}
-			      if(isset($widget->time_selector)){
+			if(isset($widget->time_selector)){
                $calendar = $widget->time_selector;
             }
-        }
-        else
-        {
-
-            $calendar = '<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';
         }
 
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
@@ -131,25 +122,25 @@ class BlogController extends Controller
 	{
 		$default_id = '20041';
 
-    if($id=="")
-    {
-        $id = $default_id;
-    }
-    else
-    {
-        $cat = blog_categories::where('slug',$id)->first();
-        if(isset($cat))
-        {
-            $id = $cat->description;
-        }
-        else
-        {
-           $id = $default_id;
-        }
-    }
+		if($id=="")
+		{
+			$id = $default_id;
+		}
+		else
+		{
+			$cat = blog_categories::where('slug',$id)->first();
+			if(isset($cat))
+			{
+				$id = $cat->description;
+			}
+			else
+			{
+				$id = $default_id;
+			}
+		}
     
 
-    $endpoint = "https://api.bokun.io";
+		$endpoint = "https://api.bokun.io";
 		$path = '/product-list.json/'. $id;
 		$method = 'GET';
 		$currency = 'USD';
@@ -162,17 +153,13 @@ class BlogController extends Controller
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
 		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
 		$base64_signature = base64_encode($sha1_signature);
-		
 		$headers = [
 			'Accept' => 'application/json',
 			'X-Bokun-AccessKey' => $bokun_accesskey,
 			'X-Bokun-Date' => $date,
 			'X-Bokun-Signature' => $base64_signature,
 		];
-		
 		$client = new \GuzzleHttp\Client(['headers' => $headers]);
-		
-
 		$response = $client->request($method, $endpoint.$path.$query);
 
 		$statusCode = $response->getStatusCode();
@@ -181,9 +168,6 @@ class BlogController extends Controller
 		$count = rev_reviews::count();
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents,'count'=>$count]);
 	}
-
-
-	
 
     public function index_shinjuku(Request $request,$id="")
     {
@@ -319,56 +303,6 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
         return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 
-	 public function checkout_tmt()
-    {
-        $render = '<div id="bokun-w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213">Loading...</div><script type="text/javascript">
-var w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213;
-(function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=bc161c64-7fa4-4143-8f98-c7f43ab806c1&amp;lang=en&amp;ccy=USD&amp;hash=w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213 = new BokunWidgetEmbedder(); w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213.initialize(options); w97537_41e75e05_9ad1_4b9e_86f4_601c995bd213.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
-	
-
-    public function receipt_tmt()
-    {
-        $render = '<div id="bokun-w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b">Loading...</div><script type="text/javascript">
-var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
-(function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=bc161c64-7fa4-4143-8f98-c7f43ab806c1&amp;lang=en&amp;ccy=USD&amp;hash=w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b = new BokunWidgetEmbedder(); w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b.initialize(options); w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-   
-	
 	public function index()
     {
 		$count = rev_reviews::count();
@@ -383,70 +317,4 @@ var w97536_6fbc3c6c_bf2b_4569_be58_36fabcca477b;
       ->with('count',$count);
     }
     
-	
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
