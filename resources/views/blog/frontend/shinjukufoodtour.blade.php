@@ -1,64 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
 @push('scripts')
-<script type="text/javascript">
-			jQuery(document).ready(function($) {	
-			var table = $('#dataTables-example').DataTable(
-			{
-				
-				"processing": true,
-       			"serverSide": true,
-        		"ajax": {
-            			"url": "/review",
-            			"type": "POST"
-        			},
-				"scrollX": true,
-				"language": {
-    				"paginate": {
-      					"previous": "<i class='fa fa-step-backward'></i>",
-						"next": "<i class='fa fa-step-forward'></i>",
-						"first": "<i class='fa fa-fast-backward'></i>",
-						"last": "<i class='fa fa-fast-forward'></i>"
-    				},
-					"aria": {
-            			"paginate": {
-                			"first":    'First',
-                			"previous": 'Previous',
-                			"next":     'Next',
-                			"last":     'Last'
-            			}
-        			}
-  				},
-				"pageLength": 5,
-				"order": [[ 0, "desc" ]],
-				"columns": [
-					{data: 'date', name: 'date', orderable: true, searchable: false, visible: false},
-					{data: 'style', name: 'style', className: 'auto', orderable: false},
-        		],
-				"dom": 'rtp',
-				"pagingType": "full_numbers",
-				"fnDrawCallback": function () {
-					
-				}
-			});
-			
-			var table = $('#dataTables-example').DataTable();
-			$('#dataTables-example').on('page.dt', function(){
-    			var target = $('#review');
-      			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      			if (target.length) {
-        			$('html, body').animate({
-          				scrollTop: (target.offset().top - 54)
-        			}, 1000, "easeInOutExpo");
-        			return false;
-      			}
-			});
-			
-			});
-			
-			
-</script>
-
 @endpush
   
  <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 

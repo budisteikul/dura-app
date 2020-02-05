@@ -312,9 +312,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 
     public function shinjukufoodtour()
     {
-    $count = rev_reviews::count();
-        return view('blog.frontend.shinjukufoodtour')
-      ->with('count',$count);
+        return view('blog.frontend.shinjukufoodtour');
     }
     
 }

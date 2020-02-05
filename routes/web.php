@@ -143,7 +143,6 @@ Route::resource('/mails/attachments','Mail\AttachmentController',[ 'names' => 'm
 Route::resource('/mails','Mail\MailController',[ 'names' => 'mails' ])->middleware(['auth', 'verified']);
 Route::get('/mails/{id}/{view}', 'Mail\MailController@show')->name('mails.show')->middleware(['auth', 'verified']);
 //========================================================================
-//Route::post('/sms/webhook', 'SMS\SMSController@index');
 
 
 
