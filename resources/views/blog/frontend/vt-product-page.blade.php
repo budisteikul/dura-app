@@ -32,10 +32,7 @@
 					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
 				</li>
                 
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#guide">Tour Guide</a>
-				</li>
-				
+               
 				
 				
 			</ul>
