@@ -20,48 +20,6 @@ use Illuminate\Support\Facades\Auth;
 class BookController extends Controller
 {
 	
-	
-	public function book(Request $request)
-    {
-		
-		
-        $name =  $request->input('name');
-		$email =  $request->input('email');
-		$os0 =  $request->input('os0');
-		$country =  $request->input('country');
-		$phone =  $request->input('phone');
-		$date =  $request->input('date');
-		$post_id =  $request->input('post_id');
-		$ticket =  $request->input('ticket');
-		
-		
-		$domain = preg_replace('#^https?://#', '', Http::root());
-		$phone = "+". $country ." ". $phone;
-		
-		$from = explode(" ",$os0);
-		$date1 = Carbon::parse($date)->formatLocalized('%d %b %Y %I:%M %p');
-		
-		
-		
-		$rev_books = new rev_books();
-		$rev_books->post_id = $post_id;
-		$rev_books->name = $name;
-		$rev_books->email = $email;
-		$rev_books->phone = $phone;
-		$rev_books->date = $date;
-		$rev_books->source = $domain;
-		$rev_books->traveller = $from[0];
-		$rev_books->status = 1;
-		$rev_books->ticket = $ticket;
-		$rev_books->save();
-		
-		Mail::to('guide@vertikaltrip.com')->send(new BookingTour($rev_books->id));	
-		
-		return response()->json([
-					"id" => "1",
-					"message" => $ticket
-				]);
-    }
     /**
      * Display a listing of the resource.
      *
