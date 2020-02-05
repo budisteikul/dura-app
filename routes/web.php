@@ -11,17 +11,14 @@
 |
 */
 
-// Auth Laravel --------------------------------------------------------------------------
+//========================================================================
+// Auth Laravel
+//========================================================================
 //Auth::routes(['verify' => true]);
-
-
-
-
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
@@ -29,95 +26,59 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
-// Auth Laravel --------------------------------------------------------------------------
-
+//========================================================================
+// Custom domain
+//========================================================================
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 
 Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
 
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
 	Route::get('/tour', 'Blog\Frontend\BlogController@index_shinjuku');
 	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@index_shinjuku');
-	Route::get('/shinjuku', function () {
-			return redirect('/tour?activityId=284167');
-	});
 });
 
 Route::domain('192.168.0.3')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
-});
-
-Route::domain('www.jogjafoodtour.com')->group(function () {
-	Route::get('/shinjuku', function () {
-			return redirect('/tour?activityId=284167');
-	});
 });
 
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
 
 Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
-	
-	Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@vt_product_list');
-	Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-	Route::get('/blank', 'Blog\Frontend\BlogController@bokun_product_page');
 });
-
-Route::post('/booking/check', 'Rev\CancellationController@index');
-Route::get('/cancellation', function(){
-	return view('blog.frontend.cancellation');
-});
-Route::post('/rev/webhook', 'Rev\WebhookController@store');
-
-
-
-// ================================================================================
-Route::get('/tour', 'Blog\Frontend\BlogController@product_tour');
-Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product_tour');
-// ================================================================================
-
-
-Route::get('/blank', 'Blog\Frontend\BlogController@blank');
-
+//========================================================================
+// Front Page
+//========================================================================
+Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+Route::post('/review', 'Rev\ReviewController@get_review');
+//========================================================================
+// Single Page
+//========================================================================
 Route::get('/page/waiver-and-release', function () {
 	return view('blog.frontend.waiver-liability');
 });
 Route::get('/page/terms-and-conditions', function () {
 	return view('blog.frontend.terms-and-conditions');
 });
-
-Route::get('/', 'Blog\Frontend\BlogController@index');
-Route::get('/review', function () {
-	return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
-});
-Route::post('/review', 'Rev\ReviewController@get_review');
-
-
+//========================================================================
+// Booking Page
+//========================================================================
+Route::post('/rev/webhook', 'Rev\WebhookController@store');
+Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/booking/checkout', 'Blog\Frontend\BlogController@checkout');
 Route::get('/booking/receipt', 'Blog\Frontend\BlogController@receipt');
 Route::get('/booking/{id}', 'Blog\Frontend\BlogController@time_selector');
-Route::get('/product-list/{id}', 'Blog\Frontend\BlogController@product_list');
-
+//========================================================================
+// Redirect Page
+//========================================================================
 Route::get('/map', function () {
 	return redirect('https://goo.gl/maps/noCZwng3FBtCVruj9');
 });
@@ -133,17 +94,23 @@ Route::get('/timeout', function () {
 Route::get('/cancel', function () {
 	return redirect('/');
 });
-
-
-// Financial Admin --------------------------------------------------------------------------
+Route::get('/review', function () {
+	return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
+});
+Route::get('/shinjuku', function () {
+			return redirect('/tour?activityId=284167');
+	});
+//========================================================================
+// Financial Admin
+//========================================================================
 Route::resource('/fin/categories','Fin\CategoryController',[ 'names' => 'route_categories' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/fin/transactions','Fin\TransactionController',[ 'names' => 'route_transactions' ])
 	->middleware(['auth', 'verified']);
 Route::get('/fin/profitloss', 'Fin\SalesController@profitloss')->middleware(['auth', 'verified']);
-// Reservation Admin --------------------------------------------------------------------------
-
-// Reservation Admin --------------------------------------------------------------------------
+//========================================================================
+// Reservation Admin
+//========================================================================
 Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ])
@@ -154,8 +121,6 @@ Route::resource('/rev/widgets','Rev\WidgetController',[ 'names' => 'widgets' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/experiences','Rev\ExperienceController',[ 'names' => 'experiences' ])
 	->middleware(['auth', 'verified']);
-// Reservation Admin --------------------------------------------------------------------------
-
 //========================================================================
 // Blog App Route
 //========================================================================
@@ -171,19 +136,18 @@ Route::resource('/blog/file', 'Blog\Backend\FileController',[ 'names' => 'blog_f
 Route::resource('/blog/setting','Blog\Backend\SettingController',[ 'names' => 'blog_setting' ])
 	->only('edit','update')
 	->middleware(['auth', 'verified']);
-
-
+//========================================================================
+// Mail Route
+//========================================================================
 Route::get('/profiles/{id}/{setting}/{token}', 'Auth\ProfileController@index')->name('profiles.index')->middleware(['auth', 'verified']);
 Route::resource('profiles','Auth\ProfileController',[ 'names' => 'profiles' ])->only(['show','update','store'])->middleware(['auth', 'verified']);
-
 Route::resource('/mails/webhook','Mail\WebhookController',[ 'names' => 'mail_webhooks' ])->only(['store','index']);
 Route::resource('/mails/settings','Mail\SettingController',[ 'names' => 'mail_settings' ])->middleware(['auth', 'verified']);
 Route::resource('/mails/attachments','Mail\AttachmentController',[ 'names' => 'mail_attachments' ])->only(['show'])->middleware(['auth', 'verified']);
 Route::resource('/mails','Mail\MailController',[ 'names' => 'mails' ])->middleware(['auth', 'verified']);
 Route::get('/mails/{id}/{view}', 'Mail\MailController@show')->name('mails.show')->middleware(['auth', 'verified']);
-
-
-Route::post('/sms/webhook', 'SMS\SMSController@index');
+//========================================================================
+//Route::post('/sms/webhook', 'SMS\SMSController@index');
 
 
 
