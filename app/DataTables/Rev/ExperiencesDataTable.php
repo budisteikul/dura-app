@@ -60,7 +60,7 @@ class ExperiencesDataTable extends DataTable
      */
     public function query(rev_widgets $model)
     {
-        $query = rev_widgets::where('content_type','experience')->get();
+        $query = rev_widgets::get();
         return $query;
     }
 
