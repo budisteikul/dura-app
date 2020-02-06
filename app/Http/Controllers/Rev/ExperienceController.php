@@ -145,7 +145,7 @@ class ExperienceController extends Controller
 		
 		
 		$blog_posts->title = $title;
-		$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
+		//$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
 		$blog_posts->date = date('Y-m-d H:i:s');
 		$blog_posts->user_id = $user->id;
 		$blog_posts->content_type = 'standard';
