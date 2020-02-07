@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <script src="/js/vertikaltrip-1.1.0.js"></script>
-	<link href="/css/vertikaltrip-1.1.0.css" rel="stylesheet" media="screen,handheld">
+<link href="/css/ratnawahyu.css" rel="stylesheet" media="screen,handheld">
 @endpush
     
    <!-- ################################################################### -->
