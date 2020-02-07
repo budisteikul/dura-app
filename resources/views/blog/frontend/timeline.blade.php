@@ -8,7 +8,7 @@
 <script src="/js/vertikaltrip-1.1.0.js"></script>
 <link href="/css/ratnawahyu.css" rel="stylesheet" media="screen,handheld">
 @endpush
-    
+
    <!-- ################################################################### -->
    <!-- Navigation -->
   <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -63,7 +63,7 @@
        </div>
     </header>
 <!-- ################################################################### -->
- <div style="background-color:#e9f0f5; margin:0; height:100%;">
+
  <section id="section"  style="background-color:#e9f0f5; max-width:1024px; margin:0 auto; height:100%;">
  	<ul class="timeline">
 	<?php
@@ -188,16 +188,13 @@
 	@endforeach
 	</ul>
  </section>
- </div>
-<!-- footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; {{ $setting->title }} 2019</p>
-    </div>
-</footer --> 
-<div class="pagination" style="background-color:#e9f0f5">
+ <div class="pagination" style="background-color:#e9f0f5">
 	<a href="{!! $results->nextPageUrl() !!}" style="visibility:hidden">Next</a>
 </div> 
 <a href="#page-top" class="cd-top js-scroll-trigger">Top</a>
+
+
+
 <script>
 function photogrid()
 {
@@ -242,6 +239,8 @@ function openFancyBox(id,index,animated_id)
 
 (function($) {
         
+		$('html, body').css('background-color', '#e9f0f5'); 
+		
 		photogrid();
 		
       	var $container = $('.timeline');
