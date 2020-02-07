@@ -63,7 +63,7 @@
        </div>
     </header>
 <!-- ################################################################### -->
- 
+ <div style="background-color:#e9f0f5; margin:0; height:100%;">
  <section id="section"  style="background-color:#e9f0f5; max-width:1024px; margin:0 auto; height:100%;">
  	<ul class="timeline">
 	<?php
@@ -188,6 +188,7 @@
 	@endforeach
 	</ul>
  </section>
+ </div>
 <!-- footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; {{ $setting->title }} 2019</p>
