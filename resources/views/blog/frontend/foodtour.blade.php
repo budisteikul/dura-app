@@ -212,14 +212,14 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
 						
                     	<span itemprop="priceCurrency" content="USD"></span>
-                    	<span itemprop="price" content="40.00"></span>
+                    	<span itemprop="price" content="44.00"></span>
 						
 				
-				 40 USD / person
+				 44 USD / person
 				
 			
     					<link itemprop="availability" href="http://schema.org/InStock" />
-                        <meta itemprop="priceValidUntil" content="2020-11-05" />
+                        <meta itemprop="priceValidUntil" content="2020-12-31" />
                         <link itemprop="url" href="https://www.jogjafoodtour.com" />
                 	</div>
                     
