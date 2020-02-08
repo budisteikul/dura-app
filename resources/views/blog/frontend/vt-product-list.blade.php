@@ -104,6 +104,8 @@
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Enjoy Jogja in Local Ways!</h1>
 				<p class="text-faded">
                     Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
+                    <br>
+                    Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
