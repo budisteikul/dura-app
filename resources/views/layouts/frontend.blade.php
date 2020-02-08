@@ -91,15 +91,15 @@ s0.parentNode.insertBefore(s1,s0);
 
 	@yield('content')
 
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-light" style="font-size:16px">
 <div class="container">
     <div class="row">
-		<div class="row col-md-8">
+		<div class="row col-md-12">
            	
-            	<div class="col-sm-6 first-column mb-4">
-                	<p class="m-0 text-left text-white">
+            	<div class="col-sm-4 first-column mb-4">
+                	<p class="m-0 text-left text-dark">
 					
-						<img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<img src="/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
 						
 						INFO AND RESERVATION
@@ -115,16 +115,27 @@ s0.parentNode.insertBefore(s1,s0);
                     </p>
                 </div>
                 
-                <div class="col-sm-6 second-column">
-                	<p class="m-0 text-left text-white">
+                <div class="col-sm-4 second-column">
+                	<p class="m-0 text-left text-dark">
                     	PAYMENT CHANNEL
                     	<br>
                         
-						<img src="/assets/foodtour/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:5px;">
+						<img src="/assets/foodtour/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
 					
-					<p class="m-0 text-left text-white">
+					<p class="m-0 text-left text-dark">
+                    
 					<small> 2020 &copy; VERTIKAL TRIP LLC</small>
+                    
+					</p>
+                </div>
+                
+                <div class="col-sm-4 second-column align-middle">
+                	
+					
+					<p class="mt-2 text-left text-dark align-middle">
+                    
+                    <div id="TA_cdswritereviewnew823" class="TA_cdswritereviewnew"><ul id="9UuVMjnO" class="TA_links pDIwwf3D"><li id="BIEq7gLF" class="zLcMli"><a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/medium-logo-29834-2.png" alt="TripAdvisor"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=cdswritereviewnew&amp;uniq=823&amp;locationId=17523331&amp;lang=en_US&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 					</p>
                 </div>
 			
