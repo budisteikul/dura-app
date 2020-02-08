@@ -9,6 +9,7 @@ use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_categories;
 use App\Models\Rev\rev_widgets;
 use App\Models\Rev\rev_reviews;
+use App\Classes\Rev\BokunClass;
 use Illuminate\Support\Facades\Request as Http;
 use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
@@ -43,63 +44,13 @@ class BlogController extends Controller
                 $activityId = $post->widgets->product_id;
             }
         }
-        
-        
-        $endpoint = "https://api.bokun.io";
-        $path = '/activity.json/'. $activityId;
-        $method = 'GET';
-        $currency = 'USD';
-        $lang = "EN";
-        $query = '?currency='.$currency.'&lang='.$lang;
-        $date = gmdate('Y-m-d H:i:s');
-        $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-        $bokun_secretkey = env("BOKUN_SECRETKEY", "");
-    
-        $string_signature = $date.$bokun_accesskey.$method. $path .$query;
-        $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-        $base64_signature = base64_encode($sha1_signature);
-    
-        $headers = [
-          'Accept' => 'application/json',
-          'X-Bokun-AccessKey' => $bokun_accesskey,
-          'X-Bokun-Date' => $date,
-          'X-Bokun-Signature' => $base64_signature,
-        ];
-    
-        $client = new \GuzzleHttp\Client(['headers' => $headers]);
-        $response = $client->request($method, $endpoint.$path.$query);
-        $statusCode = $response->getStatusCode();
-        $contents = json_decode($response->getBody()->getContents());
+		
+        $contents = BokunClass::get_product($activityId);
         
         $pickup = '';
         if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
         {
-			$endpoint = "https://api.bokun.io";
-			$path = '/activity.json/'. $activityId .'/pickup-places';
-			$method = 'GET';
-			$currency = 'USD';
-			$lang = "EN";
-			$query = '?currency='.$currency.'&lang='.$lang;
-			$date = gmdate('Y-m-d H:i:s');
-			$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-			$bokun_secretkey = env("BOKUN_SECRETKEY", "");
-    
-			$string_signature = $date.$bokun_accesskey.$method. $path .$query;
-			$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-			$base64_signature = base64_encode($sha1_signature);
-    
-			$headers = [
-				'Accept' => 'application/json',
-				'X-Bokun-AccessKey' => $bokun_accesskey,
-				'X-Bokun-Date' => $date,
-				'X-Bokun-Signature' => $base64_signature,
-			];
-    
-			$client = new \GuzzleHttp\Client(['headers' => $headers]);
-			$response = $client->request($method, $endpoint.$path.$query);
-			$statusCode = $response->getStatusCode();
-			$pickup = json_decode($response->getBody()->getContents());
-
+			$pickup = BokunClass::get_product_pickup($activityId);
         }
 
         $calendar = '
@@ -107,6 +58,7 @@ class BlogController extends Controller
 				<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
 				<noscript>Please enable javascript in your browser to book</noscript>
 				';
+				
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
 			if(isset($widget->time_selector)){
@@ -138,32 +90,8 @@ class BlogController extends Controller
 				$id = $default_id;
 			}
 		}
-    
-
-		$endpoint = "https://api.bokun.io";
-		$path = '/product-list.json/'. $id;
-		$method = 'GET';
-		$currency = 'USD';
-		$lang = "EN";
-		$query = '?currency='.$currency.'&lang='.$lang;
-		$date = gmdate('Y-m-d H:i:s');
-		$bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-		$bokun_secretkey = env("BOKUN_SECRETKEY", "");
 		
-		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
-		$sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
-		$base64_signature = base64_encode($sha1_signature);
-		$headers = [
-			'Accept' => 'application/json',
-			'X-Bokun-AccessKey' => $bokun_accesskey,
-			'X-Bokun-Date' => $date,
-			'X-Bokun-Signature' => $base64_signature,
-		];
-		$client = new \GuzzleHttp\Client(['headers' => $headers]);
-		$response = $client->request($method, $endpoint.$path.$query);
-
-		$statusCode = $response->getStatusCode();
-		$contents = json_decode($response->getBody()->getContents());
+		$contents = BokunClass::get_product_list($id);
 		
 		$count = rev_reviews::count();
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents,'count'=>$count]);
