@@ -1,7 +1,7 @@
 #mainNav {
   	border-color: rgba(34,34,34,.05);
     font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:rgba(52,58,64,1.00);
+    background-color:#2e3338;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -49,11 +49,11 @@
   	text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    color: #dce5ec;
+    color: #FFFFFF;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #c03b44;
+  color: #dadada;
   
 }
 #mainNav-back {
@@ -61,8 +61,8 @@
     padding-bottom: 0;
   	border-color: rgba(34,34,34,.05);
     font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,1.00);
+    background-color:#2e3338;
+    background: #2e3338;
 	filter: alpha(opacity=30);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -80,14 +80,14 @@
 }
 
 #mainNav-back .navbar-brand.active, #mainNav-back .navbar-brand:hover {
-  color: #FFFFFF;
+  color: #dadada;
 }
 
 #mainNav-back .navbar-nav .nav-item .nav-link {
   	text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    color: #dce5ec;
+    color: #FFFFFF;
 }
 
 #mainNav-back .navbar-nav .nav-item .nav-link.active, #mainNav-back .navbar-nav .nav-item .nav-link:hover {
@@ -114,8 +114,8 @@
   #mainNav.navbar-shrink {
     padding-top: 7px;
     padding-bottom: 7px;
-    background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,1.00);
+    background-color:#2e3338;
+    background:#2e3338;
 	filter: alpha(opacity=30);
   }
   #mainNav.navbar-shrink .navbar-brand {
@@ -125,8 +125,8 @@
   #mainNav-back {
     border-color: rgba(34,34,34,.05);
     font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:rgba(52,58,64,1.00);
-    background: rgba(52,58,64,1.00);
+    background-color:#2e3338;
+    background: #2e3338;
 	filter: alpha(opacity=30);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;

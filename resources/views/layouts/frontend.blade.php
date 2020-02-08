@@ -39,7 +39,7 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
 	<script src="/js/vertikaltrip-1.1.0.js"></script>
-	<link href="/css/vertikaltrip-1.1.1.css" rel="stylesheet" media="screen,handheld">
+	<link href="/css/vertikaltrip-1.1.3.css" rel="stylesheet" media="screen,handheld">
     
     
   
@@ -91,7 +91,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 	@yield('content')
 
-<footer class="py-5 bg-light" style="font-size:16px">
+<footer class="py-5" style="font-size:16px; background-color:#dedede">
 <div class="container">
     <div class="row">
 		<div class="row col-md-12">
