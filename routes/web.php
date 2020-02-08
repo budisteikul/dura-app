@@ -46,6 +46,9 @@ Route::domain('www.vertikaltrip.com')->group(function () {
 });
 Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
+	Route::get('/review', function () {
+		return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
+	});
 });
 Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
@@ -92,7 +95,7 @@ Route::get('/cancel', function () {
 	return redirect('/');
 });
 Route::get('/review', function () {
-	return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
+	return redirect('https://www.tripadvisor.com/UserReviewEdit-g14782503-d17523331-Vertikal_Trip-Yogyakarta_Yogyakarta_Region_Java.html');
 });
 Route::get('/shinjuku', function () {
 			return redirect('/tour?activityId=284167');
