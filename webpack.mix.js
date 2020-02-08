@@ -73,7 +73,7 @@ mix.styles([
 	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css'
 	],'public/css/ratnawahyu.css');
 	
-mix.styles(['public/css/ratnawahyu.css','resources/assets/frontend/custom/vertikaltrip.css'],'public/css/vertikaltrip-1.1.0.css');
+mix.styles(['public/css/ratnawahyu.css','resources/assets/frontend/custom/vertikaltrip.css'],'public/css/vertikaltrip-1.1.1.css');
 
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
