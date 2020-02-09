@@ -12,7 +12,32 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogClass {
-
+	
+	public static function cloudinary_url($image,$res=0)
+	{
+		\Cloudinary::config(array( 
+							"cloud_name" => env('CLOUDINARY_NAME'), 
+							"api_key" => env('CLOUDINARY_KEY'), 
+							"api_secret" => env('CLOUDINARY_SECRET') 
+						));
+		switch($res)
+		{
+			case 50:
+				$url = cloudinary_url($image, array("width" => 50, "height" => 50, "crop" => "fill"));
+			break;
+			case 250:
+				$url = cloudinary_url($image, array("width" => 250, "height" => 250, "crop" => "fill"));
+			break;
+			case 500:
+				$url = cloudinary_url($image, array("width" => 500, "height" => 500, "crop" => "fill"));
+			break;
+			default:
+				$url = cloudinary_url($image);
+		}
+		return $url;
+		
+	}
+	
 	public static function timeAgo($timestamp){
 		$datetime1=new DateTime("now");
 		$datetime1->modify('+7 hour');

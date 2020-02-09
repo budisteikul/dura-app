@@ -43,8 +43,7 @@ class PhotoController extends Controller
 						foreach($post->attachments as $attachment)
 						{
 							
-							
-							$contents	 .= '<img class="rounded" style="margin:1px;" src="https://res.cloudinary.com/budi/image/upload/c_fill,h_50,w_50/v1/'. Auth::user()->id .'/images/original/'. $attachment->file_name .'">';
+							$contents	 .= '<img class="rounded" style="margin:1px;" src="'. BlogClass::cloudinary_url(Auth::user()->id .'/images/original/'. $attachment->file_name,50) .'">';
 							
 							//$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
 						}

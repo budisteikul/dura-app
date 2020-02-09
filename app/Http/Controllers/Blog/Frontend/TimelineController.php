@@ -40,8 +40,8 @@ class TimelineController extends Controller
 				//$src = '/storage/'. $result->user_id .'/images/original/'. $attachment->file_name;
 				//$thumb = '/storage/'. $result->user_id .'/images/250/'. $attachment->file_name;
 				
-				$src = 'https://res.cloudinary.com/budi/image/upload/v1/'.$result->user_id.'/images/original/'.$attachment->file_name;
-				$thumb = 'https://res.cloudinary.com/budi/image/upload/c_fill,h_250,w_250/v1/'.$result->user_id.'/images/original/'.$attachment->file_name;
+				$src = \App\Classes\Blog\BlogClass::cloudinary_url($result->user_id.'/images/original/'.$attachment->file_name);
+				$thumb = \App\Classes\Blog\BlogClass::cloudinary_url($result->user_id.'/images/original/'.$attachment->file_name,250);
 				
 				$caption = $result->content;
 				if($caption=="") $caption = $result->title;
