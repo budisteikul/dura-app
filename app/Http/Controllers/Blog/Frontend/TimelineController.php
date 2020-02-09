@@ -119,15 +119,13 @@ class TimelineController extends Controller
 		$setting->gravatar = $get_user->picture_url;
 		//===========================================================================
 		$header = BlogClass::getConf('header',$user_id);
-		$setting->header = '/storage/'. $user_id .'/images/header/'. $header ;
+		//$setting->header = '/storage/'. $user_id .'/images/header/'. $header ;
+		$setting->header = $header ;
 		//===========================================================================
 		$setting->facebook = BlogClass::getConf('facebook',$user_id);
 		$setting->twitter = BlogClass::getConf('twitter',$user_id);
 		$setting->instagram = BlogClass::getConf('instagram',$user_id);
 		
-		$url = Http::url();
-		$setting->url = $url;
-		$setting->image = $setting->url . $setting->header;
 		$setting->title = $setting->title2;
 		$setting->user_id = $user_id;
 		

@@ -60,13 +60,19 @@ class SettingController extends Controller
 			$result = blog_tmp::where('key',$key)->where('user_id',$user->id)->first();
 			if (@count($result))
 			{
+				$header = BlogClass::getConf('header');
+				if($header != "")
+				{
+					Storage::disk('public')->move($user->id .'/images/header/'. $header, $user->id.'/images/header/trash/'. $header);
+				}
+				
 				\Cloudinary::config(array( 
 							"cloud_name" => env('CLOUDINARY_NAME'), 
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
 				$file_attr = BlogClass::getAttrFile($result->file);
-				$aaa = \Cloudinary\Uploader::upload(storage_path('app').'/'. $file_attr->name, Array('unique_filename'=>false,'use_filename'=>true,'folder' => Auth::user()->id.'/images/header'));
+				$aaa = \Cloudinary\Uploader::upload(storage_path('app').'/temp/'.$user->id .'/'. $file_attr->name, Array('unique_filename'=>false,'use_filename'=>true,'folder' => Auth::user()->id.'/images/header'));
 				
 				BlogClass::setConf('header',$aaa['secure_url']);
 				

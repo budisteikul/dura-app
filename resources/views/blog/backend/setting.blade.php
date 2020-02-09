@@ -40,7 +40,8 @@ function UPDATE()
 				$('#instagram').val(data.instagram);
 				
 				$('#div_header').removeClass('d-none');
-				$("#header").attr("src","/storage/{{ Auth::user()->id }}/images/header/"+ data.header);
+				$("#header").attr("src",data.header);
+				/* $("#header").attr("src","/storage/{{ Auth::user()->id }}/images/header/"+ data.header);*/
 				
 				$('#submit_general').prop('disabled', false);
 				$('#submit_general').html('<i class="fa fa-save"></i> Save');
@@ -87,7 +88,8 @@ function UPDATE()
 	</div>
     
     <div id="div_header" class="form-group {{ empty($setting->header) ? 'd-none' : '' }}">
-		<img id="header" src="/storage/{{ Auth::user()->id }}/images/header/{{ $setting->header }}" width="200" height="100">
+		<img id="header" src="{{ $setting->header }}" width="200" height="100">
+        <!-- img id="header" src="/storage/{{ Auth::user()->id }}/images/header/{{ $setting->header }}" width="200" height="100" -->
 	</div>
     
 	<div class="form-group">
