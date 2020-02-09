@@ -56,6 +56,15 @@ Route::domain('www.budi.my.id')->group(function () {
 //========================================================================
 // Front Page
 //========================================================================
+Route::get('/test', function () {
+	\Cloudinary::config(array( 
+							"cloud_name" => env('CLOUDINARY_NAME'), 
+							"api_key" => env('CLOUDINARY_KEY'), 
+							"api_secret" => env('CLOUDINARY_SECRET') 
+						));
+	print(cloudinary_url("eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/original/zbbzm53vmpyj8zwsw9ba.jpg", array("width" => 250, "height" => 250, "crop" => "fill")));
+	exit();
+});
 Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 Route::post('/review', 'Rev\ReviewController@get_review');
 //========================================================================

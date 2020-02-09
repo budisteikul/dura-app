@@ -23,6 +23,12 @@ class PhotoController extends Controller
 	{
 		if($request->ajax())
 		{
+			\Cloudinary::config(array( 
+							"cloud_name" => env('CLOUDINARY_NAME'), 
+							"api_key" => env('CLOUDINARY_KEY'), 
+							"api_secret" => env('CLOUDINARY_SECRET') 
+						));
+						
 			$user = Auth::user();
 			$posts = blog_posts::with(array('attachments' => function($query)
 				   {
@@ -37,7 +43,10 @@ class PhotoController extends Controller
 					{
 						foreach($post->attachments as $attachment)
 						{
-							$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
+							
+							
+							$contents	 .= '<img class="rounded" style="margin:1px;" src="'. cloudinary_url(Auth::user()->id ."/images/original/". $attachment->file_name, array("width" => 250, "height" => 250, "crop" => "fill")) .'">';
+							//$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
 						}
 					
 						$contents .=	"<div style='margin-top:10px;'>". $post->content ."</div>";
@@ -211,7 +220,7 @@ class PhotoController extends Controller
 				BlogClass::createPhoto($rs->file,$file->name);
 				blog_tmp::where('id',$rs->id)->delete();
 				BlogClass::deleteTempPhoto($rs->file);
-		//====================================================================================================
+					//====================================================================================================
 		}
 		//================================================
 		if($job)
@@ -264,10 +273,7 @@ class PhotoController extends Controller
 		$sort_order = 0 ;
 		foreach($result as $rs)
 		{
-			$sort_order++;
-			
-			//====================================================================================================
-				
+				$sort_order++;//====================================================================================================
 				$blog_attachments = new blog_attachments;
 				$blog_attachments->post_id = $blog_posts->id;
 				$blog_attachments->sort = $sort_order;
@@ -285,10 +291,7 @@ class PhotoController extends Controller
 				
 				BlogClass::createPhoto($rs->file,$file->name);
 				blog_tmp::where('id',$rs->id)->delete();
-				BlogClass::deleteTempPhoto($rs->file);
-				
-			//====================================================================================================
-			
+				BlogClass::deleteTempPhoto($rs->file);//====================================================================================================
 		}
 		BlogClass::repair_layout($blog_posts->id);
 		//================================================
@@ -315,10 +318,8 @@ class PhotoController extends Controller
 			$job = true;	
 		}
 		foreach($result as $rs)
-		{
-				//====================================================================================================
-				BlogClass::deletePhoto($rs->file_name);
-				//====================================================================================================
+		{//====================================================================================================
+				BlogClass::deletePhoto($rs->file_name);//====================================================================================================
 		}
 		
 		$blog_posts = blog_posts::where('user_id',$user->id)->find($id);
