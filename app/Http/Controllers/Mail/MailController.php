@@ -151,8 +151,8 @@ class MailController extends Controller
 					$mail_attachment_size = $mail_attachment->getSize();
 					$mail_attachment_path = $mail_attachment->getRealPath();
 				
-					if(env('FILESYSTEM_DRIVER')=="cloudinary")
-					{
+					//if(env('FILESYSTEM_DRIVER')=="cloudinary")
+					//{
 						\Cloudinary::config(array( 
 							"cloud_name" => env('CLOUDINARY_NAME'), 
 							"api_key" => env('CLOUDINARY_KEY'), 
@@ -161,12 +161,12 @@ class MailController extends Controller
 						$upload = \Cloudinary\Uploader::upload($mail_attachment , Array('resource_type' => 'raw'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
-					}
-					else
-					{
-						$path = Storage::disk('public')->putFile('mails/attachments', $mail_attachment);
-						$url = Storage::url($path);
-					}
+					//}
+					//else
+					//{
+						//$path = Storage::disk('public')->putFile('mails/attachments', $mail_attachment);
+						//$url = Storage::url($path);
+					//}
 					
 					$mail_attachment_ = new Mail_Attachment();
 					$mail_attachment_->email_id = $mail_email->id;
@@ -191,8 +191,8 @@ class MailController extends Controller
 					$path = "../storage/logs/". $mail_old_attachment;
 					file_put_contents($path, file_get_contents($mail_old_attachment_->file_url));
 					
-					if(env('FILESYSTEM_DRIVER')=="cloudinary")
-					{
+					//if(env('FILESYSTEM_DRIVER')=="cloudinary")
+					//{
 						\Cloudinary::config(array( 
 							"cloud_name" => env('CLOUDINARY_NAME'), 
 							"api_key" => env('CLOUDINARY_KEY'), 
@@ -201,12 +201,12 @@ class MailController extends Controller
 						$upload = \Cloudinary\Uploader::upload($path , Array('resource_type' => 'raw'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
-					}
-					else
-					{
-						$path = Storage::disk('public')->putFile('mails/attachments', new File($path));
-						$url = Storage::url($path);
-					}
+					//}
+					//else
+					//{
+						//$path = Storage::disk('public')->putFile('mails/attachments', new File($path));
+						//$url = Storage::url($path);
+					//}
 					
 					$mail_attachment_ = new Mail_Attachment();
 					$mail_attachment_->email_id = $mail_email->id;
@@ -416,19 +416,19 @@ class MailController extends Controller
 			$mail = Mail_Email::where('user_id',Auth::user()->id)->findOrFail($id);
 			foreach($mail->mail_attachments as $attachment)
 			{
-				if(env('FILESYSTEM_DRIVER')=="cloudinary")
-				{
+				//if(env('FILESYSTEM_DRIVER')=="cloudinary")
+				//{
 					\Cloudinary::config(array( 
 						"cloud_name" => env('CLOUDINARY_NAME'), 
 						"api_key" => env('CLOUDINARY_KEY'), 
 						"api_secret" => env('CLOUDINARY_SECRET') 
 					));
 					\Cloudinary\Uploader::destroy($attachment->file_path , Array('resource_type' => 'raw'));
-				}
-				else
-				{
-					Storage::disk('public')->delete($attachment->file_path);
-				}
+				//}
+				//else
+				//{
+					//Storage::disk('public')->delete($attachment->file_path);
+				//}
 			}
 			
 			$mail->mail_attachments()->delete();
@@ -445,19 +445,19 @@ class MailController extends Controller
 				$mail = Mail_Email::where('user_id',Auth::user()->id)->findOrFail($array_id[$i]);
 				foreach($mail->mail_attachments as $attachment)
 				{
-					if(env('FILESYSTEM_DRIVER')=="cloudinary")
-					{
+					//if(env('FILESYSTEM_DRIVER')=="cloudinary")
+					//{
 						\Cloudinary::config(array( 
 							"cloud_name" => env('CLOUDINARY_NAME'), 
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
 						\Cloudinary\Uploader::destroy($attachment->file_path , Array('resource_type' => 'raw'));
-					}
-					else
-					{
-						Storage::disk('public')->delete($attachment->file_path);
-					}
+					//}
+					//else
+					//{
+						//Storage::disk('public')->delete($attachment->file_path);
+					//}
 				}
 				$mail->mail_attachments()->delete();
 				$mail->delete();

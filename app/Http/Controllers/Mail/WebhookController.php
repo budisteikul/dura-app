@@ -90,8 +90,8 @@ class WebhookController extends Controller
 			{
 				for($i=1;$i<=$request->input('attachment-count');$i++)
 				{
-					if(env('FILESYSTEM_DRIVER')=="cloudinary")
-					{
+					//if(env('FILESYSTEM_DRIVER')=="cloudinary")
+					//{
 						\Cloudinary::config(array( 
 							"cloud_name" => env('CLOUDINARY_NAME'), 
 							"api_key" => env('CLOUDINARY_KEY'), 
@@ -100,12 +100,12 @@ class WebhookController extends Controller
 						$upload = \Cloudinary\Uploader::upload($request->file('attachment-'. $i) , Array('resource_type' => 'raw'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
-					}
-					else
-					{
-						$path = Storage::disk('public')->putFile('mails/attachments', $request->file('attachment-'. $i));
-						$url = Storage::url($path);
-					}
+					//}
+					//else
+					//{
+						//$path = Storage::disk('public')->putFile('mails/attachments', $request->file('attachment-'. $i));
+						//$url = Storage::url($path);
+					//}
 					
 					$mail_attachment = new Mail_Attachment;
 					$mail_attachment->email_id = $mail_email->id;
