@@ -63,7 +63,7 @@ class SettingController extends Controller
 				$header = BlogClass::getConf('header');
 				if($header != "")
 				{
-					Storage::disk('public')->move($user->id .'/images/header/'. $header, $user->id.'/images/header/trash/'. $header);
+					//Storage::disk('public')->move($user->id .'/images/header/'. $header, $user->id.'/images/header/trash/'. $header);
 				}
 				
 				\Cloudinary::config(array( 
