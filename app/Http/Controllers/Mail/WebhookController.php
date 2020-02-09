@@ -97,7 +97,7 @@ class WebhookController extends Controller
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
-						$upload = \Cloudinary\Uploader::upload($request->file('attachment-'. $i) , Array('resource_type' => 'raw'));
+						$upload = \Cloudinary\Uploader::upload($request->file('attachment-'. $i) , Array('resource_type' => 'raw','folder' => $user_id.'/attachments'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
 					//}

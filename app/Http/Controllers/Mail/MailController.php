@@ -158,7 +158,7 @@ class MailController extends Controller
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
-						$upload = \Cloudinary\Uploader::upload($mail_attachment , Array('resource_type' => 'raw'));
+						$upload = \Cloudinary\Uploader::upload($mail_attachment , Array('resource_type' => 'raw','folder' => Auth::user()->id.'/attachments'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
 					//}
@@ -198,7 +198,7 @@ class MailController extends Controller
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
-						$upload = \Cloudinary\Uploader::upload($path , Array('resource_type' => 'raw'));
+						$upload = \Cloudinary\Uploader::upload($path , Array('resource_type' => 'raw','folder' => Auth::user()->id.'/attachments'));
 						$path = $upload['public_id'];
 						$url = $upload['secure_url'];
 					//}
