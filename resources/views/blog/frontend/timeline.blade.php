@@ -46,7 +46,7 @@
   </nav>
    
 <!-- ################################################################### -->
-	<header id="page-top" class="intro-header" style="background-image: url('https://res.cloudinary.com/budi/image/upload/v1581235320/eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/header/DHwfJfutCkQi4hkxbsr7MbHWhd76K0IsNjhyqhiB.jpg'); background-color:#000000">
+	<header id="page-top" class="intro-header" style="background-image: url('{{ $setting->header }}'); background-color:#000000">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
     	<div class="site-heading text-center">

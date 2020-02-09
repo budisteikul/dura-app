@@ -64,7 +64,7 @@ Route::get('/test', function () {
 						));
 	//iPVXaTFBzgEMcDVV1a3X3AxLylQtx6mXcDfDVU0c
 	$aaa = \Cloudinary\Uploader::upload(storage_path('app').'/temp/9196bb3a-dd37-4727-b2be-1395fc9d5b1a/UFYVmscDcOksE9fYh80ZZNOHpGUaIePCEDzQQQ3l.jpeg', Array('unique_filename'=>false,'use_filename'=>true,'folder' => '9196bb3a-dd37-4727-b2be-1395fc9d5b1a/images/original'));
-	print_r($aaa);
+	print_r($aaa['secure_url']);
 	exit();
 });
 Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
