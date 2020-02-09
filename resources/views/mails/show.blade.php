@@ -167,18 +167,11 @@ function ARCHIVE()
 				  @else
 				  <span class="mailbox-attachment-icon"><i class="fa fa-file-o"></i></span>	  
 				  @endif
-                  <!-- div class="mailbox-attachment-info">
+                  <div class="mailbox-attachment-info">
                     <a href="{{ route('mail_attachments.show',['attachment'=>$attachment->id]) }}" class="mailbox-attachment-name"><i class="fa fa-paperclip"></i> {{ $attachment->file_name }}</a>
                         <span class="mailbox-attachment-size">
                           {{ \App\Classes\Mail\MailClass::bytesToHuman($attachment->file_size) }}
                           <a href="{{ route('mail_attachments.show',['attachment'=>$attachment->id]) }}" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                        </span>
-                  </div -->
-                  <div class="mailbox-attachment-info">
-                    <a href="{{ $attachment->file_url }}" class="mailbox-attachment-name"><i class="fa fa-paperclip"></i> {{ $attachment->file_name }}</a>
-                        <span class="mailbox-attachment-size">
-                          {{ \App\Classes\Mail\MailClass::bytesToHuman($attachment->file_size) }}
-                          <a href="{{ $attachment->file_url }}" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
                         </span>
                   </div>
                 </li>
