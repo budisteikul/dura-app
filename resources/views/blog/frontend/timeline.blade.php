@@ -144,14 +144,16 @@
 						if($d>1)
 						{
 						?>
-								<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  />
+                        		<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="https://res.cloudinary.com/budi/image/upload/c_fill,h_250,w_250/v1/{{ $setting->user_id }}/images/original/{{ $attachment->file_name }}" alt=""  />
+								<!-- img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="{{ asset('/storage/'. $setting->user_id .'/images/250/'. $attachment->file_name) }}" alt=""  / -->
 								
 						<?php	
 						}
 						else
 						{
 						?>
-                        		<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  />
+                        		<img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="https://res.cloudinary.com/budi/image/upload/c_fill,h_500,w_500/v1/{{ $setting->user_id }}/images/original/{{ $attachment->file_name }}" alt=""  />
+                        		<!-- img id="{{ $attachment->id }}" onClick="openFancyBox('{{ $result->id }}','{{ $index }}','{{ $attachment->id }}'); return false;" class="image-photo" src="{{ asset('/storage/'.$setting->user_id.'/images/500/'. $attachment->file_name) }}" alt=""  / -->
 								
                         <?php
 						}

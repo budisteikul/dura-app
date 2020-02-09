@@ -37,14 +37,20 @@ class TimelineController extends Controller
 			}
 			foreach($result->attachments as $attachment)
 			{
-				$src = '/storage/'. $result->user_id .'/images/original/'. $attachment->file_name;
-				$thumb = '/storage/'. $result->user_id .'/images/250/'. $attachment->file_name;
+				//$src = '/storage/'. $result->user_id .'/images/original/'. $attachment->file_name;
+				//$thumb = '/storage/'. $result->user_id .'/images/250/'. $attachment->file_name;
+				
+				$src = 'https://res.cloudinary.com/budi/image/upload/v1/'.$result->user_id.'/images/original/'.$attachment->file_name;
+				$thumb = 'https://res.cloudinary.com/budi/image/upload/c_fill,h_250,w_250/v1/'.$result->user_id.'/images/original/'.$attachment->file_name;
+				
 				$caption = $result->content;
 				if($caption=="") $caption = $result->title;
 				$output[] = array('src' => $src, 'thumb' => $thumb, 'caption' => $caption);
 			}
 			return response()->json($output);
 		}
+		
+		
 		
 		$blog_setting = blog_settings::where('value','like','%'. preg_replace('#^https?://#', '', Http::root() .'%'))->where('name','domain')->first();
 		if(!$blog_setting) return Redirect('/home');

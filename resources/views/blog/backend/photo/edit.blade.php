@@ -65,7 +65,9 @@ function UPDATE()
 		@foreach($result->attachments->sortBy('sort') as $attachment)
 				
 				<div class="col-auto" style="margin-top:10px;">
-					<img style=" height:150px; " class="image-photo rounded" src="/storage/{{ Auth::user()->id }}/images/250/{{ $attachment->file_name }}" >
+                	<img style=" height:150px; " class="image-photo rounded" src="https://res.cloudinary.com/budi/image/upload/c_fill,h_250,w_250/v1/{{ Auth::user()->id }}/images/original/{{ $attachment->file_name }}">
+                    
+					<!-- img style=" height:150px; " class="image-photo rounded" src="/storage/{{ Auth::user()->id }}/images/250/{{ $attachment->file_name }}" -->
 				
 					
 					<div class="form-row align-items-center pt-1">

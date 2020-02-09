@@ -67,7 +67,16 @@ class BlogClass {
 	
 	public static function createPhoto($file_path,$file)
 	{
-		//BlogClass::createDirPhoto();
+		
+		\Cloudinary::config(array( 
+							"cloud_name" => env('CLOUDINARY_NAME'), 
+							"api_key" => env('CLOUDINARY_KEY'), 
+							"api_secret" => env('CLOUDINARY_SECRET') 
+						));
+		
+		\Cloudinary\Uploader::upload(storage_path('app').'/'. $file_path, Array('unique_filename'=>false,'use_filename'=>true,'folder' => Auth::user()->id.'/images/original'));
+							
+		/*
 		$user_path = Auth::user()->id .'/';
 		Storage::disk('local')->copy($file_path,'public/'. $user_path .'/images/original/'.  $file);
 		Storage::disk('local')->copy($file_path,'public/'. $user_path .'/images/500/'. $file);
@@ -85,6 +94,7 @@ class BlogClass {
 		$img = Image::make(storage_path('app').'/public/'. $user_path .'/images/250/'. $file );
 		$img->resize(50, 50);
 		$img->save(storage_path('app').'/public/'. $user_path .'/images/50/'. $file );
+		*/
 	}
 	
 	public static function deleteTempPhoto($file)
@@ -94,6 +104,15 @@ class BlogClass {
 	
 	public static function deletePhoto($file)
 	{
+		\Cloudinary::config(array( 
+							"cloud_name" => env('CLOUDINARY_NAME'), 
+							"api_key" => env('CLOUDINARY_KEY'), 
+							"api_secret" => env('CLOUDINARY_SECRET') 
+						));
+		$public_id = explode(".",$file);
+		\Cloudinary\Uploader::destroy(Auth::user()->id.'/images/original/'. $public_id[0]);
+		
+		/*
 				$user_path = Auth::user()->id .'/';
 				if(Storage::disk('public')->exists($user_path .'images/50/'.  $file))
 				{
@@ -111,6 +130,7 @@ class BlogClass {
 				{
 					Storage::disk('public')->move($user_path .'images/original/'. $file, $user_path .'images/original/trash/'. $file);
 				}
+			*/
 	}
 	
 	public static function repair_layout($id)

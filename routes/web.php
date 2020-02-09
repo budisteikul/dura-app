@@ -33,7 +33,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
@@ -62,7 +62,9 @@ Route::get('/test', function () {
 							"api_key" => env('CLOUDINARY_KEY'), 
 							"api_secret" => env('CLOUDINARY_SECRET') 
 						));
-	print(cloudinary_url("eca1ca75-9e80-493f-bfef-cbeb44f8aac3/images/original/zbbzm53vmpyj8zwsw9ba.jpg", array("width" => 250, "height" => 250, "crop" => "fill")));
+	//iPVXaTFBzgEMcDVV1a3X3AxLylQtx6mXcDfDVU0c
+	$aaa = \Cloudinary\Uploader::upload(storage_path('app').'/temp/9196bb3a-dd37-4727-b2be-1395fc9d5b1a/UFYVmscDcOksE9fYh80ZZNOHpGUaIePCEDzQQQ3l.jpeg', Array('unique_filename'=>false,'use_filename'=>true,'folder' => '9196bb3a-dd37-4727-b2be-1395fc9d5b1a/images/original'));
+	print_r($aaa);
 	exit();
 });
 Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');

@@ -19,16 +19,15 @@ use Illuminate\Support\Facades\Storage;
 class PhotoController extends Controller
 {
 	
+	
+		
+	
+	
 	public function index(Request $request)
 	{
 		if($request->ajax())
 		{
-			\Cloudinary::config(array( 
-							"cloud_name" => env('CLOUDINARY_NAME'), 
-							"api_key" => env('CLOUDINARY_KEY'), 
-							"api_secret" => env('CLOUDINARY_SECRET') 
-						));
-						
+							
 			$user = Auth::user();
 			$posts = blog_posts::with(array('attachments' => function($query)
 				   {
@@ -45,7 +44,8 @@ class PhotoController extends Controller
 						{
 							
 							
-							$contents	 .= '<img class="rounded" style="margin:1px;" src="'. cloudinary_url(Auth::user()->id ."/images/original/". $attachment->file_name, array("width" => 250, "height" => 250, "crop" => "fill")) .'">';
+							$contents	 .= '<img class="rounded" style="margin:1px;" src="https://res.cloudinary.com/budi/image/upload/c_fill,h_50,w_50/v1/'. Auth::user()->id .'/images/original/'. $attachment->file_name .'">';
+							
 							//$contents	 .= '<img class="rounded" style="margin:1px;" src="/storage/'. Auth::user()->id .'/images/50/'. $attachment->file_name .'">';
 						}
 					
@@ -113,6 +113,8 @@ class PhotoController extends Controller
 	
 	public function edit($id)
 	{
+		
+						
 		$user = Auth::user();
 		$stdClass = app();
 		$setting = $stdClass->make('stdClass');
