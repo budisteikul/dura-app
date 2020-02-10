@@ -23,16 +23,16 @@ class BlogClass {
 		switch($res)
 		{
 			case 50:
-				$url = cloudinary_url($image, array("width" => 50, "height" => 50, "crop" => "fill"));
+				$url = cloudinary_url($image, array("width" => 50, "height" => 50, "crop" => "fill","secure"=>true));
 			break;
 			case 250:
-				$url = cloudinary_url($image, array("width" => 250, "height" => 250, "crop" => "fill"));
+				$url = cloudinary_url($image, array("width" => 250, "height" => 250, "crop" => "fill","secure"=>true));
 			break;
 			case 500:
-				$url = cloudinary_url($image, array("width" => 500, "height" => 500, "crop" => "fill"));
+				$url = cloudinary_url($image, array("width" => 500, "height" => 500, "crop" => "fill","secure"=>true));
 			break;
 			default:
-				$url = cloudinary_url($image);
+				$url = cloudinary_url($image, array("secure"=>true));
 		}
 		return $url;
 		
