@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Input;
 use Yajra\DataTables\Facades\DataTables;
-use App\Jobs\RCloneImages;
+//use App\Jobs\RCloneImages;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use App\Models\Blog\blog_posts;
@@ -148,7 +148,7 @@ class PhotoController extends Controller
 					]);
 		}
 		
-		$job = false;
+		//$job = false;
 		$title =  $request->input('title');
 		$date =  $request->input('date');
 		$user_id =  $user->id;
@@ -173,7 +173,7 @@ class PhotoController extends Controller
 				
 				BlogClass::deletePhoto($rs->file_name);
 				
-				$job = true;
+				//$job = true;
 			}
 			
 		}
@@ -192,11 +192,12 @@ class PhotoController extends Controller
 		$blog_posts->save();
 		
 		$result = blog_tmp::where('key',$key)->where('user_id',$user_id)->get();
+		/*
 		if(@count($result))
 		{
 			$job = true;
 		}
-		
+		*/
 		$sort_order = blog_attachments::where('post_id',$id)->max('sort');
 		foreach($result as $rs)
 		{
@@ -224,11 +225,13 @@ class PhotoController extends Controller
 					//====================================================================================================
 		}
 		//================================================
+		/*
 		if($job)
 		{
 			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
    			dispatch($rcloneJob);	
 		}
+		*/
 		//================================================	
     	BlogClass::repair_layout($id);
 		return response()->json([
@@ -241,7 +244,7 @@ class PhotoController extends Controller
 	{
 		
 		$user = Auth::user();
-		$job = false;
+		//$job = false;
 		$title =  $request->input('title');
 		$date =  $request->input('date');
 		$user_id =  $user->id;
@@ -266,10 +269,12 @@ class PhotoController extends Controller
 		
 		$result = blog_tmp::where('key',$key)->where('user_id',$user_id)->get();
 		
+		/*
 		if(@count($result))
 		{
 			$job = true;	
 		}
+		*/
 		
 		$sort_order = 0 ;
 		foreach($result as $rs)
@@ -296,11 +301,13 @@ class PhotoController extends Controller
 		}
 		BlogClass::repair_layout($blog_posts->id);
 		//================================================
+		/*
 		if($job)
 		{
 			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
    			dispatch($rcloneJob);	
 		}
+		*/
 		//================================================		
     	
 		return response()->json([
@@ -312,12 +319,15 @@ class PhotoController extends Controller
 	public function destroy($id)
 	{
 		$user = Auth::user();
-		$job = false;
+		//$job = false;
 		$result = blog_attachments::where('post_id',$id)->get();
+		/*
 		if(@count($result))
 		{
 			$job = true;	
 		}
+		*/
+		
 		foreach($result as $rs)
 		{//====================================================================================================
 				BlogClass::deletePhoto($rs->file_name);//====================================================================================================
@@ -327,11 +337,13 @@ class PhotoController extends Controller
 		$blog_posts->attachments()->delete();
 		$blog_posts->delete();
 		//================================================
+		/*
 		if($job)
 		{
 			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
    			dispatch($rcloneJob);
 		}
+		*/
 		//================================================
 	}
 	
