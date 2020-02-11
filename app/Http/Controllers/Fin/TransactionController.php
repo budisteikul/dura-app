@@ -165,7 +165,6 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        $fin_transactions = fin_transactions::find($id);
-		$fin_transactions->delete();
+        fin_transactions::find($id)->delete();
     }
 }

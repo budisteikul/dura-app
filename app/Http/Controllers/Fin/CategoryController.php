@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\DataTables\Fin\CategoriesDataTable;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Fin\fin_categories;
+use App\Models\Fin\fin_transactions;
 
 class CategoryController extends Controller
 {
@@ -127,7 +128,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $fin_categories = fin_categories::find($id);
-		$fin_categories->delete();
+        fin_categories::find($id)->delete();
+		fin_transactions::where('category_id', $id)->delete();
     }
 }
