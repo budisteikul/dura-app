@@ -133,10 +133,7 @@ s0.parentNode.insertBefore(s1,s0);
                 <div class="col-sm-4 second-column align-middle">
                 	
 					
-					<p class="mt-2 text-left text-dark align-middle">
-                    
-                    <div id="TA_cdswritereviewnew823" class="TA_cdswritereviewnew"><ul id="9UuVMjnO" class="TA_links pDIwwf3D"><li id="BIEq7gLF" class="zLcMli"><a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/medium-logo-29834-2.png" alt="TripAdvisor"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=cdswritereviewnew&amp;uniq=823&amp;locationId=17523331&amp;lang=en_US&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
-					</p>
+					
                 </div>
 			
         </div>
