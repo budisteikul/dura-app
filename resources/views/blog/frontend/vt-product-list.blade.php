@@ -126,14 +126,14 @@
           <div class="mt-5">
             <i class="fa fa-4x fa-ticket-alt text-danger mb-4"></i>
             <h3 class="h4 mb-2">Instant Booking</h3>
-            <p class="text-muted mb-0">Your booking are confirmed automatically!</p>
+            <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-phone-alt text-danger mb-4"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
-            <p class="text-muted mb-0">Whatsapp : +62 857 4311 2112</p>
+            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
@@ -154,6 +154,8 @@
       <div style="height:45px;"></div>	
     </div>
   </section>
+
+
 
 
 <section id="tour" style="background-color:#ffffff">
