@@ -17,7 +17,7 @@ class fin_transactions extends Model
 	
 	public function categories()
     {
-        return $this->belongsTo('App\Models\Fin\fin_categories','id');
+        return $this->belongsTo('App\Models\Fin\fin_categories','category_id');
     }
 	
 }

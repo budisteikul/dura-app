@@ -102,7 +102,8 @@ class TransactionController extends Controller
     public function edit($id)
     {
         $fin_categories = fin_categories::orderBy('name')->get();
-		$fin_transactions = fin_transactions::findOrFail($id);
+		$fin_transactions = fin_transactions::with('categories')->findOrFail($id);
+		if($fin_transactions->amount<0) $fin_transactions->amount = $fin_transactions->amount * -1;
         return view('fin.transactions.edit',['fin_transactions'=>$fin_transactions,'fin_categories'=>$fin_categories]);
     }
 
