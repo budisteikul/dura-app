@@ -60,150 +60,7 @@
 			
 </script>
 @endpush
-<style>
-#mainNav {
-  	border-color: rgba(34,34,34,.05);
-    font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:#2e3338;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
 
-.navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
-}
-
-.navbar-toggler:hover, .navbar-toggler:focus {
-  text-decoration: none !important;
-  outline: none;
-  box-shadow: none;
-}
-
-
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
-}
-
-#mainNav .navbar-brand {
-  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  color: #ccd0d5;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-}
-
-#mainNav .navbar-brand.active, #mainNav .navbar-brand:hover {
-  color: #FFFFFF;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link {
-  	text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #dadada;
-  
-}
-#mainNav-back {
-  	padding-top: 0;
-    padding-bottom: 0;
-  	border-color: rgba(34,34,34,.05);
-    font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:#2e3338;
-    background: #2e3338;
-	filter: alpha(opacity=30);
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}
-
-#mainNav-back .navbar-brand {
-  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  color: #ccd0d5;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  filter: alpha(opacity=60);
-  font-size: 1.25em;
-  padding: 12px 0;
-}
-
-#mainNav-back .navbar-brand.active, #mainNav-back .navbar-brand:hover {
-  color: #dadada;
-}
-
-#mainNav-back .navbar-nav .nav-item .nav-link {
-  	text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-#mainNav-back .navbar-nav .nav-item .nav-link.active, #mainNav-back .navbar-nav .nav-item .nav-link:hover {
-  color: #c03b44;
-  
-}
-@media(min-width:768px) {
-  #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-    border: none;
-    background-color: transparent;
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    background-color:#2e3338;
-    background:#2e3338;
-	filter: alpha(opacity=30);
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-  #mainNav-back {
-    border-color: rgba(34,34,34,.05);
-    font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;
-    background-color:#2e3338;
-    background: #2e3338;
-	filter: alpha(opacity=30);
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-  }
-  #mainNav-back .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-  #mainNav-back .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  }
-}
-</style>
  <!-- ################################################################### -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
@@ -283,7 +140,7 @@
           <div class="mt-5">
             <i class="fas fa-4x fa-history text-danger mb-4"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
-            <p class="text-muted mb-0">You can cancel the booking up to 24 hours in advance!</p>
+            <p class="text-muted mb-0">You can cancel the booking anytime up to 24 hours before your experience!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
