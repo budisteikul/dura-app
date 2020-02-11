@@ -140,7 +140,6 @@ class WidgetController extends Controller
      */
     public function destroy($id)
     {
-        $rev_widgets = rev_widgets::find($id);
-		$rev_widgets->delete();
+        rev_widgets::find($id)->delete();
     }
 }

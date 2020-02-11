@@ -168,9 +168,7 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        $rev_widgets = rev_widgets::find($id);
-		$blog_posts = blog_posts::find($rev_widgets->post_id);
-		$rev_widgets->delete();
-		$blog_posts->delete();
+        rev_widgets::find($id)->delete();
+		blog_posts::find($rev_widgets->post_id)->delete();
     }
 }

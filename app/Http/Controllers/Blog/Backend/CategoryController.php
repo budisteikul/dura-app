@@ -197,7 +197,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $user = Auth::user();
-		$blog_categories = blog_categories::where('user_id',$user->id)->find($id);
-		$blog_categories->delete();
+		blog_categories::where('user_id',$user->id)->find($id)->delete();
     }
 }

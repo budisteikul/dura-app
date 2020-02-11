@@ -134,7 +134,6 @@ class ResellerController extends Controller
      */
     public function destroy($id)
     {
-        $rev_resellers = rev_resellers::find($id);
-		$rev_resellers->delete();
+        rev_resellers::find($id)->delete();
     }
 }
