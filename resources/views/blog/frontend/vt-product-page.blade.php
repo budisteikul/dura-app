@@ -268,7 +268,7 @@
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-white" style="background-color: #2c97de;"><h3>Book {{ $contents->title }}</h3></div>
+  			<div class="card-header text-dark"><h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3></div>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:10px;padding-bottom:15px;">
     				
      
