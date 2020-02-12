@@ -166,7 +166,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
         
         <div class="col-md-8 mx-auto">
         
-        <img src="/assets/foodtour/silkwinds.jpg" class="img-fluid rounded">
+        <img src="/assets/foodtour/silkwinds-magazine.jpg" class="img-fluid rounded">
         <span class="caption text-muted"><a class="text-muted"  target="_blank" href="https://www.silverkris.com/yogyakarta-the-way-to-this-citys-heart-is-through-its-food/">Silkwinds Magazine</a></span>
         </div>
         
