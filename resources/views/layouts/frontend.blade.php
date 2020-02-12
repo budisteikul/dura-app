@@ -91,7 +91,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 	@yield('content')
 
-<footer class="py-5" style="font-size:16px; background-color:#f0f0f0">
+<footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
 <div class="container">
     <div class="row">
 		<div class="row col-md-12">
