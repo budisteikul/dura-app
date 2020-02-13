@@ -100,24 +100,17 @@ class ProfileController extends Controller
 				
 				$user = User::findOrFail(Auth::user()->id);
 				
-				if(env('FILESYSTEM_DRIVER')=="cloudinary")
-				{
-					\Cloudinary::config(array( 
+				\Cloudinary::config(array( 
 						"cloud_name" => env('CLOUDINARY_NAME'), 
 						"api_key" => env('CLOUDINARY_KEY'), 
 						"api_secret" => env('CLOUDINARY_SECRET') 
 				));
-					$upload = \Cloudinary\Uploader::upload($request->file('file') , Array('resource_type' => 'raw'));
-					if($user->picture_path!="") \Cloudinary\Uploader::destroy($user->picture_path , Array('resource_type' => 'raw'));
-					$path = $upload['public_id'];
-					$url = $upload['secure_url'];
-				}
-				else
-				{
-					Storage::disk('public')->delete($user->picture_path);
-					$path = Storage::disk('public')->putFile('auth/pictures', $request->file('file'));
-					$url = Storage::url($path);	
-				}
+				$upload = \Cloudinary\Uploader::upload($request->file('file') , Array('resource_type' => 'raw','folder' => $user->id.'/gravatars'));
+				if($user->picture_path!="") \Cloudinary\Uploader::destroy($user->picture_path , Array('resource_type' => 'raw'));
+				
+				$path = $upload['public_id'];
+				$url = $upload['secure_url'];
+				
 				
 				
 				$user->picture_path = $path;

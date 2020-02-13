@@ -129,34 +129,7 @@ $(function(){
       @if(request()->is('mails*'))
 		  @include('layouts.admin-lte.mail-menu')
 	  @else
-		
-		<ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MENU</li>
-        <li class="{{ request()->is('*hris/departments*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Departemen</a></li>
-        <li class="treeview 
-        {{ request()->is('*hris/employees*') ? 'active menu-open' : '' }}
-		{{ request()->is('*hris/positions*') ? 'active menu-open' : '' }}
-        {{ request()->is('*hris/contracts*') ? 'active menu-open' : '' }}
-        {{ request()->is('*hris/families*') ? 'active menu-open' : '' }}
-        {{ request()->is('*hris/departments*') ? 'active menu-open' : '' }}
-        ">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>Karyawan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="{{ request()->is('*hris/departments*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Departemen</a></li>
-			<li class="{{ request()->is('*hris/positions*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Jabatan</a></li>
-            <li class="{{ request()->is('*hris/employees*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Karyawan</a></li>
-            <li class="{{ request()->is('*hris/families*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Keluarga karyawan</a></li>
-            <li class="{{ request()->is('*hris/contracts*') ? 'active' : '' }}"><a href="#"><i class="fa fa-circle-o"></i> Kontrak</a></li>
-          </ul>
-        </li>
-        
-        
-      </ul>
+		  @include('layouts.admin-lte.mail-menu')
 	  @endif
     </section>
   </aside>
