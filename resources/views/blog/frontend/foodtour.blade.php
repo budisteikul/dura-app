@@ -138,6 +138,7 @@
 				<p class="text-faded">
                     Book for tonight? It's Ok! We can start the tour every day.
 					<br>Enjoy Jogja in Local Ways!
+                    <br>Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout
 				</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
