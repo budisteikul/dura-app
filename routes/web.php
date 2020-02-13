@@ -33,7 +33,7 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index');
+	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 });
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');

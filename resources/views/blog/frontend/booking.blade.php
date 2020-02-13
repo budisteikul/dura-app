@@ -13,7 +13,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 	
-		<a href="/"><img src="/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
+		<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		
 
 	</div>
@@ -35,7 +35,7 @@
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  <div class="text-right">
-		   		<img class="img-fluid" style="margin-bottom:30px;" src="/assets/vertikaltrip/Powered-By-PayPal-Logo.png">
+		   		<img class="img-fluid" style="margin-bottom:30px;" src="/assets/logo/Powered-By-PayPal-Logo.webp">
 				 </div>
                 {!! $product !!}
 				

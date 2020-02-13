@@ -99,7 +99,7 @@ s0.parentNode.insertBefore(s1,s0);
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
 					
-						<img src="/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
 						
 						INFO AND RESERVATION
@@ -120,7 +120,7 @@ s0.parentNode.insertBefore(s1,s0);
                     	PAYMENT CHANNEL
                     	<br>
                         
-						<img src="/assets/foodtour/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
+						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
 					
 					<p class="m-0 text-left text-dark">
