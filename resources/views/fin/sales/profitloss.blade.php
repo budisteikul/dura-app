@@ -264,7 +264,7 @@
         
         $profit_loss_total += $profit_loss;
         
-        $profit_loss_print = $profit_loss;
+        $profit_loss_print = number_format($profit_loss, 0, ',', '.');
         if($profit_loss<0) $profit_loss_print = '('. number_format($profit_loss*-1, 0, ',', '.') .')';
       @endphp
       <td align="right" class="font-weight-bolder" style="background-color:#FEFEEF">{{ $profit_loss_print }}</td>
