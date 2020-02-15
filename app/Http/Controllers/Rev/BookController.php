@@ -11,7 +11,6 @@ use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
 use Illuminate\Support\Facades\Validator;
-use App\Mail\Rev\BookingTour;
 use Illuminate\Support\Facades\Request as Http;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
@@ -225,10 +224,7 @@ class BookController extends Controller
 			$rev_books->status = $request->input('update');
 			$rev_books->save();
 			
-			if($rev_books->email!="")
-			{
-				Mail::to($rev_books->email)->send(new BookingTour($id));
-			}
+			
 			return response()->json([
 					"id"=>"1",
 					"message"=>'success'
