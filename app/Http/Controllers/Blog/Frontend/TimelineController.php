@@ -111,7 +111,7 @@ class TimelineController extends Controller
 		
 		$stdClass = app();
     	$setting = $stdClass->make('stdClass');
-		$setting->title = $user_id->name;
+		$setting->title = $get_user->name;
 		$setting->user_id = $user_id;
 		$setting->description = BlogClass::getConf('description',$user_id);
 		$setting->gravatar = $get_user->picture_url;
