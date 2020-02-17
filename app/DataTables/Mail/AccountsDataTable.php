@@ -57,7 +57,7 @@ class AccountsDataTable extends DataTable
         return $this->builder()
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->addAction(['title' => '','width' => '240px','class' => 'text-center'])
+                    ->addAction(['title' => '','width' => '200px','class' => 'text-center'])
                     ->parameters([
 						'dom'		   => '
 						<"row col-sm-12"
@@ -84,7 +84,7 @@ class AccountsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false],
+            ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '20px'],
 			["name" => "name", "title" => "Name", "data" => "name"],
 			["name" => "email", "title" => "Email", "data" => "email"]
         ];

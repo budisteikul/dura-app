@@ -19,10 +19,10 @@
 						"last": "<i class='fa fa-fast-forward'></i>"
     				}
   				},
-				"order": [[ 3, "desc" ]],
+				"order": [[ 2, "desc" ]],
 				"columns": [
 					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
-					{data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'auto', searchable: false, orderable: false},
+					
 					{data: 'name', name: 'name', className: 'auto'},
 					/* {data: 'email_phone', name: 'email_phone', className: 'auto'}, */
 					/* {data: 'traveller', name: 'traveller', className: 'auto'}, */
@@ -130,18 +130,17 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Order</div>
+                <div class="card-header">Booking</div>
                 <div class="card-body">
       
-      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add order</button>
+      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add booking</button>
         <hr>
         
 		<table class="table table-hover table-striped" id="dataTables-example" style="width:100%">
 			<thead>
 				<tr>
                 	<th></th>
-                	<th style="width:20px">No</th>
-                    <th>Lead</th>
+                    <th>Booking</th>
                     <th>Date</th>
 					<th style="width:280px"></th>
 				</tr>
