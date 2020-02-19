@@ -136,8 +136,7 @@
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<p class="text-faded">
-                    Book for tonight? It's Ok! We can start the tour every day.
-					<br>Enjoy Jogja in Local Ways!
+                    Enjoy Jogja in Local Ways!
                     <br>Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout
 				</p>
 			</div>
