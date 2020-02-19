@@ -113,9 +113,10 @@ s0.parentNode.insertBefore(s1,s0);
 						
 						
                     </p>
+                    
                 </div>
                 
-                <div class="col-sm-4 second-column">
+                <div class="col-sm-4 second-column mb-4">
                 	<p class="m-0 text-left text-dark">
                     	PAYMENT CHANNEL
                     	<br>
@@ -125,12 +126,13 @@ s0.parentNode.insertBefore(s1,s0);
 					
 					<p class="m-0 text-left text-dark">
                     
-					<small> 2020 &copy; VERTIKAL TRIP LLC</small>
+					<small> 2020 &copy; VERTIKAL TRIP</small>
                     
 					</p>
+                    
                 </div>
                 
-                <div class="col-sm-4 second-column align-middle">
+                <div class="col-sm-4 second-column mb-4">
                 	
 					
 					
