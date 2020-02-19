@@ -109,12 +109,14 @@
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
+					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
 				</li>
                 
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#guide">Tour Guide</a>
+					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
 				</li>
+                
+                
 				
 				
 				
@@ -424,6 +426,54 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 </div>
 </section>
 
+<section id="guide" style="background-color:#f2f2f2">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Tour Guide</h3>
+				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
+				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+				</div>
+			</div>
+			<br>
+		</div>
+        
+     </div>
+     <div class="row justify-content-center"> 
+     <div class="row col-8">       
+        
+            
+        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/ratna.webp" >
+					<h4>Kalika Prajna</h4>
+					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
+                    
+					<br><br>
+				</div>
+			</div>
+           
+            
+            
+            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
+				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/vella.webp" >
+					<h4>Vella Sekar</h4>
+					<p class="text-muted">Your Local Friend</p>
+					<br><br>
+				</div>
+			</div>
+        	
+            
+            
+        </div></div>
+        
+	</div>
+</div>
+</section>
+
 <section id="review" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
@@ -476,53 +526,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 <div style="height:50px;"></div>
 </section>
 
-<section id="guide" style="background-color:#f2f2f2">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-				<h3 class="section-heading" style="margin-top:50px;">Our Amazing Tour Guide</h3>
-				<h4 class="section-subheading text-muted">Wholeheartedly as a Local Friend</h4>
-				<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-				</div>
-			</div>
-			<br>
-		</div>
-        
-     </div>
-     <div class="row justify-content-center"> 
-     <div class="row col-8">       
-        
-            
-        	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
-				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/ratna.webp" >
-					<h4>Kalika Prajna</h4>
-					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
-                    
-					<br><br>
-				</div>
-			</div>
-           
-            
-            
-            <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
-				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/vella.webp" >
-					<h4>Vella Sekar</h4>
-					<p class="text-muted">Your Local Friend</p>
-					<br><br>
-				</div>
-			</div>
-        	
-            
-            
-        </div></div>
-        
-	</div>
-</div>
-</section>
+
 
 
 
