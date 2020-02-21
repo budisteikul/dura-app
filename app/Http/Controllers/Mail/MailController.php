@@ -25,9 +25,9 @@ class MailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(MailsDataTable $dataTable, Request $request)
+    public function index(MailsDataTable $dataTable, $id="")
     {
-		$folder = $request->input('folder');
+		$folder = $id;
 		$template = app();
 		switch($folder)
 		{
@@ -69,6 +69,9 @@ class MailController extends Controller
 		
         return $dataTable->with('folder',$folder)->render('mails.index', compact('folder','template'));
     }
+	
+	
+	
 
     /**
      * Show the form for creating a new resource.

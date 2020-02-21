@@ -83,6 +83,7 @@ class MailsDataTable extends DataTable
    
 	public function html()
     {
+		
 		$archive_button = "";
 		if($this->folder!="archive")
 		{
