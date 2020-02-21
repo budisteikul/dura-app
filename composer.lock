@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8bebacbedb164da137031af1dc58c95",
+    "content-hash": "2cfdc97d4ea408de0cceb1af3a450085",
     "packages": [
         {
             "name": "cloudinary/cloudinary_php",
@@ -2166,16 +2166,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.9.2",
+            "version": "3.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb"
+                "reference": "7e1633a6964b48589b142d60542f9ed31bd37a92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7779489a47d443f845271badbdcedfe4df8e06fb",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7e1633a6964b48589b142d60542f9ed31bd37a92",
+                "reference": "7e1633a6964b48589b142d60542f9ed31bd37a92",
                 "shasum": ""
             },
             "require": {
@@ -2249,7 +2249,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2019-12-17T08:18:51+00:00"
+            "time": "2020-02-21T04:36:14+00:00"
         },
         {
             "name": "soundasleep/html2text",
@@ -3903,16 +3903,16 @@
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v4.21.0",
+            "version": "v4.20.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "6ac575c1aa736a33e351cef6e8c6156ef611e9c4"
+                "reference": "691427b9d554f5e3467217eaa64483de60de4bec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/6ac575c1aa736a33e351cef6e8c6156ef611e9c4",
-                "reference": "6ac575c1aa736a33e351cef6e8c6156ef611e9c4",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/691427b9d554f5e3467217eaa64483de60de4bec",
+                "reference": "691427b9d554f5e3467217eaa64483de60de4bec",
                 "shasum": ""
             },
             "require": {
@@ -3959,7 +3959,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2020-02-18T02:34:45+00:00"
+            "time": "2019-11-11T15:03:06+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
