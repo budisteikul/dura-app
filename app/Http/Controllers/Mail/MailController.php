@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Html2Text\Html2Text;
 use Illuminate\Http\File;
 
+
 class MailController extends Controller
 {
     /**

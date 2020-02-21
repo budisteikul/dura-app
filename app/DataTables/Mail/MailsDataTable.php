@@ -74,6 +74,7 @@ class MailsDataTable extends DataTable
         return $query;
     }
 
+
     /**
      * Optional method if you want to use html builder.
      *
