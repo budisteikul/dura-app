@@ -497,13 +497,10 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                     
                     
                     <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
-                    	<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Restaurant">
+                    	<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
                             <meta itemprop="image" content="/assets/foodtour/webp/gallery/1.webp" />
         					<meta itemprop="name" content="Yogyakarta Night Walking and Food Tours" />
-        					<meta itemprop="servesCuisine" charset="Street Food" />
-        					<meta itemprop="priceRange" charset="$$" />
-        					<meta itemprop="telephone" charset="+6285743112112" />
-        					<meta itemprop="address" charset="Tugu Pal Putih, Cokrodiningratan, Jetis, Yogyakarta City, Special Region of Yogyakarta 55233" />
+        					<meta itemprop="slogan" charset="Enjoy Jogja in Local ways!" />
       					</div>
       					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
        						 <meta itemprop="name" content="Airbnb and Trip Advisor user" />
