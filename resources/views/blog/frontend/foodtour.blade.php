@@ -1,6 +1,57 @@
 @extends('layouts.frontend')
 @section('content')
 @push('scripts')
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Yogyakarta Night Walking and Food Tours",
+      "image": [
+        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/1.webp",
+        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/small-groups.webp",
+        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/6.webp"
+       ],
+      "description": "See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.",
+      "sku": "110844P2",
+      "mpn": "208273",
+      "brand": {
+        "@type": "Thing",
+        "name": "JOGJA FOOD TOUR"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.9",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Airbnb and Trip Advisor user"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "{{ $count }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://example.com/anvil",
+        "priceCurrency": "USD",
+        "price": "44",
+        "priceValidUntil": "2020-12-31",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "JOGJA FOOD TOUR"
+        }
+      }
+    }
+</script>
+@endif
 <script type="text/javascript">
 			jQuery(document).ready(function($) {	
 			var table = $('#dataTables-example').DataTable(
@@ -206,37 +257,25 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             	
 				<div>
 					<span style="width:30px;" class="fa fa-store"></span><strong> Name :</strong> 
-                    <span itemprop="name" content="Yogyakarta Night Walking and Food Tours">Yogyakarta Night Walking and Food Tours</span><br />
+                    <span>Yogyakarta Night Walking and Food Tours</span><br />
                     <span style="width:30px;" class="fa fa-walking"></span><strong> Tour Mode :</strong> Walk and Trishaw<br />
 					<span style="width:30px;" class="fa fa-stopwatch"></span><strong> Duration :</strong> 3 ~ 4 hours start at 6.30 pm<br />
 					<span style="width:30px;" class="fa fa-bars"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
-                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div>
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
 						
-                    	<span itemprop="priceCurrency" content="USD"></span>
-                    	<span itemprop="price" content="44.00"></span>
-						
-				
 				 44 USD / person
 				
-			
-    					<link itemprop="availability" href="http://schema.org/InStock" />
-                        <meta itemprop="priceValidUntil" content="2020-12-31" />
-                        <link itemprop="url" href="https://www.jogjafoodtour.com" />
+    					
                 	</div>
                     
                    
-                    <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
-      					<meta itemprop="name" content="VERTIKAL TRIP" />
-    				</div>
+                 
                     
                     <br>
                     
                     
-                    
-                    <meta itemprop="sku" content="15055852112" />
-                    <meta itemprop="mpn" content="15055852112" />
                     
                     
 				</div>
@@ -255,7 +294,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             	<div>
 				<h2 class="section-heading">Overview</h2>
 				See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.
-                <meta itemprop="description" content="Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more." />
+                
                 </div>
 			</p>
 
@@ -293,7 +332,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             
 			<center>
 				<br>
-				<img width="400" itemprop="image" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/webp/adv/gudeg-jogja.webp">
+				<img width="400" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/webp/adv/gudeg-jogja.webp">
 				<span class="caption text-muted">Gudeg Jogja</span>
 			</center>
             
@@ -483,33 +522,20 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
                     <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReviewEdit-g14782503-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Yogyakarta_Region_Java.html" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
-<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
+<div>	
 		    			<strong> Rating :</strong>
                     	<span class="text-warning">
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger">(4.9)</span>
 		    			</span>‎
                     	<br>
-                    	<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+                    	<small class="form-text text-muted">Based on <span>{{ $count }}</span> our new friend reviews</small>
                     	
                     </div>
 					
                     
                     
                     
-                    <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
-                    	<div itemprop="itemReviewed" itemtype="https://schema.org/Product" itemscope>
-                            <meta itemprop="image" content="/assets/foodtour/webp/gallery/1.webp" />
-        					<meta itemprop="name" content="Yogyakarta Night Walking and Food Tours" />
-        					<meta itemprop="slogan" charset="Enjoy Jogja in Local ways!" />
-      					</div>
-      					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-       						 <meta itemprop="name" content="Airbnb and Trip Advisor user" />
-      					</div>
-      					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-        					<meta itemprop="ratingValue" content="5" />
-        					<meta itemprop="bestRating" content="5" />
-      					</div>
-    				</div>
+                    
                     
                     <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 					
