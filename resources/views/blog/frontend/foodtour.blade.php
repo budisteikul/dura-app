@@ -497,7 +497,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                     
                     
                     <div itemprop="review" itemtype="http://schema.org/Review" itemscope>
-                    	<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                    	<div itemprop="itemReviewed" itemtype="https://schema.org/Product" itemscope>
                             <meta itemprop="image" content="/assets/foodtour/webp/gallery/1.webp" />
         					<meta itemprop="name" content="Yogyakarta Night Walking and Food Tours" />
         					<meta itemprop="slogan" charset="Enjoy Jogja in Local ways!" />
