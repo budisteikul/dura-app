@@ -81,7 +81,8 @@ class WidgetsDataTable extends DataTable
 						'pagingType' => 'full_numbers',
 						'responsive' => true,
 						'order' => [0,'desc']
-                    ]);
+                    ])
+					->ajax(url()->full());;
     }
 
     /**
