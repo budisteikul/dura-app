@@ -67,7 +67,7 @@ class TransactionsDataTable extends DataTable
 						'responsive' => true,
 						'order' => [3,'desc']
                     ])
-					->ajax(url()->full());;
+					->ajax('/'.request()->path());
     }
 
     /**

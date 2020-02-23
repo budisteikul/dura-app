@@ -62,7 +62,7 @@ class CategoriesDataTable extends DataTable
 						'responsive' => true,
 						'order' => [0,'desc']
                     ])
-					->ajax(url()->full());;
+					->ajax('/'.request()->path());
     }
 
     /**

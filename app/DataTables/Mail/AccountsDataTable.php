@@ -75,7 +75,7 @@ class AccountsDataTable extends DataTable
 						>',
 						//'order'		   => [0,'asc'],
                     ])
-					->ajax(url()->full());;
+					->ajax('/'.request()->path());
     }
     /**
      * Get columns.

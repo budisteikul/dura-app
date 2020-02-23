@@ -157,7 +157,7 @@ class MailsDataTable extends DataTable
 								'paginate' => [ 'next' => '<i class="fa fa-chevron-right"></i>', 'previous' => '<i class="fa fa-chevron-left"></i>']
 								]
                     ])
-					->ajax(url()->full());
+					->ajax('/'.request()->path());
     }
 
     /**
