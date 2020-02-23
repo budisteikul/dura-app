@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+		//URL::forceScheme('https');
         Schema::defaultStringLength(191);
 		if(isset($_SERVER['HTTP_CF_VISITOR'])) URL::forceScheme('https');
 		if(isset($_SERVER['HTTP_X_FORWARDED_PROTO']))
