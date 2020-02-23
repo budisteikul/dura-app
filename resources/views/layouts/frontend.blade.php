@@ -91,60 +91,74 @@ s0.parentNode.insertBefore(s1,s0);
 
 	@yield('content')
 
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 <footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
 <div class="container">
     <div class="row">
 		<div class="row col-md-12">
-           	
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
-					
-						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
-						<br>
-						
 						INFO AND RESERVATION
 						<br>
 						We're happy to help
 						<br>
-						
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
-						
-						
-						
+							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
                     </p>
-                    
                 </div>
-                
                 <div class="col-sm-4 second-column mb-4">
                 	<p class="m-0 text-left text-dark">
                     	PAYMENT CHANNEL
                     	<br>
-                        
 						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
-					
 					<p class="m-0 text-left text-dark">
-                    
-					<small> 2020 &copy; VERTIKAL TRIP</small>
-                    
+					<small> 2020 &copy; JOGJA FOOD TOUR</small>
 					</p>
-                    
                 </div>
-                
                 <div class="col-sm-4 second-column mb-4">
-                	
-					
-					
+                
                 </div>
-			
         </div>
-        
-       
-        
     </div>
 </div>
 </footer>
+@else
+<footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
+<div class="container">
+    <div class="row">
+		<div class="row col-md-12">
+            	<div class="col-sm-4 first-column mb-4">
+                	<p class="m-0 text-left text-dark">
+						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<br>
+						INFO AND RESERVATION
+						<br>
+						We're happy to help
+						<br>
+							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
+                    </p>
+                </div>
+                <div class="col-sm-4 second-column mb-4">
+                	<p class="m-0 text-left text-dark">
+                    	PAYMENT CHANNEL
+                    	<br>
+						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
+					</p>
+					<p class="m-0 text-left text-dark">
+					<small> 2020 &copy; VERTIKAL TRIP</small>
+					</p>
+                </div>
+                <div class="col-sm-4 second-column mb-4">
+                
+                </div>
+        </div>
+    </div>
+</div>
+</footer>
+@endif
+
 
 
 </body>
