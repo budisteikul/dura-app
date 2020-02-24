@@ -64,7 +64,7 @@
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  <div class="text-right">
-		   		<img class="img-fluid" style="margin-bottom:30px;" height="25" src="/assets/logo/Powered-By-PayPal-Logo.webp">
+		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
 				 </div>
                 {!! $product !!}
 				
