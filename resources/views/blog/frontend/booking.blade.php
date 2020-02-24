@@ -10,18 +10,21 @@
 <!-- ################################################################### -->
 
 <!-- Navigation -->
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
-	
-		<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
-		
-
+		<a href="/"><img src="/assets/logo/logo-jogja-istimewa.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 	</div>
 </nav>
-
+<div style="height:25px;"></div>	
+@else
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
+	<div class="container">
+		<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
+	</div>
+</nav>
 <div style="height:25px;"></div>
-
-
+@endif
 
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
