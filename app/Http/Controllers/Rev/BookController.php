@@ -82,7 +82,7 @@ class BookController extends Controller
 						{
 							$label = ""	;
 							$status = 1;
-							$button = "btn-danger";
+							$button = "btn-light";
 							$icon = "fa-toggle-off";
 							$text = " Cancelled";
 							$disabled = "";
@@ -91,7 +91,7 @@ class BookController extends Controller
 						{
 							$label = "";
 							$status = 3;
-							$button = "btn-success";
+							$button = "btn-light";
 							$icon = "fa-toggle-on";
 							$text = " Confirmed";
 							$disabled = "disabled";
@@ -100,7 +100,7 @@ class BookController extends Controller
 						{
 							$label = ""	;
 							$status = 2;
-							$button = "btn-warning";
+							$button = "btn-light";
 							$icon = "fa-toggle-off";
 							$text = " Pending";
 							$disabled = "";
