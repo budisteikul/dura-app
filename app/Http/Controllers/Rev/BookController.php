@@ -308,7 +308,7 @@ class BookController extends Controller
         $render = '<div id="bokun-w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa">Loading...</div><script type="text/javascript">
 var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
 (function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
+  var host = \'widgets.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -329,7 +329,7 @@ var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
         $render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
 var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 (function(d, t) {
-  var host = \'vertikaltrip.bokun.io\';
+  var host = \'widgets.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97536_f6820178_ae16_4095_b0ec_4c203e94f898\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_f6820178_ae16_4095_b0ec_4c203e94f898\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
