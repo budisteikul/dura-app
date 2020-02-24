@@ -202,7 +202,46 @@
 
 
 <!-- Services -->
-  <section class="page-section" id="services" style="background-color:#f2f2f2">
+  <section class="page-section" id="services" style="background-color:#FFFFFF">
+    <div class="container">
+    <div style="height:45px;"></div>
+      
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fa fa-4x fa-ticket-alt text-danger mb-4"></i>
+            <h3 class="h4 mb-2">Instant Booking</h3>
+            <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-phone-alt text-danger mb-4"></i>
+            <h3 class="h4 mb-2">24/7 Support</h3>
+            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-history text-danger mb-4"></i>
+            <h3 class="h4 mb-2">Free Cancellation</h3>
+            <p class="text-muted mb-0">You can cancel the booking anytime up to 24 hours before your experience!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fab fa-4x fa-paypal text-danger mb-4"></i>
+            <h3 class="h4 mb-2">Secure Payments</h3>
+            <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
+          </div>
+        </div>
+      </div>
+      <div style="height:45px;"></div>	
+    </div>
+  </section>
+  
+  <section class="page-section" id="press" style="background-color:#f2f2f2">
+  
     <div class="container">
       
         	<div class="row" style="padding-bottom:0px;">
@@ -243,8 +282,8 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 		<div class="col-lg-8 col-md-10 mx-auto">
         
         
+	  
         <div>
-        
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:0px;">Explore Yogyakarta Through our Jogja Food Tour</h3>
