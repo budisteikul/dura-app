@@ -60,12 +60,12 @@ class AccountsDataTable extends DataTable
                     ->addAction(['title' => '','width' => '200px','class' => 'text-center'])
                     ->parameters([
 						'dom'		   => '
-						<"row col-sm-12"
+						<"row col-sm-12 no-padding"
 						<"col-sm-6"l><"col-sm-6"f>
 						>
 						<"row"
 						<"col-sm-12"
-						<"table-responsive mailbox-messages"
+						<"table-responsive"
 							tr
 						>
 						>
@@ -73,6 +73,7 @@ class AccountsDataTable extends DataTable
 						<"row col-sm-12"
 						<"col-sm-6"i><"col-sm-6"p>
 						>',
+						"scrollX"=> false,
 						//'order'		   => [0,'asc'],
                     ])
 					->ajax('/'.request()->path());
