@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Input;
 use Yajra\DataTables\Facades\DataTables;
-//use App\Jobs\RCloneImages;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use App\Models\Blog\blog_posts;
@@ -225,13 +224,7 @@ class PhotoController extends Controller
 					//====================================================================================================
 		}
 		//================================================
-		/*
-		if($job)
-		{
-			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			dispatch($rcloneJob);	
-		}
-		*/
+		
 		//================================================	
     	BlogClass::repair_layout($id);
 		return response()->json([
@@ -301,13 +294,7 @@ class PhotoController extends Controller
 		}
 		BlogClass::repair_layout($blog_posts->id);
 		//================================================
-		/*
-		if($job)
-		{
-			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			dispatch($rcloneJob);	
-		}
-		*/
+		
 		//================================================		
     	
 		return response()->json([
@@ -337,13 +324,7 @@ class PhotoController extends Controller
 		$blog_posts->attachments()->delete();
 		$blog_posts->delete();
 		//================================================
-		/*
-		if($job)
-		{
-			$rcloneJob = (new RCloneImages())->delay(now()->addSeconds(60));
-   			dispatch($rcloneJob);
-		}
-		*/
+		
 		//================================================
 	}
 	
