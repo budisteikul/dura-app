@@ -225,13 +225,13 @@ class MailController extends Controller
 			
 			
 			
-			$message = route('mails.index') .'?folder=draft';
+			$message = route('mails.index') .'/folder/draft';
 			if($request->input('request')=='Send')
 			{
 				Mail::send(new ComposeMail($mail_account->name,$mail_account->email,$mail_to,$mail_subject,$mail_body_html,$mail_body_plain,$mail_attachments,$mail_old_attachments));
 				$mail_email->folder = 'sent';
 				$mail_email->save();
-				$message = route('mails.index') .'?folder=sent';
+				$message = route('mails.index') .'/folder/sent';
 			}
 			
 			if(@count($mail_old_attachments)>0)
