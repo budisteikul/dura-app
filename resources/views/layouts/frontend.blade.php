@@ -98,7 +98,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="row col-md-12">
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
-						INFO AND RESERVATION
+						<b>INFO AND RESERVATION</b>
 						<br>
 						We're happy to help
 						<br>
@@ -108,7 +108,7 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 <div class="col-sm-6 second-column mb-6">
                 	<p class="m-0 text-left text-dark">
-                    	PAYMENT CHANNEL
+                    	<b>PAYMENT CHANNEL</b>
                     	<br>
 						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
@@ -133,7 +133,7 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-dark">
 						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
-						INFO AND RESERVATION
+						<b>INFO AND RESERVATION</b>
 						<br>
 						We're happy to help
 						<br>
@@ -143,7 +143,7 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
                 <div class="col-sm-4 second-column mb-4">
                 	<p class="m-0 text-left text-dark">
-                    	PAYMENT CHANNEL
+                    	<b>PAYMENT CHANNEL</b>
                     	<br>
 						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
