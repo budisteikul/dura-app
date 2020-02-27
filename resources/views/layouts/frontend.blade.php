@@ -106,7 +106,7 @@ s0.parentNode.insertBefore(s1,s0);
 							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
                     </p>
                 </div>
-                <div class="col-sm-4 second-column mb-4">
+                <div class="col-sm-6 second-column mb-6">
                 	<p class="m-0 text-left text-dark">
                     	PAYMENT CHANNEL
                     	<br>
@@ -117,9 +117,9 @@ s0.parentNode.insertBefore(s1,s0);
                     <br>JOGJA FOOD TOUR is a trading name of VERTIKAL TRIP</small>
 					</p>
                 </div>
-                <div class="col-sm-4 second-column mb-4">
+                <!-- div class="col-sm-4 second-column mb-4">
                 
-                </div>
+                </div -->
         </div>
     </div>
 </div>
