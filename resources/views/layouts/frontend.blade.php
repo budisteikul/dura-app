@@ -98,6 +98,8 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="row col-md-12">
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
+						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<br>
 						<b>INFO AND RESERVATION</b>
 						<br>
 						We're happy to help
@@ -114,7 +116,7 @@ s0.parentNode.insertBefore(s1,s0);
 					</p>
 					<p class="m-0 text-left text-dark">
 					<small> 2020 &copy; JOGJA FOOD TOUR. All Rights Reserved.
-                    <br>JOGJA FOOD TOUR is a trading name of VERTIKAL TRIP LLC</small>
+                    <br>JOGJA FOOD TOUR is a trading name of VERTIKAL TRIP</small>
 					</p>
                 </div>
                 <!-- div class="col-sm-4 second-column mb-4">
