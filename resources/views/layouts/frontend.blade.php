@@ -115,7 +115,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
 					</p>
 					<p class="m-0 text-left text-dark">
-					<small> 2020 &copy; JOGJA FOOD TOUR. All Rights Reserved.
+					<small> 2020 &copy; JOGJA FOOD TOUR All Rights Reserved.
                     <br>JOGJA FOOD TOUR is a trading name of VERTIKAL TRIP</small>
 					</p>
                 </div>
