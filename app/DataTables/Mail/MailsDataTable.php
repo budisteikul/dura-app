@@ -109,7 +109,7 @@ class MailsDataTable extends DataTable
 						>
 						>
 						
-						<"table-responsive mailbox-messages"
+						<"table-responsive no-padding"
 							tr
 						>
 						<"row"

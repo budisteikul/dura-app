@@ -129,6 +129,7 @@ function STORE_OPTION()
 	return false;
 }
 </script>
+
 @endpush
     <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -175,9 +176,8 @@ function STORE_OPTION()
         <div class="box-body">
             <button id="btn-edit" onClick="CREATE()" type="button" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span> Create </button>
         </div>
-        <div class="box-body">
-		
-          {!! $dataTable->table(['class'=>'table table-bordered table-striped table-hover']) !!}
+        <div class="box-body" style="min-height:300px;">
+          {!! $dataTable->table(['class'=>'table table-hover']) !!}
         </div>
       </div>
       <!-- /.box -->

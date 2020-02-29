@@ -129,7 +129,7 @@ $(function(){
       @if(request()->is('mails*'))
 		  @include('layouts.admin-lte.mail-menu')
 	  @else
-		  @include('layouts.admin-lte.mail-menu')
+		  
 	  @endif
     </section>
   </aside>

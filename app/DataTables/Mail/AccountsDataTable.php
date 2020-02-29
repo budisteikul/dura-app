@@ -73,8 +73,7 @@ class AccountsDataTable extends DataTable
 						<"row col-sm-12"
 						<"col-sm-6"i><"col-sm-6"p>
 						>',
-						"scrollX"=> false,
-						//'order'		   => [0,'asc'],
+						'order'		   => [],
                     ])
 					->ajax('/'.request()->path());
     }

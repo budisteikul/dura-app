@@ -1,4 +1,4 @@
-@extends('layouts.admin-lte.blank',['folder' => 'profiles'])
+@extends('layouts.admin-lte.blank')
 @section('title', 'Profiles')
 @section('content')
 @push('scripts')
