@@ -138,7 +138,7 @@ $(function(){
     <div class="pull-right hidden-xs">
       Anything you want
     </div>
-    <strong>Copyright &copy; 2019 <a href="/">{{ config('app.name', 'Laravel') }}</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 <a href="/">{{ config('app.name', 'Laravel') }}</a></strong> All rights reserved.
   </footer>
 </div>
 </body>

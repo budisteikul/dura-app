@@ -60,12 +60,12 @@ class AccountsDataTable extends DataTable
                     ->addAction(['title' => '','width' => '200px','class' => 'text-center'])
                     ->parameters([
 						'dom'		   => '
-						<"row col-sm-12 no-padding"
+						<"row col-sm-12"
 						<"col-sm-6"l><"col-sm-6"f>
 						>
 						<"row"
 						<"col-sm-12"
-						<"table-responsive"
+						<"table-responsive no-padding"
 							tr
 						>
 						>
@@ -85,7 +85,7 @@ class AccountsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '20px'],
+            ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '20px', 'class' => 'text-center'],
 			["name" => "name", "title" => "Name", "data" => "name"],
 			["name" => "email", "title" => "Email", "data" => "email"]
         ];
