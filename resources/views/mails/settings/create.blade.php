@@ -66,7 +66,7 @@ function STORE()
 }
 </script>
 
-<div class="box  box-primary col-md-12">
+<div class="box box-primary col-md-12" style="height:100%">
 	<div id="result" class="box-header with-border">
     <h3 class="box-title text-light-blue"><i class="fa fa-user"></i> Add account</h3>     	
 	</div>
