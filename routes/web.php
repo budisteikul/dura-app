@@ -56,18 +56,15 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 Route::domain('www.budi.my.id')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');
 });
+
+
+
+
 //========================================================================
 // Front Page
 //========================================================================
-Route::get('/test', function () {
-	\Cloudinary::config(array( 
-							"cloud_name" => env('CLOUDINARY_NAME'), 
-							"api_key" => env('CLOUDINARY_KEY'), 
-							"api_secret" => env('CLOUDINARY_SECRET') 
-						));
-	//iPVXaTFBzgEMcDVV1a3X3AxLylQtx6mXcDfDVU0c
-	$aaa = \Cloudinary\Uploader::upload(storage_path('app').'/temp/9196bb3a-dd37-4727-b2be-1395fc9d5b1a/UFYVmscDcOksE9fYh80ZZNOHpGUaIePCEDzQQQ3l.jpeg', Array('unique_filename'=>false,'use_filename'=>true,'folder' => '9196bb3a-dd37-4727-b2be-1395fc9d5b1a/images/original'));
-	print_r($aaa['secure_url']);
+Route::get('/phpinfo', function () {
+	phpinfo();
 	exit();
 });
 Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
