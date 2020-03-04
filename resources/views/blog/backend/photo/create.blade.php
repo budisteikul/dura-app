@@ -108,7 +108,7 @@ var uploadObj = $("#mulitplefileuploader").uploadFile(settings);
 
 <div class="form-group">
 	<label for="layout">Layout :</label>
-	<input type="text" id="layout" name="layout" class="form-control" placeholder="Layout" autocomplete="off">
+	<input type="number" id="layout" name="layout" class="form-control" placeholder="Layout" autocomplete="off">
 </div>
 
 				
