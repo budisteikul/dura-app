@@ -5,6 +5,14 @@ var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 */
 
 /*
+mix.js('resources/js/admin-lte.js', 'public/js/admin-lte.js')
+	.sass('resources/sass/admin-lte.scss', 'public/css/admin-lte.css');
+	
+mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/bootstrap3-wysihtml5.all.min.js'],'public/js/admin-lte.js')
+	.styles(['public/css/admin-lte.css','resources/assets/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css'], 'public/css/admin-lte.css');
+*/
+
+/*
  |--------------------------------------------------------------------------
  | Mix Asset Management
  |--------------------------------------------------------------------------
@@ -41,7 +49,7 @@ mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 */
 
-
+/*
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
 	'resources/assets/frontend/moment/moment.js',
@@ -78,6 +86,7 @@ mix.styles(['public/css/ratnawahyu-1.1.1.css','resources/assets/frontend/custom/
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
+*/
 
 /*
 mix.webpackConfig({

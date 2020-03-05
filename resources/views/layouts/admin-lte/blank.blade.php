@@ -14,8 +14,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <script src="{{asset('js/mail.js')}}"></script>
-  <link rel="stylesheet" href="{{asset('css/mail.css')}}">
+  <script src="{{asset('js/admin-lte.js')}}"></script>
+  <link rel="stylesheet" href="{{asset('css/admin-lte.css')}}">
   
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
