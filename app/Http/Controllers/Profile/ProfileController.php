@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Notifications\Auth\ChangeEmailNotifications;
@@ -35,7 +35,7 @@ class ProfileController extends Controller
         <h4><i class="icon fa fa-ban"></i> Error!</h4>
        Verification link is not valid,<br /> click <a href="/home">here to continue</a>
         </div>';
-					return view("auth.profiles.index")->with('message',$message);
+					return view("profiles.index")->with('message',$message);
 			 }
 			 
 			 if(Carbon::parse($result->created_at)->addMinutes(60) <= Carbon::now())
@@ -45,7 +45,7 @@ class ProfileController extends Controller
         <h4><i class="icon fa fa-warning"></i> Warning!</h4>
        Verification link has been expired,<br /> click <a href="/home">here to continue</a>
         </div>';
-					return view("auth.profiles.index")->with('message',$message); 
+					return view("profiles.index")->with('message',$message); 
 			 }
 			 
 			 $user = User::findOrFail($result->id);
@@ -58,7 +58,7 @@ class ProfileController extends Controller
         <h4><i class="icon fa fa-check"></i> Success!</h4>
         Successfully to change email address,<br /> click <a href="/home">here to continue</a>
         </div>';
-			 return view("auth.profiles.index")->with('message',$message);
+			 return view("profiles.index")->with('message',$message);
 			 
 			 
 		}
@@ -131,7 +131,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        return view('auth.profiles.show');
+        return view('profiles.show');
     }
 
     /**
