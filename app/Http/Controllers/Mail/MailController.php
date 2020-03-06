@@ -125,7 +125,8 @@ class MailController extends Controller
 								</head>
 								<body>'. $mail_content .'</body>
 							   </html>';
-			$mail_body_plain = Html2Text::convert($mail_content);
+			$html = new Html2Text($mail_content);
+			$mail_body_plain = $html->getText();
 			
 			$mail_email = new Mail_Email();
 			$mail_email->user_id = Auth::user()->id;
