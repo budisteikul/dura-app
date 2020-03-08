@@ -57,19 +57,23 @@ class AccountsDataTable extends DataTable
         return $this->builder()
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->addAction(['title' => '','width' => '220px','class' => 'text-center'])
+                    ->addAction(['title' => '','width' => '240px','class' => 'text-center'])
                     ->parameters([
-						'language' => [
-							'paginate' => [
-								'previous'=>'<i class="fa fa-step-backward"></i>',
-								'next'=>'<i class="fa fa-step-forward"></i>',
-								'first'=>'<i class="fa fa-fast-backward"></i>',
-								'last'=>'<i class="fa fa-fast-forward"></i>'
-								]
-							],
-						'pagingType' => 'full_numbers',
-						'responsive' => true,
-						'order' => []
+						'dom'		   => '
+						<"row col-sm-12"
+						<"col-sm-6"l><"col-sm-6"f>
+						>
+						<"row"
+						<"col-sm-12"
+						<"table-responsive mailbox-messages"
+							tr
+						>
+						>
+						>
+						<"row col-sm-12"
+						<"col-sm-6"i><"col-sm-6"p>
+						>',
+						'order'	=> [],
                     ])
 					->ajax('/'.request()->path());
     }
