@@ -14,8 +14,10 @@ require('jquery-form');
 require('@fancyapps/fancybox');
 
 require('jquery-confirm');
+require('icheck');
 
 window.moment = require('moment');
+window.Cookies = require('js-cookie');
 
 require('tinymce');
 require('tinymce/plugins/advlist');
