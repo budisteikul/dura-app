@@ -103,11 +103,19 @@
             	<img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.webp" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Enjoy Jogja in Local Ways!</h1>
-				<p class="text-faded">
+				<!-- p class="text-faded">
                     Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
                     <br>
                     Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout
-				</p>
+				</p -->
+                <p class="text-faded">
+                Due to the current worldwide concern of COVID19, with deep regret we have decided to halt our operation from 14 March 2020 until 31 May 2020 or further notice. 
+We are so sorry to not decide it early. And for everyone who have booked it, unfortunately we have to cancel it.
+The safety and health of our guests, tour guides, employees, vendors and community is our top priority.
+<br><br>
+Regards,<br>
+Vertikal Trip Team
+</p>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
        
