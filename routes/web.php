@@ -42,7 +42,8 @@ Route::domain('192.168.0.3')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
 });
 Route::domain('www.vertikaltrip.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
+	Route::get('/tours', 'Blog\Frontend\BlogController@vt_product_list');
 });
 Route::domain('www.jogjafoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@index');

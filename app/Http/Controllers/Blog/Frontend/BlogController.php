@@ -68,12 +68,10 @@ class BlogController extends Controller
 
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
     }
-
-
+	
 	public function vt_product_list(Request $request,$id="")
 	{
 		$default_id = '20041';
-
 		if($id=="")
 		{
 			$id = $default_id;
@@ -90,11 +88,32 @@ class BlogController extends Controller
 				$id = $default_id;
 			}
 		}
-		
 		$contents = BokunClass::get_product_list($id);
-		
+		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+	}
+	
+	public function vertikaltrip(Request $request,$id="")
+	{
+		$default_id = '20041';
+		if($id=="")
+		{
+			$id = $default_id;
+		}
+		else
+		{
+			$cat = blog_categories::where('slug',$id)->first();
+			if(isset($cat))
+			{
+				$id = $cat->description;
+			}
+			else
+			{
+				$id = $default_id;
+			}
+		}
+		$contents = BokunClass::get_product_list($id);
 		$count = rev_reviews::count();
-		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents,'count'=>$count]);
+		return view('blog.frontend.vertikaltrip')->with(['contents'=>$contents,'count'=>$count]);
 	}
 
 
