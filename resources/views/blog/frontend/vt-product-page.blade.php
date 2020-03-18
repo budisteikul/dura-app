@@ -181,7 +181,7 @@
               <h3 class="mt-4"><i class="fa fa-list"></i> Categories</h3>
               @if($contents->activityCategories!="")
               @for($i=0;$i<count($contents->activityCategories);$i++)
-                {!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!}
+                <span class="badge badge-light border text-muted">{!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!}</span>
               @endfor
               @endif
             @endif
@@ -190,7 +190,7 @@
             @if($contents->activityAttributes!="")
               <h3 class="mt-4"><i class="fas fa-cogs"></i> Attributes</h3>
               @for($i=0;$i<count($contents->activityAttributes);$i++)
-                {!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}
+                <span class="badge badge-light border text-muted">{!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}</span>
               @endfor
             @endif
           </div>
@@ -244,7 +244,7 @@
     	<div class="card mb-4 shadow p-2">
   			<div class="card-header text-dark">
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
-                It just take a 2 minutes
+                Secure booking — only takes 2 minutes!
             </div>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:10px;padding-bottom:15px;">
     				
