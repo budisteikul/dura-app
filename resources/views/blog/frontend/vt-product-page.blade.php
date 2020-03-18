@@ -252,9 +252,8 @@
 </div>
 @endif  
 </div>
-
-<div style="height:35px;"></div>
     </div>
+	
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
@@ -267,8 +266,8 @@
   				</div>
 			</div>
      		
-        <div style="height:35px;"></div>
     </div>
+	
 	<div class="clearfix"></div>
     
   </div>
