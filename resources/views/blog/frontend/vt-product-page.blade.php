@@ -159,7 +159,7 @@
       <div class="col-md-6">
           <div>
             @if($contents->productCategory!="")
-              <h3 class="mt-2"><i class="far fa-clipboard"></i> Experience type</h3>
+              <h3 class="mt-4"><i class="far fa-clipboard"></i> Experience type</h3>
               {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
             @endif
             @if($contents->privateActivity)
@@ -168,19 +168,19 @@
           </div>
           <div>
             @if($contents->bookingCutoffHours!="")
-              <h3 class="mt-2"><i class="far fa-calendar-alt"></i> Booking in advance</h3>
+              <h3 class="mt-4"><i class="far fa-calendar-alt"></i> Booking in advance</h3>
               Cut off: {!!$contents->bookingCutoffHours!!} hours
             @endif
           </div>
           <div>
             @if($contents->durationText!="")
-              <h3 class="mt-2"><i class="far fa-clock"></i> Duration</h3>
+              <h3 class="mt-4"><i class="far fa-clock"></i> Duration</h3>
               {!!$contents->durationText!!}
             @endif
           </div>
           <div>
             @if($contents->difficultyLevel!="")
-              <h3 class="mt-2"><i class="fas fa-signal"></i> Difficulty</h3>
+              <h3 class="mt-4"><i class="fas fa-signal"></i> Difficulty</h3>
               {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
             @endif
           </div>
@@ -196,7 +196,7 @@
       <div class="col-md-6">
           <div>
             @if($contents->activityCategories!="")
-              <h3 class="mt-2"><i class="fa fa-list"></i> Categories</h3>
+              <h3 class="mt-4"><i class="fa fa-list"></i> Categories</h3>
               @if($contents->activityCategories!="")
               @for($i=0;$i<count($contents->activityCategories);$i++)
                 {!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!}
@@ -206,7 +206,7 @@
           </div>
 		  <div>
             @if($contents->activityAttributes!="")
-              <h3 class="mt-2"><i class="fas fa-cogs"></i> Attributes</h3>
+              <h3 class="mt-4"><i class="fas fa-cogs"></i> Attributes</h3>
               @for($i=0;$i<count($contents->activityAttributes);$i++)
                 {!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}
               @endfor
@@ -215,7 +215,7 @@
           <div>
             @if(!empty($contents->guidanceTypes))
             @if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
-              <h3 class="mt-2"><i class="fas fa-info-circle"></i> Live tour guide</h3>
+              <h3 class="mt-4"><i class="fas fa-info-circle"></i> Live tour guide</h3>
               @for($i=0;$i<count($contents->guidanceTypes[0]->languages);$i++)
                 {!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}
               @endfor
