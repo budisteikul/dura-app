@@ -18,25 +18,8 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
-			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#services">Why Choose us?</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#tour">The Tour</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
-				</li>
-                
-               
-				
-				
-			</ul>
-		</div>
+		@include('layouts.vt-menu')
+        
 	</div>
 </nav>
 
@@ -259,7 +242,10 @@
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-dark"><h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3></div>
+  			<div class="card-header text-dark">
+            	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
+                It just take a 2 minutes
+            </div>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:10px;padding-bottom:15px;">
     				
      

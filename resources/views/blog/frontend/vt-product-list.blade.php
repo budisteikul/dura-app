@@ -7,38 +7,18 @@
 
  <!-- ################################################################### -->
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 
-<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
-
+		<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
-			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#services">Why Choose us?</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#tour">The Tour</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#review">Reviews</a>
-				</li>
-              
-			</ul>
-		</div>
-		
-		
-		
-		
-    </div>
-	
-  </nav>
+		@include('layouts.vt-menu')
+        
+	</div>
+</nav>
 
 
 
@@ -49,7 +29,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-			<div style="height:66px;"></div>
+			
             <div class="row" style="padding-bottom:0px;">
                 <div class="col-lg-12 text-center">
                     <div style="height:70px;"></div>
@@ -94,7 +74,7 @@
 					@endforeach
 
 				</div>
-				<div style="height:35px;"></div>		
+				<div style="height:25px;"></div>		
 				</div>
 			</div>
         </div>
