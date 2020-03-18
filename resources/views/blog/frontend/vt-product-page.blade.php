@@ -1,7 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
 @section('title',$contents->title)
-@include('layouts.loading')
 @push('scripts')
 
 @endpush
