@@ -88,9 +88,9 @@
 
 <h1 class="mt-4">{{ $contents->title }}</h1>
 <div class="text-muted mt-4 mb-4">
-  <i class="far fa-clock"></i> {!!$contents->durationText!!} &nbsp;&nbsp;
+  <i class="far fa-clock text-danger"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
   @if($contents->difficultyLevel!="")
-  <i class="fas fa-signal"></i> {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!} &nbsp;&nbsp;
+  <i class="fas fa-signal text-danger"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
   @endif
   @if($contents->privateActivity)
     <span class="badge badge-info">PRIVATE TOUR</span>
