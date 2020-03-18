@@ -71,6 +71,7 @@ class BlogController extends Controller
 	
 	public function vt_product_list(Request $request,$id="")
 	{
+		
 		$default_id = '20041';
 		if($id=="")
 		{
@@ -83,10 +84,7 @@ class BlogController extends Controller
 			{
 				$id = $cat->description;
 			}
-			else
-			{
-				$id = $default_id;
-			}
+			
 		}
 		$contents = BokunClass::get_product_list($id);
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);

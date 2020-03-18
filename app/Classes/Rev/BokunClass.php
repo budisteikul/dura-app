@@ -27,9 +27,16 @@ class BokunClass {
           'X-Bokun-Signature' => $base64_signature,
         ];
     
-        $client = new \GuzzleHttp\Client(['headers' => $headers]);
-        $response = $client->request($method, $endpoint.$path.$query);
-        $statusCode = $response->getStatusCode();
+        
+		try {
+			$client = new \GuzzleHttp\Client(['headers' => $headers]);
+    		$response = $client->request($method, $endpoint.$path.$query);
+        	$statusCode = $response->getStatusCode();   
+		}
+		catch (\GuzzleHttp\Exception\ClientException $e) {
+    		header("Location: /");
+			exit();
+		}
         $contents = json_decode($response->getBody()->getContents());
 		return $contents;
 	}
