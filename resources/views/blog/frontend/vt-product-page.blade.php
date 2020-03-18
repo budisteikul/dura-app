@@ -274,7 +274,7 @@
 </div>
 </section>
 
-<div style="height:35px"></div>
+<div style="height:25px;background-color:#ffffff"></div>
 
 
 
