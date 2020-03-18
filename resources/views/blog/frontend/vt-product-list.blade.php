@@ -44,7 +44,7 @@
 
 
 
-
+<div style="height:50px;" style="background-color:#ffffff"></div>
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
@@ -101,8 +101,7 @@
 	</div>
 </div>
 </section>
-
-<div style="height:50px;"></div>
+<div style="height:50px;" style="background-color:#ffffff"></div>
 
 
 
