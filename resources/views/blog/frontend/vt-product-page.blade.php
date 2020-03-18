@@ -253,17 +253,7 @@
 @endif  
 </div>
 
-
-
-
-
-
-
-
-
-
-
-<div style="height:35px;"></div><div style="height:35px;"></div>
+<div class="clearfix"></div>
     </div>
     <div class="col-sm-4">
     	<div style="height:64px;"></div>
