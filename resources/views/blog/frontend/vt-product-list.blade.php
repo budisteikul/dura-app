@@ -44,13 +44,12 @@
 
 
 
-
+<div style="height:25px;"></div>
 <section id="tour" style="background-color:#ffffff">
-<div style="height:50px;" style="background-color:#ffffff"></div>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-
+			<div style="height:66px;"></div>
             <div class="row" style="padding-bottom:0px;">
                 <div class="col-lg-12 text-center">
                     <div style="height:70px;"></div>
@@ -95,13 +94,12 @@
 					@endforeach
 
 				</div>
-				<div style="height:45px;"></div>		
+				<div style="height:35px;"></div>		
 				</div>
 			</div>
         </div>
 	</div>
 </div>
-<div style="height:50px;" style="background-color:#ffffff"></div>
 </section>
 
 
