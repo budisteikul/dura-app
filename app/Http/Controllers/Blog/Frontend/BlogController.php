@@ -29,7 +29,7 @@ class BlogController extends Controller
 
   public function vt_product_page(Request $request,$id="")
     {
-        $activityId = "355686";
+        $activityId = "284167";
         if($id=="")
         {
             $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
@@ -54,10 +54,9 @@ class BlogController extends Controller
         }
 
         $calendar = '
-				<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=27a58f40-93e3-4305-b54e-6679758958de" async></script>
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/27a58f40-93e3-4305-b54e-6679758958de/experience-calendar/'.$contents->id.'"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
+				<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+				<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
+				<noscript>Please enable javascript in your browser to book</noscript>
 				';
 				
         $widget = rev_widgets::where('product_id',$activityId)->first();
@@ -73,7 +72,7 @@ class BlogController extends Controller
 	public function vt_product_list(Request $request,$id="")
 	{
 		
-		$default_id = '25594';
+		$default_id = '20041';
 		if($id=="")
 		{
 			$id = $default_id;
@@ -93,7 +92,7 @@ class BlogController extends Controller
 	
 	public function vertikaltrip(Request $request,$id="")
 	{
-		$default_id = '25594';
+		$default_id = '20041';
 		if($id=="")
 		{
 			$id = $default_id;

@@ -305,17 +305,17 @@ class BookController extends Controller
 
     public function checkout()
     {
-        $render = '<div id="bokun-w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749">Loading...</div><script type="text/javascript">
-var w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749;
+        $render = '<div id="bokun-w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa">Loading...</div><script type="text/javascript">
+var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111567?bookingChannelUUID=27a58f40-93e3-4305-b54e-6679758958de&amp;lang=en&amp;ccy=USD&amp;hash=w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
     try {
-      w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749 = new BokunWidgetEmbedder(); w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749.initialize(options); w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749.display();
+      w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa = new BokunWidgetEmbedder(); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.initialize(options); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
@@ -326,17 +326,17 @@ var w111567_7a61b9f2_cca5_4f8c_8ab7_710c513d0749;
 
     public function receipt()
     {
-        $render = '<div id="bokun-w111566_68390d54_69bf_4779_be93_1e6b54677f5c">Loading...</div><script type="text/javascript">
-var w111566_68390d54_69bf_4779_be93_1e6b54677f5c;
+        $render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
+var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111566?bookingChannelUUID=27a58f40-93e3-4305-b54e-6679758958de&amp;lang=en&amp;ccy=USD&amp;hash=w111566_68390d54_69bf_4779_be93_1e6b54677f5c\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111566_68390d54_69bf_4779_be93_1e6b54677f5c\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97536_f6820178_ae16_4095_b0ec_4c203e94f898\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_f6820178_ae16_4095_b0ec_4c203e94f898\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
     try {
-      w111566_68390d54_69bf_4779_be93_1e6b54677f5c = new BokunWidgetEmbedder(); w111566_68390d54_69bf_4779_be93_1e6b54677f5c.initialize(options); w111566_68390d54_69bf_4779_be93_1e6b54677f5c.display();
+      w97536_f6820178_ae16_4095_b0ec_4c203e94f898 = new BokunWidgetEmbedder(); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.initialize(options); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
