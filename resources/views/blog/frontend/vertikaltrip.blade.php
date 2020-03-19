@@ -161,7 +161,7 @@ Vertikal Trip Team
                     <div style="height:70px;"></div>
                     
                     <h3 class="section-heading" style="margin-top:0px;">Explore Yogyakarta Through our Tour Packages</h3>
-                    <h4 class="section-subheading text-muted">Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout</h4>
+                    <h4 class="section-subheading text-muted"></h4>
                     <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
                     
                     <div style="height:30px;"></div>
