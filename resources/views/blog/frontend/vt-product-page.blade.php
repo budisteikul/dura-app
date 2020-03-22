@@ -123,7 +123,12 @@
   <div>
         @if($contents->requirements!="")
           <h3 class="mt-4">What do I need to bring?</h3>
-          {!!$contents->requirements!!}
+          <?php
+          	$requirements = $contents->requirements;
+            $requirements = str_ireplace("from Wandernesia","",$requirements);
+			$requirements = str_ireplace("Wandernesia","",$requirements);
+          ?>
+          {!!$requirements!!}
         @endif
   </div>
 
