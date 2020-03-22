@@ -6,7 +6,6 @@
 @endpush
 
 @php
-	//$thedomain = str_ireplace("www.","",$_SERVER['HTTP_HOST']);
     $thedomain = "VERTIKAL TRIP";
 @endphp
 
