@@ -3,10 +3,13 @@
 				<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="/">Home</a>
 				</li>
-                
+                @php
+                	$contents = \App\Classes\Rev\BokunClass::get_product_list();
+                @endphp
+                @foreach($contents as $content)
                 <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/tours">Tours</a>
+					<a class="nav-link js-scroll-trigger" href="/tours/{{ $content->id }}">{{ $content->title }}</a>
 				</li>
-               
+               @endforeach
 			</ul>
 		</div>

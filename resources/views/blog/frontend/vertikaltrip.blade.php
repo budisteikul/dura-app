@@ -160,8 +160,8 @@ Vertikal Trip Team
                 <div class="col-lg-12 text-center">
                     <div style="height:70px;"></div>
                     
-                    <h3 class="section-heading" style="margin-top:0px;">Explore Yogyakarta Through our Tour Packages</h3>
-                    <h4 class="section-subheading text-muted"></h4>
+                    <h3 class="section-heading" style="margin-top:0px;">{{ $contents->title }}</h3>
+                    <h4 class="section-subheading text-muted">{{ $contents->description }}</h4>
                     <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
                     
                     <div style="height:30px;"></div>

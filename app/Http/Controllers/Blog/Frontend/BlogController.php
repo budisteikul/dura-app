@@ -86,7 +86,7 @@ class BlogController extends Controller
 			}
 			
 		}
-		$contents = BokunClass::get_product_list($id);
+		$contents = BokunClass::get_product_list_byid($id);
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
 	}
 	
@@ -109,7 +109,7 @@ class BlogController extends Controller
 				$id = $default_id;
 			}
 		}
-		$contents = BokunClass::get_product_list($id);
+		$contents = BokunClass::get_product_list_byid($id);
 		$count = rev_reviews::count();
 		return view('blog.frontend.vertikaltrip')->with(['contents'=>$contents,'count'=>$count]);
 	}
