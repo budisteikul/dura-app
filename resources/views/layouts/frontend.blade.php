@@ -135,6 +135,7 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-dark">
 						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
+
 						<b>INFO AND RESERVATION</b>
 						<br>
 						We're happy to help
@@ -144,17 +145,24 @@ s0.parentNode.insertBefore(s1,s0);
                     </p>
                 </div>
                 <div class="col-sm-4 second-column mb-4">
+                	
                 	<p class="m-0 text-left text-dark">
-                    	<b>PAYMENT CHANNEL</b>
+                    	<b>USEFUL LINKS</b>
                     	<br>
-						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:10px;margin-bottom:8px;">
+						<a target="_blank" class="text-danger" href="/page/terms-and-conditions" style="margin-top:10px;">Terms and Conditions</a>
+                        <br>
 					</p>
-					<p class="m-0 text-left text-dark">
-					<small> 2020 &copy; VERTIKAL TRIP</small>
+                    <p class="mt-4 text-left text-dark">
+						<b>PAYMENT CHANNEL</b>
+                    	<br>
+						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
+
+                        <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>
+					
                 </div>
                 <div class="col-sm-4 second-column mb-4">
-                
+                	
                 </div>
         </div>
     </div>
