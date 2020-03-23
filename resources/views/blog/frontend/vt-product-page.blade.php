@@ -31,7 +31,7 @@
 <div class="container">
   <div class="row">
   	
-    <div class="col-sm-8 col-sm-auto">
+    <div class="col-sm-7 col-sm-auto">
     	<div style="height:66px;"></div>
 
 @if($contents->keyPhoto!="")
@@ -244,10 +244,10 @@
 </div>
     </div>
 	
-    <div class="col-sm-4">
+    <div class="col-sm-5">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-  			<div class="card-header text-dark">
+  			<div class="card-header">
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 Secure booking — only takes 2 minutes!
             </div>
