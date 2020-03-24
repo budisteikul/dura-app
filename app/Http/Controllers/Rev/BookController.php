@@ -354,4 +354,15 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		$render = '';
 		return view('blog.frontend.shopping-cart')->with(['product'=>$render]);
 	}
+	
+	public function get_ticket($id)
+    {
+		$contents = BokunClass::get_ticket($id);
+		header('Cache-Control: public'); 
+		header('Content-type: application/pdf');
+		header('Content-Disposition: attachment; filename="'.$id.'.pdf"');
+		header('Content-Length: '.strlen($contents));
+		echo $contents;
+		
+	}
 }

@@ -5,10 +5,9 @@ use Illuminate\Support\Str;
 class BokunClass {
 	
 	
-	public static function get_connect($path)
+	public static function get_connect($path,$method = 'GET',$accept = 'application/json')
 	{
 		$endpoint = "https://api.bokun.io";
-        $method = 'GET';
         $currency = 'USD';
         $lang = "EN";
         $query = '?currency='.$currency.'&lang='.$lang;
@@ -21,7 +20,7 @@ class BokunClass {
         $base64_signature = base64_encode($sha1_signature);
     
         $headers = [
-          'Accept' => 'application/json',
+          'Accept' => $accept,
           'X-Bokun-AccessKey' => $bokun_accesskey,
           'X-Bokun-Date' => $date,
           'X-Bokun-Signature' => $base64_signature,
@@ -42,8 +41,14 @@ class BokunClass {
 			exit();
 		}
 		*/
-		
-        $contents = json_decode($response->getBody()->getContents());
+		if($accept=='application/json')
+		{
+        	$contents = json_decode($response->getBody()->getContents());
+		}
+		else
+		{
+			$contents = $response->getBody()->getContents();
+		}
 		return $contents;
 	}
 	
@@ -70,6 +75,11 @@ class BokunClass {
 	public static function get_shopping_cart($sessionId)
 	{
 		return self::get_connect('/checkout.json/options/shopping-cart/'. $sessionId);
+	}
+	
+	public static function get_ticket($confirmationCode)
+	{
+		return self::get_connect('/booking.json/activity-booking/'.$confirmationCode.'/ticket','GET','application/pdf');
 	}
 	
 	
