@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Request as Http;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Classes\Rev\BokunClass;
 
 class BookController extends Controller
 {
@@ -345,4 +346,12 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
         return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 	
+	
+	public function get_cart($id)
+    {
+		//$contents = BokunClass::get_shopping_cart($id);
+		//print_r($contents);
+		$render = '';
+		return view('blog.frontend.shopping-cart')->with(['product'=>$render]);
+	}
 }

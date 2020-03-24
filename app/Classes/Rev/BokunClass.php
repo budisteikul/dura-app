@@ -27,10 +27,11 @@ class BokunClass {
           'X-Bokun-Signature' => $base64_signature,
         ];
     
-        //$client = new \GuzzleHttp\Client(['headers' => $headers]);
-    	//$response = $client->request($method, $endpoint.$path.$query);
-        //$statusCode = $response->getStatusCode();   
+        $client = new \GuzzleHttp\Client(['headers' => $headers]);
+    	$response = $client->request($method, $endpoint.$path.$query);
+        $statusCode = $response->getStatusCode();   
 		
+		/*
 		try {
 			$client = new \GuzzleHttp\Client(['headers' => $headers]);
     		$response = $client->request($method, $endpoint.$path.$query);
@@ -40,6 +41,7 @@ class BokunClass {
 			header("Location: /");
 			exit();
 		}
+		*/
 		
         $contents = json_decode($response->getBody()->getContents());
 		return $contents;
@@ -63,6 +65,11 @@ class BokunClass {
 	public static function get_product_list()
 	{
 		return self::get_connect('/product-list.json/list');
+	}
+	
+	public static function get_shopping_cart($sessionId)
+	{
+		return self::get_connect('/checkout.json/options/shopping-cart/'. $sessionId);
 	}
 	
 	
