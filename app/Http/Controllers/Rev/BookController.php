@@ -305,17 +305,17 @@ class BookController extends Controller
 
     public function checkout()
     {
-        $render = '<div id="bokun-w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa">Loading...</div><script type="text/javascript">
-var w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa;
+        $render = '<div id="bokun-w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc">Loading...</div><script type="text/javascript">
+var w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
     try {
-      w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa = new BokunWidgetEmbedder(); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.initialize(options); w97537_4f330d47_9b9e_4a0e_95f9_db234e2046aa.display();
+      w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc = new BokunWidgetEmbedder(); w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc.initialize(options); w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
