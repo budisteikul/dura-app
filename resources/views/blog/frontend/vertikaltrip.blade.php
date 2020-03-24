@@ -133,7 +133,7 @@ Vertikal Trip Team
           <div class="mt-5">
             <i class="fas fa-4x fa-history text-danger mb-4"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
-            <p class="text-muted mb-0">You can cancel the booking anytime up to 24 hours before your experience!</p>
+            <p class="text-muted mb-0">Have your plans changed? No worries! You can cancel the booking anytime up to 24 hours before your experience!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
