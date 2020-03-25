@@ -221,97 +221,23 @@ html.rtl .zebraRow .itemlabel {
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
 				<div style="height:70px;"></div>
-				
+			
+            	{!! $cart !!}
+            
+            	
            <div class="card mb-8 shadow p-2">
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  <div class="text-right">
 		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
 				 </div>
+             
+             
                  
-                 
-	
-	<div class="customer-invoice booking-invoice invoice-container" >
-    	
-        {!! $web_invoice !!}
-           
+        
+         
             
-            <div class="customer-invoice mobile">
-            	<div>
-            		<div>
-            			<div style="border:1px solid #DDD;padding:10px;margin:10px 0;">
-            				<span>Yogyakarta Merapi Lava Tour Admission Ticket</span>
-            				<span>&nbsp; - &nbsp;</span>
-            				<span>Thu 11.Jun 2020</span>
-            			</div>
-            			<div class="zebraRow" style="border:1px solid #ddd;margin-bottom:10px;">
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;">Title</span>
-            					<span class="itemlabel">Passengers</span>
-            				</div>
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;">Quantity</span>
-            					<span class="itemlabel">1</span>
-            				</div>
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;">Unit price</span>
-            					<span class="itemlabel">$32.59</span>
-            				</div>
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;">Discount</span>
-            					<span class="itemlabel">10%</span>
-            				</div>
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;flex:1;">Tax</span>
-            					<span class="itemlabel">$0.00</span>
-            				</div>
-            				<div style="padding:10px;">
-            					<span style="font-weight:600;">Amount</span>
-            					<span class="itemlabel">$29.33</span>
-            				</div>
-            			</div>
-            			<div class="zebraRow" style="border:1px solid #ddd;margin-bottom:10px;">
-            				<div style="padding:10px;">
-            				<span style="font-weight:600;">Title</span>
-            				<span class="itemlabel">Pick-up and drop-off services</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Quantity</span>
-            				<span class="itemlabel">1</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Unit price</span>
-            				<span class="itemlabel">$37.80</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Discount</span>
-            				<span class="itemlabel">0%</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;flex:1;">Tax</span>
-            				<span class="itemlabel">$0.00</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Amount</span>
-            				<span class="itemlabel">$37.80</span>
-            			</div>
-            		</div>
-            	</div>
-            <div class="zebraRow" style="border:1px solid #ddd;margin-bottom:10px;">
-            	<div style="padding:10px;">
-            		<span style="font-weight:600;">Subtotal</span>
-            		<span class="itemlabel">$67.13</span>
-            	</div>
-            	<div style="padding:10px;">
-            		<span style="font-weight:600;">Amount due</span>
-            		<span class="itemlabel">$67.13</span>
-            	</div>
-            </div>
-            
-         </div>
-       </div>
-            
-  </div>
+  
 
 				
                 
