@@ -361,7 +361,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		
     		<div class="card shadow">
   				<div class="card-header bg-dark text-white pt-0 pb-1">
-    				<h3>Cart Summary</h3>
+    				<h3>Order Summary</h3>
   				</div>
   				<div class="card-body">';
 				
