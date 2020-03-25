@@ -368,7 +368,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		$cart_center = '';
 		
 		$cart_end = '
-					<hr>
+					<!-- hr>
                 	<div class="row mb-4">
                 		<div class="col-8">
                     		<span style="font-size:18px">Items</span>
@@ -376,7 +376,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
                     	<div class="col-4 text-right">
                     		<span style="font-size:18px">'. $contents[0]->totalDiscountedAsText .'</span>
                     	</div>
-                	</div>
+                	</div -->
                 	<hr>    
                     <div class="row mb-4">
                 		<div class="col-8">
