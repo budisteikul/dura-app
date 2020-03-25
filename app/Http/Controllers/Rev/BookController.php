@@ -396,10 +396,10 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 			
 			$cart_line_start = '<div class="card">
                         		<div class="card-body">
-								<div class="row">';
+								';
 			$cart_line_center = '';
 			$cart_line_end = '
-							</div>
+							
 							</div>
                    			</div>';
 			$items = $contents[$i]->lineItems;
@@ -431,7 +431,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
                     			</div>
                     			<div class="col-8">
                     				'.$contents[$i]->dates.'<br>
-                        			'.$quantity.'x '.$items[$j]->costItemTitle.' ('.$unit_price.')
+                        			'.$quantity.' x '.$items[$j]->costItemTitle.' ('.$unit_price.')
                     			</div>
                 			</div>
 							';
@@ -439,13 +439,16 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 				else
 				{
 					$cart_line_center  .= '
-							<div class="ml-4">
-                    			'.$items[$j]->costItemTitle.'<br>
+							<div class="row mb-4">
+                				<div class="col-8">
+                    					'.$items[$j]->costItemTitle.'<br>
                                 per booking
-                    		</div>
-                    		<div class="col-6 text-right">
-                    			<b>'.$totalDiscountedAsText.'</b>
-                    		</div>';
+                    			</div>
+                    			<div class="col-4 text-right">
+                    				<b>'.$totalDiscountedAsText.'</b>
+                    			</div>
+                			</div>
+							';
 				}
 				
 				
