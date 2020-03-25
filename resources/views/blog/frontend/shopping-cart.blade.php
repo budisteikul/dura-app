@@ -2,162 +2,7 @@
 @section('content')
 @include('layouts.loading')
 @push('scripts')
-<style>
-.promocode-form .well {
-  text-align: right;
-}
-.gift-card-form .well {
-  text-align: right;
-}
-@media only screen and (max-width: 600px) {
-  .customer-invoice .mobile {
-    display: block;
-  }
-}
-@media only screen and (min-width: 601px) {
-  .customer-invoice .mobile {
-    display: none;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .customer-invoice.table {
-    display: none;
-  }
-}
-.zebraRow div:nth-child(odd) {
-  background: #eee;
-}
-.zebraRow .itemlabel {
-  float: right;
-}
-html.rtl .zebraRow .itemlabel {
-  float: left;
-}
-.invoice-list {
-  margin-top: 15px;
-}
-.invoice-list a.invoice-link.selected {
-  font-weight: bold;
-  background-color: #F7F749;
-}
-.invoice-list a.inactive-invoices-link {
-  display: inline-block;
-  color: #333;
-  margin-top: 5px;
-}
-.invoice-list a.inactive-invoices-link i {
-  display: inline-block;
-  width: 10px;
-}
-.invoice-list a.inactive-invoices-link:hover {
-  text-decoration: none;
-}
-.invoice-list h5 {
-  border-bottom: 1px solid #DFDFDF;
-}
-.invoice-list .seller-invoice-list h5 {
-  margin-bottom: 0px;
-}
-.invoice-list .seller-invoice-list .seller-invoices {
-  margin-top: 6px;
-}
-.booking-invoice {
-  border: 1px solid #DDD;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  padding: 15px;
-}
-.booking-invoice .invoice-header h3 {
-  margin-top: 0px;
-  padding-top: 0px;
-}
-.booking-invoice table tr td.amount,
-.booking-invoice table tr th.amount {
-  text-align: right;
-}
-.booking-invoice tr.custom-header td {
-  font-weight: bold;
-  background-color: #f9f9f9;
-}
-.booking-invoice .product-invoice tr.product-header td {
-  font-weight: bold;
-  background-color: #f9f9f9;
-}
-.booking-invoice .product-invoice tr.product-line-item td {
-  vertical-align: middle;
-}
-.booking-invoice .product-invoice tr.product-line-item td input,
-.booking-invoice .product-invoice tr.product-line-item td select,
-.booking-invoice .product-invoice tr.product-line-item td .input-prepend,
-.booking-invoice .product-invoice tr.product-line-item td .input-append {
-  margin-bottom: 0px;
-}
-.booking-invoice .product-invoice tr.product-line-item td.title {
-  padding-left: 20px;
-}
-.booking-invoice tbody.headers {
-  border-style: none;
-}
-.booking-invoice tbody.headers th {
-  border-top-style: none;
-}
-.booking-invoice tbody.totals {
-  border-top: 4px double #333;
-}
-.booking-invoice tbody.totals tr td.empty {
-  border-top-style: none;
-}
-.booking-invoice tbody.totals tr.invoice-total td,
-.booking-invoice tbody.totals tr.invoice-paid td,
-.booking-invoice tbody.totals tr.invoice-remaining td {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-.booking-invoice tbody.dcc-payments {
-  border-top-style: none;
-}
-.booking-invoice tbody.dcc-payments tr.header td.title {
-  border-top: 4px double #333;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: left;
-}
-.booking-invoice tbody.dcc-payments tr td.empty {
-  border-top-style: none;
-}
-.booking-invoice tbody.dcc-payments tr.subhead td.amount {
-  border-top: 4px double #333;
-}
-.booking-invoice tbody.dcc-payments tr td.converted {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-.booking-invoice tr.custom-line-item td,
-.booking-invoice tr.custom-new-header td {
-  vertical-align: middle;
-}
-.booking-invoice tr.custom-line-item td input,
-.booking-invoice tr.custom-new-header td input,
-.booking-invoice tr.custom-line-item td select,
-.booking-invoice tr.custom-new-header td select,
-.booking-invoice tr.custom-line-item td .input-prepend,
-.booking-invoice tr.custom-new-header td .input-prepend,
-.booking-invoice tr.custom-line-item td .input-append,
-.booking-invoice tr.custom-new-header td .input-append {
-  margin-bottom: 0px;
-}
-.booking-invoice tr.custom-line-item td.title {
-  padding-left: 20px;
-}
-.booking-invoice .clear {
-  clear: both;
-}
-.input-prepend.input-block-level {
-  display: table;
-  width: 100%;
-}
-</style>
+
 @endpush
 
 
@@ -222,31 +67,44 @@ html.rtl .zebraRow .itemlabel {
 				<div class="col-lg-12 text-left">
 				<div style="height:70px;"></div>
 			
+            <div class="row mb-2">  
+			<div class="col-lg-6 col-lg-auto mb-6 mt-4">
             	{!! $cart !!}
+            </div>
             
-            	
-           <div class="card mb-8 shadow p-2">
+            <div class="col-lg-6 col-lg-auto mb-6 mt-4">
+            <div class="card mb-8 shadow p-2">
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  <div class="text-right">
 		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
 				 </div>
              
-             
-                 
-        
-         
-            
-  
-
-				
-                
-                
-                
-                
+                <div id="bokun-w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2">Loading...</div><script type="text/javascript">
+var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
+(function(d, t) {
+  var host = 'widgets.bokun.io';
+  var frameUrl = 'https://' + host + '/widgets/111929?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+    try {
+      w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2 = new BokunWidgetEmbedder(); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.initialize(options); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
                 
                 
 			</div></div>
+            </div>
+            
+        	</div>
+            
+            	
+           
 
 			
 				<div style="height:40px;"></div>		

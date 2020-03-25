@@ -347,15 +347,18 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
     }
 	
 	
-	public function get_cart($id)
+	public function get_cart(Request $request)
     {
+		$id = $request->input('sessionId');
 		$contents = BokunClass::get_shopping_cart($id);
 		$contents = $contents->options[0]->invoice->productInvoices;
-		//print_r($contents);
-		//exit();
+		if(empty($contents))
+		{
+			return redirect("/");
+			exit();
+		}
 		$cart_start = '
-		<div class="row mb-2">  
-		<div class="col-lg-6 col-lg-auto  mb-6">
+		
     		<div class="card shadow">
   				<div class="card-header bg-dark text-white pt-0 pb-1">
     				<h3>Cart Summary</h3>
@@ -385,8 +388,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
                 	</div>
 				</div>
 			</div>
-        </div>
-        </div>';
+        ';
 		
 		$cart_line = '';
 		for($i=0;$i<	count($contents); $i++)
