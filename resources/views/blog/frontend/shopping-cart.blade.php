@@ -230,86 +230,12 @@ html.rtl .zebraRow .itemlabel {
 				 </div>
                  
                  
-
+	
 	<div class="customer-invoice booking-invoice invoice-container" >
-    	<table class="table customer-invoice">
-        	<tbody class="headers">
-            	<tr class="header">
-                	<th></th>
-                    <th class="amount">Quantity</th>
-                    <th class="amount">Unit price</th>
-                    <th class="amount">Discount</th>
-                    <th class="amount">Tax</th>
-                    <th class="amount">Amount</th>
-                </tr>
-            </tbody>
-            <tbody class="product-invoice">
-            	<tr class="product-header">
-                	<td class="title" colspan="6">
-                    	<span>Yogyakarta Merapi Lava Tour Admission Ticket - Thu 11.Jun 2020</span>
-                    </td>
-                </tr>
-                <tr class="product-line-item ">
-                	<td class="title">
-                    	Passengers
-                    </td>
-                    <td class="quantity amount">
-                    	1
-                    </td>
-                    <td class="unit-price amount">
-                    	$32.59
-                    </td>
-                    <td class="discount amount">
-                    	<div>
-                        	<span>
-                        		<span>10</span>
-                                <span>%</span>
-                            </span>
-                       </div>
-                    </td>
-                    <td class="tax amount">
-                    	<span>$0.00</span>
-                    </td>
-                    <td class="item-total amount">$29.33</td>
-              </tr>
-              <tr class="product-line-item ">
-              	<td class="title">Pick-up and drop-off services</td>
-                <td class="quantity amount">1</td>
-                <td class="unit-price amount">$37.80</td>
-                <td class="discount amount">
-                	<div>
-                    	<span>
-                        	<span>0</span>
-                            <span>%</span>
-                        </span>
-                   </div>
-               </td>
-               <td class="tax amount">
-               		<span>$0.00</span>
-               </td>
-               <td class="item-total amount">$37.80</td>
-        </tr>
-        </tbody>
-        <tbody></tbody>
-        <tbody class="totals">
-        	<tr class="first invoice-subtotal">
-            	<td class="empty" colspan="4">&nbsp;</td>
-                <td class="subtotal amount">
-                	<span>Subtotal</span>
-                    <span>:</span>
-                </td>
-                <td class="subtotal amount">$67.13</td>
-            </tr>
-            <tr class="invoice-total">
-            	<td class="empty" colspan="4">&nbsp;</td>
-                <td class="total amount">
-                	<span>Amount due</span>
-                    <span>:</span>
-                </td>
-                <td class="total amount">$67.13</td>
-            </tr>
-            </tbody>
-            </table>
+    	
+        {!! $web_invoice !!}
+           
+            
             <div class="customer-invoice mobile">
             	<div>
             		<div>

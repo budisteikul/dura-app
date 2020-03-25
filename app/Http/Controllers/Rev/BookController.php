@@ -349,10 +349,106 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 	
 	public function get_cart($id)
     {
-		//$contents = BokunClass::get_shopping_cart($id);
-		//print_r($contents);
-		$render = '';
-		return view('blog.frontend.shopping-cart')->with(['product'=>$render]);
+		$contents = BokunClass::get_shopping_cart($id);
+		
+		//$full_payments = $contents->options[0];
+		//$partial_payments = $contents->options[1];
+		
+		
+		//print_r($contents->options[0]->invoice->productInvoices[0]);
+		
+		//exit();
+		$contents = $contents->options[0]->invoice->productInvoices;
+		
+		$web_invoice_start = '<table class="table customer-invoice">
+        	<tbody class="headers">
+            	<tr class="header">
+                	<th></th>
+                    <th class="amount">Quantity</th>
+                    <th class="amount">Unit price</th>
+                    <!-- th class="amount">Discount</th>
+                    <th class="amount">Tax</th -->
+                    <th class="amount">Amount</th>
+                </tr>
+            </tbody>';
+		
+		$web_invoice_center = '';	
+		for($i=0;$i<	count($contents); $i++)
+		{
+			$items = $contents[$i]->lineItems;
+			$line_items = '';
+			for($j=0;$j<	count($items); $j++)
+			{
+				$title = $items[$j]->title;
+				$quantity= $items[$j]->people;
+				if($quantity==0) $quantity = $items[$j]->quantity;
+				$unit_price = $items[$j]->totalAsText;
+				$discount = $items[$j]->calculatedDiscount;
+				$tax = $items[$j]->taxAsText;
+				$totalDiscountedAsText = $items[$j]->totalDiscountedAsText;
+				
+				$line_items .= '
+				<tr class="product-line-item ">
+                	<td class="title">
+                    	'. $title .'
+                    </td>
+                    <td class="quantity amount">
+                    	'. $quantity .'
+                    </td>
+                    <td class="unit-price amount">
+                    	'. $unit_price .'
+                    </td>
+                    <!-- td class="discount amount">
+                    	<div>
+                        	<span>
+                        		<span>'. $discount .'</span>
+                                <span>%</span>
+                            </span>
+                       </div>
+                    </td>
+                    <td class="tax amount">
+                    	<span>'. $tax .'</span>
+                    </td -->
+                    <td class="item-total amount">'. $totalDiscountedAsText .'</td>
+              </tr>
+        	   ';
+			}
+			
+			$web_invoice_center .= '<tbody class="product-invoice">
+            	<tr class="product-header">
+                	<td class="title" colspan="6">
+                    	<span>'. $contents[$i]->title .'</span>
+                    </td>
+                </tr>
+				'. $line_items .'
+				</tbody>';
+		}
+		
+		
+		$web_invoice_end = '<tbody></tbody>
+        <tbody class="totals">
+        	<tr class="first invoice-subtotal">
+            	<td class="empty" colspan="4">&nbsp;</td>
+                <td class="subtotal amount">
+                	<span>Subtotal</span>
+                    <span>:</span>
+                </td>
+                <td class="subtotal amount">'. $contents[0]->totalDiscountedAsText .'</td>
+            </tr>
+            <tr class="invoice-total">
+            	<td class="empty" colspan="4">&nbsp;</td>
+                <td class="total amount">
+                	<span>Amount due</span>
+                    <span>:</span>
+                </td>
+                <td class="total amount">'. $contents[0]->totalDiscountedAsText .'</td>
+            </tr>
+            </tbody>
+            </table>';
+			
+		$web_invoice = $web_invoice_start . $web_invoice_center . $web_invoice_end;
+			
+		return view('blog.frontend.shopping-cart')->with(['web_invoice'=>$web_invoice]);
 	}
 	
 	public function get_ticket($id)
