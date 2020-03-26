@@ -60,7 +60,6 @@ class ExperienceController extends Controller
 		$title =  $request->input('title');
 		$product_id =  $request->input('product_id');
 		$calendar_id =  $request->input('calendar_id');
-        $time_selector =  $request->input('time_selector');
 		
 		$blog_posts = new blog_posts;
 		$blog_posts->title = $title;
@@ -76,7 +75,6 @@ class ExperienceController extends Controller
 		$rev_widgets->post_id = $blog_posts->id;
 		$rev_widgets->product_id = $product_id;
 		$rev_widgets->calendar_id = $calendar_id;
-        $rev_widgets->time_selector = $time_selector;
 		$rev_widgets->save();
 		
 		return response()->json([
@@ -133,14 +131,12 @@ class ExperienceController extends Controller
 		$title =  $request->input('title');
 		$product_id =  $request->input('product_id');
 		$calendar_id =  $request->input('calendar_id');
-        $time_selector =  $request->input('time_selector');
 		
 		$rev_widgets = rev_widgets::findOrFail($id);
 		$blog_posts = blog_posts::find($rev_widgets->post_id);
 		
 		$rev_widgets->product_id = $product_id;
 		$rev_widgets->calendar_id = $calendar_id;
-        $rev_widgets->time_selector = $time_selector;
 		$rev_widgets->save();
 		
 		

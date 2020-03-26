@@ -19,7 +19,6 @@ function STORE()
 			"title": $('#title').val(),
 			"product_id": $('#product_id').val(),
 			"calendar_id": $('#calendar_id').val(),
-			"time_selector": $('#time_selector').val(),
         },
 		type: 'POST',
 		url: '{{ route('experiences.store') }}'
@@ -79,10 +78,7 @@ function STORE()
 	<input type="text" id="calendar_id" name="calendar_id" class="form-control" placeholder="calendar_id">
 </div>
 
-<div class="form-group">
-	<label for="time_selector">time_selector :</label>
-    <textarea class="form-control tinymce" id="time_selector" name="time_selector" rows="8" placeholder="time_selector"></textarea>
-</div>
+
 
        
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
