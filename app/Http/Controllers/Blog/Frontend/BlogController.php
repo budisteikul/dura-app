@@ -53,11 +53,6 @@ class BlogController extends Controller
 			$pickup = BokunClass::get_product_pickup($activityId);
         }
 
-        $calendar = '
-				<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-				<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
-				<noscript>Please enable javascript in your browser to book</noscript>
-				';
 		
 		$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;

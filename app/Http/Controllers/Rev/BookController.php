@@ -295,35 +295,28 @@ class BookController extends Controller
 	{
 		$render = '';
 		$widget = blog_posts::with('widgets')->where('slug',$id)->first();
-        if(isset($widget)){
-			if(isset($widget->widgets->time_selector)){
-               $render = $widget->widgets->time_selector;
-            }
+        if(!isset($widget)){
+			return redirect("/");
         }
-		return view('blog.frontend.booking')->with(['product'=>$render]);
-	}
-	
-
-    public function checkout()
-    {
-        $render = '<div id="bokun-w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc">Loading...</div><script type="text/javascript">
-var w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc;
+		
+		$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
+var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97537?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
     var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
     try {
-      w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc = new BokunWidgetEmbedder(); w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc.initialize(options); w97537_681697e7_ab93_4ad2_9d95_55128ee5a8bc.display();
+      w111662_1caddfc1_76b8_499c_959f_fcb6d96159df = new BokunWidgetEmbedder(); w111662_1caddfc1_76b8_499c_959f_fcb6d96159df.initialize(options); w111662_1caddfc1_76b8_499c_959f_fcb6d96159df.display();
     } catch (e) {}
   };
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
+		return view('blog.frontend.booking')->with(['product'=>$calendar]);
+	}
 
     public function receipt()
     {
@@ -345,279 +338,6 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 </script>';
         return view('blog.frontend.booking')->with(['product'=>$render]);
     }
-	
-	
-	public function get_cart(Request $request)
-    {
-		$id = $request->input('sessionId');
-		$contents = BokunClass::get_shopping_cart($id);
-		$contents = $contents->options[0]->invoice->productInvoices;
-		if(empty($contents))
-		{
-			return redirect("/");
-			exit();
-		}
-		$cart_start = '
-		
-    		<div class="card shadow">
-  				<div class="card-header bg-dark text-white pt-0 pb-1">
-    				<h3><i class="fas fa-shopping-cart"></i> Order Summary</h3>
-  				</div>
-  				<div class="card-body">';
-				
-		$cart_center = '';
-		
-		$cart_end = '
-					<!-- hr>
-                	<div class="row mb-4">
-                		<div class="col-8">
-                    		<span style="font-size:18px">Items</span>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    		<span style="font-size:18px">'. $contents[0]->totalDiscountedAsText .'</span>
-                    	</div>
-                	</div -->
-                	<hr>    
-                    <div class="row mb-4">
-                		<div class="col-8">
-                    		<b style="font-size:18px">Total (USD)</b>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    	<b style="font-size:18px">'. $contents[0]->totalDiscountedAsText .'</b>
-                    	</div>
-                	</div>
-				</div>
-			</div>
-        ';
-		
-		$cart_line = '';
-		for($i=0;$i<	count($contents); $i++)
-		{
-			
-			$cart_line_start = '<div class="card">
-                        		<div class="card-body">
-								';
-			$cart_line_center = '';
-			$cart_line_end = '
-							
-							</div>
-                   			</div>';
-			$items = $contents[$i]->lineItems;
-			for($j=0;$j<	count($items); $j++)
-			{
-				$title = $items[$j]->title;
-				$quantity= $items[$j]->people;
-				if($items[$j]->costItemTitle=="Price per booking") $quantity = 1;
-				$unit_price = $items[$j]->unitPriceAsText;
-				$discount = $items[$j]->calculatedDiscount;
-				$tax = $items[$j]->taxAsText;
-				$totalDiscountedAsText = $items[$j]->totalDiscountedAsText;
-				
-				if($j==0)
-				{
-					$cart_center  .= '
-							<div class="row mb-4">
-                				<div class="col-8">
-                    				<b>'. $contents[$i]->product->title .'</b>
-                    			</div>
-                    			<div class="col-4 text-right">
-                    				<b>'. $totalDiscountedAsText .'</b>
-                    			</div>
-                			 </div>
-                    
-                    		 <div class="row mb-4">
-                				<div class="ml-4">
-                    				<img class="img-fluid" src="'.$contents[$i]->product->keyPhoto->derived[2]->url.'">
-                    			</div>
-                    			<div class="col-8">
-                    				'.$contents[$i]->dates.'<br>
-                        			'.$quantity.' x '.$items[$j]->costItemTitle.' ('.$unit_price.')
-                    			</div>
-                			</div>
-							';
-				}
-				else
-				{
-					$cart_line_center  .= '
-							<div class="row mb-4">
-                				<div class="col-8">
-                    					'.$items[$j]->costItemTitle.'<br>
-                                per booking
-                    			</div>
-                    			<div class="col-4 text-right">
-                    				<b>'.$totalDiscountedAsText.'</b>
-                    			</div>
-                			</div>
-							';
-				}
-				
-				
-			}
-			
-			if($cart_line_center!='') $cart_line = $cart_line_start.$cart_line_center.$cart_line_end;
-			$cart_center = $cart_center.$cart_line;
-		}
-		
-		
-		/*
-		$contents = BokunClass::get_shopping_cart($id);
-		$contents = $contents->options[0]->invoice->productInvoices;
-		
-		$web_invoice_center = '';
-		$mobile_invoice_center = '';	
-		for($i=0;$i<	count($contents); $i++)
-		{
-			$items = $contents[$i]->lineItems;
-			$web_line_items = '';
-			$mobile_line_items = '';
-			for($j=0;$j<	count($items); $j++)
-			{
-				$title = $items[$j]->title;
-				$quantity= $items[$j]->people;
-				if($quantity==0) $quantity = $items[$j]->quantity;
-				$unit_price = $items[$j]->totalAsText;
-				$discount = $items[$j]->calculatedDiscount;
-				$tax = $items[$j]->taxAsText;
-				$totalDiscountedAsText = $items[$j]->totalDiscountedAsText;
-				
-				$web_line_items .= '
-				<tr class="product-line-item ">
-                	<td class="title">
-                    	'. $title .'
-                    </td>
-                    <td class="quantity amount">
-                    	'. $quantity .'
-                    </td>
-                    <td class="unit-price amount">
-                    	'. $unit_price .'
-                    </td>
-                    <td class="discount amount">
-                    	<div>
-                        	<span>
-                        		<span>'. $discount .'</span>
-                                <span>%</span>
-                            </span>
-                       </div>
-                    </td>
-                    <td class="tax amount">
-                    	<span>'. $tax .'</span>
-                    </td>
-                    <td class="item-total amount">'. $totalDiscountedAsText .'</td>
-              </tr>
-        	   ';
-			   
-			   $mobile_line_items .= '
-			   		<div class="zebraRow" style="border:1px solid #ddd;margin-bottom:10px;">
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Title</span>
-            				<span class="itemlabel">'. $title .'</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Quantity</span>
-            				<span class="itemlabel">'. $quantity .'</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Unit price</span>
-            				<span class="itemlabel">'. $unit_price .'</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Discount</span>
-            				<span class="itemlabel">'. $discount .'%</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;flex:1;">Tax</span>
-            				<span class="itemlabel">'. $tax .'</span>
-            			</div>
-            			<div style="padding:10px;">
-            				<span style="font-weight:600;">Amount</span>
-            				<span class="itemlabel">'. $totalDiscountedAsText .'</span>
-            			</div>
-					</div>';
-			}
-			
-			$web_invoice_center .= '<tbody class="product-invoice">
-            	<tr class="product-header">
-                	<td class="title" colspan="6">
-                    	<span>'. $contents[$i]->title .'</span>
-                    </td>
-                </tr>
-				'. $web_line_items .'
-				</tbody>';
-				
-			$mobile_invoice_center .= $mobile_line_items;
-		}
-		
-		$web_invoice_start = '<table class="table customer-invoice">
-        	<tbody class="headers">
-            	<tr class="header">
-                	<th></th>
-                    <th class="amount">Quantity</th>
-                    <th class="amount">Unit price</th>
-                    <th class="amount">Discount</th>
-                    <th class="amount">Tax</th>
-                    <th class="amount">Amount</th>
-                </tr>
-            </tbody>';
-		
-		$mobile_invoice_start = '
-		<div class="customer-invoice mobile">
-            	<div>
-            		<div>
-            			<div style="border:1px solid #DDD;padding:10px;margin:10px 0;">
-            				<span>Yogyakarta Merapi Lava Tour Admission Ticket</span>
-            				<span>&nbsp; - &nbsp;</span>
-            				<span>Thu 11.Jun 2020</span>
-            			</div>
-            		';
-					
-		$web_invoice_end = '<tbody></tbody>
-        <tbody class="totals">
-        	<tr class="first invoice-subtotal">
-            	<td class="empty" colspan="4">&nbsp;</td>
-                <td class="subtotal amount">
-                	<span>Subtotal</span>
-                    <span>:</span>
-                </td>
-                <td class="subtotal amount">'. $contents[0]->totalDiscountedAsText .'</td>
-            </tr>
-            <tr class="invoice-total">
-            	<td class="empty" colspan="4">&nbsp;</td>
-                <td class="total amount">
-                	<span>Amount due</span>
-                    <span>:</span>
-                </td>
-                <td class="total amount">'. $contents[0]->totalDiscountedAsText .'</td>
-            </tr>
-            </tbody>
-            </table>';
-		
-		$mobile_invoice_end = '
-            	</div>
-            <div class="zebraRow" style="border:1px solid #ddd;margin-bottom:10px;">
-            	<div style="padding:10px;">
-            		<span style="font-weight:600;">Subtotal</span>
-            		<span class="itemlabel">'. $contents[0]->totalDiscountedAsText .'</span>
-            	</div>
-            	<div style="padding:10px;">
-            		<span style="font-weight:600;">Amount due</span>
-            		<span class="itemlabel">'. $contents[0]->totalDiscountedAsText .'</span>
-            	</div>
-            </div>
-            
-         </div>
-       </div>';
-			
-		$web_invoice = $web_invoice_start . $web_invoice_center . $web_invoice_end;
-		$mobile_invoice = $mobile_invoice_start . $mobile_invoice_center . $mobile_invoice_end;
-		
-		
-		$container = '<div class="customer-invoice booking-invoice invoice-container" >'. 
-					  	$web_invoice .
-						$mobile_invoice
-					 .'</div>';	
-		*/
-		return view('blog.frontend.shopping-cart')->with(['cart'=>$cart_start.$cart_center.$cart_end]);
-	}
 	
 	public function get_ticket($id)
     {

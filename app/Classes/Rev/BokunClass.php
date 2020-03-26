@@ -72,7 +72,7 @@ class BokunClass {
 		return self::get_connect('/product-list.json/list');
 	}
 	
-	public static function get_shopping_cart($sessionId)
+	public static function get_checkout($sessionId)
 	{
 		return self::get_connect('/checkout.json/options/shopping-cart/'. $sessionId);
 	}
