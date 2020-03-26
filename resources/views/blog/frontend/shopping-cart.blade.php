@@ -69,7 +69,158 @@
 			
             <div class="row mb-2">  
 			<div class="col-lg-6 col-lg-auto mb-6 mt-4">
-            	{!! $cart !!}
+            	<!-- ################################################################### -->   
+                <div class="card shadow">
+  				<div class="card-header bg-dark text-white pt-0 pb-1">
+    				<h3><i class="fas fa-shopping-cart"></i> Order Summary</h3>
+  				</div>
+                
+                @php
+                	$activity = $contents->activityBookings;
+                    $invoice = $contents->customerInvoice;
+                    $product_invoice = $contents->customerInvoice->productInvoices;
+                @endphp
+                @for($i=0;$i<count($activity);$i++)
+							<?php
+								$lineitems = $product_invoice[$i]->lineItems;
+							?>
+                <!-- Product booking -->
+                <div class="card-body">
+                
+                            <!-- Product detail booking -->
+							<div class="row mb-4">
+                				<div class="col-8">
+                    				<b>{{ $activity[$i]->activity->title }}</b>
+                    			</div>
+								
+								<?php
+							
+							$group1 = array();
+							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
+    							$group1[$value->pricingCategoryId][] = $value;
+							}
+							
+							$subtotal_harga = 0;
+							for($j=0;$j<count($group1);$j++)
+								{
+									
+									try
+									{
+										$jumlah = count(array_values($group1)[$j]);
+										$harga = $jumlah * array_values($group1)[$j][0]->bookedPrice;
+										
+									}
+									catch(Exception $e)
+									{
+										$harga = $lineitems[$i]->quantity * $lineitems[$i]->total;
+									}
+									$subtotal_harga += $harga;
+								}
+							?>
+								
+                    			<div class="col-4 text-right">
+                    				<b>${{ $subtotal_harga }}</b>
+                    			</div>
+                			 </div>
+                    
+                    		 <div class="row mb-4">
+                				<div class="ml-4">
+                    				<img class="img-fluid" src="{!! $product_invoice[$i]->product->keyPhoto->derived[2]->url !!}">
+                    			</div>
+                    			<div class="col-8">
+                                	{{ $product_invoice[$i]->dates }}
+                                	<br>
+                                    {{ $activity[$i]->rate->title }}
+                                    <br>
+                            
+							
+							
+							<?php
+							
+							$group = array();
+							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
+    							$group['id_'. $value->pricingCategoryId][] = $value;
+							}
+							
+							
+							for($j=0;$j<count($group);$j++)
+								{
+									$jumlah = count(array_values($group)[$j]);
+									$judul = array_values($group)[$j][0]->bookedTitle;
+									try
+									{
+										$harga = array_values($group)[$j][0]->bookedPrice;
+										print($jumlah.' X '. $judul .' ($'. $harga .') <br>');
+									}
+									catch(Exception $e)
+									{
+										$harga = $lineitems[$i]->total;
+										print('1 X Price per booking ($'.$harga.')<br>');
+									}
+								}
+							?>
+                                    
+                                </div>
+                			</div>
+                            <!-- Product detail booking -->
+                            <?php
+								$subtotal_extra = 0;
+								if($activity[$i]->extrasPrice>0)
+								{
+							?>
+                            <!-- Extra booking $activity -->
+							<div class="card">
+                        		<div class="card-body">
+                                <?php
+								
+								for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+								{
+								?>
+									<div class="row mb-4">
+                						<div class="col-8">
+										{{ $activity[$i]->extraBookings[$k]->extra->title }}
+                    					</div>
+                    					<div class="col-4 text-right">
+                    						<b>${{ $activity[$i]->extraBookings[$k]->extra->price }}</b>
+                    					</div>
+                					</div>
+                                <?php
+									$subtotal_extra += $activity[$i]->extraBookings[$k]->extra->price;
+								}
+								?>
+								</div>
+                   			</div>
+							<!-- Extra booking -->
+                            <?php
+								}  
+							?>  
+                            
+                            
+				</div>
+                <!-- Product booking -->
+                @endfor
+                
+                <div class="card-body pt-0">
+                	<!-- hr>
+                	<div class="row mb-4">
+                		<div class="col-8">
+                    		<span style="font-size:18px">Items</span>
+                    	</div>
+                    	<div class="col-4 text-right">
+                    		<span style="font-size:18px">$0.08</span>
+                    	</div>
+                	</div -->
+                	<hr class="mt-0">    
+                    <div class="row mb-4 mt-0">
+                		<div class="col-8">
+                    		<b style="font-size:18px">Total (USD)</b>
+                    	</div>
+                    	<div class="col-4 text-right">
+                    	<b style="font-size:18px">${{ $subtotal_harga+$subtotal_extra }}</b>
+                    	</div>
+                	</div>
+                </div>
+                <!-- ################################################################### --> 
             </div>
             
             <div class="col-lg-6 col-lg-auto mb-6 mt-4">

@@ -92,7 +92,7 @@ Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/tours', 'Blog\Frontend\BlogController@vt_product_list');
-Route::get('/booking/checkout', 'Rev\BookController@get_cart');
+Route::get('/booking/checkout', 'Rev\BookController@get_shoppingcart');
 Route::get('/booking/receipt', 'Rev\BookController@receipt');
 Route::get('/booking/{id}', 'Rev\BookController@time_selector');
 

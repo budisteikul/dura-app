@@ -76,7 +76,7 @@
                 
                 
                 
-                
+             <!-- ################################################################### -->   
                 <div class="card shadow">
   				<div class="card-header bg-dark text-white pt-0 pb-1">
     				<h3><i class="fas fa-shopping-cart"></i> Order Summary</h3>
@@ -99,8 +99,34 @@
                 				<div class="col-8">
                     				<b>{{ $activity[$i]->activity->title }}</b>
                     			</div>
+								
+								<?php
+							
+							$group1 = array();
+							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
+    							$group1[$value->pricingCategoryId][] = $value;
+							}
+							
+							$subtotal_harga = 0;
+							for($j=0;$j<count($group1);$j++)
+								{
+									
+									try
+									{
+										$jumlah = count(array_values($group1)[$j]);
+										$harga = $jumlah * array_values($group1)[$j][0]->bookedPrice;
+										
+									}
+									catch(Exception $e)
+									{
+										$harga = $lineitems[$i]->quantity * $lineitems[$i]->total;
+									}
+									$subtotal_harga += $harga;
+								}
+							?>
+								
                     			<div class="col-4 text-right">
-                    				<b>{{ $lineitems[$i]->totalAsText }}</b>
+                    				<b>${{ $subtotal_harga }}</b>
                     			</div>
                 			 </div>
                     
@@ -123,6 +149,7 @@
     							$group['id_'. $value->pricingCategoryId][] = $value;
 							}
 							
+							
 							for($j=0;$j<count($group);$j++)
 								{
 									$jumlah = count(array_values($group)[$j]);
@@ -134,7 +161,8 @@
 									}
 									catch(Exception $e)
 									{
-										print('1 X Price per booking ('.$lineitems[$i]->totalAsText.')<br>');
+										$harga = $lineitems[$i]->total;
+										print('1 X Price per booking ($'.$harga.')<br>');
 									}
 								}
 							?>
@@ -143,6 +171,7 @@
                 			</div>
                             <!-- Product detail booking -->
                             <?php
+								$subtotal_extra = 0;
 								if($activity[$i]->extrasPrice>0)
 								{
 							?>
@@ -150,6 +179,7 @@
 							<div class="card">
                         		<div class="card-body">
                                 <?php
+								
 								for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 								{
 								?>
@@ -162,6 +192,7 @@
                     					</div>
                 					</div>
                                 <?php
+									$subtotal_extra += $activity[$i]->extraBookings[$k]->extra->price;
 								}
 								?>
 								</div>
@@ -192,11 +223,11 @@
                     		<b style="font-size:18px">Total (USD)</b>
                     	</div>
                     	<div class="col-4 text-right">
-                    	<b style="font-size:18px">{{ $product_invoice[0]->totalAsText }}</b>
+                    	<b style="font-size:18px">${{ $subtotal_harga+$subtotal_extra }}</b>
                     	</div>
                 	</div>
                 </div>
-                
+                <!-- ################################################################### --> 
                 
                 
                 
@@ -218,6 +249,41 @@
             </div>
             <div class="col-lg-6 col-lg-auto mb-6 mt-4">
            
+		   
+		   
+		   
+			<div class="card mb-8 shadow p-2">
+  			
+ 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
+                 <div class="text-right">
+		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
+				 </div>
+             
+                <div id="bokun-w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2">Loading...</div><script type="text/javascript">
+var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
+(function(d, t) {
+  var host = 'widgets.bokun.io';
+  var frameUrl = 'https://' + host + '/widgets/111929?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2';
+  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+    try {
+      w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2 = new BokunWidgetEmbedder(); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.initialize(options); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
+                
+                
+			</div></div>
+		   
+		   
+		   
+		   
+		   
+		   
               
         	</div>
             

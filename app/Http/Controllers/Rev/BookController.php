@@ -635,7 +635,7 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		$contents = BokunClass::get_shoppingcart($id);
 		//print_r($contents);
 		//exit();
-		return view('blog.frontend.shoppingcart')->with(['contents'=>$contents]);
+		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents]);
 	}
 	
 }
