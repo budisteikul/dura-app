@@ -88,6 +88,9 @@
                     $product_invoice = $contents->customerInvoice->productInvoices;
                 @endphp
                 @for($i=0;$i<count($activity);$i++)
+							<?php
+								$lineitems = $product_invoice[$i]->lineItems;
+							?>
                 <!-- Product booking -->
                 <div class="card-body">
                 
@@ -97,7 +100,7 @@
                     				<b>{{ $activity[$i]->activity->title }}</b>
                     			</div>
                     			<div class="col-4 text-right">
-                    				<b>{{ $product_invoice[$i]->totalAsText }}</b>
+                    				<b>{{ $lineitems[$i]->totalAsText }}</b>
                     			</div>
                 			 </div>
                     
@@ -110,7 +113,10 @@
                                 	<br>
                                     {{ $activity[$i]->rate->title }}
                                     <br>
-                            <?php
+                            
+							
+							
+							<?php
 							
 							$group = array();
 							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
@@ -128,7 +134,7 @@
 									}
 									catch(Exception $e)
 									{
-										print('1 X Price per booking ('.$product_invoice[$i]->totalAsText.')<br>');
+										print('1 X Price per booking ('.$lineitems[$i]->totalAsText.')<br>');
 									}
 								}
 							?>
@@ -145,16 +151,19 @@
                         		<div class="card-body">
                                 <?php
 								for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+								{
 								?>
 									<div class="row mb-4">
                 						<div class="col-8">
-                    						Child<br>per booking
+										{{ $activity[$i]->extraBookings[$k]->extra->title }}
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>$0.02</b>
+                    						<b>${{ $activity[$i]->extraBookings[$k]->extra->price }}</b>
                     					</div>
                 					</div>
-                                   
+                                <?php
+								}
+								?>
 								</div>
                    			</div>
 							<!-- Extra booking -->
@@ -183,7 +192,7 @@
                     		<b style="font-size:18px">Total (USD)</b>
                     	</div>
                     	<div class="col-4 text-right">
-                    	<b style="font-size:18px">$0.08</b>
+                    	<b style="font-size:18px">{{ $product_invoice[0]->totalAsText }}</b>
                     	</div>
                 	</div>
                 </div>
