@@ -232,22 +232,7 @@
 		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
 				 </div>
              
-                <div id="bokun-w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2">Loading...</div><script type="text/javascript">
-var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
-(function(d, t) {
-  var host = 'widgets.bokun.io';
-  var frameUrl = 'https://' + host + '/widgets/111929?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2';
-  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
-  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-    try {
-      w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2 = new BokunWidgetEmbedder(); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.initialize(options); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');
-</script>
+                {!! $widget !!}
                 
                 
 			</div></div>

@@ -298,8 +298,9 @@ class BookController extends Controller
         if(!isset($widget)){
 			return redirect("/");
         }
-		
-		$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
+		if(env("APP_ENV")=="production")
+		{
+			$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
@@ -315,6 +316,26 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
+		}
+		else
+		{
+			$calendar = '<div id="bokun-w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c">Loading...</div><script type="text/javascript">
+var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
+(function(d, t) {
+  var host = \'widgets.bokuntest.com\';
+  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c = new BokunWidgetEmbedder(); w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c.initialize(options); w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+		}
 		return view('blog.frontend.booking')->with(['product'=>$calendar]);
 	}
 
@@ -341,7 +362,22 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		}
 		else
 		{
-			$render = '';
+			$render = '<div id="bokun-w2529_d130060f_181c_43cd_911c_a0475b13de4b">Loading...</div><script type="text/javascript">
+var w2529_d130060f_181c_43cd_911c_a0475b13de4b;
+(function(d, t) {
+  var host = \'widgets.bokuntest.com\';
+  var frameUrl = \'https://\' + host + \'/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;lang=en&amp;ccy=USD&amp;hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2529_d130060f_181c_43cd_911c_a0475b13de4b\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w2529_d130060f_181c_43cd_911c_a0475b13de4b = new BokunWidgetEmbedder(); w2529_d130060f_181c_43cd_911c_a0475b13de4b.initialize(options); w2529_d130060f_181c_43cd_911c_a0475b13de4b.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
 		}
         return view('blog.frontend.booking')->with(['product'=>$render]);
     }
@@ -360,9 +396,48 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
     {
 		$id = $request->input('sessionId');
 		$contents = BokunClass::get_shoppingcart($id);
+		
+		if(env("APP_ENV")=="production")
+		{
+			$widget = '<div id="bokun-w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2">Loading...</div><script type="text/javascript">
+var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
+(function(d, t) {
+  var host = \'widgets.bokun.io\';
+  var frameUrl = \'https://\' + host + \'/widgets/111929?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2 = new BokunWidgetEmbedder(); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.initialize(options); w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+		}
+		else
+		{
+			$widget = '<div id="bokun-w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0">Loading...</div><script type="text/javascript">
+var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
+(function(d, t) {
+  var host = \'widgets.bokuntest.com\';
+  var frameUrl = \'https://\' + host + \'/widgets/2530?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;lang=en&amp;ccy=USD&amp;hash=w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0 = new BokunWidgetEmbedder(); w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0.initialize(options); w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+		}
 		//print_r($contents);
 		//exit();
-		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents]);
+		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents,'widget'=>$widget]);
 	}
 	
 }

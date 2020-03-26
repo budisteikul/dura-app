@@ -7,7 +7,14 @@ class BokunClass {
 	
 	public static function get_connect($path,$method = 'GET',$accept = 'application/json')
 	{
-		$endpoint = "https://api.bokun.io";
+		if(env("APP_ENV")=="production")
+		{
+			$endpoint = "https://api.bokun.io";
+		}
+		else
+		{
+			$endpoint = "https://api.bokuntest.com";
+		}
         $currency = 'USD';
         $lang = "EN";
         $query = '?currency='.$currency.'&lang='.$lang;
