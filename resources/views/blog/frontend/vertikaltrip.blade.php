@@ -2,7 +2,6 @@
 @section('title',$contents->title)
 @section('content')
 @push('scripts')
-<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
 <script type="text/javascript">
 			jQuery(document).ready(function($) {	
 			var table = $('#dataTables-example').DataTable(
