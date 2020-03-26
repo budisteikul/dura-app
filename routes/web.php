@@ -44,7 +44,7 @@ Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
 });
 Route::domain('192.168.0.3')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 });
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');

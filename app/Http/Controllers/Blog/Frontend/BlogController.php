@@ -29,7 +29,7 @@ class BlogController extends Controller
 
   public function vt_product_page(Request $request,$id="")
     {
-        $activityId = "284167";
+        $activityId = "";
         if($id=="")
         {
             $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
@@ -54,7 +54,9 @@ class BlogController extends Controller
         }
 
 		
-		$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
+		if(env("APP_ENV")=="production")
+		{
+			$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
@@ -70,6 +72,11 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
+		}
+		else
+		{
+			$calendar = '';
+		}
 		
         $widget = rev_widgets::where('product_id',$activityId)->first();
         if(isset($widget)){
@@ -83,8 +90,12 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 	
 	public function vt_product_list(Request $request,$id="")
 	{
+		$contents = BokunClass::get_product_list();
+		foreach($contents as $content)
+		{
+			$default_id = $content->id;
+		}
 		
-		$default_id = '20041';
 		if($id=="")
 		{
 			$id = $default_id;
@@ -102,24 +113,12 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
 	}
 	
-	public function vertikaltrip(Request $request,$id="")
+	public function vertikaltrip($id="")
 	{
-		$default_id = '20041';
-		if($id=="")
+		$contents = BokunClass::get_product_list();
+		foreach($contents as $content)
 		{
-			$id = $default_id;
-		}
-		else
-		{
-			$cat = blog_categories::where('slug',$id)->first();
-			if(isset($cat))
-			{
-				$id = $cat->description;
-			}
-			else
-			{
-				$id = $default_id;
-			}
+			$id = $content->id;
 		}
 		$contents = BokunClass::get_product_list_byid($id);
 		$count = rev_reviews::count();

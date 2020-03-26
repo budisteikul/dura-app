@@ -320,7 +320,9 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 
     public function receipt()
     {
-        $render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
+		if(env("APP_ENV")=="production")
+		{
+			$render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
 var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
@@ -336,6 +338,11 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
+		}
+		else
+		{
+			$render = '';
+		}
         return view('blog.frontend.booking')->with(['product'=>$render]);
     }
 	
