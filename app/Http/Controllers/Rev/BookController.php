@@ -627,6 +627,15 @@ var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
 		header('Content-Disposition: attachment; filename="'.$id.'.pdf"');
 		header('Content-Length: '.strlen($contents));
 		echo $contents;
-		
 	}
+	
+	public function get_shoppingcart(Request $request)
+    {
+		$id = $request->input('sessionId');
+		$contents = BokunClass::get_shoppingcart($id);
+		//print_r($contents);
+		//exit();
+		return view('blog.frontend.shoppingcart')->with(['contents'=>$contents]);
+	}
+	
 }

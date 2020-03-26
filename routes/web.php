@@ -96,7 +96,7 @@ Route::get('/booking/checkout', 'Rev\BookController@get_cart');
 Route::get('/booking/receipt', 'Rev\BookController@receipt');
 Route::get('/booking/{id}', 'Rev\BookController@time_selector');
 
-//Route::get('/checkout/{id}', 'Rev\BookController@get_cart');
+Route::get('/shoppingcart', 'Rev\BookController@get_shoppingcart');
 Route::get('/ticket/{id}', 'Rev\BookController@get_ticket');
 //========================================================================
 // Redirect Page

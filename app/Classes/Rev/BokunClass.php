@@ -77,6 +77,11 @@ class BokunClass {
 		return self::get_connect('/checkout.json/options/shopping-cart/'. $sessionId);
 	}
 	
+	public static function get_shoppingcart($sessionId)
+	{
+		return self::get_connect('/shopping-cart.json/session/'. $sessionId);
+	}
+	
 	public static function get_ticket($confirmationCode)
 	{
 		return self::get_connect('/booking.json/activity-booking/'.$confirmationCode.'/ticket','GET','application/pdf');
