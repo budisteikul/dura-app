@@ -176,8 +176,9 @@ Vertikal Trip Team
         			@foreach($contents->items as $content)
         			<div class="col-sm-4 col-sm-auto  mb-4">
     						<div class="card  h-100 shadow card-block rounded">
+                            @if(isset($content->activity->keyPhoto->fileName))
   				 				<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
-  				 				
+  				 			@endif
   							<div class="card-header bg-white border-0 text-left h-100 pb-0">
         								<h2 class="mb-0">{{ $content->activity->title }}</h2>
       						</div>
