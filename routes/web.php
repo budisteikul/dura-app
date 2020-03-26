@@ -96,7 +96,9 @@ Route::get('/booking/checkout', 'Rev\BookController@get_shoppingcart');
 Route::get('/booking/receipt', 'Rev\BookController@receipt');
 Route::get('/booking/{id}', 'Rev\BookController@time_selector');
 
-Route::get('/shoppingcart', 'Rev\BookController@get_shoppingcart');
+Route::get('/test', function () {
+	return view('blog.frontend.shoppingcart');
+});
 Route::get('/ticket/{id}', 'Rev\BookController@get_ticket');
 //========================================================================
 // Redirect Page
