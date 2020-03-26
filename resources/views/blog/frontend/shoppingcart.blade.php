@@ -137,14 +137,14 @@
                 			</div>
                             <!-- Product detail booking -->
                             <?php
-								if($activity->extrasPrice>0)
+								if($activity[$i]->extrasPrice>0)
+								{
 							?>
                             <!-- Extra booking $activity -->
 							<div class="card">
                         		<div class="card-body">
                                 <?php
-								if($activity->extrasPrice>0)
-								{
+								for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 								?>
 									<div class="row mb-4">
                 						<div class="col-8">
@@ -154,9 +154,7 @@
                     						<b>$0.02</b>
                     					</div>
                 					</div>
-                                  <?php
-								}
-								  ?>  
+                                   
 								</div>
                    			</div>
 							<!-- Extra booking -->
