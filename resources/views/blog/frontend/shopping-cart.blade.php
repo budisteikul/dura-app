@@ -125,7 +125,9 @@
                     
                     		 <div class="row mb-4">
                 				<div class="ml-4">
+									@if(isset($product_invoice[$i]->product->keyPhoto->derived[2]->url))
                     				<img class="img-fluid" src="{!! $product_invoice[$i]->product->keyPhoto->derived[2]->url !!}">
+									@endif
                     			</div>
                     			<div class="col-8">
                                 	{{ $product_invoice[$i]->dates }}

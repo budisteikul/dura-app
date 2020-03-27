@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Rev\rev_widgets;
 use App\Models\Blog\blog_posts;
 use App\Classes\Blog\BlogClass;
+use App\Classes\Rev\BokunClass;
 
 use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Uuid;
@@ -167,4 +168,40 @@ class ExperienceController extends Controller
         rev_widgets::find($id)->delete();
 		blog_posts::find($rev_widgets->post_id)->delete();
     }
+	
+	public function sync()
+	{
+		$product_lists = BokunClass::get_product_list();
+		foreach($product_lists as $product_list)
+		{
+			$products = BokunClass::get_product_list_byid($product_list->id);
+			foreach($products->items as $product)
+			{
+				$title = $product->activity->title;
+				$id = $product->activity->id;
+				
+				$check = rev_widgets::where('product_id',$id)->first();
+				if(!isset($check))
+				{
+					$blog_posts = new blog_posts;
+					$blog_posts->title = $title;
+					$blog_posts->slug = BlogClass::makeSlug($title,Auth::user()->id);
+					$blog_posts->date = date('Y-m-d H:i:s');
+					$blog_posts->user_id = Auth::user()->id;
+					$blog_posts->content_type = 'experience';
+					$blog_posts->post_type = 'post';
+					$blog_posts->status = 1;
+					$blog_posts->save();
+		
+					$rev_widgets = new rev_widgets();
+					$rev_widgets->post_id = $blog_posts->id;
+					$rev_widgets->product_id = $id;
+					$rev_widgets->save();
+				}
+				
+				
+			}
+		}
+		
+	}
 }
