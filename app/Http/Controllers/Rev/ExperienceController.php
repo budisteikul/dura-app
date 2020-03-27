@@ -165,11 +165,12 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        rev_widgets::find($id)->delete();
+        $rev_widgets = rev_widgets::find($id);
+		$rev_widgets->delete();
 		blog_posts::find($rev_widgets->post_id)->delete();
     }
 	
-	public function sync()
+	public function import()
 	{
 		$product_lists = BokunClass::get_product_list();
 		foreach($product_lists as $product_list)
@@ -202,6 +203,6 @@ class ExperienceController extends Controller
 				
 			}
 		}
-		
+		return redirect("/rev/experiences");
 	}
 }

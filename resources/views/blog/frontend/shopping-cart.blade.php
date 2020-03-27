@@ -84,6 +84,8 @@
                 @for($i=0;$i<count($activity);$i++)
 							<?php
 								$lineitems = $product_invoice[$i]->lineItems;
+								//print_r($lineitems);
+								//exit();
 							?>
                 <!-- Product booking -->
                 <div class="card-body">
@@ -113,7 +115,9 @@
 									}
 									catch(Exception $e)
 									{
-										$harga = $lineitems[$i]->quantity * $lineitems[$i]->total;
+										$jumlah = $lineitems[$j]->quantity;
+										$harga =  $lineitems[$j]->total;
+										$harga = $harga * $jumlah;
 									}
 									$subtotal_harga += $harga;
 								}
@@ -157,7 +161,7 @@
 									}
 									catch(Exception $e)
 									{
-										$harga = $lineitems[$i]->total;
+										$harga = $lineitems[$j]->total;
 										print('1 X Price per booking ($'.$harga.')<br>');
 									}
 								}
