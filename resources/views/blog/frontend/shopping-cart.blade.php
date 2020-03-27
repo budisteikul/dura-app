@@ -96,31 +96,35 @@
                     				<b>{{ $activity[$i]->activity->title }}</b>
                     			</div>
 								
-								<?php
+<?php
+$subtotal_harga = 0;
+for($z=0;$z<count($lineitems);$z++)
+	{
+		
+		$itemBookingId = $lineitems[$z]->itemBookingId;
+		$itemBookingId = explode("_",$itemBookingId);
+		if($activity[$i]->extrasPrice>0)
+		{
+			$check_extra = false;
+			for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+			{
+				if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
+			}
+			if(!$check_extra)
+			{
+				$jumlah = $lineitems[$z]->quantity;
+				$harga = $lineitems[$z]->unitPrice * $jumlah;
+				$subtotal_harga += $harga;
+			}
+		}
+		else
+		{
+			$jumlah = $lineitems[$z]->quantity;
+			$harga = $lineitems[$z]->unitPrice * $jumlah;
+			$subtotal_harga += $harga;
+		}
+	}
 							
-							$group1 = array();
-							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
-    							$group1[$value->pricingCategoryId][] = $value;
-							}
-							
-							$subtotal_harga = 0;
-							for($j=0;$j<count($group1);$j++)
-								{
-									
-									try
-									{
-										$jumlah = count(array_values($group1)[$j]);
-										$harga = $jumlah * array_values($group1)[$j][0]->bookedPrice;
-										
-									}
-									catch(Exception $e)
-									{
-										$jumlah = $lineitems[$j]->quantity;
-										$harga =  $lineitems[$j]->total;
-										$harga = $harga * $jumlah;
-									}
-									$subtotal_harga += $harga;
-								}
 							?>
 								
                     			<div class="col-4 text-right">
@@ -140,10 +144,48 @@
                                     {{ $activity[$i]->rate->title }}
                                     <br>
                             
-							
+<?php
+	for($z=0;$z<count($lineitems);$z++)
+	{
+		
+		$itemBookingId = $lineitems[$z]->itemBookingId;
+		$itemBookingId = explode("_",$itemBookingId);
+		if($activity[$i]->extrasPrice>0)
+		{
+			$check_extra = false;
+			for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+			{
+				if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
+			}
+			if(!$check_extra)
+			{
+				if($lineitems[$z]->quantity==$lineitems[$z]->people)
+				{
+					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
+				}
+				else
+				{
+					print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
+				}
+				
+			}
+		}
+		else
+		{
+			if($lineitems[$z]->quantity==$lineitems[$z]->people)
+				{
+					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
+				}
+				else
+				{
+					print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
+				}
+		}
+	}
+							?>
 							
 							<?php
-							
+							/*
 							$group = array();
 							foreach ( $activity[$i]->pricingCategoryBookings as $value ) {
     							$group['id_'. $value->pricingCategoryId][] = $value;
@@ -165,6 +207,7 @@
 										print('1 X Price per booking ($'.$harga.')<br>');
 									}
 								}
+							*/
 							?>
                                     
                                 </div>
