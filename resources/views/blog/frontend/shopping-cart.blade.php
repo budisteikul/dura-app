@@ -79,6 +79,7 @@
                 	$activity = $contents->activityBookings;
                     $invoice = $contents->customerInvoice;
                     $product_invoice = $contents->customerInvoice->productInvoices;
+					$grand_total = 0;
                 @endphp
                 @for($i=0;$i<count($activity);$i++)
 							<?php
@@ -200,6 +201,24 @@
                             
 				</div>
                 <!-- Product booking -->
+				
+				
+				@php
+					$total = $subtotal_harga + $subtotal_extra;
+					$grand_total += $total;
+				@endphp
+				<div class="card-body pt-0">
+                	<hr>
+                	<div class="row mb-4">
+                		<div class="col-8">
+                    		<span style="font-size:18px">Items</span>
+                    	</div>
+                    	<div class="col-4 text-right">
+                    		<span style="font-size:18px">${{ $total }}</span>
+                    	</div>
+                	</div>
+				</div>
+				
                 @endfor
                 
                 <div class="card-body pt-0">
@@ -218,7 +237,7 @@
                     		<b style="font-size:18px">Total (USD)</b>
                     	</div>
                     	<div class="col-4 text-right">
-                    	<b style="font-size:18px">${{ $subtotal_harga+$subtotal_extra }}</b>
+                    	<b style="font-size:18px">${{ $grand_total }}</b>
                     	</div>
                 	</div>
                 </div>
