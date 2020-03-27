@@ -159,7 +159,7 @@ for($z=0;$z<count($lineitems);$z++)
 			}
 			if(!$check_extra)
 			{
-				if($lineitems[$z]->quantity==$lineitems[$z]->people && $lineitems[$z]->title!="Passengers")
+				if($lineitems[$z]->title!="Passengers")
 				{
 					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
 				}
@@ -172,7 +172,7 @@ for($z=0;$z<count($lineitems);$z++)
 		}
 		else
 		{
-			if($lineitems[$z]->quantity==$lineitems[$z]->people && $lineitems[$z]->title!="Passengers")
+			if($lineitems[$z]->title!="Passengers")
 				{
 					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
 				}
