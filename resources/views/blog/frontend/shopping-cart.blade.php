@@ -112,16 +112,22 @@ for($z=0;$z<count($lineitems);$z++)
 			}
 			if(!$check_extra)
 			{
-				$jumlah = $lineitems[$z]->quantity;
-				$harga = $lineitems[$z]->unitPrice * $jumlah;
-				$subtotal_harga += $harga;
+				if($itemBookingId[1]!="pickup")
+				{
+					$jumlah = $lineitems[$z]->quantity;
+					$harga = $lineitems[$z]->unitPrice * $jumlah;
+					$subtotal_harga += $harga;
+				}
 			}
 		}
 		else
 		{
-			$jumlah = $lineitems[$z]->quantity;
-			$harga = $lineitems[$z]->unitPrice * $jumlah;
-			$subtotal_harga += $harga;
+			if($itemBookingId[1]!="pickup")
+			{
+				$jumlah = $lineitems[$z]->quantity;
+				$harga = $lineitems[$z]->unitPrice * $jumlah;
+				$subtotal_harga += $harga;
+			}
 		}
 	}
 							
@@ -148,11 +154,11 @@ for($z=0;$z<count($lineitems);$z++)
 	for($z=0;$z<count($lineitems);$z++)
 	{
 		
-		$itemBookingId = $lineitems[$z]->itemBookingId;
-		$itemBookingId = explode("_",$itemBookingId);
+		$itemBookingId = explode("_",$lineitems[$z]->itemBookingId);
+		$check_extra = false;
 		if($activity[$i]->extrasPrice>0)
 		{
-			$check_extra = false;
+			
 			for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 			{
 				if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
@@ -161,26 +167,30 @@ for($z=0;$z<count($lineitems);$z++)
 			{
 				if($lineitems[$z]->title!="Passengers")
 				{
-					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
+					
+					if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
 				}
 				else
 				{
-					print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
+					if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
 				}
 				
 			}
 		}
+		
 		else
 		{
 			if($lineitems[$z]->title!="Passengers")
-				{
-					print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
-				}
-				else
-				{
-					print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
-				}
+			{
+				if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
+			}
+			else
+			{
+				if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
+			}
 		}
+		
+	
 	}
 							?>
 							
@@ -189,13 +199,48 @@ for($z=0;$z<count($lineitems);$z++)
                                 </div>
                 			</div>
                             <!-- Product detail booking -->
+                            <!-- Pickup booking $activity -->
                             <?php
+								$subtotal_pickup = 0;
+								if($activity[$i]->pickupPrice>0)
+								{
+							?>
+                            <div class="card mb-2">
+                        		<div class="card-body">
+                                <?php
+								for($z=0;$z<count($lineitems);$z++)
+								{
+									$itemBookingId = $lineitems[$z]->itemBookingId;
+									$itemBookingId = explode("_",$itemBookingId);
+									if($itemBookingId[1]=="pickup"){
+								?>
+									<div class="row mb-4">
+                						<div class="col-8">
+										<!-- {{ $lineitems[$z]->title }} -->
+                                        Pick-up and drop-off services
+                    					</div>
+                    					<div class="col-4 text-right">
+                    						<b>${{ $lineitems[$z]->total }}</b>
+                    					</div>
+                					</div>
+                                <?php
+									$subtotal_pickup += $lineitems[$z]->total;
+									}
+								}
+								?>
+								</div>
+                   			</div>
+							<?php
+								}
+							?>
+                            <!-- Pickup booking $activity -->
+							<?php
 								$subtotal_extra = 0;
 								if($activity[$i]->extrasPrice>0)
 								{
 							?>
                             <!-- Extra booking $activity -->
-							<div class="card">
+							<div class="card mb-2">
                         		<div class="card-body">
                                 <?php
 								
@@ -227,7 +272,7 @@ for($z=0;$z<count($lineitems);$z++)
 				
 				
 				@php
-					$total = $subtotal_harga + $subtotal_extra;
+					$total = $subtotal_harga + $subtotal_extra + $subtotal_pickup;
 					$grand_total += $total;
 				@endphp
 				<div class="card-body pt-0 mt-0">
