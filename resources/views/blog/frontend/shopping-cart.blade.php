@@ -232,7 +232,7 @@
                     	</div>
                 	</div -->
                 	<hr class="mt-0">    
-                    <div class="row mb-4 mt-0">
+                    <div class="row mb-2 mt-0">
                 		<div class="col-8">
                     		<b style="font-size:18px">Total (USD)</b>
                     	</div>
