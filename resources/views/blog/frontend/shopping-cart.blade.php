@@ -211,7 +211,7 @@
                 	<hr>
                 	<div class="row mb-2">
                 		<div class="col-8">
-                    		<span style="font-size:18px">Items</span>
+                    		<span style="font-size:18px">Subtotal</span>
                     	</div>
                     	<div class="col-4 text-right">
                     		<span style="font-size:18px">${{ $total }}</span>
