@@ -207,9 +207,9 @@
 					$total = $subtotal_harga + $subtotal_extra;
 					$grand_total += $total;
 				@endphp
-				<div class="card-body pt-0">
+				<div class="card-body pt-0 mt-0">
                 	<hr>
-                	<div class="row mb-4">
+                	<div class="row mb-2">
                 		<div class="col-8">
                     		<span style="font-size:18px">Items</span>
                     	</div>
@@ -232,7 +232,7 @@
                     	</div>
                 	</div -->
                 	<hr class="mt-0">    
-                    <div class="row mb-2 mt-0">
+                    <div class="row mb-4 mt-0">
                 		<div class="col-8">
                     		<b style="font-size:18px">Total (USD)</b>
                     	</div>
