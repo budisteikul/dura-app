@@ -48,7 +48,9 @@
                     <p>&nbsp;</p>
 <p>
 
-http://localhost/booking/receipt?sessionId=de3f7fef-4ca0-4bb6-8f3a-eb5e0544fbeb&bookingId=74710&bookingHash=JDJhJDEwJDFDVEVKaldkQ3g1WlJCZk91WjZLdWV3QzF4d1ZvWGFkTkJ3ZS5kMjI0Qy5hR1BJQXc2ekR1
+Thank you for your booking with VERTIKAL TRIP.
+ 
+Receipt and ticket will be sent to your email address
 
 </p>						
 	

@@ -84,6 +84,9 @@ Route::get('/page/terms-and-conditions', function () {
 Route::get('/page/thankyou', function () {
 	return view('page.thankyou');
 });
+Route::get('/page/test-payment', function () {
+	return view('page.test-payment');
+});
 //========================================================================
 // Booking Page
 //========================================================================
