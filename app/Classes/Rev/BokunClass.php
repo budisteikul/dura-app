@@ -94,6 +94,16 @@ class BokunClass {
 		return self::get_connect('/booking.json/activity-booking/'.$confirmationCode.'/ticket','GET','application/pdf');
 	}
 	
+	public static function get_invoice($id)
+	{
+		return self::get_connect('/booking.json/'. $id .'/summary','GET','application/pdf');
+	}
+	
+	public static function get_productbooking($id)
+	{
+		return self::get_connect('/booking.json/activity-booking/'.$id);
+	}
+	
 	
 }
 ?>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_shoppingcarts;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
@@ -392,10 +393,37 @@ var w2529_d130060f_181c_43cd_911c_a0475b13de4b;
 		echo $contents;
 	}
 	
+	public function get_invoice($id)
+    {
+		$contents = BokunClass::get_invoice($id);
+		header('Cache-Control: public'); 
+		header('Content-type: application/pdf');
+		header('Content-Disposition: attachment; filename="'.$id.'.pdf"');
+		header('Content-Length: '.strlen($contents));
+		echo $contents;
+	}
+	
 	public function get_shoppingcart(Request $request)
     {
 		$id = $request->input('sessionId');
 		$contents = BokunClass::get_shoppingcart($id);
+		
+		
+		//========================================================================
+		rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
+		$activity = $contents->activityBookings;
+		for($i=0;$i<count($activity);$i++)
+		{
+			$rev_shoppingcarts = new rev_shoppingcarts();
+			$rev_shoppingcarts->sessionId = $id;
+			$rev_shoppingcarts->bookingId = $activity[$i]->id;
+			$rev_shoppingcarts->productConfirmationCode = $activity[$i]->productConfirmationCode;
+			$rev_shoppingcarts->bookingStatus = 'CART';
+			$rev_shoppingcarts->save();
+		}
+		//========================================================================
+		
+		
 		
 		if(env("APP_ENV")=="production")
 		{

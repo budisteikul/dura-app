@@ -44,7 +44,7 @@
 					</div>
 					
                     <div class="row col-md-8  mx-auto text-left">
-					<div class="textwidget">
+					<div class="textwidget" style=" min-height:250px;">
                     <p>&nbsp;</p>
 <p>These terms and conditions contain legal obligations and we encourage you to read through them carefully. Unless otherwise stated, any purchases made through {{ $thedomain }} are subject to these terms and conditions.</p>
 <p>&nbsp;</p>
