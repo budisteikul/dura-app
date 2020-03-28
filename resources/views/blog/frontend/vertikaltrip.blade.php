@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title',$contents->title)
+@section('title','VERTIKAL TRIP | Enjoy Jogja in Local Ways!')
 @section('content')
 @push('scripts')
 <script type="text/javascript">
