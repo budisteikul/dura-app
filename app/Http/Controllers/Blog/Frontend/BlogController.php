@@ -53,10 +53,11 @@ class BlogController extends Controller
 			$pickup = BokunClass::get_product_pickup($activityId);
         }
 
-		
-		if(env("APP_ENV")=="production")
+		if(env("BOKUN_WIDGET")=="classic")
 		{
-			$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
+			if(env("APP_ENV")=="production")
+			{
+				$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
@@ -72,10 +73,10 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
-		}
-		else
-		{
-			$calendar = '<div id="bokun-w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c">Loading...</div><script type="text/javascript">
+			}
+			else
+			{
+				$calendar = '<div id="bokun-w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c">Loading...</div><script type="text/javascript">
 var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 (function(d, t) {
   var host = \'widgets.bokuntest.com\';
@@ -91,14 +92,27 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
+			}
 		}
-		
-        $widget = rev_widgets::where('product_id',$activityId)->first();
-        if(isset($widget)){
-			if(isset($widget->time_selector)){
-               $calendar = $widget->time_selector;
-            }
-        }
+		else
+		{
+			if(env("APP_ENV")=="production")
+			{
+				$calendar = '
+     
+    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/93a137f0-bb95-4ea0-b4a8-9857824a2e79/experience-calendar/'.$contents->id.'"></div>
+    <noscript>Please enable javascript in your browser to book</noscript>';
+			}
+			else
+			{
+				$calendar = '
+     
+    <div class="bokunWidget" data-src="https://widgets.bokuntest.com/online-sales/bfaa0f13-9831-4e68-866b-f5dab49b7ff4/experience-calendar/'.$contents->id.'"></div>
+    <noscript>Please enable javascript in your browser to book</noscript>
+';	
+			}
+		}
+        
 
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
     }

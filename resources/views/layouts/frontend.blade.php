@@ -58,6 +58,15 @@
             });
         }
 </script -->    
+ 
+@if(env('BOKUN_WIDGET')=='new')
+	@if(env('APP_ENV')=='production')
+		<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+    @else
+    	<script type="text/javascript" src="https://widgets.bokuntest.com/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4" async></script>
+	@endif	
+@endif
+
     
     @stack('scripts')
 	
