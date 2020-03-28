@@ -32,7 +32,7 @@
 		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 			Yogyakarta Night Walking and Food Tours
 		@else
-			Book Amazing Things to do in Yogyakarta
+			Book Amazing Things to do with VERTIKAL TRIP
 		@endif
 	@endif
 	</title>
@@ -71,7 +71,7 @@
     @stack('scripts')
 	
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<!-- script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -83,7 +83,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 
 
-</script>
+</script -->
 <!--End of Tawk.to Script-->
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
