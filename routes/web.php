@@ -79,7 +79,7 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 // Single Page
 //========================================================================
 Route::get('/page/waiver-and-release', function () {
-	return view('blog.frontend.waiver-liability');
+	return view('page.waiver-liability');
 });
 Route::get('/page/terms-and-conditions', function () {
 	return view('page.terms-and-conditions');
