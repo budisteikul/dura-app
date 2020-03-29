@@ -81,7 +81,7 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #FF0000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
