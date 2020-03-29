@@ -340,48 +340,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		return view('blog.frontend.booking')->with(['product'=>$calendar]);
 	}
 
-    public function receipt()
-    {
-		if(env("APP_ENV")=="production")
-		{
-			$render = '<div id="bokun-w97536_f6820178_ae16_4095_b0ec_4c203e94f898">Loading...</div><script type="text/javascript">
-var w97536_f6820178_ae16_4095_b0ec_4c203e94f898;
-(function(d, t) {
-  var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/97536?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w97536_f6820178_ae16_4095_b0ec_4c203e94f898\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w97536_f6820178_ae16_4095_b0ec_4c203e94f898\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w97536_f6820178_ae16_4095_b0ec_4c203e94f898 = new BokunWidgetEmbedder(); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.initialize(options); w97536_f6820178_ae16_4095_b0ec_4c203e94f898.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-		}
-		else
-		{
-			$render = '<div id="bokun-w2529_d130060f_181c_43cd_911c_a0475b13de4b">Loading...</div><script type="text/javascript">
-var w2529_d130060f_181c_43cd_911c_a0475b13de4b;
-(function(d, t) {
-  var host = \'widgets.bokuntest.com\';
-  var frameUrl = \'https://\' + host + \'/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;lang=en&amp;ccy=USD&amp;hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2529_d130060f_181c_43cd_911c_a0475b13de4b\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w2529_d130060f_181c_43cd_911c_a0475b13de4b = new BokunWidgetEmbedder(); w2529_d130060f_181c_43cd_911c_a0475b13de4b.initialize(options); w2529_d130060f_181c_43cd_911c_a0475b13de4b.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-		}
-        return view('blog.frontend.booking')->with(['product'=>$render]);
-    }
+    
 	
 	public function get_ticket($id)
     {
@@ -393,15 +352,7 @@ var w2529_d130060f_181c_43cd_911c_a0475b13de4b;
 		echo $contents;
 	}
 	
-	public function get_invoice($id)
-    {
-		$contents = BokunClass::get_invoice($id);
-		header('Cache-Control: public'); 
-		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="'.$id.'.pdf"');
-		header('Content-Length: '.strlen($contents));
-		echo $contents;
-	}
+	
 	
 	public function get_shoppingcart(Request $request)
     {
@@ -468,4 +419,49 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents,'widget'=>$widget]);
 	}
 	
+	public function receipt(Request $request)
+    {
+		$bookingId = $request->input('bookingId');
+		$sessionId = $request->input('sessionId');
+		$bookingHash = $request->input('bookingHash');
+		
+		
+		//https://widgets.bokuntest.com/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&lang=en&ccy=USD&hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b&sessionId=4351b39d-bd80-41da-afdf-ca9046d3bce9&bookingId=74714&bookingHash=JDJhJDEwJDFDVEVKaldkQ3g1WlJCZk91WjZLdWViemE1Qzl2cXJTSlNWcEM4aHF1U0VIMUwvQm9sRy5t
+		
+		//$url = 'https://widgets.bokuntest.com/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&lang=en&ccy=USD&hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b&sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
+		
+		//$url = 'https://widgets.bokuntest.com/widgets/booking-receipt/74714?bookingHash=JDJhJDEwJDFDVEVKaldkQ3g1WlJCZk91WjZLdWViemE1Qzl2cXJTSlNWcEM4aHF1U0VIMUwvQm9sRy5t';
+		
+		//$ch = curl_init($url);
+		//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		//curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+		//$html = curl_exec($ch);
+		//curl_close($ch);
+		//===============================================
+		
+		//$dom = new \DOMDocument();
+		//$dom->loadHTML($html);
+		//$xpath = new DOMXPath($dom);
+		//$div = $xpath->query('//div[@class="customer-info"]');
+		//$div = $div->item(0);
+		//echo $dom->saveXML($div);
+		
+		
+		
+		$link = '/booking/invoice?sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
+        return view('page.receipt')->with(['link'=>$link]);
+    }
+	
+	public function get_invoice(Request $request)
+    {
+		$bookingId = $request->input('bookingId');
+		$sessionId = $request->input('sessionId');
+		$bookingHash = $request->input('bookingHash');
+		$contents = BokunClass::get_invoice($bookingId);
+		header('Cache-Control: public'); 
+		header('Content-type: application/pdf');
+		header('Content-Disposition: attachment; filename="INV-'.$bookingId.'.pdf"');
+		header('Content-Length: '.strlen($contents));
+		echo $contents;
+	}
 }

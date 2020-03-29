@@ -81,9 +81,6 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 Route::get('/page/terms-and-conditions', function () {
 	return view('page.terms-and-conditions');
 });
-Route::get('/page/thankyou', function () {
-	return view('page.thankyou');
-});
 Route::get('/page/test-payment', function () {
 	return view('page.test-payment');
 });
@@ -97,9 +94,9 @@ Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/tours', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/booking/checkout', 'Rev\BookController@get_shoppingcart');
 Route::get('/booking/receipt', 'Rev\BookController@receipt');
+Route::get('/booking/invoice', 'Rev\BookController@get_invoice');
+Route::get('/booking/ticket/{id}', 'Rev\BookController@get_ticket');
 Route::get('/booking/{id}', 'Rev\BookController@time_selector');
-Route::get('/ticket/{id}', 'Rev\BookController@get_ticket');
-Route::get('/invoice/{id}', 'Rev\BookController@get_invoice');
 //========================================================================
 // Redirect Page
 //========================================================================

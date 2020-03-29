@@ -84,11 +84,14 @@
 					<div class="row col-md-8  mx-auto text-left">
 					<div class="textwidget" style=" min-height:250px;">
 						<p>
-						Thank you for the booking with <b>VERTIKAL TRIP</b>, a confirmation will be sent to your email address
+						Thank you for your booking with <b>VERTIKAL TRIP</b>, a confirmation will be sent to your email address.
+						</p>
+						<p>
+						Your booking receipt is below.<br>
+						<a target="_blank" class="btn btn-danger mt-2" href={{ $link }}><i class="fas fa-file-invoice"></i> Download Invoice</a>
 						</p>
 					</div>
 					</div>
-					
 			</div>
 			</div>
 
