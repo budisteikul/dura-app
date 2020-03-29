@@ -81,10 +81,10 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #FF0000">
 	<div class="col-lg-8 col-md-10 mx-auto">
-		<div class="site-heading text-center">
-			<div class="transbox" style=" min-height:100px; padding-top:10px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
+		<div class="site-heading text-center ">
+			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.webp" width="250" -->
                 
 				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Enjoy Jogja in Local Ways!</h1>
