@@ -137,7 +137,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white " href="/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
+<a class="btn btn-danger text-white " href="https://www.vertikaltrip.com/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
 
 @endif
 
@@ -312,7 +312,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                     <div>
                     	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
 						
-				 44 USD / person
+				 37 USD / person
 				
     					
                 	</div>
