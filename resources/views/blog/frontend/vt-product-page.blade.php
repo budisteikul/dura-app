@@ -250,6 +250,14 @@
   			<div class="card-header">
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 Secure booking — only takes 2 minutes!
+				<br><br>
+				<i class="fa fa-ticket-alt text-danger mb-4"></i> Instant Booking
+				<br>
+				<i class="fa fa-phone-alt text-danger mb-4"></i> 24/7 Support
+				<br>
+				<i class="fa fa-history text-danger mb-4"></i> Free Cancellation
+				<br>
+				<i class="fab fa-paypal text-danger mb-4"></i> Secure Payments
             </div>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     				
