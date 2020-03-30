@@ -8,9 +8,9 @@
       "@type": "Product",
       "name": "Yogyakarta Night Walking and Food Tours",
       "image": [
-        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/1.webp",
-        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/small-groups.webp",
-        "https://www.jogjafoodtour.com/assets/foodtour/webp/gallery/6.webp"
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/1.jpg",
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/small-groups.jpg",
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/6.jpg"
        ],
       "description": "See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.",
       "sku": "110844P2",
@@ -181,11 +181,11 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/jogjafoodtour.webp" width="250">
+            	<img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/jogjafoodtour.png" width="250">
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<!-- p class="text-faded">
@@ -266,8 +266,8 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
         
         <div class="col-md-8 mx-auto">
         
-        <img src="/assets/foodtour/webp/adv/silkwinds.webp" class="img-fluid rounded">
-        <img src="/assets/foodtour/webp/adv/silkwinds-magazine-logo.webp" style="margin-top:4px;" class="img-fluid rounded">
+        <img src="/assets/foodtour/adv/silkwinds.jpg" class="img-fluid rounded">
+        <img src="/assets/foodtour/adv/silkwinds-magazine-logo.png" style="margin-top:4px;" class="img-fluid rounded">
         <span class="caption text-muted"><a class="text-muted"  target="_blank" href="https://www.silverkris.com/yogyakarta-the-way-to-this-citys-heart-is-through-its-food/">Silkwinds Magazine</a></span>
         </div>
         
@@ -379,7 +379,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             
 			<center>
 				<br>
-				<img width="400" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/webp/adv/gudeg-jogja.webp">
+				<img width="400" alt="Gudeg Jogja | Yogyakarta Night Walking and Food Tours" class="img-fluid rounded" src="/assets/foodtour/adv/gudeg-jogja.jpg">
 				<span class="caption text-muted">Gudeg Jogja</span>
 			</center>
             
@@ -443,63 +443,63 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 				
                 	
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/becak.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/becak.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/5.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/5.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/masangin.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/masangin.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/1.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/1.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/4.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/4.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
         
 				<div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/small-groups.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/small-groups.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
                 
                 <div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/2.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/2.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
                 
                 <div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/6.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/6.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
 				</div>
                 
                 <div class="col-lg-4 col-sm-6">
-					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/webp/gallery/3.webp">
+					<img class="img-fluid shadow p-1 bg-white rounded" alt="New Friend | Yogyakarta Night Walking and Food Tours" src="/assets/foodtour/gallery/3.jpg">
 					<br />
 					<span class="caption text-muted"></span>
 					<div class="mb-4"></div>
@@ -533,7 +533,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             
         	<div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/ratna.webp" >
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/tourguide/ratna.jpg" >
 					<h4>Kalika Prajna</h4>
 					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
@@ -545,7 +545,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             
             <div class="d-flex flex-wrap justify-content-center col-lg-4 col-md-4 mx-auto">
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
-					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/webp/tourguide/vella.webp" >
+					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/tourguide/vella.jpg" >
 					<h4>Vella Sekar</h4>
 					<p class="text-muted">Your Local Friend</p>
 					<br><br>

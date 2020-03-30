@@ -13,7 +13,7 @@
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
-		<a href="/"><img src="/assets/logo/jogjafoodtour.webp" alt="JOGJA FOOD TOUR" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
+		<a href="/"><img src="/assets/logo/jogjafoodtour.png" alt="JOGJA FOOD TOUR" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -47,7 +47,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 
-		<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
+		<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -71,8 +71,8 @@
 			<div class="col-lg-6 col-lg-auto mb-6 mt-4">
             	<!-- ################################################################### -->   
                 <div class="card shadow">
-  				<div class="card-header bg-dark text-white pt-0 pb-1">
-    				<h3><i class="fas fa-shopping-cart"></i> Order Summary</h3>
+  				<div class="card-header bg-dark text-white pb-1">
+    				<h4><i class="fas fa-shopping-cart"></i> Order Summary</h4>
   				</div>
                 
                 @php
@@ -318,13 +318,18 @@ for($z=0;$z<count($lineitems);$z++)
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  <div class="text-right">
-		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.webp">
+		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.png">
 				 </div>
              
                 {!! $widget !!}
                 
                 
-			</div></div>
+                
+                
+                
+                
+			</div>
+            </div>
             </div>
             
         	</div>

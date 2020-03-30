@@ -107,7 +107,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="row col-md-12">
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
-						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<img src="/assets/logo/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
 						<b>INFO AND RESERVATION</b>
 						<br>
@@ -127,7 +127,7 @@ s0.parentNode.insertBefore(s1,s0);
                     <p class="mt-4 text-left text-dark">
 						<b>PAYMENT CHANNEL</b>
                     	<br>
-						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
+						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
 
                         <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>
@@ -146,7 +146,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="row col-md-12">
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
-						<img src="/assets/logo/logo-dark.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<img src="/assets/logo/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
 
 						<b>INFO AND RESERVATION</b>
@@ -168,7 +168,7 @@ s0.parentNode.insertBefore(s1,s0);
                     <p class="mt-4 text-left text-dark">
 						<b>PAYMENT CHANNEL</b>
                     	<br>
-						<img src="/assets/logo/PP_Acceptance.webp" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
+						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
 
                         <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>

@@ -66,7 +66,7 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
 	<div class="container">
 
-<a href="/"><img src="/assets/logo/logo.webp" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
+<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -81,11 +81,11 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.webp'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
-            	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.webp" width="250" -->
+            	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.png" width="250" -->
                 
 				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Enjoy Jogja in Local Ways!</h1>
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
