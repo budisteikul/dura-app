@@ -11,6 +11,8 @@ use App\Models\Rev\rev_widgets;
 use App\Models\Blog\blog_posts;
 use App\Classes\Blog\BlogClass;
 use App\Classes\Rev\BokunClass;
+use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_reviews;
 
 use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Uuid;
@@ -103,9 +105,24 @@ class ExperienceController extends Controller
      */
     public function edit($id)
     {
+		$limit = false;
+		
 		$rev_widgets = rev_widgets::findOrFail($id);
-		$blog_posts = blog_posts::findOrFail($rev_widgets->post_id);
-        return view('rev.experiences.edit',['rev_widgets'=>$rev_widgets,'blog_posts'=>$blog_posts]);
+		$blog_posts = blog_posts::findOrFail($rev_widgets->post_id);		
+				
+				$rev_books = rev_books::where('post_id',$blog_posts->id)->get();
+				if(count($rev_books))
+				{
+					$limit = true;
+				}
+				$rev_reviews = rev_reviews::where('post_id',$blog_posts->id)->get();
+				if(count($rev_reviews))
+				{
+					$limit = true;
+				}
+				
+		
+        return view('rev.experiences.edit',['rev_widgets'=>$rev_widgets,'blog_posts'=>$blog_posts,'limit'=>$limit]);
     }
 
     /**

@@ -9,7 +9,7 @@ class BookClass {
 	public static function get_id($product_id)
 	{
 		$id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
-		$slug = rev_widgets::with('posts')->where('product_id',$product_id)->first();
+		$slug = rev_widgets::with('posts')->where('product_id',$product_id)->orWhere('calendar_id', $product_id)->first();
 		if(isset($slug))
 		{
 			$id = $slug->posts->id;	
@@ -19,7 +19,7 @@ class BookClass {
 	
 	public static function get_slug($id)
 	{
-		$slug = rev_widgets::with('posts')->where('product_id',$id)->first();
+		$slug = rev_widgets::with('posts')->where('product_id',$id)->orWhere('calendar_id', $id)->first();
 		if(isset($slug))
 		{
 			$url = '/tour/'. $slug->posts->slug;	

@@ -64,10 +64,18 @@ function UPDATE()
 	<input type="text" id="title" name="title" class="form-control" value="{{  $blog_posts->title }}" placeholder="Title">
 </div>
 
+@if($limit)
+<div class="form-group">
+	<label for="product_id">product_id :</label>
+	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $rev_widgets->product_id }}" placeholder="product_id" disabled="true">
+</div>
+@else
 <div class="form-group">
 	<label for="product_id">product_id :</label>
 	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $rev_widgets->product_id }}" placeholder="product_id">
 </div>
+@endif
+
 
 <div class="form-group">
 	<label for="calendar_id">calendar_id :</label>

@@ -13,6 +13,8 @@ use Illuminate\Support\Str;
 
 use App\Models\Blog\blog_posts;
 use App\Models\Rev\rev_widgets;
+use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_reviews;
 
 class ExperiencesDataTable extends DataTable
 {
@@ -38,13 +40,36 @@ class ExperiencesDataTable extends DataTable
 					return $title;
 				})
 			->editColumn('product_id', function ($resource) {
-					return Str::limit($resource->product_id,10);
+					$product_id = Str::limit($resource->product_id,10);
+					return $product_id;
 				})
 			->editColumn('calendar_id', function ($resource) {
 					return Str::limit($resource->calendar_id,10);
 				})
 			->addColumn('action', function ($id) {
-				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+				$check_book = false;
+				$check_review = false;
+				$post = blog_posts::find($id->post_id);
+				
+				$rev_books = rev_books::where('post_id',$post->id)->get();
+				if(count($rev_books))
+				{
+					$check_book = true;
+				}
+				$rev_reviews = rev_reviews::where('post_id',$post->id)->get();
+				if(count($rev_reviews))
+				{
+					$check_review = true;
+				}
+				
+				if(!$check_book || !$rev_reviews)
+				{
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+				}
+				else
+				{
+					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button"  class="btn btn-light" disabled="true"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+				}
             })
 			->rawColumns(['action']);
     }
