@@ -65,32 +65,33 @@
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
 				<div style="height:70px;"></div>
-				
-           <div class="card mb-8 shadow p-2">
+			
+			<div class="card mb-8 shadow p-2">
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
-                 <div class="text-right">
-				 </div>
-                 
-                 
-					<div class="row" style="padding-bottom:0px;">
-						<div class="col-lg-12 text-center">
-							<h1 class="section-heading">THANK YOU!</h1>
-							<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-							<h4 class="section-subheading text-muted">
-								
-							</h4>
-						</div>
-					</div>
-					<div class="row col-md-8  mx-auto text-left">
-					<div class="textwidget" style=" min-height:250px;">
-						
-                        <p>
+				 <div class="col-md-12  mx-auto text-left">
+				 <p>
                         <h4>Your booking references is {{ $customer->confirmationCode }}</h4>
+						
 						Thank you for your booking with <b>VERTIKAL TRIP</b>, a confirmation will be sent to your email address.
 						</p>
-                        <br>
+				</div>
+				 </div>
+			</div>
+
+			
+			<div class="row mb-2">
+			<!-- ################################################################### --> 
+			<div class="col-lg-6 col-lg-auto mb-6 mt-4">
+            	  
+                <div class="card shadow">
+					<div class="card-header bg-dark text-white pb-1">
+						<h4><i class="fas fa-user-tie"></i> Customer Info</h4>
+					</div>
+                
+					<div class="card-body">
+                
+                        
                         <p>
-                        <h4>Customer info</h4>
 						<h3>Full Name</h3>
 						{{ $customer->firstName }} {{ $customer->lastName }}
                         <h3>Phone</h3>
@@ -98,24 +99,61 @@
                         <h3>Email</h3>
 						{{ $customer->email }}
                         </p>
-                        <br>
-						<p>
-                        <h4>Travel Documents</h4>
+								
+					</div>
+					
+				</div>
+			</div>
+			<!-- ################################################################### -->
+			<div class="col-lg-6 col-lg-auto mb-6 mt-4">
+            	  
+                <div class="card shadow">
+					<div class="card-header bg-dark text-white pb-1">
+						<h4><i class="fas fa-file"></i> Travel Documents</h4>
+					</div>
+                
+					<div class="card-body">
+                
+                        <p>
 						<h3>Receipt</h3>
-						<a target="_blank" href={{ $link }}><i class="fas fa-file-pdf"></i> Invoice.pdf</a>
+						<a target="_blank" class="text-danger" href=/booking/invoice/{{ $customer->confirmationCode }}><i class="far fa-file-pdf"></i> Invoice-{{ $customer->confirmationCode }}.pdf</a>
 						<h3>Experience tickets</h3>
                         @foreach($rev_shoppingcarts as $rev_shoppingcart)
-                        <a target="_blank" href=/booking/ticket/{{ $rev_shoppingcart->productConfirmationCode }}><i class="fas fa-file-pdf"></i> Ticket-{{ $rev_shoppingcart->productConfirmationCode }}.pdf</a>
+                        <a target="_blank" class="text-danger" href=/booking/ticket/{{ $rev_shoppingcart->productConfirmationCode }}><i class="far fa-file-pdf"></i> Ticket-{{ $rev_shoppingcart->productConfirmationCode }}.pdf</a>
                         <br>
                         @endforeach
                         </p>
-                        
-                        
-                        
+								
 					</div>
-					</div>
+					
+				</div>
 			</div>
+			<!-- ################################################################### -->			
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+        
 
 			
 				<div style="height:40px;"></div>		

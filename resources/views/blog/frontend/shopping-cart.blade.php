@@ -65,7 +65,7 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
-				<div style="height:70px;"></div>
+				<div style="height:56px;"></div>
 			
             <div class="row mb-2">  
 			<div class="col-lg-6 col-lg-auto mb-6 mt-4">

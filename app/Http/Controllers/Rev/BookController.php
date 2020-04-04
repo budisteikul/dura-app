@@ -344,15 +344,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 
     
 	
-	public function get_ticket($id)
-    {
-		$contents = BokunClass::get_ticket($id);
-		header('Cache-Control: public'); 
-		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="ticket-'.$id.'.pdf"');
-		header('Content-Length: '.strlen($contents));
-		echo $contents;
-	}
+	
 	
 	
 	
@@ -481,20 +473,26 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		}
 		
 		
-		$link = '/booking/invoice?sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
 		
-        return view('page.receipt')->with(['link'=>$link,'rev_shoppingcarts'=>$rev_shoppingcarts,'customer'=>$customer]);
+        return view('page.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts,'customer'=>$customer]);
     }
 	
-	public function get_invoice(Request $request)
+	public function get_invoice($id)
     {
-		$bookingId = $request->input('bookingId');
-		$sessionId = $request->input('sessionId');
-		$bookingHash = $request->input('bookingHash');
-		$contents = BokunClass::get_invoice($bookingId);
+		$contents = BokunClass::get_invoice($id);
 		header('Cache-Control: public'); 
 		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="INV-'.$bookingId.'.pdf"');
+		header('Content-Disposition: attachment; filename="Invoice-'.$bookingId.'.pdf"');
+		header('Content-Length: '.strlen($contents));
+		echo $contents;
+	}
+	
+	public function get_ticket($id)
+    {
+		$contents = BokunClass::get_ticket($id);
+		header('Cache-Control: public'); 
+		header('Content-type: application/pdf');
+		header('Content-Disposition: attachment; filename="Ticket-'.$id.'.pdf"');
 		header('Content-Length: '.strlen($contents));
 		echo $contents;
 	}
