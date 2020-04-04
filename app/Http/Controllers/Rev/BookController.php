@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Classes\Rev\BokunClass;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 class BookController extends Controller
 {
@@ -361,6 +363,16 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		
 		
 		//========================================================================
+		
+		$lastsessionBooking = $request->session()->get('sessionBooking');
+		if($request->session()->has('sessionBooking')){
+			$sessionBooking = $request->session()->get('sessionBooking');
+		}else{
+			$sessionBooking = Uuid::uuid4()->toString();
+			$request->session()->put('sessionBooking',$sessionBooking);
+		}
+		
+		
 		rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		$activity = $contents->activityBookings;
 		for($i=0;$i<count($activity);$i++)
@@ -368,6 +380,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_shoppingcarts = new rev_shoppingcarts();
 			$rev_shoppingcarts->sessionId = $id;
 			$rev_shoppingcarts->bookingId = $activity[$i]->id;
+			$rev_shoppingcarts->sessionBooking = $sessionBooking;
 			$rev_shoppingcarts->productConfirmationCode = $activity[$i]->productConfirmationCode;
 			$rev_shoppingcarts->bookingStatus = 'CART';
 			$rev_shoppingcarts->save();
@@ -414,8 +427,9 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 })(document, \'script\');
 </script>';
 		}
-		//print_r($contents);
-		//exit();
+		
+		
+		
 		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents,'widget'=>$widget]);
 	}
 	
@@ -425,27 +439,11 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		$sessionId = $request->input('sessionId');
 		$bookingHash = $request->input('bookingHash');
 		
-		
-		//https://widgets.bokuntest.com/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&lang=en&ccy=USD&hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b&sessionId=4351b39d-bd80-41da-afdf-ca9046d3bce9&bookingId=74714&bookingHash=JDJhJDEwJDFDVEVKaldkQ3g1WlJCZk91WjZLdWViemE1Qzl2cXJTSlNWcEM4aHF1U0VIMUwvQm9sRy5t
-		
-		//$url = 'https://widgets.bokuntest.com/widgets/2529?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&lang=en&ccy=USD&hash=w2529_d130060f_181c_43cd_911c_a0475b13de4b&sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
-		
-		//$url = 'https://widgets.bokuntest.com/widgets/booking-receipt/74714?bookingHash=JDJhJDEwJDFDVEVKaldkQ3g1WlJCZk91WjZLdWViemE1Qzl2cXJTSlNWcEM4aHF1U0VIMUwvQm9sRy5t';
-		
-		//$ch = curl_init($url);
-		//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		//curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
-		//$html = curl_exec($ch);
-		//curl_close($ch);
-		//===============================================
-		
-		//$dom = new \DOMDocument();
-		//$dom->loadHTML($html);
-		//$xpath = new DOMXPath($dom);
-		//$div = $xpath->query('//div[@class="customer-info"]');
-		//$div = $div->item(0);
-		//echo $dom->saveXML($div);
-		
+		if($request->session()->has('sessionBooking')){
+			$sessionBooking = $request->session()->get('sessionBooking');
+			rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->update(['bookingStatus'=>'CONFIRMED','id'=>$bookingId]);
+			$request->session()->forget('sessionBooking');
+		}
 		
 		
 		$link = '/booking/invoice?sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
