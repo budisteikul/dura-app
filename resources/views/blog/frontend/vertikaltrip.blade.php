@@ -87,7 +87,7 @@
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.png" width="250" -->
                 
-				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Enjoy Jogja in Local Ways!</h1>
+				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<!-- p class="text-faded">
                     Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
