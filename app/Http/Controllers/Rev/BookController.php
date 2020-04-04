@@ -444,11 +444,12 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		}
 		
 		
-		
-		
+		//print_r($rev_shoppingcarts);
+		//exit();
 		$customer = new \StdClass();
 		foreach($rev_shoppingcarts as $rev_shoppingcart)
 		{
+			
 			$contents = BokunClass::get_productbooking($rev_shoppingcart->bookingId);
 				
 				
@@ -465,6 +466,8 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 					'phoneNumber'=>$contents->parentBooking->customer->phoneNumberCountryCode . $contents->parentBooking->customer->phoneNumber
 				]);
 			
+				$customer->bookingId = $contents->parentBookingId;
+				$customer->sessionId = $sessionId;
 				$customer->confirmationCode = $contents->confirmationCode;
 				$customer->firstName = $contents->parentBooking->customer->firstName;
 				$customer->lastName = $contents->parentBooking->customer->lastName;
@@ -477,23 +480,31 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
         return view('page.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts,'customer'=>$customer]);
     }
 	
-	public function get_invoice($id)
+	public function get_invoice($id="",$sessionId="")
     {
-		$contents = BokunClass::get_invoice($id);
-		header('Cache-Control: public'); 
-		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="Invoice-'.$bookingId.'.pdf"');
-		header('Content-Length: '.strlen($contents));
-		echo $contents;
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('parrentId',$id)->get();
+		if(count($rev_shoppingcarts))
+		{
+			$contents = BokunClass::get_invoice($id);
+			header('Cache-Control: public'); 
+			header('Content-type: application/pdf');
+			header('Content-Disposition: attachment; filename="Invoice-'.$id.'.pdf"');
+			header('Content-Length: '.strlen($contents));
+			echo $contents;
+		}
 	}
 	
-	public function get_ticket($id)
+	public function get_ticket($id="",$sessionId="")
     {
-		$contents = BokunClass::get_ticket($id);
-		header('Cache-Control: public'); 
-		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="Ticket-'.$id.'.pdf"');
-		header('Content-Length: '.strlen($contents));
-		echo $contents;
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('productConfirmationCode',$id)->get();
+		if(count($rev_shoppingcarts))
+		{
+			$contents = BokunClass::get_ticket($id);
+			header('Cache-Control: public'); 
+			header('Content-type: application/pdf');
+			header('Content-Disposition: attachment; filename="Ticket-'.$id.'.pdf"');
+			header('Content-Length: '.strlen($contents));
+			echo $contents;
+		}
 	}
 }
