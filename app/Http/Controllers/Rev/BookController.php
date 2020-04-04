@@ -349,7 +349,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$contents = BokunClass::get_ticket($id);
 		header('Cache-Control: public'); 
 		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="'.$id.'.pdf"');
+		header('Content-Disposition: attachment; filename="ticket-'.$id.'.pdf"');
 		header('Content-Length: '.strlen($contents));
 		echo $contents;
 	}
@@ -441,20 +441,49 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		
 		if($request->session()->has('sessionBooking')){
 			$sessionBooking = $request->session()->get('sessionBooking');
-			rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->update(['bookingStatus'=>'CONFIRMED','id'=>$bookingId]);
+			rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->update(['bookingStatus'=>'CONFIRMED','parrentId'=>$bookingId]);
 			$request->session()->forget('sessionBooking');
 		}
 		
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CONFIRMED')->where('id',$bookingId)->get();
-		
-		
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CONFIRMED')->where('parrentId',$bookingId)->get();
 		if(!count($rev_shoppingcarts))
 		{
 			return redirect('/');
 		}
 		
+		
+		
+		
+		$customer = new \StdClass();
+		foreach($rev_shoppingcarts as $rev_shoppingcart)
+		{
+			$contents = BokunClass::get_productbooking($rev_shoppingcart->bookingId);
+				
+				
+				rev_shoppingcarts::where('id', $rev_shoppingcart->id)
+				->update([
+					'parrentId'=>$contents->parentBookingId,
+					'parrentConfirmationCode'=>$contents->confirmationCode,
+					'title'=>$contents->title,
+					'rateTitle'=>$contents->rateTitle,
+					
+					'firstName'=>$contents->parentBooking->customer->firstName,
+					'lastName'=>$contents->parentBooking->customer->lastName,
+					'email'=>$contents->parentBooking->customer->email,
+					'phoneNumber'=>$contents->parentBooking->customer->phoneNumberCountryCode . $contents->parentBooking->customer->phoneNumber
+				]);
+			
+				$customer->confirmationCode = $contents->confirmationCode;
+				$customer->firstName = $contents->parentBooking->customer->firstName;
+				$customer->lastName = $contents->parentBooking->customer->lastName;
+				$customer->email = $contents->parentBooking->customer->email;
+				$customer->phoneNumber = $contents->parentBooking->customer->phoneNumberCountryCode . $contents->parentBooking->customer->phoneNumber;
+		}
+		
+		
 		$link = '/booking/invoice?sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
-        return view('page.receipt')->with(['link'=>$link]);
+		
+        return view('page.receipt')->with(['link'=>$link,'rev_shoppingcarts'=>$rev_shoppingcarts,'customer'=>$customer]);
     }
 	
 	public function get_invoice(Request $request)

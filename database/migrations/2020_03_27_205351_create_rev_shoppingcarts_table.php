@@ -16,10 +16,19 @@ class CreateRevShoppingcartsTable extends Migration
         Schema::create('rev_shoppingcarts', function (Blueprint $table) {
             $table->string('id')->primary();
 			$table->string('sessionId')->nullable();
-			$table->string('bookingId')->nullable();
 			$table->string('sessionBooking')->nullable();
+			$table->string('parrentId')->nullable();
+			$table->string('parrentConfirmationCode')->nullable();
+			$table->string('bookingId')->nullable();
 			$table->string('productConfirmationCode')->nullable();
 			$table->string('bookingStatus')->nullable();
+			$table->string('title')->nullable();
+			$table->string('rateTitle')->nullable();
+			
+			$table->string('firstName')->nullable();
+			$table->string('lastName')->nullable();
+			$table->string('email')->nullable();
+			$table->string('phoneNumber')->nullable();
 			
             $table->timestamps();
 			$table->softDeletes();

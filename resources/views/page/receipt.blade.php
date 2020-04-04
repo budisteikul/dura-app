@@ -83,13 +83,35 @@
 					</div>
 					<div class="row col-md-8  mx-auto text-left">
 					<div class="textwidget" style=" min-height:250px;">
-						<p>
+						
+                        <p>
+                        <h4>Your booking references is {{ $customer->confirmationCode }}</h4>
 						Thank you for your booking with <b>VERTIKAL TRIP</b>, a confirmation will be sent to your email address.
 						</p>
+                        <br>
+                        <p>
+                        <h4>Customer info</h4>
+						<h3>Full Name</h3>
+						{{ $customer->firstName }} {{ $customer->lastName }}
+                        <h3>Phone</h3>
+						{{ $customer->phoneNumber }}
+                        <h3>Email</h3>
+						{{ $customer->email }}
+                        </p>
+                        <br>
 						<p>
-						Your booking receipt is below.<br>
-						<a target="_blank" class="btn btn-danger mt-2" href={{ $link }}><i class="fas fa-file-invoice"></i> Download Invoice</a>
-						</p>
+                        <h4>Travel Documents</h4>
+						<h3>Receipt</h3>
+						<a target="_blank" href={{ $link }}><i class="fas fa-file-pdf"></i> Invoice.pdf</a>
+						<h3>Experience tickets</h3>
+                        @foreach($rev_shoppingcarts as $rev_shoppingcart)
+                        <a target="_blank" href=/booking/ticket/{{ $rev_shoppingcart->productConfirmationCode }}><i class="fas fa-file-pdf"></i> Ticket-{{ $rev_shoppingcart->productConfirmationCode }}.pdf</a>
+                        <br>
+                        @endforeach
+                        </p>
+                        
+                        
+                        
 					</div>
 					</div>
 			</div>

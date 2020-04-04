@@ -104,6 +104,5 @@ class BokunClass {
 		return self::get_connect('/booking.json/activity-booking/'.$id);
 	}
 	
-	
 }
 ?>
