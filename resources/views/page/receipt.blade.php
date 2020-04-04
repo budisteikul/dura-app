@@ -92,7 +92,7 @@
                 
                         
                         <p>
-						<h3>Full Name</h3>
+						<h3>Name</h3>
 						{{ $customer->firstName }} {{ $customer->lastName }}
                         <h3>Phone</h3>
 						{{ $customer->phoneNumber }}
