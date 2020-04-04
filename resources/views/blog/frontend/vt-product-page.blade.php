@@ -125,8 +125,7 @@
           <h3 class="mt-4">What do I need to bring?</h3>
           <?php
           	$requirements = $contents->requirements;
-            $requirements = str_ireplace("from Wandernesia","",$requirements);
-			$requirements = str_ireplace("Wandernesia","",$requirements);
+            $requirements = str_ireplace("Wandernesia","Vertikal Trip",$requirements);
           ?>
           {!!$requirements!!}
         @endif
@@ -135,7 +134,11 @@
   <div>
         @if($contents->attention!="")
           <h3 class="mt-4">Please note</h3>
-          {!!$contents->attention!!}
+          <?php
+          	$attention = $contents->attention;
+            $attention = str_ireplace("Wandernesia","Vertikal Trip",$attention);
+          ?>
+          {!!$attention!!}
         @endif
   </div>
   
@@ -259,7 +262,7 @@
 				<br>
 				<i class="fab fa-paypal text-danger mb-4"></i> Secure Payments
             </div>
- 				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
+ 				 <div id="bookingframe" class="card-body" style="padding-left:0px;padding-right:0px;padding-top:20px;padding-bottom:15px;">
     				
      
 					{!! $calendar !!}
