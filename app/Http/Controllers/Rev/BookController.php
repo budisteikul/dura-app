@@ -482,7 +482,7 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 	
 	public function get_invoice($id="",$sessionId="")
     {
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('parrentId',$id)->get();
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('parrentId',$id)->where('bookingStatus','CONFIRMED')->get();
 		if(count($rev_shoppingcarts))
 		{
 			$contents = BokunClass::get_invoice($id);
@@ -496,7 +496,7 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 	
 	public function get_ticket($id="",$sessionId="")
     {
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('productConfirmationCode',$id)->get();
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('productConfirmationCode',$id)->where('bookingStatus','CONFIRMED')->get();
 		if(count($rev_shoppingcarts))
 		{
 			$contents = BokunClass::get_ticket($id);
