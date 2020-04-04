@@ -32,7 +32,7 @@
 		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 			Yogyakarta Night Walking and Food Tours
 		@else
-			Book Amazing Things to do with VERTIKAL TRIP
+			Book Amazing Things to Do With VERTIKAL TRIP
 		@endif
 	@endif
 	</title>
