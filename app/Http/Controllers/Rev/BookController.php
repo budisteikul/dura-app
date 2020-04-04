@@ -445,6 +445,13 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 			$request->session()->forget('sessionBooking');
 		}
 		
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CONFIRMED')->where('id',$bookingId)->get();
+		
+		
+		if(!count($rev_shoppingcarts))
+		{
+			return redirect('/');
+		}
 		
 		$link = '/booking/invoice?sessionId='.$sessionId.'&bookingId='.$bookingId.'&bookingHash='. $bookingHash;
         return view('page.receipt')->with(['link'=>$link]);

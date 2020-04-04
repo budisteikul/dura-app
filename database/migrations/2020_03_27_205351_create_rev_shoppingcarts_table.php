@@ -14,8 +14,7 @@ class CreateRevShoppingcartsTable extends Migration
     public function up()
     {
         Schema::create('rev_shoppingcarts', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-			
+            $table->string('id')->primary();
 			$table->string('sessionId')->nullable();
 			$table->string('bookingId')->nullable();
 			$table->string('sessionBooking')->nullable();
