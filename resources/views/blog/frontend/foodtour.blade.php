@@ -120,7 +120,7 @@
 
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="aaa.com")
 <noscript><a href="https://jogjafoodtour.eventbrite.com" rel="noopener noreferrer" target="_blank"></noscript>
-<button class="btn btn-theme text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
+<button class="btn btn-danger text-white" id="eventbrite-widget-modal-trigger-77732854059" type="button" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></button>
 <noscript></a>Book now on Eventbrite</noscript>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
@@ -137,7 +137,7 @@
     });
 </script>
 @else
-<a class="btn btn-theme text-white " href="https://www.vertikaltrip.com/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
+<a class="btn btn-danger text-white " href="https://www.vertikaltrip.com/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
 
 @endif
 
@@ -226,7 +226,7 @@ Vertikal Trip Team
           <div class="mt-5 mb-2">
             <i class="fas fa-4x fa-phone-alt text-secondary mb-2"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
-            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-theme" href="https://wa.me/+6285743112112">+6285743112112</a></p>
+            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
@@ -385,8 +385,8 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
             
 		
         	<br>
-            <div class="bd-callout bd-callout-theme w-100" style="margin-right:5px;">
-						<span style="width:30px;" class="fa fa-map-marked-alt text-theme"></span><strong class="text-theme"> Meeting/Redemption  point</strong><br>
+            <div class="bd-callout bd-callout-danger w-100" style="margin-right:5px;">
+						<span style="width:30px;" class="fa fa-map-marked-alt text-danger"></span><strong class="text-danger"> Meeting/Redemption  point</strong><br>
                         <br>
                         - You will receive a confirmation email and voucher instantly after booking
 						<br>
@@ -535,7 +535,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 				<div class="team-member" style="margin-bottom:5px; margin-left:30px; margin-right:30px;">
 					<img alt="Tour Guide | Yogyakarta Night Walking and Food Tours" class="mx-auto rounded-circle" width="200" src="/assets/foodtour/tourguide/ratna.jpg" >
 					<h4>Kalika Prajna</h4>
-					<p class="text-muted">Your Local Friend<br /><span class="text-theme">On duty</span></p>
+					<p class="text-muted">Your Local Friend<br /><span class="text-danger">On duty</span></p>
                     
 					<br><br>
 				</div>
@@ -567,10 +567,10 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 			
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
-                    <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReviewEdit-g14782503-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Yogyakarta_Region_Java.html" target="_blank" class="text-theme"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
+                    <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReviewEdit-g14782503-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Yogyakarta_Region_Java.html" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
 					<strong> Rating :</strong>
 					<span class="text-warning">
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-theme" itemprop="ratingValue">(4.9)</span>
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
 					</span>‎
 					<br>
 					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
