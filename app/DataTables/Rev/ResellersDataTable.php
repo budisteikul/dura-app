@@ -4,6 +4,8 @@ namespace App\DataTables\Rev;
 
 use App\Models\Rev\rev_resellers;
 use Yajra\DataTables\Services\DataTable;
+use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_reviews;
 
 class ResellersDataTable extends DataTable
 {
@@ -18,7 +20,21 @@ class ResellersDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->addColumn('action', function ($id) {
-						if($id->status==1)
+				$check_book = false;
+				$check_review = false;
+				
+				$rev_books = rev_books::where('source',$id->id)->get();
+				if(count($rev_books))
+				{
+					$check_book = true;
+				}
+				$rev_reviews = rev_reviews::where('source',$id->id)->get();
+				if(count($rev_reviews))
+				{
+					$check_review = true;
+				}
+				
+					if($id->status==1)
 						{
 							$label = ""	;
 							$status = 0;
@@ -37,15 +53,29 @@ class ResellersDataTable extends DataTable
 							$disabled = "";
 						}
 						
-				
-				
-				return '<div class="btn-toolbar justify-content-end">
+				if($check_book || $check_review)
+				{
+					return '<div class="btn-toolbar justify-content-end">
 						
 						<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $id->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>
+						&nbsp;
+						<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button></div>
 						
+						</div>';
+				}
+				else
+				{
+				//==============================================================================
+						
+					return '<div class="btn-toolbar justify-content-end">
+						
+						<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $id->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>
+						&nbsp;
 						<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
 						
 						</div>';
+				//====================================================
+				}
             })
 			->rawColumns(['action']);
     }

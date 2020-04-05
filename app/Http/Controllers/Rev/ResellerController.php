@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\DataTables\Rev\ResellersDataTable;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Rev\rev_resellers;
+use App\Models\Rev\rev_books;
+use App\Models\Rev\rev_reviews;
 
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
@@ -89,8 +91,21 @@ class ResellerController extends Controller
      */
     public function edit($id)
     {
+		$limit = false;
+		
+				$rev_books = rev_books::where('source',$id)->get();
+				if(count($rev_books))
+				{
+					$limit = true;
+				}
+				$rev_reviews = rev_reviews::where('source',$id)->get();
+				if(count($rev_reviews))
+				{
+					$limit = true;
+				}
+		
         $rev_resellers = rev_resellers::findOrFail($id);
-        return view('rev.resellers.edit',['rev_resellers'=>$rev_resellers]);
+        return view('rev.resellers.edit',['rev_resellers'=>$rev_resellers,'limit'=>$limit]);
     }
 
     /**

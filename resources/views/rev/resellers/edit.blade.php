@@ -61,10 +61,17 @@ function UPDATE()
 	<input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{ $rev_resellers->name }}">
 </div>
 
+@if($limit)
+<div class="form-group">
+	<label for="name">uuid :</label>
+	<input type="text" id="uuid" name="uuid" class="form-control" placeholder="uuid" value="{{ $rev_resellers->id }}" disabled="true">
+</div>
+@else
 <div class="form-group">
 	<label for="name">uuid :</label>
 	<input type="text" id="uuid" name="uuid" class="form-control" placeholder="uuid" value="{{ $rev_resellers->id }}">
 </div>
+@endif
      
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
 <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>

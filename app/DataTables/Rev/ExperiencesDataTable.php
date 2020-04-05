@@ -59,7 +59,7 @@ class ExperiencesDataTable extends DataTable
 					$check_review = true;
 				}
 				
-				if(!$check_book || !$rev_reviews)
+				if(!$check_book || !$check_review)
 				{
 					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
 				}
