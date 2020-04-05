@@ -262,7 +262,7 @@
 				<br>
 				<i class="fab fa-paypal text-danger mb-4"></i> Secure Payments
             </div>
- 				 <div id="bookingframe" class="card-body" style="padding-left:0px;padding-right:0px;padding-top:20px;padding-bottom:15px;">
+ 				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     				
      
 					{!! $calendar !!}

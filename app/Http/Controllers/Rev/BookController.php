@@ -301,13 +301,17 @@ class BookController extends Controller
         if(!isset($widget)){
 			return redirect("/");
         }
+		
+		$bookingChannelUUID = '93a137f0-bb95-4ea0-b4a8-9857824a2e79';
+		$rev_resellers = rev_resellers::where('status',1)->first();
+		if(isset($rev_resellers)) $bookingChannelUUID = $rev_resellers->id;
 		if(env("APP_ENV")=="production")
 		{
 			$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
+  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
@@ -326,7 +330,7 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 (function(d, t) {
   var host = \'widgets.bokuntest.com\';
-  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
+  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
@@ -380,14 +384,16 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		//========================================================================
 		
 		
-		
+		$bookingChannelUUID = '93a137f0-bb95-4ea0-b4a8-9857824a2e79';
+		$rev_resellers = rev_resellers::where('status',1)->first();
+		if(isset($rev_resellers)) $bookingChannelUUID = $rev_resellers->id;
 		if(env("APP_ENV")=="production")
 		{
 			$widget = '<div id="bokun-w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2">Loading...</div><script type="text/javascript">
 var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111929?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2\';
+  var frameUrl = \'https://\' + host + \'/widgets/111929?bookingChannelUUID='.$bookingChannelUUID.'&amp;lang=en&amp;ccy=USD&amp;hash=w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
@@ -406,7 +412,7 @@ var w111929_2cb5f0f5_dc73_4c7a_ac95_85cca45165a2;
 var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 (function(d, t) {
   var host = \'widgets.bokuntest.com\';
-  var frameUrl = \'https://\' + host + \'/widgets/2530?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4&amp;lang=en&amp;ccy=USD&amp;hash=w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0\';
+  var frameUrl = \'https://\' + host + \'/widgets/2530?bookingChannelUUID='.$bookingChannelUUID.'&amp;lang=en&amp;ccy=USD&amp;hash=w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {

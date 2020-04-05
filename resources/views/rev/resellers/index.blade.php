@@ -59,6 +59,24 @@
    		});
 		
 	}
+	
+	function STATUS(id, status)
+	{
+		var table = $('#dataTableBuilder').DataTable();
+		$.ajax({
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+        	"update":status
+        },
+		type: 'PUT',
+		url: "{{ route('resellers.index') }}/"+ id
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				table.ajax.reload( null, false );
+			}
+		});
+	}
 	</script>
 @endpush
 <div class="row justify-content-center">

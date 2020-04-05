@@ -17,7 +17,6 @@ function UPDATE()
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"title": $('#title').val(),
 			"product_id": $('#product_id').val(),
-			"calendar_id": $('#calendar_id').val(),
         },
 		type: 'PUT',
 		url: '{{ route('experiences.update',$rev_widgets->id) }}'
@@ -75,12 +74,6 @@ function UPDATE()
 	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $rev_widgets->product_id }}" placeholder="product_id">
 </div>
 @endif
-
-
-<div class="form-group">
-	<label for="calendar_id">calendar_id :</label>
-	<input type="text" id="calendar_id" name="calendar_id" class="form-control" value="{{  $rev_widgets->calendar_id }}" placeholder="calendar_id">
-</div>
 
 
      

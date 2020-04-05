@@ -18,7 +18,34 @@ class ResellersDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->addColumn('action', function ($id) {
-				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+						if($id->status==1)
+						{
+							$label = ""	;
+							$status = 0;
+							$button = "btn-secondary";
+							$icon = "fa-toggle-on";
+							$text = " ";
+							$disabled = "";
+						}
+						else
+						{
+							$label = ""	;
+							$status = 1;
+							$button = "btn-light";
+							$icon = "fa-toggle-off";
+							$text = " ";
+							$disabled = "";
+						}
+						
+				
+				
+				return '<div class="btn-toolbar justify-content-end">
+						
+						<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $id->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>
+						
+						<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
+						
+						</div>';
             })
 			->rawColumns(['action']);
     }
@@ -73,7 +100,7 @@ class ResellersDataTable extends DataTable
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "name", "title" => "Name", "data" => "name"],
-			["name" => "commission", "title" => "Commission (%)", "data" => "commission"]
+			["name" => "id", "title" => "Channel UUID", "data" => "id"],
         ];
     }
 

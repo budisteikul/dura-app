@@ -9,6 +9,9 @@ use App\DataTables\Rev\ResellersDataTable;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Rev\rev_resellers;
 
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+
 class ResellerController extends Controller
 {
     /**
@@ -41,7 +44,6 @@ class ResellerController extends Controller
     {
         $validator = Validator::make($request->all(), [
           	'name' => 'required|string|max:255',
-			'commission' => 'required|numeric'
        	]);
         
        	if ($validator->fails()) {
@@ -50,13 +52,16 @@ class ResellerController extends Controller
        	}
 		
 		$name =  $request->input('name');
-		$commission =  $request->input('commission');
-		$link =  $request->input('link');
+		$uuid =  $request->input('uuid');
+		
+		if($uuid=="") $uuid = Uuid::uuid4()->toString();
 		
 		$rev_resellers = new rev_resellers();
 		$rev_resellers->name = $name;
-		$rev_resellers->commission = $commission;
-		$rev_resellers->link = $link;
+		$rev_resellers->save();
+		
+		$rev_resellers = rev_resellers::findOrFail($rev_resellers->id);
+		$rev_resellers->id = $uuid;
 		$rev_resellers->save();
 		
 		return response()->json([
@@ -97,10 +102,32 @@ class ResellerController extends Controller
      */
     public function update(Request $request, $id)
     {
+		if($request->input('update')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'update' => 'in:0,1'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+			
+			rev_resellers::query()->update(['status'=>0]);
+			$rev_resellers = rev_resellers::find($id);
+			$rev_resellers->status = $request->input('update');
+			$rev_resellers->save();
+			
+			
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+		}
+		
         $validator = Validator::make($request->all(), [
           	'name' => 'required|string|max:255',
 			'uuid' => 'required|string|max:255',
-			'commission' => 'required|numeric'
        	]);
         
        	if ($validator->fails()) {
@@ -109,15 +136,11 @@ class ResellerController extends Controller
        	}
 		
 		$name =  $request->input('name');
-		$commission =  $request->input('commission');
-		$link =  $request->input('link');
 		$uuid =  $request->input('uuid');
 		
 		$rev_resellers = rev_resellers::findOrFail($id);
 		$rev_resellers->id = $uuid;
 		$rev_resellers->name = $name;
-		$rev_resellers->commission = $commission;
-		$rev_resellers->link = $link;
 		$rev_resellers->save();
 		
 		return response()->json([

@@ -43,9 +43,6 @@ class ExperiencesDataTable extends DataTable
 					$product_id = Str::limit($resource->product_id,10);
 					return $product_id;
 				})
-			->editColumn('calendar_id', function ($resource) {
-					return Str::limit($resource->calendar_id,10);
-				})
 			->addColumn('action', function ($id) {
 				$check_book = false;
 				$check_review = false;
@@ -125,7 +122,6 @@ class ExperiencesDataTable extends DataTable
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "post", "title" => "post", "data" => "post"],
 			["name" => "product_id", "title" => "product_id", "data" => "product_id"],
-			["name" => "calendar_id", "title" => "calendar_id", "data" => "calendar_id"],
         ];
     }
 

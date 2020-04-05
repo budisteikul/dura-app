@@ -18,7 +18,6 @@ function STORE()
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"title": $('#title').val(),
 			"product_id": $('#product_id').val(),
-			"calendar_id": $('#calendar_id').val(),
         },
 		type: 'POST',
 		url: '{{ route('experiences.store') }}'
@@ -73,10 +72,6 @@ function STORE()
 	<input type="text" id="product_id" name="product_id" class="form-control" placeholder="product_id">
 </div>
 
-<div class="form-group">
-	<label for="calendar_id">calendar_id :</label>
-	<input type="text" id="calendar_id" name="calendar_id" class="form-control" placeholder="calendar_id">
-</div>
 
 
 

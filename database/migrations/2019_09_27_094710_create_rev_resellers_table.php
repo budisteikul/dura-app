@@ -14,11 +14,10 @@ class CreateRevResellersTable extends Migration
     public function up()
     {
         Schema::create('rev_resellers', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->string('id')->primary();
 			
 			$table->string('name')->nullable();
-			$table->string('link')->nullable();
-			$table->float('commission')->nullable();
+			$table->integer('status')->nullable();
 			
             $table->timestamps();
 			$table->softDeletes();

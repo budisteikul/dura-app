@@ -16,9 +16,7 @@ function UPDATE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
-			"link": $('#link').val(),
 			"uuid": $('#uuid').val(),
-			"commission": $('#commission').val()
         },
 		type: 'PUT',
 		url: '{{ route('resellers.update',$rev_resellers->id) }}'
@@ -66,16 +64,6 @@ function UPDATE()
 <div class="form-group">
 	<label for="name">uuid :</label>
 	<input type="text" id="uuid" name="uuid" class="form-control" placeholder="uuid" value="{{ $rev_resellers->id }}">
-</div>
-
-<div class="form-group">
-	<label for="link">link :</label>
-	<input type="text" id="link" name="link" class="form-control" placeholder="link" value="{{ $rev_resellers->link }}">
-</div>
-
-<div class="form-group">
-	<label for="commission">commission :</label>
-	<input type="number" step="0.01" id="commission" name="commission" class="form-control" placeholder="commission" value="{{ $rev_resellers->commission }}">
 </div>
      
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>

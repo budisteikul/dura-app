@@ -17,8 +17,7 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
-			"link": $('#link').val(),
-			"commission": $('#commission').val()
+			"uuid": $('#uuid').val(),
         },
 		type: 'POST',
 		url: '{{ route('resellers.store') }}'
@@ -68,13 +67,8 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="link">link :</label>
-	<input type="text" id="link" name="link" class="form-control" placeholder="link">
-</div>
-
-<div class="form-group">
-	<label for="commission">commission :</label>
-	<input type="number" step="0.01" id="commission" name="commission" class="form-control" placeholder="commission">
+	<label for="uuid">uuid :</label>
+	<input type="text" id="uuid" name="uuid" class="form-control" placeholder="uuid">
 </div>
 
 

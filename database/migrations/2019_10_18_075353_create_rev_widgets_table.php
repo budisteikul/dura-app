@@ -20,8 +20,7 @@ class CreateRevWidgetsTable extends Migration
       			->references('id')->on('blog_posts')
       			->onDelete('cascade')->onUpdate('cascade');
 			
-			$table->longText('product_id')->nullable();
-			$table->longText('calendar_id')->nullable();
+			$table->integer('product_id')->nullable();
 				
 			$table->timestamps();
 			$table->softDeletes();
