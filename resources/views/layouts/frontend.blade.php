@@ -186,7 +186,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
 					</p>
                     <p class="mt-4 text-left text-dark">
-                    <div style="margin-bottom:4px;">
+                    <div style="margin-bottom:5px;">
 						<b>FOLLOW US</b>
 					</div>
                     <div>
