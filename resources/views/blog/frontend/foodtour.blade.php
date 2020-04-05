@@ -210,35 +210,35 @@ Vertikal Trip Team
 
 
 <!-- Services -->
-  <section class="page-section" id="services" style="background-color:#FFFFFF">
+  <section class="page-section bg-light" id="services">
     <div class="container">
-    <div style="height:45px;"></div>
+    <div style="height:25px;"></div>
       
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fa fa-4x fa-ticket-alt text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fa fa-4x fa-ticket-alt text-danger mb-2"></i>
             <h3 class="h4 mb-2">Instant Booking</h3>
             <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-phone-alt text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fas fa-4x fa-phone-alt text-danger mb-2"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
             <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-history text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fas fa-4x fa-history text-danger mb-2"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
-            <p class="text-muted mb-0">You can cancel the booking anytime up to 24 hours before your experience!</p>
+            <p class="text-muted mb-0">Have your plans changed? No worries! You can cancel the booking anytime up to 24 hours before your experience!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fab fa-4x fa-paypal text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fab fa-4x fa-paypal text-danger mb-2"></i>
             <h3 class="h4 mb-2">Secure Payments</h3>
             <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
           </div>
@@ -561,44 +561,26 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 </section>
 
 <section id="review" style="background-color:#ffffff">
-<div class="container">
+<div class="container mb-6">
 	<div class="row">
-    
     	<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="row" style="padding-bottom:0px;">
+			
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
                     <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReviewEdit-g14782503-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Yogyakarta_Region_Java.html" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
-<div>	
-		    			<strong> Rating :</strong>
-                    	<span class="text-warning">
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger">(4.9)</span>
-		    			</span>‎
-                    	<br>
-                    	<small class="form-text text-muted">Based on <span>{{ $count }}</span> our new friend reviews</small>
-                    	
-                    </div>
-					
-                    
-                    
-                    
-                    
-                    
-                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-					
-
-                    
+					<strong> Rating :</strong>
+					<span class="text-warning">
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+					</span>‎
+					<br>
+					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
-			</div>
+				<table id="dataTables-example" style="width:100%">
+				<tbody>           
+				</tbody>
+				</table>
 		</div>
-    
-    <div class="col-lg-8 col-md-10 mx-auto">
-    <br>
-    <table id="dataTables-example" style="width:100%">
-			<tbody>           
-			</tbody>
-	</table>
-    </div>
     </div>
 </div>
 <div style="height:50px;"></div>

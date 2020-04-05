@@ -117,29 +117,29 @@ Vertikal Trip Team
       
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fa fa-4x fa-ticket-alt text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fa fa-4x fa-ticket-alt text-danger mb-2"></i>
             <h3 class="h4 mb-2">Instant Booking</h3>
             <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-phone-alt text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fas fa-4x fa-phone-alt text-danger mb-2"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
             <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-history text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fas fa-4x fa-history text-danger mb-2"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
             <p class="text-muted mb-0">Have your plans changed? No worries! You can cancel the booking anytime up to 24 hours before your experience!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fab fa-4x fa-paypal text-danger mb-4"></i>
+          <div class="mt-5 mb-2">
+            <i class="fab fa-4x fa-paypal text-danger mb-2"></i>
             <h3 class="h4 mb-2">Secure Payments</h3>
             <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
           </div>
