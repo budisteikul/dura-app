@@ -64,11 +64,11 @@ class ReviewController extends Controller
 					
 					$date = Carbon::parse($resource->date)->formatLocalized('%b, %Y');
 					
-					$user = '<a href="'.$reseller_link.'" target="_blank" rel="noreferrer" class="text-danger"><b>'. $resource->user .'</b></a> <small><span class="text-muted">'.$date.'</span></small><br>';
+					$user = '<b>'. $resource->user .'</b> <small><span class="text-muted">'.$date.'</span></small><br>';
 					$rating = '<span class="text-warning">'. $star .'</span>‎<br>';
-					$post_title = 'Review of: '. $blog_posts->title.'<br>';
+					$post_title = 'Review of : <b>'. $blog_posts->title.'</b><br>';
 					$text =  nl2br($resource->text) .'<br>';
-					$from = '<a href="'. $reseller_link .'" class="text-danger" target="_blank" rel="noreferrer">'. $reseller_name .'</a>';
+					$from = '<b>'.$reseller_name.'</b>';
 					$output = $user.$post_title.$rating.$title.$text.$from;
 					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
 				})

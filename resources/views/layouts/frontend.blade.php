@@ -100,6 +100,100 @@ s0.parentNode.insertBefore(s1,s0);
 
 	@yield('content')
 
+
+
+<style>
+
+ .btn.btn-social-icon {
+     width: 35px;
+     height: 35px;
+     padding: 3px 0
+ }
+
+ .btn-outline-facebook {
+     border: 1px solid #3b579d;
+     color: #3b579d
+ }
+
+ .btn-outline-facebook:hover {
+     background: #3b579d;
+     color: #ffffff
+ }
+ 
+ .btn-font-facebook {
+     color: #3b579d
+ }
+
+ .btn-font-facebook:hover {
+     background: #3b579d;
+     color: #ffffff
+ }
+ 
+ 
+ 
+ .btn-outline-tripadvisor {
+     border: 1px solid #00af87;
+     color: #00af87
+ }
+
+ .btn-outline-tripadvisor:hover {
+     background: #00af87;
+     color: #ffffff
+ }
+
+ .btn-font-tripadvisor {
+     color: #00af87
+ }
+
+ .btn-font-tripadvisor:hover {
+     background: #00af87;
+     color: #ffffff
+ }
+ 
+ .btn-outline-airbnb {
+     border: 1px solid #fd5c63;
+     color: #fd5c63
+ }
+
+ .btn-outline-airbnb:hover {
+     background: #fd5c63;
+     color: #ffffff
+ }
+
+ .btn-font-airbnb {
+     color: #fd5c63
+ }
+
+ .btn-font-airbnb:hover {
+     background: #fd5c63;
+     color: #ffffff
+ }
+ 
+ 
+ 
+ 
+ .btn-outline-instagram {
+     border: 1px solid #e1306c;
+     color: #e1306c
+ }
+
+ .btn-outline-instagram:hover {
+     background: #e1306c;
+     color: #ffffff
+ }
+
+.btn-font-instagram {
+     color: #e1306c
+ }
+
+ .btn-font-instagram:hover {
+     background: #e1306c;
+     color: #ffffff
+ }
+ 
+
+</style>
+
 @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 <footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
 <div class="container">
@@ -125,6 +219,24 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
 					</p>
                     <p class="mt-4 text-left text-dark">
+						<b>FOLLOW US</b>
+<div>
+<a target="_blank" href= 'https://www.tripadvisor.com/Attraction_Review-g14782503-d17523331-Reviews-Vertikal_Trip-Yogyakarta_Yogyakarta_Region_Java.html' class="btn btn-social-icon btn-outline-tripadvisor"><i class="fab fa-tripadvisor fa-2x btn-font-tripadvisor"></i></a>
+<a target="_blank" href='https://www.airbnb.com/users/show/225353316' class="btn btn-social-icon btn-outline-airbnb"><i class="fab fa-airbnb fa-2x btn-font-airbnb"></i></a>
+<a target="_blank" href='https://www.facebook.com/vertikaltrip' class="btn btn-social-icon btn-outline-facebook"><i class="fab fa-facebook fa-2x btn-font-facebook"></i></a>
+<a target="_blank" href='https://www.instagram.com/vertikaltrip' class="btn btn-social-icon btn-outline-instagram"><i class="fab fa-instagram fa-2x  btn-font-instagram"></i></a>
+
+</div>                      
+                        
+                      
+					</p>
+                    
+                    
+					
+                </div>
+                <div class="col-sm-4 second-column mb-4">
+                	
+                    <p class="text-left text-dark">
 						<b>PAYMENT CHANNEL</b>
                     	<br>
 						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
@@ -132,9 +244,6 @@ s0.parentNode.insertBefore(s1,s0);
                         <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>
                 </div>
-                <!-- div class="col-sm-4 second-column mb-4">
-                
-                </div -->
         </div>
     </div>
 </div>
@@ -166,16 +275,31 @@ s0.parentNode.insertBefore(s1,s0);
                         <br>
 					</p>
                     <p class="mt-4 text-left text-dark">
+						<b>FOLLOW US</b>
+<div>
+<a target="_blank" href= 'https://www.tripadvisor.com/Attraction_Review-g14782503-d17523331-Reviews-Vertikal_Trip-Yogyakarta_Yogyakarta_Region_Java.html' class="btn btn-social-icon btn-outline-tripadvisor"><i class="fab fa-tripadvisor fa-2x btn-font-tripadvisor"></i></a>
+<a target="_blank" href='https://www.airbnb.com/users/show/225353316' class="btn btn-social-icon btn-outline-airbnb"><i class="fab fa-airbnb fa-2x btn-font-airbnb"></i></a>
+<a target="_blank" href='https://www.facebook.com/vertikaltrip' class="btn btn-social-icon btn-outline-facebook"><i class="fab fa-facebook fa-2x btn-font-facebook"></i></a>
+<a target="_blank" href='https://www.instagram.com/vertikaltrip' class="btn btn-social-icon btn-outline-instagram"><i class="fab fa-instagram fa-2x  btn-font-instagram"></i></a>
+
+</div>                      
+                        
+                      
+					</p>
+                    
+                    
+					
+                </div>
+                <div class="col-sm-4 second-column mb-4">
+                	
+                    <p class="text-left text-dark">
 						<b>PAYMENT CHANNEL</b>
                     	<br>
 						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
 
                         <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>
-					
-                </div>
-                <div class="col-sm-4 second-column mb-4">
-                	
+                    
                 </div>
         </div>
     </div>
