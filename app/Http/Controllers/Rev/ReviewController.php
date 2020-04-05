@@ -70,7 +70,8 @@ class ReviewController extends Controller
 					$text =  nl2br($resource->text) .'<br>';
 					$from = '<b>'.$reseller_name.'</b>';
 					$output = $user.$post_title.$rating.$title.$text.$from;
-					return '<div style="margin-bottom:20px;" >'. $output .'</div>';
+					
+					return '<div style="margin-bottom:30px;" >'. $output .'</div>';
 				})
 				->rawColumns(['style'])
 				->toJson();

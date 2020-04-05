@@ -115,7 +115,7 @@ s0.parentNode.insertBefore(s1,s0);
 						We're happy to help
 						<br>
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
+							<span class="far fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
                     </p>
                 </div>
                 <div class="col-sm-4 second-column mb-4">
@@ -174,7 +174,7 @@ s0.parentNode.insertBefore(s1,s0);
 						We're happy to help
 						<br>
 							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="fa fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
+							<span class="far fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-danger" target="_blank">guide@vertikaltrip.com</a>
                     </p>
                 </div>
                 <div class="col-sm-4 second-column mb-4">

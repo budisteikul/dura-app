@@ -111,9 +111,9 @@ Vertikal Trip Team
 
 
   <!-- Services Section -->
-  <section class="page-section" id="services" style="background-color:#FFFFFF">
+  <section class="page-section bg-light" id="services">
     <div class="container">
-    <div style="height:70px;"></div>
+    <div style="height:25px;"></div>
       
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
@@ -212,43 +212,26 @@ Vertikal Trip Team
 
 
 <section id="review" style="background-color:#ffffff">
-<div class="container">
+<div class="container mb-6">
 	<div class="row">
-    
     	<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="row" style="padding-bottom:0px;">
+			
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
                     <h4 class="section-subheading text-muted"><a href="/review" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
-<div  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">	
-		    			<strong> Rating :</strong>
-                    	<span class="text-warning">
-		        			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
-		    			</span>‎
-                    	<br>
-                    	<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
-                    	
-                    </div>
-					
-                    
-                    
-                    
-                                        
-                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
-					
-
-                    
+					<strong> Rating :</strong>
+					<span class="text-warning">
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+					</span>‎
+					<br>
+					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
-			</div>
+				<table id="dataTables-example" style="width:100%">
+				<tbody>           
+				</tbody>
+				</table>
 		</div>
-    
-    <div class="col-lg-8 col-md-10 mx-auto">
-    <br>
-    <table id="dataTables-example" style="width:100%">
-			<tbody>           
-			</tbody>
-	</table>
-    </div>
     </div>
 </div>
 <div style="height:50px;"></div>
