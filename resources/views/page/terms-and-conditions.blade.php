@@ -78,7 +78,7 @@
 					<div class="row" style="padding-bottom:0px;">
 						<div class="col-lg-12 text-center">
 							<h3 class="section-heading">TERMS AND CONDITIONS</h3>
-							<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+							<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
 							<h4 class="section-subheading text-muted">
 								
 							</h4>

@@ -426,6 +426,14 @@ article{
     color: #5bc0de
 }
 
+.bd-callout-theme {
+    border-left-color: #1D57C7
+}
+
+.bd-callout-theme h4 {
+    color: #1D57C7
+}
+
 .bd-callout-warning {
     border-left-color: #f0ad4e
 }
@@ -464,3 +472,54 @@ article{
      background: #e1306c;
      color: #ffffff
  }
+ 
+ .btn-theme{
+    background-color: #1D57C7;
+    border-color:#1D57C7;
+	color:#FFFFFF;
+}
+
+.btn-theme:hover{
+    background-color: #1D57C7;
+    border-color:#1D57C7;
+	color:#FFFFFF;
+}
+
+.btn-theme:focus{
+    background-color:#1D57C7;
+    border-color:#1D57C7;
+	color:#FFFFFF;
+}
+.btn-theme:active{
+    background-color:#1D57C7;
+    border-color:#1D57C7;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.075) inset, 0 0 8px #1D57C7;
+    outline: 0 none;
+	color:#FFFFFF;
+}
+.btn-theme:not(:disabled):not(.disabled):active{
+    color: #FFFFFF;
+    background: #1D57C7;
+    border-color: #1D57C7;
+    outline: 0 none;
+}
+.btn-theme:not(:disabled):not(.disabled):focus{
+    box-shadow: 0 0 5px #1D57C7;
+}
+.btn-theme[disabled] {
+    background: #1D57C7 !important;
+    border-color:#1D57C7 !important;
+}
+.btn-theme[disabled]:hover {
+    background: #1D57C7 !important;
+    border-color:#1D57C7 !important;
+}
+.text-theme
+{
+	color:#1D57C7;
+}
+.badge-theme
+{
+	background-color:#1D57C7;
+	color:#FFFFFF;
+}

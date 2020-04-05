@@ -91,7 +91,7 @@
 }
 
 #mainNav-back .navbar-nav .nav-item .nav-link.active, #mainNav-back .navbar-nav .nav-item .nav-link:hover {
-  color: #c03b44;
+  color: #dadada;
   
 }
 @media(min-width:768px) {

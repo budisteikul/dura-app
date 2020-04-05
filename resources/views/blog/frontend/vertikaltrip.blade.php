@@ -87,8 +87,8 @@
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
             	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.png" width="250" -->
                 
-				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
-                <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
+				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With<br>VERTIKAL TRIP</h1>
+                <hr style="max-width:50px;border-color: #1D57C7;border-width: 3px;">
 				<!-- p class="text-faded">
                     Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
                     <br>
@@ -118,28 +118,28 @@ Vertikal Trip Team
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5 mb-2">
-            <i class="fa fa-4x fa-ticket-alt text-danger mb-2"></i>
+            <i class="fa fa-4x fa-ticket-alt text-secondary mb-2"></i>
             <h3 class="h4 mb-2">Instant Booking</h3>
             <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5 mb-2">
-            <i class="fas fa-4x fa-phone-alt text-danger mb-2"></i>
+            <i class="fas fa-4x fa-phone-alt text-secondary mb-2"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
-            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
+            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5 mb-2">
-            <i class="fas fa-4x fa-history text-danger mb-2"></i>
+            <i class="fas fa-4x fa-history text-secondary mb-2"></i>
             <h3 class="h4 mb-2">Free Cancellation</h3>
             <p class="text-muted mb-0">Have your plans changed? No worries! You can cancel the booking anytime up to 24 hours before your experience!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5 mb-2">
-            <i class="fab fa-4x fa-paypal text-danger mb-2"></i>
+            <i class="fab fa-4x fa-paypal text-secondary mb-2"></i>
             <h3 class="h4 mb-2">Secure Payments</h3>
             <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
           </div>
@@ -163,7 +163,7 @@ Vertikal Trip Team
                     
                     <h3 class="section-heading" style="margin-top:0px;">{{ $contents->title }}</h3>
                     <h4 class="section-subheading text-muted">{{ $contents->description }}</h4>
-                    <hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+                    <hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
                     
                     <div style="height:30px;"></div>
                 </div>
@@ -195,7 +195,7 @@ Vertikal Trip Team
     								<p class="card-text text-right"><b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></p>
   								</div>
   								<div class="card-footer bg-primary p-0">
-    								<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-primary btn-lg btn-block text-white" style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
+    								<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-lg btn-block" style=" cursor: pointer; "><i class="fas fa-info-circle"></i> More info</a>
   								</div>
 							</div>
     				</div>
@@ -218,14 +218,14 @@ Vertikal Trip Team
 			
 				<div class="col-lg-12 text-center">
 					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
-                    <h4 class="section-subheading text-muted"><a href="/review" target="_blank" class="text-danger"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
+                    <h4 class="section-subheading text-muted"><a href="/review" target="_blank" class="text-theme"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
 					<strong> Rating :</strong>
 					<span class="text-warning">
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-secondary" itemprop="ratingValue">(4.9)</span>
 					</span>‎
 					<br>
 					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
-					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
+					<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
 				</div>
 				<table id="dataTables-example" style="width:100%">
 				<tbody>           

@@ -71,9 +71,9 @@
 
 <h1 class="mt-4">{{ $contents->title }}</h1>
 <div class="text-muted mt-4 mb-4">
-  <i class="far fa-clock text-danger"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
+  <i class="far fa-clock text-theme"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
   @if($contents->difficultyLevel!="")
-  <i class="fas fa-signal text-danger"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
+  <i class="fas fa-signal text-theme"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
   @endif
   @if($contents->privateActivity)
     <span class="badge badge-info">PRIVATE TOUR</span>
@@ -254,13 +254,13 @@
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 Secure booking — only takes 2 minutes!
 				<br><br>
-				<i class="fa fa-ticket-alt text-danger mb-4"></i> Instant Booking
+				<i class="fa fa-ticket-alt text-secondary mb-4"></i> Instant Booking
 				<br>
-				<i class="fa fa-phone-alt text-danger mb-4"></i> 24/7 Support
+				<i class="fa fa-phone-alt text-secondary mb-4"></i> 24/7 Support
 				<br>
-				<i class="fa fa-history text-danger mb-4"></i> Free Cancellation
+				<i class="fa fa-history text-secondary mb-4"></i> Free Cancellation
 				<br>
-				<i class="fab fa-paypal text-danger mb-4"></i> Secure Payments
+				<i class="fab fa-paypal text-secondary mb-4"></i> Secure Payments
             </div>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     				
