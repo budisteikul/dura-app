@@ -66,15 +66,12 @@
 				<div class="col-lg-12 text-left">
 				<div style="height:70px;"></div>
 				
-           <div class="card mb-8 shadow p-2">
-  			
- 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
-                 <div class="text-right">
-		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.png">
-				 </div>
-                 
-                 
-                 
+           <div class="card mb-8 shadow">
+  				<div class="card-header bg-dark text-white pb-1">
+    				<h4><i class="fas fa-calendar-alt"></i> Select Date and Travelers</h4>
+  				</div>
+ 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;">
+                
                  
                  
                 {!! $product !!}
