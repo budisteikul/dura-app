@@ -125,9 +125,9 @@
                             <div class="card mb-2">
                         		<div class="card-body">
                                		@foreach($pickups as $carts_detail)
-									<div class="row mb-4">
+									<div class="row mb-2">
                 						<div class="col-8">
-                                        Pick-up and drop-off services
+                                        <strong>Pick-up and drop-off services</strong>
                                         <br>
                                         {{ $carts_detail->unitPrice }}
                     					</div>
@@ -147,15 +147,18 @@
                             @endphp
                             @if(count($extra))
 							<div class="card mb-2">
+                            
                         		<div class="card-body">
+                                <div class="row col-12 mb-2">
+                            		<strong>Extras</strong>
+                            	</div>
                                 @foreach($extra as $carts_detail)
-									<div class="row mb-4">
+									<div class="row mb-2">
                 						<div class="col-8">
 										{{ $carts_detail->title }}
-                                        
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>{{ $carts_detail->total }}</b>
+                    						<b>${{ $carts_detail->total }}</b>
                     					</div>
                 					</div>
                                @endforeach

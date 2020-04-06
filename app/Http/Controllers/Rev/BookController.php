@@ -374,6 +374,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		rev_carts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		$activity = $contents->activityBookings;
 		
+		
 		//========================================================================
 		for($i=0;$i<count($activity);$i++)
 		{
@@ -391,6 +392,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_carts->date = $product_invoice[$i]->dates;
 			$rev_carts->save();
 			
+			
 			$grand_total = 0;
 			for($z=0;$z<count($lineitems);$z++)
 			{
@@ -399,14 +401,21 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$itemBookingId = $lineitems[$z]->itemBookingId;
 					$itemBookingId = explode("_",$itemBookingId);
 					
-					$type_product = 'extra';
+					$type_product = '';
 					$unitPrice = 'Price per booking';
+					
+					
+					
 					if($activity[$i]->extrasPrice>0)
 					{
 						$check_extra = false;
 						for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 						{
-							if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
+							if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id)
+							{
+								$check_extra = true;
+							}
+							
 						}
 						if(!$check_extra)
 						{
@@ -457,6 +466,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$rev_carts_detail->save();
 						$grand_total += $subtotal;
 					}
+					
 					if($type_product=="pickup")
 					{
 						$rev_carts_detail = new rev_carts_detail();
@@ -474,31 +484,32 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$rev_carts_detail->save();
 						$grand_total += $lineitems[$z]->total;
 					}
-					if($type_product=="extra")
-					{
-						for($k=0;$k<count($activity[$i]->extraBookings);$k++)
-						{
-							$rev_carts_detail = new rev_carts_detail();
-							$rev_carts_detail->cart_id = $rev_carts->id;
-							
-						
-							$rev_carts_detail->type = $type_product;
-							$rev_carts_detail->title = $activity[$i]->extraBookings[$k]->extra->title;
-							$rev_carts_detail->qty = 1;
-							$rev_carts_detail->price = $activity[$i]->extraBookings[$k]->extra->price;
-							$rev_carts_detail->unitPrice = $unitPrice;
-							$rev_carts_detail->subtotal = $activity[$i]->extraBookings[$k]->extra->price;
-							$rev_carts_detail->total = $activity[$i]->extraBookings[$k]->extra->price;
-						
-							$rev_carts_detail->save();
-							$grand_total += $activity[$i]->extraBookings[$k]->extra->price;
-						}
-					}
-					
 					
 			}
-			rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
+					
+			if($activity[$i]->extrasPrice>0)
+			{
+				for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+				{	
+					$rev_carts_detail = new rev_carts_detail();
+					$rev_carts_detail->cart_id = $rev_carts->id;
+						
+					$rev_carts_detail->type = 'extra';
+					$rev_carts_detail->title = $activity[$i]->extraBookings[$k]->extra->title;
+					$rev_carts_detail->qty = 1;
+					$rev_carts_detail->price = $activity[$i]->extraBookings[$k]->extra->price;
+					$rev_carts_detail->unitPrice = $unitPrice;
+					$rev_carts_detail->subtotal = $activity[$i]->extraBookings[$k]->extra->price;
+					$rev_carts_detail->total = $activity[$i]->extraBookings[$k]->extra->price;
+						
+					$rev_carts_detail->save();
+					$grand_total += $activity[$i]->extraBookings[$k]->extra->price;
+				}
+			}
+			
 		}
+		rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
+		
 		//========================================================================
 		
 		
