@@ -75,219 +75,110 @@
     				<h4><i class="fas fa-shopping-cart"></i> Order Summary</h4>
   				</div>
                 
-                @php
-                	$activity = $contents->activityBookings;
-                    $invoice = $contents->customerInvoice;
-                    $product_invoice = $contents->customerInvoice->productInvoices;
-					$grand_total = 0;
-                @endphp
-                @for($i=0;$i<count($activity);$i++)
-							<?php
-								$lineitems = $product_invoice[$i]->lineItems;
-								//print_r($lineitems);
-								//exit();
-							?>
+                
                 <!-- Product booking -->
                 <div class="card-body">
-                
+                <?php
+				$grand_total = 0;
+				?>
+                @foreach($rev_carts as $rev_cart)
                             <!-- Product detail booking -->
 							<div class="row mb-4">
                 				<div class="col-8">
-                    				<b>{{ $activity[$i]->activity->title }}</b>
+                    				<b>{{ $rev_cart->title }}</b>
                     			</div>
-								
-<?php
-$subtotal_harga = 0;
-for($z=0;$z<count($lineitems);$z++)
-	{
-		
-		$itemBookingId = $lineitems[$z]->itemBookingId;
-		$itemBookingId = explode("_",$itemBookingId);
-		if($activity[$i]->extrasPrice>0)
-		{
-			$check_extra = false;
-			for($k=0;$k<count($activity[$i]->extraBookings);$k++)
-			{
-				if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
-			}
-			if(!$check_extra)
-			{
-				if($itemBookingId[1]!="pickup")
-				{
-					$jumlah = $lineitems[$z]->quantity;
-					$harga = $lineitems[$z]->unitPrice * $jumlah;
-					$subtotal_harga += $harga;
-				}
-			}
-		}
-		else
-		{
-			if($itemBookingId[1]!="pickup")
-			{
-				$jumlah = $lineitems[$z]->quantity;
-				$harga = $lineitems[$z]->unitPrice * $jumlah;
-				$subtotal_harga += $harga;
-			}
-		}
-	}
-							
-							?>
-								
                     			<div class="col-4 text-right">
-                    				<b>${{ $subtotal_harga }}</b>
+                                	<?php
+									$product_price = 0;
+									foreach($rev_cart->carts_detail()->where('type','product')->get() as $carts_detail)
+									{
+										$product_price += $carts_detail->subtotal;
+									}
+									?>
+                    				<b>${{ $product_price }}</b>
                     			</div>
                 			 </div>
                     
                     		 <div class="row mb-4">
                 				<div class="ml-4">
-									@if(isset($product_invoice[$i]->product->keyPhoto->derived[2]->url))
-                    				<img class="img-fluid" src="{!! $product_invoice[$i]->product->keyPhoto->derived[2]->url !!}">
-									@endif
+                               		@if(isset($rev_cart->image))
+                    				<img class="img-fluid" src="{{ $rev_cart->image }}">
+                                	@endif
                     			</div>
                     			<div class="col-8">
-                                	{{ $product_invoice[$i]->dates }}
+                                	{{ $rev_cart->date }}
                                 	<br>
-                                    {{ $activity[$i]->rate->title }}
+                                    {{ $rev_cart->rate }}
                                     <br>
-                            
-<?php
-	for($z=0;$z<count($lineitems);$z++)
-	{
-		
-		$itemBookingId = explode("_",$lineitems[$z]->itemBookingId);
-		$check_extra = false;
-		if($activity[$i]->extrasPrice>0)
-		{
-			
-			for($k=0;$k<count($activity[$i]->extraBookings);$k++)
-			{
-				if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
-			}
-			if(!$check_extra)
-			{
-				if($lineitems[$z]->title!="Passengers")
-				{
-					
-					if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
-				}
-				else
-				{
-					if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
-				}
-				
-			}
-		}
-		
-		else
-		{
-			if($lineitems[$z]->title!="Passengers")
-			{
-				if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x ".$lineitems[$z]->title." ($".$lineitems[$z]->unitPrice.")<br>");
-			}
-			else
-			{
-				if($itemBookingId[1]!="pickup")print($lineitems[$z]->quantity ." x Price per booking ($". $lineitems[$z]->unitPrice .")<br>");
-			}
-		}
-		
-	
-	}
-							?>
-							
-							
-                                    
+                                    @foreach($rev_cart->carts_detail()->where('type','product')->get() as $carts_detail)
+                                    {{ $carts_detail->qty }} x {{ $carts_detail->unitPrice }} ({{ $carts_detail->price }})
+                                    <br>
+                                    @endforeach
                                 </div>
                 			</div>
                             <!-- Product detail booking -->
                             <!-- Pickup booking $activity -->
-                            <?php
-								$subtotal_pickup = 0;
-								if($activity[$i]->pickupPrice>0)
-								{
-							?>
+                           
                             <div class="card mb-2">
                         		<div class="card-body">
-                                <?php
-								for($z=0;$z<count($lineitems);$z++)
-								{
-									$itemBookingId = $lineitems[$z]->itemBookingId;
-									$itemBookingId = explode("_",$itemBookingId);
-									if($itemBookingId[1]=="pickup"){
-								?>
+                               		@foreach($rev_cart->carts_detail()->where('type','pickup')->get() as $carts_detail)
 									<div class="row mb-4">
                 						<div class="col-8">
-										<!-- {{ $lineitems[$z]->title }} -->
                                         Pick-up and drop-off services
+                                        <br>
+                                        {{ $carts_detail->unitPrice }}
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>${{ $lineitems[$z]->total }}</b>
+                    						<b>${{ $carts_detail->total }}</b>
                     					</div>
                 					</div>
-                                <?php
-									$subtotal_pickup += $lineitems[$z]->total;
-									}
-								}
-								?>
+                               		@endforeach
 								</div>
                    			</div>
-							<?php
-								}
-							?>
+							
                             <!-- Pickup booking $activity -->
-							<?php
-								$subtotal_extra = 0;
-								if($activity[$i]->extrasPrice>0)
-								{
-							?>
+							
                             <!-- Extra booking $activity -->
 							<div class="card mb-2">
                         		<div class="card-body">
-                                <?php
-								
-								for($k=0;$k<count($activity[$i]->extraBookings);$k++)
-								{
-								?>
+                                @foreach($rev_cart->carts_detail()->where('type','extra')->get() as $carts_detail)
 									<div class="row mb-4">
                 						<div class="col-8">
-										{{ $activity[$i]->extraBookings[$k]->extra->title }}
+										{{ $carts_detail->title }}
+                                        
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>${{ $activity[$i]->extraBookings[$k]->extra->price }}</b>
+                    						<b>{{ $carts_detail->total }}</b>
                     					</div>
                 					</div>
-                                <?php
-									$subtotal_extra += $activity[$i]->extraBookings[$k]->extra->price;
-								}
-								?>
+                               @endforeach
 								</div>
                    			</div>
 							<!-- Extra booking -->
-                            <?php
-								}  
-							?>  
-                            
+                           
                             
 				</div>
                 <!-- Product booking -->
-				
-				
-				@php
-					$total = $subtotal_harga + $subtotal_extra + $subtotal_pickup;
-					$grand_total += $total;
-				@endphp
-				<div class="card-body pt-0 mt-0">
+                <div class="card-body pt-0 mt-0">
                 	<hr>
                 	<div class="row mb-2">
                 		<div class="col-8">
                     		<span style="font-size:18px">Subtotal</span>
                     	</div>
                     	<div class="col-4 text-right">
-                    		<span style="font-size:18px">${{ $total }}</span>
+                    		<span style="font-size:18px">${{ $rev_cart->total }}</span>
                     	</div>
                 	</div>
 				</div>
+                <?php
+				$grand_total += $rev_cart->total;
+				?>
+				@endforeach
 				
-                @endfor
+				
+				
+				
+                
                 
                 <div class="card-body pt-0">
                 	<!-- hr>

@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_shoppingcarts;
+use App\Models\Rev\rev_carts;
+use App\Models\Rev\rev_carts_detail;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
@@ -368,18 +370,134 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$request->session()->put('sessionBooking',$sessionBooking);
 		}
 		
-		
-		rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
+		//========================================================================
+		rev_carts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		$activity = $contents->activityBookings;
+		
+		//========================================================================
 		for($i=0;$i<count($activity);$i++)
 		{
-			$rev_shoppingcarts = new rev_shoppingcarts();
-			$rev_shoppingcarts->sessionId = $id;
-			$rev_shoppingcarts->bookingId = $activity[$i]->id;
-			$rev_shoppingcarts->sessionBooking = $sessionBooking;
-			$rev_shoppingcarts->productConfirmationCode = $activity[$i]->productConfirmationCode;
-			$rev_shoppingcarts->bookingStatus = 'CART';
-			$rev_shoppingcarts->save();
+			$product_invoice = $contents->customerInvoice->productInvoices;
+			$lineitems = $product_invoice[$i]->lineItems;
+			
+			$rev_carts = new rev_carts();
+			$rev_carts->sessionId = $id;
+			$rev_carts->sessionBooking = $sessionBooking;
+			$rev_carts->productConfirmationCode = $activity[$i]->productConfirmationCode;
+			$rev_carts->bookingId = $activity[$i]->id;
+			$rev_carts->image = $product_invoice[$i]->product->keyPhoto->derived[2]->url;
+			$rev_carts->title = $activity[$i]->activity->title;
+			$rev_carts->rate = $activity[$i]->rate->title;
+			$rev_carts->date = $product_invoice[$i]->dates;
+			$rev_carts->save();
+			
+			$grand_total = 0;
+			for($z=0;$z<count($lineitems);$z++)
+			{
+					
+					
+					$itemBookingId = $lineitems[$z]->itemBookingId;
+					$itemBookingId = explode("_",$itemBookingId);
+					
+					$type_product = 'extra';
+					$unitPrice = 'Price per booking';
+					if($activity[$i]->extrasPrice>0)
+					{
+						$check_extra = false;
+						for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+						{
+							if($itemBookingId[1]==$activity[$i]->extraBookings[$k]->id) $check_extra = true;
+						}
+						if(!$check_extra)
+						{
+							if($itemBookingId[1]!="pickup")
+							{
+								$type_product = 'product';
+								if($lineitems[$z]->title!="Passengers")
+								{
+									$unitPrice = $lineitems[$z]->title;
+								}
+							}
+						}
+					}
+					else
+					{
+						if($itemBookingId[1]!="pickup")
+						{
+							$type_product = 'product';
+							if($lineitems[$z]->title!="Passengers")
+							{
+								$unitPrice = $lineitems[$z]->title;
+							}
+						}
+					}
+					
+					if($itemBookingId[1]=="pickup"){
+						$type_product = "pickup";
+					}
+					
+					
+					
+					if($type_product=="product")
+					{
+						$rev_carts_detail = new rev_carts_detail();
+						$rev_carts_detail->cart_id = $rev_carts->id;
+						
+					
+						$rev_carts_detail->type = $type_product;
+						$rev_carts_detail->title = $activity[$i]->activity->title;
+						$rev_carts_detail->qty = $lineitems[$z]->quantity;
+						$rev_carts_detail->price = $lineitems[$z]->unitPrice;
+						$rev_carts_detail->unitPrice = $unitPrice;
+						
+						$subtotal = $lineitems[$z]->unitPrice * $rev_carts_detail->qty;
+						$rev_carts_detail->subtotal = $subtotal;
+						$rev_carts_detail->total = $subtotal;
+						
+						$rev_carts_detail->save();
+						$grand_total += $subtotal;
+					}
+					if($type_product=="pickup")
+					{
+						$rev_carts_detail = new rev_carts_detail();
+						$rev_carts_detail->cart_id = $rev_carts->id;
+						
+						
+						$rev_carts_detail->type = $type_product;
+						$rev_carts_detail->title = 'Pick-up and drop-off services';
+						$rev_carts_detail->qty = 1;
+						$rev_carts_detail->price = $lineitems[$z]->total;
+						$rev_carts_detail->unitPrice = $unitPrice;
+						$rev_carts_detail->subtotal = $lineitems[$z]->total;
+						$rev_carts_detail->total = $lineitems[$z]->total;
+						
+						$rev_carts_detail->save();
+						$grand_total += $lineitems[$z]->total;
+					}
+					if($type_product=="extra")
+					{
+						for($k=0;$k<count($activity[$i]->extraBookings);$k++)
+						{
+							$rev_carts_detail = new rev_carts_detail();
+							$rev_carts_detail->cart_id = $rev_carts->id;
+							
+						
+							$rev_carts_detail->type = $type_product;
+							$rev_carts_detail->title = $activity[$i]->extraBookings[$k]->extra->title;
+							$rev_carts_detail->qty = 1;
+							$rev_carts_detail->price = $activity[$i]->extraBookings[$k]->extra->price;
+							$rev_carts_detail->unitPrice = $unitPrice;
+							$rev_carts_detail->subtotal = $activity[$i]->extraBookings[$k]->extra->price;
+							$rev_carts_detail->total = $activity[$i]->extraBookings[$k]->extra->price;
+						
+							$rev_carts_detail->save();
+							$grand_total += $activity[$i]->extraBookings[$k]->extra->price;
+						}
+					}
+					
+					
+			}
+			rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
 		}
 		//========================================================================
 		
@@ -426,9 +544,13 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 </script>';
 		}
 		
+		$rev_carts = rev_carts::where('sessionId', $id)
+						->where('sessionBooking', $sessionBooking)
+						->where('bookingStatus','CART')->get();
 		
 		
-		return view('blog.frontend.shopping-cart')->with(['contents'=>$contents,'widget'=>$widget]);
+		
+		return view('blog.frontend.shopping-cart')->with(['rev_carts'=>$rev_carts,'widget'=>$widget]);
 	}
 	
 	public function receipt(Request $request)
@@ -439,32 +561,31 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		
 		if($request->session()->has('sessionBooking')){
 			$sessionBooking = $request->session()->get('sessionBooking');
-			rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->update(['bookingStatus'=>'CONFIRMED','parrentId'=>$bookingId]);
+			
+			rev_carts::where('sessionId', $sessionId)->where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->update(['bookingStatus'=>'CONFIRMED','parrentId'=>$bookingId]);
+			
 			$request->session()->forget('sessionBooking');
 		}
 		
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)->where('bookingStatus','CONFIRMED')->where('parrentId',$bookingId)->get();
-		if(!count($rev_shoppingcarts))
+		//=========================================================
+		$rev_carts = rev_carts::where('sessionId', $sessionId)->where('bookingStatus','CONFIRMED')->where('parrentId',$bookingId)->get();
+		if(!isset($rev_carts))
 		{
-			return redirect('/');
+			//return redirect('/');
 		}
+		//=========================================================
 		
-		
-		//print_r($rev_shoppingcarts);
-		//exit();
 		$customer = new \StdClass();
-		foreach($rev_shoppingcarts as $rev_shoppingcart)
+		foreach($rev_carts as $rev_cart)
 		{
 			
-			$contents = BokunClass::get_productbooking($rev_shoppingcart->bookingId);
+			$contents = BokunClass::get_productbooking($rev_cart->bookingId);
 				
 				
-				rev_shoppingcarts::where('id', $rev_shoppingcart->id)
+				rev_carts::where('id', $rev_cart->id)
 				->update([
 					'parrentId'=>$contents->parentBookingId,
 					'parrentConfirmationCode'=>$contents->confirmationCode,
-					'title'=>$contents->title,
-					'rateTitle'=>$contents->rateTitle,
 					
 					'firstName'=>$contents->parentBooking->customer->firstName,
 					'lastName'=>$contents->parentBooking->customer->lastName,
@@ -482,14 +603,13 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 		}
 		
 		
-		
-        return view('page.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts,'customer'=>$customer]);
+        return view('page.receipt')->with(['rev_carts'=>$rev_carts,'customer'=>$customer]);
     }
 	
 	public function get_invoice($id="",$sessionId="")
     {
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('parrentId',$id)->where('bookingStatus','CONFIRMED')->get();
-		if(count($rev_shoppingcarts))
+		$rev_carts = rev_carts::where('sessionId',$sessionId)->where('parrentId',$id)->where('bookingStatus','CONFIRMED')->get();
+		if(count($rev_carts))
 		{
 			$contents = BokunClass::get_invoice($id);
 			header('Cache-Control: public'); 
@@ -502,8 +622,8 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
 	
 	public function get_ticket($id="",$sessionId="")
     {
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$sessionId)->where('productConfirmationCode',$id)->where('bookingStatus','CONFIRMED')->get();
-		if(count($rev_shoppingcarts))
+		$rev_carts = rev_carts::where('sessionId',$sessionId)->where('productConfirmationCode',$id)->where('bookingStatus','CONFIRMED')->get();
+		if(count($rev_carts))
 		{
 			$contents = BokunClass::get_ticket($id);
 			header('Cache-Control: public'); 

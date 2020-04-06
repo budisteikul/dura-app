@@ -113,17 +113,17 @@
 					</div>
                 
 					<div class="card-body">
-                
+                	 
                         <p>
 						<h3>Receipt</h3>
 						<a target="_blank" class="text-theme" href="/booking/invoice/{{ $customer->bookingId }}/{{$customer->sessionId}}"><i class="far fa-file-pdf"></i> Invoice-{{ $customer->confirmationCode }}.pdf</a>
 						<h3>Experience tickets</h3>
-                        @foreach($rev_shoppingcarts as $rev_shoppingcart)
-                        <a target="_blank" class="text-theme" href="/booking/ticket/{{ $rev_shoppingcart->productConfirmationCode }}/{{$customer->sessionId}}"><i class="far fa-file-pdf"></i> Ticket-{{ $rev_shoppingcart->productConfirmationCode }}.pdf</a>
+                       	@foreach($rev_carts as $rev_cart)
+                        <a target="_blank" class="text-theme" href="/booking/ticket/{{ $rev_cart->productConfirmationCode }}/{{$customer->sessionId}}"><i class="far fa-file-pdf"></i> Ticket-{{ $rev_cart->productConfirmationCode }}.pdf</a>
                         <br>
                         @endforeach
                         </p>
-								
+							
 					</div>
 					
 				</div>
