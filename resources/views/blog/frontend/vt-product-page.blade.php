@@ -71,12 +71,12 @@
 
 <h1 class="mt-4">{{ $contents->title }}</h1>
 <div class="text-muted mt-4 mb-4">
-  <i class="far fa-clock text-theme"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
+  <i class="far fa-clock text-success"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
   @if($contents->difficultyLevel!="")
-  <i class="fas fa-signal text-theme"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
+  <i class="fas fa-signal text-success"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
   @endif
   @if($contents->privateActivity)
-    <span class="badge badge-info">PRIVATE TOUR</span>
+    <span class="badge badge-success">PRIVATE TOUR</span>
   @endif
 </div>
 <div class="text-muted mt-4 mb-4">
@@ -86,16 +86,16 @@
 </div>
 <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><b>Description</b></a>
+    <a class="nav-link active text-theme" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><b>Description</b></a>
   </li>
   @if(!empty($contents->startPoints))
   <li class="nav-item">
-    <a class="nav-link" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false"><b>Meeting point</b></a>
+    <a class="nav-link text-theme" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false"><b>Meeting point</b></a>
   </li>
   @endif
   @if(!empty($contents->pickupPlaces))
   <li class="nav-item">
-    <a class="nav-link" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false"><b>Pick-up</b></a>
+    <a class="nav-link text-theme" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false"><b>Pick-up</b></a>
   </li>
   @endif
 </ul>
@@ -153,7 +153,7 @@
               {!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
             @endif
             @if($contents->privateActivity)
-                <span class="badge badge-info">PRIVATE TOUR</span>
+                <span class="badge badge-success">PRIVATE TOUR</span>
             @endif
           </div>
           <div>
