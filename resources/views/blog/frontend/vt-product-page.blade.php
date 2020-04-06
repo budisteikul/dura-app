@@ -31,7 +31,7 @@
 <div class="container">
   <div class="row">
   	
-    <div class="col-sm-7 col-sm-auto">
+    <div class="col-lg-7 col-sm-auto">
     	<div style="height:66px;"></div>
 
 @if($contents->keyPhoto!="")
@@ -247,7 +247,7 @@
 </div>
     </div>
 	
-    <div class="col-sm-5">
+    <div class="col-lg-5">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
   			<div class="card-header">
@@ -262,6 +262,8 @@
 				<br>
 				<i class="fab fa-paypal text-secondary mb-4"></i> Secure Payments
             </div>
+            	
+                <style></style>
  				 <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     				
      
