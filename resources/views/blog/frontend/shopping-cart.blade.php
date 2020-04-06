@@ -118,10 +118,13 @@
                 			</div>
                             <!-- Product detail booking -->
                             <!-- Pickup booking $activity -->
-                           
+                            @php
+							$pickups = $rev_cart->carts_detail()->where('type','pickup')->get();
+                            @endphp
+                            @if(count($pickups))
                             <div class="card mb-2">
                         		<div class="card-body">
-                               		@foreach($rev_cart->carts_detail()->where('type','pickup')->get() as $carts_detail)
+                               		@foreach($pickups as $carts_detail)
 									<div class="row mb-4">
                 						<div class="col-8">
                                         Pick-up and drop-off services
@@ -135,13 +138,17 @@
                                		@endforeach
 								</div>
                    			</div>
-							
+							@endif
                             <!-- Pickup booking $activity -->
 							
                             <!-- Extra booking $activity -->
+                            @php
+                            $extra = $rev_cart->carts_detail()->where('type','extra')->get();
+                            @endphp
+                            @if(count($extra))
 							<div class="card mb-2">
                         		<div class="card-body">
-                                @foreach($rev_cart->carts_detail()->where('type','extra')->get() as $carts_detail)
+                                @foreach($extra as $carts_detail)
 									<div class="row mb-4">
                 						<div class="col-8">
 										{{ $carts_detail->title }}
@@ -155,7 +162,7 @@
 								</div>
                    			</div>
 							<!-- Extra booking -->
-                           
+                            @endif
                             
 				</div>
                 <!-- Product booking -->
