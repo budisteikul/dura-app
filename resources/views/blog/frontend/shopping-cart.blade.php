@@ -111,7 +111,7 @@
                                     {{ $rev_cart->rate }}
                                     <br>
                                     @foreach($rev_cart->carts_detail()->where('type','product')->get() as $carts_detail)
-                                    {{ $carts_detail->qty }} x {{ $carts_detail->unitPrice }} ({{ $carts_detail->price }})
+                                    {{ $carts_detail->qty }} x {{ $carts_detail->unitPrice }} (${{ $carts_detail->price }})
                                     <br>
                                     @endforeach
                                 </div>
@@ -169,6 +169,11 @@
                             
 				</div>
                 <!-- Product booking -->
+                <?php
+				$grand_total += $rev_cart->total;
+				?>
+                @endforeach
+                
                 <div class="card-body pt-0 mt-0">
                 	<hr>
                 	<div class="row mb-2">
@@ -176,14 +181,12 @@
                     		<span style="font-size:18px">Subtotal</span>
                     	</div>
                     	<div class="col-4 text-right">
-                    		<span style="font-size:18px">${{ $rev_cart->total }}</span>
+                    		<span style="font-size:18px">${{ $grand_total }}</span>
                     	</div>
                 	</div>
 				</div>
-                <?php
-				$grand_total += $rev_cart->total;
-				?>
-				@endforeach
+                
+				
 				
 				
 				

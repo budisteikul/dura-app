@@ -69,7 +69,7 @@ Route::domain('www.budi.my.id')->group(function () {
 //========================================================================
 // Front Page
 //========================================================================
-Route::get('/phpinfo', function () {
+Route::get('/phpinfo_', function () {
 	phpinfo();
 	exit();
 });
@@ -81,8 +81,8 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 Route::get('/page/terms-and-conditions', function () {
 	return view('page.terms-and-conditions');
 });
-Route::get('/page/test-payment', function () {
-	return view('page.test-payment');
+Route::get('/page/privacy-policy', function () {
+	return view('page.privacy-policy');
 });
 //========================================================================
 // Booking Page

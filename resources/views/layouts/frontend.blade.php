@@ -184,6 +184,8 @@ s0.parentNode.insertBefore(s1,s0);
                     	<br>
 						<a target="_blank" class="text-theme" href="/page/terms-and-conditions" style="margin-top:10px;">Terms and Conditions</a>
                         <br>
+                        <a target="_blank" class="text-theme" href="/page/terms-and-conditions">Privacy Policy</a>
+                        <br>
 					</p>
                     <p class="mt-4 text-left text-dark">
                     <div style="margin-bottom:5px;">
