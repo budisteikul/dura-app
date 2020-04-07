@@ -151,6 +151,13 @@ Vertikal Trip Team
 
 
 
+@php
+	$product_lists = \App\Classes\Rev\BokunClass::get_product_list();
+@endphp
+<?php
+
+?>
+@foreach($product_lists as $product_list)
 
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
@@ -161,8 +168,8 @@ Vertikal Trip Team
                 <div class="col-lg-12 text-center">
                     <div style="height:70px;"></div>
                     
-                    <h3 class="section-heading" style="margin-top:0px;">{{ $contents->title }}</h3>
-                    <h4 class="section-subheading text-muted">{{ $contents->description }}</h4>
+                    <h3 class="section-heading" style="margin-top:0px;">{{ $product_list->title }}</h3>
+                    <h4 class="section-subheading text-muted">{{ $product_list->description }}</h4>
                     <hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
                     
                     <div style="height:30px;"></div>
@@ -173,8 +180,10 @@ Vertikal Trip Team
 				<div class="col-lg-12 text-center">
 					
         		<div class="row">
-
-        			@foreach($contents->items as $content)
+                	@php
+					$contents = \App\Classes\Rev\BokunClass::get_product_list_byid($product_list->id);
+        			@endphp
+                    @foreach($contents->items as $content)
         			<div class="col-sm-4 col-sm-auto  mb-4">
     						<div class="card  h-100 shadow card-block rounded">
                             @if(isset($content->activity->keyPhoto->fileName))
@@ -211,7 +220,7 @@ Vertikal Trip Team
 	</div>
 </div>
 </section>
-
+@endforeach
 
 <section id="review" style="background-color:#ffffff">
 <div class="container mb-6">
