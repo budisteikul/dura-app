@@ -89,9 +89,7 @@ Route::get('/page/privacy-policy', function () {
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-Route::get('/tour', function () {
-	return view('blog.frontend.vt-product-list-all');
-});
+Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
