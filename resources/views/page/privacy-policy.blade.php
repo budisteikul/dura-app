@@ -1,4 +1,5 @@
 @extends('layouts.frontend')
+@section('title','Privacy Policy')
 @section('content')
 @include('layouts.loading')
 @push('scripts')
