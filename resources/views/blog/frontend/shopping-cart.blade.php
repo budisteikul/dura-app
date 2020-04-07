@@ -75,13 +75,13 @@
     				<h4><i class="fas fa-shopping-cart"></i> Order Summary</h4>
   				</div>
                 
-                
-                <!-- Product booking -->
-                <div class="card-body">
                 <?php
 				$grand_total = 0;
 				?>
                 @foreach($rev_carts as $rev_cart)
+                <!-- Product booking -->
+                <div class="card-body">
+                
                             <!-- Product detail booking -->
 							<div class="row mb-4">
                 				<div class="col-8">
