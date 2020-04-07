@@ -69,7 +69,7 @@
 				
            <div class="card mb-8 shadow p-2">
   			
- 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
+ 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px; min-height:500px;">
                  <div class="text-right">
 		   		
 				 </div>
