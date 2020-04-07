@@ -38,8 +38,8 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.1.4.js"></script>
-	<link href="/css/vertikaltrip-1.1.4.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-1.1.5.js"></script>
+	<link href="/css/vertikaltrip-1.1.5.css" rel="stylesheet" media="screen,handheld">
     
     
   

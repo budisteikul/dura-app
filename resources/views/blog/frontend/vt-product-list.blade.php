@@ -54,13 +54,13 @@
   				 				<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
   				 			@endif	
   							<div class="card-header bg-white border-0 text-left h-100 pb-0">
-        								<h2 class="mb-0">{{ $content->activity->title }}</h2>
+        								<h3 class="mb-2">{{ $content->activity->title }}</h3>
       						</div>
+                            	@if($content->activity->excerpt!="")
 								<div class="card-body pt-0 h-100">
-    								@if($content->activity->excerpt!="")
 									<p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
-									@endif
   								</div>
+                                @endif
 								<div class="card-body pt-0">
     								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
   								</div>
