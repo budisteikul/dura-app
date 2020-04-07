@@ -41,10 +41,8 @@
 	color: #ffffff;
     background-color: #000000;
     border: 0px;
-    background: rgba(0,0,0,0.6);
-	filter: alpha(opacity=30);
+    background: rgba(0,0,0,0.2);
 }
-
 .tldate {
  	 display: block;
  	 width: 150px;

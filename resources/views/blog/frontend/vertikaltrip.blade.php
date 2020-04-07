@@ -60,10 +60,9 @@
 			
 </script>
 @endpush
-
  <!-- ################################################################### -->
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
 	<div class="container">
 
 <a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
@@ -81,27 +80,24 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.jpg'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/wallpaper.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
-			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
+			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
             	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.png" width="250" -->
                 
 				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
                 <hr style="max-width:50px;border-color: #1D57C7;border-width: 3px;">
-				<!-- p class="text-faded">
-                    Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
-                    <br>
-                    Get 10% discount with promotional code <span class="badge badge-success">HAPPYHOLIDAY</span> at checkout
-				</p -->
-                <p class="text-faded">
+				
+                <a class="btn btn-lg btn-theme js-scroll-trigger" href="/#tour">DISCOVER TOURS</a>
+                <!-- p class="text-faded">
                 Due to the current worldwide concern of COVID19, with deep regret we have decided to halt our operation from 14 March 2020 until 31 May 2020 or further notice. 
 We are so sorry to not decide it early. And for everyone who have booked it, unfortunately we have to cancel it.
 The safety and health of our guests, tour guides, employees, vendors and community is our top priority.
 <br><br>
 Regards,<br>
 Vertikal Trip Team
-</p>
+</p -->
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
        
@@ -281,9 +277,9 @@ Vertikal Trip Team
   // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
+      $("#mainNav").addClass("navbar-shrink shadow");
     } else {
-      $("#mainNav").removeClass("navbar-shrink");
+      $("#mainNav").removeClass("navbar-shrink shadow");
     }
   };
   
