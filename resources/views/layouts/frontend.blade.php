@@ -38,8 +38,8 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.1.3.js"></script>
-	<link href="/css/vertikaltrip-1.1.3.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-1.1.4.js"></script>
+	<link href="/css/vertikaltrip-1.1.4.css" rel="stylesheet" media="screen,handheld">
     
     
   
@@ -173,8 +173,8 @@ s0.parentNode.insertBefore(s1,s0);
 						<br>
 						We're happy to help
 						<br>
-							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-theme" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="far fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-theme" target="_blank">guide@vertikaltrip.com</a>
+							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-theme no-decoration" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
+							<span class="far fa-envelope"></span> Email : <a href="mailto:guide@vertikaltrip.com" class="badge badge-theme no-decoration" target="_blank">guide@vertikaltrip.com</a>
                     </p>
                 </div>
                 <div class="col-sm-4 second-column mb-4">

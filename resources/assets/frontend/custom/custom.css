@@ -523,3 +523,7 @@ article{
 	background-color:#1D57C7;
 	color:#FFFFFF;
 }
+.badge-theme:hover
+{
+	background-color:#FFFFFF;
+}
