@@ -506,9 +506,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$grand_total += $activity[$i]->extraBookings[$k]->extra->price;
 				}
 			}
-			
+			rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
 		}
-		rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
+		
 		
 		//========================================================================
 		
