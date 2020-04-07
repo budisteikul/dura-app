@@ -154,10 +154,7 @@ Vertikal Trip Team
 @php
 	$product_lists = \App\Classes\Rev\BokunClass::get_product_list();
 @endphp
-<?php
-
-?>
-@foreach($product_lists as $product_list)
+@foreach(collect($product_lists)->sortByDesc('title') as $product_list)
 
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
