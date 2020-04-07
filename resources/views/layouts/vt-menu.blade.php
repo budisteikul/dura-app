@@ -1,8 +1,8 @@
 		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item">
+				<!-- li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="/">Home</a>
-				</li>
+				</li -->
                 @php
                 	$contents = \App\Classes\Rev\BokunClass::get_product_list();
                 @endphp
