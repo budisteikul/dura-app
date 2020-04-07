@@ -89,9 +89,13 @@ Route::get('/page/privacy-policy', function () {
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
+Route::get('/tour', function () {
+	return view('blog.frontend.vt-product-list-all');
+});
 Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
-Route::get('/tours', 'Blog\Frontend\BlogController@vt_product_list');
+Route::get('/tours', function () {
+	return view('blog.frontend.vt-product-list-all');
+});
 Route::get('/booking/checkout', 'Rev\BookController@get_shoppingcart');
 Route::get('/booking/receipt', 'Rev\BookController@receipt');
 Route::get('/booking/invoice/{id}/{sessionId}', 'Rev\BookController@get_invoice');
