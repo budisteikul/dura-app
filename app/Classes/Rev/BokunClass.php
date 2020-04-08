@@ -104,5 +104,15 @@ class BokunClass {
 		return self::get_connect('/booking.json/activity-booking/'.$id);
 	}
 	
+	public static function get_questionshoppingcart($id)
+	{
+		return self::get_connect('/question.json/shopping-cart/'.$id);
+	}
+	
+	public static function get_questionbooking($id)
+	{
+		return self::get_connect('/question.json/activity-booking/'.$id);
+	}
+	
 }
 ?>

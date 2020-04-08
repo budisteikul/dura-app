@@ -10,6 +10,7 @@ use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_shoppingcarts;
 use App\Models\Rev\rev_carts;
 use App\Models\Rev\rev_carts_detail;
+use App\Models\Rev\rev_carts_question;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Classes\Rev\BookClass;
@@ -358,8 +359,6 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
     {
 		$id = $request->input('sessionId');
 		$contents = BokunClass::get_shoppingcart($id);
-		
-		
 		//========================================================================
 		
 		$lastsessionBooking = $request->session()->get('sessionBooking');
@@ -373,8 +372,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		//========================================================================
 		rev_carts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		$activity = $contents->activityBookings;
-		
-		
+		$order_question = 1;
 		//========================================================================
 		for($i=0;$i<count($activity);$i++)
 		{
@@ -392,19 +390,15 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_carts->date = $product_invoice[$i]->dates;
 			$rev_carts->save();
 			
-			
 			$grand_total = 0;
 			for($z=0;$z<count($lineitems);$z++)
 			{
-					
 					
 					$itemBookingId = $lineitems[$z]->itemBookingId;
 					$itemBookingId = explode("_",$itemBookingId);
 					
 					$type_product = '';
 					$unitPrice = 'Price per booking';
-					
-					
 					
 					if($activity[$i]->extrasPrice>0)
 					{
@@ -451,7 +445,6 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					{
 						$rev_carts_detail = new rev_carts_detail();
 						$rev_carts_detail->cart_id = $rev_carts->id;
-						
 					
 						$rev_carts_detail->type = $type_product;
 						$rev_carts_detail->title = $activity[$i]->activity->title;
@@ -507,11 +500,62 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 				}
 			}
 			rev_carts::where('id',$rev_carts->id)->update(['subtotal'=>$grand_total,'total'=>$grand_total]);
-		}
+		
 		
 		
 		//========================================================================
+		$contents = BokunClass::get_questionshoppingcart($id);
+		$mainContactDetails = $contents->mainContactDetails;
+		foreach($mainContactDetails as $mainContactDetail)
+		{
+			$rev_carts_question = new rev_carts_question();
+			$rev_carts_question->cart_id = $rev_carts->id;
+			$rev_carts_question->type = 'mainContactDetails';
+			$rev_carts_question->questionId = $mainContactDetail->questionId;
+			$rev_carts_question->label = $mainContactDetail->label;
+			$rev_carts_question->dataType = $mainContactDetail->dataType;
+			if(isset($mainContactDetail->dataFormat)) $rev_carts_question->dataFormat = $mainContactDetail->dataFormat;
+			$rev_carts_question->required = $mainContactDetail->required;
+			$rev_carts_question->selectOption = $mainContactDetail->selectFromOptions;
+			$rev_carts_question->selectMultiple = $mainContactDetail->selectMultiple;
+			$rev_carts_question->order = $order_question;
+			$rev_carts_question->save();
+			$order_question += 1;
+		}
 		
+		$activityBookings = $contents->activityBookings;
+		foreach($activityBookings as $activityBooking)
+		{
+			
+			if(isset($activityBooking->questions))
+			{
+				$questions = $activityBooking->questions;
+				for($i=0;$i<count($questions);$i++)
+				{
+					$rev_carts_question = new rev_carts_question();
+					$rev_carts_question->cart_id = $rev_carts->id;
+					$rev_carts_question->type = 'activityBookings';
+					$rev_carts_question->bookingId = $activityBooking->bookingId;
+			
+					$rev_carts_question->questionId = $questions[$i]->questionId;
+					$rev_carts_question->label = $questions[$i]->label;
+					$rev_carts_question->dataType = $questions[$i]->dataType;
+					if(isset($questions[$i]->dataFormat)) $rev_carts_question->dataFormat = $questions[$i]->dataFormat;
+					$rev_carts_question->required = $questions[$i]->required;
+					$rev_carts_question->selectOption = $questions[$i]->selectFromOptions;
+					$rev_carts_question->selectMultiple = $questions[$i]->selectMultiple;
+					$rev_carts_question->order = $order_question;
+					$rev_carts_question->save();
+					$order_question += 1;
+				}
+			}
+		}
+		//========================================================================
+		}
+		//========================================================================
+		
+		
+		//========================================================================
 		
 		$bookingChannelUUID = '93a137f0-bb95-4ea0-b4a8-9857824a2e79';
 		$rev_resellers = rev_resellers::where('status',1)->first();

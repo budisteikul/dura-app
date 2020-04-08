@@ -17,4 +17,9 @@ class rev_carts extends Model
     {
         return $this->hasMany('App\Models\Rev\rev_carts_detail','cart_id');
     }
+	
+	public function carts_question()
+    {
+        return $this->hasMany('App\Models\Rev\rev_carts_question','cart_id');
+    }
 }
