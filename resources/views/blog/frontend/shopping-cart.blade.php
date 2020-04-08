@@ -225,6 +225,8 @@
 		   		<img style="margin-bottom:30px;" height="20" src="/assets/logo/Powered-By-PayPal-Logo.png">
 				 </div>
              
+             
+             	
                 {!! $widget !!}
                 
                 

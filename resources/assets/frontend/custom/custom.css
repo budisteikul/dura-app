@@ -525,3 +525,8 @@ article{
 {
 	background-color:#FFFFFF;
 }
+
+.required:after {
+  content:" *";
+  color: red;
+}

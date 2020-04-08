@@ -617,8 +617,20 @@ var w2530_63d268fd_7751_45f2_aa8c_3d02e7c40bf0;
   var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, \'script\');
 </script>';
+			
+			/*
+			$widget = '<div class="form-group">
+						<label for="title" class="required"><strong>Title</strong></label>
+						<input type="text" id="title" style="height:40px;" name="title" class="form-control">
+					   </div>
+					   
+					   <div class="form-group">
+						<label for="title" class="required"><strong>Title</strong></label>
+						<input type="text" id="title" style="height:40px;" name="title" class="form-control">
+					   </div>';
 		}
-		
+			*/
+			
 		$rev_carts = rev_carts::where('sessionId', $id)
 						->where('sessionBooking', $sessionBooking)
 						->where('bookingStatus','CART')->get();
