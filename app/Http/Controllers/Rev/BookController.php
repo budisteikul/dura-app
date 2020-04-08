@@ -527,6 +527,26 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		foreach($activityBookings as $activityBooking)
 		{
 			
+			if(isset($activityBooking->pickupQuestions))
+			{
+				for($i=0;$i<count($activityBooking->pickupQuestions);$i++)
+				{
+					$rev_carts_question = new rev_carts_question();
+					$rev_carts_question->cart_id = $rev_carts->id;
+					$rev_carts_question->type = 'pickupQuestions';
+			
+					$rev_carts_question->questionId = $activityBooking->pickupQuestions[$i]->questionId;
+					$rev_carts_question->label = $activityBooking->pickupQuestions[$i]->label;
+					$rev_carts_question->dataType = $activityBooking->pickupQuestions[$i]->dataType;
+					$rev_carts_question->required = $activityBooking->pickupQuestions[$i]->required;
+					$rev_carts_question->selectOption = $activityBooking->pickupQuestions[$i]->selectFromOptions;
+					$rev_carts_question->selectMultiple = $activityBooking->pickupQuestions[$i]->selectMultiple;
+					$rev_carts_question->order = $order_question;
+					$rev_carts_question->save();
+					$order_question += 1;
+				}
+			}
+			
 			if(isset($activityBooking->questions))
 			{
 				$questions = $activityBooking->questions;
