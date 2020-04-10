@@ -52,7 +52,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		
+		@include('layouts.vt-menu')
         
 	</div>
 </nav>
