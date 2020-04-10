@@ -26,6 +26,8 @@ use App\Classes\Rev\BokunClass;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
+use App\Mail\Rev\Booking;
+
 class BookController extends Controller
 {
 	
@@ -694,7 +696,8 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_books->post_id = BookClass::get_id($shoppingcart_products->productId);
 			$shoppingcart = $shoppingcart_products->shoppingcarts()->first(); 
 			$rev_books->name = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer .' '. $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer;
-			$rev_books->email = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
+			$email = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
+			$rev_books->email = $email;
 			$rev_books->phone = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;;
 			$rev_books->date = BookClass::texttodate($shoppingcart_products->date);
 			$rev_resellers = rev_resellers::where('status',1)->first();
@@ -713,6 +716,8 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_books->save();
 			//=============================================================
 		}
+		
+		Mail::to($email)->send(new Booking($rev_shoppingcarts->id));
 		
 		$request->session()->forget('sessionBooking');
 		

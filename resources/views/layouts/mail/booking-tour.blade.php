@@ -184,7 +184,7 @@
           <!-- Logo -->
           <tr>
             <td class="email-masthead">
-              <a class="email-masthead_name">Vertikal Trip</a>
+              <a class="email-masthead_name">VERTIKAL TRIP</a>
             </td>
           </tr>
           <!-- Email Body -->
@@ -195,8 +195,8 @@
                 <tr>
                   <td class="content-cell">
                     
-                    <h1>Hi {{$name}},</h1>
-                    <p>Thank you for booking our tour. {{ $tour }} will start at {{ $date }}. Our meeting point is Tugu Yogyakarta Monument</p>
+                    <h1>Hi {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}},</h1>
+                    <p>Thank you for your booking with VERTIKAL TRIP</p>
                     <!-- Action -->
                     
                     <!-- Sub copy -->
@@ -205,17 +205,22 @@
                       <tr>
                         <td>
                           <p>
-                          <strong>Product : </strong>{{$tour}}<br />
-                          <strong>Name : </strong>{{$name}}<br />
-                            <strong>Email :</strong> {{$email}}<br />
-                            <strong>Phone :</strong> {{$phone}}<br />
-                            <strong>Date :</strong> {{$date}}<br />
-                          <strong>Number of travelers :</strong> {{$os0}} 
+                          <strong>CUSTOMER INFO</strong><br />
+                          <strong>Name :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}} {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer}}<br />
+                          <strong>Phone :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer}}<br />
+                          <strong>Email :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer}}
                           <br />
-                          <strong>Ticket : </strong> <a href="https://www.vertikaltrip.com/ticket/{{$ticket}}">{{$ticket}}</a>
 						  <br />
-                          <strong>Meeting point :</strong> <a href="https://goo.gl/maps/bsk9cGSh9iuUX7e46">Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
-Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 55233</a>
+                          <strong>TRAVEL DOCUMENTS</strong><br />
+                          <strong>Receipt</strong>
+                          <br />
+                          <a target="_blank" href="https://www.vertikaltrip.com/booking/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}</a>
+                          <br /><br />
+                          <strong>Ticket</strong>
+                          <br />
+                          @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+                          <a target="_blank" class="text-theme" href="https://www.vertikaltrip.com/booking/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}</a><br />
+                          @endforeach
                           </p>
                           
                         </td>
@@ -231,10 +236,10 @@ Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 5
               <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-cell">
-                    <p class="sub center">Vertikal Trip <br />
-                    Whatsapp : +6285743112112<br />
-                    Tugu Yogyakarta Monument (Tugu Pal Putih)<br />
-Cokrodiningratan, Kec. Jetis, Kota Yogyakarta,<br />Daerah Istimewa Yogyakarta 55233
+                    <p class="sub center">VERTIKAL TRIP<br />
+                    Jl. Abiyoso VII No.190 Bantul ID<br />
+					Whatsapp : +6285743112112<br />
+                    Email : guide@vertikaltrip.com<br />
                     </p>
                   </td>
                 </tr>

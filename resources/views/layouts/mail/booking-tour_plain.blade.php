@@ -1,24 +1,21 @@
-Hi {{$name}},
-Thank you for booking our tour. {{ $tour }} will start at {{ $date }}. Our meeting point is Tugu Yogyakarta Monument
+Hi {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}},
+Thank you for your booking with VERTIKAL TRIP
 
-Product : {{$tour}}
-Name : {{$name}}
-Email : {{$email}}
-Phone : {{$phone}}
-Date : {{$date}}
-Number of travelers : {{$os0}}
-Ticket : {{$ticket}} [https://www.vertikaltrip.com/ticket/{{$ticket}}]
-Meeting Point : Tugu Yogyakarta Monument (Tugu Pal Putih) 
-Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
-[https://goo.gl/maps/bsk9cGSh9iuUX7e46]
+CUSTOMER INFO
+Name : {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}} {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer}}
+Phone : {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer}}
+Email : {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer}}
 
+TRAVEL DOCUMENTS
+Receipt
+Invoice-{{ $rev_shoppingcarts->confirmationCode }} [https://www.vertikaltrip.com/booking/invoice/{{ $rev_shoppingcarts->id }}]
 
+Ticket
+@foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+Ticket-{{ $shoppingcart_products->productConfirmationCode }} [https://www.vertikaltrip.com/booking/ticket/{{$shoppingcart_products->id}}]
+@endforeach
 
-Thanks,
-Vertikal Trip Team
-
-Vertikal Trip
+VERTIKAL TRIP
+Jl. Abiyoso VII No.190 Bantul ID
 Whatsapp : +6285743112112
-Tugu Yogyakarta Monument (Tugu Pal Putih)
-Cokrodiningratan, Kec. Jetis, Kota Yogyakarta
-Daerah Istimewa Yogyakarta 55233
+Email : guide@vertikaltrip.com
