@@ -8,8 +8,8 @@
 <script>
 $( document ).ready(function() {
     $('#proses').hide();
-	//$('#alert-success').hide();
-	//$('#alert-failed').hide();
+	$('#alert-success').hide();
+	$('#alert-failed').hide();
 });
 </script>
 
@@ -411,10 +411,10 @@ function STORE()
   <div id="paypal-button-container"></div>
 </div>
 <div id="alert-success" class="alert alert-primary text-center" role="alert">
-  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment ${{ $grand_total }} Successful!</h2>
+  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment Successful!</h2>
 </div>
 <div id="alert-failed" class="alert alert-danger text-center" role="alert">
-  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-frown"></i> Payment ${{ $grand_total }} Failed!</h2>
+  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-frown"></i> Payment Failed!</h2>
 </div>
 
 <script>
@@ -600,8 +600,8 @@ $questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->
 							}
 							else
 							{
-								$("#proses").removeClass("loader");
-								return actions.restart();
+								$("#proses").hide();
+								$('#alert-failed').fadeIn("slow");
 							}
 						});
 					
