@@ -29,7 +29,7 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #F5F7F9;
+      background-color: #1D57C7;
     }
     .email-content {
       width: 100%;
@@ -49,7 +49,7 @@
     .email-masthead_name {
       font-size: 16px;
       font-weight: bold;
-      color: #839197;
+      color: #FFFFFF;
       text-decoration: none;
       text-shadow: 0 1px 0 white;
     }
@@ -75,7 +75,7 @@
       text-align: center;
     }
     .email-footer p {
-      color: #839197;
+      color: #ffffff;
     }
     .body-action {
       width: 100%;
