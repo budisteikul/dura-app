@@ -8,8 +8,8 @@
 <script>
 $( document ).ready(function() {
     $('#proses').hide();
-	$('#alert-success').hide();
-	$('#alert-failed').hide();
+	//$('#alert-success').hide();
+	//$('#alert-failed').hide();
 });
 </script>
 
@@ -334,8 +334,7 @@ function STORE()
 				$("#submit").slideUp("slow");
 				$("#proses").fadeIn("slow");
 				createPaypalButton('{{$grand_total}}');
-				//$("#submit").attr("disabled", false);	
-				//$('#submit').html('<i class="fa fa-save"></i> {{ __('Save') }}');
+				
 			}
 			else
 			{
@@ -412,7 +411,7 @@ function STORE()
   <div id="paypal-button-container"></div>
 </div>
 <div id="alert-success" class="alert alert-primary text-center" role="alert">
-  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment ${{ $grand_total }} Success!</h2>
+  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment ${{ $grand_total }} Successful!</h2>
 </div>
 <div id="alert-failed" class="alert alert-danger text-center" role="alert">
   <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-frown"></i> Payment ${{ $grand_total }} Failed!</h2>
@@ -452,7 +451,7 @@ $questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->
   				$('#span-{{ $question->questionId }}').remove();
 			@endif
 		}
-		checkForm();
+		
   	});
 	@endforeach
 
@@ -571,6 +570,10 @@ $questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->
       				}
       			});
     		},
+			onError: function (err) {
+    				$("#proses").hide();
+					$('#alert-failed').fadeIn("slow");
+  				},
    			onApprove: function(data, actions) {
 				$("#proses").addClass("loader");
       			
@@ -590,9 +593,10 @@ $questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->
 						}).done(function( data ) {
 							if(data.id=="1")
 							{
+								window.location.href = '/booking/receipt/'+ data.message;
 								$("#proses").hide();
 								$('#alert-success').fadeIn("slow");
-								window.location.replace("/booking/receipt/"+ data.message);
+								
 							}
 							else
 							{
@@ -605,6 +609,7 @@ $questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->
 					//=========================================================
       			});
     		}
+			
   		}).render('#paypal-button-container');
   }
   
