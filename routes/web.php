@@ -94,13 +94,13 @@ Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });
-Route::get('/booking/checkout', 'Rev\BookController@get_shoppingcart');
-//Route::get('/booking/checkout', function () {
-	//return view('page.checkout');
-//});
-Route::get('/booking/receipt', 'Rev\BookController@receipt');
-Route::get('/booking/invoice/{id}/{sessionId}', 'Rev\BookController@get_invoice');
-Route::get('/booking/ticket/{id}/{sessionId}', 'Rev\BookController@get_ticket');
+Route::get('/booking/shoppingcart', 'Rev\BookController@get_shoppingcart');
+Route::get('/booking/checkout', 'Rev\BookController@get_checkout');
+Route::post('/booking/checkout', 'Rev\BookController@post_checkout');
+Route::post('/booking/payment', 'Rev\BookController@payment');
+Route::get('/booking/receipt/{id}', 'Rev\BookController@receipt');
+Route::get('/booking/invoice/{id}', 'Rev\BookController@get_invoice');
+Route::get('/booking/ticket/{id}', 'Rev\BookController@get_ticket');
 Route::get('/booking/{id}', 'Rev\BookController@time_selector');
 //========================================================================
 // Redirect Page

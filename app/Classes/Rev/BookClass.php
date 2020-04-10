@@ -2,9 +2,19 @@
 namespace App\Classes\Rev;
 use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_widgets;
+use App\Models\Rev\rev_shoppingcarts;
 use Illuminate\Support\Str;
 
 class BookClass {
+	
+	public static function get_ticket(){
+    	$uuid = "VT-". rand(100000,999999);
+    	while( rev_shoppingcarts::where('confirmationCode','=',$uuid)->first() ){
+        	$uuid = "VT-". rand(100000,999999);
+    	}
+
+    	return $uuid;
+	}
 	
 	public static function get_id($product_id)
 	{

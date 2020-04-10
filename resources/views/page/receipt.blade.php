@@ -51,7 +51,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		@include('layouts.vt-menu')
+		
         
 	</div>
 </nav>
@@ -70,7 +70,7 @@
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
 				 <div class="col-md-12  mx-auto text-left">
 				 <p>
-                        <h4>Your booking references is {{ $customer->confirmationCode }}</h4>
+                        <h4>Your booking references is {{ $rev_shoppingcarts->confirmationCode }}</h4>
 						
 						Thank you for your booking with <b>VERTIKAL TRIP</b>, a confirmation will be sent to your email address.
 						</p>
@@ -89,17 +89,18 @@
 					</div>
                 
 					<div class="card-body">
-                
-                        
+                		
+                       
                         <p>
 						<h3>Name</h3>
-						{{ $customer->firstName }} {{ $customer->lastName }}
+						{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer }}
+                        {{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer }} 
                         <h3>Phone</h3>
-						{{ $customer->phoneNumber }}
+						{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer }} 
                         <h3>Email</h3>
-						{{ $customer->email }}
+						{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} 
                         </p>
-								
+						
 					</div>
 					
 				</div>
@@ -116,10 +117,10 @@
                 	 
                         <p>
 						<h3>Receipt</h3>
-						<a target="_blank" class="text-theme" href="/booking/invoice/{{ $customer->bookingId }}/{{$customer->sessionId}}"><i class="far fa-file-pdf"></i> Invoice-{{ $customer->confirmationCode }}.pdf</a>
+						<a target="_blank" class="text-theme" href="/booking/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}</a>
 						<h3>Experience tickets</h3>
-                       	@foreach($rev_carts as $rev_cart)
-                        <a target="_blank" class="text-theme" href="/booking/ticket/{{ $rev_cart->productConfirmationCode }}/{{$customer->sessionId}}"><i class="far fa-file-pdf"></i> Ticket-{{ $rev_cart->productConfirmationCode }}.pdf</a>
+                       	@foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+                        <a target="_blank" class="text-theme" href="/booking/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}</a>
                         <br>
                         @endforeach
                         </p>

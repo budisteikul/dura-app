@@ -19,8 +19,8 @@ class BokunClass {
         $lang = "EN";
         $query = '?currency='.$currency.'&lang='.$lang;
         $date = gmdate('Y-m-d H:i:s');
-        $bokun_accesskey = env("BOKUN_ACCESSKEY", "");
-        $bokun_secretkey = env("BOKUN_SECRETKEY", "");
+        $bokun_accesskey = env("BOKUN_ACCESSKEY");
+        $bokun_secretkey = env("BOKUN_SECRETKEY");
 		
 		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
         $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
@@ -112,6 +112,11 @@ class BokunClass {
 	public static function get_questionbooking($id)
 	{
 		return self::get_connect('/question.json/activity-booking/'.$id);
+	}
+	
+	public static function get_removeshoppingcart($sessionId,$id)
+	{
+		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'.$id);
 	}
 	
 }

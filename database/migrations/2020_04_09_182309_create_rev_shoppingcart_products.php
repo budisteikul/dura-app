@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRevCartsTable extends Migration
+class CreateRevShoppingcartProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,21 @@ class CreateRevCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rev_carts', function (Blueprint $table) {
+        Schema::create('rev_shoppingcart_products', function (Blueprint $table) {
             $table->uuid('id')->primary();
-			
-			$table->string('sessionId')->nullable();
-			$table->string('sessionBooking')->nullable();
-			$table->string('parrentId')->nullable();
-			$table->string('parrentConfirmationCode')->nullable();
+			$table->uuid('shoppingcarts_id');
+			$table->foreign('shoppingcarts_id')
+      				->references('id')->on('rev_shoppingcarts')
+      				->onDelete('cascade')->onUpdate('cascade');
+				
 			$table->string('bookingId')->nullable();	
 			$table->string('productConfirmationCode')->nullable();
-			$table->string('bookingStatus')->default('CART');
 			
+			$table->string('productId')->nullable();
 			$table->string('image')->nullable();
 			$table->string('title')->nullable();
 			$table->string('rate')->nullable();
 			$table->string('date')->nullable();
-			
-			$table->string('firstName')->nullable();
-			$table->string('lastName')->nullable();
-			$table->string('email')->nullable();
-			$table->string('phoneNumber')->nullable();
 			
 			$table->float('subtotal')->default(0);
 			$table->float('discount')->default(0);
@@ -52,6 +47,6 @@ class CreateRevCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rev_carts');
+        Schema::dropIfExists('rev_shoppingcart_products');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRevCartsQuestionsTable extends Migration
+class CreateRevShoppingcartQuestions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateRevCartsQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rev_carts_question', function (Blueprint $table) {
+        Schema::create('rev_shoppingcart_questions', function (Blueprint $table) {
             $table->uuid('id')->primary();
-			$table->uuid('cart_id');
-			$table->foreign('cart_id')
-      			->references('id')->on('rev_carts')
-      			->onDelete('cascade')->onUpdate('cascade');
-				
-			$table->string('type')->default('main');
 			
+			$table->uuid('shoppingcarts_id');
+			$table->foreign('shoppingcarts_id')
+      				->references('id')->on('rev_shoppingcarts')
+      				->onDelete('cascade')->onUpdate('cascade');
+					
+			$table->string('type')->nullable();
 			$table->string('bookingId')->nullable();
 			$table->string('questionId')->nullable();
 			$table->string('label')->nullable();
@@ -45,6 +45,6 @@ class CreateRevCartsQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rev_carts_question');
+        Schema::dropIfExists('rev_shoppingcart_questions');
     }
 }
