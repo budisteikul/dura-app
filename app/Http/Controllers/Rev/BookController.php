@@ -78,6 +78,8 @@ class BookController extends Controller
 					$date_text = '';
 					$traveller = 'People : '. $book->traveller .'<br>';
 					$channel = '';
+					$product = '';
+					$status = '';
 					
 					if($book->ticket!='') $ticket = $book->ticket .'<br>';
 					if($book->name!='') $name = 'Name : '. $book->name .'<br>';
@@ -87,42 +89,25 @@ class BookController extends Controller
 					$rev_resellers = rev_resellers::find($book->source);
 					if(isset($rev_resellers)) $channel = 'Channel : '. $rev_resellers->name .'<br>';
 					$post = blog_posts::find($book->post_id);
-					if(isset($post)) $channel = 'Product : '. $post->title .'<br>';
+					if(isset($post)) $product = 'Product : '. $post->title .'<br>';
+					if($book->status==1) $status = 'Status : Pending<br>';
+					if($book->status==2) $status = 'Status : Confirmed<br>';
+					if($book->status==3) $status = 'Status : Cancelled<br>';
 					
-					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel; 
+					
+					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel . $product . $status; 
 				})
 				->addColumn('action', function ($book) {
 					
-						if($book->status==3)
+						$button = '';
+						if($book->status==1)
 						{
-							$label = ""	;
-							$status = 1;
-							$button = "btn-light";
-							$icon = "fa-toggle-off";
-							$text = " Cancelled";
-							$disabled = "";
+							$button = '<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" class="btn btn-primary"><i class="fas fa-tasks"></i> Action</button></div>&nbsp;';
 						}
-						else if($book->status==2)
-						{
-							$label = "";
-							$status = 3;
-							$button = "btn-light";
-							$icon = "fa-toggle-on";
-							$text = " Confirmed";
-							$disabled = "disabled";
-						}
-						else
-						{
-							$label = ""	;
-							$status = 2;
-							$button = "btn-light";
-							$icon = "fa-toggle-off";
-							$text = " Pending";
-							$disabled = "";
-						}
+						
 						return '<div class="btn-toolbar justify-content-end">
 						
-						<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" onClick="STATUS(\''. $book->id .'\',\''. $status .'\')" class="btn '.$button.'"><i class="fa '. $icon .'"></i>'. $text .'</button></div>
+						'.$button.'
 						
 						<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
 						
