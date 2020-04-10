@@ -384,7 +384,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_shoppingcart_products->productConfirmationCode = $activity[$i]->productConfirmationCode;
 			$rev_shoppingcart_products->bookingId = $activity[$i]->id;
 			$rev_shoppingcart_products->productId = $activity[$i]->activity->id;
-			$rev_shoppingcart_products->image = $product_invoice[$i]->product->keyPhoto->derived[2]->url;
+			if(isset($product_invoice[$i]->product->keyPhoto->derived[2]->url)) $rev_shoppingcart_products->image = $product_invoice[$i]->product->keyPhoto->derived[2]->url;
 			$rev_shoppingcart_products->title = $activity[$i]->activity->title;
 			$rev_shoppingcart_products->rate = $activity[$i]->rate->title;
 			$rev_shoppingcart_products->date = $product_invoice[$i]->dates;
