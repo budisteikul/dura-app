@@ -104,7 +104,11 @@ class BookController extends Controller
 						$button = '';
 						if($book->status==1)
 						{
-							$button = '<div class="btn-group mb-2" role="group"><button id="btn-update" type="button" class="btn btn-primary"><i class="fas fa-tasks"></i> Action</button></div>&nbsp;';
+							$check_ticket = rev_shoppingcarts::where('confirmationCode',$book->ticket)->first();
+							if(isset($check_ticket))
+							{
+								$button = '<div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="btn-capture" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="btn-void" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div>&nbsp;';
+							}
 						}
 						
 						return '<div class="btn-toolbar justify-content-end">
@@ -220,7 +224,7 @@ class BookController extends Controller
         if($request->input('update')!="")
 		{
 			$validator = Validator::make($request->all(), [
-          			'update' => 'in:1,2,3'
+          			'update' => 'in:capture,void'
        		]);
 				
 			if ($validator->fails()) {
@@ -229,8 +233,21 @@ class BookController extends Controller
        		}
 				
 			$rev_books = rev_books::find($id);
-			$rev_books->status = $request->input('update');
-			$rev_books->save();
+			$update = $request->input('update');
+			if($update=="capture")
+			{
+				$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$rev_books->ticket)->first();
+				PaypalClass::captureAuth($rev_shoppingcarts->authorizationID);
+				$rev_books->status = 2;
+				$rev_books->save();
+			}
+			if($update=="void")
+			{
+				$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$rev_books->ticket)->first();
+				PaypalClass::voidPaypal($rev_shoppingcarts->authorizationID);
+				$rev_books->status = 3;
+				$rev_books->save();
+			}
 			
 			
 			return response()->json([
@@ -611,9 +628,15 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$sessionBooking = $request->session()->get('sessionBooking');
 		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
 						->where('bookingStatus','CART')->first();
-		$value = number_format((float)$rev_shoppingcarts->total, 2, '.', '');				
-		$response = PaypalClass::createOrder($value);
-		//print_r($response);
+		$value = number_format((float)$rev_shoppingcarts->total, 2, '.', '');		
+		
+		$name = '';
+		foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+		{
+			$name = $shoppingcart_products->title;
+		}		
+		$response = PaypalClass::createOrder($value,$name);
+		
 		return response()->json($response);
 	}
 	

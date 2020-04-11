@@ -47,11 +47,11 @@ class PaypalClass {
 		return $response->result->purchase_units[0]->amount->value;
 	}
 	
-	public static function createOrder($value,$debug=false)
+	public static function createOrder($value,$name="Booking tour",$debug=false)
   	{
     	$request = new OrdersCreateRequest();
     	$request->prefer('return=representation');
-    	$request->body = self::buildRequestBodyCreateOrder($value);
+    	$request->body = self::buildRequestBodyCreateOrder($value,$name);
    		// 3. Call PayPal to set up a transaction
     	$client = self::client();
     	$response = $client->execute($request);
@@ -76,7 +76,7 @@ class PaypalClass {
   	}
 	
 	
-	public static function buildRequestBodyCreateOrder($value)
+	public static function buildRequestBodyCreateOrder($value,$name)
     {
         return array(
             'intent' => 'AUTHORIZE',
@@ -88,6 +88,7 @@ class PaypalClass {
                 array(
                     0 =>
                         array(
+							'description' => $name,
                             'amount' =>
                                 array(
                                     'currency_code' => 'USD',

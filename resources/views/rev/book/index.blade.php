@@ -96,19 +96,18 @@
 		
 	}
 	
-	function VIEW(id)
-	{
-		$.fancybox.open({
-        	type: 'ajax',
-       	 	src: '/ticket/'+ id,
-			//src: '/ticket/',
-			touch: false,
-   		});
-		
-	}
-	
 	function STATUS(id, status)
 	{
+		$("#btn-capture").attr("disabled", true);
+		$("#btn-void").attr("disabled", true);
+		if(status=="capture")
+		{
+			$('#btn-capture').html('<i class="fa fa-spinner fa-spin"></i>');
+		}
+		if(status=="void")
+		{
+			$('#btn-void').html('<i class="fa fa-spinner fa-spin"></i>');
+		}
 		var table = $('#dataTables-example').DataTable();
 		$.ajax({
 		data: {
@@ -120,6 +119,10 @@
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
+				$("#btn-capture").attr("disabled", false);
+				$("#btn-void").attr("disabled", false);
+				$('#btn-capture').html('<i class="far fa-money-bill-alt"></i> Capture');
+				$('#btn-void').html('<i class="far fa-money-bill-alt"></i> Void');
 				table.ajax.reload( null, false );
 			}
 		});
