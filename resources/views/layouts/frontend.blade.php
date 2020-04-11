@@ -15,7 +15,7 @@
 			@endif
 	@endif
 	">
-    <meta name="author" content="Vertikal Trip LLC">
+    <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,12 +38,8 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.1.8.js"></script>
-	<link href="/css/vertikaltrip-1.1.8.css" rel="stylesheet" media="screen,handheld">
-    
-    
-  
-    
+	<script src="/js/vertikaltrip-1.2.0.js"></script>
+	<link href="/css/vertikaltrip-1.2.0.css" rel="stylesheet" media="screen,handheld">
 <!-- script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
@@ -60,11 +56,7 @@
 </script -->    
  
 @if(env('BOKUN_WIDGET')=='new')
-	@if(env('APP_ENV')=='production')
 		<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
-    @else
-    	<script type="text/javascript" src="https://widgets.bokuntest.com/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=bfaa0f13-9831-4e68-866b-f5dab49b7ff4" async></script>
-	@endif	
 @endif
 
     
@@ -101,7 +93,7 @@ s0.parentNode.insertBefore(s1,s0);
 	@yield('content')
     
 
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+
 <footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
 <div class="container">
     <div class="row">
@@ -110,65 +102,6 @@ s0.parentNode.insertBefore(s1,s0);
                 	<p class="m-0 text-left text-dark">
 						<img src="/assets/logo/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
-						<b>INFO AND RESERVATION</b>
-						<br>
-						We're happy to help
-						<br>
-							<span class="fab fa-whatsapp"></span> Whatsapp : <a class="badge badge-danger" href="https://wa.me/+6285743112112">+62 857-4311-2112</a> <br>
-							<span class="far fa-envelope"></span> Email : <a href="mailto:guide@jogjafoodtour.com" class="badge badge-danger" target="_blank">guide@jogjafoodtour.com</a>
-                    </p>
-                </div>
-                <div class="col-sm-4 second-column mb-4">
-                	
-                	<p class="m-0 text-left text-dark">
-                    	<b>USEFUL LINKS</b>
-                    	<br>
-						<a target="_blank" class="text-danger" href="/page/terms-and-conditions" style="margin-top:10px;">Terms and Conditions</a>
-                        <br>
-					</p>
-                    <p class="mt-4 text-left text-dark">
-                    <div style="margin-bottom:3px;">
-						<b>FOLLOW US</b>
-					</div>
-                    <div>
-<a target="_blank" href= 'https://www.tripadvisor.com/Attraction_Review-g14782503-d17523331-Reviews-Vertikal_Trip-Yogyakarta_Yogyakarta_Region_Java.html' class="btn btn-social-icon btn-tripadvisor"><i class="fab fa-tripadvisor fa-2x text-white"></i></a>
-<a target="_blank" href='https://www.airbnb.com/users/show/225353316' class="btn btn-social-icon btn-airbnb"><i class="fab fa-airbnb fa-2x text-white"></i></a>
-<a target="_blank" href='https://www.facebook.com/vertikaltrip' class="btn btn-social-icon btn-facebook"><i class="fab fa-facebook fa-2x text-white"></i></a>
-<a target="_blank" href='https://www.instagram.com/vertikaltrip' class="btn btn-social-icon btn-instagram"><i class="fab fa-instagram fa-2x text-white"></i></a>
-					</div>
-                      
-                        
-                      
-					</p>
-                    
-                    
-					
-                </div>
-                <div class="col-sm-4 second-column mb-4">
-                	
-                    <p class="text-left text-dark">
-						<b>PAYMENT CHANNEL</b>
-                    	<br>
-						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
-
-                        <small> 2020 &copy; VERTIKAL TRIP</small>
-					</p>
-                    
-                </div>
-        </div>
-    </div>
-</div>
-</footer>
-@else
-<footer class="py-5" style="font-size:16px; background-color:#f2f2f2">
-<div class="container">
-    <div class="row">
-		<div class="row col-md-12">
-            	<div class="col-sm-4 first-column mb-4">
-                	<p class="m-0 text-left text-dark">
-						<img src="/assets/logo/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
-						<br>
-
 						<b>INFO AND RESERVATION</b>
 						<br>
 						We're happy to help
@@ -178,7 +111,6 @@ s0.parentNode.insertBefore(s1,s0);
                     </p>
                 </div>
                 <div class="col-sm-4 second-column mb-4">
-                	
                 	<p class="m-0 text-left text-dark">
                     	<b>USEFUL LINKS</b>
                     	<br>
@@ -197,30 +129,21 @@ s0.parentNode.insertBefore(s1,s0);
 <a target="_blank" href='https://www.facebook.com/vertikaltrip' class="btn btn-social-icon btn-facebook"><i class="fab fa-facebook fa-2x text-white"></i></a>
 <a target="_blank" href='https://www.instagram.com/vertikaltrip' class="btn btn-social-icon btn-instagram"><i class="fab fa-instagram fa-2x text-white"></i></a>
 					</div>
-                      
-                        
-                      
 					</p>
-                    
-                    
-					
                 </div>
                 <div class="col-sm-4 second-column mb-4">
-                	
                     <p class="text-left text-dark">
 						<b>PAYMENT CHANNEL</b>
                     	<br>
 						<img src="/assets/logo/PP_Acceptance.png" height="35" alt="Buy now with PayPal"  style="margin-top:5px; margin-bottom:5px;"><br>
-
                         <small> 2020 &copy; VERTIKAL TRIP</small>
 					</p>
-                    
                 </div>
         </div>
     </div>
 </div>
 </footer>
-@endif
+
 
 
 

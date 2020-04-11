@@ -49,7 +49,7 @@ mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
 */
 
-
+/*
 mix.scripts([
 	'resources/assets/frontend/jquery/dist/jquery.min.js',
 	'resources/assets/frontend/moment/moment.js',
@@ -60,9 +60,6 @@ mix.scripts([
 	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
 	'resources/assets/frontend/back-to-top/js/main.js',
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-	'resources/assets/frontend/sweetalert/dist/sweetalert.min.js',
-	'resources/assets/frontend/wowjs/dist/wow.min.js',
 	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
 	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
 	],'public/js/vertikaltrip-1.1.8.js');
@@ -77,7 +74,6 @@ mix.styles([
 	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 	'resources/assets/frontend/custom/nav.css',
 	'resources/assets/frontend/custom/custom.css',
-	'resources/assets/frontend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
 	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css'
 	],'public/css/ratnawahyu-1.1.1.css');
 	
@@ -86,7 +82,7 @@ mix.styles(['public/css/ratnawahyu-1.1.1.css','resources/assets/frontend/custom/
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
 mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
 mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-
+*/
 
 /*
 mix.webpackConfig({
@@ -133,3 +129,21 @@ mix.webpackConfig({
     ]
 });
 */
+mix.scripts([
+	'resources/assets/frontend/jquery/dist/jquery.min.js',
+	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
+	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
+	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
+	],'public/js/vertikaltrip-1.2.0.js');
+
+mix.styles([
+	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
+	'resources/assets/frontend/fontawesome-free-5.9.0-web/css/all.css',
+	'resources/assets/frontend/animate.css/animate.min.css',
+	'resources/assets/frontend/custom/nav.css',
+	'resources/assets/frontend/custom/custom.css',
+	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css',
+	'resources/assets/frontend/custom/vertikaltrip.css'
+	],'public/css/vertikaltrip-1.2.0.css');
+	
+mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
