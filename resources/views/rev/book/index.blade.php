@@ -98,15 +98,16 @@
 	
 	function STATUS(id, status)
 	{
-		$("#btn-capture").attr("disabled", true);
-		$("#btn-void").attr("disabled", true);
+		
+		$("#capture-"+ id).attr("disabled", true);
+		$("#void-"+ id).attr("disabled", true);
 		if(status=="capture")
 		{
-			$('#btn-capture').html('<i class="fa fa-spinner fa-spin"></i>');
+			$("#capture-"+ id).html('<i class="fa fa-spinner fa-spin"></i>');
 		}
 		if(status=="void")
 		{
-			$('#btn-void').html('<i class="fa fa-spinner fa-spin"></i>');
+			$("#void-"+ id).html('<i class="fa fa-spinner fa-spin"></i>');
 		}
 		var table = $('#dataTables-example').DataTable();
 		$.ajax({
@@ -119,10 +120,10 @@
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
-				$("#btn-capture").attr("disabled", false);
-				$("#btn-void").attr("disabled", false);
-				$('#btn-capture').html('<i class="far fa-money-bill-alt"></i> Capture');
-				$('#btn-void').html('<i class="far fa-money-bill-alt"></i> Void');
+				$("#capture-"+ id).attr("disabled", false);
+				$("#void-"+ id).attr("disabled", false);
+				$("#capture-"+ id).html('<i class="far fa-money-bill-alt"></i> Capture');
+				$("#void-"+ id).html('<i class="far fa-money-bill-alt"></i> Void');
 				table.ajax.reload( null, false );
 			}
 		});

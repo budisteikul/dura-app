@@ -107,7 +107,7 @@ class BookController extends Controller
 							$check_ticket = rev_shoppingcarts::where('confirmationCode',$book->ticket)->first();
 							if(isset($check_ticket))
 							{
-								return '<div class="btn-toolbar justify-content-end"><div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="btn-capture" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="btn-void" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div></div>';
+								return '<div class="btn-toolbar justify-content-end"><div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="capture-'.$book->id.'" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="void-'.$book->id.'" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div></div>';
 							}
 							else
 							{

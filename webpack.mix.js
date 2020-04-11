@@ -134,7 +134,7 @@ mix.scripts([
 	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
 	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
 	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-	],'public/js/vertikaltrip-1.2.0.js');
+	],'public/js/vertikaltrip-1.2.2.js');
 
 mix.styles([
 	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
@@ -144,6 +144,6 @@ mix.styles([
 	'resources/assets/frontend/custom/custom.css',
 	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css',
 	'resources/assets/frontend/custom/vertikaltrip.css'
-	],'public/css/vertikaltrip-1.2.0.css');
+	],'public/css/vertikaltrip-1.2.2.css');
 	
 mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
