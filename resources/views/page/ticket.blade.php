@@ -311,7 +311,7 @@ h3 {
             <div class="divider_right divider_hole">
             </div>
         </div>
-					<h2>{{ $rev_shoppingcart_products->title }}<br>{{ $rev_shoppingcart_products->rate }}</h2>
+					<h2 style="margin-left:15px; margin-right:15px;">{{ $rev_shoppingcart_products->title }}<br>{{ $rev_shoppingcart_products->rate }}</h2>
         </div>
         <div class="card_trip" style="padding-bottom:50px;">
             <div class="trip_from">
