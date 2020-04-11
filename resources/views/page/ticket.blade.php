@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>E-TICKET</title>
+<style type="text/css" media="all">
 body {
   background: #c5d8e6;
   font-family: helvetica, arial;
@@ -148,7 +153,7 @@ h3 {
 }
 .card_divider .divider {
   width: 85%;
-  margin: auto;
+  margin: -4px auto;
   height: 2px;
   background: linear-gradient(to right, #c5d8e6 50%, transparent 50%);
   background-size: 10px 8px, 100% 2px;
@@ -283,7 +288,9 @@ h3 {
 
 
 </style>
-<body>
+</head>
+  <body>
+
 <div class="cards_wrapper">
 		
 				<div class="card aa-theme">
@@ -349,4 +356,4 @@ h3 {
 		
 </div>
 
-  </body>
+  </body></html>
