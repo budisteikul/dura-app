@@ -210,7 +210,7 @@ footer {
       </div>
       <div id="company">
         				<h2 class="name">
-                            <img src="{{ url('/assets/logo/logo-dark.png') }}" data-holder-rendered="true" height="50" />
+                            <img src="/assets/logo/logo-dark.png" data-holder-rendered="true" height="50" />
                         </h2>
                         <div>Jl. Abiyoso VII No.190 Bantul ID</div>
                         <div>+62 857 43 112 112</div>
