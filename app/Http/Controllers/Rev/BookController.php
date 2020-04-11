@@ -107,17 +107,23 @@ class BookController extends Controller
 							$check_ticket = rev_shoppingcarts::where('confirmationCode',$book->ticket)->first();
 							if(isset($check_ticket))
 							{
-								$button = '<div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="btn-capture" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="btn-void" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div>&nbsp;';
+								return '<div class="btn-toolbar justify-content-end"><div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="btn-capture" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="btn-void" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div></div>';
+							}
+							else
+							{
+								return '<div class="btn-toolbar justify-content-end">
+									<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
+									</div>';
 							}
 						}
+						else
+						{
+							return '<div class="btn-toolbar justify-content-end">
+									<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
+									</div>';
+						}
 						
-						return '<div class="btn-toolbar justify-content-end">
 						
-						'.$button.'
-						
-						<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
-						
-						</div>';
 					
 				})
 				->rawColumns(['action','name','date','status'])
