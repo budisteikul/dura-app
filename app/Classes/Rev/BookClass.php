@@ -53,7 +53,6 @@ class BookClass {
 		else
 		{
 			$date = \DateTime::createFromFormat('D d.M Y', $text[0]);
-			print($date->format('Y-m-d'));
 			$hasil = $date->format('Y-m-d') .' 00:00:00';
 		}
 		return $hasil;

@@ -592,10 +592,29 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						->where('bookingStatus','CART')->first();
 		
 		
+		
+		
 		return view('blog.frontend.shopping-cart')
 				->with([
 						'rev_shoppingcarts'=>$rev_shoppingcarts
 					]);
+	}
+	
+	public function createPayment(Request $request)
+	{
+		if(!$request->session()->has('sessionBooking')){
+			return response()->json([
+					"id" => "2",
+					"message" => 'Shooping cart empty'
+				]);
+		}
+		$sessionBooking = $request->session()->get('sessionBooking');
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
+						->where('bookingStatus','CART')->first();
+		$value = number_format((float)$rev_shoppingcarts->total, 2, '.', '');				
+		$response = PaypalClass::createOrder($value);
+		//print_r($response);
+		return response()->json($response);
 	}
 	
 	public function post_checkout(Request $request)

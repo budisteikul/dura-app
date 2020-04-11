@@ -98,6 +98,7 @@ Route::get('/booking/shoppingcart', 'Rev\BookController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\BookController@get_checkout');
 Route::post('/booking/checkout', 'Rev\BookController@post_checkout');
 Route::post('/booking/payment', 'Rev\BookController@payment');
+Route::post('/booking/create-paypal-transaction', 'Rev\BookController@createPayment');
 Route::get('/booking/receipt/{id}', 'Rev\BookController@receipt');
 Route::get('/booking/invoice/{id}', 'Rev\BookController@get_invoice');
 Route::get('/booking/ticket/{id}', 'Rev\BookController@get_ticket');

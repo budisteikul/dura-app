@@ -5,6 +5,7 @@ use PayPalCheckoutSdk\Core\SandboxEnvironment;
 use PayPalCheckoutSdk\Core\ProductionEnvironment;
 use PayPalCheckoutSdk\Payments\AuthorizationsCaptureRequest;
 use PayPalCheckoutSdk\Orders\OrdersGetRequest;
+use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 
 class PaypalClass {
 	
@@ -46,10 +47,61 @@ class PaypalClass {
 		return $response->result->purchase_units[0]->amount->value;
 	}
 	
+	public static function createOrder($value,$debug=false)
+  	{
+    	$request = new OrdersCreateRequest();
+    	$request->prefer('return=representation');
+    	$request->body = self::buildRequestBodyCreateOrder($value);
+   		// 3. Call PayPal to set up a transaction
+    	$client = self::client();
+    	$response = $client->execute($request);
+    	if ($debug)
+    	{
+      		print "Status Code: {$response->statusCode}\n";
+      		print "Status: {$response->result->status}\n";
+      		print "Order ID: {$response->result->id}\n";
+      		print "Intent: {$response->result->intent}\n";
+      		print "Links:\n";
+      		foreach($response->result->links as $link)
+      		{
+        		print "\t{$link->rel}: {$link->href}\tCall Type: {$link->method}\n";
+      		}
+
+      		// To print the whole response body, uncomment the following line
+      		// echo json_encode($response->result, JSON_PRETTY_PRINT);
+    	}
+
+    	// 4. Return a successful response to the client.
+    	return $response;
+  	}
+	
+	
+	public static function buildRequestBodyCreateOrder($value)
+    {
+        return array(
+            'intent' => 'AUTHORIZE',
+            'application_context' =>
+                array(
+                    'shipping_preference' => 'NO_SHIPPING'
+                ),
+            'purchase_units' =>
+                array(
+                    0 =>
+                        array(
+                            'amount' =>
+                                array(
+                                    'currency_code' => 'USD',
+                                    'value' => $value
+                                )
+                        )
+                )
+        );
+    }
+	
 	public static function captureAuth($id)
     {
 		$request = new AuthorizationsCaptureRequest($id);
-    	$request->body = self::buildRequestBody();
+    	$request->body = self::buildRequestBodyCapture();
     	$client = self::client();
     	$response = $client->execute($request);
     	/*
@@ -71,7 +123,7 @@ class PaypalClass {
 	  return $response->result->status;
 	}
 	
-	public static function buildRequestBody()
+	public static function buildRequestBodyCapture()
   	{
     		return "{}";
   	}

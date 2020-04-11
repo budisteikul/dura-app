@@ -2,9 +2,9 @@
 @section('content')
 @include('layouts.loading')
 @push('scripts')
-
-@endpush
-
+<script
+    src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&intent=authorize">
+  </script>
 <script>
 $( document ).ready(function() {
     $('#proses').hide();
@@ -12,6 +12,11 @@ $( document ).ready(function() {
 	$('#alert-failed').hide();
 });
 </script>
+
+
+@endpush
+
+
 
 <!-- ################################################################### -->
 
@@ -229,6 +234,129 @@ $( document ).ready(function() {
   			
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  
+
+                 
+<form onSubmit="STORE(); return false;">             
+<h3>Main Contact</h3>   
+
+
+	@php
+    	$main_contacts = $rev_shoppingcarts->shoppingcart_questions()->where('type','mainContactDetails')->orderBy('order')->get()
+    @endphp
+    @foreach($main_contacts as $main_contact)        
+<div class="form-group">
+	<label for="{{ $main_contact->questionId }}" class="{{ $main_contact->required ? "required" : "" }}"><strong>{{ $main_contact->label }}</strong></label>
+	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+</div>
+	@endforeach
+    
+    
+    @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+    @php
+    	$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('bookingId',$shoppingcart_products->bookingId)->where('type','activityBookings')->orderBy('order')->get();
+    @endphp
+    @if(count($activityBookings))
+    <h2>{{ $shoppingcart_products->title }}</h2>
+    
+    @foreach($activityBookings as $activityBooking)
+    <div class="form-group">
+	<label for="{{ $activityBooking->questionId }}" class="{{ $activityBooking->required ? "required" : "" }}"><strong>{{ $activityBooking->label }}</strong></label>
+	<input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
+</div>
+    @endforeach
+    @endif
+    @endforeach
+    
+    
+    @php
+    $pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
+    @endphp
+    @if(count($pickup_questions))
+    
+    <h3>Pick-up questions</h3>
+    
+    @foreach($pickup_questions as $pickup_question)
+    <div class="form-group">
+	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
+	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+</div>
+    @endforeach
+    @endif
+
+<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme">{{ __('Next') }} <i class="fas fa-arrow-right"></i></button>
+</form>
+<div id="proses">     
+  <h2>Payment</h2>        
+  <div id="paypal-button-container"></div>
+</div>
+<div id="alert-success" class="alert alert-primary text-center" role="alert">
+  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment Successful!</h2>
+</div>
+<div id="alert-failed" class="alert alert-danger text-center" role="alert">
+  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-frown"></i> Payment Failed!</h2>
+</div>
+
+
+ 
+                
+			</div>
+            </div>
+            </div>
+            
+        	</div>
+            
+            	
+           
+
+			
+				<div style="height:40px;"></div>		
+				</div>
+			</div>
+        </div>
+	</div>
+</div>
+</section>
+
+<script>
+
+	
+@php
+$questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->get()
+@endphp
+    @foreach($questions as $question)
+	$("#{{ $question->questionId }}").focusout(function() {
+		$('#{{ $question->questionId }}').removeClass('is-invalid');
+  		$('#span-{{ $question->questionId }}').remove();
+    	if($("#{{ $question->questionId }}").val()=="")
+		{
+			$('#{{ $question->questionId }}').addClass('is-invalid');
+			$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Please fill out this field</strong></span>');
+		}
+		else
+		{
+			@if($question->dataFormat=="EMAIL_ADDRESS")
+				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if(regex.test($("#{{ $question->questionId }}").val()))
+				{
+					$('#{{ $question->questionId }}').removeClass('is-invalid');
+  					$('#span-{{ $question->questionId }}').remove();
+				}
+				else
+				{
+					$('#{{ $question->questionId }}').addClass('is-invalid');
+					$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Invalid email</strong></span>');
+				}
+			@else
+				$('#{{ $question->questionId }}').removeClass('is-invalid');
+  				$('#span-{{ $question->questionId }}').remove();
+			@endif
+		}
+		
+  	});
+	@endforeach
+
+
+</script>
 <script language="javascript">
 function STORE()
 {
@@ -333,7 +461,58 @@ function STORE()
 				
 				$("#submit").slideUp("slow");
 				$("#proses").fadeIn("slow");
-				createPaypalButton('{{$grand_total}}');
+				//=========================================================
+				paypal.Buttons({
+    			createOrder: function() {
+  					return fetch('/booking/create-paypal-transaction', {
+    				method: 'post',
+    				headers: {
+      					'content-type': 'application/json',
+						'X-CSRF-TOKEN': $("meta[name=csrf-token]").attr("content")
+    				}
+  				}).then(function(res) {
+    					return res.json();
+  				}).then(function(data) {
+    					return data.result.id; // Use the same key name for order ID on the client and server
+  				});
+				},
+				onError: function (err) {
+    				$("#proses").hide();
+					$('#alert-failed').fadeIn("slow");
+  				},
+   				onApprove: function(data, actions) {
+					$("#proses").addClass("loader");
+      				actions.order.authorize().then(function(authorization) {
+        				var authorizationID = authorization.purchase_units[0].payments.authorizations[0].id
+						$.ajax({
+							data: {
+        						"_token": $("meta[name=csrf-token]").attr("content"),
+								"orderID": data.orderID,
+								"authorizationID": authorizationID,
+        						},
+							type: 'POST',
+							url: '/booking/payment'
+						}).done(function(data) {
+							if(data.id=="1")
+							{
+								window.location.href = '/booking/receipt/'+ data.message;
+								$("#proses").hide();
+								$('#alert-success').fadeIn("slow");
+								
+							}
+							else
+							{
+								$("#proses").hide();
+								$('#alert-failed').fadeIn("slow");
+							}
+						}).fail(function(error) {
+							console.log(error);
+						});
+      				});
+    			}
+			
+  				}).render('#paypal-button-container');
+				//=========================================================
 				
 			}
 			else
@@ -356,196 +535,4 @@ function STORE()
 	return false;
 }
 </script>
-                 
-<form onSubmit="STORE(); return false;">             
-<h3>Main Contact</h3>   
-
-
-	@php
-    	$main_contacts = $rev_shoppingcarts->shoppingcart_questions()->where('type','mainContactDetails')->orderBy('order')->get()
-    @endphp
-    @foreach($main_contacts as $main_contact)        
-<div class="form-group">
-	<label for="{{ $main_contact->questionId }}" class="{{ $main_contact->required ? "required" : "" }}"><strong>{{ $main_contact->label }}</strong></label>
-	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
-</div>
-	@endforeach
-    
-    
-    @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-    @php
-    	$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('bookingId',$shoppingcart_products->bookingId)->where('type','activityBookings')->orderBy('order')->get();
-    @endphp
-    @if(count($activityBookings))
-    <h2>{{ $shoppingcart_products->title }}</h2>
-    
-    @foreach($activityBookings as $activityBooking)
-    <div class="form-group">
-	<label for="{{ $activityBooking->questionId }}" class="{{ $activityBooking->required ? "required" : "" }}"><strong>{{ $activityBooking->label }}</strong></label>
-	<input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
-</div>
-    @endforeach
-    @endif
-    @endforeach
-    
-    
-    @php
-    $pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
-    @endphp
-    @if(count($pickup_questions))
-    
-    <h3>Pick-up questions</h3>
-    
-    @foreach($pickup_questions as $pickup_question)
-    <div class="form-group">
-	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
-	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
-</div>
-    @endforeach
-    @endif
-
-<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme">{{ __('Next') }} <i class="fas fa-arrow-right"></i></button>
-</form>
-<div id="proses">     
-  <h2>Payment</h2>        
-  <div id="paypal-button-container"></div>
-</div>
-<div id="alert-success" class="alert alert-primary text-center" role="alert">
-  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-smile"></i> Payment Successful!</h2>
-</div>
-<div id="alert-failed" class="alert alert-danger text-center" role="alert">
-  <h2 style="margin-bottom:10px; margin-top:10px;"><i class="far fa-frown"></i> Payment Failed!</h2>
-</div>
-
-<script>
-
-	
-@php
-$questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->get()
-@endphp
-    @foreach($questions as $question)
-	$("#{{ $question->questionId }}").focusout(function() {
-		$('#{{ $question->questionId }}').removeClass('is-invalid');
-  		$('#span-{{ $question->questionId }}').remove();
-    	if($("#{{ $question->questionId }}").val()=="")
-		{
-			$('#{{ $question->questionId }}').addClass('is-invalid');
-			$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Please fill out this field</strong></span>');
-		}
-		else
-		{
-			@if($question->dataFormat=="EMAIL_ADDRESS")
-				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-				if(regex.test($("#{{ $question->questionId }}").val()))
-				{
-					$('#{{ $question->questionId }}').removeClass('is-invalid');
-  					$('#span-{{ $question->questionId }}').remove();
-				}
-				else
-				{
-					$('#{{ $question->questionId }}').addClass('is-invalid');
-					$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Invalid email</strong></span>');
-				}
-			@else
-				$('#{{ $question->questionId }}').removeClass('is-invalid');
-  				$('#span-{{ $question->questionId }}').remove();
-			@endif
-		}
-		
-  	});
-	@endforeach
-
-
-</script>
- 
-                
-			</div>
-            </div>
-            </div>
-            
-        	</div>
-            
-            	
-           
-
-			
-				<div style="height:40px;"></div>		
-				</div>
-			</div>
-        </div>
-	</div>
-</div>
-</section>
-
-
-
-
-<script
-    src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&intent=authorize"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-  </script>
-  <script>
-   
-  
-   
-  function createPaypalButton(value)
-  {
-	  //This function displays Smart Payment Buttons on your web page.
-  		paypal.Buttons({
-    		createOrder: function(data, actions) {
-      			return actions.order.create({
-        			purchase_units: [{
-         			 	amount: {
-            			value: value
-          				}
-        			}],
-					application_context: {
-						shipping_preference: 'NO_SHIPPING'
-      				}
-      			});
-    		},
-			onError: function (err) {
-    				$("#proses").hide();
-					$('#alert-failed').fadeIn("slow");
-  				},
-   			onApprove: function(data, actions) {
-				$("#proses").addClass("loader");
-      			
-      			actions.order.authorize().then(function(authorization) {
-        			
-        			var authorizationID = authorization.purchase_units[0].payments.authorizations[0].id
-        			
-					
-					$.ajax({
-						data: {
-        					"_token": $("meta[name=csrf-token]").attr("content"),
-							"orderID": data.orderID,
-							"authorizationID": authorizationID,
-        					},
-						type: 'POST',
-						url: '/booking/payment'
-						}).done(function( data ) {
-							if(data.id=="1")
-							{
-								window.location.href = '/booking/receipt/'+ data.message;
-								$("#proses").hide();
-								$('#alert-success').fadeIn("slow");
-								
-							}
-							else
-							{
-								$("#proses").hide();
-								$('#alert-failed').fadeIn("slow");
-							}
-						});
-					
-					
-					//=========================================================
-      			});
-    		}
-			
-  		}).render('#paypal-button-container');
-  }
-  
-  </script>
-
 @endsection
