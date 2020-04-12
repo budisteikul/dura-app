@@ -65,15 +65,20 @@
     								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
   								</div>
   								<div class="card-footer bg-white pt-0" style="border:none;">
-                                <div class="row mb-2">
-                                	<div class="col-lg-6 text-left ml-0">
-                                    <span class="text-muted">Price from</span><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
+                                <div class="d-flex align-items-end mb-2">
+  									<div class="p-0 ml-0">
+                                    	<div class="text-left">
+                                    		<span class="text-muted">Price from</span>
+                                    	</div>
+                                    	<div>
+                                    		<b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
+                                    	</div>
                                     </div>
-                                    <div class="col-lg-6 text-right d-flex align-items-end justify-content-end">
-                                    <a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
+  									<div class="ml-auto p-0">
+                                    	<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
                                     </div>
+								</div>
                                 
-                                </div>
     								
   								</div>
   								
