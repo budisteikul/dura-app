@@ -34,20 +34,18 @@ Route::domain('www.ratnawahyu.com')->group(function () {
 });
 Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
-	//Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
 });
-Route::domain('192.168.0.3')->group(function () {
+Route::domain('192.168.0.2')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 });
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
-	Route::get('/tours', 'Blog\Frontend\BlogController@vt_product_list');
 });
 Route::domain('www.jogjafoodtour.com')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index');
+	Route::get('/', 'Blog\Frontend\BlogController@jogjafoodtour');
 	Route::get('/order', function () {
 		return redirect('https://www.jogjafoodtour.com/booking/yogyakarta-night-walking-and-food-tours');
 	});
@@ -55,9 +53,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 		return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
 	});
 });
-Route::domain('www.budi.my.id')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@index');
-});
+
 
 
 
@@ -65,11 +61,7 @@ Route::domain('www.budi.my.id')->group(function () {
 //========================================================================
 // Front Page
 //========================================================================
-Route::get('/phpinfo_', function () {
-	phpinfo();
-	exit();
-});
-Route::get('/', 'Blog\Frontend\BlogController@vt_product_list');
+Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 Route::post('/review', 'Rev\ReviewController@get_review');
 //========================================================================
 // Single Page

@@ -18,46 +18,30 @@ use GuzzleHttp\Client as GuzzleClient;
 
 class BlogController extends Controller
 {
-	/**
-     * Instantiate a new UserController instance.
-     */
-    public function __construct()
-	{
-		
-	}
-	
-  
-
-  public function vt_product_page(Request $request,$id="")
+	public function vt_product_page(Request $request,$id="")
     {
-        $activityId = "";
-        if($id=="")
+        $post = blog_posts::with('widgets')->where('slug',$id)->first();
+        if(isset($post))
         {
-            $post = rev_widgets::with('posts')->where('product_id', $request->input('activityId'))->first();
-            if(isset($post)) return redirect('/tour/'. $post->posts->slug .'/');
-            $activityId = $request->input('activityId');
+            $id = $post->widgets->product_id;
         }
-        else
-        {
-            $post = blog_posts::with('widgets')->where('slug',$id)->first();
-            if(isset($post))
-            {
-                $activityId = $post->widgets->product_id;
-            }
-        }
-		
-        $contents = BokunClass::get_product($activityId);
+		else
+		{
+			$id = $request->input('activityId');
+			$rev_widgets = rev_widgets::where('product_id',$id)->first();
+			if(isset($rev_widgets))
+			{
+				return redirect('/tour/'. $rev_widgets->posts()->first()->slug );
+			}
+		}
         
+        $contents = BokunClass::get_product($id);
         $pickup = '';
         if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
         {
-			$pickup = BokunClass::get_product_pickup($activityId);
+			$pickup = BokunClass::get_product_pickup($id);
         }
-		
-		
 		$widget_id = $contents->id;
-		
-		
 		$bookingChannelUUID = '93a137f0-bb95-4ea0-b4a8-9857824a2e79';
 		$rev_resellers = rev_resellers::where('status',1)->first();
 		if(isset($rev_resellers)) $bookingChannelUUID = $rev_resellers->id;
@@ -106,68 +90,33 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		{
 			if(env("APP_ENV")=="production")
 			{
-				$calendar = '
-     
-    <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$widget_id.'"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>';
+				$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$widget_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 			}
 			else
 			{
-				$calendar = '
-     
-    <div class="bokunWidget" data-src="https://widgets.bokuntest.com/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$widget_id.'"></div>
-    <noscript>Please enable javascript in your browser to book</noscript>
-';	
+				$calendar = '<div class="bokunWidget" data-src="https://widgets.bokuntest.com/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$widget_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';	
 			}
 		}
-        
-
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
     }
 	
-	public function vt_product_list(Request $request,$id="")
+	public function vt_product_list($id)
 	{
-		$contents = BokunClass::get_product_list();
-		foreach($contents as $content)
-		{
-			$default_id = $content->id;
-		}
-		
-		if($id=="")
-		{
-			$id = $default_id;
-		}
-		else
-		{
-			$cat = blog_categories::where('slug',$id)->first();
-			if(isset($cat))
-			{
-				$id = $cat->description;
-			}
-			
-		}
 		$contents = BokunClass::get_product_list_byid($id);
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
 	}
 	
-	public function vertikaltrip($id="")
+	public function vertikaltrip()
 	{
-		$contents = BokunClass::get_product_list();
-		foreach($contents as $content)
-		{
-			$id = $content->id;
-		}
-		$contents = BokunClass::get_product_list_byid($id);
 		$count = rev_reviews::count();
-		return view('blog.frontend.vertikaltrip')->with(['contents'=>$contents,'count'=>$count]);
+		return view('blog.frontend.vertikaltrip')->with(['count'=>$count]);
 	}
 
 
-	public function index()
+	public function jogjafoodtour()
     {
 		$count = rev_reviews::count();
-        return view('blog.frontend.foodtour')
-		->with('count',$count);
+        return view('blog.frontend.foodtour')->with(['count'=>$count]);
     }
 
     public function shinjukufoodtour()

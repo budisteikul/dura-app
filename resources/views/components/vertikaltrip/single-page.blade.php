@@ -35,12 +35,12 @@
 	
 			<h1 class="mt-4">{{ $contents->title }}</h1>
 			<div class="text-muted mt-4 mb-4">
-  				<i class="far fa-clock text-success"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
+  				<i class="far fa-clock text-danger"></i> <b>{!!$contents->durationText!!}</b> &nbsp;&nbsp;
   				@if($contents->difficultyLevel!="")
-  				<i class="fas fa-signal text-success"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
+  				<i class="fas fa-signal text-danger"></i> <b>{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}</b> &nbsp;&nbsp;
   				@endif
   				@if($contents->privateActivity)
-    			<span class="badge badge-success">PRIVATE TOUR</span>
+    			<span class="badge badge-danger">PRIVATE TOUR</span>
   				@endif
 			</div>
 			<div class="text-muted mt-4 mb-4">
@@ -112,7 +112,7 @@
               								{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
             								@endif
             								@if($contents->privateActivity)
-                							<span class="badge badge-success">PRIVATE TOUR</span>
+                							<span class="badge badge-danger">PRIVATE TOUR</span>
             								@endif
           								</div>
           								<div>
