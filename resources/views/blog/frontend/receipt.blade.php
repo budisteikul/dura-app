@@ -1,11 +1,11 @@
 @extends('layouts.frontend')
-@section('title',$contents->title)
 @section('content')
+@include('layouts.loading')
 
 <!-- Navbar Section -->
 @include('components.vertikaltrip.navbar')
 
-<!-- Single Tour Section -->
-@include('components.vertikaltrip.single-tour')
+<!-- Receipt Section -->
+@include('components.vertikaltrip.receipt')
 
 @endsection

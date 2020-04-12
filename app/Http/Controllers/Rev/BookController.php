@@ -779,19 +779,18 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 	public function receipt($id)
     {
 		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
-		return view('page.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+		return view('blog.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
     }
 	
 	public function get_invoice($id)
     {
 		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
-		return view('page.invoice')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+		return view('components.vertikaltrip.invoice')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
 	}
-	
 	
 	public function get_ticket($id)
     {
 		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
-		return view('page.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products]);
+		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products]);
 	}
 }

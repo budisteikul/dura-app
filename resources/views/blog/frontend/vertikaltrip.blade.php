@@ -1,263 +1,46 @@
 @extends('layouts.frontend')
 @section('title','Book Amazing Things to Do With VERTIKAL TRIP')
 @section('content')
-@push('scripts')
-<script type="text/javascript">
-			jQuery(document).ready(function($) {	
-			var table = $('#dataTables-example').DataTable(
-			{
-				
-				"processing": true,
-       			"serverSide": true,
-        		"ajax": {
-            			"url": "/review",
-            			"type": "POST"
-        			},
-				"scrollX": true,
-				"language": {
-    				"paginate": {
-      					"previous": "<i class='fa fa-step-backward'></i>",
-						"next": "<i class='fa fa-step-forward'></i>",
-						"first": "<i class='fa fa-fast-backward'></i>",
-						"last": "<i class='fa fa-fast-forward'></i>"
-    				},
-					"aria": {
-            			"paginate": {
-                			"first":    'First',
-                			"previous": 'Previous',
-                			"next":     'Next',
-                			"last":     'Last'
-            			}
-        			}
-  				},
-				"pageLength": 5,
-				"order": [[ 0, "desc" ]],
-				"columns": [
-					{data: 'date', name: 'date', orderable: true, searchable: false, visible: false},
-					{data: 'style', name: 'style', className: 'auto', orderable: false},
-        		],
-				"dom": 'rtp',
-				"pagingType": "full_numbers",
-				"fnDrawCallback": function () {
-					
-				}
-			});
-			
-			var table = $('#dataTables-example').DataTable();
-			$('#dataTables-example').on('page.dt', function(){
-    			var target = $('#review');
-      			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      			if (target.length) {
-        			$('html, body').animate({
-          				scrollTop: (target.offset().top - 54)
-        			}, 1000, "easeInOutExpo");
-        			return false;
-      			}
-			});
-			
-			});
-			
-			
-</script>
-@endpush
- <!-- ################################################################### -->
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
 	<div class="container">
-
-<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
-
+		<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
 		@include('layouts.vt-menu')
 		
-		
-		
-		
     </div>
-	
-  </nav>
+</nav>
 
+<!-- Header Section -->
 <header id="page-top" class="intro-header" style="background-image: url('/assets/logo/background.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
-            	<!-- img alt="Yogyakarta Night Walking and Food Tours" src="/assets/logo/logo-jogja-istimewa.png" width="250" -->
-                
 				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
                 <hr style="max-width:50px;border-color: #1D57C7;border-width: 3px;">
-				
                 <a class="btn btn-lg btn-theme js-scroll-trigger" href="/#tour">DISCOVER TOURS</a>
-                <!-- p class="text-faded">
-                Due to the current worldwide concern of COVID19, with deep regret we have decided to halt our operation from 14 March 2020 until 31 May 2020 or further notice. 
-We are so sorry to not decide it early. And for everyone who have booked it, unfortunately we have to cancel it.
-The safety and health of our guests, tour guides, employees, vendors and community is our top priority.
-<br><br>
-Regards,<br>
-Vertikal Trip Team
-</p -->
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
-       
 		</div>
     </div>
 </header>
 
+<!-- Services Section -->
+@include('components.vertikaltrip.services')
 
-  <!-- Services Section -->
-  <section class="page-section bg-light" id="services">
-    <div class="container">
-    <div style="height:25px;"></div>
-      
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mb-2">
-            <i class="fa fa-4x fa-ticket-alt text-theme mb-2"></i>
-            <h3 class="h4 mb-2">Instant Booking</h3>
-            <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mb-2">
-            <i class="fas fa-4x fa-phone-alt text-theme mb-2"></i>
-            <h3 class="h4 mb-2">24/7 Support</h3>
-            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mb-2">
-            <i class="fas fa-4x fa-history text-theme mb-2"></i>
-            <h3 class="h4 mb-2">Free Cancellation</h3>
-            <p class="text-muted mb-0">Have your plans changed? No worries! You can cancel the booking anytime up to 24 hours before your experience!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mb-2">
-            <i class="fab fa-4x fa-paypal text-theme mb-2"></i>
-            <h3 class="h4 mb-2">Secure Payments</h3>
-            <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
-          </div>
-        </div>
-      </div>
-      <div style="height:45px;"></div>	
-    </div>
-  </section>
+<!-- All Tour Section -->
+@include('components.vertikaltrip.all-tour')
 
-
-
-@php
-	$product_lists = \App\Classes\Rev\BokunClass::get_product_list();
-@endphp
-@foreach(collect($product_lists)->sortByDesc('title') as $product_list)
-
-<section id="tour" style="background-color:#ffffff">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12 col-md-12 mx-auto">
-
-            <div class="row" style="padding-bottom:0px;">
-                <div class="col-lg-12 text-center">
-                    <div style="height:70px;"></div>
-                    
-                    <h3 class="section-heading" style="margin-top:0px;">{{ $product_list->title }}</h3>
-                    <h4 class="section-subheading text-muted">{{ $product_list->description }}</h4>
-                    <hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
-                    
-                    <div style="height:30px;"></div>
-                </div>
-            </div>
-
-			<div class="row" style="padding-bottom:0px;">
-				<div class="col-lg-12 text-center">
-					
-        		<div class="row">
-                	@php
-					$contents = \App\Classes\Rev\BokunClass::get_product_list_byid($product_list->id);
-        			@endphp
-                    @foreach($contents->items as $content)
-        			<div class="col-sm-4 col-sm-auto  mb-4">
-    						<div class="card h-100 shadow card-block rounded">
-                            @if(isset($content->activity->keyPhoto->fileName))
-  				 				<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
-  				 			@endif	
-  								<div class="card-header bg-white border-0 text-left pb-0">
-        								<h2 class="mb-4">{{ $content->activity->title }}</h2>
-      							</div>
-                            	@if($content->activity->excerpt!="")
-								<div class="card-body pt-0">
-									<p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
-  								</div>
-                                @endif
-								<div class="card-body pt-0">
-    								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
-  								</div>
-  								<div class="card-footer bg-white pt-0" style="border:none">
-                                <div class="d-flex align-items-end mb-2">
-  									<div class="p-0 ml-0">
-                                    	<div class="text-left">
-                                    		<span class="text-muted">Price from</span>
-                                    	</div>
-                                    	<div>
-                                    		<b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
-                                    	</div>
-                                    </div>
-  									<div class="ml-auto p-0">
-                                    	<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
-                                    </div>
-								</div>
-    								
-  								</div>
-  								
-							</div>
-    				</div>
-					@endforeach
-
-				</div>
-				<div style="height:45px;"></div>		
-				</div>
-			</div>
-        </div>
-	</div>
-</div>
-</section>
-@endforeach
-
-<section id="review" style="background-color:#ffffff">
-<div class="container mb-6">
-	<div class="row">
-    	<div class="col-lg-8 col-md-10 mx-auto">
-			
-				<div class="col-lg-12 text-center">
-					<h3 class="section-heading" style="margin-top:50px;">How Our New Friend Talk About The Tour</h3>
-                    <h4 class="section-subheading text-muted"><a href="/review" target="_blank" class="text-theme"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
-					<strong> Rating :</strong>
-					<span class="text-warning">
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-secondary" itemprop="ratingValue">(4.9)</span>
-					</span>‎
-					<br>
-					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
-					<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
-				</div>
-				<table id="dataTables-example" style="width:100%">
-				<tbody>           
-				</tbody>
-				</table>
-		</div>
-    </div>
-</div>
-<div style="height:50px;"></div>
-</section>
-
+<!-- Reviews Section -->
+@include('components.vertikaltrip.reviews')
 
 <script>
-
-
 (function($) {
-        
-  "use strict"; // Start of use strict
-  // Smooth scrolling using jQuery easing
+  "use strict";
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -270,20 +53,16 @@ Vertikal Trip Team
       }
     }
   });
-
- 
-  // Activate scrollspy to add active class to navbar items on scroll
+  
   $('body').scrollspy({
     target: '#mainNav',
     offset: 75
   });
- 
-  // Closes responsive menu when a scroll trigger link is clicked
+  
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink shadow");
@@ -292,12 +71,9 @@ Vertikal Trip Team
     }
   };
   
-  // Collapse now if page is not at top
   navbarCollapse();
   
-  // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-  
   
 })(jQuery);
 </script>

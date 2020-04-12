@@ -1,63 +1,9 @@
 @extends('layouts.frontend')
 @section('title','Privacy Policy')
 @section('content')
-@include('layouts.loading')
-@push('scripts')
-@endpush
 
-
-
-<!-- ################################################################### -->
-
-<!-- Navigation -->
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
-	<div class="container">
-		<a href="/"><img src="/assets/logo/jogjafoodtour.png" alt="JOGJA FOOD TOUR" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse stroke" id="navbarResponsive">
-			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#services">Why Jogja Food Tour?</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#about">The Tour</a>
-				</li>
-                
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#gallery">Snapshot</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#guide">Tour Guide</a>
-				</li>
-                
-                <li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="/#review">Reviews</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<div style="height:25px;"></div>	
-@else
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
-	<div class="container">
-
-		<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		
-		@include('layouts.vt-menu')
-        
-	</div>
-</nav>
-<div style="height:25px;"></div>
-@endif
+<!-- Navbar Section -->
+@include('components.vertikaltrip.navbar')
 
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
@@ -65,33 +11,28 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
-				<div style="height:70px;"></div>
-				
-           <div class="card mb-8 shadow p-2">
-  			
- 				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
-                 <div class="text-right">
+					<div style="height:70px;"></div>
+           			<div class="card mb-8 shadow p-2">
+                     	<div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
+                 			<div class="text-right">
 		   		
-				 </div>
-                 
-				 
-				 <!-- ##### -->
-					<div class="row" style="padding-bottom:0px;">
-						<div class="col-lg-12 text-center">
-							<h3 class="section-heading">PRIVACY POLICY</h3>
-							<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
-							<h4 class="section-subheading text-muted">
-								Personal data rights and data security
-							</h4>
-						</div>
-					</div>
+				 			</div>
+				 			<!-- ##### -->
+							<div class="row" style="padding-bottom:0px;">
+								<div class="col-lg-12 text-center">
+									<h3 class="section-heading">PRIVACY POLICY</h3>
+									<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
+									<h4 class="section-subheading text-muted">
+									Personal data rights and data security
+									</h4>
+								</div>
+							</div>
 					
-                 <!-- ##### -->
-                 <div class="row col-md-8  mx-auto text-left">
-					<div class="textwidget" style=" min-height:250px;">
-					 <!-- ##### content -->
-					
-					  <p>&nbsp;</p>
+                 			<!-- ##### -->
+                 			<div class="row col-md-8  mx-auto text-left">
+								<div class="textwidget" style=" min-height:250px;">
+					 			<!-- ##### content ############################################################## -->
+					  			<p>&nbsp;</p>
 
 <p><strong>Introduction</strong></p>
 <p>We’ve provided this Privacy Policy to inform you of our practices and how the information we collect is used. It also explains where and how we collect your personal information, as well as your rights over any personal information we hold concerning you. This policy applies to you if you use our products or services online, by phone or through our mobile applications, or interact with us on social media. This policy upholds our commitment to protect your personal information.</p>
@@ -178,24 +119,17 @@ If any of the personal information we hold about you is inaccurate or out of dat
 <p>&nbsp;</p>
 
 <p class="text-right"><strong>Last updated 22th March 2020</strong></p>
-					 <!-- ##### -->
+					 			<!-- ##### content ############################################################## -->
+								</div>
+							</div>
+                 			<!-- ##### --> 
+						</div>
 					</div>
-				</div>
-                 <!-- ##### --> 
-                 
-              
-				
-			</div>
-			</div>
-
-			
-				<div style="height:40px;"></div>		
+					<div style="height:40px;"></div>		
 				</div>
 			</div>
-        </div>
+		</div>
 	</div>
 </div>
 </section>
-
-
 @endsection
