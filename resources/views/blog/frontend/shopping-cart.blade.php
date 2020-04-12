@@ -3,7 +3,7 @@
 @include('layouts.loading')
 @push('scripts')
 <script
-    src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&intent=authorize">
+    src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&intent=authorize"  data-csp-nonce="xyz-123">
   </script>
 <script>
 $( document ).ready(function() {
@@ -464,21 +464,49 @@ function STORE()
 				//=========================================================
 				paypal.Buttons({
     			createOrder: function() {
+					
   					return fetch('/booking/create-paypal-transaction', {
     				method: 'post',
     				headers: {
       					'content-type': 'application/json',
 						'X-CSRF-TOKEN': $("meta[name=csrf-token]").attr("content")
-    				}
-  				}).then(function(res) {
+    					}
+  					}).then(function(res) {
+						//console.log(res);
     					return res.json();
-  				}).then(function(data) {
-    					return data.result.id; // Use the same key name for order ID on the client and server
-  				});
+  					}).then(function(data) {
+						//console.log(data);
+    					return data.result.id;
+  					});//
+					
+					
+					/*
+					$.ajax({
+						data: {
+        					"_token": $("meta[name=csrf-token]").attr("content")
+        					},
+							type: 'POST',
+							url: '/booking/create-paypal-transaction'
+						}).done(function( data ) {
+							var result = data;
+							var orderID = data.result.id;
+						});
+					*/
+					/*	
+					return actions.order.create({
+        				purchase_units: [{
+          					amount: {
+            				value: '0.01'
+          					}
+        				}]
+      				});
+					*/
 				},
 				onError: function (err) {
     				$("#proses").hide();
 					$('#alert-failed').fadeIn("slow");
+					$('#alert-failed').html("Browser not support Paypal");
+					
   				},
    				onApprove: function(data, actions) {
 					$("#proses").addClass("loader");

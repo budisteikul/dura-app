@@ -1,8 +1,4 @@
-
 const mix = require('laravel-mix');
-/*
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-*/
 
 /*
 mix.js('resources/js/admin-lte.js', 'public/js/admin-lte.js')
@@ -23,13 +19,18 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  |
  */
 
-/*
+/* VERTIKAL TRIP */
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.2.6.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.2.6.css');
+
+ 
+/* ADMIN */
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
 mix.scripts([
-	'resources/assets/backend/jquery-uploadfile/js/jquery.uploadfile.js',
-	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+	'resources/assets/admin/jquery-uploadfile/js/jquery.uploadfile.js',
+	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
 	],'public/js/app_tmp2.js');
 
 mix.scripts([
@@ -40,110 +41,46 @@ mix.scripts([
 
 mix.styles([
 	'public/css/app_tmp1.css',
-	'resources/assets/backend/jquery-uploadfile/css/uploadfile.css',
-	'resources/assets/backend/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+	'resources/assets/admin/jquery-uploadfile/css/uploadfile.css',
+	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 	],'public/css/app.css');
 	
-mix.copyDirectory('resources/assets/backend/avatars', 'public/img');
+mix.copyDirectory('resources/assets/admin/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-*/
 
-/*
+
+/* RATNAWAHYU */
+mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
+mix.sass('resources/sass/ratnawahyu.scss', 'public/css/ratnawahyu_tmp1.css');
+
+
 mix.scripts([
-	'resources/assets/frontend/jquery/dist/jquery.min.js',
-	'resources/assets/frontend/moment/moment.js',
-	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
-	'resources/assets/frontend/jquery-easing/jquery.easing.min.js',
-	'resources/assets/frontend/jquery-infinite-scroll/jquery.infinitescroll.min.js',
-	'resources/assets/frontend/photoset-grid/jquery.photoset-grid.min.js',
-	'resources/assets/frontend/imagesloaded/imagesloaded.pkgd.min.js',
-	'resources/assets/frontend/back-to-top/js/main.js',
-	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
-	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-	],'public/js/vertikaltrip-1.1.8.js');
+	'resources/assets/ratnawahyu/jquery-easing/jquery.easing.min.js',
+	'resources/assets/ratnawahyu/jquery-infinite-scroll/jquery.infinitescroll.min.js',
+	'resources/assets/ratnawahyu/photoset-grid/jquery.photoset-grid.min.js',
+	'resources/assets/ratnawahyu/imagesloaded/imagesloaded.pkgd.min.js',
+	'resources/assets/ratnawahyu/back-to-top/js/main.js',
+	'resources/assets/ratnawahyu/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+	],'public/js/ratnawahyu_tmp2.js');
 
 mix.styles([
-	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
-	'resources/assets/frontend/fontawesome-free-5.9.0-web/css/all.css',
-	'resources/assets/frontend/animate.css/animate.min.css',
-	'resources/assets/frontend/jquery-infinite-scroll/main.css',
-	'resources/assets/frontend/photoset-grid/css/main.css',
-	'resources/assets/frontend/back-to-top/css/style.css',
-	'resources/assets/frontend/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
-	'resources/assets/frontend/custom/nav.css',
-	'resources/assets/frontend/custom/custom.css',
-	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css'
-	],'public/css/ratnawahyu-1.1.1.css');
-	
-mix.styles(['public/css/ratnawahyu-1.1.1.css','resources/assets/frontend/custom/vertikaltrip.css'],'public/css/vertikaltrip-1.1.8.css');
+	'resources/assets/ratnawahyu/jquery-infinite-scroll/main.css',
+	'resources/assets/ratnawahyu/photoset-grid/css/main.css',
+	'resources/assets/ratnawahyu/back-to-top/css/style.css',
+	'resources/assets/ratnawahyu/@fancyapps/fancybox/dist/jquery.fancybox.min.css'
+	],'public/css/ratnawahyu_tmp2.css');
 
-mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
-mix.copyDirectory('resources/assets/frontend/back-to-top/img', 'public/img');
-mix.copy('resources/assets/frontend/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-*/
-
-/*
-mix.webpackConfig({
-    plugins: [
-    new SWPrecacheWebpackPlugin({
-        cacheId: 'pwa',
-        filename: 'service-worker.js',
-        //staticFileGlobs: ['public/assets/foodtour/*.{css,eot,svg,ttf,woff,woff2,js,html,webp}','public/assets/foodtour/logo/*.{css,eot,svg,ttf,woff,woff2,js,html,webp}','public/assets/foodtour/webp/*.{css,eot,svg,ttf,woff,woff2,js,html,webp}','public/webfonts/*.{css,eot,svg,ttf,woff,woff2,js,html,webp}','public/js/vertikaltrip-1.0.8.js','public/css/vertikaltrip-1.0.8.css'],
-        minify: true,
-        stripPrefix: 'public/',
-        handleFetch: true,
-        dynamicUrlToDependencies: { 
-			//you should add the path to your blade files here so they can be cached
-            //and have full support for offline first (example below)
-            '/': ['resources/views/blog/frontend/foodtour.blade.php'],
-			'/book/payment': ['resources/views/blog/frontend/payment.blade.php'],
-			'/book': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
-			'/book/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
-			'/book/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
-			'/book/stripe': ['resources/views/blog/frontend/timeselector-stripe.blade.php'],
-			'/book/stripe/checkout': ['resources/views/blog/frontend/checkout-stripe.blade.php'],
-			'/book/stripe/checkout/receipt': ['resources/views/blog/frontend/receipt-stripe.blade.php'],
-			'/book/paypal': ['resources/views/blog/frontend/timeselector-paypal.blade.php'],
-			'/book/paypal/checkout': ['resources/views/blog/frontend/checkout-paypal.blade.php'],
-			'/book/paypal/checkout/receipt': ['resources/views/blog/frontend/receipt-paypal.blade.php'],
-			'/order': ['resources/views/blog/frontend/product.blade.php'],
-			'/tour/yogyakarta-night-walking-and-food-tours': ['resources/views/blog/frontend/product.blade.php'],
-        },
-        staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /service-worker\.js$/],
-        navigateFallback: '/',
-		ignoreUrlParametersMatching: [/./],
-        runtimeCaching: [
-            {
-                urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
-                handler: 'cacheFirst'
-            },
-			{
-                urlPattern: /^https:\/\/static\.vertikaltrip\.com\//,
-                handler: 'cacheFirst'
-            }
-        ],
-       
-    })
-    ]
-});
-*/
 mix.scripts([
-	'resources/assets/frontend/jquery/dist/jquery.min.js',
-	'resources/assets/frontend/bootstrap-4.3.1/dist/js/bootstrap.min.js',
-	'resources/assets/frontend/datatables.net/js/jquery.dataTables.min.js',
-	'resources/assets/frontend/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-	],'public/js/vertikaltrip-1.2.2.js');
+	'public/js/ratnawahyu_tmp1.js',
+	'public/js/ratnawahyu_tmp2.js'
+	],'public/js/ratnawahyu-1.1.9.js');
+
 
 mix.styles([
-	'resources/assets/frontend/bootstrap-4.3.1/dist/css/bootstrap.min.css',
-	'resources/assets/frontend/fontawesome-free-5.9.0-web/css/all.css',
-	'resources/assets/frontend/animate.css/animate.min.css',
-	'resources/assets/frontend/custom/nav.css',
-	'resources/assets/frontend/custom/custom.css',
-	'resources/assets/frontend/datatables.net-bs4/css/dataTables.bootstrap4.css',
-	'resources/assets/frontend/custom/vertikaltrip.css'
-	],'public/css/vertikaltrip-1.2.2.css');
-	
-mix.copyDirectory('resources/assets/frontend/fontawesome-free-5.9.0-web/webfonts', 'public/webfonts');
+	'public/css/ratnawahyu_tmp1.css',
+	'public/css/ratnawahyu_tmp2.css'
+	],'public/css/ratnawahyu-1.1.9.css');
+
+mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
+mix.copy('resources/assets/ratnawahyu/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');

@@ -52,12 +52,13 @@ class TimelineController extends Controller
 		
 		
 		
-		$blog_setting = blog_settings::where('value','like','%'. preg_replace('#^https?://#', '', Http::root() .'%'))->where('name','domain')->first();
-		if(!$blog_setting) return Redirect('/home');
+		//$blog_setting = blog_settings::where('value','like','%'. preg_replace('#^https?://#', '', Http::root() .'%'))->where('name','domain')->first();
+		//if(!$blog_setting) return Redirect('/home');
 		
-		$user_id = $blog_setting->user_id;
+		$user_id = Auth::user()->id;
 		$get_user = User::where('id',$user_id)->whereNotNull('email_verified_at')->first();
 		if(!$get_user) return Redirect('/login');
+		
 		
 		if (Auth::check()) {
 			

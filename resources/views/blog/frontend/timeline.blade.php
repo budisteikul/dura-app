@@ -5,8 +5,8 @@
 @push('scripts')
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="/js/vertikaltrip-1.1.1.js"></script>
-<link href="/css/ratnawahyu-1.1.1.css" rel="stylesheet" media="screen,handheld">
+<script src="/js/ratnawahyu-1.1.9.js"></script>
+<link href="/css/ratnawahyu-1.1.9.css" rel="stylesheet" media="screen,handheld">
 @endpush
 
    <!-- ################################################################### -->
