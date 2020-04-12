@@ -54,15 +54,15 @@
         			@endphp
         			@foreach($contents->items as $content)
         			<div class="col-sm-4 col-sm-auto  mb-4">
-    						<div class="card  h-100 shadow card-block rounded">
+    						<div class="card h-100 shadow card-block rounded">
                             @if(isset($content->activity->keyPhoto->fileName))
   				 				<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
   				 			@endif	
-  							<div class="card-header bg-white border-0 text-left h-100 pb-0">
-        								<h3 class="mb-2">{{ $content->activity->title }}</h3>
-      						</div>
+  								<div class="card-header bg-white border-0 text-left pb-0">
+        								<h2 class="mb-4">{{ $content->activity->title }}</h2>
+      							</div>
                             	@if($content->activity->excerpt!="")
-								<div class="card-body pt-0 h-100">
+								<div class="card-body pt-0">
 									<p class="card-text text-left">{!!$content->activity->excerpt!!}</p>
   								</div>
                                 @endif
@@ -70,11 +70,18 @@
     								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
   								</div>
   								<div class="card-body pt-0">
-    								<p class="card-text text-right"><b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></p>
+                                <div class="row">
+                                	<div class="col-lg-6 text-left ml-0">
+                                    <b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
+                                    </div>
+                                    <div class="col-lg-6 text-right d-flex align-items-end justify-content-end">
+                                    <a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
+                                    </div>
+                                
+                                </div>
+    								
   								</div>
-  								<div class="card-footer bg-primary p-0">
-    								<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-primary btn-lg btn-block text-white" style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
-  								</div>
+  								
 							</div>
     				</div>
 					@endforeach
