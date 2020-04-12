@@ -22,7 +22,7 @@
   				 					<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
   				 					@endif	
   									<div class="card-header bg-white border-0 text-left pb-0">
-        								<h2 class="mb-4">{{ $content->activity->title }}</h2>
+        								<h3 class="mb-4">{{ $content->activity->title }}</h3>
       								</div>
                             		@if($content->activity->excerpt!="")
 									<div class="card-body pt-0">
