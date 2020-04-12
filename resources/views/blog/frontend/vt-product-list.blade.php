@@ -64,8 +64,8 @@
 								<div class="card-body pt-0">
     								<p class="card-text text-left text-muted"><i class="far fa-clock"></i> Duration : {{ $content->activity->durationText }}</p>
   								</div>
-  								<div class="card-body pt-0">
-                                <div class="row">
+  								<div class="card-footer bg-white pt-0" style="border:none;">
+                                <div class="row mb-2">
                                 	<div class="col-lg-6 text-left ml-0">
                                     <span class="text-muted">Price from</span><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
                                     </div>
