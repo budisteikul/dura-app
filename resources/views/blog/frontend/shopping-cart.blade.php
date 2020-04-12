@@ -477,35 +477,13 @@ function STORE()
   					}).then(function(data) {
 						//console.log(data);
     					return data.result.id;
-  					});//
+  					});
 					
-					
-					/*
-					$.ajax({
-						data: {
-        					"_token": $("meta[name=csrf-token]").attr("content")
-        					},
-							type: 'POST',
-							url: '/booking/create-paypal-transaction'
-						}).done(function( data ) {
-							var result = data;
-							var orderID = data.result.id;
-						});
-					*/
-					/*	
-					return actions.order.create({
-        				purchase_units: [{
-          					amount: {
-            				value: '0.01'
-          					}
-        				}]
-      				});
-					*/
 				},
 				onError: function (err) {
     				$("#proses").hide();
+					$('#alert-failed').html("Your browser is not support Paypal");
 					$('#alert-failed').fadeIn("slow");
-					$('#alert-failed').html("Browser not support Paypal");
 					
   				},
    				onApprove: function(data, actions) {
