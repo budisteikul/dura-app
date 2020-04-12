@@ -20,11 +20,11 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  */
 
 /* VERTIKAL TRIP */
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.2.6.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.2.6.css');
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.2.7.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.2.7.css');
 
  
-/* ADMIN */
+/* ADMIN
 mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
 mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
 
@@ -48,9 +48,9 @@ mix.styles([
 mix.copyDirectory('resources/assets/admin/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
+ */
 
-
-/* RATNAWAHYU */
+/* RATNAWAHYU
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
 mix.sass('resources/sass/ratnawahyu.scss', 'public/css/ratnawahyu_tmp1.css');
 
@@ -84,3 +84,4 @@ mix.styles([
 
 mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
 mix.copy('resources/assets/ratnawahyu/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
+ */
