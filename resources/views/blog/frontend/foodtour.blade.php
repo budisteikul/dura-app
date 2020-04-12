@@ -137,7 +137,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white " href="https://www.vertikaltrip.com/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
+<a class="btn btn-danger text-white " href="/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
 
 @endif
 
