@@ -25,10 +25,10 @@
         			<div class="col-sm-4 col-sm-auto  mb-4">
 						<div class="card h-100 shadow card-block rounded">
 						@if(isset($content->activity->keyPhoto->fileName))
-							<img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}">
+							<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
 						@endif	
 							<div class="card-header bg-white border-0 text-left pb-0">
-								<h3 class="mb-4">{{ $content->activity->title }}</h3>
+								<h3 class="mb-4"><a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-dark text-decoration-none">{{ $content->activity->title }}</a></h3>
 							</div>
 							@if($content->activity->excerpt!="")
 							<div class="card-body pt-0">

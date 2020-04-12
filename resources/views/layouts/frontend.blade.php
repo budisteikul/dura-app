@@ -40,6 +40,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
 	<script src="/js/vertikaltrip-1.2.8.js"></script>
 	<link href="/css/vertikaltrip-1.2.8.css" rel="stylesheet" media="screen,handheld">
+   
 <!-- script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
