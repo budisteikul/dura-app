@@ -196,8 +196,7 @@ Vertikal Trip Team
   								<div class="card-body pt-0">
                                 <div class="row">
                                 	<div class="col-lg-6 text-left ml-0">
-                                    <b>Price from</b><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
-                                    </div>
+                                    <span class="text-muted">Price from</span><br /><b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b></div>
                                     <div class="col-lg-6 text-right d-flex align-items-end justify-content-end">
                                     <a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
                                     </div>
