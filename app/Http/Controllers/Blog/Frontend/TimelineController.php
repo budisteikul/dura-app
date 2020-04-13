@@ -51,7 +51,7 @@ class TimelineController extends Controller
 		}
 		
 		
-		
+		if (!Auth::check()) return redirect("/login");
 		//$blog_setting = blog_settings::where('value','like','%'. preg_replace('#^https?://#', '', Http::root() .'%'))->where('name','domain')->first();
 		//if(!$blog_setting) return Redirect('/home');
 		
