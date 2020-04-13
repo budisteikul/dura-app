@@ -19,36 +19,36 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  |
  */
 
-/* VERTIKAL TRIP */
+/* VERTIKAL TRIP
 mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.3.0.js');
 mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.3.0.css');
+  */
  
- 
-/* ADMIN
-mix.js('resources/js/app.js', 'public/js/app_tmp1.js');
-mix.sass('resources/sass/app.scss', 'public/css/app_tmp1.css');
+/* ADMIN */
+mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
+mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
 mix.scripts([
 	'resources/assets/admin/jquery-uploadfile/js/jquery.uploadfile.js',
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
-	],'public/js/app_tmp2.js');
+	],'public/js/admin_tmp2.js');
 
 mix.scripts([
-	'public/js/app_tmp1.js',
-	'public/js/app_tmp2.js'
-	],'public/js/app.js');
+	'public/js/admin_tmp1.js',
+	'public/js/admin_tmp2.js'
+	],'public/js/admin.js');
 
 
 mix.styles([
-	'public/css/app_tmp1.css',
+	'public/css/admin_tmp1.css',
 	'resources/assets/admin/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/app.css');
+	],'public/css/admin.css');
 	
 mix.copyDirectory('resources/assets/admin/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
- */
+
 
 /* RATNAWAHYU
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
