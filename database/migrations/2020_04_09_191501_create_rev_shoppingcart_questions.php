@@ -30,6 +30,7 @@ class CreateRevShoppingcartQuestions extends Migration
 			$table->string('required')->nullable();
 			$table->string('selectOption')->nullable();
 			$table->string('selectMultiple')->nullable();
+			$table->string('help')->nullable();
 			$table->string('order')->nullable();
 			$table->string('answer')->nullable();
 				

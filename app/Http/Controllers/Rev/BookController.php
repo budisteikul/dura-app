@@ -587,6 +587,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$rev_shoppingcart_questions->label = $questions[$i]->label;
 					$rev_shoppingcart_questions->dataType = $questions[$i]->dataType;
 					if(isset($questions[$i]->dataFormat)) $rev_shoppingcart_questions->dataFormat = $questions[$i]->dataFormat;
+					if(isset($questions[$i]->help)) $rev_shoppingcart_questions->help = $questions[$i]->help;
 					$rev_shoppingcart_questions->required = $questions[$i]->required;
 					$rev_shoppingcart_questions->selectOption = $questions[$i]->selectFromOptions;
 					$rev_shoppingcart_questions->selectMultiple = $questions[$i]->selectMultiple;

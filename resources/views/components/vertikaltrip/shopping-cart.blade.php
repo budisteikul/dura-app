@@ -169,7 +169,11 @@ $( document ).ready(function() {
     @foreach($main_contacts as $main_contact)        
 <div class="form-group">
 	<label for="{{ $main_contact->questionId }}" class="{{ $main_contact->required ? "required" : "" }}"><strong>{{ $main_contact->label }}</strong></label>
-	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    <?php
+    $dataFormat = "text";
+    if($main_contact->dataFormat=="EMAIL_ADDRESS") $dataFormat = "email";
+    ?>
+	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="{{ $dataFormat }}" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
 </div>
 	@endforeach
     
@@ -183,7 +187,11 @@ $( document ).ready(function() {
     @foreach($activityBookings as $activityBooking)
     <div class="form-group">
 	<label for="{{ $activityBooking->questionId }}" class="{{ $activityBooking->required ? "required" : "" }}"><strong>{{ $activityBooking->label }}</strong></label>
+    
 	<input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
+    @if(isset($activityBooking->help))
+    <small class="form-text text-muted">{{$activityBooking->help}}</small>
+    @endif
 </div>
     @endforeach
     @endif
