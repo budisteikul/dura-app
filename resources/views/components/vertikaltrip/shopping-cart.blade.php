@@ -169,12 +169,15 @@ $( document ).ready(function() {
     @foreach($main_contacts as $main_contact)        
 <div class="form-group">
 	<label for="{{ $main_contact->questionId }}" class="{{ $main_contact->required ? "required" : "" }}"><strong>{{ $main_contact->label }}</strong></label>
-    <?php
-    $dataFormat = "text";
-    if($main_contact->dataFormat=="EMAIL_ADDRESS") $dataFormat = "email";
-    ?>
-	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="{{ $dataFormat }}" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    @if($main_contact->dataFormat=="EMAIL_ADDRESS")
+	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="email" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    @elseif($main_contact->dataFormat=="PHONE_NUMBER")
+    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="tel" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    @else
+    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    @endif
 </div>
+	
 	@endforeach
     
     @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
