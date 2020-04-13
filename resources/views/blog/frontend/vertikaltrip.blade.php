@@ -5,9 +5,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
 	<div class="container">
-		<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
+		<a href="/"><img id="brand" src="/assets/logo/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">MENU</span>
 		</button>
 		
 		@include('layouts.vt-menu')
@@ -64,10 +64,12 @@
   });
 
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
+    if ($("#mainNav").offset().top > 100 && $(window).width() > 768) {
       $("#mainNav").addClass("navbar-shrink shadow");
+	  //$("#brand").attr("src", "/assets/logo/logo-blue.png");
     } else {
       $("#mainNav").removeClass("navbar-shrink shadow");
+	  //$("#brand").attr("src", "/assets/logo/logo.png");
     }
   };
   

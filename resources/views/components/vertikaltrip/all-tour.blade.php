@@ -49,7 +49,7 @@
                                     	</div>
                                     </div>
   									<div class="ml-auto p-0">
-                                    	<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md " style=" cursor: pointer; background-color: #1D57C7; border-color: #1D57C7;"><i class="fas fa-info-circle"></i> More info</a>
+                                    	<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md"><i class="fas fa-info-circle"></i> More info</a>
                                     </div>
 								</div>
 							</div>

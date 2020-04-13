@@ -38,9 +38,9 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.2.9.js"></script>
-	<link href="/css/vertikaltrip-1.2.9.css" rel="stylesheet" media="screen,handheld">
-   
+	<script src="/js/vertikaltrip-1.3.0.js"></script>
+	<link href="/css/vertikaltrip-1.3.0.css" rel="stylesheet" media="screen,handheld">
+  
 <!-- script>
           if ('serviceWorker' in navigator ) {
             window.addEventListener('load', function() {
@@ -88,7 +88,7 @@ s0.parentNode.insertBefore(s1,s0);
      
 
 </head>
-<body class=" bg-dark">
+<body class=" bg-white">
 
 
 	@yield('content')

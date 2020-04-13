@@ -20,8 +20,8 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  */
 
 /* VERTIKAL TRIP */
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.2.9.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.2.9.css');
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.3.0.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.3.0.css');
  
  
 /* ADMIN
