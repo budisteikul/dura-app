@@ -286,7 +286,7 @@ h3 {
   border-top: 5px solid #0087C3;
 }
 
-
+{!! $watermark !!}
 </style>
 </head>
   <body>

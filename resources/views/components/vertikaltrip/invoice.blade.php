@@ -157,7 +157,7 @@ table tfoot td {
   border-bottom: none;
   font-size: 1.2em;
   white-space: nowrap; 
-  border-top: 1px solid #AAAAAA; 
+  border-top: none; 
 }
 
 table tfoot tr:first-child td {
@@ -257,9 +257,9 @@ footer {
                         <tr>
             				<td class="no">{{ sprintf("%02d", $number) }}</td>
             				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
-            				<td class="unit">${{ $shoppingcart_rates->price }}</td>
+            				<td class="unit">{{ $shoppingcart_rates->price }}</td>
             				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
-            				<td class="total">${{ $shoppingcart_rates->total }}</td>
+            				<td class="total">{{ $shoppingcart_rates->total }}</td>
           				</tr>
                         
                         <?php
@@ -276,7 +276,7 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">SUBTOTAL</td>
-            <td>${{ $subtotal }}</td>
+            <td>{{ $subtotal }}</td>
           </tr>
           @php
           	$refunded = 0;
@@ -287,17 +287,17 @@ footer {
           @endphp
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">Refunded</td>
-            <td>${{ $refunded }}</td>
+            <td colspan="2">REFUNDED</td>
+            <td>{{ $refunded }}</td>
           </tr>
           @endif
           @php
-          	$grandtotal = $subtotal - $refunded
+          	$grandtotal = $subtotal + $refunded
           @endphp
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">GRAND TOTAL</td>
-            <td>${{ $grandtotal }}</td>
+            <td colspan="2">AMOUNT DUE (USD)</td>
+            <td>{{ $grandtotal }}</td>
           </tr>
         </tfoot>
       </table>
