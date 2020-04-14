@@ -231,7 +231,7 @@ footer {
           <h1>INVOICE {{ $rev_shoppingcarts->confirmationCode }}</h1>
           <div class="date">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
           <div class="date">Due Date: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
-          <div class="date">Status: Paid in Full</div>
+          <div class="date">Status: {{ \App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode) }}</div>
         </div>
       </div>
       <table border="0" cellspacing="0" cellpadding="0">
@@ -278,10 +278,26 @@ footer {
             <td colspan="2">SUBTOTAL</td>
             <td>${{ $subtotal }}</td>
           </tr>
+          @php
+          	$refunded = 0;
+          @endphp
+          @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
+          @php
+          	$refunded = $subtotal * -1;
+          @endphp
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">Refunded</td>
+            <td>${{ $refunded }}</td>
+          </tr>
+          @endif
+          @php
+          	$grandtotal = $subtotal - $refunded
+          @endphp
           <tr>
             <td colspan="2"></td>
             <td colspan="2">GRAND TOTAL</td>
-            <td>${{ $subtotal }}</td>
+            <td>${{ $grandtotal }}</td>
           </tr>
         </tfoot>
       </table>

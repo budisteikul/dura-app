@@ -7,6 +7,19 @@ use Illuminate\Support\Str;
 
 class BookClass {
 	
+	public static function check_status_invoice($id)
+	{
+		$status = "-";
+		$rev_books = rev_books::where('ticket',$id)->first();	
+		if(isset($rev_books))
+		{
+			if($rev_books->status==1) $status = "Paid in full";
+			if($rev_books->status==2) $status = "Paid in full";
+			if($rev_books->status==3) $status = "Refunded";	
+		}
+		return $status;
+	}
+	
 	public static function get_ticket(){
     	$uuid = "VT-". rand(100000,999999);
     	while( rev_shoppingcarts::where('confirmationCode','=',$uuid)->first() ){
