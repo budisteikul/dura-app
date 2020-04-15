@@ -66,6 +66,7 @@
 									<a class="dropdown-item" href="/rev/experiences"><i class="far fa-circle"></i> {{ __('Experiences') }}</a>
 									<a class="dropdown-item" href="/rev/review"><i class="far fa-circle"></i> {{ __('Review') }}</a>
                                     <a class="dropdown-item" href="/rev/resellers"><i class="far fa-circle"></i> {{ __('Channel') }}</a>
+                                    <a class="dropdown-item" href="/rev/page"><i class="far fa-circle"></i> {{ __('Page') }}</a>
                                     
                                     
                                     <!-- a class="dropdown-item" href="/blog/post"><i class="far fa-circle"></i> {{ __('Posts') }}</a -->
