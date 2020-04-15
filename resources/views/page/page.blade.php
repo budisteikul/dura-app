@@ -31,6 +31,7 @@
                  			<!-- ##### -->
                  			<div class="row col-md-8  mx-auto text-left">
 								<div class="textwidget" style=" min-height:250px;">
+                                <p>&nbsp;</p>
 					 			<!-- ##### content ############################################################## -->
 					  			{!! $blog_posts->content !!}
 					 			<!-- ##### content ############################################################## -->
