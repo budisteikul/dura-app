@@ -112,18 +112,11 @@ function UPDATE()
     
 </div>
 
+
+
 <div class="form-group">
 	<label for="traveller">Traveller :</label>
-    <select class="form-control" name="traveller" id="traveller">
-      <option value="1" {{ ($book->traveller=='1') ? 'selected' : '' }}>1</option>
-      <option value="2" {{ ($book->traveller=='2') ? 'selected' : '' }}>2</option>
-      <option value="3" {{ ($book->traveller=='3') ? 'selected' : '' }}>3</option>
-      <option value="4" {{ ($book->traveller=='4') ? 'selected' : '' }}>4</option>
-      <option value="5" {{ ($book->traveller=='5') ? 'selected' : '' }}>5</option>
-      <option value="6" {{ ($book->traveller=='6') ? 'selected' : '' }}>6</option>
-      <option value="7" {{ ($book->traveller=='7') ? 'selected' : '' }}>7</option>
-      <option value="8" {{ ($book->traveller=='8') ? 'selected' : '' }}>8</option>
-	</select>
+	<input type="number" id="traveller" name="traveller" class="form-control" value="{{$book->traveller}}">
 </div>
 
 <div class="form-group">
