@@ -41,28 +41,28 @@
 
 <p><strong>What type of information we collect and hold</strong></p>
 <ul>
-  <li>Information that you provide to us such as your name,  telephone number, email address, feedback you give to us by phone, email or post, and your communications with us via social media    </li>
-  <li>We do not store your credit card details, including of the last 4 digits and expiration dates which the payment gateways provide us    </li>
-  <li>Information about the services that we provide to you (including, for example, the tours we have supplied to you, when and where they were supplied, how much they were purchased for, as well as the manner in which you use our products and services, and so on)    </li>
-  <li>Information about any device you have used to access our services (such as your device’s make and model, browser or IP address) and how you use our services, including our website    </li>
-  <li>Your contact details and details of the emails and other electronic communications you receive from us, including whether that communication has been opened and whether you have clicked on any links within that communication. We do this to inform our choices when creating communications that are relevant to you    </li>
+  <li>Information that you provide to us such as your name,  telephone number, email address, feedback you give to us by phone, email or post, and your communications with us via social media</li>
+  <li>We do not store your credit card details, including of the last 4 digits and expiration dates</li>
+  <li>Information about the services that we provide to you (including, for example, the tours we have supplied to you, when and where they were supplied, how much they were purchased for, as well as the manner in which you use our products and services, and so on)</li>
+  <li>Information about any device you have used to access our services (such as your device’s make and model, browser or IP address) and how you use our services, including our website</li>
+  <li>Your contact details and details of the emails and other electronic communications you receive from us, including whether that communication has been opened and whether you have clicked on any links within that communication. We do this to inform our choices when creating communications that are relevant to you</li>
 </ul>
 <p>&nbsp;</p>
 
 <p><strong>How your information is used by us</strong></p>
 <p>The information we collect may be used to:</p>
 <ul>
-  <li>Make our services available to you    </li>
-  <li>Process your orders    </li>
-  <li>Process payments and refunds    </li>
-  <li>Personalise your booking experience    </li>
-  <li>Help us to ensure that our customers are genuine and to prevent fraud    </li>
-  <li>Conduct market research, either ourselves or via reputable agencies    </li>
-  <li>For statistical analysis    </li>
-  <li>Help us understand more about you as a customer, the products and services you consume and how you consume them, so we can improve our service to you    </li>
-  <li>Find ways to improve our services and websites    </li>
-  <li>Contact you about products and services, as well as provide you with offers, promotions    </li>
-  <li>Help answer your questions and solve any issues you may have    </li>
+  <li>Make our services available to you</li>
+  <li>Process your orders</li>
+  <li>Process payments and refunds</li>
+  <li>Personalise your booking experience</li>
+  <li>Help us to ensure that our customers are genuine and to prevent fraud</li>
+  <li>Conduct market research, either ourselves or via reputable agencies</li>
+  <li>For statistical analysis</li>
+  <li>Help us understand more about you as a customer, the products and services you consume and how you consume them, so we can improve our service to you</li>
+  <li>Find ways to improve our services and websites</li>
+  <li>Contact you about products and services, as well as provide you with offers, promotions</li>
+  <li>Help answer your questions and solve any issues you may have</li>
   </ul>
 <p>Your personal data will be held for 2 years unless a request is expressly made to remove delete this information. Without prejudice to any other administrative or judicial remedy, you shall have the right to lodge a complaint with a supervisory authority in the Republic of Indonesia if the you consider that the processing of your personal data infringes this Regulation.</p>
 <p>&nbsp;</p>
@@ -71,22 +71,22 @@
 <p>We do not sell, rent or lease your personal information to third parties. We work with GDPR-compliant data processors with whom we share and receive your information.</p>
 <p>For example:  </p>
 <ul>
-  <li>Payment Gateways    </li>
-  <li>Advertising Networks    </li>
-  <li>Analytics Providers    </li>
-  <li>Email Providers    </li>
-  <li>Review Agencies    </li>
-  <li>Search Information Providers    </li>
-  <li>Fraud Prevention Service Providers    </li>
-  <li>Tour operators    </li>
+  <li>Payment Gateways</li>
+  <li>Advertising Networks</li>
+  <li>Analytics Providers</li>
+  <li>Email Providers</li>
+  <li>Review Agencies</li>
+  <li>Search Information Providers</li>
+  <li>Fraud Prevention Service Providers</li>
+  <li>Tour operators</li>
   </ul>
 <p>Vertikaltrip.com will not share personal information with any third parties without your permission, unless to:  </p>
 <ul>
-  <li>Respond to duly authorised information requests of governmental authorities    </li>
-  <li>Comply with any law, regulation, subpoena, or court order    </li>
-  <li>Help prevent fraud, or enforce or protect the rights and properties of Vertikaltrip.com    </li>
-  <li>Protect the personal safety of Vertikal Trip’s employees and third parties on Vertikal Trip’s property    </li>
-  <li>Transfer personal data if Vertikal Trip’s website or Vertikaltrip.com is acquired (or the majority of the company is acquired) by a third party    </li>
+  <li>Respond to duly authorised information requests of governmental authorities</li>
+  <li>Comply with any law, regulation, subpoena, or court order</li>
+  <li>Help prevent fraud, or enforce or protect the rights and properties of Vertikaltrip.com</li>
+  <li>Protect the personal safety of Vertikal Trip’s employees and third parties on Vertikal Trip’s property</li>
+  <li>Transfer personal data if Vertikal Trip’s website or Vertikaltrip.com is acquired (or the majority of the company is acquired) by a third party</li>
   <li>Transfer personal data if we sell or acquire any business or assets to a third-party buyer or seller</li>
 </ul>
 <p>&nbsp;</p>
@@ -108,7 +108,7 @@ If any of the personal information we hold about you is inaccurate or out of dat
 <p><strong>Security</strong></p>
 <p>Vertikal Trip is committed to protecting the information with which you provide us.</p>
 <ul>
-  <li>We use a trusted payment processing service to process your payment and we do not store your credit/debit card information, including of the expiry dates and last 4 digits of your card number.     </li>
+  <li>We use a trusted payment processing service to process your payment and we do not store your credit/debit card information, including of the expiry dates and last 4 digits of your card number.</li>
   <li>We use secure socket layer software (SSL) to encrypt personal information that you provide. This technology prevents you from inadvertently revealing personal information using an unsecure connection. Our website is certified with an SSL certificate, which verifies that our website is secure.    </li>
   <li>We keep your information confidential and store user personal data on a secure server, which is password protected and firewall protected. Unfortunately, the transmission of information via the internet is not completely secure. We will do our best to protect your personal data, although we cannot guarantee the security of your data once transmitted to our website. We will strive to prevent unauthorised access to your data using strict procedures and security features.</li>
 </ul>
