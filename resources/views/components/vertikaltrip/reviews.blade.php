@@ -10,7 +10,7 @@ var table = $('#dataTables-example').DataTable(
 		"url": "/review",
 		"type": "POST",
 		"headers": {
-      		'X-CSRF-TOKEN': '{{ csrf_token() }}'
+      		'X-CSRF-TOKEN': $("meta[name=csrf-token]").attr("content")
     		}
 	},
 	"scrollX": true,
