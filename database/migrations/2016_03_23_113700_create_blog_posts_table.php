@@ -25,6 +25,7 @@ class CreateBlogPostsTable extends Migration
 			$table->string('post_type',10)->default('post');
 			$table->string('content_type',10)->default('text');
 			$table->dateTime('date')->nullable();
+			$table->string('description')->nullable();
 			$table->longText('content')->nullable();
 			$table->string('layout')->nullable();
 			$table->tinyInteger('status')->default(1);

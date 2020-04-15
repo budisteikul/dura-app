@@ -67,15 +67,6 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 Route::post('/review', 'Rev\ReviewController@get_review');
 //========================================================================
-// Single Page
-//========================================================================
-Route::get('/page/terms-and-conditions', function () {
-	return view('page.terms-and-conditions');
-});
-Route::get('/page/privacy-policy', function () {
-	return view('page.privacy-policy');
-});
-//========================================================================
 // Booking Page
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
@@ -144,11 +135,14 @@ Route::resource('/rev/experiences','Rev\ExperienceController',[ 'names' => 'expe
 //========================================================================
 // Blog App Route
 //========================================================================
+Route::get('/page/{id}','Blog\Backend\PageController@show');
+Route::resource('/blog/page','Blog\Backend\PageController',[ 'names' => 'page' ])
+	->middleware(['auth', 'verified']);
 Route::resource('/blog/photo','Blog\Backend\PhotoController',[ 'names' => 'blog_photo' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/blog/category','Blog\Backend\CategoryController',[ 'names' => 'blog_category' ])
 	->middleware(['auth', 'verified']);
-	Route::resource('/blog/post','Blog\Backend\PostController',[ 'names' => 'blog_post' ])
+Route::resource('/blog/post','Blog\Backend\PostController',[ 'names' => 'blog_post' ])
 	->middleware(['auth', 'verified']);
 Route::resource('/blog/file', 'Blog\Backend\FileController',[ 'names' => 'blog_file' ])
 	->only('store','destroy')
