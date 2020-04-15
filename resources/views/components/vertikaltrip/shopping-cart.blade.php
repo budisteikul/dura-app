@@ -386,6 +386,7 @@ function STORE()
 					
   					return fetch('/booking/create-paypal-transaction', {
     				method: 'POST',
+					credentials: 'same-origin',
     				headers: {
       					'content-type': 'application/json',
 						'X-CSRF-TOKEN': $("meta[name=csrf-token]").attr("content")
