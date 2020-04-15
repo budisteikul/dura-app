@@ -385,7 +385,7 @@ function STORE()
     			createOrder: function() {
 					
   					return fetch('/booking/create-paypal-transaction', {
-    				method: 'post',
+    				method: 'POST',
     				headers: {
       					'content-type': 'application/json',
 						'X-CSRF-TOKEN': $("meta[name=csrf-token]").attr("content")
