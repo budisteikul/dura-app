@@ -114,7 +114,7 @@ If any of the personal information we hold about you is inaccurate or out of dat
 </ul>
 <p>&nbsp;</p>
 
-<p><strong>Security</strong></p>
+<p><strong>Policy change</strong></p>
 <p>Vertikaltrip.com may occasionally update its Privacy Policy. When this is done we will also revise the ‘last updated’ date of its privacy policy statement.</p>
 <p>&nbsp;</p>
 
