@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Privacy Policy')
+@section('title','PRIVACY POLICY')
 @section('content')
 
 <!-- Navbar Section -->
