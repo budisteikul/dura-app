@@ -5,6 +5,9 @@ var table = $('#dataTables-example').DataTable(
 {
 	"processing": true,
 	"serverSide": true,
+	"beforeSend": function(request) {
+    	request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
+  	},
 	"ajax": 
 	{
 		"url": "/review",
