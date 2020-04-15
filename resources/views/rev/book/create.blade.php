@@ -130,7 +130,7 @@ function STORE()
 
 <div class="form-group">
 	<label for="phone">Phone :</label>
-	<input type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
+	<input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone">
 </div>
 
 <div class="form-group">

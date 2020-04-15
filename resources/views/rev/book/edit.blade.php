@@ -126,7 +126,7 @@ function UPDATE()
 
 <div class="form-group">
 	<label for="phone">Phone :</label>
-	<input type="text" id="phone" name="phone" class="form-control" value="{{ $book->phone }}" placeholder="Phone">
+	<input type="tel" id="phone" name="phone" class="form-control" value="{{ $book->phone }}" placeholder="Phone">
 </div>
 
 <div class="form-group">
