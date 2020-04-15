@@ -120,7 +120,7 @@ function STORE()
 
 <div class="form-group">
 	<label for="traveller">Traveller :</label>
-	<input type="number" id="traveller" name="traveller" class="form-control">
+	<input type="number" id="traveller" name="traveller" class="form-control" value="1">
 </div>
 
 <div class="form-group">
