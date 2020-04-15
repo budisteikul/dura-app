@@ -5,13 +5,13 @@ var table = $('#dataTables-example').DataTable(
 {
 	"processing": true,
 	"serverSide": true,
-	"beforeSend": function(request) {
-    	request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
-  	},
 	"ajax": 
 	{
 		"url": "/review",
-		"type": "POST"
+		"type": "POST",
+		"headers": {
+      		'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    		}
 	},
 	"scrollX": true,
 	"language": 
