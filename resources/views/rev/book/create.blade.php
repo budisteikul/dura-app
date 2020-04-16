@@ -23,7 +23,7 @@ function STORE()
 			"phone": $('#phone').val(),
 			"source": $('#source').val(),
 			"date": $('#date').val(),
-			"status": '2',
+			"status": $('#status').val(),
         	"traveller": $('#traveller').val()
         },
 		type: 'POST',
@@ -138,7 +138,13 @@ function STORE()
 	<input type="email" id="email" name="email" class="form-control" placeholder="Email">
 </div>
 
-
+<div class="form-group">
+	<label for="status">Status :</label>
+    <select class="form-control" id="status">
+       	<option value="2">Confirmed</option>
+        <option value="3">Cancelled</option>
+	</select>
+</div>
 
 
        

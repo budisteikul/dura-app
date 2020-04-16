@@ -294,10 +294,11 @@ function STORE()
 				@php
     			$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->orderBy('order')->get();
     			@endphp
-    			@foreach($activityBookings as $activityBooking)
-					"{{ $activityBooking->questionId }}",
-				@endforeach
-				
+				@if(count($activityBookings))
+    				@foreach($activityBookings as $activityBooking)
+						"{{ $activityBooking->questionId }}",
+					@endforeach
+				@endif
 				@php
     			$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
     			@endphp
@@ -329,10 +330,11 @@ function STORE()
 				@php
     			$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->orderBy('order')->get();
     			@endphp
-    			@foreach($activityBookings as $activityBooking)
-					"{{ $activityBooking->questionId }}": $('#{{ $activityBooking->questionId }}').val(),
-				@endforeach
-				
+				@if(count($activityBookings))
+    				@foreach($activityBookings as $activityBooking)
+						"{{ $activityBooking->questionId }}": $('#{{ $activityBooking->questionId }}').val(),
+					@endforeach
+				@endif
 				@php
     			$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
     			@endphp
@@ -361,11 +363,12 @@ function STORE()
 				@php
     			$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->orderBy('order')->get();
     			@endphp
-    			@foreach($activityBookings as $activityBooking)
-					$("#{{ $activityBooking->questionId }}").attr("disabled", true);
-					$("#{{ $activityBooking->questionId }}").addClass("input-disabled");
-				@endforeach
-				
+				@if(count($activityBookings))
+    				@foreach($activityBookings as $activityBooking)
+						$("#{{ $activityBooking->questionId }}").attr("disabled", true);
+						$("#{{ $activityBooking->questionId }}").addClass("input-disabled");
+					@endforeach
+				@endif
 				@php
     			$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
     			@endphp

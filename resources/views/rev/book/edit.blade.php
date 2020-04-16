@@ -21,7 +21,7 @@ function UPDATE()
 			"phone": $('#phone').val(),
 			"source": $('#source').val(),
 			"date": $('#date').val(),
-			"status": '2',
+			"status": $('#status').val(),
         	"traveller": $('#traveller').val(),
         },
 		type: 'PUT',
@@ -132,6 +132,14 @@ function UPDATE()
 <div class="form-group">
 	<label for="email">Email :</label>
 	<input type="email" id="email" name="email" class="form-control" value="{{ $book->email }}" placeholder="Email">
+</div>
+
+<div class="form-group">
+	<label for="status">Status :</label>
+    <select class="form-control" id="status">
+       	<option value="2" {{ ($book->status==2) ? 'selected' : '' }}>Confirmed</option>
+        <option value="3" {{ ($book->status==3) ? 'selected' : '' }}>Cancelled</option>
+	</select>
 </div>
 
 <button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>

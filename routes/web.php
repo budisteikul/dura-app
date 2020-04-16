@@ -76,15 +76,18 @@ Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });
-Route::get('/booking/shoppingcart', 'Rev\BookController@get_shoppingcart');
-Route::get('/booking/checkout', 'Rev\BookController@get_checkout');
-Route::post('/booking/checkout', 'Rev\BookController@post_checkout');
-Route::post('/booking/payment', 'Rev\BookController@payment');
-Route::post('/booking/create-paypal-transaction', 'Rev\BookController@createPayment');
-Route::get('/booking/receipt/{id}', 'Rev\BookController@receipt');
-Route::get('/booking/invoice/{id}', 'Rev\BookController@get_invoice');
-Route::get('/booking/ticket/{id}', 'Rev\BookController@get_ticket');
-Route::get('/booking/{id}', 'Rev\BookController@time_selector');
+//========================================================================
+// Shopping Cart
+//========================================================================
+Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
+Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');
+Route::post('/booking/checkout', 'Rev\ShoppingCartController@post_checkout');
+Route::post('/booking/payment', 'Rev\ShoppingCartController@payment');
+Route::post('/booking/create-paypal-transaction', 'Rev\ShoppingCartController@createPayment');
+Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');
+Route::get('/booking/invoice/{id}', 'Rev\ShoppingCartController@get_invoice');
+Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');
+Route::get('/booking/{id}', 'Rev\ShoppingCartController@time_selector');
 //========================================================================
 // Redirect Page
 //========================================================================
