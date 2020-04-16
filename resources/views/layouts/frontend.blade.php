@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-sm-4 second-column mb-4">
                 	<p class="m-0 text-left text-dark">
-                    	<b>USEFUL LINKS</b>
+                    	<b>TERMS AND POLICY</b>
                     	<br>
 						<a target="_blank" class="text-theme" href="/page/terms-and-conditions" style="margin-top:10px;">Terms and Conditions</a>
                         <br>
