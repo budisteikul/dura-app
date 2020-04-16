@@ -22,7 +22,7 @@
 					$contents = \App\Classes\Rev\BokunClass::get_product_list_byid($product_list->id);
         			@endphp
                     @foreach($contents->items as $content)
-        			<div class="col-sm-4 col-sm-auto  mb-4">
+        			<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100 shadow card-block rounded">
 						@if(isset($content->activity->keyPhoto->fileName))
 							<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
