@@ -76,7 +76,7 @@ var table = $('#dataTables-example').DataTable(
 				</span>‎
 				<br>
 				<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
-				<hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
+				<hr class="hr-theme">
 			</div>
 			<table id="dataTables-example" style="width:100%">
 				<tbody>           

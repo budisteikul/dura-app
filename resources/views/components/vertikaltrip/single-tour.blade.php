@@ -7,7 +7,7 @@
                     <div style="height:70px;"></div>
                     <h3 class="section-heading" style="margin-top:0px;">{{ $contents->title }}</h3>
                     <h4 class="section-subheading text-muted">{!! $contents->description !!}</h4>
-                    <hr style="max-width:50px;border-color:#1D57C7;border-width:3px;">
+                    <hr class="hr-theme">
                     <div style="height:30px;"></div>
                 </div>
             </div>

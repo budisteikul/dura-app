@@ -21,7 +21,7 @@
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
-                <hr style="max-width:50px;border-color: #1D57C7;border-width: 3px;">
+                <hr class="hr-theme">
                 <a class="btn btn-lg btn-theme js-scroll-trigger" href="/#tour">DISCOVER TOURS</a>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>

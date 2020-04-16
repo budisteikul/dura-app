@@ -19,12 +19,12 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  |
  */
 
-/* VERTIKAL TRIP
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.3.0.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.3.0.css');
-  */
+/* VERTIKAL TRIP  */
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.3.1.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.3.1.css');
+
  
-/* ADMIN */
+/* ADMIN
 mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
 mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
@@ -48,7 +48,7 @@ mix.styles([
 mix.copyDirectory('resources/assets/admin/avatars', 'public/img');
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-
+ */
 
 /* RATNAWAHYU
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
