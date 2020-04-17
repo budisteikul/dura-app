@@ -1,7 +1,7 @@
 <?php
 namespace App\Classes\Rev;
 use App\Models\Rev\rev_books;
-use App\Models\Rev\rev_widgets;
+use App\Models\Blog\blog_posts;
 use App\Models\Rev\rev_shoppingcarts;
 use Illuminate\Support\Str;
 
@@ -32,20 +32,20 @@ class BookClass {
 	public static function get_id($product_id)
 	{
 		$id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
-		$slug = rev_widgets::with('posts')->where('product_id',$product_id)->first();
+		$slug = blog_posts::where('product_id',$product_id)->first();
 		if(isset($slug))
 		{
-			$id = $slug->posts->id;	
+			$id = $slug->id;	
 		}
 		return $id;
 	}
 	
 	public static function get_slug($id)
 	{
-		$slug = rev_widgets::with('posts')->where('product_id',$id)->first();
+		$slug = blog_posts::where('product_id',$id)->first();
 		if(isset($slug))
 		{
-			$url = '/tour/'. $slug->posts->slug;	
+			$url = '/tour/'. $slug->slug;	
 		}
 		else
 		{

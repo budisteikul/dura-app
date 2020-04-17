@@ -20,6 +20,7 @@ class CreateBlogPostsTable extends Migration
       			->references('id')->on('users')
       			->onDelete('cascade')->onUpdate('cascade');
 				
+			$table->integer('product_id')->nullable();	
 			$table->string('title')->nullable();
 			$table->string('slug')->nullable();
 			$table->string('post_type',10)->default('post');

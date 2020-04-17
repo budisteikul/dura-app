@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 use App\DataTables\Rev\ExperiencesDataTable;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Rev\rev_widgets;
 use App\Models\Blog\blog_posts;
 use App\Classes\Blog\BlogClass;
 use App\Classes\Rev\BokunClass;
@@ -62,7 +61,7 @@ class ExperienceController extends Controller
 		
 		$title =  $request->input('title');
 		$product_id =  $request->input('product_id');
-		
+		//319494
 		$blog_posts = new blog_posts;
 		$blog_posts->title = $title;
 		$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
@@ -71,12 +70,8 @@ class ExperienceController extends Controller
 		$blog_posts->content_type = 'experience';
 		$blog_posts->post_type = 'post';
 		$blog_posts->status = 1;
+		$blog_posts->product_id = $product_id;
 		$blog_posts->save();
-		
-		$rev_widgets = new rev_widgets();
-		$rev_widgets->post_id = $blog_posts->id;
-		$rev_widgets->product_id = $product_id;
-		$rev_widgets->save();
 		
 		return response()->json([
 					"id" => "1",
@@ -105,8 +100,8 @@ class ExperienceController extends Controller
     {
 		$limit = false;
 		
-		$rev_widgets = rev_widgets::findOrFail($id);
-		$blog_posts = blog_posts::findOrFail($rev_widgets->post_id);		
+		
+		$blog_posts = blog_posts::findOrFail($id);		
 				
 				$rev_books = rev_books::where('post_id',$blog_posts->id)->get();
 				if(count($rev_books))
@@ -120,7 +115,7 @@ class ExperienceController extends Controller
 				}
 				
 		
-        return view('rev.experiences.edit',['rev_widgets'=>$rev_widgets,'blog_posts'=>$blog_posts,'limit'=>$limit]);
+        return view('rev.experiences.edit',['blog_posts'=>$blog_posts,'limit'=>$limit]);
     }
 
     /**
@@ -147,15 +142,10 @@ class ExperienceController extends Controller
 		$title =  $request->input('title');
 		$product_id =  $request->input('product_id');
 		
-		$rev_widgets = rev_widgets::findOrFail($id);
-		$blog_posts = blog_posts::find($rev_widgets->post_id);
 		
-		$rev_widgets->product_id = $product_id;
-		$rev_widgets->save();
-		
-		
+		$blog_posts = blog_posts::find($id);
 		$blog_posts->title = $title;
-		//$blog_posts->slug = BlogClass::makeSlug($title,$user->id);
+		$blog_posts->product_id = $product_id;
 		$blog_posts->date = date('Y-m-d H:i:s');
 		$blog_posts->user_id = $user->id;
 		$blog_posts->content_type = 'experience';
@@ -178,9 +168,8 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        $rev_widgets = rev_widgets::find($id);
-		$rev_widgets->delete();
-		blog_posts::find($rev_widgets->post_id)->delete();
+        $blog_posts = blog_posts::find($id);
+		$blog_posts->delete();
     }
 	
 	public function import()
@@ -194,7 +183,7 @@ class ExperienceController extends Controller
 				$title = $product->activity->title;
 				$id = $product->activity->id;
 				
-				$check = rev_widgets::where('product_id',$id)->first();
+				$check = blog_posts::where('product_id',$id)->first();
 				if(!isset($check))
 				{
 					$blog_posts = new blog_posts;
@@ -205,12 +194,8 @@ class ExperienceController extends Controller
 					$blog_posts->content_type = 'experience';
 					$blog_posts->post_type = 'post';
 					$blog_posts->status = 1;
+					$blog_posts->product_id = $id;
 					$blog_posts->save();
-		
-					$rev_widgets = new rev_widgets();
-					$rev_widgets->post_id = $blog_posts->id;
-					$rev_widgets->product_id = $id;
-					$rev_widgets->save();
 				}
 				
 				

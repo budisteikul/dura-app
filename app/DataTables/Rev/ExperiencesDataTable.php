@@ -12,7 +12,6 @@ use Yajra\DataTables\Services\DataTable;
 use Illuminate\Support\Str;
 
 use App\Models\Blog\blog_posts;
-use App\Models\Rev\rev_widgets;
 use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_reviews;
 
@@ -28,33 +27,18 @@ class ExperiencesDataTable extends DataTable
     {
         return datatables($query)
             ->addIndexColumn()
-			->addColumn('post', function ($resource) {
-					$post = blog_posts::find($resource->post_id);
-                    if(!isset($post)){
-                        $title = "";
-                    }
-                    else
-                    {
-                        $title = $post->title;
-                    }
-					return $title;
-				})
-			->editColumn('product_id', function ($resource) {
-					$product_id = Str::limit($resource->product_id,10);
-					return $product_id;
-				})
 			->addColumn('action', function ($id) {
 				$check_book = false;
 				$check_review = false;
-				$post = blog_posts::find($id->post_id);
 				
-				$rev_books = rev_books::where('post_id',$post->id)->get();
+				
+				$rev_books = rev_books::where('post_id',$id->id)->get();
 				if(count($rev_books))
 				{
 					$check_book = true;
 				}
 				
-				$rev_reviews = rev_reviews::where('post_id',$post->id)->get();
+				$rev_reviews = rev_reviews::where('post_id',$id->id)->get();
 				if(count($rev_reviews))
 				{
 					$check_review = true;
@@ -79,9 +63,9 @@ class ExperiencesDataTable extends DataTable
      * @param \App\Rev/ExperiencesDataTable $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(rev_widgets $model)
+    public function query(blog_posts $model)
     {
-        $query = rev_widgets::get();
+        $query = blog_posts::where('content_type','experience');
         return $query;
     }
 
@@ -122,7 +106,7 @@ class ExperiencesDataTable extends DataTable
          return [
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
-			["name" => "post", "title" => "post", "data" => "post"],
+			["name" => "title", "title" => "title", "data" => "title"],
 			["name" => "product_id", "title" => "product_id", "data" => "product_id"],
         ];
     }

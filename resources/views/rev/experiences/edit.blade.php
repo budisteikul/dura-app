@@ -19,7 +19,7 @@ function UPDATE()
 			"product_id": $('#product_id').val(),
         },
 		type: 'PUT',
-		url: '{{ route('experiences.update',$rev_widgets->id) }}'
+		url: '{{ route('experiences.update',$blog_posts->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -53,7 +53,7 @@ function UPDATE()
                 <div class="card-header">Edit experiences</div>
                 <div class="card-body">
 				
-<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('experiences.update',$rev_widgets->id) }}">
+<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('experiences.update',$blog_posts->id) }}">
 @csrf
 @method('PUT')
 <div id="result"></div>
@@ -66,12 +66,12 @@ function UPDATE()
 @if($limit)
 <div class="form-group">
 	<label for="product_id">product_id :</label>
-	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $rev_widgets->product_id }}" placeholder="product_id" disabled="true">
+	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $blog_posts->product_id }}" placeholder="product_id" disabled="true">
 </div>
 @else
 <div class="form-group">
 	<label for="product_id">product_id :</label>
-	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $rev_widgets->product_id }}" placeholder="product_id">
+	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $blog_posts->product_id }}" placeholder="product_id">
 </div>
 @endif
 

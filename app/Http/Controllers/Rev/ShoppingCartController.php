@@ -32,8 +32,8 @@ class ShoppingCartController extends Controller
     public function time_selector($id)
 	{
 		$render = '';
-		$widget = blog_posts::with('widgets')->where('slug',$id)->first();
-        if(!isset($widget)){
+		$product_id = blog_posts::where('slug',$id)->first();
+        if(!isset($product_id)){
 			return redirect("/");
         }
 		
@@ -46,7 +46,7 @@ class ShoppingCartController extends Controller
 var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 (function(d, t) {
   var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
+  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
@@ -65,7 +65,7 @@ var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
 var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 (function(d, t) {
   var host = \'widgets.bokuntest.com\';
-  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$widget->widgets->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
+  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
   s.onload = s.onreadystatechange = function() {
