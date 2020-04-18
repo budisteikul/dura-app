@@ -9,6 +9,7 @@ use App\Models\Rev\rev_shoppingcarts;
 use App\Models\Rev\rev_shoppingcart_products;
 use App\Models\Rev\rev_shoppingcart_rates;
 use App\Models\Rev\rev_shoppingcart_questions;
+use App\Models\Rev\rev_shoppingcart_question_options;
 use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
@@ -254,6 +255,20 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_shoppingcart_questions->save();
 			$order += 1;
 			
+			if($mainContactDetail->selectFromOptions=="true")
+			{
+				$order_option = 1;
+				foreach($mainContactDetail->answerOptions as $answerOption)
+				{
+					$rev_shoppingcart_question_options = new rev_shoppingcart_question_options();
+					$rev_shoppingcart_question_options->shoppingcart_question_id = $rev_shoppingcart_questions->id;
+					$rev_shoppingcart_question_options->label = $answerOption->label;
+					$rev_shoppingcart_question_options->value = $answerOption->value;
+					$rev_shoppingcart_question_options->order = $order_option;
+					$rev_shoppingcart_question_options->save();
+					$order_option += 1;
+				}
+			}
 		}
 		
 		$activityBookings = $questions->activityBookings;
@@ -290,7 +305,6 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
 					$rev_shoppingcart_questions->type = 'activityBookings';
 					$rev_shoppingcart_questions->bookingId = $activityBooking->bookingId;
-			
 					$rev_shoppingcart_questions->questionId = $questions[$i]->questionId;
 					$rev_shoppingcart_questions->label = $questions[$i]->label;
 					$rev_shoppingcart_questions->dataType = $questions[$i]->dataType;
@@ -302,9 +316,26 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$rev_shoppingcart_questions->order = $order;
 					$rev_shoppingcart_questions->save();
 					$order += 1;
+					
+					if($questions[$i]->selectFromOptions=="true")
+					{
+						$order_option = 1;
+						foreach($questions[$i]->answerOptions as $answerOption)
+						{
+							$rev_shoppingcart_question_options = new rev_shoppingcart_question_options();
+							$rev_shoppingcart_question_options->shoppingcart_question_id = $rev_shoppingcart_questions->id;
+							$rev_shoppingcart_question_options->label = $answerOption->label;
+							$rev_shoppingcart_question_options->value = $answerOption->value;
+							$rev_shoppingcart_question_options->order = $order_option;
+							$rev_shoppingcart_question_options->save();
+							$order_option += 1;
+						}
+					}
+			
 				}
 			}
 		}
+		
 		
 		return redirect("/booking/checkout");
 	}
@@ -322,7 +353,6 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$sessionBooking = $request->session()->get('sessionBooking');
 		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
 						->where('bookingStatus','CART')->first();
-		
 		
 		
 		
@@ -383,6 +413,27 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 				$rev_shoppingcart_questions = rev_shoppingcart_questions::find($question->id);
 				$rev_shoppingcart_questions->answer = $request->input($question->questionId);
 				$rev_shoppingcart_questions->save();
+				
+				if($rev_shoppingcart_questions->selectOption)
+				{
+					$rev_shoppingcart_question_options = rev_shoppingcart_question_options::where('shoppingcart_question_id',$rev_shoppingcart_questions->id)->get();
+					foreach($rev_shoppingcart_question_options as $rev_shoppingcart_question_option)
+					{
+						if($rev_shoppingcart_question_option->value==$request->input($question->questionId))
+						{
+							$rev_shoppingcart_question_options_ = rev_shoppingcart_question_options::find($rev_shoppingcart_question_option->id);
+							$rev_shoppingcart_question_options_->answer = 1;
+							$rev_shoppingcart_question_options_->save();
+						}
+						else
+						{
+							$rev_shoppingcart_question_options_ = rev_shoppingcart_question_options::find($rev_shoppingcart_question_option->id);
+							$rev_shoppingcart_question_options_->answer = 0;
+							$rev_shoppingcart_question_options_->save();
+						}
+						
+					}
+				}
 				
 			}
 		

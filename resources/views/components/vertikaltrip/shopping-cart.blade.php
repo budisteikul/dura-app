@@ -10,6 +10,7 @@ $( document ).ready(function() {
 });
 </script>
 @endpush
+
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
@@ -162,6 +163,7 @@ $( document ).ready(function() {
  				 <div class="card-body" style="padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:15px;">
                  
 <form onSubmit="STORE(); return false;">             
+<!-- ########################################### -->
 <h3>Main Contact</h3>   
 	@php
     	$main_contacts = $rev_shoppingcarts->shoppingcart_questions()->where('type','mainContactDetails')->orderBy('order')->get()
@@ -174,12 +176,20 @@ $( document ).ready(function() {
     @elseif($main_contact->dataFormat=="PHONE_NUMBER")
     <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="tel" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
     @else
+    @if($main_contact->selectOption)
+    <select style="font-size:16px"  class="form-control" id="{{ $main_contact->questionId }}" name="{{ $main_contact->questionId }}" {{ $main_contact->required ? "required" : "" }}>
+    	<option value=""></option>
+    	@foreach($main_contact->shoppingcart_question_options()->orderBy('order')->get() as $shoppingcart_question_option)
+    	<option value="{{ $shoppingcart_question_option->value }}" {{ $shoppingcart_question_option->answer==1 ? "selected" : "" }}>{{ $shoppingcart_question_option->label }}</option>
+        @endforeach
+    </select>
+    @else
     <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
     @endif
+    @endif
 </div>
-	
 	@endforeach
-    
+ <!-- ########################################### -->   
     @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
     @php
     	$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('bookingId',$shoppingcart_products->bookingId)->where('type','activityBookings')->orderBy('order')->get();
@@ -190,16 +200,24 @@ $( document ).ready(function() {
     @foreach($activityBookings as $activityBooking)
     <div class="form-group">
 	<label for="{{ $activityBooking->questionId }}" class="{{ $activityBooking->required ? "required" : "" }}"><strong>{{ $activityBooking->label }}</strong></label>
-    
-	<input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
+    @if($activityBooking->selectOption)
+    <select style="font-size:16px" class="form-control" id="{{ $activityBooking->questionId }}" name="{{ $activityBooking->questionId }}" {{ $activityBooking->required ? "required" : "" }}>
+    	<option value=""></option>
+    	@foreach($activityBooking->shoppingcart_question_options()->orderBy('order')->get() as $shoppingcart_question_option)
+    	<option value="{{ $shoppingcart_question_option->value }}" {{ $shoppingcart_question_option->answer==1 ? "selected" : "" }}>{{ $shoppingcart_question_option->label }}</option>
+        @endforeach
+    </select>
+    @else
+    <input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
+    @endif
     @if(isset($activityBooking->help))
     <small class="form-text text-muted">{{$activityBooking->help}}</small>
     @endif
-</div>
+	</div>
     @endforeach
     @endif
     @endforeach
-    
+<!-- ########################################### -->    
     @php
     $pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
     @endphp
@@ -214,6 +232,7 @@ $( document ).ready(function() {
 </div>
     @endforeach
     @endif
+<!-- ########################################### -->
 
 <button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme">{{ __('Next') }} <i class="fas fa-arrow-right"></i></button>
 </form>

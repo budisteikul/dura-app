@@ -17,4 +17,9 @@ class rev_shoppingcart_questions extends Model
         return $this->belongsTo('App\Models\Rev\rev_shoppingcarts','shoppingcarts_id','id');
     }
 	
+	public function shoppingcart_question_options()
+    {
+        return $this->hasMany('App\Models\Rev\rev_shoppingcart_question_options','shoppingcart_question_id','id');
+    }
+	
 }

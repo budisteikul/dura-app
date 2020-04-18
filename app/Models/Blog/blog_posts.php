@@ -30,9 +30,5 @@ class blog_posts extends Model
         return $this->belongsToMany('App\Models\Blog\blog_categories','blog_categories_posts', 'post_id', 'category_id');
     }
 	
-	public function widgets()
-    {
-        return $this->hasOne('App\Models\Rev\rev_widgets','post_id','id');
-    }
 }
 
