@@ -120,13 +120,13 @@
                 </div>
                 <div class="col-sm-4 second-column mb-4">
                     <p class="text-left text-dark">
-						<div>
+						
                         <b>PAYMENT CHANNEL</b>
-                    	</div>
-						<img class="mt-2 mb-2" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png" alt="Credit Card Badges">
-                        <div>
+                    	<br>
+						<img class="mb-2 mt-2" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png" alt="Credit Card Badges">
+                        <br>
                         <small> 2020 &copy; VERTIKAL TRIP</small>
-                        </div>
+                        
 					</p>
                 </div>
         </div>
