@@ -388,7 +388,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                         - You can present a mobile voucher for this activity to our tour guide
                         <br>
 <br>
-                        <img src="/assets/logo/Google_Maps-Logo.jpg" height="30" alt="Book Yogyakarta Night Walking and Food Tours via Google Maps"><br>
+                        <img src="/assets/logo/Google_Maps-Logo.jpg" height="30" style="margin-bottom:5px;" alt="Book Yogyakarta Night Walking and Food Tours via Google Maps"><br>
                         
                         
                         <div class="map-responsive">
