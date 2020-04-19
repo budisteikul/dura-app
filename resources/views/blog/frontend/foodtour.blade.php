@@ -8,9 +8,9 @@
       "@type": "Product",
       "name": "Yogyakarta Night Walking and Food Tours",
       "image": [
-        "https://www.jogjafoodtour.com/assets/foodtour/gallery/1.jpg",
-        "https://www.jogjafoodtour.com/assets/foodtour/gallery/small-groups.jpg",
-        "https://www.jogjafoodtour.com/assets/foodtour/gallery/6.jpg"
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/67328563_375493963154576_6016721914330873856_n.jpg",
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/72972035_417301452307160_8303451640472535040_n.jpg",
+        "https://www.jogjafoodtour.com/assets/foodtour/gallery/67707843_379659329404706_5297007346822676480_n.jpg"
        ],
       "description": "See a different side of Yogyakarta, Indonesia’s cultural capital, on this fun night tour jam-packed with street food delights. Join your guide and no more than seven other travelers in the city center, then board a “becak” rickshaw to tour the sights. Savor the light, sweet flavors of Javanese cuisine; soak up the vibrant atmosphere of this university city; try traditional games; and enjoy fairground rides at Alun-Alun Kidul.",
       "sku": "110844P2",
@@ -184,7 +184,7 @@
 	
   </nav>
 
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-dark.jpg'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/tugu-night.jpg'); background-color: #000000; background-repeat: no-repeat; background-size: cover ;">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center">
 			<div class="transbox" style=" min-height:100px; padding-top:20px; padding-bottom:5px; padding-left:10px; padding-right:10px;">
@@ -192,6 +192,7 @@
                 <hr style="max-width:50px;border-color: #c03b44;border-width: 3px;">
 				<h1 id="title" style="text-shadow: 2px 2px #555555;">Yogyakarta Night Walking and Food Tours</h1>
 				<p class="text-faded">
+                	Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more. <br>
                     Enjoy Jogja in Local Ways!
 				</p>
 			</div>
@@ -220,7 +221,7 @@
           <div class="mt-5 mb-2">
             <i class="fas fa-4x fa-phone-alt text-secondary mb-2"></i>
             <h3 class="h4 mb-2">24/7 Support</h3>
-            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support. Whatsapp : <a  target="_blank" class="badge badge-danger" href="https://wa.me/+6285743112112">+6285743112112</a></p>
+            <p class="text-muted mb-0">Stay Connected with us! With 24/7 Support.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
