@@ -130,7 +130,7 @@
                     <th>Text</th>
                     <th>Rating</th>
                     <th>Date</th>
-                    <th>Source</th>
+                    <th>Channel</th>
 					<th style="width:280px"></th>
 				</tr>
 			</thead>
