@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','TERMS AND CONDITIONS')
+@section('title',$blog_posts->title)
 @section('content')
 
 <!-- Navbar Section -->
