@@ -188,7 +188,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$rev_shoppingcart_rates->unitPrice = $unitPrice;
 						
 						$subtotal = $lineitems[$z]->unitPrice * $rev_shoppingcart_rates->qty;
-						$discount = $subtotal - $lineitems[$z]->discountedUnitPrice;
+						$discount = $subtotal - ($lineitems[$z]->discountedUnitPrice * $rev_shoppingcart_rates->qty);
 						$total = $subtotal - $discount;
 						
 						$rev_shoppingcart_rates->discount = $discount;
