@@ -5,10 +5,11 @@
     <title>E-TICKET</title>
 <style type="text/css" media="all">
 body {
-  background: #c5d8e6;
+  background: #ffffff;
   font-family: helvetica, arial;
   text-transform: uppercase;
   box-sizing: border-box;
+  -webkit-print-color-adjust: exact; 
 }
 
 h1 {
@@ -20,10 +21,17 @@ h1 {
 
 h2 {
   color: #ffffff;
-  opacity: .5;
   font-weight: 100;
   font-size: .9em;
   margin: 0px;
+}
+
+.rate {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: .9em;
+  margin: 0px;
+  opacity: .8;
 }
 
 h3 {
@@ -149,13 +157,13 @@ h3 {
   height: 25px;
   width: 25px;
   border-radius: 100%;
-  background: #c5d8e6;
+  background: #ffffff;
 }
 .card_divider .divider {
   width: 85%;
   margin: -4px auto;
   height: 2px;
-  background: linear-gradient(to right, #c5d8e6 50%, transparent 50%);
+  background: linear-gradient(to right, #ffffff 50%, transparent 50%);
   background-size: 10px 8px, 100% 2px;
   opacity: .2;
 }
@@ -293,7 +301,7 @@ h3 {
 
 <div class="cards_wrapper">
 		
-				<div class="card aa-theme">
+	<div class="card aa-theme">
         <div class="card_heading">
 					<div class="card_logo">
 						<img src="{{ url('/assets/logo/logo-dark.png') }}" style="max-width:200px;" />
@@ -311,7 +319,9 @@ h3 {
             <div class="divider_right divider_hole">
             </div>
         </div>
-					<h2 style="margin-left:15px; margin-right:15px;">{{ $rev_shoppingcart_products->title }}<br>{{ $rev_shoppingcart_products->rate }}</h2>
+					<h2 style="margin-left:15px; margin-right:15px;">{{ $rev_shoppingcart_products->title }}</h2>
+                    <br>
+                    <span class="rate">{{ $rev_shoppingcart_products->rate }}</span>
         </div>
         <div class="card_trip" style="padding-bottom:50px;">
             <div class="trip_from">

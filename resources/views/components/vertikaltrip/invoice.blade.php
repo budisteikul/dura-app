@@ -20,13 +20,11 @@ a {
 body {
   position: relative;
   width: 21cm;  
-  height: 21cm; 
   margin: 0 auto; 
   color: #555555;
   background: #FFFFFF; 
-  font-family: Arial, sans-serif; 
-  font-size: 14px; 
-  font-family: SourceSansPro;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px; 
 }
 
 header {
@@ -123,30 +121,36 @@ table .no {
   color: #FFFFFF;
   font-size: 1.6em;
   background: #0087C3;
+  -webkit-print-color-adjust: exact; 
 }
 
 table .desc {
   text-align: left;
+  -webkit-print-color-adjust: exact; 
 }
 
 table .unit {
   background: #DDDDDD;
+  -webkit-print-color-adjust: exact; 
 }
 
 table .qty {
+	-webkit-print-color-adjust: exact; 
 }
 
 table .total {
   background: #0087C3;
   color: #FFFFFF;
+  -webkit-print-color-adjust: exact; 
 }
 
 table .discount {
-  
+  -webkit-print-color-adjust: exact; 
 }
 
 table .subtotal {
   background: #DDDDDD;
+  -webkit-print-color-adjust: exact; 
 }
 
 table td.unit,
@@ -246,11 +250,11 @@ footer {
         <thead>
           <tr>
             <th class="no">#</th>
-            <th class="desc">DESCRIPTION</th>
-            <th class="unit">UNIT PRICE</th>
-            <th class="qty">QUANTITY</th>
-            <th class="subtotal">SUBTOTAL</th>
-            <th class="discount">DISCOUNT</th>
+            <th class="desc"><strong>DESCRIPTION</strong></th>
+            <th class="unit"><strong>UNIT PRICE</strong></th>
+            <th class="qty"><strong>QUANTITY</strong></th>
+            <th class="subtotal"><strong>SUBTOTAL</strong></th>
+            <th class="discount"><strong>DISCOUNT</strong></th>
             <th class="total">TOTAL</th>
           </tr>
         </thead>
@@ -271,7 +275,7 @@ footer {
             				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
             				<td class="unit">${{ $shoppingcart_rates->price }}</td>
             				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
-            				<td class="subtotal">${{ $shoppingcart_rates->subtotal }}</td>
+           				  <td class="subtotal">${{ $shoppingcart_rates->subtotal }}</td>
             				<td class="discount">${{ $shoppingcart_rates->discount }}</td>
             				<td class="total">${{ $shoppingcart_rates->total }}</td>
           				</tr>
@@ -314,7 +318,7 @@ footer {
           @endif
         </tfoot>
       </table>
-      <div id="thanks">Thank you for your booking with VERTIKAL TRIP</div>
+      <div id="thanks"><strong>Thank you for your booking with VERTIKAL TRIP</strong></div>
       <div id="notices">
         <div>NOTICE:</div>
         <div class="notice">&nbsp;</div>
