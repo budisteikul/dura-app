@@ -142,6 +142,10 @@ table .total {
 }
 
 table .discount {
+  
+}
+
+table .subtotal {
   background: #DDDDDD;
 }
 
@@ -245,6 +249,7 @@ footer {
             <th class="desc">DESCRIPTION</th>
             <th class="unit">UNIT PRICE</th>
             <th class="qty">QUANTITY</th>
+            <th class="subtotal">SUBTOTAL</th>
             <th class="discount">DISCOUNT</th>
             <th class="total">TOTAL</th>
           </tr>
@@ -264,10 +269,11 @@ footer {
                         <tr>
             				<td class="no">{{ sprintf("%02d", $number) }}</td>
             				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
-            				<td class="unit">{{ $shoppingcart_rates->price }}</td>
+            				<td class="unit">${{ $shoppingcart_rates->price }}</td>
             				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
-            				<td class="discount">{{ $shoppingcart_rates->discount }}</td>
-            				<td class="total">{{ $shoppingcart_rates->total }}</td>
+            				<td class="subtotal">${{ $shoppingcart_rates->subtotal }}</td>
+            				<td class="discount">${{ $shoppingcart_rates->discount }}</td>
+            				<td class="total">${{ $shoppingcart_rates->total }}</td>
           				</tr>
                         
                         <?php
@@ -285,30 +291,27 @@ footer {
         <tfoot>
           <tr>
             <td colspan="2"></td>
-            <td colspan="3">TOTAL</td>
-            <td>{{ $grantTotal }}</td>
+            <td colspan="4">GRAND TOTAL</td>
+            <td>${{ $grantTotal }}</td>
           </tr>
-          @php
-          	$refunded = 0;
-          @endphp
           @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
-          @php
-          	$refunded = $grantTotal * -1;
-          @endphp
           <tr>
             <td colspan="2"></td>
-            <td colspan="3">REFUNDED</td>
-            <td>{{ $refunded }}</td>
+            <td colspan="4">REFUNDED</td>
+            <td>-${{ $grantTotal }}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="4">AMOUNT DUE (USD)</td>
+            <td>$0</td>
+          </tr>
+          @else
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="4">AMOUNT DUE (USD)</td>
+            <td>${{ $grantTotal }}</td>
           </tr>
           @endif
-          @php
-          	$grandtotal = $grantTotal + $refunded
-          @endphp
-          <tr>
-            <td colspan="2"></td>
-            <td colspan="3">AMOUNT DUE (USD)</td>
-            <td>{{ $grandtotal }}</td>
-          </tr>
         </tfoot>
       </table>
       <div id="thanks">Thank you for your booking with VERTIKAL TRIP</div>
