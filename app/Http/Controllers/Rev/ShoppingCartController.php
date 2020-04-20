@@ -592,23 +592,11 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 	
 	public function get_ticket($id)
     {
-		$watermark = '';
+		$watermark = false;
 		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
 		if(BookClass::check_status_invoice($rev_shoppingcart_products->shoppingcarts()->first()->confirmationCode)=="Refunded")
 		{
-			$watermark = '.aa-theme:after {
-  							content: "";
-  							display: block;
-  							width: 100%;
-  							height: 100%;
-  							position: absolute;
-  							top: 0;
-  							left: 50;
-  							background-image: url("/assets/logo/cancelled.png");
-  							background-position: 10px 80px;
-  							background-repeat: no-repeat;
-  							opacity: 0.9;
-							}';
+			$watermark = true;
 		}
 		
 		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products,'watermark'=>$watermark]);

@@ -7,7 +7,7 @@
 body {
   background: #ffffff;
   font-family: helvetica, arial;
-  text-transform: uppercase;
+  
   box-sizing: border-box;
   -webkit-print-color-adjust: exact; 
 }
@@ -21,17 +21,11 @@ h1 {
 
 h2 {
   color: #ffffff;
+  opacity: .5;
   font-weight: 100;
   font-size: .9em;
   margin: 0px;
-}
-
-.rate {
-  color: #ffffff;
-  font-weight: 100;
-  font-size: .9em;
-  margin: 0px;
-  opacity: .8;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -44,7 +38,6 @@ h3 {
 
 .cards_wrapper {
   text-align: center;
-  padding-top: 20px;
 }
 
 .card {
@@ -294,7 +287,21 @@ h3 {
   border-top: 5px solid #0087C3;
 }
 
-{!! $watermark !!}
+@if($watermark)
+.aa-theme:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50;
+	background-image: url("/assets/logo/cancelled.png");
+	background-position: 10px 50px;
+	background-repeat: no-repeat;
+	opacity: 0.9;
+	}
+@endif
 </style>
 </head>
   <body>
@@ -319,9 +326,7 @@ h3 {
             <div class="divider_right divider_hole">
             </div>
         </div>
-					<h2 style="margin-left:15px; margin-right:15px;">{{ $rev_shoppingcart_products->title }}</h2>
-                    <br>
-                    <span class="rate">{{ $rev_shoppingcart_products->rate }}</span>
+					<h2 style="margin-left:15px; margin-right:15px;">{{ $rev_shoppingcart_products->title }}<br>{{ $rev_shoppingcart_products->rate }}</h2>
         </div>
         <div class="card_trip" style="padding-bottom:50px;">
             <div class="trip_from">
@@ -329,7 +334,7 @@ h3 {
             </div>
             <div class="trip_icon">
                 {!! QrCode::size(100)->generate('https://www.vertikaltrip.com/booking/ticket/'.$rev_shoppingcart_products->id ); !!}
-            	<div style="color:#ffffff; margin-top:7px;">{{ $rev_shoppingcart_products->productConfirmationCode }}</div>
+            	<div style="color:#ffffff; margin-top:7px; opacity:0.6;">{{ $rev_shoppingcart_products->productConfirmationCode }}</div>
             </div>
             <div class="trip_to">
                
