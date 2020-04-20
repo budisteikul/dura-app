@@ -21,7 +21,7 @@ h1 {
 
 h2 {
   color: #ffffff;
-  opacity: .5;
+  opacity: .8;
   font-weight: 100;
   font-size: .9em;
   margin: 0px;
