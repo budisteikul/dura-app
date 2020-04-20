@@ -70,11 +70,9 @@ $( document ).ready(function() {
                                     {{ $shoppingcart_product->rate }}
                                     <br>
                                     @foreach($shoppingcart_product->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
-                                    	@if($shoppingcart_rates->discount > 0)
-                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (<strike class="text-muted">${{ $shoppingcart_rates->subtotal }}</strike>&nbsp;${{ $shoppingcart_rates->total }})
-                                        @else
-                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (${{ $shoppingcart_rates->subtotal }})
-                                    	@endif
+                                    	
+                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (${{ $shoppingcart_rates->price }})
+                                    	
                                         <br>
                                     @endforeach
                                 </div>
