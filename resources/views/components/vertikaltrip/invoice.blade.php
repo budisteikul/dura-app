@@ -141,9 +141,14 @@ table .total {
   color: #FFFFFF;
 }
 
+table .discount {
+  background: #DDDDDD;
+}
+
 table td.unit,
 table td.qty,
-table td.total {
+table td.total,
+table td.discount {
   font-size: 1.2em;
 }
 
@@ -193,8 +198,7 @@ footer {
   color: #777777;
   width: 100%;
   height: 30px;
-  position: absolute;
-  bottom: 0;
+  margin-top:50px;
   border-top: 1px solid #AAAAAA;
   padding: 8px 0;
   text-align: center;
@@ -241,6 +245,7 @@ footer {
             <th class="desc">DESCRIPTION</th>
             <th class="unit">UNIT PRICE</th>
             <th class="qty">QUANTITY</th>
+            <th class="discount">DISCOUNT</th>
             <th class="total">TOTAL</th>
           </tr>
         </thead>
@@ -251,6 +256,8 @@ footer {
                         @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
                         <?php
 						$subtotal = 0;
+						$total = 0;
+						$discount = 0;
 						$number = 1;
 						?>
                         @foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
@@ -259,44 +266,47 @@ footer {
             				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
             				<td class="unit">{{ $shoppingcart_rates->price }}</td>
             				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
+            				<td class="discount">{{ $shoppingcart_rates->discount }}</td>
             				<td class="total">{{ $shoppingcart_rates->total }}</td>
           				</tr>
                         
                         <?php
 						$number += 1;
-						$subtotal += $shoppingcart_rates->total;
+						$subtotal += $shoppingcart_rates->subtotal;
+						$total += $shoppingcart_rates->total;
+						$discount += $shoppingcart_rates->discount;
 						?>
                         @endforeach
                         <?php
-						$grantTotal += $subtotal;
+						$grantTotal += $total;
 						?>
                         @endforeach
         </tbody>
         <tfoot>
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">SUBTOTAL</td>
-            <td>{{ $subtotal }}</td>
+            <td colspan="3">TOTAL</td>
+            <td>{{ $grantTotal }}</td>
           </tr>
           @php
           	$refunded = 0;
           @endphp
           @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
           @php
-          	$refunded = $subtotal * -1;
+          	$refunded = $grantTotal * -1;
           @endphp
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">REFUNDED</td>
+            <td colspan="3">REFUNDED</td>
             <td>{{ $refunded }}</td>
           </tr>
           @endif
           @php
-          	$grandtotal = $subtotal + $refunded
+          	$grandtotal = $grantTotal + $refunded
           @endphp
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">AMOUNT DUE (USD)</td>
+            <td colspan="3">AMOUNT DUE (USD)</td>
             <td>{{ $grandtotal }}</td>
           </tr>
         </tfoot>

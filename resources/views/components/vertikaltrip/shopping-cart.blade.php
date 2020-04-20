@@ -26,6 +26,8 @@ $( document ).ready(function() {
     				<h4><i class="fas fa-shopping-cart"></i> Shopping Cart</h4>
   				</div>
                 <?php
+				$grand_subtotal = 0;
+				$grand_discount = 0;
 				$grand_total = 0;
 				?>
                 @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_product)
@@ -38,14 +40,22 @@ $( document ).ready(function() {
                     			</div>
                     			<div class="col-4 text-right">
                                 	<?php
-									$product_price = 0;
+									$product_subtotal = 0;
+									$product_discount = 0;
+									$product_total = 0;
 									foreach($shoppingcart_product->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
 									{
-										$product_price += $shoppingcart_rates->total;
+										$product_subtotal += $shoppingcart_rates->subtotal;
+										$product_discount += $shoppingcart_rates->discount;
+										$product_total += $shoppingcart_rates->total;
 									}
 									?>
-                    				<b>${{ $product_price }}</b>
-                    			</div>
+                                    @if($product_discount>0)
+                                    	<strike class="text-muted">${{ $product_subtotal }}</strike>&nbsp;<b>${{ $product_total }}</b>
+                                    @else
+                    					<b>${{ $product_total }}</b>
+                    				@endif
+                                </div>
                 			 </div>
                     
                     		 <div class="row mb-4">
@@ -60,8 +70,12 @@ $( document ).ready(function() {
                                     {{ $shoppingcart_product->rate }}
                                     <br>
                                     @foreach($shoppingcart_product->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
-                                    {{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (${{ $shoppingcart_rates->price }})
-                                    <br>
+                                    	@if($shoppingcart_rates->discount > 0)
+                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (<strike class="text-muted">${{ $shoppingcart_rates->subtotal }}</strike>&nbsp;${{ $shoppingcart_rates->total }})
+                                        @else
+                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (${{ $shoppingcart_rates->subtotal }})
+                                    	@endif
+                                        <br>
                                     @endforeach
                                 </div>
                 			</div>
@@ -81,8 +95,12 @@ $( document ).ready(function() {
                                         {{ $shopppingcart_rates->unitPrice }}
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>${{ $shopppingcart_rates->total }}</b>
-                    					</div>
+                    						@if($shopppingcart_rates->discount > 0)
+                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike>&nbsp;<b>${{ $shopppingcart_rates->total }}</b>
+                                            @else
+                                            	<b>${{ $shopppingcart_rates->subtotal }}</b>
+                    						@endif
+                                        </div>
                 					</div>
                                		@endforeach
 								</div>
@@ -107,7 +125,11 @@ $( document ).ready(function() {
 										{{ $shoppingcart_rates->title }}
                     					</div>
                     					<div class="col-4 text-right">
-                    						<b>${{ $shoppingcart_rates->total }}</b>
+                                        	@if($shopppingcart_rates->discount > 0)
+                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike>&nbsp;<b>${{ $shopppingcart_rates->total }}</b>
+                                            @else
+                    							<b>${{ $shoppingcart_rates->subtotal }}</b>
+                                            @endif
                     					</div>
                 					</div>
                                @endforeach
@@ -119,32 +141,36 @@ $( document ).ready(function() {
 				</div>
                 <!-- Product booking -->
                 <?php
+				$grand_subtotal += $shoppingcart_product->subtotal;
+				$grand_discount += $shoppingcart_product->discount;
 				$grand_total += $shoppingcart_product->total;
 				?>
+                
                 @endforeach
                 <div class="card-body pt-0 mt-0">
                 	<hr>
                 	<div class="row mb-2">
                 		<div class="col-8">
-                    		<span style="font-size:18px">Subtotal</span>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    		<span style="font-size:18px">${{ $grand_total }}</span>
-                    	</div>
-                	</div>
-				</div>
-                
-                <div class="card-body pt-0">
-                	<!-- hr>
-                	<div class="row mb-4">
-                		<div class="col-8">
                     		<span style="font-size:18px">Items</span>
                     	</div>
                     	<div class="col-4 text-right">
-                    		<span style="font-size:18px">$0.08</span>
+                    		<span style="font-size:18px">${{ $grand_subtotal }}</span>
                     	</div>
-                	</div -->
-                	<hr class="mt-0">    
+                	</div>
+                    @if($grand_discount>0)
+                    <div class="row mb-2">
+                		<div class="col-8">
+                    		<span style="font-size:18px">Discount</span>
+                    	</div>
+                    	<div class="col-4 text-right">
+                    		<span style="font-size:18px">${{ $grand_discount }}</span>
+                    	</div>
+                	</div>
+                    @endif
+				</div>
+                
+                <div class="card-body pt-0">
+                	<hr class="mt-0"> 
                     <div class="row mb-4 mt-0">
                 		<div class="col-8">
                     		<b style="font-size:18px">Total (USD)</b>

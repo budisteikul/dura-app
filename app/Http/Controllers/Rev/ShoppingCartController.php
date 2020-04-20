@@ -105,7 +105,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$rev_shoppingcarts->sessionBooking = $sessionBooking;
 		$rev_shoppingcarts->save();
 		
-		$grandtotal = 0;
+		$grand_total = 0;
+		$grand_subtotal = 0;
+		$grand_discount = 0;
 		for($i=0;$i<count($activity);$i++)
 		{
 			$product_invoice = $contents->customerInvoice->productInvoices;
@@ -122,6 +124,8 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$rev_shoppingcart_products->date = $product_invoice[$i]->dates;
 			$rev_shoppingcart_products->save();
 			
+			$subtotal_product = 0;
+			$total_discount = 0;
 			$total_product = 0;
 			for($z=0;$z<count($lineitems);$z++)
 			{
@@ -184,11 +188,18 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$rev_shoppingcart_rates->unitPrice = $unitPrice;
 						
 						$subtotal = $lineitems[$z]->unitPrice * $rev_shoppingcart_rates->qty;
+						$discount = $subtotal - $lineitems[$z]->discountedUnitPrice;
+						$total = $subtotal - $discount;
+						
+						$rev_shoppingcart_rates->discount = $discount;
 						$rev_shoppingcart_rates->subtotal = $subtotal;
-						$rev_shoppingcart_rates->total = $subtotal;
+						$rev_shoppingcart_rates->total = $total;
 						
 						$rev_shoppingcart_rates->save();
-						$total_product += $subtotal;
+						
+						$subtotal_product += $subtotal;
+						$total_discount += $discount;
+						$total_product += $total;
 					}
 					
 					if($type_product=="pickup")
@@ -201,11 +212,20 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$rev_shoppingcart_rates->qty = 1;
 						$rev_shoppingcart_rates->price = $lineitems[$z]->total;
 						$rev_shoppingcart_rates->unitPrice = $unitPrice;
-						$rev_shoppingcart_rates->subtotal = $lineitems[$z]->total;
-						$rev_shoppingcart_rates->total = $lineitems[$z]->total;
+						
+						$subtotal = $lineitems[$z]->total;
+						$discount = $subtotal - $lineitems[$z]->discountedUnitPrice;
+						$total = $subtotal - $discount;
+						
+						$rev_shoppingcart_rates->discount = $discount;
+						$rev_shoppingcart_rates->subtotal = $subtotal;
+						$rev_shoppingcart_rates->total = $total;
 						
 						$rev_shoppingcart_rates->save();
-						$total_product += $lineitems[$z]->total;
+						
+						$subtotal_product += $subtotal;
+						$total_discount += $discount;
+						$total_product += $total;
 					}	
 			}
 			
@@ -221,19 +241,41 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					$rev_shoppingcart_rates->qty = 1;
 					$rev_shoppingcart_rates->price = $activity[$i]->extraBookings[$k]->extra->price;
 					$rev_shoppingcart_rates->unitPrice = $unitPrice;
-					$rev_shoppingcart_rates->subtotal = $activity[$i]->extraBookings[$k]->extra->price;
-					$rev_shoppingcart_rates->total = $activity[$i]->extraBookings[$k]->extra->price;
+					
+					$subtotal = $activity[$i]->extraBookings[$k]->extra->price;
+					$discount = $subtotal - $activity[$i]->extraBookings[$k]->extra->discountedUnitPrice;
+					$total = $subtotal - $discount;
+					
+					$rev_shoppingcart_rates->discount = $discount;
+					$rev_shoppingcart_rates->subtotal = $subtotal;
+					$rev_shoppingcart_rates->total = $total;
 						
 					$rev_shoppingcart_rates->save();
-					$total_product += $activity[$i]->extraBookings[$k]->extra->price;
+					
+					$subtotal_product += $subtotal;
+					$total_discount += $discount;
+					$total_product += $total;
 				}
 			}
 			
-			rev_shoppingcart_products::where('id',$rev_shoppingcart_products->id)->update(['subtotal'=>$total_product,'total'=>$total_product]);
-			$grandtotal += $total_product;
+			
+			
+			rev_shoppingcart_products::where('id',$rev_shoppingcart_products->id)->update([
+				'subtotal'=>$subtotal_product,
+				'discount'=>$total_discount,
+				'total'=>$total_product
+				]);
+				
+			$grand_discount += $total_discount;
+			$grand_subtotal += $subtotal_product;
+			$grand_total += $total_product;
 		}
 		
-		rev_shoppingcarts::where('id',$rev_shoppingcarts->id)->update(['subtotal'=>$grandtotal,'total'=>$grandtotal]);
+		rev_shoppingcarts::where('id',$rev_shoppingcarts->id)->update([
+				'subtotal'=>$grand_subtotal,
+				'discount'=>$grand_discount,
+				'total'=>$grand_total
+			]);
 		
 		
 		$mainContactDetails = $questions->mainContactDetails;
@@ -336,7 +378,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			}
 		}
 		
-		
+		//exit();
 		return redirect("/booking/checkout");
 	}
 	
