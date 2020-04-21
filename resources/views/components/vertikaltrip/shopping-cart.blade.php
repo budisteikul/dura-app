@@ -95,7 +95,7 @@ $( document ).ready(function() {
                     					</div>
                     					<div class="col-4 text-right">
                     						@if($shopppingcart_rates->discount > 0)
-                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike>&nbsp;<b>${{ $shopppingcart_rates->total }}</b>
+                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike><br><b>${{ $shopppingcart_rates->total }}</b>
                                             @else
                                             	<b>${{ $shopppingcart_rates->subtotal }}</b>
                     						@endif
@@ -125,7 +125,7 @@ $( document ).ready(function() {
                     					</div>
                     					<div class="col-4 text-right">
                                         	@if($shopppingcart_rates->discount > 0)
-                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike>&nbsp;<b>${{ $shopppingcart_rates->total }}</b>
+                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike><br><b>${{ $shopppingcart_rates->total }}</b>
                                             @else
                     							<b>${{ $shoppingcart_rates->subtotal }}</b>
                                             @endif
