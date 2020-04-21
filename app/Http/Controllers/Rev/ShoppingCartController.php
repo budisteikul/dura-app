@@ -27,6 +27,8 @@ use Carbon\Carbon;
 use App\Mail\Rev\Booking;
 use Session;
 
+use PDF;
+
 class ShoppingCartController extends Controller
 {
     public function time_selector($id)
@@ -368,4 +370,12 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					"message" => $rev_shoppingcarts->sessionId
 				]);
 	}
+	
+	public function get_invoicePDF($id)
+	{
+		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
+		$pdf = PDF::loadView('components.vertikaltrip.invoice-pdf', compact('rev_shoppingcarts'))->setPaper('a4', 'portrait');
+		return $pdf->download('disney.pdf');
+	}
+	
 }

@@ -305,13 +305,13 @@ h3 {
 </style>
 </head>
   <body>
-
+<center>Please take a screenshot with a mobile phone</center>
 <div class="cards_wrapper">
 		
 	<div class="card aa-theme">
         <div class="card_heading">
 					<div class="card_logo">
-						<img src="{{ url('/assets/logo/logo-blue.png') }}" style="max-width:200px;" />
+						<img src="{{ url('/assets/logo/logo-dark.png') }}" style="max-width:200px;" />
 					</div>
                     <?php
 					$image = str_ireplace("w=80","w=300",$rev_shoppingcart_products->image);

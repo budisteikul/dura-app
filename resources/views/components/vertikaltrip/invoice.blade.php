@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">   
     <title>INVOICE</title>
 <style type="text/css" media="all">
+body {
+  position: relative;
+  width: 21cm; 
+  margin: 0 auto; 
+  color: #555555;
+  background: #FFFFFF; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px; 
+}
 
 
 .clearfix:after {
@@ -17,15 +27,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  position: relative;
-  width: 21cm;  
-  margin: 0 auto; 
-  color: #555555;
-  background: #FFFFFF; 
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px; 
-}
 
 header {
   padding: 10px 0;
@@ -218,12 +219,12 @@ footer {
   <body>
     <header class="clearfix">
       <div id="logo">
-        {!! QrCode::size(100)->margin(0)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id ); !!}
+        {!! QrCode::size(111)->margin(0)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id ); !!}
       </div>
       <div id="company">
-        				<h2 class="name">
-                            <img src="/assets/logo/logo-dark.png" data-holder-rendered="true" height="50" />
-                        </h2>
+        				<br><br>
+                            <img src="/assets/logo/logo-blue.png" data-holder-rendered="true" height="40" />
+                        
                         <div>Jl. Abiyoso VII No.190 Bantul ID</div>
                         <div>+62 857 43 112 112</div>
                         <div>guide@vertikaltrip.com</div>
