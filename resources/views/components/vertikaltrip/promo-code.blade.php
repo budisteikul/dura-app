@@ -40,7 +40,7 @@ $( document ).ready(function() {
 	$('#alert-promocode-failed').hide();
 });
 </script>
-                <div class="card shadow">
+                <div class="card shadow mt-4">
                 	<div class="card-body">
                     		<div id="alert-promocode-success" class="alert alert-primary text-center" role="alert">
   								<i class="far fa-smile"></i> Promo code applied
@@ -92,7 +92,7 @@ function DELETE()
 	return false;
 }
 </script>
-<div class="card shadow">
+<div class="card shadow mt-4">
 	<div class="card-body">
     		<div id="alert-promocode-failed" class="alert alert-danger text-center" role="alert">
 				<i class="far fa-frown"></i> Promo code removed
