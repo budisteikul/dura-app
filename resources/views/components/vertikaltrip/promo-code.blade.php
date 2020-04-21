@@ -51,7 +51,7 @@ $( document ).ready(function() {
                     	<form onSubmit="PROMOCODE(); return false;" class="form-inline">
   							<div class="form-row align-items-center">
     							<div class="col-auto">
-      								<input type="text" class="form-control" id="promocode" placeholder="Promo code">
+      								<input type="text" class="form-control" id="promocode" placeholder="Promo code" required>
     							</div>
     							<div class="col-auto">
       								<button id="apply" type="submit" class="btn btn-secondary ">Apply</button>
