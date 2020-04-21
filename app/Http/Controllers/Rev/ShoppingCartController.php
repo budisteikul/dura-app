@@ -102,7 +102,11 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		
 		$activity = $contents->activityBookings;
+		
+		
 		$rev_shoppingcarts = new rev_shoppingcarts();
+		
+		
 		$rev_shoppingcarts->sessionId = $id;
 		$rev_shoppingcarts->sessionBooking = $sessionBooking;
 		if(isset($contents->promoCode)) $rev_shoppingcarts->promoCode = $contents->promoCode->code;
@@ -116,7 +120,10 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			$product_invoice = $contents->customerInvoice->productInvoices;
 			$lineitems = $product_invoice[$i]->lineItems;
 			
+			
 			$rev_shoppingcart_products = new rev_shoppingcart_products();
+			
+			
 			$rev_shoppingcart_products->shoppingcarts_id = $rev_shoppingcarts->id;
 			$rev_shoppingcart_products->productConfirmationCode = $activity[$i]->productConfirmationCode;
 			$rev_shoppingcart_products->bookingId = $activity[$i]->id;
@@ -181,23 +188,21 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					
 					if($type_product=="product")
 					{
+						
 						$rev_shoppingcart_rates = new rev_shoppingcart_rates();
+						
 						$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
-					
 						$rev_shoppingcart_rates->type = $type_product;
 						$rev_shoppingcart_rates->title = $activity[$i]->activity->title;
 						$rev_shoppingcart_rates->qty = $lineitems[$z]->quantity;
 						$rev_shoppingcart_rates->price = $lineitems[$z]->unitPrice;
 						$rev_shoppingcart_rates->unitPrice = $unitPrice;
-						
 						$subtotal = $lineitems[$z]->unitPrice * $rev_shoppingcart_rates->qty;
 						$discount = $subtotal - ($lineitems[$z]->discountedUnitPrice * $rev_shoppingcart_rates->qty);
 						$total = $subtotal - $discount;
-						
 						$rev_shoppingcart_rates->discount = $discount;
 						$rev_shoppingcart_rates->subtotal = $subtotal;
 						$rev_shoppingcart_rates->total = $total;
-						
 						$rev_shoppingcart_rates->save();
 						
 						$subtotal_product += $subtotal;
@@ -207,25 +212,22 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 					
 					if($type_product=="pickup")
 					{
-						$rev_shoppingcart_rates = new rev_shoppingcart_rates();
-						$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
 						
+						$rev_shoppingcart_rates = new rev_shoppingcart_rates();
+						
+						$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
 						$rev_shoppingcart_rates->type = $type_product;
 						$rev_shoppingcart_rates->title = 'Pick-up and drop-off services';
 						$rev_shoppingcart_rates->qty = 1;
 						$rev_shoppingcart_rates->price = $lineitems[$z]->total;
 						$rev_shoppingcart_rates->unitPrice = $unitPrice;
-						
 						$subtotal = $lineitems[$z]->total;
 						$discount = $subtotal - $lineitems[$z]->discountedUnitPrice;
 						$total = $subtotal - $discount;
-						
 						$rev_shoppingcart_rates->discount = $discount;
 						$rev_shoppingcart_rates->subtotal = $subtotal;
 						$rev_shoppingcart_rates->total = $total;
-						
 						$rev_shoppingcart_rates->save();
-						
 						$subtotal_product += $subtotal;
 						$total_discount += $discount;
 						$total_product += $total;
@@ -236,25 +238,22 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			{
 				for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 				{	
+					
 					$rev_shoppingcart_rates = new rev_shoppingcart_rates();
+					
 					$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
-						
 					$rev_shoppingcart_rates->type = 'extra';
 					$rev_shoppingcart_rates->title = $activity[$i]->extraBookings[$k]->extra->title;
 					$rev_shoppingcart_rates->qty = 1;
 					$rev_shoppingcart_rates->price = $activity[$i]->extraBookings[$k]->extra->price;
 					$rev_shoppingcart_rates->unitPrice = $unitPrice;
-					
 					$subtotal = $activity[$i]->extraBookings[$k]->extra->price;
 					$discount = $subtotal - $activity[$i]->extraBookings[$k]->extra->discountedUnitPrice;
 					$total = $subtotal - $discount;
-					
 					$rev_shoppingcart_rates->discount = $discount;
 					$rev_shoppingcart_rates->subtotal = $subtotal;
 					$rev_shoppingcart_rates->total = $total;
-						
 					$rev_shoppingcart_rates->save();
-					
 					$subtotal_product += $subtotal;
 					$total_discount += $discount;
 					$total_product += $total;
@@ -287,6 +286,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		{
 			
 			$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+			
 			$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
 			$rev_shoppingcart_questions->type = 'mainContactDetails';
 			$rev_shoppingcart_questions->questionId = $mainContactDetail->questionId;
@@ -305,7 +305,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 				$order_option = 1;
 				foreach($mainContactDetail->answerOptions as $answerOption)
 				{
+					
 					$rev_shoppingcart_question_options = new rev_shoppingcart_question_options();
+					
 					$rev_shoppingcart_question_options->shoppingcart_question_id = $rev_shoppingcart_questions->id;
 					$rev_shoppingcart_question_options->label = $answerOption->label;
 					$rev_shoppingcart_question_options->value = $answerOption->value;
@@ -325,7 +327,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 				$order = 1;
 				for($i=0;$i<count($activityBooking->pickupQuestions);$i++)
 				{
+					
 					$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+					
 					$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
 					$rev_shoppingcart_questions->type = 'pickupQuestions';
 					$rev_shoppingcart_questions->questionId = $activityBooking->pickupQuestions[$i]->questionId;
@@ -346,7 +350,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 				$order = 1;
 				for($i=0;$i<count($questions);$i++)
 				{
+					
 					$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+					
 					$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
 					$rev_shoppingcart_questions->type = 'activityBookings';
 					$rev_shoppingcart_questions->bookingId = $activityBooking->bookingId;
@@ -367,7 +373,9 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 						$order_option = 1;
 						foreach($questions[$i]->answerOptions as $answerOption)
 						{
+							
 							$rev_shoppingcart_question_options = new rev_shoppingcart_question_options();
+							
 							$rev_shoppingcart_question_options->shoppingcart_question_id = $rev_shoppingcart_questions->id;
 							$rev_shoppingcart_question_options->label = $answerOption->label;
 							$rev_shoppingcart_question_options->value = $answerOption->value;
