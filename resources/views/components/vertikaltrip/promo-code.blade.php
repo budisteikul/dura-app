@@ -94,10 +94,10 @@ function DELETE()
 </script>
 <div class="card shadow">
 	<div class="card-body">
-    	<div class="row mb-2">
-        	<div id="alert-promocode-failed" class="alert alert-danger text-center" role="alert">
+    		<div id="alert-promocode-failed" class="alert alert-danger text-center" role="alert">
 				<i class="far fa-frown"></i> Promo code removed
 			</div>
+    	<div class="row mb-2">
         	<div class="col-8 my-auto">
 				<strong>Promo code : {{ $rev_shoppingcarts->promoCode }}</strong>
 			</div>
