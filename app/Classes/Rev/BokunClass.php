@@ -57,16 +57,11 @@ class BokunClass {
 		else if(400 === $statusCode)
 		{
 			return "400";
-			/*
-			return response()->json([
-					"id" => $statusCode,
-					"message" => 'NOT_FOUND'
-				]);
-			*/
 		}
 		else
 		{
 			//print_r($response);
+			header("Location: /");
 			exit();
 		}
 	}
