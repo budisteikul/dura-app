@@ -87,6 +87,8 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$id = $request->input('sessionId');
 		$contents = BokunClass::get_shoppingcart($id);
 		$questions = BokunClass::get_questionshoppingcart($id);
+		
+		
 		//========================================================================
 		
 		$lastsessionBooking = $request->session()->get('sessionBooking');
@@ -103,6 +105,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		$rev_shoppingcarts = new rev_shoppingcarts();
 		$rev_shoppingcarts->sessionId = $id;
 		$rev_shoppingcarts->sessionBooking = $sessionBooking;
+		if(isset($contents->promoCode)) $rev_shoppingcarts->promoCode = $contents->promoCode->code;
 		$rev_shoppingcarts->save();
 		
 		$grand_total = 0;
@@ -378,6 +381,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 			}
 		}
 		
+		//print_r($contents);
 		//exit();
 		return redirect("/booking/checkout");
 	}
@@ -568,6 +572,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		}
 		
 		Mail::to($email)->send(new Booking($rev_shoppingcarts->id));
+		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
 		
 		$request->session()->forget('sessionBooking');
 		
@@ -600,6 +605,44 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		}
 		
 		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products,'watermark'=>$watermark]);
+	}
+	
+	public function applypromocode(Request $request)
+	{
+		if(!$request->session()->has('sessionBooking')){
+			return response()->json([
+					"id" => "2",
+					"message" => 'Variable Not Valid'
+				]);
+		}
+		$validator = Validator::make($request->all(), [
+          	'promocode' => ['required', 'string', 'max:255'],
+       	]);
+		if ($validator->fails()) {
+            $errors = $validator->errors();
+			return response()->json($errors);
+       	}
+		$promocode = $request->input('promocode');
+		$sessionBooking = $request->session()->get('sessionBooking');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		
+		$contents = BokunClass::get_applypromocode($rev_shoppingcarts->sessionId,$promocode);
+		
+		
+		if($contents=="400")
+		{
+			return response()->json([
+					"id" => "2",
+					"message" => 'Promo code: NOT_FOUND'
+				]);
+		}
+		else
+		{
+			return response()->json([
+					"id" => "1",
+					"message" => $rev_shoppingcarts->sessionId
+				]);
+		}
 	}
 	
 }

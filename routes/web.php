@@ -82,6 +82,7 @@ Route::get('/tours', function () {
 Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');
 Route::post('/booking/checkout', 'Rev\ShoppingCartController@post_checkout');
+Route::post('/booking/promo-code', 'Rev\ShoppingCartController@applypromocode');
 Route::post('/booking/payment', 'Rev\ShoppingCartController@payment');
 Route::post('/booking/create-paypal-transaction', 'Rev\ShoppingCartController@createPayment');
 Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');

@@ -20,6 +20,7 @@ class CreateRevShoppingcarts extends Migration
 			$table->string('sessionBooking')->nullable();
 			$table->string('sessionId')->nullable();
 			$table->string('confirmationCode')->nullable();
+			$table->string('promoCode')->nullable();
 			
 			$table->string('orderID')->nullable();
 			$table->string('authorizationID')->nullable();

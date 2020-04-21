@@ -20,7 +20,8 @@ $( document ).ready(function() {
 				<div style="height:56px;"></div>
             	<div class="row mb-2">  
 				<div class="col-lg-6 col-lg-auto mb-6 mt-4">
-            	<!-- ################################################################### -->   
+            	<!-- ################################################################### -->  
+                 
                 <div class="card shadow">
   				<div class="card-header bg-dark text-white pb-1">
     				<h4><i class="fas fa-shopping-cart"></i> Shopping Cart</h4>
@@ -179,6 +180,10 @@ $( document ).ready(function() {
                 	</div>
                 </div>
 				</div>
+                
+                <!-- ################################################################### -->
+                <!-- Promo Code Section -->
+				@include('components.vertikaltrip.promo-code')
                 <!-- ################################################################### --> 
             </div>
             

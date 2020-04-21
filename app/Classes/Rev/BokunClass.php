@@ -38,25 +38,37 @@ class BokunClass {
         //$statusCode = $response->getStatusCode();   
 		
 		
-		try {
-			$client = new \GuzzleHttp\Client(['headers' => $headers]);
-    		$response = $client->request($method, $endpoint.$path.$query);
-        	$statusCode = $response->getStatusCode();   
-		}
-		catch (\GuzzleHttp\Exception\ClientException $e) {
-			header("Location: /");
-			exit();
-		}
 		
-		if($accept=='application/json')
+		$client = new \GuzzleHttp\Client(['headers' => $headers,'exceptions' => false]);
+		$response = $client->request($method, $endpoint.$path.$query);
+		$statusCode = $response->getStatusCode(); 
+		if(200 === $statusCode)
 		{
-        	$contents = json_decode($response->getBody()->getContents());
+			if($accept=='application/json')
+			{
+        		$contents = json_decode($response->getBody()->getContents());
+			}
+			else
+			{
+				$contents = $response->getBody()->getContents();
+			}
+			return $contents;
+		}
+		else if(400 === $statusCode)
+		{
+			return "400";
+			/*
+			return response()->json([
+					"id" => $statusCode,
+					"message" => 'NOT_FOUND'
+				]);
+			*/
 		}
 		else
 		{
-			$contents = $response->getBody()->getContents();
+			//print_r($response);
+			exit();
 		}
-		return $contents;
 	}
 	
 	public static function get_product($activityId)
@@ -119,5 +131,15 @@ class BokunClass {
 		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'.$id);
 	}
 	
+	public static function get_removepromocode($sessionId)
+	{
+		return self::get_connect('/cart.json/'.$sessionId.'/remove-promo-code');
+	}
+	
+	public static function get_applypromocode($sessionId,$id)
+	{
+		$id = strtolower($id);
+		return self::get_connect('/cart.json/'.$sessionId.'/apply-promo-code/'.$id);
+	}
 }
 ?>
