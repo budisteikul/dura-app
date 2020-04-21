@@ -645,4 +645,23 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 		}
 	}
 	
+	public function removepromocode(Request $request)
+	{
+		if(!$request->session()->has('sessionBooking')){
+			return response()->json([
+					"id" => "2",
+					"message" => 'Variable Not Valid'
+				]);
+		}
+		
+		$sessionBooking = $request->session()->get('sessionBooking');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		
+		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
+		
+			return response()->json([
+					"id" => "1",
+					"message" => $rev_shoppingcarts->sessionId
+				]);
+	}
 }

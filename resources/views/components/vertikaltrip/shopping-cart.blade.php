@@ -52,7 +52,7 @@ $( document ).ready(function() {
 									}
 									?>
                                     @if($product_discount>0)
-                                    	<strike class="text-muted">${{ $product_subtotal }}</strike>&nbsp;<b>${{ $product_total }}</b>
+                                    	<strike class="text-muted">${{ $product_subtotal }}</strike><br><b>${{ $product_total }}</b>
                                     @else
                     					<b>${{ $product_total }}</b>
                     				@endif

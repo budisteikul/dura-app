@@ -34,13 +34,13 @@ function PROMOCODE()
 }
 </script>
 <!-- ################################################################### -->
- <script>
+<script>
 $( document ).ready(function() {
 	$('#alert-promocode-success').hide();
 	$('#alert-promocode-failed').hide();
 });
 </script>
-                <div class="card shadow mt-2">
+                <div class="card shadow">
                 	<div class="card-body">
                     		<div id="alert-promocode-success" class="alert alert-primary text-center" role="alert">
   								<i class="far fa-smile"></i> Promo code applied
@@ -62,9 +62,40 @@ $( document ).ready(function() {
                 </div>
  <!-- ################################################################### --> 
  @else
- 				<div class="card shadow mt-2">
-                	<div class="card-body">
-                    		<strong>Promo code : {{ $rev_shoppingcarts->promoCode }}</strong>
-                	</div>
-                </div>
+<script language="javascript">
+function DELETE()
+{
+	$("#apply").attr("disabled", true);
+	$('#apply').html('<i class="fa fa-spinner fa-spin"></i>');
+	
+	$.ajax({
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+			"promocode": $('#promocode').val(),
+        },
+		type: 'POST',
+		url: '/booking/promo-code/remove'
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				window.location.href = '/booking/shoppingcart?sessionId='+ data.message;
+			}
+		});
+	
+	
+	return false;
+}
+</script>
+<div class="card shadow">
+	<div class="card-body">
+    	<div class="row mb-2">
+        	<div class="col-8 my-auto">
+				<strong>Promo code : {{ $rev_shoppingcarts->promoCode }}</strong>
+			</div>
+			<div class="col-4 my-auto text-right">
+				<button id="apply" type="button" onClick="DELETE();" class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+			</div>
+		</div>	
+	</div>
+</div>
  @endif         
