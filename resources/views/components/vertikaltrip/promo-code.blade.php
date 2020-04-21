@@ -17,7 +17,7 @@ function PROMOCODE()
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location.href = '/booking/shoppingcart?sessionId='+ data.message;
+				window.location.href = '/booking/checkout';
 				$('#alert-promocode-success').fadeIn("slow");
 			}
 			else
@@ -83,7 +83,7 @@ function DELETE()
 		}).done(function( data ) {
 			if(data.id=="1")
 			{
-				window.location.href = '/booking/shoppingcart?sessionId='+ data.message;
+				window.location.href = '/booking/checkout';
 				$('#alert-promocode-failed').fadeIn("slow");
 			}
 		});
