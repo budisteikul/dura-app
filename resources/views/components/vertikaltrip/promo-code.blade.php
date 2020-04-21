@@ -62,6 +62,11 @@ $( document ).ready(function() {
                 </div>
  <!-- ################################################################### --> 
  @else
+ <script>
+$( document ).ready(function() {
+	$('#alert-promocode-failed').hide();
+});
+</script>
 <script language="javascript">
 function DELETE()
 {
@@ -79,6 +84,7 @@ function DELETE()
 			if(data.id=="1")
 			{
 				window.location.href = '/booking/shoppingcart?sessionId='+ data.message;
+				$('#alert-promocode-failed').fadeIn("slow");
 			}
 		});
 	
@@ -89,6 +95,9 @@ function DELETE()
 <div class="card shadow">
 	<div class="card-body">
     	<div class="row mb-2">
+        	<div id="alert-promocode-failed" class="alert alert-danger text-center" role="alert">
+				<i class="far fa-frown"></i> Promo code removed
+			</div>
         	<div class="col-8 my-auto">
 				<strong>Promo code : {{ $rev_shoppingcarts->promoCode }}</strong>
 			</div>
