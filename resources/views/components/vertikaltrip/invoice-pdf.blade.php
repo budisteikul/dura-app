@@ -26,6 +26,7 @@ table td {
   background: #EEEEEE;
   text-align: center;
   border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #FFFFFF;
 }
 
 table th {
@@ -75,7 +76,8 @@ table td.unit,
 table td.qty,
 table td.total,
 table tbody tr:last-child td {
-  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #FFFFFF;
 }
 
 table tfoot td {
@@ -218,7 +220,7 @@ footer {
        </tbody>
      </table>
 
-<table class="main" border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0">
   <thead>
           <tr>
             <th class="no">#</th>
@@ -228,7 +230,7 @@ footer {
             <th class="total">TOTAL</th>
           </tr>
   </thead>
-        <tbody>
+        
           <?php
 						$grantTotal = 0;
 						?>
@@ -240,6 +242,7 @@ footer {
 						$number = 1;
 						?>
                         @foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
+                        <tbody>
                         <tr>
            				  <td class="no">{{ sprintf("%02d", $number) }}</td>
            				  <td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
@@ -247,7 +250,7 @@ footer {
            				  <td class="qty">{{ $shoppingcart_rates->qty }}</td>
            				  <td class="total">${{ $shoppingcart_rates->subtotal }}</td>
           				</tr>
-                        
+                        </tbody>
                         <?php
 						$number += 1;
 						$subtotal += $shoppingcart_rates->subtotal;
@@ -259,7 +262,7 @@ footer {
 						$grantTotal += $total;
 						?>
                         @endforeach
-        </tbody>
+        
         <tfoot>
           <tr>
             <td colspan="2"></td>
