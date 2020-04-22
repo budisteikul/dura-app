@@ -92,6 +92,7 @@ Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');
 Route::get('/booking/{id}', 'Rev\ShoppingCartController@time_selector');
 
 Route::get('/pdf/invoice/{id}', 'Rev\ShoppingCartController@get_invoicePDF');
+Route::get('/pdf/ticket/{id}', 'Rev\ShoppingCartController@get_ticketPDF');
 //========================================================================
 // Redirect Page
 //========================================================================

@@ -8,11 +8,11 @@ Email : {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where(
 
 TRAVEL DOCUMENTS
 Receipt
-Invoice-{{ $rev_shoppingcarts->confirmationCode }} [https://www.vertikaltrip.com/booking/invoice/{{ $rev_shoppingcarts->id }}]
+Invoice-{{ $rev_shoppingcarts->confirmationCode }}.pdf [https://www.vertikaltrip.com/pdf/invoice/{{ $rev_shoppingcarts->id }}]
 
 Ticket
 @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-Ticket-{{ $shoppingcart_products->productConfirmationCode }} [https://www.vertikaltrip.com/booking/ticket/{{$shoppingcart_products->id}}]
+Ticket-{{ $shoppingcart_products->productConfirmationCode }}.pdf [https://www.vertikaltrip.com/pdf/ticket/{{$shoppingcart_products->id}}]
 @endforeach
 
 VERTIKAL TRIP

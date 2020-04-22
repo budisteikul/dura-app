@@ -214,12 +214,12 @@
                           <strong>TRAVEL DOCUMENTS</strong><br />
                           <strong>Receipt</strong>
                           <br />
-                          <a target="_blank" href="https://www.vertikaltrip.com/booking/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}</a>
+                          <a target="_blank" href="https://www.vertikaltrip.com/pdf/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}.pdf</a>
                           <br /><br />
                           <strong>Ticket</strong>
                           <br />
                           @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-                          <a target="_blank" class="text-theme" href="https://www.vertikaltrip.com/booking/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}</a><br />
+                          <a target="_blank" class="text-theme" href="https://www.vertikaltrip.com/pdf/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}.pdf</a><br />
                           @endforeach
                           </p>
                           

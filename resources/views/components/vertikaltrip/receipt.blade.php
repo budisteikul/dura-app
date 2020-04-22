@@ -57,10 +57,10 @@
                 	 
                         <p>
 						<h3>Receipt</h3>
-						<a target="_blank" class="text-theme" href="/booking/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}</a>
+						<a target="_blank" class="text-theme" href="/pdf/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}.pdf</a>
 						<h3>Experience tickets</h3>
                        	@foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-                        <a target="_blank" class="text-theme" href="/booking/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}</a>
+                        <a target="_blank" class="text-theme" href="/pdf/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}.pdf</a>
                         <br>
                         @endforeach
                         </p>

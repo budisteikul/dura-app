@@ -305,7 +305,7 @@ h3 {
 </style>
 </head>
   <body>
-<center>Please take a screenshot with a mobile phone</center>
+
 <div class="cards_wrapper">
 		
 	<div class="card aa-theme">

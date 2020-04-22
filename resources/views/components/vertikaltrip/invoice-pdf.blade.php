@@ -3,88 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">   
-    <title>INVOICE</title>
+<title>INVOICE</title>
 <style type="text/css" media="all">
 body {
-  position: relative;
-  width: 21cm; 
   margin: 0 auto; 
   color: #555555;
   background: #FFFFFF; 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px; 
-}
-
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-a {
-  color: #0087C3;
-  text-decoration: none;
-}
-
-
-header {
-  padding: 10px 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #AAAAAA;
-}
-
-#logo {
-  float: left;
-  margin-top: 8px;
-}
-
-#logo img {
-  height: 70px;
-}
-
-#company {
-  float: right;
-  text-align: right;
-}
-
-
-#details {
-  margin-bottom: 50px;
-}
-
-#client {
-  padding-left: 6px;
-  border-left: 6px solid #0087C3;
-  float: left;
-}
-
-#client .to {
-  color: #777777;
-}
-
-h2.name {
-  font-size: 1.4em;
-  font-weight: normal;
-  margin: 0;
-}
-
-#invoice {
-  float: right;
-  text-align: right;
-}
-
-#invoice h1 {
-  color: #0087C3;
-  font-size: 2.4em;
-  line-height: 1em;
-  font-weight: normal;
-  margin: 0  0 10px 0;
-}
-
-#invoice .date {
-  font-size: 1.1em;
-  color: #777777;
 }
 
 table {
@@ -145,22 +71,9 @@ table .total {
   -webkit-print-color-adjust: exact; 
 }
 
-table .discount {
-  -webkit-print-color-adjust: exact; 
-}
-
-table .subtotal {
-  background: #DDDDDD;
-  -webkit-print-color-adjust: exact; 
-}
-
 table td.unit,
 table td.qty,
 table td.total,
-table td.discount {
-  font-size: 1.2em;
-}
-
 table tbody tr:last-child td {
   border: none;
 }
@@ -189,8 +102,48 @@ table tfoot tr td:first-child {
   border: none;
 }
 
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+#client {
+  padding-left: 6px;
+  border-left: 6px solid #0087C3;
+}
+
+#client .to {
+  color: #777777;
+}
+
+h2.name {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin: 0;
+}
+
+
+
+
+#invoice {
+  text-align: right;
+}
+
+#invoice h1 {
+  color: #0087C3;
+  font-size: 2.4em;
+  line-height: 1em;
+  font-weight: normal;
+  margin-bottom:7px;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+
 #thanks{
-  font-size: 1.2em;
+  font-size: 1.0em;
   margin-bottom: 20px;
 }
 
@@ -207,56 +160,74 @@ footer {
   color: #777777;
   width: 100%;
   height: 30px;
-  margin-top:50px;
   border-top: 1px solid #AAAAAA;
   padding: 8px 0;
   text-align: center;
+  
+  display: block;
+    position: fixed;
+    bottom: 0;
 }
-
-
-	</style>
-  </head>
-  <body>
-    <header class="clearfix">
-      <div id="logo">
-        {!! QrCode::size(111)->margin(0)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id ); !!}
-      </div>
-      <div id="company">
-        				<br><br>
-                            <img src="/assets/logo/logo-blue.png" data-holder-rendered="true" height="40" />
-                        
-                        <div>Jl. Abiyoso VII No.190 Bantul ID</div>
+</style>
+</head>
+<body>
+    
+      
+     <table border="0" cellspacing="0" cellpadding="0" style="margin-bottom:0px;">
+       <tbody>
+         <tr>
+           <td style="background-color:#FFFFFF; text-align:left; padding-left:0px;">
+           <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id)) }} ">
+           				
+           </td>
+           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px;">
+                        <img src="assets/logo/logo-blue.png" height="30" />
+                        <div style="margin-top:0px;">Jl. Abiyoso VII No.190 Bantul ID</div>
                         <div>+62 857 43 112 112</div>
                         <div>guide@vertikaltrip.com</div>
-      </div>
-      
-    </header>
-    <main>
-      <div id="details" class="clearfix">
-        <div id="client">
+           </td>
+         </tr>
+       </tbody>
+     </table>
+     
+   <hr style="border:none; height:1px; color: #AAA; background-color: #AAA; margin-top:0px; margin-bottom:0px;">  
+
+<table border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px; margin-top:0px;">
+       <tbody>
+         <tr>
+           <td style="background-color:#FFFFFF; text-align:left; padding-left:0px;">
+           
+         <div id="client">
           <div class="to">INVOICE TO:</div>
           <h2 class="name">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer }}
                         {{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer }} </h2>
           <div class="address">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer }}</div>
           <div class="email"><a href="mailto:{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} ">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} </a></div>
         </div>
-        <div id="invoice">
-          <h1>INVOICE {{ $rev_shoppingcarts->confirmationCode }}</h1>
-          <div class="date">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
-          <div class="date">Due Date: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
-          <div class="date">Status: {{ \App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode) }}</div>
-        </div>
-      </div>
-      <table border="0" cellspacing="0" cellpadding="0">
-        <thead>
+           				
+           </td>
+           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px;">
+            <div id="invoice">
+          		<h1>INVOICE {{ $rev_shoppingcarts->confirmationCode }}</h1>
+          		<div class="date">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
+          		<div class="date">Due Date: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
+          		<div class="date">Status: {{ \App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode) }}</div>
+        	</div>           
+           </td>
+         </tr>
+       </tbody>
+     </table>
+
+<table class="main" border="0" cellspacing="0" cellpadding="0">
+  <thead>
           <tr>
             <th class="no">#</th>
-            <th class="desc"><strong>DESCRIPTION</strong></th>
+            <th class="desc" width="50%"><strong>DESCRIPTION</strong></th>
             <th class="unit"><strong>UNIT PRICE</strong></th>
             <th class="qty"><strong>QUANTITY</strong></th>
             <th class="total">TOTAL</th>
           </tr>
-        </thead>
+  </thead>
         <tbody>
           <?php
 						$grantTotal = 0;
@@ -270,10 +241,10 @@ footer {
 						?>
                         @foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
                         <tr>
-            				<td class="no">{{ sprintf("%02d", $number) }}</td>
-            				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
-            				<td class="unit">${{ $shoppingcart_rates->price }}</td>
-            				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
+           				  <td class="no">{{ sprintf("%02d", $number) }}</td>
+           				  <td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
+           				  <td class="unit">${{ $shoppingcart_rates->price }}</td>
+           				  <td class="qty">{{ $shoppingcart_rates->qty }}</td>
            				  <td class="total">${{ $shoppingcart_rates->subtotal }}</td>
           				</tr>
                         
@@ -321,16 +292,14 @@ footer {
           </tr>
           @endif
         </tfoot>
-      </table>
-      <div id="thanks"><strong>Thank you for your booking with VERTIKAL TRIP</strong></div>
-      <div id="notices">
-        <div>NOTICE:</div>
-        <div class="notice">&nbsp;</div>
-      </div>
-    </main>
-    <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
-    </footer>
-  
+</table>
+<div id="thanks">Thank you for your booking with VERTIKAL TRIP</div>   
+<div id="notices">
+<div>NOTICE:</div>
+<div class="notice">&nbsp;</div>
+</div>
+<footer>
+	Invoice was created on a computer and is valid without the signature and seal.
+</footer>
 </body>
 </html>

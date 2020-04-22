@@ -375,7 +375,15 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 	{
 		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
 		$pdf = PDF::loadView('components.vertikaltrip.invoice-pdf', compact('rev_shoppingcarts'))->setPaper('a4', 'portrait');
-		return $pdf->download('disney.pdf');
+		return $pdf->download('Invoice-'. $rev_shoppingcarts->confirmationCode .'.pdf');
+	}
+	
+	public function get_ticketPDF($id)
+    {
+		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
+		$customPaper = array(0,0,300,540);
+		$pdf = PDF::loadView('components.vertikaltrip.ticket-pdf', compact('rev_shoppingcart_products'))->setPaper($customPaper);
+		return $pdf->download('Ticket-'. $rev_shoppingcart_products->productConfirmationCode .'.pdf');
 	}
 	
 }
