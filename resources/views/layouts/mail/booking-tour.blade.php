@@ -13,7 +13,6 @@
     }
     body {
       width: 100% !important;
-	  font-family: helvetica, arial;
       height: 100%;
       margin: 0;
       line-height: 1.4;
