@@ -13,6 +13,7 @@
     }
     body {
       width: 100% !important;
+	  font-family: helvetica, arial;
       height: 100%;
       margin: 0;
       line-height: 1.4;
@@ -29,7 +30,7 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #1D57C7;
+      background-color: #0087C3;
     }
     .email-content {
       width: 100%;
