@@ -179,7 +179,7 @@ footer {
        <tbody>
          <tr>
            <td style="background-color:#FFFFFF; text-align:left; padding-left:0px;">
-           <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id)) }} ">
+           <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate(url('/booking/invoice/'.$rev_shoppingcarts->id))) }} ">
            				
            </td>
            <td style="background-color:#FFFFFF; text-align:right; padding-right:0px;">

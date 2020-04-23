@@ -196,36 +196,20 @@
                   <td class="content-cell">
                     
                     <h1>Hi {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}},</h1>
-                    <p>Thank you for your booking with VERTIKAL TRIP</p>
+                    <p>Thank you for your booking with VERTIKAL TRIP. <br />
+                    Your booking receipt and ticket is on attachments.<br />
+                    If you have any question, don't hesitate to contact us.</p>
+                    <p>Regards,</p>
+                    <p>Vertikal Trip team.</p>
                     <!-- Action -->
                     
                     <!-- Sub copy -->
-                    
-                    <table class="body-sub" width="100%">
+                    <!-- table class="body-sub" width="100%">
                       <tr>
-                        <td>
-                          <p>
-                          <strong>CUSTOMER INFO</strong><br />
-                          <strong>Name :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}} {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer}}<br />
-                          <strong>Phone :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer}}<br />
-                          <strong>Email :</strong> {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer}}
-                          <br />
-						  <br />
-                          <strong>TRAVEL DOCUMENTS</strong><br />
-                          <strong>Receipt</strong>
-                          <br />
-                          <a target="_blank" href="https://www.vertikaltrip.com/pdf/invoice/{{ $rev_shoppingcarts->id }}"><i class="fas fa-file-invoice"></i> Invoice-{{ $rev_shoppingcarts->confirmationCode }}.pdf</a>
-                          <br /><br />
-                          <strong>Ticket</strong>
-                          <br />
-                          @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-                          <a target="_blank" class="text-theme" href="https://www.vertikaltrip.com/pdf/ticket/{{$shoppingcart_products->id}}"><i class="fas fa-ticket-alt"></i> Ticket-{{ $shoppingcart_products->productConfirmationCode }}.pdf</a><br />
-                          @endforeach
-                          </p>
-                          
-                        </td>
+                        <td>&nbsp;</td>
                       </tr>
-                    </table>
+                    </table -->
+                    
                   </td>
                 </tr>
               </table>

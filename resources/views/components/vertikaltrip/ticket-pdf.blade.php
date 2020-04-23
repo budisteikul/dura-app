@@ -123,7 +123,7 @@ body {
                     	{{ $rev_shoppingcart_products->rate }} 
                     </div>
                     <div class="qrcode">
-						<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcart_products->id)) }} "> 
+						<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate(url('/booking/invoice/'.$rev_shoppingcart_products->id))) }} "> 
 					</div>
                     <div class="qrcode" style="margin-top:0px;">
                     	{{ $rev_shoppingcart_products->productConfirmationCode }}
