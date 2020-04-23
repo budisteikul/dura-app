@@ -12,12 +12,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px; 
 }
-.rcorners {
-  border-radius: 6px;
-  border: 2px solid #0087C3;
-  width: 300px;
-}
-
 
 .card_divider {
   position: relative;
