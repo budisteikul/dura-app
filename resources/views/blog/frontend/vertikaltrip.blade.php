@@ -2,8 +2,6 @@
 @section('title','Book Amazing Things to Do With VERTIKAL TRIP')
 @section('content')
 
-<!-- {{ url('/jogjafoodtour') }} -->
-
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
 	<div class="container">

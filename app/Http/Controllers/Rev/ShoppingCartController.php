@@ -94,10 +94,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 	{
 		
 		if(!Session::has('sessionBooking')){
-			return response()->json([
-					"id" => "2",
-					"message" => 'Shooping cart empty'
-				]);
+			return redirect("/booking/shoppingcart/empty");
 		}
 		
 		$sessionBooking = Session::get('sessionBooking');
@@ -115,10 +112,7 @@ var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
 	public function createPayment(Request $request)
 	{
 		if(!Session::has('sessionBooking')){
-			return response()->json([
-					"id" => "2",
-					"message" => 'Shooping cart empty'
-				]);
+			return redirect("/booking/shoppingcart/empty");
 		}
 		$sessionBooking = Session::get('sessionBooking');
 		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)

@@ -111,7 +111,7 @@ body {
 					$image = str_ireplace("w=80","w=300",$rev_shoppingcart_products->image);
 					$image = str_ireplace("h=80","h=200",$image);
 					?>
-					<img src="{{ $image }}">
+					<img class="product-image" src="{{ $image }}">
 					<div class="card_divider" style="margin-top:-7px;">
 							<div class="divider_left divider_hole"></div>
 							<hr style="border:dashed #FFFFFF thin; opacity:0.8;">
@@ -123,7 +123,7 @@ body {
                     	{{ $rev_shoppingcart_products->rate }} 
                     </div>
                     <div class="qrcode">
-						<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate(url('/booking/invoice/'.$rev_shoppingcart_products->id))) }} "> 
+						<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(111)->margin(0)->generate(url('/booking/invoice/'.$rev_shoppingcart_products->id))) }} "> 
 					</div>
                     <div class="qrcode" style="margin-top:0px;">
                     	{{ $rev_shoppingcart_products->productConfirmationCode }}

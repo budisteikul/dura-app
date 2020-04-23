@@ -79,6 +79,9 @@ Route::get('/tours', function () {
 //========================================================================
 // Shopping Cart
 //========================================================================
+Route::get('/booking/shoppingcart/empty', function () {
+	return view('page.empty-shoppingcart');
+});
 Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');
 Route::post('/booking/checkout', 'Rev\ShoppingCartController@post_checkout');
