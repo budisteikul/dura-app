@@ -33,7 +33,7 @@
 	<div class="container">
 		<a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">MENU</span>
+			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">TOUR</span>
 		</button>
 		
 		@include('layouts.vt-menu')

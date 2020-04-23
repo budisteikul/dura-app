@@ -4,7 +4,7 @@
 		<div class="col-lg-12 col-md-12 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
-				<div style="height:70px;"></div>
+				<div style="height:77px;"></div>
 				
            <div class="card mb-8 shadow">
   				<div class="card-header bg-dark text-white pb-1">
