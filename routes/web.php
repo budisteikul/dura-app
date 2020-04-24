@@ -57,13 +57,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 	});
 });
 Route::domain('foodtours.xyz')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@jogjafoodtour');
-	Route::get('/order', function () {
-		return redirect('https://foodtours.xyz/booking/yogyakarta-night-walking-and-food-tours');
-	});
-	Route::get('/review', function () {
-		return redirect('https://www.tripadvisor.com/UserReviewEdit-g12872450-d15646790.html');
-	});
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 });
 
 

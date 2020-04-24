@@ -29,7 +29,7 @@
 	@hasSection('title')
 		@yield('title')
 	@else
-		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
 			Yogyakarta Night Walking and Food Tours
 		@else
 			Book Amazing Things to Do With VERTIKAL TRIP
