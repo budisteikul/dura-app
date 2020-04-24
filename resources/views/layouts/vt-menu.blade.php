@@ -8,6 +8,9 @@
 					<a class="nav-link menu-hover" href="/tours/26778">Tokyo Food Tours</a>
 				</li>
                 <li class="nav-item">
+					<a class="nav-link menu-hover" href="/tours/27272">Paris Food Tours</a>
+				</li>
+                <li class="nav-item">
 					<a class="nav-link menu-hover" href="/tours/27271">Trinidad Food Tours</a>
 				</li>
                 <li class="nav-item">
