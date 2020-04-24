@@ -8,7 +8,7 @@
 	@hasSection('description')
 		@yield('description')
 	@else
-			@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+			@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
 				Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.
 			@else
 				Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.
@@ -29,7 +29,7 @@
 	@hasSection('title')
 		@yield('title')
 	@else
-		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
 			Yogyakarta Night Walking and Food Tours
 		@else
 			Book Amazing Things to Do With VERTIKAL TRIP

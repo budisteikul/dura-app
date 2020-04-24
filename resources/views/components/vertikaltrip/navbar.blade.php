@@ -1,5 +1,5 @@
 <!-- Navigation -->
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com" || str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
 		<a href="/"><img src="/assets/logo/jogjafoodtour.png" alt="JOGJA FOOD TOUR" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
