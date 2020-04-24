@@ -6,7 +6,7 @@
                 @endphp
                 @foreach($contents as $content)
                 <li class="nav-item">
-					<a class="nav-link menu-hover" href="/tours/{{ $content->id }}">{{ $content->title }}</a>
+					<a class="nav-link menu-hover" href="https://foodtours.xyz/tours/{{ $content->id }}">{{ $content->title }}</a>
 				</li>
                @endforeach
 			</ul>
