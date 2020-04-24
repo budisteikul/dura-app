@@ -35,52 +35,14 @@ class ShoppingCartController extends Controller
 	{
 		$render = '';
 		$product_id = blog_posts::where('slug',$id)->first();
+		
         if(!isset($product_id)){
 			return redirect("/");
         }
 		
-		$bookingChannelUUID = '93a137f0-bb95-4ea0-b4a8-9857824a2e79';
-		$rev_resellers = rev_resellers::where('status',1)->first();
-		if(isset($rev_resellers)) $bookingChannelUUID = $rev_resellers->id;
-		if(env("APP_ENV")=="production")
-		{
-			$calendar = '<div id="bokun-w111662_1caddfc1_76b8_499c_959f_fcb6d96159df">Loading...</div><script type="text/javascript">
-var w111662_1caddfc1_76b8_499c_959f_fcb6d96159df;
-(function(d, t) {
-  var host = \'widgets.bokun.io\';
-  var frameUrl = \'https://\' + host + \'/widgets/111662?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w111662_1caddfc1_76b8_499c_959f_fcb6d96159df\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w111662_1caddfc1_76b8_499c_959f_fcb6d96159df = new BokunWidgetEmbedder(); w111662_1caddfc1_76b8_499c_959f_fcb6d96159df.initialize(options); w111662_1caddfc1_76b8_499c_959f_fcb6d96159df.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-		}
-		else
-		{
-			$calendar = '<div id="bokun-w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c">Loading...</div><script type="text/javascript">
-var w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c;
-(function(d, t) {
-  var host = \'widgets.bokuntest.com\';
-  var frameUrl = \'https://\' + host + \'/widgets/2531?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id->product_id.'&amp;lang=en&amp;ccy=USD&amp;hash=w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\';
-  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\'w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
-  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
-  s.onload = s.onreadystatechange = function() {
-    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
-    try {
-      w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c = new BokunWidgetEmbedder(); w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c.initialize(options); w2531_c2173ff7_b853_4e16_a1a0_4b636370d50c.display();
-    } catch (e) {}
-  };
-  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, \'script\');
-</script>';
-		}
-		return view('blog.frontend.booking')->with(['product'=>$calendar]);
+		$calendar = BokunClass::get_widget($product_id->product_id);
+		
+		return view('blog.frontend.booking')->with(['product'=>$calendar,'product_id'=>$product_id]);
 	}
 	
 	public function get_shoppingcart(Request $request)

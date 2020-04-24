@@ -1,4 +1,5 @@
 @extends('layouts.frontend')
+@section('title','Book '. $product_id->title)
 @section('content')
 @include('layouts.loading')
 

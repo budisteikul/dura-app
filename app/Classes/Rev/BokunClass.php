@@ -1,9 +1,50 @@
 <?php
 namespace App\Classes\Rev;
 use Illuminate\Support\Str;
+use App\Models\Rev\rev_resellers;
 
 class BokunClass {
 	
+	public static function get_widget($product_id="")
+	{
+		if($product_id=="")
+		{
+			header("Location: /");
+			exit();	
+		}
+		
+		$widget_hash = env("BOKUN_WIDGET_HASH");
+		$widget_id = explode("_",$widget_hash);
+		$widget_id = str_ireplace("w","",$widget_id[0]);
+		
+		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		
+		if(env("BOKUN_WIDGET")=="classic")
+		{
+			$calendar = '<div id="bokun-'.$widget_hash.'">Loading...</div><script type="text/javascript">
+var '.$widget_hash.';
+(function(d, t) {
+  var host = \'widgets.bokun.io\';
+  var frameUrl = \'https://\' + host + \'/widgets/'.$widget_id.'?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id.'&amp;lang=en&amp;ccy=USD&amp;hash='.$widget_hash.'\';
+  var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\''.$widget_hash.'\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
+  s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
+  s.onload = s.onreadystatechange = function() {
+    var rs = this.readyState; if (rs) if (rs != \'complete\') if (rs != \'loaded\') return;
+    try {
+      '.$widget_hash.' = new BokunWidgetEmbedder(); '.$widget_hash.'.initialize(options); '.$widget_hash.'.display();
+    } catch (e) {}
+  };
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, \'script\');
+</script>';
+		}
+		else
+		{
+			$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$contents->id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+		}
+		
+		return $calendar;
+	}
 	
 	public static function get_connect($path,$method = 'GET',$accept = 'application/json')
 	{
