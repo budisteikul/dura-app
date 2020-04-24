@@ -40,7 +40,7 @@ var '.$widget_hash.';
 		}
 		else
 		{
-			$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$contents->id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+			$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$product_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 		}
 		
 		return $calendar;
