@@ -164,7 +164,7 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('25671');
 @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
 
 @php
-$contents = \App\Classes\Rev\BokunClass::get_product_list_byid('27220');
+$contents = \App\Classes\Rev\BokunClass::get_product_list_byid('27270');
 @endphp
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
