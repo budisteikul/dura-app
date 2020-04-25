@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Book Amazing Things to Do With VERTIKAL TRIP')
+@section('title','Book Amazing Food Tour With VERTIKAL TRIP')
 @section('content')
 
 <!-- Navigation -->
@@ -7,7 +7,7 @@
 	<div class="container">
 		<a href="/"><img id="brand" src="/assets/logo/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">TOURS</span>
+			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">DESTINATION</span>
 		</button>
 		
 		@include('layouts.ft-menu')
@@ -16,13 +16,13 @@
 </nav>
 
 <!-- Header Section -->
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/background.jpg'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/foodtours-background.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
-				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Things to Do With VERTIKAL TRIP</h1>
+				<h1 id="title" style="text-shadow: 2px 2px #555555; font-size:36px">Book Amazing Food Tour With VERTIKAL TRIP</h1>
                 <hr class="hr-theme">
-                <a class="btn btn-lg btn-theme js-scroll-trigger" href="/#tour">DISCOVER TOURS</a>
+                <a class="btn btn-lg btn-theme js-scroll-trigger" href="/#tour">DISCOVER FOOD TOURS</a>
 			</div>
             <i class="fa fa-angle-down infinite animated fadeInDown" style="font-size: 50px; color:#FFFFFF; margin-top:30px"></i>
 		</div>
