@@ -18,8 +18,5 @@
                 <li class="nav-item">
 					<a class="nav-link menu-hover" href="/tours/27273">Cancun Food Tours</a>
 				</li>
-                <li class="nav-item">
-					<a class="nav-link menu-hover" href="/tours/27274">India Food Tours</a>
-				</li>
             </ul>
 		</div>
