@@ -340,23 +340,25 @@ class BookClass {
 	}
 	
 	public static function get_ticket(){
-    	$uuid = "VT-". rand(100000,999999);
+    	$uuid = "VER-". rand(100000,999999);
     	while( rev_shoppingcarts::where('confirmationCode','=',$uuid)->first() ){
-        	$uuid = "VT-". rand(100000,999999);
+        	$uuid = "VER-". rand(100000,999999);
     	}
-
     	return $uuid;
 	}
 	
 	public static function get_id($product_id)
 	{
-		$id = '7d435e1b-3fa8-470b-aaaf-f43a4b6fe947';
 		$slug = blog_posts::where('product_id',$product_id)->first();
 		if(isset($slug))
 		{
-			$id = $slug->id;	
+			$product_id = $slug->id;	
 		}
-		return $id;
+		else
+		{
+			$product_id = '';
+		}
+		return $product_id;
 	}
 	
 	public static function get_slug($id)
