@@ -38,7 +38,9 @@ Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('www.shinjukufoodtour.com')->group(function () {
-	return redirect('https://foodtours.xyz/tours/26778');
+	Route::get('/', function () {
+		return redirect('https://foodtours.xyz/tours/26778');
+	});
 });
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
