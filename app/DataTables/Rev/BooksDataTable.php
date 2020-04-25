@@ -46,11 +46,11 @@ class BooksDataTable extends DataTable
 					$phone = '';
 					$email = '';
 					$date_text = '';
-					$traveller = 'People : '. $book->traveller .'<br>';
+					$traveller = '<strong>People :</strong> '. $book->traveller .'<br>';
 					$channel = '';
 					$product = '';
 					$status = '';
-					$note = '------';
+					$note = '';
 					
 					if($book->ticket!='')
 					{
@@ -64,17 +64,20 @@ class BooksDataTable extends DataTable
 							$ticket = $book->ticket .'<br>';
 						}
 					}
-					if($book->name!='') $name = 'Name : '. $book->name .'<br>';
-					if($book->phone!='') $phone = 'Phone : '.$book->phone .'<br>';
-					if($book->email!='') $email = 'Email : '.$book->email .'<br>';
-					if($book->date_text!='') $date_text = 'Date : '.$book->date_text .'<br>';
+					if($book->name!='') $name = '<strong>Name :</strong> '. $book->name .'<br>';
+					if($book->phone!='') $phone = '<strong>Phone :</strong> '.$book->phone .'<br>';
+					if($book->email!='') $email = '<strong>Email :</strong> '.$book->email .'<br>';
+					if($book->date_text!='') $date_text = '<strong>Date :</strong> '.$book->date_text .'<br>';
+					
 					$rev_resellers = rev_resellers::find($book->source);
-					if(isset($rev_resellers)) $channel = 'Channel : '. $rev_resellers->name .'<br>';
+					if(isset($rev_resellers)) $channel = '<strong>Channel :</strong> '. $rev_resellers->name .'<br>';
+					
 					$post = blog_posts::find($book->post_id);
-					if(isset($post)) $product = 'Product : '. $post->title .'<br>';
-					if($book->status==1) $status = 'Status : Pending<br>';
-					if($book->status==2) $status = 'Status : Confirmed<br>';
-					if($book->status==3) $status = 'Status : Cancelled<br>';
+					if(isset($post)) $product = '<strong>Product :</strong> '. $post->title .'<br>';
+					
+					if($book->status==1) $status = '<strong>Status :</strong> PENDING<br>';
+					if($book->status==2) $status = '<strong>Status :</strong> CONFIRMED<br>';
+					if($book->status==3) $status = '<strong>Status :</strong> CANCELLED<br>';
 					
 					if(isset($book->ticket))
 					{
@@ -101,7 +104,7 @@ class BooksDataTable extends DataTable
 						
 					}
 					}
-					
+					if($note!="") $note = "----". $note;
 					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel . $product . $status . $note; 
 				})
 				->addColumn('action', function ($book) {
