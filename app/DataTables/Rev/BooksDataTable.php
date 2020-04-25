@@ -75,9 +75,9 @@ class BooksDataTable extends DataTable
 					$post = blog_posts::find($book->post_id);
 					if(isset($post)) $product = '<strong>Product :</strong> '. $post->title .'<br>';
 					
-					if($book->status==1) $status = '<strong>Status :</strong> PENDING<br>';
-					if($book->status==2) $status = '<strong>Status :</strong> CONFIRMED<br>';
-					if($book->status==3) $status = '<strong>Status :</strong> CANCELLED<br>';
+					if($book->status==1) $status = '<strong>Status :</strong> <span class="text-warning"><strong>PENDING</strong></span><br>';
+					if($book->status==2) $status = '<strong>Status :</strong> <span class="text-success"><strong>CONFIRMED</strong></span><br>';
+					if($book->status==3) $status = '<strong>Status :</strong> <span class="text-danger"><strong>CANCELLED</strong></span><br>';
 					
 					if(isset($book->ticket))
 					{
@@ -105,7 +105,9 @@ class BooksDataTable extends DataTable
 					}
 					}
 					if($note!="") $note = "----". $note;
-					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel . $product . $status . $note; 
+					
+					$return = $ticket . $name . $traveller . $phone . $email . $date_text . $channel . $product . $status . $note;
+					return   '<div>'. $return .'</div>';
 				})
 				->addColumn('action', function ($book) {
 					
