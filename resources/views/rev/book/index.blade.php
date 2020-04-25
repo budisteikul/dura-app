@@ -2,43 +2,7 @@
 @section('content')
 @push('scripts')
 	<script type="text/javascript">
-	jQuery(document).ready(function($) {	
-     		//$.fn.dataTable.ext.errMode = () => window.parent.location = '/login';
-			var table = $('#dataTables-example').DataTable(
-			{
-				
-				"processing": true,
-       			"serverSide": true,
-        		"ajax": '{{ route('rev_book.index') }}',
-				"scrollX": true,
-				"language": {
-    				"paginate": {
-      					"previous": "<i class='fa fa-step-backward'></i>",
-						"next": "<i class='fa fa-step-forward'></i>",
-						"first": "<i class='fa fa-fast-backward'></i>",
-						"last": "<i class='fa fa-fast-forward'></i>"
-    				}
-  				},
-				"order": [[ 2, "desc" ]],
-				"columns": [
-					{data: 'created_at', name: 'created_at', orderable: true, searchable: false, visible: false},
-					
-					{data: 'name', name: 'name', className: 'auto'},
-					/* {data: 'email_phone', name: 'email_phone', className: 'auto'}, */
-					/* {data: 'traveller', name: 'traveller', className: 'auto'}, */
-					{data: 'date', name: 'date', className: 'auto'},
-					/* {data: 'source', name: 'source', className: 'auto'}, */
-					{data: 'action', name: 'action', orderable: false, searchable: false, className: 'text-right'}
-        		],
-				
-				"pagingType": "full_numbers",
-				"fnDrawCallback": function () {
-					
-				}
-			});
-			
-			
-	});
+	
 	
 	function DELETE(id)
 	{
@@ -53,7 +17,7 @@
             		btnClass: 'btn-danger btn-flat',
             		keys: ['enter'],
             		action: function(){
-                 		var table = $('#dataTables-example').DataTable();
+                 		var table = $('#dataTableBuilder').DataTable();
 							$.ajax({
 							beforeSend: function(request) {
     							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
@@ -109,7 +73,7 @@
 		{
 			$("#void-"+ id).html('<i class="fa fa-spinner fa-spin"></i>');
 		}
-		var table = $('#dataTables-example').DataTable();
+		var table = $('#dataTableBuilder').DataTable();
 		$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
@@ -140,20 +104,8 @@
       	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add booking</button>
         <hr>
         
-		<table class="table table-hover table-striped" id="dataTables-example" style="width:100%">
-			<thead>
-				<tr>
-                	<th></th>
-                    <th>Booking</th>
-                    <th>Date</th>
-					<th style="width:280px"></th>
-				</tr>
-			</thead>
-			<tbody>           
-			</tbody>
-            
-		</table>
-		
+		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}
+		{!! $dataTable->scripts() !!}
                 </div>
             </div>
         </div>

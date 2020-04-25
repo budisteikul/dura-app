@@ -33,7 +33,7 @@ function STORE()
 			if(data.id=="1")
 			{
 				
-       				$('#dataTables-example').DataTable().ajax.reload( null, false );
+       				$('#dataTableBuilder').DataTable().ajax.reload( null, false );
 					$.fancybox.close();	
 			}
 			else

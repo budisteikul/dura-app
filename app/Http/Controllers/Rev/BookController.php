@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Rev;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use Yajra\DataTables\Facades\DataTables;
+use App\DataTables\Rev\BooksDataTable;
 use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request as Http;
 use Illuminate\Support\Facades\Mail;
 
-use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Auth;
 
 use App\Mail\Rev\Booking;
@@ -31,124 +31,9 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(BooksDataTable $dataTable)
     {
-        if($request->ajax())
-		{
-			$books = rev_books::query();
-			return Datatables::eloquent($books)
-				->addIndexColumn()
-				->editColumn('date', function ($book) {
-					$dateint = str_ireplace("-","",$book->date);
-					$dateint = str_ireplace(":","",$dateint);
-					$dateint = str_ireplace(" ","",$dateint);
-					
-					$st1 = date('YmdHis');
-					$st2 = $dateint;
-					$date = Carbon::parse($book->date)->formatLocalized('%d %b %Y %I:%M %p');
-					if($st2 >= $st1)
-					{
-						return '<span class="badge badge-danger">'. $date .'</span>';
-					}
-					else
-					{
-						return '<span class="badge badge-success">'. $date .'</span>';
-					}
-				})
-				->editColumn('source', function ($book) {
-					$rev_resellers = rev_resellers::find($book->source);
-					if(isset($rev_resellers)) return $rev_resellers->name;
-					return '';
-				})
-				->addColumn('product', function ($book) {
-					$post = blog_posts::find($book->post_id);
-					return $post->title;
-				})
-				->editColumn('name', function ($book) {
-					
-					$ticket = '';
-					$name = '';
-					$phone = '';
-					$email = '';
-					$date_text = '';
-					$traveller = 'People : '. $book->traveller .'<br>';
-					$channel = '';
-					$product = '';
-					$status = '';
-					$note = '------';
-					
-					if($book->ticket!='') $ticket = $book->ticket .'<br>';
-					if($book->name!='') $name = 'Name : '. $book->name .'<br>';
-					if($book->phone!='') $phone = 'Phone : '.$book->phone .'<br>';
-					if($book->email!='') $email = 'Email : '.$book->email .'<br>';
-					if($book->date_text!='') $date_text = 'Date : '.$book->date_text .'<br>';
-					$rev_resellers = rev_resellers::find($book->source);
-					if(isset($rev_resellers)) $channel = 'Channel : '. $rev_resellers->name .'<br>';
-					$post = blog_posts::find($book->post_id);
-					if(isset($post)) $product = 'Product : '. $post->title .'<br>';
-					if($book->status==1) $status = 'Status : Pending<br>';
-					if($book->status==2) $status = 'Status : Confirmed<br>';
-					if($book->status==3) $status = 'Status : Cancelled<br>';
-					
-					if(isset($book->ticket))
-					{
-					$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$book->ticket)->first();
-					if(isset($rev_shoppingcarts))
-					{
-						$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
-						$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->orderBy('order')->get();
-						if(count($pickup_questions))
-						{
-							foreach($pickup_questions as $pickup_question)
-							{
-								$note .= '<br>'. $pickup_question->label .' : '. $pickup_question->answer;
-							}
-						}
-						
-						if(count($activityBookings))
-						{
-							foreach($activityBookings as $activityBooking)
-							{
-								$note .= '<br>'. $activityBooking->label .' : '. $activityBooking->answer;
-							}
-						}
-						
-					}
-					}
-					
-					return  $ticket . $name . $traveller . $phone . $email . $date_text . $channel . $product . $status . $note; 
-				})
-				->addColumn('action', function ($book) {
-					
-						$button = '';
-						if($book->status==1)
-						{
-							$check_ticket = rev_shoppingcarts::where('confirmationCode',$book->ticket)->first();
-							if(isset($check_ticket))
-							{
-								return '<div class="btn-toolbar justify-content-end"><div class="btn-group mb-2" role="group"><button onClick="STATUS(\''.$book->id.'\',\'capture\')" id="capture-'.$book->id.'" type="button" class="btn btn-primary"><i class="far fa-money-bill-alt"></i> Capture</button><button onClick="STATUS(\''.$book->id.'\',\'void\')" id="void-'.$book->id.'" type="button" class="btn btn-secondary"><i class="far fa-money-bill-alt"></i> Void</button></div></div>';
-							}
-							else
-							{
-								return '<div class="btn-toolbar justify-content-end">
-									<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
-									</div>';
-							}
-						}
-						else
-						{
-							return '<div class="btn-toolbar justify-content-end">
-									<div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$book->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $book->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div>
-									</div>';
-						}
-						
-						
-					
-				})
-				->rawColumns(['action','name','date','status'])
-				->toJson();
-		}
-        return view('rev.book.index');
+        return $dataTable->render('rev.book.index');
     }
 
     /**

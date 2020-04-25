@@ -212,7 +212,11 @@ footer {
             <div id="invoice">
           		<h1>INVOICE {{ $rev_shoppingcarts->confirmationCode }}</h1>
           		<div class="date">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
-          		<div class="date">Due Date: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
+          		@php
+                	$min_date = $rev_shoppingcarts->shoppingcart_products()->orderBy('date','asc')->first();
+                    $min_date = \App\Classes\Rev\BookClass::texttodate($min_date->date);
+                @endphp
+                <div class="date">Due Date: {{ Carbon\Carbon::parse($min_date)->formatLocalized('%d %b %Y') }}</div>
           		<div class="date">Status: {{ \App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode) }}</div>
         	</div>           
            </td>
