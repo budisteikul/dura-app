@@ -161,11 +161,9 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('25671');
 </div>
 </section>
 
-
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 <!-- Reviews Section -->
 @include('components.vertikaltrip.reviews')
-@endif
+
 
 <script>
 (function($) {

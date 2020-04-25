@@ -71,7 +71,7 @@ class ReviewController extends Controller
 					$from = '<b>'.$reseller_name.'</b>';
 					$output = $user.$post_title.$rating.$title.$text.$from;
 					
-					return '<div style="margin-bottom:30px;" >'. $output .'</div>';
+					return '<div class="bd-callout bd-callout-theme shadow-sm rounded" style="margin-top:5px;margin-bottom:5px;" >'. $output .'</div>';
 				})
 				->rawColumns(['style'])
 				->toJson();
