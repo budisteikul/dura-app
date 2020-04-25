@@ -423,8 +423,7 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('27271');
 
 
 @else
-<!-- Services Section -->
-@include('components.vertikaltrip.all-tour')
+
 @endif
 
 
