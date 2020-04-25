@@ -54,12 +54,18 @@ class BlogController extends Controller
 		$count = rev_reviews::count();
 		return view('blog.frontend.vertikaltrip')->with(['count'=>$count]);
 	}
+	
+	public function foodtours()
+	{
+		$count = rev_reviews::count();
+		return view('blog.frontend.foodtours')->with(['count'=>$count]);
+	}
 
 
 	public function jogjafoodtour()
     {
 		$count = rev_reviews::count();
-        return view('blog.frontend.foodtour')->with(['count'=>$count]);
+        return view('blog.frontend.jogjafoodtour')->with(['count'=>$count]);
     }
 
     public function shinjukufoodtour()

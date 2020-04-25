@@ -29,20 +29,16 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 //========================================================================
 // Custom domain
 //========================================================================
+Route::domain('localhost')->group(function () {
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
+	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
+	Route::get('/foodtours', 'Blog\Frontend\BlogController@foodtours');
+});
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
-Route::domain('localhost')->group(function () {
-	//Route::get('/', 'Blog\Frontend\TimelineController@index');
-	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
-	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
-	
-});
 Route::domain('www.shinjukufoodtour.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@shinjukufoodtour');
-});
-Route::domain('192.168.0.2')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 });
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
@@ -57,7 +53,7 @@ Route::domain('www.jogjafoodtour.com')->group(function () {
 	});
 });
 Route::domain('foodtours.xyz')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
+	Route::get('/', 'Blog\Frontend\BlogController@foodtours');
 });
 
 

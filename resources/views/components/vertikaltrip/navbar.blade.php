@@ -35,9 +35,11 @@
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">TOURS</span>
 		</button>
-		
+		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 		@include('layouts.vt-menu')
-        
+        @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
+        @include('layouts.ft-menu')
+        @endif
 	</div>
 </nav>
 <div style="height:25px;"></div>
