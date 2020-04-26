@@ -153,6 +153,8 @@ class BookController extends Controller
 			{
 				$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$rev_books->ticket)->first();
 				PaypalClass::voidPaypal($rev_shoppingcarts->authorizationID);
+				$rev_shoppingcarts->bookingStatus = 'CANCELLED';
+				$rev_shoppingcarts->save();
 				$rev_books->status = 3;
 				$rev_books->save();
 			}
@@ -214,7 +216,10 @@ class BookController extends Controller
     public function destroy($id)
     {
         $rev_books = rev_books::find($id);
+		$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$rev_books->ticket)->first();
+		if(isset($rev_shoppingcarts)) $rev_shoppingcarts->delete();
 		$rev_books->delete();
+		
     }
 	
 	
