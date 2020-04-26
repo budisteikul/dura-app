@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Request as Http;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Rev\rev_shoppingcarts;
 
 class WebhookController extends Controller
 {
@@ -49,6 +50,9 @@ class WebhookController extends Controller
 		$rev_books->ticket = $ticket;
 		$rev_books->status = $status;
 		$rev_books->save();
+		
+		BookClass::webhook_insert_shoppingcart($data);
+		
 		break;
 		case 'BOOKING_ITEM_CANCELLED':
 			$rev_books = rev_books::where('ticket',$data['confirmationCode'])->first();
@@ -57,6 +61,7 @@ class WebhookController extends Controller
 				$rev_books->status = 3;
 				$rev_books->save();
 			}
+			rev_shoppingcarts::where('confirmationCode',$data['confirmationCode'])->update(['bookingStatus'=>'CANCELLED']);
 		break;
 		}
 		
