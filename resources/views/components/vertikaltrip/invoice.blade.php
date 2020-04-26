@@ -233,7 +233,7 @@ footer {
     </header>
     <main>
       <div id="details" class="clearfix">
-        <div id="client">
+        <div id="client" style="width:40%">
           <div class="to">INVOICE TO:</div>
           <h2 class="name">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer }}
                         {{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer }} </h2>
