@@ -419,7 +419,7 @@ class BookClass {
 					
 					$rev_shoppingcart_question_options = new rev_shoppingcart_question_options();
 					
-					$rev_shoppingcart_question_options->shoppingcart_question_id = $rev_shoppingcart_questions->id;
+					$rev_shoppingcart_question_options->shoppingcart_questions_id = $rev_shoppingcart_questions->id;
 					$rev_shoppingcart_question_options->label = $answerOption->label;
 					$rev_shoppingcart_question_options->value = $answerOption->value;
 					$rev_shoppingcart_question_options->order = $order_option;
