@@ -122,7 +122,7 @@ class ShoppingCartController extends Controller
 				
 				if($rev_shoppingcart_questions->selectOption)
 				{
-					$rev_shoppingcart_question_options = rev_shoppingcart_question_options::where('shoppingcart_question_id',$rev_shoppingcart_questions->id)->get();
+					$rev_shoppingcart_question_options = rev_shoppingcart_question_options::where('shoppingcart_questions_id',$rev_shoppingcart_questions->id)->get();
 					foreach($rev_shoppingcart_question_options as $rev_shoppingcart_question_option)
 					{
 						if($rev_shoppingcart_question_option->value==$request->input($question->questionId))
