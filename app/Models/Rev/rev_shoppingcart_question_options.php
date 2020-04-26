@@ -12,8 +12,8 @@ class rev_shoppingcart_question_options extends Model
 	public $incrementing = false;
 	protected $keyType = 'string';
 	
-	public function shoppingcarts()
+	public function shoppingcart_questions()
     {
-        return $this->belongsTo('App\Models\Rev\rev_shoppingcart_questions','shoppingcart_question_id','id');
+        return $this->belongsTo('App\Models\Rev\rev_shoppingcart_questions','shoppingcart_questions_id','id');
     }
 }

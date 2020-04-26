@@ -19,7 +19,7 @@ class rev_shoppingcart_questions extends Model
 	
 	public function shoppingcart_question_options()
     {
-        return $this->hasMany('App\Models\Rev\rev_shoppingcart_question_options','shoppingcart_question_id','id');
+        return $this->hasMany('App\Models\Rev\rev_shoppingcart_question_options','shoppingcart_questions_id','id');
     }
 	
 }
