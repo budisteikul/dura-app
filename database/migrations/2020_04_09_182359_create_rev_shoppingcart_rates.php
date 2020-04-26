@@ -27,6 +27,7 @@ class CreateRevShoppingcartRates extends Migration
 			$table->string('price')->nullable();
 			$table->string('unitPrice')->nullable();
 			
+			$table->string('currency')->default('USD');
 			$table->float('subtotal')->default(0);
 			$table->float('discount')->default(0);
 			$table->float('tax')->default(0);

@@ -16,8 +16,8 @@ class CreateRevShoppingcartQuestionOptions extends Migration
         Schema::create('rev_shoppingcart_question_options', function (Blueprint $table) {
             $table->uuid('id')->primary();
 			
-			$table->uuid('shoppingcart_question_id');
-			$table->foreign('shoppingcart_question_id')
+			$table->uuid('shoppingcart_questions_id');
+			$table->foreign('shoppingcart_questions_id')
       				->references('id')->on('rev_shoppingcart_questions')
       				->onDelete('cascade')->onUpdate('cascade');
 			

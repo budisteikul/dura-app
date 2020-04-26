@@ -117,6 +117,7 @@ class BookClass {
 						$subtotal = $lineitems[$j]['unitPrice'] * $rev_shoppingcart_rates->qty;
 						$discount = $subtotal - ($lineitems[$j]['discountedUnitPrice'] * $rev_shoppingcart_rates->qty);
 						$total = $subtotal - $discount;
+						$rev_shoppingcart_rates->currency = $data['currency'];
 						$rev_shoppingcart_rates->discount = $discount;
 						$rev_shoppingcart_rates->subtotal = $subtotal;
 						$rev_shoppingcart_rates->total = $total;
@@ -139,6 +140,7 @@ class BookClass {
 						$subtotal = $lineitems[$j]['total'];
 						$discount = $subtotal - $lineitems[$j]['discountedUnitPrice'];
 						$total = $subtotal - $discount;
+						$rev_shoppingcart_rates->currency = $data['currency'];
 						$rev_shoppingcart_rates->discount = $discount;
 						$rev_shoppingcart_rates->subtotal = $subtotal;
 						$rev_shoppingcart_rates->total = $total;
@@ -152,6 +154,7 @@ class BookClass {
 				}
 				
 				rev_shoppingcart_products::where('id',$rev_shoppingcart_products->id)->update([
+				'currency'=>$data['currency'],
 				'subtotal'=>$subtotal_product,
 				'discount'=>$total_discount,
 				'total'=>$total_product
@@ -182,6 +185,7 @@ class BookClass {
 			$grand_total += $total_product;
 			
 			rev_shoppingcarts::where('id',$rev_shoppingcarts->id)->update([
+				'currency'=>$data['currency'],
 				'subtotal'=>$grand_subtotal,
 				'discount'=>$grand_discount,
 				'total'=>$grand_total

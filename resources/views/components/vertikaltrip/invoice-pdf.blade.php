@@ -250,9 +250,9 @@ footer {
                         <tr>
            				  <td class="no">{{ sprintf("%02d", $number) }}</td>
            				  <td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
-           				  <td class="unit">${{ $shoppingcart_rates->price }}</td>
+           				  <td class="unit">{{ $shoppingcart_rates->price }}</td>
            				  <td class="qty">{{ $shoppingcart_rates->qty }}</td>
-           				  <td class="total">${{ $shoppingcart_rates->subtotal }}</td>
+           				  <td class="total">{{ $shoppingcart_rates->subtotal }}</td>
           				</tr>
                         </tbody>
                         <?php
@@ -271,31 +271,31 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">TOTAL</td>
-            <td>${{ $subtotal }}</td>
+            <td>{{ $subtotal }}</td>
           </tr>
           @if($discount>0)
           <tr>
             <td colspan="2"></td>
             <td colspan="2">DISCOUNT</td>
-            <td>${{ $discount }}</td>
+            <td>{{ $discount }}</td>
           </tr>
           @endif
           @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
           <tr>
             <td colspan="2"></td>
             <td colspan="2">REFUNDED</td>
-            <td>-${{ $grantTotal }}</td>
+            <td>-{{ $grantTotal }}</td>
           </tr>
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">AMOUNT DUE (USD)</td>
-            <td>$0</td>
+            <td colspan="2">AMOUNT DUE ({{$rev_shoppingcarts->currency}})</td>
+            <td>0</td>
           </tr>
           @else
           <tr>
             <td colspan="2"></td>
-            <td colspan="2">AMOUNT DUE (USD)</td>
-            <td>${{ $grantTotal }}</td>
+            <td colspan="2">AMOUNT DUE ({{$rev_shoppingcarts->currency}})</td>
+            <td>{{ $grantTotal }}</td>
           </tr>
           @endif
         </tfoot>

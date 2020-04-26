@@ -25,6 +25,7 @@ class CreateRevShoppingcarts extends Migration
 			$table->string('orderID')->nullable();
 			$table->string('authorizationID')->nullable();
 			
+			$table->string('currency')->default('USD');
 			$table->float('subtotal')->default(0);
 			$table->float('discount')->default(0);
 			$table->float('tax')->default(0);
