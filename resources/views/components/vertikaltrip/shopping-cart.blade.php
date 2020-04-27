@@ -270,7 +270,7 @@ $( document ).ready(function() {
     @endif
 <!-- ########################################### -->
 
-<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme">{{ __('Next') }} <i class="fas fa-arrow-right"></i></button>
+<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme">{{ __('Next to payment') }} <i class="fas fa-arrow-right"></i></button>
 </form>
 <div id="proses">     
   <h2>Payment</h2>        
