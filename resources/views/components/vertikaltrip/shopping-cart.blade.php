@@ -255,10 +255,17 @@ $( document ).ready(function() {
     <h3>Pick-up questions</h3>
     
     @foreach($pickup_questions as $pickup_question)
+    @if($pickup_question->dataType=="READ_ONLY")
+    <div class="form-group" style="margin-bottom:3px;">
+	<strong>{{ $pickup_question->answer }}</strong>
+	<input type="hidden" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+	</div>
+    @else
     <div class="form-group">
 	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
 	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
-</div>
+	</div>
+	@endif
     @endforeach
     @endif
 <!-- ########################################### -->

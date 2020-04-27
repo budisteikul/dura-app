@@ -323,9 +323,7 @@ class BookClass {
 					
 					if($type_product=="pickup")
 					{
-						
 						$rev_shoppingcart_rates = new rev_shoppingcart_rates();
-						
 						$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
 						$rev_shoppingcart_rates->type = $type_product;
 						$rev_shoppingcart_rates->title = 'Pick-up and drop-off services';
@@ -339,19 +337,31 @@ class BookClass {
 						$rev_shoppingcart_rates->subtotal = $subtotal;
 						$rev_shoppingcart_rates->total = $total;
 						$rev_shoppingcart_rates->save();
+						
 						$subtotal_product += $subtotal;
 						$total_discount += $discount;
 						$total_product += $total;
 					}	
+					
+						if(isset($activity[$i]->pickupPlace->title))
+						{
+							$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+							$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
+							$rev_shoppingcart_questions->type = 'pickupQuestions';
+							$rev_shoppingcart_questions->questionId = 'pickupPlace';
+							$rev_shoppingcart_questions->label = 'Pickup Place';
+							$rev_shoppingcart_questions->dataType = 'READ_ONLY';
+							$rev_shoppingcart_questions->answer = $activity[$i]->pickupPlace->title;
+							$rev_shoppingcart_questions->order = 1;
+							$rev_shoppingcart_questions->save();
+						}
 			}
 			
 			if($activity[$i]->extrasPrice>0)
 			{
 				for($k=0;$k<count($activity[$i]->extraBookings);$k++)
 				{	
-					
 					$rev_shoppingcart_rates = new rev_shoppingcart_rates();
-					
 					$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
 					$rev_shoppingcart_rates->type = 'extra';
 					$rev_shoppingcart_rates->title = $activity[$i]->extraBookings[$k]->extra->title;
@@ -435,7 +445,7 @@ class BookClass {
 			
 			if(isset($activityBooking->pickupQuestions))
 			{
-				$order = 1;
+				$order = 2;
 				for($i=0;$i<count($activityBooking->pickupQuestions);$i++)
 				{
 					
