@@ -25,8 +25,8 @@
 								<div class="textwidget my-auto" style=" min-height:250px;">
                                 <div style="height:50px;"></div>
 					 			<!-- ##### content ############################################################## -->
-					  			<br><br>
-                                <h1><i class="fas fa-shopping-cart"></i> Your shopping cart is empty</h1>
+					  			<br>
+                                <h1><i class="fas fa-shopping-cart"></i> <br>Your shopping cart is empty</h1>
                                
 					 			<!-- ##### content ############################################################## -->
                                 <div style="height:50px;"></div>
