@@ -439,6 +439,8 @@ class BookClass {
 			}
 		}
 		
+		if(isset($questions->activityBookings))
+		{
 		$activityBookings = $questions->activityBookings;
 		foreach($activityBookings as $activityBooking)
 		{
@@ -508,6 +510,7 @@ class BookClass {
 			
 				}
 			}
+		}
 		}
 	}
 	
