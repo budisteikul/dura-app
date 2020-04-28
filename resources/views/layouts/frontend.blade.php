@@ -59,7 +59,10 @@
 </script -->    
  
 @if(env('BOKUN_WIDGET')=='new')
-		<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79" async></script>
+		@php
+        $bookingChannelUUID = \App\Models\Rev\rev_resellers::where('status',1)->first()->id;
+        @endphp
+		<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID={{$bookingChannelUUID}}" async></script>
 @endif
 
     
