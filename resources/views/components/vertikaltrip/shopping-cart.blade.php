@@ -24,7 +24,7 @@ $( document ).ready(function() {
                  
                 <div class="card shadow">
   				<div class="card-header bg-dark text-white pb-1">
-    				<h4><i class="fas fa-shopping-cart"></i> Shopping Cart</h4>
+    				<h4><i class="fas fa-shopping-cart"></i> Order Summary</h4>
   				</div>
                 <?php
 				$grand_subtotal = 0;
