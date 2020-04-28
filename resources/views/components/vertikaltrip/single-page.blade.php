@@ -101,81 +101,7 @@
         				@endif
   					</div>
   
-  					<div class="card mt-4 w-100 bg-light">
-  						<div class="card-body">
-    						<div class="col-md-12">
-      							<div class="row">
-      								<div class="col-md-6">
-          								<div>
-            								@if($contents->productCategory!="")
-              								<h3 class="mt-4"><i class="far fa-clipboard"></i> Experience type</h3>
-              								{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
-            								@endif
-            								@if($contents->privateActivity)
-                							<span class="badge badge-danger">PRIVATE TOUR</span>
-            								@endif
-          								</div>
-          								<div>
-											@if($contents->bookingCutoffHours!="")
-											<h3 class="mt-4"><i class="far fa-calendar-alt"></i> Booking in advance</h3>
-              								Cut off: {!!$contents->bookingCutoffHours!!} hours
-            								@endif
-          								</div>
-          								<div>
-            								@if($contents->durationText!="")
-              								<h3 class="mt-4"><i class="far fa-clock"></i> Duration</h3>
-              								{!!$contents->durationText!!}
-            								@endif
-          								</div>
-        								<div>
-											@if($contents->difficultyLevel!="")
-											<h3 class="mt-4"><i class="fas fa-signal"></i> Difficulty</h3>
-											{!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
-											@endif
-										</div>
-         								 <!-- div>
-            								@if(!empty($contents->supportedAccessibilityTypes))
-              								<h3 class="mt-2">Supported accessibility</h3>
-              								@for($i=0;$i<count($contents->supportedAccessibilityTypes);$i++)
-             								{!!\App\Classes\Rev\BookClass::lang('accessibility',$contents->supportedAccessibilityTypes[$i])!!}
-             							    @endfor
-           								    @endif
-          								</div -->
-      								</div>
-      								<div class="col-md-6">
-          								<div>
-            								@if($contents->activityCategories!="")
-              								<h3 class="mt-4"><i class="fa fa-list"></i> Categories</h3>
-              								@if($contents->activityCategories!="")
-              								@for($i=0;$i<count($contents->activityCategories);$i++)
-                							<span class="badge badge-light border text-muted">{!! \App\Classes\Rev\BookClass::lang('categories',$contents->activityCategories[$i]) !!}</span>
-              								@endfor
-              								@endif
-            								@endif
-          								</div>
-		  								<div>
-           								    @if($contents->activityAttributes!="")
-              								<h3 class="mt-4"><i class="fas fa-cogs"></i> Attributes</h3>
-              								@for($i=0;$i<count($contents->activityAttributes);$i++)
-                							<span class="badge badge-light border text-muted">{!!\App\Classes\Rev\BookClass::lang('categories',$contents->activityAttributes[$i])!!}</span>
-              								@endfor
-            								@endif
-          								</div>
-          								<div>
-            								@if(!empty($contents->guidanceTypes))
-            								@if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
-              								<h3 class="mt-4"><i class="fas fa-info-circle"></i> Live tour guide</h3>
-              								@for($i=0;$i<count($contents->guidanceTypes[0]->languages);$i++)
-                							{!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}
-              								@endfor
-            								@endif
-            								@endif
-          								</div>
-      								</div>
-    							</div>
-    						</div>
-  						</div>
-					</div>
+  					
 				</div>
 				@if(!empty($contents->startPoints))
   					<div class="tab-pane fade mt-4" id="meeting" role="tabpanel" aria-labelledby="meeting-tab">
@@ -208,17 +134,68 @@
     	<div class="col-lg-5">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
+        									<div class="card-header bg-white">
+                                            	<h2>Details</h2>
+                                            </div>
+  											<div class="card-body">
+            								
+                
+											@if($contents->productCategory!="")
+              								<i class="far fa-clipboard text-secondary mb-4" style="width:20px;"></i> 
+              								{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
+            								@endif
+            								@if($contents->privateActivity)
+                							<span class="badge badge-danger">PRIVATE TOUR</span>
+            								@endif
+				<br>
+											@if($contents->bookingCutoffHours!="")
+											<i class="far fa-calendar-alt text-secondary mb-4" style="width:20px;"></i> Booking Cut off: {!!$contents->bookingCutoffHours!!} hours
+            								@endif
+				<br>
+											@if($contents->durationText!="")
+              								<i class="far fa-clock text-secondary mb-4" style="width:20px;"></i> Duration: 
+              								{!!$contents->durationText!!}
+            								@endif
+				<br>
+											@if($contents->difficultyLevel!="")
+											<i class="fas fa-signal text-secondary mb-4" style="width:20px;"></i> Difficulty {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
+											@endif
+                                            <br>
+                                            @if(!empty($contents->guidanceTypes))
+            								@if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
+              								<i class="fas fa-info-circle text-secondary mb-4" style="width:20px;"></i> Live Tour Guide in 
+              								@for($i=0;$i<count($contents->guidanceTypes[0]->languages);$i++)
+                							{!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}
+              								@endfor
+            								@endif
+            								@endif
+            </div>
+			
+
+ 			
+            
+		</div>
+        <div class="card mb-4 shadow p-2">
   			<div class="card-header">
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 Secure booking — only takes 2 minutes!
 				<br><br>
-				<i class="fa fa-ticket-alt text-secondary mb-4"></i> Instant Booking
-				<br>
-				<i class="fa fa-phone-alt text-secondary mb-4"></i> 24/7 Support
-				<br>
-				<i class="fa fa-history text-secondary mb-4"></i> Free Cancellation
-				<br>
-				<i class="fab fa-paypal text-secondary mb-4"></i> Secure Payments
+                <div class="row">
+                	<div class="col-6">
+                    	<i class="fa fa-ticket-alt text-secondary mb-4" style="width:20px;"></i> Instant Booking
+						<br>
+						<i class="fa fa-phone-alt text-secondary mb-4" style="width:20px;"></i> 24/7 Support
+						<br>
+                    </div>
+                    <div class="col-6">
+                    	<i class="fa fa-history text-secondary mb-4" style="width:20px;"></i> Free Cancellation
+						<br>
+						<i class="fab fa-paypal text-secondary mb-4" style="width:20px;"></i> Secure Payments
+                        <br>
+                    </div>
+                </div>
+				
+				
             </div>
  			<div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     			{!! $calendar !!}
@@ -226,7 +203,12 @@
 		</div>
     </div>
 	<div class="clearfix"></div>
+    
   </div>
   <div style="height:25px;background-color:#ffffff"></div>
 </div>
 </section>
+
+
+
+

@@ -122,7 +122,7 @@ body {
                     <div class="qrcode" style="margin-top:0px;">
                     	{{ $rev_shoppingcart_products->productConfirmationCode }}
                     </div>
-                         
+                     
 		</div>
         
         <div class="card_divider">
