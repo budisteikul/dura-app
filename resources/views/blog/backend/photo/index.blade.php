@@ -92,7 +92,7 @@
 	{
 		$.fancybox.open({
         	type: 'ajax',
-       	 	src: 'https://widgets.bokun.io/widgets/111662?bookingChannelUUID=93a137f0-bb95-4ea0-b4a8-9857824a2e79&activityId=319494&lang=en&ccy=USD&hash=w111662_1caddfc1_76b8_499c_959f_fcb6d96159df&sessionId=54760b6b-58d7-431c-aa68-db02817f87de&bokunSessionId=54760b6b-58d7-431c-aa68-db02817f87de&',
+       	 	src: '{{ route('blog_photo.index') }}/create',
 			touch: false,
 			modal: true,
 			beforeShow : function() {

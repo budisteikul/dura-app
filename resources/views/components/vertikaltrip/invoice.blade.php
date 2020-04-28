@@ -223,7 +223,7 @@ footer {
       </div>
       <div id="company">
         				<br><br>
-                            <img src="/assets/logo/logo-blue.png" data-holder-rendered="true" height="40" />
+                            <img src="/img/logo-blue.png" data-holder-rendered="true" height="40" />
                         
                         <div>Jl. Abiyoso VII No.190 Bantul ID</div>
                         <div>+62 857 43 112 112</div>

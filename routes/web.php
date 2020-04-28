@@ -33,6 +33,7 @@ Route::domain('localhost')->group(function () {
 	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
 	Route::get('/foodtours', 'Blog\Frontend\BlogController@foodtours');
+	Route::get('/ratnawahyu', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('www.ratnawahyu.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');

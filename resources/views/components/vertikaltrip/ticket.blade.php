@@ -296,7 +296,7 @@ h3 {
 	position: absolute;
 	top: 0;
 	left: 50;
-	background-image: url("/assets/logo/cancelled.png");
+	background-image: url("/img/cancelled.png");
 	background-position: 10px 50px;
 	background-repeat: no-repeat;
 	opacity: 0.9;
@@ -311,7 +311,7 @@ h3 {
 	<div class="card aa-theme">
         <div class="card_heading">
 					<div class="card_logo">
-						<img src="{{ url('/assets/logo/logo-dark.png') }}" style="max-width:200px;" />
+						<img src="{{ url('/img/logo-dark.png') }}" style="max-width:200px;" />
 					</div>
                     <?php
 					$image = str_ireplace("w=80","w=300",$rev_shoppingcart_products->image);

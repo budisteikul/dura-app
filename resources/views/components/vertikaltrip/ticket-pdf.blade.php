@@ -99,7 +99,7 @@ body {
 <div class="card aa-theme">
         <div class="card_heading">
         			<div class="card_logo">
-						<img src="assets/logo/logo-blue.png" height="35" style="max-width:200px;" />
+						<img src="img/logo-blue.png" height="35" style="max-width:200px;" />
 					</div>
                     <?php
 					$image = str_ireplace("w=80","w=300",$rev_shoppingcart_products->image);

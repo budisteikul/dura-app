@@ -92,7 +92,7 @@
 		<div class="row col-md-12">
             	<div class="col-sm-4 first-column mb-4">
                 	<p class="m-0 text-left text-dark">
-						<img src="/assets/logo/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
+						<img src="/img/logo-dark.png" alt="VERTIKAL TRIP LLC" height="50"  style="margin-top:2px;margin-bottom:2px;">
 						<br>
 						<b>INFO AND RESERVATION</b>
 						<br>

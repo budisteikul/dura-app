@@ -46,7 +46,7 @@
   </nav>
    
 <!-- ################################################################### -->
-	<header id="page-top" class="intro-header" style="background-image: url('/assets/ratnawahyu/DHwfJfutCkQi4hkxbsr7MbHWhd76K0IsNjhyqhiB.jpeg'); background-color:#000000">
+	<header id="page-top" class="intro-header" style="background-image: url('/img/DHwfJfutCkQi4hkxbsr7MbHWhd76K0IsNjhyqhiB.jpeg'); background-color:#000000">
     	
         <div class="col-lg-8 col-md-10 mx-auto">
     	<div class="site-heading text-center">
@@ -253,7 +253,7 @@ function openFancyBox(id,index,animated_id)
 			debug: false,
 			path: function (pagenum) {
 				var test = pagenum + ( {{ $results->currentPage() }} - 1 );
-  				return '/?page=' + test;
+  				return '{{ \URL::current() }}?page=' + test;
 			},		
         	loading: {
           		finishedMsg: "You've reached the end of time",

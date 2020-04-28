@@ -19,12 +19,20 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
  |
  */
 
-/* VERTIKAL TRIP  */
+mix.copyDirectory('resources/assets/manifest', 'public/');
+mix.copyDirectory('resources/assets/core', 'public/'); 
+
+/* VERTIKAL TRIP & JOGJAFOODTOUR */
 mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-1.3.2.js');
 mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-1.3.2.css');
+mix.copyDirectory('resources/assets/vertikaltrip/img/core', 'public/img');
+
+mix.copyDirectory('resources/assets/jogjafoodtour/img/core', 'public/img'); 
+mix.copyDirectory('resources/assets/jogjafoodtour/img/gallery', 'public/img');
+mix.copyDirectory('resources/assets/jogjafoodtour/img/tourguide', 'public/img'); 
 
  
-/* ADMIN
+/* ADMIN */
 mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
 mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
@@ -45,12 +53,14 @@ mix.styles([
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 	],'public/css/admin.css');
 	
-mix.copyDirectory('resources/assets/admin/avatars', 'public/img');
+
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
- */
 
-/* RATNAWAHYU
+ 
+
+
+/* RATNAWAHYU */
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
 mix.sass('resources/sass/ratnawahyu.scss', 'public/css/ratnawahyu_tmp1.css');
 
@@ -81,5 +91,14 @@ mix.styles([
 	],'public/css/ratnawahyu-1.1.9.css');
 
 mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
+mix.copyDirectory('resources/assets/ratnawahyu/img/core', 'public/img');
 mix.copy('resources/assets/ratnawahyu/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
- */
+
+ 
+ /* MAIL */
+ mix.copyDirectory('resources/assets/mail/img/avatars', 'public/img');
+ mix.copyDirectory('resources/assets/mail/js', 'public/js');
+ mix.copyDirectory('resources/assets/mail/css', 'public/css');
+ mix.copyDirectory('resources/assets/mail/font-awesome', 'public/fonts/vendor/font-awesome');
+ mix.copyDirectory('resources/assets/mail/icheck', 'public/images/vendor/icheck');
+ mix.copyDirectory('resources/assets/mail/bootstrap', 'public/fonts/vendor/bootstrap');

@@ -5,7 +5,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
 	<div class="container">
-		<a href="/"><img id="brand" src="/assets/logo/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
+		<a href="/"><img id="brand" src="/img/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		
 		
 		@include('layouts.vt-menu')
@@ -14,7 +14,7 @@
 </nav>
 
 <!-- Header Section -->
-<header id="page-top" class="intro-header" style="background-image: url('/assets/logo/background.jpg'); background-color: #000000">
+<header id="page-top" class="intro-header" style="background-image: url('/img/background.jpg'); background-color: #000000">
 	<div class="col-lg-8 col-md-10 mx-auto">
 		<div class="site-heading text-center ">
 			<div class="transbox" style=" min-height:100px; padding-top:5px; padding-bottom:35px; padding-left:10px; padding-right:10px;">
@@ -191,10 +191,10 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('25671');
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100 && $(window).width() > 768) {
       $("#mainNav").addClass("navbar-shrink shadow");
-	  //$("#brand").attr("src", "/assets/logo/logo-blue.png");
+	  //$("#brand").attr("src", "/img/logo-blue.png");
     } else {
       $("#mainNav").removeClass("navbar-shrink shadow");
-	  //$("#brand").attr("src", "/assets/logo/logo.png");
+	  //$("#brand").attr("src", "/img/logo.png");
     }
   };
   
