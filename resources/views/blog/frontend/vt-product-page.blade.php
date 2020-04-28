@@ -34,14 +34,7 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('20041');
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-            <div class="row" style="padding-bottom:0px;">
-                <div class="col-lg-12 text-center">
-                    <div style="height:70px;"></div>
-                    <h3 class="section-heading" style="margin-top:0px;">Amazing Things to do</h3>
-                    <hr class="hr-theme">
-                    <div style="height:30px;"></div>
-                </div>
-            </div>
+            
 
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">	
@@ -60,15 +53,13 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('20041');
                                 		<div class="d-flex align-items-end mb-2">
   											<div class="p-0 ml-0">
                                     			<div class="text-left">
-                                    				<span class="text-muted">Price from</span>
+                                    				<span class="text-muted">Price from</span> <b>${{$content->activity->nextDefaultPrice}}</b>
                                     			</div>
                                     			<div>
-                                    				<b style="font-size: 24px;">${{$content->activity->nextDefaultPrice}}</b>
+                                    				
                                     			</div>
                                     		</div>
-  											<div class="ml-auto p-0">
-                                    			<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md "><i class="fas fa-info-circle"></i> More info</a>
-                                    		</div>
+  											
 										</div>
   									</div>
 								</div>
