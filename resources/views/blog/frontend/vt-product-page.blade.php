@@ -6,7 +6,8 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
-		<a class="btn btn-theme text-white js-scroll-trigger" href="#bookingframe" style="margin-top:17px;margin-bottom:17px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>
+		<!-- a class="btn btn-theme text-white js-scroll-trigger" href="#bookingframe" style="margin-top:17px;margin-bottom:17px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a -->
+        <a href="/"><img src="/assets/logo/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">TOURS</span>
 		</button>
@@ -34,13 +35,21 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('20041');
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-            
+            <div class="row" style="padding-bottom:0px;">
+                <div class="col-lg-12 text-left">
+                    <div style="height:70px;"></div>
+                    <h3 class="section-heading" style="margin-top:0px;"></h3>
+                    <h4 class="section-subheading text-muted">There are more exciting things that you might like</h4>
+                    
+                    <div style="height:10px;"></div>
+                </div>
+            </div>
 
 			<div class="row" style="padding-bottom:0px;">
-				<div class="col-lg-12 text-center">	
+				<div class="col-lg text-center">	
         			<div class="row">
         					@foreach($contents->items as $content)
-        					<div class="col-lg-4 col-md-6 mb-4">
+        					<div class="col-lg-4 scol-xs-6 mb-4">
     							<div class="card h-100 shadow card-block rounded">
                             		@if(isset($content->activity->keyPhoto->fileName))
   				 					<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>

@@ -171,7 +171,7 @@
  			
             
 		</div>
-        <div class="card mb-4 shadow p-2">
+        <div id="bookingCard" class="card mb-4 shadow p-2">
   			<div class="card-header">
             	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 Secure booking — only takes 2 minutes!
