@@ -34,7 +34,14 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid('20041');
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 mx-auto">
-            
+            <div class="row" style="padding-bottom:0px;">
+                <div class="col-lg-12 text-center">
+                    <div style="height:70px;"></div>
+                    <h3 class="section-heading" style="margin-top:0px;">Amazing Things to do</h3>
+                    <hr class="hr-theme">
+                    <div style="height:30px;"></div>
+                </div>
+            </div>
 
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">	
