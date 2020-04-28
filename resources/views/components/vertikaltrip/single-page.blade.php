@@ -134,33 +134,28 @@
     	<div class="col-lg-5">
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
-        									<div class="card-header bg-white">
-                                            	<h2>Details</h2>
-                                            </div>
+        									
   											<div class="card-body">
             								
                 
-											@if($contents->productCategory!="")
-              								<i class="far fa-clipboard text-secondary mb-4" style="width:20px;"></i> 
-              								{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} &nbsp;&nbsp;
-            								@endif
-            								@if($contents->privateActivity)
-                							<span class="badge badge-danger">PRIVATE TOUR</span>
-            								@endif
+				<h3>{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} Details</h3>							
 				<br>
 											@if($contents->bookingCutoffHours!="")
 											<i class="far fa-calendar-alt text-secondary mb-4" style="width:20px;"></i> Booking Cut off: {!!$contents->bookingCutoffHours!!} hours
+                                            <br>
             								@endif
-				<br>
+				
 											@if($contents->durationText!="")
               								<i class="far fa-clock text-secondary mb-4" style="width:20px;"></i> Duration: 
               								{!!$contents->durationText!!}
+                                            <br>
             								@endif
-				<br>
+				
 											@if($contents->difficultyLevel!="")
 											<i class="fas fa-signal text-secondary mb-4" style="width:20px;"></i> Difficulty {!!\App\Classes\Rev\BookClass::lang('dificulty',$contents->difficultyLevel)!!}
-											@endif
                                             <br>
+											@endif
+                                            
                                             @if(!empty($contents->guidanceTypes))
             								@if($contents->guidanceTypes[0]->guidanceType=="GUIDED")
               								<i class="fas fa-info-circle text-secondary mb-4" style="width:20px;"></i> Live Tour Guide in 
@@ -168,6 +163,7 @@
                 							{!!\App\Classes\Rev\BookClass::lang('language',$contents->guidanceTypes[0]->languages[$i])!!}
               								@endfor
             								@endif
+                                            <br>
             								@endif
             </div>
 			
