@@ -48,7 +48,7 @@ var '.$widget_hash.';
 	
 	public static function get_connect($path,$method = 'GET',$accept = 'application/json')
 	{
-		if(env("APP_ENV")=="production")
+		if(env("BOKUN_ENV")=="production")
 		{
 			$endpoint = "https://api.bokun.io";
 		}
