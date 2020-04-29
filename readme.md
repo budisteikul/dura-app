@@ -1,8 +1,7 @@
 # VERTIKAL TRIP WEBSITE ENGINE
 
-## Requirments & Install
+## Install
 
-Node-JS Version 10.14.2  
 ```
 composer install  
 php artisan migrate  
