@@ -12,8 +12,8 @@
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-	<script src="/js/ratnawahyu-3.0.0.js"></script>
-	<link href="/css/ratnawahyu-3.0.0.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/ratnawahyu-3.0.1.js"></script>
+	<link href="/css/ratnawahyu-3.0.1.css" rel="stylesheet" media="screen,handheld">
     
     @stack('scripts')
    

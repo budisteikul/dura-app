@@ -23,8 +23,8 @@ mix.copyDirectory('resources/assets/manifest', 'public/');
 mix.copyDirectory('resources/assets/core', 'public/'); 
 
 /* VERTIKAL TRIP & JOGJAFOODTOUR */
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-3.0.0.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-3.0.0.css');
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-3.0.1.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-3.0.1.css');
 mix.copyDirectory('resources/assets/vertikaltrip/img/core', 'public/img');
 
 mix.copyDirectory('resources/assets/jogjafoodtour/img/core', 'public/img'); 
@@ -44,14 +44,14 @@ mix.scripts([
 mix.scripts([
 	'public/js/admin_tmp1.js',
 	'public/js/admin_tmp2.js'
-	],'public/js/admin-3.0.0.js');
+	],'public/js/admin-3.0.1.js');
 
 
 mix.styles([
 	'public/css/admin_tmp1.css',
 	'resources/assets/admin/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/admin-3.0.0.css');
+	],'public/css/admin-3.0.1.css');
 	
 
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
@@ -82,13 +82,13 @@ mix.styles([
 mix.scripts([
 	'public/js/ratnawahyu_tmp1.js',
 	'public/js/ratnawahyu_tmp2.js'
-	],'public/js/ratnawahyu-3.0.0.js');
+	],'public/js/ratnawahyu-3.0.1.js');
 
 
 mix.styles([
 	'public/css/ratnawahyu_tmp1.css',
 	'public/css/ratnawahyu_tmp2.css'
-	],'public/css/ratnawahyu-3.0.0.css');
+	],'public/css/ratnawahyu-3.0.1.css');
 
 mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
 mix.copyDirectory('resources/assets/ratnawahyu/img/core', 'public/img');
