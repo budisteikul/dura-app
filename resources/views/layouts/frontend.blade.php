@@ -40,8 +40,8 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-1.3.2.js"></script>
-	<link href="/css/vertikaltrip-1.3.2.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-3.0.0.js"></script>
+	<link href="/css/vertikaltrip-3.0.0.css" rel="stylesheet" media="screen,handheld">
   
 <!-- script>
           if ('serviceWorker' in navigator ) {

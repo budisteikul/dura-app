@@ -10,7 +10,10 @@
     <meta name="robots" content="all,index,follow">
 	<meta name="theme-color" content="#343A40">
     <title></title>
-    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<script src="/js/ratnawahyu-3.0.0.js"></script>
+	<link href="/css/ratnawahyu-3.0.0.css" rel="stylesheet" media="screen,handheld">
     
     @stack('scripts')
    

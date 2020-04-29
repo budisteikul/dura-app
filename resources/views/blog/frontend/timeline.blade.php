@@ -2,12 +2,6 @@
 @extends('layouts.index')
 @section('title', $setting->title)
 @section('content')
-@push('scripts')
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<script src="/js/ratnawahyu-1.1.9.js"></script>
-<link href="/css/ratnawahyu-1.1.9.css" rel="stylesheet" media="screen,handheld">
-@endpush
 
    <!-- ################################################################### -->
    <!-- Navigation -->
