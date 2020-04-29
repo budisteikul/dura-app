@@ -2,7 +2,7 @@
 
 ## APP ENV
 
-APP_NAME="VERTIKAL TRIP"  
+APP_NAME=  
 APP_DEBUG=false  
 APP_ENV=production  
 APP_KEY=  
