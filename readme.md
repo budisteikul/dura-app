@@ -5,7 +5,10 @@
 Node-JS Version 10.14.2  
 ```
 composer install  
-npm install
+php artisan migrate  
+php artisan db:seed 
+npm install  
+npm run production
 ```
 
 ## APP ENV
