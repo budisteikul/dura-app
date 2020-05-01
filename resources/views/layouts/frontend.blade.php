@@ -40,8 +40,8 @@
 	</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-3.0.1.js"></script>
-	<link href="/css/vertikaltrip-3.0.1.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-3.0.2.js"></script>
+	<link href="/css/vertikaltrip-3.0.2.css" rel="stylesheet" media="screen,handheld">
   
 <!-- script>
           if ('serviceWorker' in navigator ) {
@@ -139,10 +139,13 @@
 </div>
 </footer>
 
-
+<!-- a href="https://wa.me/+6285743112112" class="wa-float" target="_blank">
+<i class="fab fa-whatsapp wa-icon-float"></i>
+</a -->
 
 
 </body>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -154,8 +157,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-
-
 </script>
 <!--End of Tawk.to Script-->
+
 </html>
