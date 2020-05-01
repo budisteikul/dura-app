@@ -249,24 +249,6 @@ class ShoppingCartController extends Controller
 		return view('blog.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
     }
 	
-	public function get_invoice($id)
-    {
-		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
-		return view('components.vertikaltrip.invoice')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
-	}
-	
-	public function get_ticket($id)
-    {
-		$watermark = false;
-		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
-		if(BookClass::check_status_invoice($rev_shoppingcart_products->shoppingcarts()->first()->confirmationCode)=="Refunded")
-		{
-			$watermark = true;
-		}
-		
-		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products,'watermark'=>$watermark]);
-	}
-	
 	public function applypromocode(Request $request)
 	{
 		if(!Session::has('sessionBooking')){
@@ -327,9 +309,27 @@ class ShoppingCartController extends Controller
 				]);
 	}
 	
+	public function get_invoice($id)
+    {
+		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->first();
+		return view('components.vertikaltrip.invoice')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+	}
+	
+	public function get_ticket($id)
+    {
+		$watermark = false;
+		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
+		if(BookClass::check_status_invoice($rev_shoppingcart_products->shoppingcarts()->first()->confirmationCode)=="Refunded")
+		{
+			$watermark = true;
+		}
+		
+		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products,'watermark'=>$watermark]);
+	}
+	
 	public function get_invoicePDF($id)
 	{
-		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
+		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->first();
 		$pdf = PDF::loadView('components.vertikaltrip.invoice-pdf', compact('rev_shoppingcarts'))->setPaper('a4', 'portrait');
 		return $pdf->download('Invoice-'. $rev_shoppingcarts->confirmationCode .'.pdf');
 	}

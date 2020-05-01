@@ -333,13 +333,14 @@ h3 {
                 
             </div>
             <div class="trip_icon">
-                {!! QrCode::size(100)->generate('https://www.vertikaltrip.com/booking/ticket/'.$rev_shoppingcart_products->id ); !!}
+                {!! QrCode::errorCorrection('H')->size(111)->margin(3)->generate(url('/booking/ticket/'.$rev_shoppingcart_products->id)); !!}
             	<div style="color:#ffffff; margin-top:7px; opacity:0.6;">{{ $rev_shoppingcart_products->productConfirmationCode }}</div>
             </div>
             <div class="trip_to">
                
             </div>
         </div>
+        <br>
         <div class="card_divider">
             <div class="divider_left divider_hole">
             </div>

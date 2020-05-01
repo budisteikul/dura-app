@@ -219,7 +219,7 @@ footer {
   <body>
     <header class="clearfix">
       <div id="logo">
-        {!! QrCode::size(111)->margin(0)->generate('https://www.vertikaltrip.com/booking/invoice/'.$rev_shoppingcarts->id ); !!}
+        {!! QrCode::errorCorrection('H')->size(111)->margin(3)->generate(url('/booking/invoice/'.$rev_shoppingcarts->id)); !!}
       </div>
       <div id="company">
         				<br><br>
@@ -272,9 +272,9 @@ footer {
                         <tr>
             				<td class="no">{{ sprintf("%02d", $number) }}</td>
             				<td class="desc"><h3>{{ $shoppingcart_rates->title }}</h3>{{ $shoppingcart_rates->unitPrice }}</td>
-            				<td class="unit">{{ $shoppingcart_rates->price }}</td>
+            				<td class="unit">{{ number_format((float)$shoppingcart_rates->price, 2, '.', '') }}</td>
             				<td class="qty">{{ $shoppingcart_rates->qty }}</td>
-           				  <td class="total">{{ $shoppingcart_rates->subtotal }}</td>
+           				  <td class="total">{{ number_format((float)$shoppingcart_rates->subtotal, 2, '.', '') }}</td>
           				</tr>
                         
                         <?php
@@ -293,20 +293,20 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">TOTAL</td>
-            <td>{{ $subtotal }}</td>
+            <td>{{ number_format((float)$subtotal, 2, '.', '') }}</td>
           </tr>
           @if($discount>0)
           <tr>
             <td colspan="2"></td>
             <td colspan="2">DISCOUNT</td>
-            <td>{{ $discount }}</td>
+            <td>{{ number_format((float)$discount, 2, '.', '') }}</td>
           </tr>
           @endif
           @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
           <tr>
             <td colspan="2"></td>
             <td colspan="2">REFUNDED</td>
-            <td>-{{ $grantTotal }}</td>
+            <td>-{{ number_format((float)$grantTotal, 2, '.', '') }}</td>
           </tr>
           <tr>
             <td colspan="2"></td>
@@ -317,7 +317,7 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">AMOUNT DUE ({{$rev_shoppingcarts->currency}})</td>
-            <td>{{ $grantTotal }}</td>
+            <td>{{ number_format((float)$grantTotal, 2, '.', '') }}</td>
           </tr>
           @endif
         </tfoot>

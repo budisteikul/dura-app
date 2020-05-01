@@ -117,7 +117,7 @@ body {
                     	{{ $rev_shoppingcart_products->rate }} 
                     </div>
                     <div class="qrcode">
-						<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(111)->margin(3)->generate(url('/booking/ticket/'.$rev_shoppingcart_products->id))) }} "> 
+						<img src="data:image/png;base64, {{ base64_encode(QrCode::errorCorrection('H')->format('png')->size(111)->margin(3)->generate(url('/booking/ticket/'.$rev_shoppingcart_products->id))) }} "> 
 					</div>
                     <div class="qrcode" style="margin-top:0px;">
                     	{{ $rev_shoppingcart_products->productConfirmationCode }}
