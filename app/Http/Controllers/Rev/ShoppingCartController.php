@@ -48,7 +48,7 @@ class ShoppingCartController extends Controller
 	public function get_shoppingcart(Request $request)
     {
 		$id = $request->input('sessionId');
-		BookClass::get_shoppingcart($id);
+		BookClass::get_shoppingcart($id,"insert");
 		return redirect("/booking/checkout");
 	}
 	
@@ -298,7 +298,7 @@ class ShoppingCartController extends Controller
 		}
 		else
 		{
-			BookClass::get_shoppingcart($rev_shoppingcarts->sessionId);
+			BookClass::get_shoppingcart($rev_shoppingcarts->sessionId,"update");
 			return response()->json([
 					"id" => "1",
 					"message" => $rev_shoppingcarts->sessionId
@@ -319,7 +319,7 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
 		
 		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
-		BookClass::get_shoppingcart($rev_shoppingcarts->sessionId);
+		BookClass::get_shoppingcart($rev_shoppingcarts->sessionId,"update");
 		
 			return response()->json([
 					"id" => "1",
