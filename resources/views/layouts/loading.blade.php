@@ -59,7 +59,6 @@ $(window).on('load', function(){
 }
 
 /* Animation */
-
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
