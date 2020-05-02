@@ -54,8 +54,8 @@ $(window).on('load', function(){
   -o-animation: spinner 1500ms infinite linear;
   animation: spinner 1500ms infinite linear;
   border-radius: 0.5em;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
-  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  -webkit-box-shadow: #1D57C7 1.5em 0 0 0, #1D57C7 1.1em 1.1em 0 0, #1D57C7 0 1.5em 0 0, #1D57C7 -1.1em 1.1em 0 0, #1D57C7 -1.5em 0 0 0, #1D57C7 -1.1em -1.1em 0 0, #1D57C7 0 -1.5em 0 0, #1D57C7 1.1em -1.1em 0 0;
+  box-shadow: #1D57C7 1.5em 0 0 0, #1D57C7 1.1em 1.1em 0 0, #1D57C7 0 1.5em 0 0, #1D57C7 -1.1em 1.1em 0 0, #1D57C7 -1.5em 0 0 0, #1D57C7 -1.1em -1.1em 0 0, #1D57C7 0 -1.5em 0 0, #1D57C7 1.1em -1.1em 0 0;
 }
 
 /* Animation */
