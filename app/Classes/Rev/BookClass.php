@@ -827,5 +827,31 @@ class BookClass {
 		}
 		return $hasil;
 	}
+	
+	public static function canCancel($ticket){
+		$canCancel = false;
+		$rev_books = rev_books::where('ticket',$ticket)->first();
+		$limitDate = date('Y-m-d H:i:s', strtotime($rev_books->date. ' - 1 day'));
+		
+		$dateint = str_ireplace("-","",$limitDate);
+		$dateint = str_ireplace(":","",$dateint);
+		$dateint = str_ireplace(" ","",$dateint);
+		
+		$st1 = date('YmdHis');
+		$st2 = $dateint;
+		
+		if($st2 >= $st1)
+		{
+			$canCancel = true;
+			if(rev_shoppingcarts::where('confirmationCode',$ticket)->first()->bookingStatus=="CANCELLED") $canCancel = false;
+		}
+		else
+		{
+			$canCancel = false;
+		}
+		
+		return $canCancel;
+	}
+	
 }
 ?>

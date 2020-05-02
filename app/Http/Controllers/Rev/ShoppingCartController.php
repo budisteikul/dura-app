@@ -342,4 +342,11 @@ class ShoppingCartController extends Controller
 		return $pdf->download('Ticket-'. $rev_shoppingcart_products->productConfirmationCode .'.pdf');
 	}
 	
+	public function selfservice($id)
+    {
+		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->first();
+		$canCancel = BookClass::canCancel($rev_shoppingcarts->confirmationCode);
+		return view('page.view')->with(['rev_shoppingcarts'=>$rev_shoppingcarts,'canCancel'=>$canCancel]);
+	}
+	
 }

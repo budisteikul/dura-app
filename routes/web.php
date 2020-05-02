@@ -93,6 +93,7 @@ Route::post('/booking/promo-code', 'Rev\ShoppingCartController@applypromocode');
 Route::post('/booking/promo-code/remove', 'Rev\ShoppingCartController@removepromocode');
 Route::post('/booking/payment', 'Rev\ShoppingCartController@payment');
 Route::post('/booking/create-paypal-transaction', 'Rev\ShoppingCartController@createPayment');
+Route::get('/booking/selfservice/{id}', 'Rev\ShoppingCartController@selfservice');
 Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');
 Route::get('/booking/invoice/{id}', 'Rev\ShoppingCartController@get_invoice');
 Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');
