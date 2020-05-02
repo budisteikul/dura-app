@@ -177,5 +177,10 @@ var '.$widget_hash.';
 		$id = strtolower($id);
 		return self::get_connect('/cart.json/'.$sessionId.'/apply-promo-code/'.$id);
 	}
+	
+	public static function get_availabilities($id,$start,$end)
+	{
+		return self::get_connect('/activity.json/'.$id.'/availabilities?start='.$start.'&end='.$end.'&lang=EN&currency=USD&includeSoldOut=false');
+	}
 }
 ?>
