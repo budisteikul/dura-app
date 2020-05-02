@@ -270,10 +270,10 @@ $( document ).ready(function() {
     @endif
 <!-- ########################################### -->
 
-<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme"><strong>Pay USD {{ $grand_total }}</strong></button>
+<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme"><i class="fas fa-lock"></i> <strong>Pay USD {{ $grand_total }}</strong></button>
 </form>
 <div id="proses">     
-  <h2>Payment</h2>        
+  <h2>Pay with</h2>        
   <div id="paypal-button-container"></div>
 </div>
 <div id="alert-success" class="alert alert-primary text-center" role="alert">
@@ -510,7 +510,7 @@ function STORE()
 					});
 					
 				$("#submit").attr("disabled", false);
-				$('#submit').html('<strong>Pay USD {{ $grand_total }}</strong>');
+				$('#submit').html('<i class="fas fa-lock"></i> <strong>Pay USD {{ $grand_total }}</strong>');
 				
 			}
 		});
