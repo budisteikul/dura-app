@@ -115,7 +115,7 @@
 
 @endpush
   
- <div  itemscope itemtype="http://schema.org/Product" style="background-color:#FFFFFF"> 
+<div style="background-color:#FFFFFF"> 
     
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav">
@@ -565,10 +565,10 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
                     <h4 class="section-subheading text-muted"><a href="https://www.tripadvisor.com/UserReviewEdit-g14782503-d15646790-Yogyakarta_Night_Walking_and_Food_Tours-Yogyakarta_Yogyakarta_Region_Java.html" target="_blank" class="text-theme"><i class="fab fa-tripadvisor" aria-hidden="true"></i>  Review us on Trip Advisor</a></h4>
 					<strong> Rating :</strong>
 					<span class="text-warning">
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger" itemprop="ratingValue">(4.9)</span>
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span class="text-danger">(4.9)</span>
 					</span>‎
 					<br>
-					<small class="form-text text-muted">Based on <span itemprop="reviewCount">{{ $count }}</span> our new friend reviews</small>
+					<small class="form-text text-muted">Based on {{ $count }} our new friend reviews</small>
 					<hr style="max-width:50px;border-color:#e2433b;border-width:3px;">
 				</div>
 				<table id="dataTables-example" style="width:100%">
