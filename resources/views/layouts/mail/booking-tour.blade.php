@@ -196,11 +196,15 @@
                   <td class="content-cell">
                     
                     <h1>Hi {{$rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer}},</h1>
-                    <p>Thank you for your booking with VERTIKAL TRIP. <br />
-                    Your booking receipt and ticket is on attachments.<br />
-                    If you have any question, don't hesitate to contact us.</p>
-                    <p>Regards,</p>
-                    <p>Vertikal Trip team.</p>
+                    <p>Have a good day,<br />
+                      Thank you for your booking with VERTIKAL TRIP. <br />
+                    You can find booking receipt and e-ticket  on attachments and present it  to our team on location                  <br />
+                    If you have any question, feel free to contact us.<br />
+                    Thanks again, and enjoy your time in Indonesia :)
+                    <br />
+                    </p>
+                    <p>Regards,<br />
+                    Vertikal Trip team.</p>
                     <!-- Action -->
                     
                     <!-- Sub copy -->
@@ -222,6 +226,8 @@
                   <td class="content-cell">
                     <p class="sub center">VERTIKAL TRIP<br />
                     Jl. Abiyoso VII No.190 Bantul ID<br />
+                    Website : www.vertikaltrip.com
+                    <br />
 					Whatsapp : +6285743112112<br />
                     Email : guide@vertikaltrip.com<br />
                     </p>
