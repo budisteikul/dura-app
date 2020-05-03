@@ -33,11 +33,8 @@
 	<div class="container">
 		<a href="/"><img src="/img/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
 		
-		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
-		@include('layouts.vt-menu')
-        @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
-        @include('layouts.ft-menu')
-        @endif
+		@include('layouts.all-menu')
+        
 	</div>
 </nav>
 <div style="height:25px;"></div>
