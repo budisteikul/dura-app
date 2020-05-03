@@ -51,7 +51,7 @@ class BlogController extends Controller
 	
 	public function vertikaltrip()
 	{
-		$productArray = array("20041", "25671");
+		$productArray = array("27597", "25594");
 		$count = rev_reviews::count();
 		return view('blog.frontend.vertikaltrip')->with(['count'=>$count,'productArray'=>$productArray]);
 	}

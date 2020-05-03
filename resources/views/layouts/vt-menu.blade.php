@@ -5,10 +5,10 @@
 			<ul class="navbar-nav text-uppercase ml-auto">
 				
 				<li class="nav-item">
-					<a class="nav-link menu-hover" href="/tours/25671">Jogja Car Rentals</a>
+					<a class="nav-link menu-hover" href="/tours/27597">Jogja Car Rentals</a>
 				</li>
                 <li class="nav-item">
-					<a class="nav-link menu-hover" href="/tours/20041">Jogja Things to do</a>
+					<a class="nav-link menu-hover" href="/tours/25594">Jogja Things to do</a>
 				</li>
 				
             </ul>
