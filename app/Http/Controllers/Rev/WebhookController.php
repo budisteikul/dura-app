@@ -24,7 +24,7 @@ class WebhookController extends Controller
 		{
 		case 'BOOKING_CONFIRMED':
 		
-		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
+		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['externalId']);
 		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
 		
 		$post_id = $product_id;
