@@ -34,7 +34,7 @@
 $productArray = array("27270", "26778", "27272", "27271" ,"27273");
 for($i=0;$i<count($productArray);$i++)
 {
-$contents = \App\Classes\Rev\BokunClass::get_product_list_byid('27581');
+$contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]);
 @endphp
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
