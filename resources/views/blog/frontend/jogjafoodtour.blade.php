@@ -305,9 +305,7 @@ Yogyakarta is also the unofficial culinary capital of Indonesia
 					<span style="width:30px;" class="fa fa-bars"></span><strong> Type :</strong> Open Trip<br />
 					<span style="width:30px;" class="fa fa-language"></span><strong> Language :</strong> Offered in English<br />
                     <div>
-                    	<span style="width:30px;" class="fa fa-tags"></span><strong> Price :</strong>
-						
-				 37 USD / person
+                  
 				
     					
                 	</div>
