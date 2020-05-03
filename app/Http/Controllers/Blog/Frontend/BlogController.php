@@ -51,14 +51,16 @@ class BlogController extends Controller
 	
 	public function vertikaltrip()
 	{
+		$productArray = array("20041", "25671");
 		$count = rev_reviews::count();
-		return view('blog.frontend.vertikaltrip')->with(['count'=>$count]);
+		return view('blog.frontend.vertikaltrip')->with(['count'=>$count,'productArray'=>$productArray]);
 	}
 	
 	public function foodtours()
 	{
+		$productArray = array("26778", "27272", "27271" ,"27273");
 		$count = rev_reviews::count();
-		return view('blog.frontend.foodtours')->with(['count'=>$count]);
+		return view('blog.frontend.foodtours')->with(['count'=>$count,'productArray'=>$productArray]);
 	}
 
 

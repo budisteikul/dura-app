@@ -7,7 +7,6 @@
 	<div class="container">
 		<a href="/"><img id="brand" src="/img/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
 		
-		
 		@include('layouts.ft-menu')
 		
     </div>
@@ -31,7 +30,6 @@
 @include('components.vertikaltrip.services')
 
 @php
-$productArray = array("27270", "26778", "27272", "27271" ,"27273");
 for($i=0;$i<count($productArray);$i++)
 {
 $contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]);
@@ -99,10 +97,6 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]
 @php
 }
 @endphp
-@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
-<!-- Reviews Section -->
-@include('components.vertikaltrip.reviews')
-@endif
 
 <script>
 (function($) {
