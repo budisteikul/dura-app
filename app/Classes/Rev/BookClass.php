@@ -742,6 +742,20 @@ class BookClass {
 		}
 		return $product_id;
 	}
+
+	public static function get_reseller($id)
+	{
+		$slug = rev_resellers::where('id',$product_id)->first();
+		if(isset($slug))
+		{
+			$id = $slug->id;	
+		}
+		else
+		{
+			$id = '';
+		}
+		return $id;
+	}
 	
 	public static function get_slug($id)
 	{

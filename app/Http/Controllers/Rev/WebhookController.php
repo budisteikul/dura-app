@@ -25,6 +25,7 @@ class WebhookController extends Controller
 		case 'BOOKING_CONFIRMED':
 		
 		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['externalId']);
+		$source_id = BookClass::get_reseller($data['bookingChannel']['uuid']);
 		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
 		
 		$post_id = $product_id;
@@ -32,7 +33,7 @@ class WebhookController extends Controller
 		$email = $data['customer']['email'];
 		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
 		$date = $date;
-		$source = $data['bookingChannel']['uuid'];;
+		$source = $source_id;
 		$traveller = $data['invoice']['productInvoices'][0]['lineItems'][0]['people'];
 		$ticket = $data['confirmationCode'];
 		$date_text = $data['invoice']['productInvoices'][0]['dates'];
