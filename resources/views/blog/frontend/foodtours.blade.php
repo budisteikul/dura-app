@@ -5,7 +5,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNav">
   <div class="container">
-    
+    <a href="/"><img id="brand" src="/img/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:2px;margin-bottom:2px;"></a>
     @include('layouts.all-menu')
     </div>
 </nav>

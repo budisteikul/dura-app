@@ -31,9 +31,9 @@
 @else
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark fixed-top shadow mb-5" id="mainNav-back">
 	<div class="container">
-		@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+		
 		<a href="/"><img src="/img/logo.png" alt="VERTIKAL TRIP" height="50"  style="margin-top:9px;margin-bottom:9px;"></a>
-		@endif
+		
 		
 		@include('layouts.all-menu')
         

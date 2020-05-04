@@ -30,7 +30,7 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 // Custom domain
 //========================================================================
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
+	Route::get('/', 'Blog\Frontend\BlogController@foodtours');
 	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
 	Route::get('/foodtours', 'Blog\Frontend\BlogController@foodtours');
 	Route::get('/ratnawahyu', 'Blog\Frontend\TimelineController@index');
@@ -85,6 +85,10 @@ Route::get('/tours', function () {
 //========================================================================
 Route::get('/booking/shoppingcart/empty', function () {
 	return view('page.empty-shoppingcart');
+});
+Route::get('/country', function () {
+	$content = \App\Classes\Rev\BokunClass::get_country();
+	print_r($content);
 });
 Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');

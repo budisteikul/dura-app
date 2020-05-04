@@ -182,5 +182,10 @@ var '.$widget_hash.';
 	{
 		return self::get_connect('/activity.json/'.$id.'/availabilities?start='.$start.'&end='.$end.'&lang=EN&currency=USD&includeSoldOut=false');
 	}
+
+	public static function get_country()
+	{
+		return self::get_connect('/country.json/findAll');
+	}
 }
 ?>
