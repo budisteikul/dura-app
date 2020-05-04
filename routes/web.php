@@ -30,7 +30,7 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 // Custom domain
 //========================================================================
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@foodtours');
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
 	Route::get('/foodtours', 'Blog\Frontend\BlogController@foodtours');
 	Route::get('/ratnawahyu', 'Blog\Frontend\TimelineController@index');

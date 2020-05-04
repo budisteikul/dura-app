@@ -57,7 +57,7 @@ class BlogController extends Controller
 	
 	public function foodtours()
 	{
-		$productArray = array("26778", "27272", "27271" ,"27273");
+		$productArray = array("27653", "27654", "27655");
 		$count = rev_reviews::count();
 		return view('blog.frontend.foodtours')->with(['count'=>$count,'productArray'=>$productArray]);
 	}

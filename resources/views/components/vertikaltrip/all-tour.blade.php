@@ -1,7 +1,7 @@
 @php
-	$product_lists = \App\Classes\Rev\BokunClass::get_product_list();
+	$product_lists = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
 @endphp
-@foreach(collect($product_lists)->sortByDesc('title') as $product_list)
+@foreach($product_lists->children as $product_list)
 <section id="tour" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">

@@ -11,10 +11,14 @@
         
         <div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
+                @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
                 @php
-                	$contents = \App\Classes\Rev\BokunClass::get_product_list();
+                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
                 @endphp
-                @foreach($contents as $content)
+                @else
+                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27651);
+                @endif
+                @foreach($contents->children as $content)
                 <li class="nav-item">
 					<a class="nav-link menu-hover" href="/tours/{{ $content->id }}">{{ $content->title }}</a>
 				</li>
