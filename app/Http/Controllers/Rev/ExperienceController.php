@@ -174,7 +174,14 @@ class ExperienceController extends Controller
 	
 	public function import()
 	{
-		$product_lists = BokunClass::get_product_list_byid(27645);
+		if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+		{
+			$product_lists = BokunClass::get_product_list_byid(27645);
+		}
+		else
+		{
+			$product_lists = BokunClass::get_product_list_byid(27651);
+		}
 		foreach($product_lists->children as $product_list)
 		{
 			$products = BokunClass::get_product_list_byid($product_list->id);
