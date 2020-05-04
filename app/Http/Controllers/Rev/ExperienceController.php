@@ -180,7 +180,7 @@ class ExperienceController extends Controller
 		}
 		else
 		{
-			$product_lists = BokunClass::get_product_list_byid(27673);
+			$product_lists = BokunClass::get_product_list_byid(27651);
 		}
 		foreach($product_lists->children as $product_list)
 		{
