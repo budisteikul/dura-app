@@ -174,12 +174,14 @@ class ExperienceController extends Controller
 	
 	public function import()
 	{
-		$product_lists = BokunClass::get_product_list();
-		foreach($product_lists as $product_list)
+		$product_lists = BokunClass::get_product_list_byid(27645);
+		foreach($product_lists->children as $product_list)
 		{
 			$products = BokunClass::get_product_list_byid($product_list->id);
 			foreach($products->items as $product)
 			{
+				print($product->activity->title .''. $product->activity->id .'<br>');
+				/*
 				$title = $product->activity->title;
 				$id = $product->activity->id;
 				
@@ -197,10 +199,10 @@ class ExperienceController extends Controller
 					$blog_posts->product_id = $id;
 					$blog_posts->save();
 				}
-				
+				*/
 				
 			}
 		}
-		return redirect("/rev/experiences");
+		//return redirect("/rev/experiences");
 	}
 }
