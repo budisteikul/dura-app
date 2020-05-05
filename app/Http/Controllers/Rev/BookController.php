@@ -10,6 +10,10 @@ use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 use App\Models\Rev\rev_shoppingcarts;
+use App\Models\Rev\rev_shoppingcart_products;
+use App\Models\Rev\rev_shoppingcart_rates;
+use App\Models\Rev\rev_shoppingcart_questions;
+use App\Models\Rev\rev_shoppingcart_question_options;
 
 use App\Classes\Rev\BookClass;
 use App\Classes\Rev\PaypalClass;
@@ -17,7 +21,8 @@ use App\Classes\Rev\PaypalClass;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request as Http;
 use Illuminate\Support\Facades\Mail;
-
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -43,9 +48,97 @@ class BookController extends Controller
      */
     public function create()
     {
-		$rev_resellers = rev_resellers::orderBy('name')->get();
-		$blog_post = blog_posts::where('content_type','experience')->orderBy('created_at')->get();
-        return view('rev.book.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
+		$rev_books = rev_books::get();
+		
+		foreach($rev_books as $book)
+		{
+			$rev_shoppingcarts = new rev_shoppingcarts();
+			$bookingStatus = 'CONFIRMED';
+			if($book->status==1) $bookingStatus = 'PENDING';
+			if($book->status==2) $bookingStatus = 'CONFIRMED';
+			if($book->status==3) $bookingStatus = 'CANCELLED';
+			$rev_shoppingcarts->bookingStatus = $bookingStatus;
+			$ticket = $book->ticket;
+			if($ticket=="") $ticket = BookClass::get_ticket();
+			$rev_shoppingcarts->confirmationCode = $ticket;
+			$rev_shoppingcarts->paymentStatus = 0;
+			$bookingChannel = '';
+			$rev_resellers = rev_resellers::find($book->source);
+			if(isset($rev_resellers)) $bookingChannel = $rev_resellers->name;
+			$rev_shoppingcarts->bookingChannel = $bookingChannel;
+			$rev_shoppingcarts->sessionBooking = Uuid::uuid4()->toString();
+			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
+			$rev_shoppingcarts->currency = 'USD';
+			$rev_shoppingcarts->discount = 0;
+			$rev_shoppingcarts->subtotal = 0;
+			$rev_shoppingcarts->total = 0;
+			$rev_shoppingcarts->save();	
+			
+			$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+			$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
+			$rev_shoppingcart_questions->type = 'mainContactDetails';
+			$rev_shoppingcart_questions->questionId = 'firstName';
+			$rev_shoppingcart_questions->order = 1;
+			$rev_shoppingcart_questions->answer = $book->name;
+			$rev_shoppingcart_questions->save();
+			
+			$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+			$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
+			$rev_shoppingcart_questions->type = 'mainContactDetails';
+			$rev_shoppingcart_questions->questionId = 'lastName';
+			$rev_shoppingcart_questions->order = 2;
+			$rev_shoppingcart_questions->answer = '';
+			$rev_shoppingcart_questions->save();
+			
+			$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+			$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
+			$rev_shoppingcart_questions->type = 'mainContactDetails';
+			$rev_shoppingcart_questions->questionId = 'email';
+			$rev_shoppingcart_questions->order = 3;
+			$rev_shoppingcart_questions->answer = $book->email;
+			$rev_shoppingcart_questions->save();
+			
+			$rev_shoppingcart_questions = new rev_shoppingcart_questions();
+			$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
+			$rev_shoppingcart_questions->type = 'mainContactDetails';
+			$rev_shoppingcart_questions->questionId = 'phoneNumber';
+			$rev_shoppingcart_questions->order = 4;
+			$rev_shoppingcart_questions->answer = $book->phone;
+			$rev_shoppingcart_questions->save();
+			
+			$rev_shoppingcart_products = new rev_shoppingcart_products();
+			$rev_shoppingcart_products->shoppingcarts_id = $rev_shoppingcarts->id;
+			$rev_shoppingcart_products->productConfirmationCode = $ticket;
+			
+			$blog_posts = blog_posts::find($book->post_id);
+			$rev_shoppingcart_products->productId = $blog_posts->product_id;
+			$rev_shoppingcart_products->title = $blog_posts->title;
+			$rev_shoppingcart_products->rate = '';
+			$rev_shoppingcart_products->date = BookClass::datetotext($book->date);
+			$rev_shoppingcart_products->currency = 'USD';
+			$rev_shoppingcart_products->discount = 0;
+			$rev_shoppingcart_products->subtotal = 0;
+			$rev_shoppingcart_products->total = 0;
+			$rev_shoppingcart_products->save();
+			
+			$rev_shoppingcart_rates = new rev_shoppingcart_rates();
+			$rev_shoppingcart_rates->shoppingcart_products_id = $rev_shoppingcart_products->id;
+			$rev_shoppingcart_rates->type = 'product';
+			$rev_shoppingcart_rates->title = $blog_posts->title;
+			$rev_shoppingcart_rates->qty = $book->traveller;
+			$rev_shoppingcart_rates->price = 0;
+			$rev_shoppingcart_rates->unitPrice = 'Person';
+			$rev_shoppingcart_rates->currency = 'USD';
+			$rev_shoppingcart_rates->discount = 0;
+			$rev_shoppingcart_rates->subtotal = 0;
+			$rev_shoppingcart_rates->total = 0;
+			$rev_shoppingcart_rates->save();
+			
+		}
+		
+		//$rev_resellers = rev_resellers::orderBy('name')->get();
+		//$blog_post = blog_posts::where('content_type','experience')->orderBy('created_at')->get();
+        //return view('rev.book.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
     }
 
     /**
@@ -216,8 +309,6 @@ class BookController extends Controller
     public function destroy($id)
     {
         $rev_books = rev_books::find($id);
-		$rev_shoppingcarts = rev_shoppingcarts::where('confirmationCode',$rev_books->ticket)->first();
-		if(isset($rev_shoppingcarts)) $rev_shoppingcarts->delete();
 		$rev_books->delete();
 		
     }
