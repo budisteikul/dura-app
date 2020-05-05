@@ -95,7 +95,7 @@ class BookingsDataTable extends DataTable
 				}
 				else
 				{
-					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button></div><div class="btn-group mb-2" role="group"></div></div>';
 				}
 				return $button;
 				

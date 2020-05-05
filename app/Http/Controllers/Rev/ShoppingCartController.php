@@ -63,7 +63,10 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
 						->where('bookingStatus','CART')->first();
 		
-		
+		if(!isset($rev_shoppingcarts))
+		{
+			return redirect("/booking/shoppingcart/empty");
+		}
 		
 		return view('blog.frontend.shopping-cart')
 				->with([
