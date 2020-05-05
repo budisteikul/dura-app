@@ -49,6 +49,15 @@ class BookController extends Controller
     public function create()
     {
 		/*
+		$rev_shoppingcart_products = rev_shoppingcart_products::get();
+		foreach($rev_shoppingcart_products as $shoppingcart_products)
+		{
+			$shoppingcart_products = rev_shoppingcart_products::find($shoppingcart_products->id);
+			$shoppingcart_products->date = BookClass::texttodate($shoppingcart_products->dateAsText);
+			$shoppingcart_products->save();
+		}
+		*/
+		/*
 		$rev_books = rev_books::get();
 		
 		foreach($rev_books as $book)

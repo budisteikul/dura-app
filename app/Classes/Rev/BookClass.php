@@ -86,7 +86,7 @@ class BookClass {
 				$rev_shoppingcart_products->image = $data['activityBookings'][$i]['invoice']['product']['keyPhoto']['derived'][2]['url'];
 				$rev_shoppingcart_products->title = $data['activityBookings'][$i]['product']['title'];
 				$rev_shoppingcart_products->rate = $data['activityBookings'][$i]['rateTitle'];
-				$rev_shoppingcart_products->date = $data['activityBookings'][$i]['invoice']['dates'];
+				$rev_shoppingcart_products->date = self::texttodate($data['activityBookings'][$i]['invoice']['dates']);
 				$rev_shoppingcart_products->save();
 				
 				$lineitems = $data['activityBookings'][$i]['invoice']['lineItems'];
@@ -237,7 +237,7 @@ class BookClass {
 			if(isset($product_invoice[$i]->product->keyPhoto->derived[2]->url)) $rev_shoppingcart_products->image = $product_invoice[$i]->product->keyPhoto->derived[2]->url;
 			$rev_shoppingcart_products->title = $activity[$i]->activity->title;
 			$rev_shoppingcart_products->rate = $activity[$i]->rate->title;
-			$rev_shoppingcart_products->date = $product_invoice[$i]->dates;
+			$rev_shoppingcart_products->date = self::texttodate($product_invoice[$i]->dates);
 			$rev_shoppingcart_products->save();
 			
 			$subtotal_product = 0;
@@ -546,7 +546,7 @@ class BookClass {
 			if(isset($product_invoice[$i]->product->keyPhoto->derived[2]->url)) $rev_shoppingcart_products->image = $product_invoice[$i]->product->keyPhoto->derived[2]->url;
 			$rev_shoppingcart_products->title = $activity[$i]->activity->title;
 			$rev_shoppingcart_products->rate = $activity[$i]->rate->title;
-			$rev_shoppingcart_products->date = $product_invoice[$i]->dates;
+			$rev_shoppingcart_products->date = self::texttodate($product_invoice[$i]->dates);
 			$rev_shoppingcart_products->save();
 			
 			$subtotal_product = 0;

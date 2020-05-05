@@ -141,7 +141,8 @@ body {
         	      <tr>
         	        <td class="text-no-opacity">
                 <?php
-				$tanggal = str_ireplace("@","<br>",$rev_shoppingcart_products->date);
+				$tanggal = \App\Classes\Rev\BookClass::datetotext($rev_shoppingcart_products->date);
+				$tanggal = str_ireplace("@","<br>",$tanggal);
 				?>
                 {!! $tanggal !!}
                     </td>

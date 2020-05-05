@@ -33,7 +33,7 @@ class BookingsDataTable extends DataTable
 				
 				$email = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
 				$phone = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;
-				$date = $rev_shoppingcarts->shoppingcart_products()->first()->date;
+				$date = BookClass::datetotext($rev_shoppingcarts->shoppingcart_products()->first()->date);
 				$channel = $rev_shoppingcarts->bookingChannel;
 				$product = $rev_shoppingcarts->shoppingcart_products()->first()->title;
 				$status = $rev_shoppingcarts->bookingStatus;

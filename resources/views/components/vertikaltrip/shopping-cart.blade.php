@@ -66,7 +66,7 @@ $( document ).ready(function() {
                                 	@endif
                     			</div>
                     			<div class="col-8">
-                                	{{ $shoppingcart_product->date }}
+                                	{{ \App\Classes\Rev\BookClass::datetotext($shoppingcart_product->date) }}
                                 	<br>
                                     {{ $shoppingcart_product->rate }}
                                     <br>
