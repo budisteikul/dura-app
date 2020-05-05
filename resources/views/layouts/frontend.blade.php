@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@hasSection('description')@yield('description')@else @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more.@elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")Hi we are from the Vertikal Trip team, we will help you to direct booking to food tour operator in the world.@else Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.@endif @endif">
+    <meta name="description" content="@hasSection('description')@yield('description')@else @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")Enjoy Jogja in Local Ways. Join us on this experience to try authentic Javanese dishes, play traditional games, travel on a becak, learn interesting fun facts about city, interact with locals and many more. @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")Hi we are from the Vertikal Trip team, we will help you to direct booking to food tour operator in the world.@else Hi we are from the Vertikal Trip team, we will give you complete Yogyakarta atmosphere, tradition, food, and culture. Along the journey we will accompany you so you can feel the real with locals experience with us, share our stories, experiences and traditions.@endif @endif">
     <meta name="author" content="Vertikal Trip">
     <meta name="robots" content="all,index,follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,7 +15,7 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2e3237">
 	<meta name="msapplication-TileColor" content="#2e3237">
 	<meta name="theme-color" content="#2e3237">
-    <title>@hasSection('title')@yield('title')@else @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")Yogyakarta Night Walking and Food Tours@else Book Amazing Things to Do With VERTIKAL TRIP @endif @endif</title>
+    <title>@hasSection('title')@yield('title')@else @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")Yogyakarta Night Walking and Food Tours @else Book Amazing Things to Do With VERTIKAL TRIP @endif @endif</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
 	<script src="/js/vertikaltrip-3.0.2.js"></script>
