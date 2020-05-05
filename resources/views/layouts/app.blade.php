@@ -62,7 +62,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/rev/book"><i class="far fa-circle"></i> {{ __('Booking') }}</a>
+                                    <a class="dropdown-item" href="/rev/booking"><i class="far fa-circle"></i> {{ __('Booking') }}</a>
 									<a class="dropdown-item" href="/rev/experiences"><i class="far fa-circle"></i> {{ __('Experiences') }}</a>
 									<a class="dropdown-item" href="/rev/review"><i class="far fa-circle"></i> {{ __('Review') }}</a>
                                     <a class="dropdown-item" href="/rev/resellers"><i class="far fa-circle"></i> {{ __('Channel') }}</a>

@@ -204,6 +204,7 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts->bookingStatus = 'CONFIRMED';
 		$rev_shoppingcarts->save();
 		
+		$email = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
 		Mail::to($email)->send(new Booking($rev_shoppingcarts->id));
 		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
 		

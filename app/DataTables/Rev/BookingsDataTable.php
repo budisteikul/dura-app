@@ -5,6 +5,7 @@ namespace App\DataTables\Rev;
 use App\Models\Rev\rev_shoppingcarts;
 use Yajra\DataTables\Services\DataTable;
 use App\Classes\Rev\BookClass;
+use Carbon\Carbon;
 
 class BookingsDataTable extends DataTable
 {
@@ -18,9 +19,6 @@ class BookingsDataTable extends DataTable
     {
         return datatables($query)
             ->addIndexColumn()
-			->addColumn('travelDate', function ($rev_shoppingcarts) {
-				return BookClass::texttodate($rev_shoppingcarts->shoppingcart_products()->first()->date);
-			})
 			->addColumn('booking', function ($rev_shoppingcarts) {
 				$confirmationCode = $rev_shoppingcarts->confirmationCode;
 				$name = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer .' '. $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer;
@@ -140,7 +138,7 @@ class BookingsDataTable extends DataTable
 							],
 						'pagingType' => 'full_numbers',
 						'responsive' => true,
-						'order' => [3,'desc']
+						'order' => [0,'desc']
                     ])
 					->ajax('/'.request()->path());
     }
@@ -155,8 +153,7 @@ class BookingsDataTable extends DataTable
         return [
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
-			["name" => "booking", "title" => "Booking", "data" => "booking"],
-			["name" => "travelDate", "title" => "Date", "data" => "travelDate"],
+			["name" => "booking", "title" => "Booking", "data" => "booking", "orderable" => false],
         ];
     }
 
