@@ -152,7 +152,7 @@ Route::get('/rev/experiences/import','Rev\ExperienceController@import')
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/experiences','Rev\ExperienceController',[ 'names' => 'experiences' ])
 	->middleware(['auth', 'verified']);
-Route::resource('/rev/shoppingcart','Rev\Backend\ShoppingCartController',[ 'names' => 'shoppingcarts' ])
+Route::resource('/rev/booking','Rev\BookingController',[ 'names' => 'bookings' ])
 	->middleware(['auth', 'verified']);
 //========================================================================
 // Blog App Route

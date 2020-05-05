@@ -197,6 +197,8 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts->orderID = $orderID;
 		$rev_shoppingcarts->authorizationID = $authorizationID;
 		$rev_shoppingcarts->confirmationCode = BookClass::get_ticket();
+		$rev_shoppingcarts->bookingChannel = 'WEBSITE';
+		$rev_shoppingcarts->paymentStatus = 1;
 		$rev_shoppingcarts->subtotal = $grand_total;
 		$rev_shoppingcarts->total = $grand_total;
 		$rev_shoppingcarts->bookingStatus = 'CONFIRMED';

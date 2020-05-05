@@ -24,6 +24,8 @@ class BookClass {
 			$rev_shoppingcarts = new rev_shoppingcarts();
 			$rev_shoppingcarts->bookingStatus = 'CONFIRMED';
 			$rev_shoppingcarts->confirmationCode = $data['confirmationCode'];
+			$rev_shoppingcarts->paymentStatus = 2;
+			$rev_shoppingcarts->bookingChannel = $data['seller']['title'];
 			$rev_shoppingcarts->sessionBooking = Uuid::uuid4()->toString();
 			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
 			$rev_shoppingcarts->save();
@@ -202,6 +204,8 @@ class BookClass {
 		$rev_shoppingcarts = new rev_shoppingcarts();
 		$rev_shoppingcarts->sessionId = $id;
 		$rev_shoppingcarts->sessionBooking = $sessionBooking;
+		$rev_shoppingcarts->bookingChannel = 'WEBSITE';
+		$rev_shoppingcarts->paymentStatus = 0;
 		if(isset($contents->promoCode)) $rev_shoppingcarts->promoCode = $contents->promoCode->code;
 		$rev_shoppingcarts->save();
 		
