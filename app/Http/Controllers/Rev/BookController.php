@@ -48,7 +48,7 @@ class BookController extends Controller
      */
     public function create()
     {
-		
+		/*
 		$rev_books = rev_books::get();
 		
 		foreach($rev_books as $book)
@@ -136,7 +136,7 @@ class BookController extends Controller
 			$rev_shoppingcart_rates->save();
 			
 		}
-		
+		*/
 		//$rev_resellers = rev_resellers::orderBy('name')->get();
 		//$blog_post = blog_posts::where('content_type','experience')->orderBy('created_at')->get();
         //return view('rev.book.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
