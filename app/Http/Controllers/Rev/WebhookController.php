@@ -24,48 +24,10 @@ class WebhookController extends Controller
 		{
 		case 'BOOKING_CONFIRMED':
 		
-		$product_id = BookClass::get_id($data['activityBookings'][0]['product']['id']);
-		$source_id = BookClass::get_reseller($data['bookingChannel']['uuid']);
-		$date = BookClass::texttodate($data['invoice']['productInvoices'][0]['dates']);
-		
-		$post_id = $product_id;
-		$name = $data['customer']['firstName'] .' '. $data['customer']['lastName'];
-		$email = $data['customer']['email'];
-		$phone = $data['customer']['phoneNumberCountryCode'] .' '. $data['customer']['phoneNumber'];
-		$date = $date;
-		$source = $source_id;
-		$traveller = $data['invoice']['productInvoices'][0]['lineItems'][0]['people'];
-		$ticket = $data['confirmationCode'];
-		$date_text = $data['invoice']['productInvoices'][0]['dates'];
-		$status = '2';
-		
-		try {
-			$rev_books = new rev_books();
-			$rev_books->post_id = $post_id;
-			$rev_books->name = $name;
-			$rev_books->email = $email;
-			$rev_books->phone = $phone;
-			$rev_books->date = $date;
-			$rev_books->source = $source;
-			$rev_books->traveller = $traveller;
-			$rev_books->date_text = $date_text;
-			$rev_books->ticket = $ticket;
-			$rev_books->status = $status;
-			$rev_books->save();
-		} catch (\Exception $e) {
-
-		}
-		
 		BookClass::webhook_insert_shoppingcart($data);
 		
 		break;
 		case 'BOOKING_ITEM_CANCELLED':
-			$rev_books = rev_books::where('ticket',$data['confirmationCode'])->first();
-			if(isset($rev_books))
-			{
-				$rev_books->status = 3;
-				$rev_books->save();
-			}
 			rev_shoppingcarts::where('confirmationCode',$data['confirmationCode'])->update(['bookingStatus'=>'CANCELLED']);
 		break;
 		}

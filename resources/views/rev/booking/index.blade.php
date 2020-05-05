@@ -41,6 +41,17 @@
 	}
 	
 	
+	function CREATE()
+	{
+		$.fancybox.open({
+        	type: 'ajax',
+       	 	src: '{{ route('bookings.create') }}',
+			touch: false,
+			modal: true,
+			autoFocus:false,
+   		});	
+	}
+	
 	function STATUS(id, status)
 	{
 		
@@ -79,9 +90,10 @@
 <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">shoppingcart</div>
+                <div class="card-header">Booking</div>
                 <div class="card-body">
-      
+      <button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add booking</button>
+       
       	<hr>
         
 		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}

@@ -204,39 +204,6 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts->bookingStatus = 'CONFIRMED';
 		$rev_shoppingcarts->save();
 		
-		foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-		{
-			//BokunClass::get_removeshoppingcart($rev_shoppingcarts->sessionId,$shoppingcart_products->bookingId);
-			//=============================================================
-			try {
-				$rev_books = new rev_books();
-				$rev_books->post_id = BookClass::get_id($shoppingcart_products->productId);
-				$shoppingcart = $shoppingcart_products->shoppingcarts()->first(); 
-				$rev_books->name = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer .' '. $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer;
-				$email = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
-				$rev_books->email = $email;
-				$rev_books->phone = $shoppingcart->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;;
-				$rev_books->date = BookClass::texttodate($shoppingcart_products->date);
-				$rev_resellers = rev_resellers::where('status',1)->first();
-				$rev_books->source = $rev_resellers->id;
-			
-				$traveller = 0;
-				foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
-				{
-					$traveller += $shoppingcart_rates->qty;
-				}
-			
-				$rev_books->traveller = $traveller;
-				$rev_books->status = 1;
-				$rev_books->ticket = $shoppingcart->confirmationCode;
-				$rev_books->date_text = $shoppingcart_products->date;
-				$rev_books->save();
-			} catch (\Exception $e) {
-
-			}
-			//=============================================================
-		}
-		
 		Mail::to($email)->send(new Booking($rev_shoppingcarts->id));
 		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
 		

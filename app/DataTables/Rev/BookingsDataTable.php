@@ -34,6 +34,7 @@ class BookingsDataTable extends DataTable
 				}
 				
 				$email = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
+				$phone = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;
 				$date = $rev_shoppingcarts->shoppingcart_products()->first()->date;
 				$channel = $rev_shoppingcarts->bookingChannel;
 				$product = $rev_shoppingcarts->shoppingcart_products()->first()->title;
@@ -73,16 +74,18 @@ class BookingsDataTable extends DataTable
 						}
 				if($note!="") $note = "----". $note;
 				
-				$content = '<a href="/pdf/invoice/'.$rev_shoppingcarts->id.'">'. $confirmationCode .'</a><br>';
-				$content .= 'Channel : '. $channel .'<br>';
-				$content .= 'Name : '. $name .'<br>';
-				$content .= 'Traveller : '. $traveller .'<br>';
-				$content .= 'Email : '. $email .'<br>';
-				$content .= 'Product : '. $product .'<br>';
-				$content .= 'Date : '. $date .'<br>';
-				$content .= 'Payment Status : '. $paymentStatus .'<br>';
-				$content .= 'Booking Status : '. $status .'<br>';
-				$content .= $note .'<br>';
+				$content = '';
+				if($confirmationCode!="") $content .= '<a href="/pdf/invoice/'.$rev_shoppingcarts->id.'">'. $confirmationCode .'</a><br>';
+				if($channel!="") $content .= 'Channel : '. $channel .'<br>';
+				if($name!="") $content .= 'Name : '. $name .'<br>';
+				if($traveller!="") $content .= 'Traveller : '. $traveller .'<br>';
+				if($email!="") $content .= 'Email : '. $email .'<br>';
+				if($phone!="") $content .= 'Phone : '. $phone .'<br>';
+				if($product!="") $content .= 'Product : '. $product .'<br>';
+				if($date!="") $content .= 'Date : '. $date .'<br>';
+				if($paymentStatus!="") $content .= 'Payment Status : '. $paymentStatus .'<br>';
+				if($status!="") $content .= 'Booking Status : '. $status .'<br>';
+				if($note!="") $content .= $note .'<br>';
 				
 				return $content;
 			})
