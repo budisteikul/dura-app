@@ -113,8 +113,9 @@ class BookingsDataTable extends DataTable
      */
     public function query(rev_shoppingcarts $model)
     {
-        $query = rev_shoppingcarts::get();
-        return $query;
+        //$query = rev_shoppingcarts::get();
+        //return $query;
+		return $model->query();
     }
 
     /**

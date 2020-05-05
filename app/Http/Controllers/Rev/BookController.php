@@ -48,6 +48,7 @@ class BookController extends Controller
      */
     public function create()
     {
+		
 		$rev_books = rev_books::get();
 		
 		foreach($rev_books as $book)
