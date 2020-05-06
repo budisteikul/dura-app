@@ -89,7 +89,7 @@ function REMOVE(id)
                 			 </div>
                     
                     		 <div class="row mb-4">
-                             <div class="col-10 row">
+                             <!-- div class="col-10 row" -->
                 				<div class="ml-4">
                                		@if(isset($shoppingcart_product->image))
                     				<img class="img-fluid" src="{{ $shoppingcart_product->image }}">
@@ -107,10 +107,10 @@ function REMOVE(id)
                                         <br>
                                     @endforeach
                                 </div>
-                			</div>
+                			<!-- /div>
                             <div class="col text-right">
-                            	<!-- button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button -->
-                            </div>
+                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+                            </div -->
                             </div>
                             <!-- Product detail booking -->
                             <!-- Pickup booking $activity -->
