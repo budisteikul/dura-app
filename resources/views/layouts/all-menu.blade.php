@@ -15,13 +15,13 @@
                 @php
                     $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
                 @endphp
-                @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
+                @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
                 @php
                     $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27673);
                 @endphp
                 @else
                 @php
-                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27673);
+                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
                 @endphp
                 @endif
                 @foreach($contents->children as $line1)

@@ -10,7 +10,6 @@ use App\Models\Rev\rev_shoppingcart_products;
 use App\Models\Rev\rev_shoppingcart_rates;
 use App\Models\Rev\rev_shoppingcart_questions;
 use App\Models\Rev\rev_shoppingcart_question_options;
-use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_resellers;
 use App\Models\Blog\blog_posts;
 

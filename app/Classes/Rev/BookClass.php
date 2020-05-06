@@ -2,7 +2,6 @@
 namespace App\Classes\Rev;
 use Illuminate\Http\Request;
 
-use App\Models\Rev\rev_books;
 use App\Models\Blog\blog_posts;
 
 use App\Classes\Rev\BokunClass;
@@ -721,18 +720,7 @@ class BookClass {
 		if($action=="update") self::update_shoppingcart($contents,$id,$sessionBooking);
 	}
 	
-	public static function check_status_invoice($id)
-	{
-		$status = "-";
-		$rev_books = rev_books::where('ticket',$id)->first();	
-		if(isset($rev_books))
-		{
-			if($rev_books->status==1) $status = "Paid in full";
-			if($rev_books->status==2) $status = "Paid in full";
-			if($rev_books->status==3) $status = "Refunded";	
-		}
-		return $status;
-	}
+	
 	
 	public static function get_ticket(){
     	$uuid = "VER-". rand(100000,999999);
@@ -855,30 +843,7 @@ class BookClass {
 		return $hasil;
 	}
 	
-	public static function canCancel($ticket){
-		$canCancel = false;
-		$rev_books = rev_books::where('ticket',$ticket)->first();
-		$limitDate = date('Y-m-d H:i:s', strtotime($rev_books->date. ' - 1 day'));
-		
-		$dateint = str_ireplace("-","",$limitDate);
-		$dateint = str_ireplace(":","",$dateint);
-		$dateint = str_ireplace(" ","",$dateint);
-		
-		$st1 = date('YmdHis');
-		$st2 = $dateint;
-		
-		if($st2 >= $st1)
-		{
-			$canCancel = true;
-			if(rev_shoppingcarts::where('confirmationCode',$ticket)->first()->bookingStatus=="CANCELLED") $canCancel = false;
-		}
-		else
-		{
-			$canCancel = false;
-		}
-		
-		return $canCancel;
-	}
+	
 	
 }
 ?>

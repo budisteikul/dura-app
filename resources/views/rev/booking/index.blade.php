@@ -10,10 +10,10 @@
 	function DELETE(id)
 	{
 		$.confirm({
-    		title: 'Warning',
+    		title: 'Delete this booking',
     		content: 'Are you sure?',
     		type: 'red',
-			icon: 'fa fa-warning',
+			icon: 'fa fa-trash-alt',
     		buttons: {   
         		ok: {
             		text: "OK",
@@ -30,6 +30,40 @@
 						}).done(function( msg ) {
 							table.ajax.reload( null, false );
 						});	
+            		}
+        		},
+        		cancel: function(){
+                	console.log('the user clicked cancel');
+        		}
+    		}
+		});
+		
+	}
+	
+	function CANCEL(id)
+	{
+		$.confirm({
+    		title: 'Cancel this booking',
+    		content: 'Are you sure?',
+    		type: 'red',
+			icon: 'fa fa-ban',
+    		buttons: {   
+        		ok: {
+            		text: "OK",
+            		btnClass: 'btn-danger',
+            		keys: ['enter'],
+            		action: function(){
+                 		var table = $('#dataTableBuilder').DataTable();
+							$.ajax({
+     						type: 'PUT',
+							data: {
+        						"_token": $("meta[name=csrf-token]").attr("content"),
+        						"cancel":"cancel"
+        					},
+     						url: '{{ route('bookings.index') }}/'+ id
+							}).done(function( msg ) {
+								table.ajax.reload( null, false );
+							});	
             		}
         		},
         		cancel: function(){
@@ -72,7 +106,7 @@
         	"update":status
         },
 		type: 'PUT',
-		url: "/rev/booking/"+ id
+		url: "{{ route('bookings.index') }}/"+ id
 		}).done(function( data ) {
 			if(data.id=="1")
 			{

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Blog\blog_posts;
 use App\Classes\Blog\BlogClass;
 use App\Classes\Rev\BokunClass;
-use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_reviews;
 
 use Illuminate\Support\Facades\Auth;
@@ -103,11 +102,7 @@ class ExperienceController extends Controller
 		
 		$blog_posts = blog_posts::findOrFail($id);		
 				
-				$rev_books = rev_books::where('post_id',$blog_posts->id)->get();
-				if(count($rev_books))
-				{
-					$limit = true;
-				}
+				
 				$rev_reviews = rev_reviews::where('post_id',$blog_posts->id)->get();
 				if(count($rev_reviews))
 				{

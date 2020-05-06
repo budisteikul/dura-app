@@ -7,7 +7,6 @@ use Yajra\DataTables\Services\DataTable;
 use Illuminate\Support\Str;
 
 use App\Models\Blog\blog_posts;
-use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_reviews;
 
 class ExperiencesDataTable extends DataTable
@@ -23,23 +22,14 @@ class ExperiencesDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->addColumn('action', function ($id) {
-				$check_book = false;
 				$check_review = false;
-				
-				
-				$rev_books = rev_books::where('post_id',$id->id)->get();
-				if(count($rev_books))
-				{
-					$check_book = true;
-				}
-				
 				$rev_reviews = rev_reviews::where('post_id',$id->id)->get();
 				if(count($rev_reviews))
 				{
 					$check_review = true;
 				}
 				
-				if($check_book || $check_review)
+				if($check_review)
 				{
 					
 					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button"  class="btn btn-light" disabled="true"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';

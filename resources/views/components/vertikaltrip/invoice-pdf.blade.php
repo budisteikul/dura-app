@@ -279,7 +279,7 @@ footer {
             <td>{{ number_format((float)$discount, 2, '.', '') }}</td>
           </tr>
           @endif
-          @if(\App\Classes\Rev\BookClass::check_status_invoice($rev_shoppingcarts->confirmationCode)=="Refunded")
+          @if($rev_shoppingcarts->bookingStatus=="CANCELLED")
           <tr>
             <td colspan="2"></td>
             <td colspan="2">REFUNDED</td>

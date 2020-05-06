@@ -30,7 +30,7 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 // Custom domain
 //========================================================================
 Route::domain('localhost')->group(function () {
-	Route::get('/', 'Blog\Frontend\BlogController@foodtours');
+	Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 	Route::get('/jogjafoodtour', 'Blog\Frontend\BlogController@jogjafoodtour');
 	Route::get('/foodtours', 'Blog\Frontend\BlogController@foodtours');
 	Route::get('/ratnawahyu', 'Blog\Frontend\TimelineController@index');
@@ -140,8 +140,6 @@ Route::get('/fin/profitloss', 'Fin\SalesController@profitloss')->middleware(['au
 //========================================================================
 // Reservation Admin
 //========================================================================
-Route::resource('/rev/book','Rev\BookController',[ 'names' => 'rev_book' ])
-	->middleware(['auth', 'verified']);
 Route::resource('/rev/review','Rev\ReviewController',[ 'names' => 'rev_review' ])
 	->middleware(['auth', 'verified']);	
 Route::resource('/rev/resellers','Rev\ResellerController',[ 'names' => 'resellers' ])

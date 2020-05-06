@@ -64,7 +64,7 @@ function STORE()
 	<div class="card-header">Add booking</div>
 	<div class="card-body">
 				
-<form action="{{ route('rev_book.store') }}" method="post" onSubmit="STORE(); return false;">
+<form onSubmit="STORE(); return false;">
 
 <div id="result"></div>
 

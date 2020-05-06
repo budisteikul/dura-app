@@ -77,18 +77,20 @@ class BookingsDataTable extends DataTable
 				if($note!="") $note = "----". $note;
 				
 				$content = '';
+				
 				if($confirmationCode!="") $content .= '<a href="/pdf/invoice/'.$rev_shoppingcarts->id.'">'. $confirmationCode .'</a><br>';
 				if($channel!="") $content .= 'Channel : '. $channel .'<br>';
 				if($name!="") $content .= 'Name : '. $name .'<br>';
 				if($traveller!="") $content .= 'Traveller : '. $traveller .'<br>';
 				if($email!="") $content .= 'Email : '. $email .'<br>';
 				if($phone!="") $content .= 'Phone : '. $phone .'<br>';
-				if($paymentStatus!="") $content .= 'Payment Status : '. $paymentStatus .'<br>';
-				if($status!="") $content .= 'Booking Status : '. $status .'<br>';
+				
 				if($note!="") $content .= $note .'<br>';
 				if($product!="") $content .= 'Product : '. $product .'<br>';
 				if($date!="") $content .= 'Date : '. $date .'<br>';
 				
+				if($paymentStatus!="") $content .= 'Payment Status : '. $paymentStatus .'<br>';
+				if($status!="") $content .= 'Booking Status : '. $status .'<br>';
 				
 				return ''. $content .'';
 			})
@@ -100,8 +102,14 @@ class BookingsDataTable extends DataTable
 				}
 				else
 				{
-					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group">
+					$cancelButton = '';
+					if($id->bookingStatus=="CONFIRMED")
+					{
+						$cancelButton = '<button id="btn-cancel" type="button" onClick="CANCEL(\''. $id->id .'\')" class="btn btn-warning btn-sm"><i class="fa fa-ban"></i> Cancel this booking</button>';
+					}
 					
+					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group">
+					'. $cancelButton .'
 					<button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button>
 					</div><div class="btn-group mb-2" role="group"></div></div>';
 				}

@@ -4,7 +4,6 @@ namespace App\DataTables\Rev;
 
 use App\Models\Rev\rev_resellers;
 use Yajra\DataTables\Services\DataTable;
-use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_reviews;
 
 class ResellersDataTable extends DataTable
@@ -20,14 +19,9 @@ class ResellersDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->addColumn('action', function ($id) {
-				$check_book = false;
 				$check_review = false;
 				
-				$rev_books = rev_books::where('source',$id->id)->get();
-				if(count($rev_books))
-				{
-					$check_book = true;
-				}
+				
 				$rev_reviews = rev_reviews::where('source',$id->id)->get();
 				if(count($rev_reviews))
 				{
@@ -53,7 +47,7 @@ class ResellersDataTable extends DataTable
 							$disabled = "";
 						}
 						
-				if($check_book || $check_review)
+				if($check_review)
 				{
 					return '<div class="btn-toolbar justify-content-end">
 						

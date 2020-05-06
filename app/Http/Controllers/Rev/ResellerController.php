@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\DataTables\Rev\ResellersDataTable;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Rev\rev_resellers;
-use App\Models\Rev\rev_books;
 use App\Models\Rev\rev_reviews;
 
 use Ramsey\Uuid\Uuid;
@@ -93,11 +92,7 @@ class ResellerController extends Controller
     {
 		$limit = false;
 		
-				$rev_books = rev_books::where('source',$id)->get();
-				if(count($rev_books))
-				{
-					$limit = true;
-				}
+				
 				$rev_reviews = rev_reviews::where('source',$id)->get();
 				if(count($rev_reviews))
 				{

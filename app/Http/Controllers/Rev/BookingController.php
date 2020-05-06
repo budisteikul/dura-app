@@ -137,6 +137,28 @@ class BookingController extends Controller
 	
 	public function update(Request $request, $id)
     {
+		if($request->input('cancel')!="")
+		{
+			$validator = Validator::make($request->all(), [
+          			'cancel' => 'in:cancel'
+       		]);
+				
+			if ($validator->fails()) {
+            	$errors = $validator->errors();
+				return response()->json($errors);
+       		}
+			
+			$rev_shoppingcarts = rev_shoppingcarts::find($id);
+			$rev_shoppingcarts->bookingStatus = 'CANCELLED';
+			$rev_shoppingcarts->save();
+			
+			return response()->json([
+					"id"=>"1",
+					"message"=>'success'
+					]);
+			
+		}
+		
 		if($request->input('update')!="")
 		{
 			$validator = Validator::make($request->all(), [
