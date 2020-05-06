@@ -9,6 +9,35 @@ $( document ).ready(function() {
 	$('#alert-failed').hide();
 });
 </script>
+<script language="javascript">
+function REMOVE(id)
+{
+	$('#remove-'+id).attr("disabled", true);
+	$('#remove-'+id).html('<i class="fa fa-spinner fa-spin"></i>');
+	
+	$.ajax({
+		data: {
+        	"_token": $("meta[name=csrf-token]").attr("content"),
+			"bookingId": id,
+        },
+		type: 'POST',
+		url: '/booking/remove'
+		}).done(function( data ) {
+			if(data.id=="1")
+			{
+				window.location.href = '/booking/checkout';
+			}
+			else
+			{
+				$('#remove-'+id).attr("disabled", false);
+				$('#remove-'+id).html('<i class="fa fa-trash-alt"></i>');
+			}
+		});
+	
+	
+	return false;
+}
+</script>
 @endpush
 
 <section id="booking" style="background-color:#ffffff">
@@ -60,6 +89,7 @@ $( document ).ready(function() {
                 			 </div>
                     
                     		 <div class="row mb-4">
+                             <div class="col-10 row">
                 				<div class="ml-4">
                                		@if(isset($shoppingcart_product->image))
                     				<img class="img-fluid" src="{{ $shoppingcart_product->image }}">
@@ -78,6 +108,10 @@ $( document ).ready(function() {
                                     @endforeach
                                 </div>
                 			</div>
+                            <div class="col text-right">
+                            	<!-- button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button -->
+                            </div>
+                            </div>
                             <!-- Product detail booking -->
                             <!-- Pickup booking $activity -->
                             @php

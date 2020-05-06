@@ -187,5 +187,10 @@ var '.$widget_hash.';
 	{
 		return self::get_connect('/country.json/findAll');
 	}
+	
+	public static function get_removeactivity($sessionId,$id)
+	{
+		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'. $id);
+	}
 }
 ?>

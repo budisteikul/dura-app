@@ -93,6 +93,7 @@ Route::get('/country', function () {
 Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');
 Route::post('/booking/checkout', 'Rev\ShoppingCartController@post_checkout');
+Route::post('/booking/remove', 'Rev\ShoppingCartController@removebookingid');
 Route::post('/booking/promo-code', 'Rev\ShoppingCartController@applypromocode');
 Route::post('/booking/promo-code/remove', 'Rev\ShoppingCartController@removepromocode');
 Route::post('/booking/payment', 'Rev\ShoppingCartController@payment');

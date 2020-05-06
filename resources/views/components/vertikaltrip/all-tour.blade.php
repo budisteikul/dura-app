@@ -1,6 +1,12 @@
+@if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 @php
 	$product_lists = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
 @endphp
+@else
+@php
+	$product_lists = \App\Classes\Rev\BokunClass::get_product_list_byid(27770);
+@endphp
+@endif
 @foreach($product_lists->children as $product_list)
 <section id="tour" style="background-color:#ffffff">
 <div class="container">

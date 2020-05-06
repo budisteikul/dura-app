@@ -213,6 +213,7 @@ class BookClass {
 		$rev_shoppingcarts->sessionId = $id;
 		$rev_shoppingcarts->sessionBooking = $sessionBooking;
 		$rev_shoppingcarts->bookingChannel = 'WEBSITE';
+		$rev_shoppingcarts->confirmationCode = self::get_ticket();
 		$rev_shoppingcarts->paymentStatus = 0;
 		if(isset($contents->promoCode)) $rev_shoppingcarts->promoCode = $contents->promoCode->code;
 		$rev_shoppingcarts->save();
@@ -791,7 +792,14 @@ class BookClass {
 	
 	public static function datetotext($str){
 		$date = \DateTime::createFromFormat('Y-m-d H:i:s', $str);
-		return $date->format('D d.M Y @ H:i');
+		if($date->format('H:i')=="00:00")
+		{
+			return $date->format('D d.M Y');
+		}
+		else
+		{
+			return $date->format('D d.M Y @ H:i');
+		}
 	}
 	
 	public static function lang($type,$str){

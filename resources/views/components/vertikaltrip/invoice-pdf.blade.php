@@ -236,13 +236,13 @@ footer {
         
           <?php
 						$grantTotal = 0;
+						$number = 1;
 						?>
                         @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
                         <?php
 						$subtotal = 0;
 						$total = 0;
 						$discount = 0;
-						$number = 1;
 						?>
                         @foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
                         <tbody>

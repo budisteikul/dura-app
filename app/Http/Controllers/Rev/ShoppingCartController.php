@@ -67,6 +67,11 @@ class ShoppingCartController extends Controller
 			return redirect("/booking/shoppingcart/empty");
 		}
 		
+		if($rev_shoppingcarts->shoppingcart_products()->count()==0)
+		{
+			return redirect("/booking/shoppingcart/empty");
+		}
+		
 		return view('blog.frontend.shopping-cart')
 				->with([
 						'rev_shoppingcarts'=>$rev_shoppingcarts
@@ -82,13 +87,8 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
 						->where('bookingStatus','CART')->first();
 		$value = number_format((float)$rev_shoppingcarts->total, 2, '.', '');		
-		
-		$name = '';
-		foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-		{
-			$name = $shoppingcart_products->title;
-		}		
-		$response = PaypalClass::createOrder($value,$name);
+			
+		$response = PaypalClass::createOrder($value,'BOOKING REFERENCE: '. $rev_shoppingcarts->confirmationCode);
 		
 		return response()->json($response);
 	}
@@ -198,7 +198,6 @@ class ShoppingCartController extends Controller
 		
 		$rev_shoppingcarts->orderID = $orderID;
 		$rev_shoppingcarts->authorizationID = $authorizationID;
-		$rev_shoppingcarts->confirmationCode = BookClass::get_ticket();
 		$rev_shoppingcarts->bookingChannel = 'WEBSITE';
 		$rev_shoppingcarts->paymentStatus = 1;
 		$rev_shoppingcarts->subtotal = $grand_total;
@@ -210,8 +209,12 @@ class ShoppingCartController extends Controller
 		Mail::to($email)->send(new Booking($rev_shoppingcarts->id));
 		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
 		
-		Session::forget('sessionBooking');
+		foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+		{
+			BokunClass::get_removeactivity($rev_shoppingcarts->sessionId,$shoppingcart_products->bookingId);
+		}
 		
+		Session::forget('sessionBooking');
 		return response()->json([
 					"id" => "1",
 					"message" => $rev_shoppingcarts->id
@@ -265,6 +268,28 @@ class ShoppingCartController extends Controller
 					"message" => $rev_shoppingcarts->sessionId
 				]);
 		}
+	}
+	
+	public function removebookingid(Request $request)
+	{
+		if(!Session::has('sessionBooking')){
+			return response()->json([
+					"id" => "2",
+					"message" => 'Variable Not Valid'
+				]);
+		}
+		
+		$sessionBooking = Session::get('sessionBooking');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		
+		$bookingId = $request->input('bookingId');
+		BokunClass::get_removeactivity($rev_shoppingcarts->sessionId,$bookingId);
+		BookClass::get_shoppingcart($rev_shoppingcarts->sessionId,"update");
+		
+			return response()->json([
+					"id" => "1",
+					"message" => $rev_shoppingcarts->sessionId
+				]);
 	}
 	
 	public function removepromocode(Request $request)

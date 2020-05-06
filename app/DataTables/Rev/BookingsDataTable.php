@@ -23,22 +23,11 @@ class BookingsDataTable extends DataTable
 				$confirmationCode = $rev_shoppingcarts->confirmationCode;
 				$name = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer .' '. $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer;
 				
-				$traveller = 0;
-				foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
-				{
-					foreach($shoppingcart_products->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
-					{
-						$traveller += $shoppingcart_rates->qty;
-					}
-				}
-				
 				$email = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
 				$phone = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;
 				
 				$channel = $rev_shoppingcarts->bookingChannel;
 				
-				$product = $rev_shoppingcarts->shoppingcart_products()->first()->title;
-				$date = BookClass::datetotext($rev_shoppingcarts->shoppingcart_products()->first()->date);
 				
 				$status = $rev_shoppingcarts->bookingStatus;
 				$paymentStatus = $rev_shoppingcarts->paymentStatus;
@@ -57,42 +46,62 @@ class BookingsDataTable extends DataTable
 						$paymentStatus = "NOT AVAILABLE";
 				}
 				
-				$note = '';
-				$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
-				$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->orderBy('order')->get();
-				if(count($pickup_questions))
-						{
-							foreach($pickup_questions as $pickup_question)
-							{
-								$note .= '<br>'. $pickup_question->label .' : '. $pickup_question->answer;
-							}
-						}
-				if(count($activityBookings))
-						{
-							foreach($activityBookings as $activityBooking)
-							{
-								$note .= '<br>'. $activityBooking->label .' : '. $activityBooking->answer;
-							}
-						}
-				if($note!="") $note = "----". $note;
+				
 				
 				$content = '';
 				
 				if($confirmationCode!="") $content .= '<a href="/pdf/invoice/'.$rev_shoppingcarts->id.'">'. $confirmationCode .'</a><br>';
 				if($channel!="") $content .= 'Channel : '. $channel .'<br>';
 				if($name!="") $content .= 'Name : '. $name .'<br>';
-				if($traveller!="") $content .= 'Traveller : '. $traveller .'<br>';
+				
 				if($email!="") $content .= 'Email : '. $email .'<br>';
 				if($phone!="") $content .= 'Phone : '. $phone .'<br>';
+				$pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
+				if(count($pickup_questions))
+						{
+							foreach($pickup_questions as $pickup_question)
+							{
+								$content .= 'Pickup : '. $pickup_question->answer .'<br>';
+							}
+						}
 				
-				if($note!="") $content .= $note .'<br>';
-				if($product!="") $content .= 'Product : '. $product .'<br>';
-				if($date!="") $content .= 'Date : '. $date .'<br>';
 				
 				if($paymentStatus!="") $content .= 'Payment Status : '. $paymentStatus .'<br>';
 				if($status!="") $content .= 'Booking Status : '. $status .'<br>';
 				
-				return ''. $content .'';
+				
+				
+				
+				$product_content = '';
+				foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
+				{
+					$rate = '';
+					if($shoppingcart_products->rate!="") $rate = '('. $shoppingcart_products->rate .')';
+					$product_content .= '<b>'. $shoppingcart_products->title .' '. $rate .'</b><br>';
+					$product_content .= BookClass::datetotext($shoppingcart_products->date) .'<br>';
+					foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
+					{
+						if($shoppingcart_rates->type=="product")
+						{
+							$product_content .= '- '. $shoppingcart_rates->qty .' '. $shoppingcart_rates->unitPrice .'<br>';
+						}
+						elseif($shoppingcart_rates->type=="pickup")
+						{
+							$product_content .= '- '. $shoppingcart_rates->title .'<br>';
+						}
+						
+						
+					}
+					
+					foreach($rev_shoppingcarts->shoppingcart_questions()->where('type','activityBookings')->where('bookingId',$shoppingcart_products->bookingId)->get() as $shoppingcart_questions)
+					{
+						$product_content .= $shoppingcart_questions->label .' : '. $shoppingcart_questions->answer .'<br>';
+					}
+					
+					$product_content .= "<br>";
+				}
+				
+				return ''. $content .'<br>'. $product_content ;
 			})
 			->addColumn('action', function ($id) {
 				
