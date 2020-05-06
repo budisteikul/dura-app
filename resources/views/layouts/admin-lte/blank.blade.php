@@ -67,7 +67,7 @@ $(function(){
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 		  <li class="dropdown messages-menu">
-            <a href="{{ route('rev_book.index') }}" class="dropdown-toggle">
+            <a href="{{ route('bookings.index') }}" class="dropdown-toggle">
               <i class="fa fa-ticket"></i>
 			</a>
           </li>

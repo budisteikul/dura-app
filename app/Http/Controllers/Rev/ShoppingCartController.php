@@ -223,8 +223,11 @@ class ShoppingCartController extends Controller
 	public function receipt($id)
     {
 		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
-		return view('blog.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
-    }
+		if(isset($rev_shoppingcarts))
+		{
+			return view('blog.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+		}
+	}
 	
 	public function applypromocode(Request $request)
 	{
@@ -288,20 +291,28 @@ class ShoppingCartController extends Controller
 	
 	public function get_invoice($id)
     {
-		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->first();
-		return view('components.vertikaltrip.invoice')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
+		if(isset($rev_shoppingcarts))
+		{
+			print("Invoice Valid");
+		}
+		else
+		{
+			print("Invoice NOT Valid");
+		}
 	}
 	
 	public function get_ticket($id)
     {
-		$watermark = false;
-		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first();
-		if(BookClass::check_status_invoice($rev_shoppingcart_products->shoppingcarts()->first()->confirmationCode)=="Refunded")
+		$rev_shoppingcart_products = rev_shoppingcart_products::where('id',$id)->first()->shoppingcarts()->where('bookingStatus','CONFIRMED')->first();
+		if(isset($rev_shoppingcart_products))
 		{
-			$watermark = true;
+			print("Ticket Valid");
 		}
-		
-		return view('components.vertikaltrip.ticket')->with(['rev_shoppingcart_products'=>$rev_shoppingcart_products,'watermark'=>$watermark]);
+		else
+		{
+			print("Ticket NOT Valid");
+		}
 	}
 	
 	public function get_invoicePDF($id)

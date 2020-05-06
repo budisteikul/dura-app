@@ -22,6 +22,7 @@ class BookingsDataTable extends DataTable
 			->addColumn('booking', function ($rev_shoppingcarts) {
 				$confirmationCode = $rev_shoppingcarts->confirmationCode;
 				$name = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer .' '. $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer;
+				
 				$traveller = 0;
 				foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
 				{
@@ -33,9 +34,12 @@ class BookingsDataTable extends DataTable
 				
 				$email = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer;
 				$phone = $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer;
-				$date = BookClass::datetotext($rev_shoppingcarts->shoppingcart_products()->first()->date);
+				
 				$channel = $rev_shoppingcarts->bookingChannel;
+				
 				$product = $rev_shoppingcarts->shoppingcart_products()->first()->title;
+				$date = BookClass::datetotext($rev_shoppingcarts->shoppingcart_products()->first()->date);
+				
 				$status = $rev_shoppingcarts->bookingStatus;
 				$paymentStatus = $rev_shoppingcarts->paymentStatus;
 				switch($paymentStatus)
@@ -79,13 +83,14 @@ class BookingsDataTable extends DataTable
 				if($traveller!="") $content .= 'Traveller : '. $traveller .'<br>';
 				if($email!="") $content .= 'Email : '. $email .'<br>';
 				if($phone!="") $content .= 'Phone : '. $phone .'<br>';
-				if($product!="") $content .= 'Product : '. $product .'<br>';
-				if($date!="") $content .= 'Date : '. $date .'<br>';
 				if($paymentStatus!="") $content .= 'Payment Status : '. $paymentStatus .'<br>';
 				if($status!="") $content .= 'Booking Status : '. $status .'<br>';
 				if($note!="") $content .= $note .'<br>';
+				if($product!="") $content .= 'Product : '. $product .'<br>';
+				if($date!="") $content .= 'Date : '. $date .'<br>';
 				
-				return $content;
+				
+				return ''. $content .'';
 			})
 			->addColumn('action', function ($id) {
 				
@@ -95,7 +100,10 @@ class BookingsDataTable extends DataTable
 				}
 				else
 				{
-					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button></div><div class="btn-group mb-2" role="group"></div></div>';
+					$button = '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group">
+					
+					<button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button>
+					</div><div class="btn-group mb-2" role="group"></div></div>';
 				}
 				return $button;
 				
@@ -152,7 +160,6 @@ class BookingsDataTable extends DataTable
     {
         return [
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
-            ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "booking", "title" => "Booking", "data" => "booking", "orderable" => false],
         ];
     }

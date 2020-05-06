@@ -109,7 +109,7 @@ class BookingController extends Controller
 			$title = blog_posts::where('product_id',$productId)->first()->title;
 			$rev_shoppingcart_products->title = $title;
 			$rev_shoppingcart_products->rate = '';
-			$rev_shoppingcart_products->date = BookClass::datetotext($date);
+			$rev_shoppingcart_products->date = $date;
 			$rev_shoppingcart_products->currency = 'USD';
 			$rev_shoppingcart_products->discount = 0;
 			$rev_shoppingcart_products->subtotal = 0;
