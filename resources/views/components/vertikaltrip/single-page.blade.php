@@ -48,7 +48,7 @@
   				{!!$contents->excerpt!!}
   				@endif
 			</div>
-			<ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
+			<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   				<li class="nav-item">
     				<a class="nav-link active text-theme" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><b>Description</b></a>
   				</li>
@@ -135,9 +135,7 @@
     	<div style="height:64px;"></div>
     	<div class="card mb-4 shadow p-2">
         									
-  											<div class="card-body">
-            								
-                
+  				<div class="card-body">
 				<h3>{!!\App\Classes\Rev\BookClass::lang('type',$contents->productCategory)!!} Details</h3>							
 				<br>
 											@if($contents->bookingCutoffHours!="")
@@ -165,30 +163,21 @@
             								@endif
                                             <br>
             								@endif
-            </div>
-			
-
- 			
-            
+            	</div>
 		</div>
         <div id="bookingCard" class="card mb-4 shadow p-2">
   			<div class="card-header">
-            	<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
-                Secure booking — only takes 2 minutes!
-				<br><br>
-                
+            			<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
+                		Secure booking — only takes 2 minutes!
+						<br><br>
                     	<i class="fa fa-ticket-alt text-secondary mb-4" style="width:20px;"></i> Instant Booking
 						<br>
 						<i class="fa fa-phone-alt text-secondary mb-4" style="width:20px;"></i> 24/7 Support
 						<br>
-                   
                     	<i class="fa fa-history text-secondary mb-4" style="width:20px;"></i> Free Cancellation
 						<br>
 						<i class="fab fa-paypal text-secondary mb-4" style="width:20px;"></i> Secure Payments
                         <br>
-                    
-				
-				
             </div>
  			<div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
     			{!! $calendar !!}

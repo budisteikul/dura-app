@@ -21,7 +21,7 @@
                 @endphp
                 @else
                 @php
-                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27770);
+                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
                 @endphp
                 @endif
                 @foreach($contents->children as $line1)

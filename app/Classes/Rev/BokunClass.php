@@ -192,5 +192,10 @@ var '.$widget_hash.';
 	{
 		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'. $id);
 	}
+	
+	public static function get_activeids()
+	{
+		return self::get_connect('/activity.json/active-ids');
+	}
 }
 ?>

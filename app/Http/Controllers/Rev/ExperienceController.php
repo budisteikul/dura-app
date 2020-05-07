@@ -169,6 +169,34 @@ class ExperienceController extends Controller
 	
 	public function import()
 	{
+		$contents = BokunClass::get_activeids();
+		
+		for($i=0;$i<count($contents->suppliers);$i++)
+		{
+			for($j=0;$j<count($contents->suppliers[$i]->activityIds);$j++)
+			{
+				$product_id = $contents->suppliers[$i]->activityIds[$j];
+				$blog_posts = blog_posts::where('product_id',$product_id)->first();
+				if(!isset($blog_posts))
+				{
+					
+					$activity = BokunClass::get_product($product_id);
+					$title = $activity->title;
+					$blog_posts = new blog_posts;
+					$blog_posts->title = $title;
+					$blog_posts->slug = BlogClass::makeSlug($title,Auth::user()->id);
+					$blog_posts->date = date('Y-m-d H:i:s');
+					$blog_posts->user_id = Auth::user()->id;
+					$blog_posts->content_type = 'experience';
+					$blog_posts->post_type = 'post';
+					$blog_posts->status = 1;
+					$blog_posts->product_id = $product_id;
+					$blog_posts->save();
+				}
+			}
+		}
+		return redirect("/rev/experiences");
+		/*
 		if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="vertikaltrip.com")
 		{
 			$product_lists = BokunClass::get_product_list_byid(27645);
@@ -206,5 +234,6 @@ class ExperienceController extends Controller
 			}
 		}
 		return redirect("/rev/experiences");
+		*/
 	}
 }

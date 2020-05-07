@@ -4,7 +4,7 @@
 @endphp
 @else
 @php
-	$product_lists = \App\Classes\Rev\BokunClass::get_product_list_byid(27770);
+	$product_lists = \App\Classes\Rev\BokunClass::get_product_list_byid(27645);
 @endphp
 @endif
 @foreach($product_lists->children as $product_list)
