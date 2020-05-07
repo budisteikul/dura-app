@@ -447,9 +447,10 @@ class BookClass {
 				$order = 2;
 				for($i=0;$i<count($activityBooking->pickupQuestions);$i++)
 				{
-					
+					$check_pickupQuestions = rev_shoppingcart_questions::where('shoppingcarts_id',$rev_shoppingcarts->id)->where('type','pickupQuestions')->first();
+					if(!isset($check_pickupQuestions))
+					{
 					$rev_shoppingcart_questions = new rev_shoppingcart_questions();
-					
 					$rev_shoppingcart_questions->shoppingcarts_id = $rev_shoppingcarts->id;
 					$rev_shoppingcart_questions->type = 'pickupQuestions';
 					$rev_shoppingcart_questions->questionId = $activityBooking->pickupQuestions[$i]->questionId;
@@ -461,6 +462,7 @@ class BookClass {
 					$rev_shoppingcart_questions->order = $order;
 					$rev_shoppingcart_questions->save();
 					$order += 1;
+					}
 				}
 			}
 			

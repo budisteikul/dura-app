@@ -9,35 +9,6 @@ $( document ).ready(function() {
 	$('#alert-failed').hide();
 });
 </script>
-<script language="javascript">
-function REMOVE(id)
-{
-	$('#remove-'+id).attr("disabled", true);
-	$('#remove-'+id).html('<i class="fa fa-spinner fa-spin"></i>');
-	
-	$.ajax({
-		data: {
-        	"_token": $("meta[name=csrf-token]").attr("content"),
-			"bookingId": id,
-        },
-		type: 'POST',
-		url: '/booking/remove'
-		}).done(function( data ) {
-			if(data.id=="1")
-			{
-				window.location.href = '/booking/checkout';
-			}
-			else
-			{
-				$('#remove-'+id).attr("disabled", false);
-				$('#remove-'+id).html('<i class="fa fa-trash-alt"></i>');
-			}
-		});
-	
-	
-	return false;
-}
-</script>
 @endpush
 
 <section id="booking" style="background-color:#ffffff">
@@ -49,174 +20,10 @@ function REMOVE(id)
 				<div style="height:56px;"></div>
             	<div class="row mb-2">  
 				<div class="col-lg-6 col-lg-auto mb-6 mt-4">
+                
             	<!-- ################################################################### -->  
-                 
-                <div class="card shadow">
-  				<div class="card-header bg-dark text-white pb-1">
-    				<h4><i class="fas fa-shopping-cart"></i> Order Summary</h4>
-  				</div>
-                <?php
-				$grand_subtotal = 0;
-				$grand_discount = 0;
-				$grand_total = 0;
-				?>
-                @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_product)
-                <!-- Product booking -->
-                <div class="card-body">
-                            <!-- Product detail booking -->
-							<div class="row mb-4">
-                				<div class="col-8">
-                    				<b>{{ $shoppingcart_product->title }}</b>
-                    			</div>
-                    			<div class="col-4 text-right">
-                                	<?php
-									$product_subtotal = 0;
-									$product_discount = 0;
-									$product_total = 0;
-									foreach($shoppingcart_product->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
-									{
-										$product_subtotal += $shoppingcart_rates->subtotal;
-										$product_discount += $shoppingcart_rates->discount;
-										$product_total += $shoppingcart_rates->total;
-									}
-									?>
-                                    @if($product_discount>0)
-                                    	<strike class="text-muted">${{ $product_subtotal }}</strike><br><b>${{ $product_total }}</b>
-                                    @else
-                    					<b>${{ $product_total }}</b>
-                    				@endif
-                                </div>
-                			 </div>
-                    
-                    		 <div class="row mb-4">
-                             <!-- div class="col-10 row" -->
-                				<div class="ml-4">
-                               		@if(isset($shoppingcart_product->image))
-                    				<img class="img-fluid" src="{{ $shoppingcart_product->image }}">
-                                	@endif
-                    			</div>
-                    			<div class="col-8">
-                                	{{ \App\Classes\Rev\BookClass::datetotext($shoppingcart_product->date) }}
-                                	<br>
-                                    {{ $shoppingcart_product->rate }}
-                                    <br>
-                                    @foreach($shoppingcart_product->shoppingcart_rates()->where('type','product')->get() as $shoppingcart_rates)
-                                    	
-                                        	{{ $shoppingcart_rates->qty }} x {{ $shoppingcart_rates->unitPrice }} (${{ $shoppingcart_rates->price }})
-                                    	
-                                        <br>
-                                    @endforeach
-                                </div>
-                			<!-- /div>
-                            <div class="col text-right">
-                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
-                            </div -->
-                            </div>
-                            <!-- Product detail booking -->
-                            <!-- Pickup booking $activity -->
-                            @php
-							$pickups = $shoppingcart_product->shoppingcart_rates()->where('type','pickup')->get();
-                            @endphp
-                            @if(count($pickups))
-                            <div class="card mb-2">
-                        		<div class="card-body">
-                               		@foreach($pickups as $shopppingcart_rates)
-									<div class="row mb-2">
-                						<div class="col-8">
-                                        <strong>Pick-up and drop-off services</strong>
-                                        <br>
-                                        {{ $shopppingcart_rates->unitPrice }}
-                    					</div>
-                    					<div class="col-4 text-right">
-                    						@if($shopppingcart_rates->discount > 0)
-                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike><br><b>${{ $shopppingcart_rates->total }}</b>
-                                            @else
-                                            	<b>${{ $shopppingcart_rates->subtotal }}</b>
-                    						@endif
-                                        </div>
-                					</div>
-                               		@endforeach
-								</div>
-                   			</div>
-							@endif
-                            <!-- Pickup booking $activity -->
-							
-                            <!-- Extra booking $activity -->
-                            @php
-                            $extra = $shoppingcart_product->shoppingcart_rates()->where('type','extra')->get();
-                            @endphp
-                            @if(count($extra))
-							<div class="card mb-2">
-                            
-                        		<div class="card-body">
-                                <div class="row col-12 mb-2">
-                            		<strong>Extras</strong>
-                            	</div>
-                                @foreach($extra as $shoppingcart_rates)
-									<div class="row mb-2">
-                						<div class="col-8">
-										{{ $shoppingcart_rates->title }}
-                    					</div>
-                    					<div class="col-4 text-right">
-                                        	@if($shopppingcart_rates->discount > 0)
-                                            	<strike class="text-muted">${{ $shopppingcart_rates->subtotal }}</strike><br><b>${{ $shopppingcart_rates->total }}</b>
-                                            @else
-                    							<b>${{ $shoppingcart_rates->subtotal }}</b>
-                                            @endif
-                    					</div>
-                					</div>
-                               @endforeach
-								</div>
-                   			</div>
-							<!-- Extra booking -->
-                            @endif
-                            
-				</div>
-                <!-- Product booking -->
-                <?php
-				$grand_subtotal += $shoppingcart_product->subtotal;
-				$grand_discount += $shoppingcart_product->discount;
-				$grand_total += $shoppingcart_product->total;
-				?>
-                
-                @endforeach
-                <div class="card-body pt-0 mt-0">
-                	<hr>
-                	<div class="row mb-2">
-                		<div class="col-8">
-                    		<span style="font-size:18px">Items</span>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    		<span style="font-size:18px">${{ $grand_subtotal }}</span>
-                    	</div>
-                	</div>
-                    @if($grand_discount>0)
-                    <div class="row mb-2">
-                		<div class="col-8">
-                    		<span style="font-size:18px">Discount</span>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    		<span style="font-size:18px">${{ $grand_discount }}</span>
-                    	</div>
-                	</div>
-                    @endif
-				</div>
-                
-                <div class="card-body pt-0">
-                	<hr class="mt-0"> 
-                    <div class="row mb-4 mt-0">
-                		<div class="col-8">
-                    		<b style="font-size:18px">Total (USD)</b>
-                    	</div>
-                    	<div class="col-4 text-right">
-                    	<b style="font-size:18px">${{ $grand_total }}</b>
-                    	</div>
-                	</div>
-                </div>
-				</div>
-                
+                @include('components.vertikaltrip.noremove-shoppingcart')
                 <!-- ################################################################### -->
-                <!-- Promo Code Section -->
 				@include('components.vertikaltrip.promo-code')
                 <!-- ################################################################### --> 
             </div>
@@ -252,7 +59,29 @@ function REMOVE(id)
     @endif
 </div>
 	@endforeach
- <!-- ########################################### -->   
+ <!-- ########################################### -->  
+    @php
+    $pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
+    @endphp
+    @if(count($pickup_questions))
+    
+    <h3>Pick-up questions</h3>
+    
+    @foreach($pickup_questions as $pickup_question)
+    @if($pickup_question->dataType=="READ_ONLY")
+    <div class="form-group" style="margin-bottom:3px;">
+	<strong>{{ $pickup_question->answer }}</strong>
+	<input type="hidden" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+	</div>
+    @else
+    <div class="form-group">
+	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
+	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+	</div>
+	@endif
+    @endforeach
+    @endif
+<!-- ########################################### --> 
     @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
     @php
     	$activityBookings = $rev_shoppingcarts->shoppingcart_questions()->where('bookingId',$shoppingcart_products->bookingId)->where('type','activityBookings')->orderBy('order')->get();
@@ -281,33 +110,12 @@ function REMOVE(id)
     @endif
     @endforeach
 <!-- ########################################### -->    
-    @php
-    $pickup_questions = $rev_shoppingcarts->shoppingcart_questions()->where('type','pickupQuestions')->orderBy('order')->get();
-    @endphp
-    @if(count($pickup_questions))
-    
-    <h3>Pick-up questions</h3>
-    
-    @foreach($pickup_questions as $pickup_question)
-    @if($pickup_question->dataType=="READ_ONLY")
-    <div class="form-group" style="margin-bottom:3px;">
-	<strong>{{ $pickup_question->answer }}</strong>
-	<input type="hidden" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
-	</div>
-    @else
-    <div class="form-group">
-	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
-	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
-	</div>
-	@endif
-    @endforeach
-    @endif
-<!-- ########################################### -->
 
-<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme"><i class="fas fa-lock"></i> <strong>Pay USD {{ $grand_total }}</strong></button>
+
+<button id="submit" type="submit" style="height:47px;" class="btn btn-lg btn-block btn-theme"><i class="fas fa-lock"></i> <strong>Pay {{ $rev_shoppingcarts->currency }} {{ $rev_shoppingcarts->total }}</strong></button>
 </form>
 <div id="proses">     
-  <h2>Pay with</h2>        
+  <h2>Pay with</h2>
   <div id="paypal-button-container"></div>
 </div>
 <div id="alert-success" class="alert alert-primary text-center" role="alert">
@@ -544,7 +352,7 @@ function STORE()
 					});
 					
 				$("#submit").attr("disabled", false);
-				$('#submit').html('<i class="fas fa-lock"></i> <strong>Pay USD {{ $grand_total }}</strong>');
+				$('#submit').html('<i class="fas fa-lock"></i> <strong>Pay {{ $rev_shoppingcarts->currency }} {{ $rev_shoppingcarts->total }}</strong>');
 				
 			}
 		});
