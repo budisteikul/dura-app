@@ -75,19 +75,19 @@ class BookingsDataTable extends DataTable
 				$product_content = '';
 				foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
 				{
-					$rate = '';
-					if($shoppingcart_products->rate!="") $rate = '('. $shoppingcart_products->rate .')';
-					$product_content .= '<b>'. $shoppingcart_products->title .' '. $rate .'</b><br>';
+					
+					$product_content .= '<b>'. $shoppingcart_products->title .'</b><br>';
+					if($shoppingcart_products->rate!="") $product_content .= ''. $shoppingcart_products->rate .'<br>';
 					$product_content .= BookClass::datetotext($shoppingcart_products->date) .'<br>';
 					foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
 					{
 						if($shoppingcart_rates->type=="product")
 						{
-							$product_content .= '- '. $shoppingcart_rates->qty .' '. $shoppingcart_rates->unitPrice .'<br>';
+							$product_content .= ''. $shoppingcart_rates->qty .' '. $shoppingcart_rates->unitPrice .'<br>';
 						}
 						elseif($shoppingcart_rates->type=="pickup")
 						{
-							$product_content .= '- '. $shoppingcart_rates->title .'<br>';
+							$product_content .= ''. $shoppingcart_rates->title .'<br>';
 						}
 						
 						
