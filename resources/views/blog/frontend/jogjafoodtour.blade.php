@@ -40,13 +40,13 @@
         "@type": "Offer",
         "url": "https://example.com/anvil",
         "priceCurrency": "USD",
-        "price": "44",
+        "price": "40",
         "priceValidUntil": "2020-12-31",
         "itemCondition": "https://schema.org/UsedCondition",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",
-          "name": "JOGJA FOOD TOUR"
+          "name": "VERTIKAL TRIP"
         }
       }
     }
