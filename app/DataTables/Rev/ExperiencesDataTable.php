@@ -21,6 +21,9 @@ class ExperiencesDataTable extends DataTable
     {
         return datatables($query)
             ->addIndexColumn()
+			->editColumn('title', function($id){
+				return $id->title .'<br><a href="'.url('/tour/'.$id->slug).'" target="_blank">'. url('/tour/'.$id->slug) .'</a>';
+			})
 			->addColumn('action', function ($id) {
 				$check_review = false;
 				$rev_reviews = rev_reviews::where('post_id',$id->id)->get();
@@ -39,7 +42,7 @@ class ExperiencesDataTable extends DataTable
 					return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
 				}
             })
-			->rawColumns(['action']);
+			->rawColumns(['action','title']);
     }
 
     /**

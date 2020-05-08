@@ -18,10 +18,9 @@ class PagesDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->editColumn('title', function ($id) {
-				return $id->title .'<br>'. $id->description;
-			})
-			->addColumn('link', function ($id) {
-				return url('/page/'.$id->slug);
+				$description = '';
+				if($id->description!="") $description .= '<br>'.$id->description;
+				return $id->title . $description .'<br><a href="'.url('/page/'.$id->slug).'" target="_blank">'. url('/page/'.$id->slug) .'</a>';
 			})
 			->addColumn('action', function ($id) {
 				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
@@ -79,7 +78,6 @@ class PagesDataTable extends DataTable
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "title", "title" => "title", "data" => "title"],
-			["name" => "link", "title" => "link", "data" => "link"],
         ];
     }
 
