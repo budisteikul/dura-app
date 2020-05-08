@@ -57,7 +57,7 @@
     				<a class="nav-link text-theme" id="meeting-tab" data-toggle="tab" href="#meeting" role="tab" aria-controls="meeting" aria-selected="false"><b>Meeting point</b></a>
   				</li>
   				@endif
-  				@if(!empty($contents->pickupPlaces))
+  				@if(!empty($pickup->pickupPlaces))
   				<li class="nav-item">
     				<a class="nav-link text-theme" id="pickup-tab" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup" aria-selected="false"><b>Pick-up</b></a>
   				</li>
@@ -115,7 +115,7 @@
   						</div>
 					</div>
 				@endif 
-				@if(!empty($contents->pickupPlaces))
+				@if(!empty($pickup->pickupPlaces))
   				<div class="tab-pane fade mt-4" id="pickup" role="tabpanel" aria-labelledby="pickup-tab">
   					We offer pick-up to the following places for this experience:
   					<br><br>

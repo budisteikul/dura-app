@@ -282,5 +282,19 @@ class BlogClass {
 			return $string_test;
 			
 		}
+		
+		public static function childrenrender($hierarchicalArray)
+		{
+			$html = '';
+			foreach($hierarchicalArray as $item) {
+				$html .= "<ul>";
+				$html .= "<li>".$item->title."</li>";
+				if(isset($item->children)) {
+                	$html .= self::childrenrender($item->children);
+            	}
+				$html .= "</ul>";
+			}
+        	return $html;
+		}
 }
 ?>

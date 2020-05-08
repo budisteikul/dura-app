@@ -81,6 +81,15 @@ Route::get('/tours/{id}', 'Blog\Frontend\BlogController@product_list_byid');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });
+Route::get('/coba', function () {
+	$contents = \App\Classes\Rev\BokunClass::get_product(132762);
+	$pickup = \App\Classes\Rev\BokunClass::get_product_pickup(132762);
+	//========================================================================
+	print_r($pickup);
+	//========================================================================
+});
+
+
 //========================================================================
 // Shopping Cart
 //========================================================================
