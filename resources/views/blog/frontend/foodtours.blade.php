@@ -49,14 +49,24 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-center">	
         			<div class="row">
-        					@foreach($contents->items as $content)
+        				@foreach($contents->items as $content)
+                        @php
+                        if(isset($content->activity->slug))
+                        {
+                        	$link = '/tour/'. $content->activity->slug;
+                        }
+                        else
+                        {
+                        	$link = '/tour?activityId='. $content->activity->id;
+                        }
+                        @endphp
         					<div class="col-lg-4 col-md-6 mb-4">
     							<div class="card h-100 shadow card-block rounded">
                             		@if(isset($content->activity->keyPhoto->fileName))
-  				 					<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
+  				 					<a href="{!! $link !!}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
   				 					@endif	
   									<div class="card-header bg-white border-0 text-left pb-0">
-        								<h3 class="mb-4"><a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="text-dark text-decoration-none">{{ $content->activity->title }}</a></h3>
+        								<h3 class="mb-4"><a href="{!! $link !!}" class="text-dark text-decoration-none">{{ $content->activity->title }}</a></h3>
       								</div>
                             		@if($content->activity->excerpt!="")
 									<div class="card-body pt-0">
@@ -77,7 +87,7 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]
                                     			</div>
                                     		</div>
   											<div class="ml-auto p-0">
-                                    			<a href="{{ \App\Classes\Rev\BookClass::get_slug($content->activity->id) }}" class="btn btn-theme btn-md "><i class="fas fa-info-circle"></i> More info</a>
+                                    			<a href="{!! $link !!}" class="btn btn-theme btn-md "><i class="fas fa-info-circle"></i> More info</a>
                                     		</div>
 										</div>
   									</div>
