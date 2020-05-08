@@ -30,18 +30,11 @@ use PDF;
 
 class ShoppingCartController extends Controller
 {
-    public function time_selector($id)
+    public function time_selector($slug)
 	{
-		$render = '';
-		$product_id = blog_posts::where('slug',$id)->first();
-		
-        if(!isset($product_id)){
-			return redirect("/");
-        }
-		
-		$calendar = BokunClass::get_widget($product_id->product_id);
-		
-		return view('blog.frontend.booking')->with(['product'=>$calendar,'product_id'=>$product_id]);
+		$contents = BokunClass::get_productbyslug($slug);
+		$calendar = BokunClass::get_widget($contents->id);
+		return view('blog.frontend.booking')->with(['product'=>$calendar,'product_id'=>$contents]);
 	}
 	
 	public function get_shoppingcart(Request $request)

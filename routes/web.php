@@ -103,7 +103,7 @@ Route::get('/booking/selfservice/{id}', 'Rev\ShoppingCartController@selfservice'
 Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');
 Route::get('/booking/invoice/{id}', 'Rev\ShoppingCartController@get_invoice');
 Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');
-Route::get('/booking/{id}', 'Rev\ShoppingCartController@time_selector');
+Route::get('/booking/{slug}', 'Rev\ShoppingCartController@time_selector');
 
 Route::get('/pdf/invoice/{id}', 'Rev\ShoppingCartController@get_invoicePDF');
 Route::get('/pdf/ticket/{id}', 'Rev\ShoppingCartController@get_ticketPDF');
