@@ -14,9 +14,28 @@ use Illuminate\Support\Facades\Request as Http;
 use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
 use GuzzleHttp\Client as GuzzleClient;
+Use Str;
 
 class BlogController extends Controller
 {
+	public function product_list($slug="",$id="")
+	{
+		$contents = BokunClass::get_product_list_byid($id);
+		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+	}
+	
+	public function product_page($slug="",$id="")
+    {
+		$contents = BokunClass::get_product($id);
+		$pickup = '';
+        if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
+        {
+			$pickup = BokunClass::get_product_pickup($id);
+        }
+		$calendar = BokunClass::get_widget($contents->id);
+        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
+	}
+	
 	public function vt_product_page(Request $request,$id="")
     {
         $post = blog_posts::where('slug',$id)->first();
@@ -46,7 +65,8 @@ class BlogController extends Controller
 	public function vt_product_list($id)
 	{
 		$contents = BokunClass::get_product_list_byid($id);
-		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+		return redirect("/activities/". Str::slug($contents->title) ."/". $contents->id);
+		//return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
 	}
 	
 	public function vertikaltrip()

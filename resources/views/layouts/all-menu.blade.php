@@ -33,14 +33,14 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @foreach($line1->children as $line2)
-                                 <a class="dropdown-item" href="/tours/{{ $line2->id }}">{{ $line2->title }}</a>
+                                 <a class="dropdown-item" href="/activities/{{ Str::slug($line1->title) }}/{{ $line2->id }}">{{ $line2->title }}</a>
                             @endforeach
                              </div>
                         </li>
 
                     @else
                         <li class="nav-item">
-                            <a class="nav-link menu-hover" href="/tours/{{ $line1->id }}">{{ $line1->title }}</a>
+                            <a class="nav-link menu-hover" href="/activities/{{ Str::slug($line1->title) }}/{{ $line1->id }}">{{ $line1->title }}</a>
                         </li>
                     @endif
                @endforeach

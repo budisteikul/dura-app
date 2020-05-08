@@ -73,7 +73,8 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 // Booking Page
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
-
+Route::get('/activity/{slug}/{id}', 'Blog\Frontend\BlogController@product_page');
+Route::get('/activities/{slug}/{id}', 'Blog\Frontend\BlogController@product_list');
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
 Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
