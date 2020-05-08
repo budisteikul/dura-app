@@ -56,6 +56,54 @@ class BlogController extends Controller
 		return redirect("/tours/". Str::slug($contents->title) ."/". $contents->id);
 	}
 	
+	public function sitemap()
+	{
+		$product_lists = BokunClass::get_product_list_byid(env('BOKUN_NAVBAR'));
+		foreach($product_lists->children as $line1)
+		{
+			echo url('/tours/'. Str::slug($line1->title).'/'.$line1->id) .'
+';
+			$contents = BokunClass::get_product_list_byid($line1->id);
+			foreach($contents->items as $content)
+			{
+						if(isset($content->activity->slug))
+                        {
+                        	$link = '/tour/'. $content->activity->slug;
+                        }
+                        else
+                        {
+                        	$link = '/tour?activityId='. $content->activity->id;
+                        }
+						echo url($link) .'
+';
+			}
+					
+			if(!empty($line1->children))
+			{
+				foreach($line1->children as $line2)
+				{
+					echo url('/tours/'. Str::slug($line2->title).'/'.$line2->id) .'
+';
+					$contents = BokunClass::get_product_list_byid($line2->id);
+					foreach($contents->items as $content)
+					{
+						if(isset($content->activity->slug))
+                        {
+                        	$link = '/tour/'. $content->activity->slug;
+                        }
+                        else
+                        {
+                        	$link = '/tour?activityId='. $content->activity->id;
+                        }
+						echo url($link) .'
+';
+					}
+				}
+			}
+			
+		}
+	}
+	
 	public function vertikaltrip()
 	{
 		$count = rev_reviews::count();

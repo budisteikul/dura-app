@@ -68,7 +68,7 @@ Route::domain('foodtours.xyz')->group(function () {
 //========================================================================
 Route::get('/', 'Blog\Frontend\BlogController@vertikaltrip');
 Route::post('/review', 'Rev\ReviewController@get_review');
-
+Route::get('/sitemap.txt', 'Blog\Frontend\BlogController@sitemap');
 //========================================================================
 // Booking Page
 //========================================================================

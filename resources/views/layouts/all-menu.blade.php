@@ -19,7 +19,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @foreach($line1->children as $line2)
-                                 <a class="dropdown-item" href="/tours/{{ Str::slug($line1->title) }}/{{ $line2->id }}">{{ $line2->title }}</a>
+                                 <a class="dropdown-item" href="/tours/{{ Str::slug($line2->title) }}/{{ $line2->id }}">{{ $line2->title }}</a>
                             @endforeach
                              </div>
                         </li>
