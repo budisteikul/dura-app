@@ -112,6 +112,11 @@ var '.$widget_hash.';
 		return self::get_connect('/activity.json/'. $activityId);
 	}
 	
+	public static function get_productbyslug($slug)
+	{
+		return self::get_connect('/activity.json/slug/'. $slug);
+	}
+	
 	public static function get_product_pickup($activityId)
 	{
 		return self::get_connect('/activity.json/'. $activityId .'/pickup-places');

@@ -73,11 +73,11 @@ Route::post('/review', 'Rev\ReviewController@get_review');
 // Booking Page
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
-Route::get('/activity/{slug}/{id}', 'Blog\Frontend\BlogController@product_page');
-Route::get('/activities/{slug}/{id}', 'Blog\Frontend\BlogController@product_list');
-Route::get('/tour/{id}', 'Blog\Frontend\BlogController@vt_product_page');
-Route::get('/tour', 'Blog\Frontend\BlogController@vt_product_page');
-Route::get('/tours/{id}', 'Blog\Frontend\BlogController@vt_product_list');
+
+Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product_page_byslug');
+Route::get('/tour', 'Blog\Frontend\BlogController@product_page_byid');
+Route::get('/tours/{slug}/{id}', 'Blog\Frontend\BlogController@product_list_byslug');
+Route::get('/tours/{id}', 'Blog\Frontend\BlogController@product_list_byid');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });

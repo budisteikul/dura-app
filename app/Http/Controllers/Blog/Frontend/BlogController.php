@@ -18,40 +18,28 @@ Use Str;
 
 class BlogController extends Controller
 {
-	public function product_list($slug="",$id="")
+	public function product_list_byslug($slug="",$id="")
 	{
 		$contents = BokunClass::get_product_list_byid($id);
 		return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
 	}
 	
-	public function product_page($slug="",$id="")
+	public function product_page_byslug($id="")
     {
-		$contents = BokunClass::get_product($id);
+		$contents = BokunClass::get_productbyslug($id);
+		
 		$pickup = '';
         if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
         {
-			$pickup = BokunClass::get_product_pickup($id);
+			$pickup = BokunClass::get_product_pickup($contents->id);
         }
 		$calendar = BokunClass::get_widget($contents->id);
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
 	}
 	
-	public function vt_product_page(Request $request,$id="")
+	public function product_page_byid(Request $request)
     {
-        $post = blog_posts::where('slug',$id)->first();
-        if(isset($post))
-        {
-            $id = $post->product_id;
-        }
-		else
-		{
-			$id = $request->input('activityId');
-			$blog_posts = blog_posts::where('product_id',$id)->first();
-			if(isset($blog_posts))
-			{
-				return redirect('/tour/'. $blog_posts->slug );
-			}
-		}
+        $id = $request->input('activityId');
         $contents = BokunClass::get_product($id);
         $pickup = '';
         if($contents->meetingType=='PICK_UP' || $contents->meetingType=='MEET_ON_LOCATION_OR_PICK_UP')
@@ -62,11 +50,10 @@ class BlogController extends Controller
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
     }
 	
-	public function vt_product_list($id)
+	public function product_list_byid($id)
 	{
 		$contents = BokunClass::get_product_list_byid($id);
-		return redirect("/activities/". Str::slug($contents->title) ."/". $contents->id);
-		//return view('blog.frontend.vt-product-list')->with(['contents'=>$contents]);
+		return redirect("/tours/". Str::slug($contents->title) ."/". $contents->id);
 	}
 	
 	public function vertikaltrip()
