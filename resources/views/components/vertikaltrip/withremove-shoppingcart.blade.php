@@ -85,7 +85,7 @@ function REMOVE(id)
                                 </div>
                 			</div>
                             <div class="col text-right">
-                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt fa-sm"></i></button>
+                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn btn-sm btn-danger"><i class="fa fa-trash-alt fa-sm"></i></button>
                             </div>
                             </div>
                             <!-- Product detail booking -->
