@@ -110,7 +110,7 @@ var '.$widget_hash.';
 	
 	public static function get_product($activityId)
 	{
-		$value = Cache::store('database')->remember('bokunProductbyid_'. $activityId, 3600, function() use ($activityId) {
+		$value = Cache::store('database')->remember('bokunProductbyid_'. $activityId, 86400, function() use ($activityId) {
     		return self::get_connect('/activity.json/'. $activityId);
 		});
 		return $value;
@@ -118,7 +118,7 @@ var '.$widget_hash.';
 	
 	public static function get_productbyslug($slug)
 	{
-		$value = Cache::store('database')->remember('bokunProductbyslug_'. $slug, 3600, function() use ($slug) {
+		$value = Cache::store('database')->remember('bokunProductbyslug_'. $slug, 86400, function() use ($slug) {
     		return self::get_connect('/activity.json/slug/'. $slug);
 		});
 		return $value;
@@ -126,7 +126,7 @@ var '.$widget_hash.';
 	
 	public static function get_product_pickup($activityId)
 	{
-		$value = Cache::store('database')->remember('bokunProductpickup_'. $activityId, 3600, function() use ($activityId) {
+		$value = Cache::store('database')->remember('bokunProductpickup_'. $activityId, 86400, function() use ($activityId) {
     		return self::get_connect('/activity.json/'. $activityId .'/pickup-places');
 		});
 		return $value;
@@ -134,7 +134,7 @@ var '.$widget_hash.';
 	
 	public static function get_product_list_byid($id)
 	{
-		$value = Cache::store('database')->remember('bokunProductlistbyid_'. $id, 3600, function() use ($id) {
+		$value = Cache::store('database')->remember('bokunProductlistbyid_'. $id, 86400, function() use ($id) {
     		return self::get_connect('/product-list.json/'. $id);
 		});
 		return $value;
@@ -142,7 +142,7 @@ var '.$widget_hash.';
 	
 	public static function get_product_list()
 	{
-		$value = Cache::store('database')->remember('bokunProductlist', 3600, function() {
+		$value = Cache::store('database')->remember('bokunProductlist', 86400, function() {
     		return self::get_connect('/product-list.json/list');
 		});
 		return $value;
@@ -150,7 +150,7 @@ var '.$widget_hash.';
 	
 	public static function get_questionshoppingcart($id)
 	{
-		$value = Cache::store('database')->remember('bokunQuestionshoppingcart_'. $id, 3600, function() use ($id) {
+		$value = Cache::store('database')->remember('bokunQuestionshoppingcart_'. $id, 86400, function() use ($id) {
     		return self::get_connect('/question.json/shopping-cart/'.$id);
 		});
 		return $value;
@@ -158,7 +158,7 @@ var '.$widget_hash.';
 	
 	public static function get_questionbooking($id)
 	{
-		$value = Cache::store('database')->remember('bokunQuestionbooking_'. $id, 3600, function() use ($id) {
+		$value = Cache::store('database')->remember('bokunQuestionbooking_'. $id, 86400, function() use ($id) {
     		return self::get_connect('/question.json/activity-booking/'.$id);
 		});
 		return $value;
@@ -166,7 +166,7 @@ var '.$widget_hash.';
 	
 	public static function get_activeids()
 	{
-		$value = Cache::store('database')->remember('bokunActiveids', 3600, function() {
+		$value = Cache::store('database')->remember('bokunActiveids', 86400, function() {
     		return self::get_connect('/activity.json/active-ids');
 		});
 		return $value;
@@ -174,7 +174,7 @@ var '.$widget_hash.';
 	
 	public static function get_country()
 	{
-		$value = Cache::store('database')->remember('bokunCountry', 3600, function() {
+		$value = Cache::store('database')->remember('bokunCountry', 86400, function() {
     		return self::get_connect('/country.json/findAll');
 		});
 		return $value;
