@@ -83,9 +83,8 @@ Route::get('/tours', function () {
 });
 Route::get('/coba', function () {
 	$contents = \App\Classes\Rev\BokunClass::get_product(132762);
-	$pickup = \App\Classes\Rev\BokunClass::get_product_pickup(132762);
 	//========================================================================
-	print_r($pickup);
+	print_r($contents);
 	//========================================================================
 });
 

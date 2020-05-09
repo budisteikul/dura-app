@@ -2,6 +2,7 @@
 namespace App\Classes\Rev;
 use Illuminate\Support\Str;
 use App\Models\Rev\rev_resellers;
+use Cache;
 
 class BokunClass {
 	
@@ -109,27 +110,74 @@ var '.$widget_hash.';
 	
 	public static function get_product($activityId)
 	{
-		return self::get_connect('/activity.json/'. $activityId);
+		$value = Cache::store('database')->remember('bokunProductbyid_'. $activityId, 3600, function() use ($activityId) {
+    		return self::get_connect('/activity.json/'. $activityId);
+		});
+		return $value;
 	}
 	
 	public static function get_productbyslug($slug)
 	{
-		return self::get_connect('/activity.json/slug/'. $slug);
+		$value = Cache::store('database')->remember('bokunProductbyslug_'. $slug, 3600, function() use ($slug) {
+    		return self::get_connect('/activity.json/slug/'. $slug);
+		});
+		return $value;
 	}
 	
 	public static function get_product_pickup($activityId)
 	{
-		return self::get_connect('/activity.json/'. $activityId .'/pickup-places');
+		$value = Cache::store('database')->remember('bokunProductpickup_'. $activityId, 3600, function() use ($activityId) {
+    		return self::get_connect('/activity.json/'. $activityId .'/pickup-places');
+		});
+		return $value;
 	}
 	
 	public static function get_product_list_byid($id)
 	{
-		return self::get_connect('/product-list.json/'. $id);
+		$value = Cache::store('database')->remember('bokunProductlistbyid_'. $id, 3600, function() use ($id) {
+    		return self::get_connect('/product-list.json/'. $id);
+		});
+		return $value;
 	}
 	
 	public static function get_product_list()
 	{
-		return self::get_connect('/product-list.json/list');
+		$value = Cache::store('database')->remember('bokunProductlist', 3600, function() {
+    		return self::get_connect('/product-list.json/list');
+		});
+		return $value;
+	}
+	
+	public static function get_questionshoppingcart($id)
+	{
+		$value = Cache::store('database')->remember('bokunQuestionshoppingcart_'. $id, 3600, function() use ($id) {
+    		return self::get_connect('/question.json/shopping-cart/'.$id);
+		});
+		return $value;
+	}
+	
+	public static function get_questionbooking($id)
+	{
+		$value = Cache::store('database')->remember('bokunQuestionbooking_'. $id, 3600, function() use ($id) {
+    		return self::get_connect('/question.json/activity-booking/'.$id);
+		});
+		return $value;
+	}
+	
+	public static function get_activeids()
+	{
+		$value = Cache::store('database')->remember('bokunActiveids', 3600, function() {
+    		return self::get_connect('/activity.json/active-ids');
+		});
+		return $value;
+	}
+	
+	public static function get_country()
+	{
+		$value = Cache::store('database')->remember('bokunCountry', 3600, function() {
+    		return self::get_connect('/country.json/findAll');
+		});
+		return $value;
 	}
 	
 	public static function get_checkout($sessionId)
@@ -157,16 +205,6 @@ var '.$widget_hash.';
 		return self::get_connect('/booking.json/activity-booking/'.$id);
 	}
 	
-	public static function get_questionshoppingcart($id)
-	{
-		return self::get_connect('/question.json/shopping-cart/'.$id);
-	}
-	
-	public static function get_questionbooking($id)
-	{
-		return self::get_connect('/question.json/activity-booking/'.$id);
-	}
-	
 	public static function get_removeshoppingcart($sessionId,$id)
 	{
 		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'.$id);
@@ -187,20 +225,11 @@ var '.$widget_hash.';
 	{
 		return self::get_connect('/activity.json/'.$id.'/availabilities?start='.$start.'&end='.$end.'&lang=EN&currency=USD&includeSoldOut=false');
 	}
-
-	public static function get_country()
-	{
-		return self::get_connect('/country.json/findAll');
-	}
 	
 	public static function get_removeactivity($sessionId,$id)
 	{
 		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'. $id);
 	}
 	
-	public static function get_activeids()
-	{
-		return self::get_connect('/activity.json/active-ids');
-	}
 }
 ?>
