@@ -150,18 +150,12 @@ var '.$widget_hash.';
 	
 	public static function get_questionshoppingcart($id)
 	{
-		$value = Cache::store('database')->remember('bokunQuestionshoppingcart_'. $id, 86400, function() use ($id) {
-    		return self::get_connect('/question.json/shopping-cart/'.$id);
-		});
-		return $value;
+		return self::get_connect('/question.json/shopping-cart/'.$id);
 	}
 	
 	public static function get_questionbooking($id)
 	{
-		$value = Cache::store('database')->remember('bokunQuestionbooking_'. $id, 86400, function() use ($id) {
-    		return self::get_connect('/question.json/activity-booking/'.$id);
-		});
-		return $value;
+		return self::get_connect('/question.json/activity-booking/'.$id);
 	}
 	
 	public static function get_activeids()

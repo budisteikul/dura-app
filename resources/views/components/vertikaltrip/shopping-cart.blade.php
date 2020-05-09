@@ -22,7 +22,7 @@ $( document ).ready(function() {
 				<div class="col-lg-6 col-lg-auto mb-6 mt-4">
                 
             	<!-- ################################################################### -->  
-                @include('components.vertikaltrip.noremove-shoppingcart')
+                @include('components.vertikaltrip.withremove-shoppingcart')
                 <!-- ################################################################### -->
 				@include('components.vertikaltrip.promo-code')
                 <!-- ################################################################### --> 

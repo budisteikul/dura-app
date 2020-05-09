@@ -71,7 +71,7 @@ function REMOVE(id)
                     				<img class="img-fluid" width="55" src="{{ $shoppingcart_product->image }}">
                                 	@endif
                     			</div>
-                    			<div class="col-8 ml-0" style="font-size:12px">
+                    			<div class="col-8" style="font-size:12px; margin-left:-8px">
                                 	{{ \App\Classes\Rev\BookClass::datetotext($shoppingcart_product->date) }}
                                 	<br>
                                     {{ $shoppingcart_product->rate }}
@@ -85,7 +85,7 @@ function REMOVE(id)
                                 </div>
                 			</div>
                             <div class="col text-right">
-                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+                            	<button id="remove-{{ $shoppingcart_product->bookingId }}" onClick="REMOVE({{ $shoppingcart_product->bookingId }});" class="btn-sm btn-danger"><i class="fa fa-trash-alt fa-sm"></i></button>
                             </div>
                             </div>
                             <!-- Product detail booking -->
@@ -99,9 +99,9 @@ function REMOVE(id)
                                		@foreach($pickups as $shopppingcart_rates)
 									<div class="row mb-2">
                 						<div class="col-8">
-                                        <strong>Pick-up and drop-off services</strong>
+                                        <strong style="font-size:12px;">Pick-up and drop-off services</strong>
                                         <br>
-                                        {{ $shopppingcart_rates->unitPrice }}
+                                        <span style="font-size:12px;">{{ $shopppingcart_rates->unitPrice }}</span>
                     					</div>
                     					<div class="col-4 text-right">
                     						@if($shopppingcart_rates->discount > 0)
