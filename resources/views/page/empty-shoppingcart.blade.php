@@ -22,7 +22,7 @@
 					
                  			<!-- ##### -->
                  			<div class="row col-md-12  mx-auto d-flex justify-content-center">
-								<div class="textwidget my-auto" style=" min-height:250px;">
+								<div class="textwidget my-auto" style=" min-height:180px;">
                                 <div style="height:50px;"></div>
 					 			<!-- ##### content ############################################################## -->
 					  			<br>
