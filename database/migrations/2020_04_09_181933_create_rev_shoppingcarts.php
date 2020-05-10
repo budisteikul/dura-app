@@ -17,7 +17,6 @@ class CreateRevShoppingcarts extends Migration
             $table->uuid('id')->primary();
 			
 			$table->string('bookingStatus')->default('CART');
-			$table->string('sessionBooking')->nullable();
 			$table->string('sessionId')->nullable();
 			$table->string('bookingChannel')->nullable();
 			$table->tinyInteger('paymentStatus')->default(1);
