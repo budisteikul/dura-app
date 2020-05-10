@@ -182,11 +182,11 @@ footer {
            <img src="data:image/png;base64, {{ base64_encode(QrCode::errorCorrection('H')->format('png')->size(111)->margin(0)->generate(url('/booking/invoice/'.$rev_shoppingcarts->id))) }} ">
            				
            </td>
-           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px;">
+           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px; line-height: 18px; font-size:14px; color:#777777">
                         <img src="img/logo-blue.png" height="30" />
-                        <div style="margin-top:0px;">Jl. Abiyoso VII No.190 Bantul ID</div>
-                        <div>+62 857 43 112 112</div>
-                        <div>guide@vertikaltrip.com</div>
+                        <div style="margin-top:3px;">Jl. Abiyoso VII No.190 Bantul ID</div>
+                        <div>Telp: +62 857 43 112 112</div>
+                        <div>Email: guide@vertikaltrip.com</div>
            </td>
          </tr>
        </tbody>
@@ -197,26 +197,26 @@ footer {
 <table border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px; margin-top:0px;">
        <tbody>
          <tr>
-           <td style="background-color:#FFFFFF; text-align:left; padding-left:0px; width:40%">
+           <td style="background-color:#FFFFFF; text-align:left; padding-left:0px; padding-top:0px; width:40%">
            
          <div id="client">
-          <div class="to">INVOICE TO:</div>
-          <h2 class="name">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer }}
+          <div class="to" style=" line-height: 18px; font-size:14px;">INVOICE TO:</div>
+          <h2 class="name" style=" line-height: 18px; font-size:14px;">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','firstName')->first()->answer }}
                         {{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','lastName')->first()->answer }} </h2>
-          <div class="address">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer }}</div>
-          <div class="email"><a href="mailto:{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} ">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} </a></div>
+          <div class="address" style=" line-height: 18px; font-size:14px;">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','phoneNumber')->first()->answer }}</div>
+          <div class="email" style=" line-height: 18px; font-size:14px;"><a href="mailto:{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} ">{{ $rev_shoppingcarts->shoppingcart_questions()->select('answer')->where('type','mainContactDetails')->where('questionId','email')->first()->answer }} </a></div>
         </div>
            				
            </td>
-           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px;">
+           <td style="background-color:#FFFFFF; text-align:right; padding-right:0px; padding-top:0px;">
             <div id="invoice">
           		<h1>INVOICE {{ $rev_shoppingcarts->confirmationCode }}</h1>
-          		<div class="date">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
+          		<div class="date" style=" line-height: 18px; font-size:14px;">Date of Invoice: {{ Carbon\Carbon::parse($rev_shoppingcarts->created_at)->formatLocalized('%d %b %Y') }}</div>
           		@php
                 	$min_date = $rev_shoppingcarts->shoppingcart_products()->orderBy('date','asc')->first()->date;
                 @endphp
-                <div class="date">Due Date: {{ Carbon\Carbon::parse($min_date)->formatLocalized('%d %b %Y') }}</div>
-          		<div class="date">Status: {{ $rev_shoppingcarts->bookingStatus }}</div>
+                <div class="date" style=" line-height: 18px; font-size:14px;">Due Date: {{ Carbon\Carbon::parse($min_date)->formatLocalized('%d %b %Y') }}</div>
+          		<div class="date" style=" line-height: 18px; font-size:14px;">Status: {{ $rev_shoppingcarts->bookingStatus }}</div>
         	</div>           
            </td>
          </tr>
