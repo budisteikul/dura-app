@@ -34,7 +34,7 @@ class BookClass {
 				$bookingChannel = $data['seller']['title'];
 			}
 			$rev_shoppingcarts->bookingChannel = $bookingChannel;
-			$rev_shoppingcarts->sessionBooking = Uuid::uuid4()->toString();
+			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
 			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
 			$rev_shoppingcarts->save();
 			
@@ -204,14 +204,13 @@ class BookClass {
 			return $rev_shoppingcarts->id;
 	}
 	
-	public static function insert_shoppingcart($contents,$id,$sessionBooking)
+	public static function insert_shoppingcart($contents,$id)
 	{
 		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->delete();
 		
 		$activity = $contents->activityBookings;
 		$rev_shoppingcarts = new rev_shoppingcarts();
 		$rev_shoppingcarts->sessionId = $id;
-		$rev_shoppingcarts->sessionBooking = $sessionBooking;
 		$rev_shoppingcarts->bookingChannel = 'WEBSITE';
 		$rev_shoppingcarts->confirmationCode = self::get_ticket();
 		$rev_shoppingcarts->paymentStatus = 0;
@@ -513,12 +512,11 @@ class BookClass {
 		}
 	}
 	
-	public static function update_shoppingcart($contents,$id,$sessionBooking)
+	public static function update_shoppingcart($contents,$id)
 	{
 		$activity = $contents->activityBookings;
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId',$id)->where('sessionBooking',$sessionBooking)->first();
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$id)->first();
 		$rev_shoppingcarts->sessionId = $id;
-		$rev_shoppingcarts->sessionBooking = $sessionBooking;
 		if(isset($contents->promoCode))
 		{
 			$rev_shoppingcarts->promoCode = $contents->promoCode->code;
@@ -531,6 +529,7 @@ class BookClass {
 		
 		$rev_shoppingcarts->shoppingcart_products()->delete();
 		
+
 		$grand_total = 0;
 		$grand_subtotal = 0;
 		$grand_discount = 0;
@@ -709,18 +708,18 @@ class BookClass {
 	
 	public static function get_shoppingcart($id,$action="insert")
 	{
-		$lastsessionBooking = Session::get('sessionBooking');
-		if(Session::has('sessionBooking')){
-			$sessionBooking = Session::get('sessionBooking');
+		$lastsessionId = Session::get('sessionId');
+		if(Session::has('sessionId')){
+			$sessionId = Session::get('sessionId');
 		}else{
-			$sessionBooking = Uuid::uuid4()->toString();
-			Session::put('sessionBooking',$sessionBooking);
+			$sessionId = $id;
+			Session::put('sessionId',$sessionId);
 		}
 		
 		//========================================================================
 		$contents = BokunClass::get_shoppingcart($id);
-		if($action=="insert") self::insert_shoppingcart($contents,$id,$sessionBooking);
-		if($action=="update") self::update_shoppingcart($contents,$id,$sessionBooking);
+		if($action=="insert") self::insert_shoppingcart($contents,$id);
+		if($action=="update") self::update_shoppingcart($contents,$id);
 	}
 	
 	

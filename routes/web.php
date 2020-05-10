@@ -82,9 +82,10 @@ Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });
 Route::get('/coba', function () {
-	$contents = \App\Classes\Rev\BokunClass::get_product(132762);
+	$rev_shoppingcarts = \App\Models\Rev\rev_shoppingcarts::where('sessionId','06d81be0-f82d-41b0-a802-7f0481312175')->first();
+	$rev_shoppingcarts->shoppingcart_products()->delete();
 	//========================================================================
-	print_r($contents);
+	
 	//========================================================================
 });
 

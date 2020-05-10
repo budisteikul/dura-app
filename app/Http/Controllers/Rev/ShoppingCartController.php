@@ -47,12 +47,12 @@ class ShoppingCartController extends Controller
 	public function get_checkout(Request $request)
 	{
 		
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return redirect("/booking/shoppingcart/empty");
 		}
 		
-		$sessionBooking = Session::get('sessionBooking');
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
+		$sessionId = Session::get('sessionId');
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)
 						->where('bookingStatus','CART')->first();
 		
 		if(!isset($rev_shoppingcarts))
@@ -73,11 +73,11 @@ class ShoppingCartController extends Controller
 	
 	public function createPayment(Request $request)
 	{
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return redirect("/booking/shoppingcart/empty");
 		}
-		$sessionBooking = Session::get('sessionBooking');
-		$rev_shoppingcarts = rev_shoppingcarts::where('sessionBooking', $sessionBooking)
+		$sessionId = Session::get('sessionId');
+		$rev_shoppingcarts = rev_shoppingcarts::where('sessionId', $sessionId)
 						->where('bookingStatus','CART')->first();
 		$value = number_format((float)$rev_shoppingcarts->total, 2, '.', '');		
 			
@@ -88,16 +88,16 @@ class ShoppingCartController extends Controller
 	
 	public function post_checkout(Request $request)
 	{
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return response()->json([
 					"id" => "2",
 					"message" => 'Variable Not Valid'
 				]);
 		}
 		
-		$sessionBooking = Session::get('sessionBooking');
+		$sessionId = Session::get('sessionId');
 		
-		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 		
 		
 			foreach($rev_shoppingcarts->shoppingcart_questions()->get() as $question)
@@ -162,7 +162,7 @@ class ShoppingCartController extends Controller
 			return response()->json($errors);
        	}
 		
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			
 			return response()->json([
 					"id" => "2",
@@ -171,9 +171,9 @@ class ShoppingCartController extends Controller
 		}
 		
 		
-		$sessionBooking = Session::get('sessionBooking');
+		$sessionId = Session::get('sessionId');
 		
-		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 		
 		$grand_total = $rev_shoppingcarts->total;
 		
@@ -207,7 +207,7 @@ class ShoppingCartController extends Controller
 			BokunClass::get_removeactivity($rev_shoppingcarts->sessionId,$shoppingcart_products->bookingId);
 		}
 		
-		Session::forget('sessionBooking');
+		Session::forget('sessionId');
 		return response()->json([
 					"id" => "1",
 					"message" => $rev_shoppingcarts->id
@@ -226,7 +226,7 @@ class ShoppingCartController extends Controller
 	
 	public function applypromocode(Request $request)
 	{
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return response()->json([
 					"id" => "2",
 					"message" => 'Variable Not Valid'
@@ -241,8 +241,8 @@ class ShoppingCartController extends Controller
        	}
 		
 		$promocode = $request->input('promocode');
-		$sessionBooking = Session::get('sessionBooking');
-		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		$sessionId = Session::get('sessionId');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 		
 		$contents = BokunClass::get_applypromocode($rev_shoppingcarts->sessionId,$promocode);
 		
@@ -265,15 +265,15 @@ class ShoppingCartController extends Controller
 	
 	public function removebookingid(Request $request)
 	{
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return response()->json([
 					"id" => "2",
 					"message" => 'Variable Not Valid'
 				]);
 		}
 		
-		$sessionBooking = Session::get('sessionBooking');
-		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		$sessionId = Session::get('sessionId');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 		
 		$bookingId = $request->input('bookingId');
 		BokunClass::get_removeactivity($rev_shoppingcarts->sessionId,$bookingId);
@@ -287,15 +287,15 @@ class ShoppingCartController extends Controller
 	
 	public function removepromocode(Request $request)
 	{
-		if(!Session::has('sessionBooking')){
+		if(!Session::has('sessionId')){
 			return response()->json([
 					"id" => "2",
 					"message" => 'Variable Not Valid'
 				]);
 		}
 		
-		$sessionBooking = Session::get('sessionBooking');
-		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionBooking',$sessionBooking)->first();
+		$sessionId = Session::get('sessionId');
+		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 		
 		BokunClass::get_removepromocode($rev_shoppingcarts->sessionId);
 		BookClass::get_shoppingcart($rev_shoppingcarts->sessionId,"update");
