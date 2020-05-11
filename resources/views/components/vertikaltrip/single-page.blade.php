@@ -358,7 +358,7 @@ a.label:focus {
 				<i class="fa fa-spinner icon-spin icon-2x pull-left"></i> processing...
 			</div>
 		</div>
-		<script src="/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js"></script>
+		
         </div>
 			</div>
 </div>
