@@ -79,7 +79,7 @@ class BlogController extends Controller
 		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
 		$middle = json_encode($availability);
 		$last = '}]';
-		$availability = $first.$middle.$last;
+		$firstavailability = $first.$middle.$last;
 		
 		$microtime = $availability[0]->date;
 		$month = date("n",$microtime/1000);
