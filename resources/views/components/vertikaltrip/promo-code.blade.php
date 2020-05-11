@@ -5,6 +5,7 @@ function PROMOCODE()
 	$('#alert-promocode-success').fadeOut("slow");
 	$('#alert-promocode-failed').fadeOut("slow");
 	$("#apply").attr("disabled", true);
+	$("#promocode").attr("disabled", true);
 	$('#apply').html('<i class="fa fa-spinner fa-spin"></i>');
 	
 	$.ajax({
@@ -24,6 +25,7 @@ function PROMOCODE()
 			{
 				$('#promocode').val('');
 				$('#alert-promocode-failed').fadeIn("slow");
+				$("#promocode").attr("disabled", false);
 				$("#apply").attr("disabled", false);
 				$('#apply').html('Apply');
 			}
