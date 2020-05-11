@@ -18,7 +18,7 @@ class BokunClass {
 		$widget_id = explode("_",$widget_hash);
 		$widget_id = str_ireplace("w","",$widget_id[0]);
 		
-		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		$bookingChannelUUID = env("BOKUN_BOOKING_CHANNEL");
 		
 		if(env("BOKUN_WIDGET")=="classic")
 		{
@@ -60,8 +60,6 @@ var '.$widget_hash.';
 	
 	public static function get_connect($path,$method = 'GET',$accept = 'application/json',$data="")
 	{
-		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
-		
 		if(env("BOKUN_ENV")=="production")
 		{
 			$endpoint = "https://api.bokun.io";
@@ -86,13 +84,9 @@ var '.$widget_hash.';
           'X-Bokun-AccessKey' => $bokun_accesskey,
           'X-Bokun-Date' => $date,
           'X-Bokun-Signature' => $base64_signature,
-		  'X-Bokun-Channel' => $bookingChannelUUID,
+		  'X-Bokun-Channel' => env("BOKUN_BOOKING_CHANNEL"),
         ];
     
-        //$client = new \GuzzleHttp\Client(['headers' => $headers]);
-    	//$response = $client->request($method, $endpoint.$path.$query);
-        //$statusCode = $response->getStatusCode();   
-		
 		$client = new \GuzzleHttp\Client(['headers' => $headers,'exceptions' => false]);
 		if($method=="POST")
 		{
@@ -125,7 +119,6 @@ var '.$widget_hash.';
 		}
 		else
 		{
-			//print_r($response);
 			header("Location: /");
 			exit();
 		}

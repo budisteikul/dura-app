@@ -16,6 +16,8 @@ use Carbon\Carbon;
 use GuzzleHttp\Client as GuzzleClient;
 Use Str;
 Use Session;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 class BlogController extends Controller
 {
@@ -36,14 +38,14 @@ class BlogController extends Controller
         }
 		
 		if(Session::has('sessionId')){
-			$sessionId = \Session::get('sessionId');
+			$sessionId = Session::get('sessionId');
 		}else{
-			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
-			\Session::put('sessionId',$sessionId);
+			$sessionId = Uuid::uuid4()->toString();
+			Session::put('sessionId',$sessionId);
 		}
-		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		$bookingChannelUUID = env("BOKUN_BOOKING_CHANNEL");
 		
-		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$availability = BokunClass::get_availabilityactivity($contents->id,1);
 		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
 		$middle = json_encode($availability);
 		$last = '}]';
@@ -65,8 +67,15 @@ class BlogController extends Controller
 			$pickup = BokunClass::get_product_pickup($id);
         }
 		
+		if(Session::has('sessionId')){
+			$sessionId = Session::get('sessionId');
+		}else{
+			$sessionId = Uuid::uuid4()->toString();
+			Session::put('sessionId',$sessionId);
+		}
+		$bookingChannelUUID = env("BOKUN_BOOKING_CHANNEL");
 		
-		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$availability = BokunClass::get_availabilityactivity($contents->id,1);
 		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
 		$middle = json_encode($availability);
 		$last = '}]';
@@ -82,14 +91,14 @@ class BlogController extends Controller
 	{
 		$contents = BokunClass::get_productbyslug($slug);
 		if(Session::has('sessionId')){
-			$sessionId = \Session::get('sessionId');
+			$sessionId = Session::get('sessionId');
 		}else{
-			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
-			\Session::put('sessionId',$sessionId);
+			$sessionId = Uuid::uuid4()->toString();
+			Session::put('sessionId',$sessionId);
 		}
-		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		$bookingChannelUUID = env("BOKUN_BOOKING_CHANNEL");
 		
-		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$availability = BokunClass::get_availabilityactivity($contents->id,1);
 		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
 		$middle = json_encode($availability);
 		$last = '}]';
@@ -104,13 +113,6 @@ class BlogController extends Controller
 	public function product_list_byid($id)
 	{
 		$contents = BokunClass::get_product_list_byid($id);
-		if(Session::has('sessionId')){
-			$sessionId = \Session::get('sessionId');
-		}else{
-			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
-			\Session::put('sessionId',$sessionId);
-		}
-		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
 		return redirect("/tours/". Str::slug($contents->title) ."/". $contents->id);
 	}
 	
@@ -174,7 +176,6 @@ class BlogController extends Controller
 		$count = rev_reviews::count();
 		return view('blog.frontend.foodtours')->with(['count'=>$count,'productArray'=>$productArray]);
 	}
-
 
 	public function jogjafoodtour()
     {

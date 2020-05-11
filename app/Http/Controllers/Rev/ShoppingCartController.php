@@ -360,6 +360,4 @@ class ShoppingCartController extends Controller
 		return response()->json($contents);
 	}
 	
-	
-	
 }

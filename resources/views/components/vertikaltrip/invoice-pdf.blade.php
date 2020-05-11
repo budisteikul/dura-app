@@ -237,12 +237,12 @@ footer {
           <?php
 						$grantTotal = 0;
 						$number = 1;
+						$total = 0;
+						$discount = 0;
 						?>
                         @foreach($rev_shoppingcarts->shoppingcart_products()->get() as $shoppingcart_products)
                         <?php
 						$subtotal = 0;
-						$total = 0;
-						$discount = 0;
 						?>
                         @foreach($shoppingcart_products->shoppingcart_rates()->get() as $shoppingcart_rates)
                         <tbody>
@@ -261,16 +261,14 @@ footer {
 						$discount += $shoppingcart_rates->discount;
 						?>
                         @endforeach
-                        <?php
-						$grantTotal += $total;
-						?>
+                        
                         @endforeach
         
         <tfoot>
           <tr>
             <td colspan="2"></td>
             <td colspan="2">TOTAL</td>
-            <td>{{ number_format((float)$subtotal, 2, '.', '') }}</td>
+            <td>{{ number_format((float)$total, 2, '.', '') }}</td>
           </tr>
           @if($discount>0)
           <tr>
@@ -283,7 +281,7 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">REFUNDED</td>
-            <td>-{{ number_format((float)$grantTotal, 2, '.', '') }}</td>
+            <td>-{{ number_format((float)$total, 2, '.', '') }}</td>
           </tr>
           <tr>
             <td colspan="2"></td>
@@ -294,7 +292,7 @@ footer {
           <tr>
             <td colspan="2"></td>
             <td colspan="2">AMOUNT DUE ({{$rev_shoppingcarts->currency}})</td>
-            <td>{{ number_format((float)$grantTotal, 2, '.', '') }}</td>
+            <td>{{ number_format((float)$total, 2, '.', '') }}</td>
           </tr>
           @endif
         </tfoot>
