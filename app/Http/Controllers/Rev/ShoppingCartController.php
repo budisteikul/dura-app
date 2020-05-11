@@ -30,12 +30,7 @@ use PDF;
 
 class ShoppingCartController extends Controller
 {
-    public function time_selector($slug)
-	{
-		$contents = BokunClass::get_productbyslug($slug);
-		$calendar = BokunClass::get_widget($contents->id);
-		return view('blog.frontend.booking')->with(['product'=>$calendar,'product_id'=>$contents]);
-	}
+    
 	
 	public function get_shoppingcart(Request $request)
     {

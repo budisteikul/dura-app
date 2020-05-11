@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Book '. $product_id->title)
+@section('title','Book '. $contents->title)
 @section('content')
 @include('layouts.loading')
 <!-- Navbar Section -->

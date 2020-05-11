@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Shopping Cart')
 @section('content')
-
+@include('layouts.loading')
 <!-- Navbar Section -->
 @include('components.vertikaltrip.navbar')
 

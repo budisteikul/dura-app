@@ -105,7 +105,7 @@ Route::post('/booking/create-paypal-transaction', 'Rev\ShoppingCartController@cr
 Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');
 Route::get('/booking/invoice/{id}', 'Rev\ShoppingCartController@get_invoice');
 Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');
-Route::get('/booking/{slug}', 'Rev\ShoppingCartController@time_selector');
+Route::get('/booking/{slug}', 'Blog\Frontend\BlogController@time_selector');
 
 Route::get('/pdf/invoice/{id}', 'Rev\ShoppingCartController@get_invoicePDF');
 Route::get('/pdf/ticket/{id}', 'Rev\ShoppingCartController@get_ticketPDF');

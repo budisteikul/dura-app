@@ -78,6 +78,29 @@ class BlogController extends Controller
         return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
     }
 	
+	public function time_selector($slug)
+	{
+		$contents = BokunClass::get_productbyslug($slug);
+		if(Session::has('sessionId')){
+			$sessionId = \Session::get('sessionId');
+		}else{
+			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
+			\Session::put('sessionId',$sessionId);
+		}
+		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		
+		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
+		$middle = json_encode($availability);
+		$last = '}]';
+		$firstavailability = $first.$middle.$last;
+		
+		$microtime = $availability[0]->date;
+		$month = date("n",$microtime/1000);
+		$year = date("Y",$microtime/1000);
+		return view('blog.frontend.booking')->with(['contents'=>$contents,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
+	}
+	
 	public function product_list_byid($id)
 	{
 		$contents = BokunClass::get_product_list_byid($id);

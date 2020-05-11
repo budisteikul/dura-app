@@ -14,7 +14,7 @@
                 
                  
                  
-                {!! $product !!}
+                @include('components.vertikaltrip.booking-widget')
 				
 			</div>
 			</div>
