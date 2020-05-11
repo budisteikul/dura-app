@@ -23,8 +23,8 @@ mix.copyDirectory('resources/assets/manifest', 'public/');
 mix.copyDirectory('resources/assets/core', 'public/'); 
 
 /* VERTIKAL TRIP & JOGJAFOODTOUR */
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-3.0.2.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-3.0.2.css');
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-3.0.3.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-3.0.3.css');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/0.64cdccc40b9065595318.js',
@@ -57,7 +57,7 @@ mix.copyDirectory('resources/assets/jogjafoodtour/img/gallery', 'public/img');
 mix.copyDirectory('resources/assets/jogjafoodtour/img/tourguide', 'public/img'); 
 
  
-/* ADMIN
+/* ADMIN */
 mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
 mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
@@ -69,23 +69,23 @@ mix.scripts([
 mix.scripts([
 	'public/js/admin_tmp1.js',
 	'public/js/admin_tmp2.js'
-	],'public/js/admin-3.0.2.js');
+	],'public/js/admin-3.0.3.js');
 
 
 mix.styles([
 	'public/css/admin_tmp1.css',
 	'resources/assets/admin/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/admin-3.0.2.css');
+	],'public/css/admin-3.0.3.css');
 	
 
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
- */
+
  
 
 
-/* RATNAWAHYU
+/* RATNAWAHYU */
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
 mix.sass('resources/sass/ratnawahyu.scss', 'public/css/ratnawahyu_tmp1.css');
 
@@ -107,24 +107,23 @@ mix.styles([
 mix.scripts([
 	'public/js/ratnawahyu_tmp1.js',
 	'public/js/ratnawahyu_tmp2.js'
-	],'public/js/ratnawahyu-3.0.2.js');
+	],'public/js/ratnawahyu-3.0.3.js');
 
 
 mix.styles([
 	'public/css/ratnawahyu_tmp1.css',
 	'public/css/ratnawahyu_tmp2.css'
-	],'public/css/ratnawahyu-3.0.2.css');
+	],'public/css/ratnawahyu-3.0.3.css');
 
 mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
 mix.copyDirectory('resources/assets/ratnawahyu/img/core', 'public/img');
 mix.copy('resources/assets/ratnawahyu/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
- */
+
  
- /* MAIL
+ /* MAIL  */
  mix.copyDirectory('resources/assets/mail/img/avatars', 'public/img');
  mix.copyDirectory('resources/assets/mail/js', 'public/js');
  mix.copyDirectory('resources/assets/mail/css', 'public/css');
  mix.copyDirectory('resources/assets/mail/font-awesome', 'public/fonts/vendor/font-awesome');
  mix.copyDirectory('resources/assets/mail/icheck', 'public/images/vendor/icheck');
  mix.copyDirectory('resources/assets/mail/bootstrap', 'public/fonts/vendor/bootstrap');
-  */

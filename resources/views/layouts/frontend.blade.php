@@ -18,8 +18,8 @@
     <title>@hasSection('title')@yield('title')@else @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")Yogyakarta Night Walking and Food Tours @else Book Amazing Things to Do With VERTIKAL TRIP @endif @endif</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet" type="text/css" media="screen,handheld">
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' media="screen,handheld">
-	<script src="/js/vertikaltrip-3.0.2.js"></script>
-	<link href="/css/vertikaltrip-3.0.2.css" rel="stylesheet" media="screen,handheld">
+	<script src="/js/vertikaltrip-3.0.3.js"></script>
+	<link href="/css/vertikaltrip-3.0.3.css" rel="stylesheet" media="screen,handheld">
     @if(env('BOKUN_WIDGET')=='new')
 		@php
         $bookingChannelUUID = \App\Models\Rev\rev_resellers::where('status',1)->first()->id;

@@ -10,14 +10,14 @@
     <title>{{ str_ireplace("www.","",$_SERVER['HTTP_HOST']) }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/admin-3.0.2.js') }}"></script>
+    <script src="{{ asset('js/admin-3.0.3.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/admin-3.0.2.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin-3.0.3.css') }}" rel="stylesheet">
    
     @stack('scripts')
     
