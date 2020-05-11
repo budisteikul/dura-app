@@ -81,14 +81,11 @@ Route::get('/tours/{id}', 'Blog\Frontend\BlogController@product_list_byid');
 Route::get('/tours', function () {
 	return view('blog.frontend.vt-product-list-all');
 });
-Route::get('/coba', function () {
-	$rev_shoppingcarts = \App\Models\Rev\rev_shoppingcarts::where('sessionId','06d81be0-f82d-41b0-a802-7f0481312175')->first();
-	$rev_shoppingcarts->shoppingcart_products()->delete();
-	//========================================================================
-	
-	//========================================================================
-});
 
+Route::get('/snippets/activity/{activityId}/calendar/json/{year}/{month}', 'Rev\ShoppingCartController@snippetscalendar');
+Route::post('/snippets/activity/invoice-preview', 'Rev\ShoppingCartController@snippetsinvoice');
+Route::post('/snippets/widget/cart/session/{id}/activity', 'Rev\ShoppingCartController@addshoppingcart');
+Route::get('/snippets/widgets', 'Rev\ShoppingCartController@widget');
 
 //========================================================================
 // Shopping Cart
@@ -96,10 +93,7 @@ Route::get('/coba', function () {
 Route::get('/booking/shoppingcart/empty', function () {
 	return view('page.empty-shoppingcart');
 });
-Route::get('/country', function () {
-	$content = \App\Classes\Rev\BokunClass::get_country();
-	print_r($content);
-});
+
 Route::get('/booking/shoppingcart', 'Rev\ShoppingCartController@get_shoppingcart');
 Route::get('/booking/checkout', 'Rev\ShoppingCartController@get_checkout');
 Route::post('/booking/checkout', 'Rev\ShoppingCartController@post_checkout');
@@ -108,7 +102,6 @@ Route::post('/booking/promo-code', 'Rev\ShoppingCartController@applypromocode');
 Route::post('/booking/promo-code/remove', 'Rev\ShoppingCartController@removepromocode');
 Route::post('/booking/payment', 'Rev\ShoppingCartController@payment');
 Route::post('/booking/create-paypal-transaction', 'Rev\ShoppingCartController@createPayment');
-Route::get('/booking/selfservice/{id}', 'Rev\ShoppingCartController@selfservice');
 Route::get('/booking/receipt/{id}', 'Rev\ShoppingCartController@receipt');
 Route::get('/booking/invoice/{id}', 'Rev\ShoppingCartController@get_invoice');
 Route::get('/booking/ticket/{id}', 'Rev\ShoppingCartController@get_ticket');

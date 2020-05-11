@@ -179,8 +179,189 @@
 						<i class="fab fa-paypal text-secondary mb-4" style="width:20px;"></i> Secure Payments
                         <br>
             </div>
- 			<div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
-    			{!! $calendar !!}
+            
+ <div id="bookingframe" class="card-body" style="padding-left:1px;padding-right:1px;padding-top:20px;padding-bottom:15px;">
+
+<style>
+.calendar
+{
+	font-size:13px;
+}
+.rates-container
+{
+	margin-bottom:10px;	
+}
+.start-times-container
+{
+	margin-bottom:10px;	
+}
+.time
+{
+	margin-left:10px;
+	
+}
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+a.label:hover,
+a.label:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.label:empty {
+  display: none;
+}
+.btn .label {
+  position: relative;
+  top: -1px;
+}
+.label-default {
+  background-color: #777;
+}
+.label-default[href]:hover,
+.label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.label-primary {
+  background-color: #337ab7;
+}
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+  background-color: #286090;
+}
+.label-success {
+  background-color: #5cb85c;
+}
+.label-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #449d44;
+}
+.label-info {
+  background-color: #5bc0de;
+}
+.label-info[href]:hover,
+.label-info[href]:focus {
+  background-color: #31b0d5;
+}
+.label-warning {
+  background-color: #f0ad4e;
+}
+.label-warning[href]:hover,
+.label-warning[href]:focus {
+  background-color: #ec971f;
+}
+.label-danger {
+  background-color: #d9534f;
+}
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+  background-color: #c9302c;
+}
+
+</style>     
+<script src="/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css">
+<div class="widget-body" id="WidgetContent">       
+
+	    
+
+<div class="widget">
+	<div id="ActivityBookingWidget"></div>
+    <script>
+    window.priceFormatter = new WidgetUtils.PriceFormatter({
+        currency: 'USD',
+        language: 'en',
+        decimalSeparator: '.',
+        groupingSeparator: ',',
+        symbol: '$'
+    });
+
+	window.i18nLang = 'en';
+    window.ActivityBookingWidgetConfig = {
+        currency: 'USD',
+        language: 'en',
+        embedded: false,
+        priceFormatter: window.priceFormatter,
+        invoicePreviewUrl: '/snippets/activity/invoice-preview',
+        addToCartUrl: '/snippets/widget/cart/session/<?= $sessionId ?>/activity',
+        calendarUrl: '/snippets/activity/{id}/calendar/json/{year}/{month}',
+        activities: [],
+        pickupPlaces: [],
+        dropoffPlaces: [],
+        showOnRequestMessage: false,
+        showCalendar: true,
+        showUpcoming: false,
+        displayOrder: 'Calendar',
+        selectedTab: 'all',
+        hideExtras: false,
+        showActivityList: false,
+        showFewLeftWarning: true,
+        warningThreshold: 10,
+        displayStartTimeSelectBox: false,
+        displayMessageAfterAddingToCart: false,
+        defaultCategoryMandatory: true,
+        defaultCategorySelected: true,
+        affiliateCodeFromQueryString: true,
+        affiliateParamName: 'trackingCode',
+        affiliateCode: '',
+        onAfterRender: function() {
+            if ( window.widgetIframe != undefined ) { window.widgetIframe.autoResize(); }
+            setTimeout(function() {
+                if ( window.widgetIframe != undefined ) { window.widgetIframe.autoResize(); }
+            }, 200);
+
+            if (typeof onWidgetRender !== 'undefined') {
+                onWidgetRender();
+            }
+        },
+        onAvailabilitySelected: function(selectedRate, selectedDate, selectedAvailability) {
+        },
+        onAddedToCart: function(cart) {
+                var successUrl = '/booking/shoppingcart';
+                if ( successUrl.indexOf('?') == -1 ) {
+                  successUrl += '?sessionId=<?= $sessionId ?>';
+                } else {
+                  successUrl += '&sessionId=<?= $sessionId ?>';
+                }
+                if ( window.widgetIframe != undefined ) {
+                  window.widgetIframe.redirectParent(successUrl);
+                } else {
+                  window.location = successUrl;
+                }
+            
+        },
+        
+        calendarMonth: {!!$month!!},
+        calendarYear: {!!$year!!},
+        loadingCalendar: true,
+        
+        activity: {!! json_encode($contents) !!},
+        
+        upcomingAvailabilities: [],
+        
+        firstDayAvailabilities: {!! $firstavailability !!}
+    }; 
+    </script>
+		</div>
+		<div id="generic-loading-template" style="display:none">
+			<div class="well well-large well-transparent lead">
+				<i class="fa fa-spinner icon-spin icon-2x pull-left"></i> processing...
+			</div>
+		</div>
+		<script src="/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js"></script>
+        </div>
+			</div>
+</div>
 			</div>
 		</div>
     </div>

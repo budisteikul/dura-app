@@ -25,7 +25,7 @@ class BokunClass {
 			$calendar = '<div id="bokun-'.$widget_hash.'">Loading...</div><script type="text/javascript">
 var '.$widget_hash.';
 (function(d, t) {
-  var host = \'widgets.bokun.io\';
+  var host = \'extranet.bokun.io\';
   var frameUrl = \'https://\' + host + \'/widgets/'.$widget_id.'?bookingChannelUUID='.$bookingChannelUUID.'&amp;activityId='.$product_id.'&amp;lang=en&amp;ccy=USD&amp;hash='.$widget_hash.'\';
   var s = d.createElement(t), options = {\'host\': host, \'frameUrl\': frameUrl, \'widgetHash\':\''.$widget_hash.'\', \'autoResize\':true,\'height\':\'\',\'width\':\'100%\', \'minHeight\': 0,\'async\':true, \'ssl\':true, \'affiliateTrackingCode\': \'\', \'transientSession\': true, \'cookieLifetime\': 43200 };
   s.src = \'https://\' + host + \'/assets/javascripts/widgets/embedder.js\';
@@ -41,14 +41,27 @@ var '.$widget_hash.';
 		}
 		else
 		{
-			$calendar = '<div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$product_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
+			$calendar = '<div class="bokunWidget" data-src="https://extranet.bokun.io/online-sales/'.$bookingChannelUUID.'/experience-calendar/'.$product_id.'"></div><noscript>Please enable javascript in your browser to book</noscript>';
 		}
 		
 		return $calendar;
 	}
 	
-	public static function get_connect($path,$method = 'GET',$accept = 'application/json')
+	public static function get_invoice($data)
 	{
+		return self::get_connect('/snippets/activity/invoice-preview','POST','application/json',$data);
+	}
+	
+	public static function get_addshoppingcart($sessionId,$data)
+	{
+		return self::get_connect('/shopping-cart.json/session/'. $sessionId .'/activity','POST','application/json',$data);
+	}
+	
+	
+	public static function get_connect($path,$method = 'GET',$accept = 'application/json',$data="")
+	{
+		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		
 		if(env("BOKUN_ENV")=="production")
 		{
 			$endpoint = "https://api.bokun.io";
@@ -64,7 +77,7 @@ var '.$widget_hash.';
         $bokun_accesskey = env("BOKUN_ACCESSKEY");
         $bokun_secretkey = env("BOKUN_SECRETKEY");
 		
-		$string_signature = $date.$bokun_accesskey.$method. $path .$query;
+		$string_signature = $date.$bokun_accesskey.$method.$path.$query;
         $sha1_signature =  hash_hmac("sha1",$string_signature, $bokun_secretkey, true);
         $base64_signature = base64_encode($sha1_signature);
     
@@ -73,17 +86,27 @@ var '.$widget_hash.';
           'X-Bokun-AccessKey' => $bokun_accesskey,
           'X-Bokun-Date' => $date,
           'X-Bokun-Signature' => $base64_signature,
+		  'X-Bokun-Channel' => $bookingChannelUUID,
         ];
     
         //$client = new \GuzzleHttp\Client(['headers' => $headers]);
     	//$response = $client->request($method, $endpoint.$path.$query);
         //$statusCode = $response->getStatusCode();   
 		
-		
-		
 		$client = new \GuzzleHttp\Client(['headers' => $headers,'exceptions' => false]);
-		$response = $client->request($method, $endpoint.$path.$query);
+		if($method=="POST")
+		{
+			$response = $client->request('POST',$endpoint.$path.$query,
+    			['json' => $data]
+			);
+		}
+		else
+		{
+			$response = $client->request($method,$endpoint.$path.$query);
+		}
 		$statusCode = $response->getStatusCode(); 
+		
+		
 		if(200 === $statusCode)
 		{
 			if($accept=='application/json')
@@ -189,7 +212,7 @@ var '.$widget_hash.';
 		return self::get_connect('/booking.json/activity-booking/'.$confirmationCode.'/ticket','GET','application/pdf');
 	}
 	
-	public static function get_invoice($id)
+	public static function get_invoicepdf($id)
 	{
 		return self::get_connect('/booking.json/'. $id .'/summary','GET','application/pdf');
 	}
@@ -223,6 +246,20 @@ var '.$widget_hash.';
 	public static function get_removeactivity($sessionId,$id)
 	{
 		return self::get_connect('/shopping-cart.json/session/'.$sessionId.'/remove-activity/'. $id);
+	}
+	
+	public static function get_calendar($activityId,$year,$month)
+	{
+		$value = Cache::store('database')->remember('bokunCalendar_'.$activityId .'_'.$year .'_'.$month , 86400, function() use ($activityId,$year,$month) {
+    		return self::get_connect('/snippets/activity/'.$activityId.'/calendar/json/'.$year.'/'.$month);
+		});
+		return $value;
+		
+	}
+	
+	public static function get_availabilityactivity($id,$max)
+	{
+		return self::get_connect('/activity.json/'.$id.'/upcoming-availabilities/'.$max);
 	}
 	
 }

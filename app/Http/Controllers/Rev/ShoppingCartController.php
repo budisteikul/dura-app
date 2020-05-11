@@ -347,11 +347,24 @@ class ShoppingCartController extends Controller
 		return $pdf->download('Ticket-'. $rev_shoppingcart_products->productConfirmationCode .'.pdf');
 	}
 	
-	public function selfservice($id)
-    {
-		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->first();
-		$canCancel = BookClass::canCancel($rev_shoppingcarts->confirmationCode);
-		return view('page.view')->with(['rev_shoppingcarts'=>$rev_shoppingcarts,'canCancel'=>$canCancel]);
+	public function snippetsinvoice(Request $request)
+	{
+		$contents = BokunClass::get_invoice($request->all());
+		return response()->json($contents);
 	}
+	
+	public function snippetscalendar($activityId,$year,$month)
+	{
+		$contents = BokunClass::get_calendar($activityId,$year,$month);
+		return response()->json($contents);
+	}
+	
+	public function addshoppingcart($id,Request $request)
+	{
+		$contents = BokunClass::get_addshoppingcart($id,$request->all());
+		return response()->json($contents);
+	}
+	
+	
 	
 }

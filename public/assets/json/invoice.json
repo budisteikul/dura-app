@@ -1,0 +1,263 @@
+{
+	"id": 1,
+	"issueDate": 1589124106673,
+	"currency": "USD",
+	"includedAppliedTaxes": [ ],
+	"excludedAppliedTaxes": [ ],
+	"issuer": {
+	"id": 19626,
+	"title": "VERTIKAL TRIP",
+	"externalId": "",
+	"flags": [ ]
+},
+"issuerCompany": 
+{
+	"registrationNumber": "",
+	"vatRegistrationNumber": ""
+},
+"customLineItems": [ ],
+"productInvoices": [
+{
+	"id": 2,
+	"currency": "USD",
+	"includedAppliedTaxes": [ ],
+	"excludedAppliedTaxes": [ ],
+	"title": "Yogyakarta Night Walking and Food Tours - Mon 01.Jun 2020 @ 18:30",
+	"product": {
+	"id": 208273,
+	"title": "Yogyakarta Night Walking and Food Tours",
+	"flags": [ ],
+	"keyPhoto": {
+	"id": 755445,
+	"originalUrl": "https://bokun.s3.amazonaws.com/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg",
+	"description": null,
+	"alternateText": null,
+	"height": "576",
+	"width": "1024",
+	"flags": [ ],
+	"derived": [
+	{
+		"name": "large",
+		"url": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=660&h=660",
+		"cleanUrl": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=660&h=660"
+	},
+{
+"name": "preview",
+"url": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=300&h=300",
+"cleanUrl": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=300&h=300"
+},
+{
+"name": "thumbnail",
+"url": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=80&h=80&fit=crop",
+"cleanUrl": "https://bokunprod.imgix.net/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg?w=80&h=80&fit=crop"
+}
+],
+"fileName": "/00896c0f-7c1b-4246-9e41-7d2b52c63a69.jpeg"
+},
+"vendor": {
+"id": 19626,
+"title": "VERTIKAL TRIP",
+"currencyCode": "IDR",
+"countryCode": "ID",
+"showInvoiceIdOnTicket": false,
+"showAgentDetailsOnTicket": false,
+"showPaymentsOnInvoice": false,
+"companyEmailIsDefault": false
+}
+},
+"productCategory": "ACTIVITIES",
+"dates": "Mon 01.Jun 2020 @ 18:30",
+"hasFees": false,
+"customLineItems": [ ],
+"lineItems": [
+{
+"id": 3,
+"title": "Adult",
+"currency": "USD",
+"unitPriceDate": 1589124106696,
+"quantity": 1,
+"unitPrice": 38.7,
+"calculatedDiscount": 0,
+"customDiscount": 0,
+"calculatedDiscountAmount": 0,
+"taxAmount": 0,
+"taxesAsMoney": [ ],
+"strikeThroughTotal": {
+"amount": 38.7,
+"currency": "USD"
+},
+"itemBookingId": "208273_277236",
+"costItemId": 2272009,
+"costItemTitle": "Adult (6+)",
+"costGroupTitle": "Yogyakarta Night Walking and Food Tours",
+"supportsDiscount": true,
+"people": 1,
+"discountedUnitPrice": 38.7,
+"totalAsText": "$38.70",
+"totalDiscountedAsText": "$38.70",
+"totalDueAsText": "$38.70",
+"discountedUnitPriceAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"taxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"taxAsText": "$0.00",
+"discountedUnitPriceAsText": "$38.70",
+"unitPriceAsText": "$38.70",
+"discountAmountAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"discountAmountAsText": "$0.00",
+"calculatedDiscountAmountAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"total": 38.7,
+"totalDiscountedAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalDue": 38.7,
+"totalDueAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"unitPriceAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"discount": 0,
+"totalDiscounted": 38.7
+}
+],
+"appliedFees": [ ],
+"totalFeesAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalFeesAsText": "$0.00",
+"totalExcludedTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalAsText": "$38.70",
+"totalWithExcludedTaxAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalDiscountedAsText": "$38.70",
+"totalDiscountAsText": "$0.00",
+"totalDueAsText": "$38.70",
+"excludedTaxes": false,
+"totalExcludedTaxAsText": "$0.00",
+"includedTaxes": false,
+"totalIncludedTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalIncludedTaxAsText": "$0.00",
+"totalTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalTaxAsText": "$0.00",
+"totalDiscountAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"strikeThroughTotalAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"strikeThroughTotalAsText": "$38.70",
+"free": false,
+"totalDiscountedAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalDueAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+}
+}
+],
+"payments": [ ],
+"appliedFees": [ ],
+"totalDueWithoutExcludedTaxAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"invoiceNumber": "C-1",
+"recipientName": "",
+"lodgingTaxes": [ ],
+"totalFeesAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalFeesAsText": "$0.00",
+"totalBookingFeeAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalBookingFeePercent": 0,
+"issuerName": "VERTIKAL TRIP",
+"totalDueAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalExcludedTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalAsText": "$38.70",
+"totalWithExcludedTaxAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalDiscountedAsText": "$38.70",
+"totalDiscountAsText": "$0.00",
+"totalDueAsText": "$38.70",
+"excludedTaxes": false,
+"totalExcludedTaxAsText": "$0.00",
+"includedTaxes": false,
+"totalIncludedTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalIncludedTaxAsText": "$0.00",
+"totalTaxAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"totalTaxAsText": "$0.00",
+"totalDiscountAsMoney": {
+"amount": 0,
+"currency": "USD"
+},
+"strikeThroughTotalAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"strikeThroughTotalAsText": "$38.70",
+"free": false,
+"totalDiscountedAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+},
+"totalAsMoney": {
+"amount": 38.7,
+"currency": "USD"
+}
+}

@@ -1,0 +1,5534 @@
+{
+"timeZone": "Asia/Jakarta",
+"month": 6,
+"year": 2020,
+"allowPast": false,
+"allowAllToday": false,
+"requiredPax": 0,
+"cutoffMinutes": 240,
+"firstOfMonth": 1590969600000,
+"lastOfMonth": 1593475200000,
+"isFlexible": false,
+"weeks": [
+{
+"days": [
+{
+"date": 1,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-01",
+"dateObj": 1590969600000,
+"availabilities": [
+{
+"id": "439479_20200601",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 01.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200601",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1590969600000,
+"localizedDate": "Mon 01.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+763000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+768000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 2,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-02",
+"dateObj": 1591056000000,
+"availabilities": [
+{
+"id": "439479_20200602",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Tue 02.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200602",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591056000000,
+"localizedDate": "Tue 02.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 3,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-03",
+"dateObj": 1591142400000,
+"availabilities": [
+{
+"id": "439479_20200603",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Wed 03.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200603",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591142400000,
+"localizedDate": "Wed 03.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 4,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-04",
+"dateObj": 1591228800000,
+"availabilities": [
+{
+"id": "439479_20200604",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Thu 04.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200604",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591228800000,
+"localizedDate": "Thu 04.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 5,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-05",
+"dateObj": 1591315200000,
+"availabilities": [
+{
+"id": "439479_20200605",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Fri 05.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200605",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591315200000,
+"localizedDate": "Fri 05.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 6,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-06",
+"dateObj": 1591401600000,
+"availabilities": [
+{
+"id": "439479_20200606",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sat 06.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200606",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591401600000,
+"localizedDate": "Sat 06.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 7,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-07",
+"dateObj": 1591488000000,
+"availabilities": [
+{
+"id": "439479_20200607",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sun 07.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200607",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591488000000,
+"localizedDate": "Sun 07.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+}
+]
+},
+{
+"days": [
+{
+"date": 8,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-08",
+"dateObj": 1591574400000,
+"availabilities": [
+{
+"id": "439479_20200608",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 08.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200608",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591574400000,
+"localizedDate": "Mon 08.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 9,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-09",
+"dateObj": 1591660800000,
+"availabilities": [
+{
+"id": "439479_20200609",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Tue 09.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200609",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591660800000,
+"localizedDate": "Tue 09.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 10,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-10",
+"dateObj": 1591747200000,
+"availabilities": [
+{
+"id": "439479_20200610",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Wed 10.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200610",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591747200000,
+"localizedDate": "Wed 10.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 11,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-11",
+"dateObj": 1591833600000,
+"availabilities": [
+{
+"id": "439479_20200611",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Thu 11.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200611",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591833600000,
+"localizedDate": "Thu 11.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+787000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 12,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-12",
+"dateObj": 1591920000000,
+"availabilities": [
+{
+"id": "439479_20200612",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Fri 12.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200612",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1591920000000,
+"localizedDate": "Fri 12.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 13,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-13",
+"dateObj": 1592006400000,
+"availabilities": [
+{
+"id": "439479_20200613",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sat 13.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200613",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592006400000,
+"localizedDate": "Sat 13.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 14,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-14",
+"dateObj": 1592092800000,
+"availabilities": [
+{
+"id": "439479_20200614",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sun 14.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200614",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592092800000,
+"localizedDate": "Sun 14.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+}
+]
+},
+{
+"days": [
+{
+"date": 15,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-15",
+"dateObj": 1592179200000,
+"availabilities": [
+{
+"id": "439479_20200615",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 15.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200615",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592179200000,
+"localizedDate": "Mon 15.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 16,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-16",
+"dateObj": 1592265600000,
+"availabilities": [
+{
+"id": "439479_20200616",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Tue 16.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200616",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592265600000,
+"localizedDate": "Tue 16.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 17,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-17",
+"dateObj": 1592352000000,
+"availabilities": [
+{
+"id": "439479_20200617",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Wed 17.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200617",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592352000000,
+"localizedDate": "Wed 17.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 18,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-18",
+"dateObj": 1592438400000,
+"availabilities": [
+{
+"id": "439479_20200618",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Thu 18.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200618",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592438400000,
+"localizedDate": "Thu 18.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 19,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-19",
+"dateObj": 1592524800000,
+"availabilities": [
+{
+"id": "439479_20200619",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Fri 19.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200619",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592524800000,
+"localizedDate": "Fri 19.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 20,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-20",
+"dateObj": 1592611200000,
+"availabilities": [
+{
+"id": "439479_20200620",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sat 20.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200620",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592611200000,
+"localizedDate": "Sat 20.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 21,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-21",
+"dateObj": 1592697600000,
+"availabilities": [
+{
+"id": "439479_20200621",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sun 21.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200621",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592697600000,
+"localizedDate": "Sun 21.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+}
+]
+},
+{
+"days": [
+{
+"date": 22,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-22",
+"dateObj": 1592784000000,
+"availabilities": [
+{
+"id": "439479_20200622",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 22.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200622",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592784000000,
+"localizedDate": "Mon 22.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 23,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-23",
+"dateObj": 1592870400000,
+"availabilities": [
+{
+"id": "439479_20200623",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Tue 23.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200623",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592870400000,
+"localizedDate": "Tue 23.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 24,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-24",
+"dateObj": 1592956800000,
+"availabilities": [
+{
+"id": "439479_20200624",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Wed 24.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200624",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1592956800000,
+"localizedDate": "Wed 24.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 25,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-25",
+"dateObj": 1593043200000,
+"availabilities": [
+{
+"id": "439479_20200625",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Thu 25.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200625",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593043200000,
+"localizedDate": "Thu 25.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 26,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-26",
+"dateObj": 1593129600000,
+"availabilities": [
+{
+"id": "439479_20200626",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Fri 26.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200626",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593129600000,
+"localizedDate": "Fri 26.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 27,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-27",
+"dateObj": 1593216000000,
+"availabilities": [
+{
+"id": "439479_20200627",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sat 27.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200627",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593216000000,
+"localizedDate": "Sat 27.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+788000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 28,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-28",
+"dateObj": 1593302400000,
+"availabilities": [
+{
+"id": "439479_20200628",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Sun 28.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200628",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593302400000,
+"localizedDate": "Sun 28.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+}
+]
+},
+{
+"days": [
+{
+"date": 29,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-29",
+"dateObj": 1593388800000,
+"availabilities": [
+{
+"id": "439479_20200629",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 29.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200629",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593388800000,
+"localizedDate": "Mon 29.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 30,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-30",
+"dateObj": 1593475200000,
+"availabilities": [
+{
+"id": "439479_20200630",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Tue 30.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200630",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1593475200000,
+"localizedDate": "Tue 30.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+789000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+},
+{
+"date": 1,
+"notInCurrentMonth": true,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-07-01",
+"dateObj": 1593561600000,
+"availabilities": [ ],
+"empty": true,
+"available": false,
+"soldOut": false
+},
+{
+"date": 2,
+"notInCurrentMonth": true,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-07-02",
+"dateObj": 1593648000000,
+"availabilities": [ ],
+"empty": true,
+"available": false,
+"soldOut": false
+},
+{
+"date": 3,
+"notInCurrentMonth": true,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-07-03",
+"dateObj": 1593734400000,
+"availabilities": [ ],
+"empty": true,
+"available": false,
+"soldOut": false
+},
+{
+"date": 4,
+"notInCurrentMonth": true,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-07-04",
+"dateObj": 1593820800000,
+"availabilities": [ ],
+"empty": true,
+"available": false,
+"soldOut": false
+},
+{
+"date": 5,
+"notInCurrentMonth": true,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-07-05",
+"dateObj": 1593907200000,
+"availabilities": [ ],
+"empty": true,
+"available": false,
+"soldOut": false
+}
+]
+}
+],
+"prevMonthYear": 2020,
+"nextMonthYear": 2020,
+"todayInMonth": false,
+"nextMonth": 7,
+"prevMonth": 5,
+"firstAvailableDay": {
+"date": 1,
+"notInCurrentMonth": false,
+"past": false,
+"pastCutoff": false,
+"earliestCutoffDate": 1589163437734,
+"today": false,
+"fullDate": "2020-06-01",
+"dateObj": 1590969600000,
+"availabilities": [
+{
+"id": "439479_20200601",
+"data": {
+"pickupAllotment": "false",
+"pickupPricePerBooking": "0",
+"defaultprice": "38.70",
+"bookedParticipants": "0",
+"pickupAvailabilityCount": "1000",
+"priceNotFound": "false",
+"minParticipants": "1",
+"dropoffPricePerBooking": "0",
+"minParticipantsToBookNow": "1",
+"flexible": "false",
+"startTimeId": "439479",
+"availabilityCount": "8",
+"localizedDate": "Mon 01.Jun'20",
+"startTime": "18:30",
+"unlimitedAvailability": "false"
+},
+"activityAvailability": {
+"id": "439479_20200601",
+"activityId": 208273,
+"activityTitle": "Yogyakarta Night Walking and Food Tours",
+"activityOwnerId": 19626,
+"activityOwnerTitle": "VERTIKAL TRIP",
+"startTime": "18:30",
+"startTimeId": 439479,
+"startTimeLabel": null,
+"flexible": false,
+"date": 1590969600000,
+"localizedDate": "Mon 01.Jun'20",
+"availabilityCount": 8,
+"bookedParticipants": 0,
+"minParticipants": 1,
+"minParticipantsToBookNow": 1,
+"productGroupId": 4430,
+"recurrenceId": 1333799,
+"pickupAllotment": false,
+"pickupAvailabilityCount": 1000,
+"unlimitedAvailability": false,
+"defaultRateId": 539211,
+"rates": [
+{
+"id": 539211,
+"title": "Standard rate",
+"description": "",
+"index": 0,
+"rateCode": null,
+"pricedPerPerson": true,
+"minPerBooking": 1,
+"maxPerBooking": 8,
+"cancellationPolicy": {
+"id": 39811,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+763000000
+],
+"title": "Non-Standard Viator policy",
+"tax": null,
+"penaltyRules": [
+{
+"id": 47707,
+"created": [
+2020,
+5,
+10,
+15,
+17,
+17,
+768000000
+],
+"cutoffHours": 24,
+"percentage": 100
+}
+]
+},
+"fixedPassExpiryDate": null,
+"passValidForDays": null,
+"pickupSelectionType": "UNAVAILABLE",
+"pickupPricingType": "INCLUDED_IN_PRICE",
+"pickupPricedPerPerson": false,
+"dropoffSelectionType": "UNAVAILABLE",
+"dropoffPricingType": "INCLUDED_IN_PRICE",
+"dropoffPricedPerPerson": false,
+"extraConfigs": [ ],
+"startTimeIds": [
+439479
+],
+"allStartTimes": false,
+"tieredPricingEnabled": false,
+"tiers": [ ],
+"pricingCategoryIds": [
+277236,
+277238
+],
+"allPricingCategories": true,
+"details": [ ]
+}
+],
+"pricesByRate": [
+{
+"activityRateId": 539211,
+"pricePerCategoryUnit": [
+{
+"id": 277236,
+"amount": {
+"amount": 38.7,
+"currency": "USD"
+}
+},
+{
+"id": 277238,
+"amount": {
+"amount": 0,
+"currency": "USD"
+}
+}
+],
+"extraPricePerUnit": [ ],
+"extraPricePerCategoryUnit": [ ]
+}
+],
+"comboActivity": false,
+"comboStartTimes": [ ],
+"flags": [ ],
+"defaultPrice": 38.7,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPrice": null,
+"pickupPricesByCategory": { },
+"dropoffPrice": null,
+"dropoffPricesByCategory": { },
+"extraPrices": { },
+"guidedLanguages": [
+"en"
+],
+"unavailable": false,
+"pickupSoldOut": false,
+"soldOut": false
+},
+"unlimitedAvailability": false,
+"availabilityCount": 8,
+"bookedCount": 0,
+"closed": false,
+"pastCutoff": false,
+"pricesByCategory": {
+"277236": 38.7,
+"277238": 0
+},
+"pickupPricesByCategory": { },
+"dropoffPricesByCategory": { },
+"extraPrices": { }
+}
+],
+"empty": false,
+"available": true,
+"soldOut": false
+}
+}

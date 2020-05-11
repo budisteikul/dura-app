@@ -35,7 +35,6 @@ class BookClass {
 			}
 			$rev_shoppingcarts->bookingChannel = $bookingChannel;
 			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
-			$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
 			$rev_shoppingcarts->save();
 			
 			// main contact questions

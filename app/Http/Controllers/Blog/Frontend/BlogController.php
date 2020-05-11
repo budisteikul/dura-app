@@ -15,6 +15,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
 use GuzzleHttp\Client as GuzzleClient;
 Use Str;
+Use Session;
 
 class BlogController extends Controller
 {
@@ -33,8 +34,25 @@ class BlogController extends Controller
         {
 			$pickup = BokunClass::get_product_pickup($contents->id);
         }
-		$calendar = BokunClass::get_widget($contents->id);
-        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
+		
+		if(Session::has('sessionId')){
+			$sessionId = \Session::get('sessionId');
+		}else{
+			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
+			\Session::put('sessionId',$sessionId);
+		}
+		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
+		
+		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
+		$middle = json_encode($availability);
+		$last = '}]';
+		$firstavailability = $first.$middle.$last;
+		
+		$microtime = $availability[0]->date;
+		$month = date("n",$microtime/1000);
+		$year = date("Y",$microtime/1000);
+        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
 	}
 	
 	public function product_page_byid(Request $request)
@@ -46,13 +64,30 @@ class BlogController extends Controller
         {
 			$pickup = BokunClass::get_product_pickup($id);
         }
-		$calendar = BokunClass::get_widget($contents->id);
-        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'calendar'=>$calendar]);
+		
+		
+		$availability = \App\Classes\Rev\BokunClass::get_availabilityactivity($contents->id,1);
+		$first = '[{"date":'. $availability[0]->date .',"localizedDate":"'. $availability[0]->localizedDate .'","availabilities":';
+		$middle = json_encode($availability);
+		$last = '}]';
+		$availability = $first.$middle.$last;
+		
+		$microtime = $availability[0]->date;
+		$month = date("n",$microtime/1000);
+		$year = date("Y",$microtime/1000);
+        return view('blog.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
     }
 	
 	public function product_list_byid($id)
 	{
 		$contents = BokunClass::get_product_list_byid($id);
+		if(Session::has('sessionId')){
+			$sessionId = \Session::get('sessionId');
+		}else{
+			$sessionId = \Ramsey\Uuid\Uuid::uuid4()->toString();
+			\Session::put('sessionId',$sessionId);
+		}
+		$bookingChannelUUID = rev_resellers::where('status',1)->first()->id;
 		return redirect("/tours/". Str::slug($contents->title) ."/". $contents->id);
 	}
 	
