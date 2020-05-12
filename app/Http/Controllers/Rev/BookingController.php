@@ -61,7 +61,6 @@ class BookingController extends Controller
 		$rev_shoppingcarts->confirmationCode = $ticket;
 		$rev_shoppingcarts->paymentStatus = 0;
 		$rev_shoppingcarts->bookingChannel = $bookingChannel;
-		$rev_shoppingcarts->sessionBooking = Uuid::uuid4()->toString();
 		$rev_shoppingcarts->sessionId = Uuid::uuid4()->toString();
 		$rev_shoppingcarts->currency = 'USD';
 		$rev_shoppingcarts->discount = 0;
