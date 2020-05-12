@@ -39,8 +39,8 @@ mix.scripts([
 	],'public/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js');
 
 mix.scripts([
-	'resources/assets/vertikaltrip/assets/javascripts/apps/build/34275891001c2b2b8f4dc098c32ca3d8-OldWidgetsAvoIndex.js',
-	],'public/assets/javascripts/apps/build/34275891001c2b2b8f4dc098c32ca3d8-OldWidgetsAvoIndex.js');
+	'resources/assets/vertikaltrip/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
+	],'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/ActivityBookingWidget.9a4ae35b1ec27737a85c.js',
@@ -57,7 +57,7 @@ mix.copyDirectory('resources/assets/jogjafoodtour/img/gallery', 'public/img');
 mix.copyDirectory('resources/assets/jogjafoodtour/img/tourguide', 'public/img'); 
 
  
-/* ADMIN */
+/* ADMIN
 mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
 mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
@@ -81,11 +81,11 @@ mix.styles([
 
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-
+ */
  
 
 
-/* RATNAWAHYU */
+/* RATNAWAHYU
 mix.js('resources/js/ratnawahyu.js', 'public/js/ratnawahyu_tmp1.js');
 mix.sass('resources/sass/ratnawahyu.scss', 'public/css/ratnawahyu_tmp1.css');
 
@@ -118,12 +118,13 @@ mix.styles([
 mix.copyDirectory('resources/assets/ratnawahyu/back-to-top/img', 'public/img');
 mix.copyDirectory('resources/assets/ratnawahyu/img/core', 'public/img');
 mix.copy('resources/assets/ratnawahyu/jquery-infinite-scroll/output_DTGK2a.gif', 'public/img/output_DTGK2a.gif');
-
+ */
  
- /* MAIL  */
+ /* MAIL
  mix.copyDirectory('resources/assets/mail/img/avatars', 'public/img');
  mix.copyDirectory('resources/assets/mail/js', 'public/js');
  mix.copyDirectory('resources/assets/mail/css', 'public/css');
  mix.copyDirectory('resources/assets/mail/font-awesome', 'public/fonts/vendor/font-awesome');
  mix.copyDirectory('resources/assets/mail/icheck', 'public/images/vendor/icheck');
  mix.copyDirectory('resources/assets/mail/bootstrap', 'public/fonts/vendor/bootstrap');
+  */
