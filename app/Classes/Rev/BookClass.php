@@ -24,7 +24,7 @@ class BookClass {
 			$rev_shoppingcarts->bookingStatus = 'CONFIRMED';
 			$rev_shoppingcarts->confirmationCode = $data['confirmationCode'];
 			$rev_shoppingcarts->paymentStatus = 0;
-			if($data['promoCode']) $rev_shoppingcarts->promoCode = $data['promoCode']['code'];
+			if(isset($data['promoCode'])) $rev_shoppingcarts->promoCode = $data['promoCode']['code'];
 			$bookingChannel = '';
 			if(isset($data['affiliate']['title']))
 			{
