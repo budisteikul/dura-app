@@ -7439,74 +7439,9 @@
             max: i.y.maybe(i.y.number),
             touched: !1
         }).views(function(e) {
-            var t = {get isRequiredValid() {
-                    return e.dataType === f.boolean ? e.required && void 0 !== t.value && null !== t.value || !e.required : e.required && t.value || !e.required
-                },
-                get hasError() {
-                    return !!e.answerError
-                },
-                get isValid() {
-                    return t.isRequiredValid && !t.hasError
-                },
-                get isDirty() {
-                    return t.value !== e.firstValue
-                },
-                get getUniqueIdentifier() {
-                    for (var t = [], n = e, r = Object(i.n)(e); n !== r;) {
-                        if (void 0 !== n.bookingId) t.push(n.bookingId);
-                        else if (n.activityBookingDetail && n.activityBookingDetail.activityBookingId) t.push(n.activityBookingDetail.activityBookingId);
-                        else if (void 0 !== n.questionId) t.push(n.questionId);
-                        else {
-                            var a = Object(i.m)(n);
-                            a.length && t.push(a[a.length - 1])
-                        }
-                        n = Object(i.k)(n)
-                    }
-                    return t.reverse().join("/")
-                },
-                get isCheckmark() {
-                    return t.isValid && (void 0 !== e.currentValue || void 0 !== t.value)
-                },
-                get value() {
-                    var n = null,
-                        r = y(e);
-                    if (null == (n = (null == r ? void 0 : r.storeQuestionValues) ? r.questionSpecificationValues.get(t.getUniqueIdentifier) : e.currentValue) && e.defaultValue && (n = e.defaultValue), e.dataType === f.boolean) {
-                        if ("false" === n) return !1;
-                        if ("true" === n) return !0
-                    }
-                    return n
-                },
-                get getFormattedValue() {
-                    switch (e.dataType) {
-                        case f.date:
-                            if (!t.value) return null;
-                            var n = u()(t.value, "DD/MM/YYYY", !0);
-                            return n.isValid() ? n.format("".concat(l.a)) : t.value;
-                        case f.dateAndTime:
-                            if (!t.value) return null;
-                            var r = u()(t.value, "DD/MM/YYYY HH:mm", !0);
-                            return r.isValid() ? r.format("".concat(l.a, " HH:mm")) : t.value;
-                        case f.boolean:
-                            if (!0 === t.value) return "true";
-                            if (!1 === t.value) return "false"
-                    }
-                    return t.value
-                },
-                get getAnswerValues() {
-                    return Array.isArray(t.getFormattedValue) ? t.getFormattedValue : [t.getFormattedValue]
-                }
-            };
-            return t
+            
         }).views(function(e) {
-            return {get getAnswersString() {
-                    return e.dataType === f.boolean ? e.value ? Object(o.a)().t("frontend.yes") : Object(o.a)().t("frontend.no") : e.answers && 0 !== e.answers.length && (1 !== e.answers.length || e.answers[0]) ? e.selectFromOptions && e.answerOptions ? e.answers.map(function(t) {
-                        var n = e.answerOptions.find(function(e) {
-                            return e.value === t
-                        });
-                        return n ? n.label : t
-                    }).join(", ") : e.answers.join(", ") : "-"
-                }
-            }
+            
         }).preProcessSnapshot(function(e) {
             var t = function(e) {
                 for (var t, n = 1; n < arguments.length; n++) t = null == arguments[n] ? {} : arguments[n], n % 2 ? b(Object(t), !0).forEach(function(n) {
@@ -9829,25 +9764,9 @@
             })
         },
         l = r.y.model().views(function(e) {
-            var t = {get getAllQuestions() {
-                    return Object(a.d)(e, i.a)
-                },
-                get hasQuestions() {
-                    return 0 !== t.getAllQuestions.length
-                },
-                get hasInvalidQuestions() {
-                    return c(e)
-                }
-            };
-            return t
+            
         }).views(function(e) {
-            return {
-                getQuestionById: function(t) {
-                    return e.getAllQuestions.find(function(e) {
-                        return e.questionId === t
-                    })
-                }
-            }
+            
         });
     t.a = l
 }, function(e, t, n) {
@@ -12699,25 +12618,13 @@
             id: r.y.number,
             originalUrl: r.y.string
         }).views(function(e) {
-            return {get getImgixSrcUrl() {
-                    return -1 === e.originalUrl.indexOf("bokundemo.s3") ? -1 === e.originalUrl.indexOf("bokundev.s3") ? "https://bokunprod.imgix.net".concat(e.fileName) : "https://bokundev.imgix.net".concat(e.fileName) : "https://bokundemo.imgix.net".concat(e.fileName)
-                }
-            }
+            
         }).views(function(e) {
             var t = function(t) {
                 return "".concat(e.getImgixSrcUrl, "?dpr=1&auto=format&w=").concat(t, "&h=").concat(t)
             };
             return {
-                getSizeUrl: t,
-                getCroppedUrl: function(e) {
-                    return "".concat(t(e), "?&crop=center&fit=crop")
-                },
-                getSrcSet: function(e) {
-                    return "".concat(t(e), " ").concat(e, "w")
-                },
-                get getAspectRatioPadding() {
-                    return 56.25
-                }
+                
             }
         });
     t.a = i
@@ -14782,18 +14689,7 @@
             return {get getIndex() {
                     return Object(a.k)(e).indexOf(e)
                 },
-                get getTitle() {
-                    return s(e.passengerDetails)
-                },
-                get getActivityBookingQuestions() {
-                    return Object(a.k)(e, 2)
-                },
-                get getTransportBookingQuestions() {
-                    return Object(a.k)(e, 2)
-                },
-                get getExternalPassengerDetails() {
-                    return Object(a.k)(e, 4).getPassengerDetailsExcluding(Object(a.k)(e, 2).getPassengerDetails)
-                }
+                
             }
         }),
         d = a.y.compose(l, u.a);
@@ -16436,53 +16332,7 @@
             }
         }).views(function(e) {
             var t = {
-                getPassengerDetailsIdentifierIds: function(e, t) {
-                    return [
-                        ["personalIdNumber"],
-                        ["firstName", "lastName"]
-                    ].find(function(n) {
-                        return n.every(function(n) {
-                            return h(e, n) && h(t, n)
-                        })
-                    }) || []
-                },
-                getPassengerDetailsExcluding: function(e) {
-                    return t.getPassengerDetails.filter(function(n) {
-                        return e && !e.some(function(e) {
-                            return t.getPassengerDetailsIdentifierIds(n, e).every(function(t) {
-                                var r = h(n, t),
-                                    a = h(e, t);
-                                return r && a && r.value === a.value
-                            })
-                        })
-                    })
-                },
-                get getPassengerQuestions() {
-                    var t = [];
-                    return Object(s.c)(e, function(e) {
-                        m.b.is(e) && t.push(e)
-                    }), t
-                },
-                get getPassengerDetails() {
-                    var n = [];
-                    return [e.mainContactDetails].concat(t.getPassengerQuestions.map(function(e) {
-                        return e.passengerDetails
-                    })).filter(function(e) {
-                        return !Object(u.d)(e)
-                    }).map(function(e) {
-                        var r = t.getPassengerDetailsIdentifierIds(e, e);
-                        if (r) {
-                            var a = r.map(function(t) {
-                                return h(e, t) ? h(e, t).value : null
-                            }).join("");
-                            n[a] || (n[a] = []), n[a].filter(function(e) {
-                                return e && e.value
-                            }).length < e.filter(function(e) {
-                                return e && e.value
-                            }).length && (n[a] = e)
-                        }
-                    }), Object.values(n)
-                }
+                
             };
             return t
         }),
@@ -16514,22 +16364,7 @@
             activeStepPath: c.y.maybe(c.y.string),
             storeQuestionValues: !0
         }).views(function(e) {
-            return {get getStepPaths() {
-                    var t = Object(c.n)(e).shoppingCartStore,
-                        n = [];
-                    return t && Object(c.n)(e).paymentStore ? (Object(s.c)(e.bookingQuestions, function(e) {
-                        (d.a.is(e) || m.b.is(e)) && e.hasQuestions && n.push(Object(c.l)(e))
-                    }), e.bookingQuestions && n.push(Object(c.l)(e.bookingQuestions.mainContactDetails)), n.push(Object(c.l)(Object(c.n)(e).paymentStore.checkout)), n) : n
-                },
-                get hasInvalidQuestions() {
-                    return Object(u.d)(e.bookingQuestions)
-                },
-                hasProductsSansActivitiesQuestions: function() {
-                    var t = !1;
-                    return Object(s.c)(e.bookingQuestions, function(e) {
-                        (p.a.is(e) || g.a.is(e) || b.a.is(e)) && e.hasQuestions && (t = !0)
-                    }), t
-                }
+            return {
             }
         }).views(function(e) {
             return {get getCurrentIndex() {
@@ -17439,15 +17274,10 @@
         undoIdx: -1,
         targetPath: ""
     }).views(function(e) {
-        return {get canUndo() {
-                return e.undoIdx > 0
-            },
-            get canRedo() {
-                return e.undoIdx < e.history.length - 1
-            }
+        return {
         }
     }).actions(function(e) {
-        var t, n, r = !1;
+        
         return {
             
         }
@@ -17460,12 +17290,7 @@
             history: s.y.array(g),
             undoIdx: 0
         }).views(function(e) {
-            return {get canUndo() {
-                    return e.undoIdx > 0
-                },
-                get canRedo() {
-                    return e.undoIdx < e.history.length
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -17496,17 +17321,7 @@
             unavailable: s.y.boolean,
             guidedLanguages: s.y.string
         }).views(function(e) {
-            return {get dateAsDate() {
-                    return Object(_.b)(e.dateAndTime)
-                },
-                get getDateAsString() {
-                    return Object(_.g)(e.date.toJS())
-                },
-                get getRecurrenceRule() {
-                    return Object(s.k)(e, 2).recurrences.find(function(t) {
-                        return t.id === e.recurrenceRuleIds[e.recurrenceRuleIds.length - 1].id
-                    })
-                }
+            return {
             }
         }),
         O = Object(v.f)("AvailabilityCalendarModalData", {
@@ -17662,11 +17477,9 @@
                 
             }
         }).actions(function(e) {
-            var t = Object(L.a)(e.updateWebsiteConfig, 500);
+           
             return {
-                debouncedUpdateWebsiteConfig: function(e) {
-                    t(e)
-                }
+                
             }
         }),
         H = n(1071),
@@ -17808,9 +17621,7 @@
             })
         }).views(function(e) {
             return {
-                getProgressItemWithTexts: function(t) {
-                    return e.onboardingProgress[t]
-                }
+                
             }
         }),
         ke = n(566),
@@ -17986,9 +17797,7 @@
             vendorId: s.y.maybe($e),
             activityId: s.y.maybe(s.y.string)
         }).actions(function(e) {
-            var t = function(t) {
-                e.page = t
-            };
+            
             return {
                 
             }
@@ -18025,38 +17834,12 @@
             isSearching: !1
         }).actions(function(e) {
             return {
-                handleSearch: Object(s.i)(o.a.mark(function t() {
-                    var n;
-                    return o.a.wrap(function(t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return t.prev = 0, e.isSearching = !0, tt.cancel(), tt = u.a.CancelToken.source(), t.next = 6, u.a.post(e.searchUrl, Object(s.o)(e.query), {
-                                    cancelToken: tt.token
-                                });
-                            case 6:
-                                n = t.sent, e.searchResult = n.data, e.isSearching = !1, t.next = 16;
-                                break;
-                            case 11:
-                                if (t.prev = 11, t.t0 = t.catch(0), !u.a.isCancel(t.t0)) {
-                                    t.next = 15;
-                                    break
-                                }
-                                return t.abrupt("return");
-                            case 15:
-                                e.isSearching = !1;
-                            case 16:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t, null, [
-                        [0, 11]
-                    ])
-                })),
+                
                 
             }
         }).actions(function(e) {
             return {
-                search: Object(L.a)(e.handleSearch, 400)
+                
             }
         }),
         rt = (n(1032), n(11)),
@@ -18075,25 +17858,7 @@
             templateProductLists: s.y.maybe(s.y.array(s.y.frozen(null)))
         }).views(function(e) {
             return {
-                getProductListMappingTypes: function() {
-                    return {
-                        options: [{
-                            label: window.__i18n.t("websiteEditor.WEBSITES.WEBSITE_TEMPLATE_COLLECTIONS.ALL_SUPPLIED"),
-                            value: {
-                                type: R.a.ALL_SUPPLIED,
-                                productList: null
-                            }
-                        }].concat(d()(e.templateProductLists.map(function(e) {
-                            return {
-                                label: e.title,
-                                value: {
-                                    type: R.a.PRODUCT_LIST,
-                                    productList: e.id
-                                }
-                            }
-                        })))
-                    }
-                }
+                
             }
         }),
         ut = Object(v.f)("DudaPhone", {
@@ -18127,9 +17892,7 @@
             reddit: s.y.maybeNull(s.y.string)
         }).actions(function(e) {
             return {
-                setValue: function(t, n) {
-                    e[t] = n
-                }
+                
             }
         }),
         pt = Object(v.f)("DudaGeo", {
@@ -18229,15 +17992,7 @@
             tiers: s.y.array(wt)
         }).views(function(e) {
             return {
-                totalAmount: function(t) {
-                    if (!e.tiers) return 0;
-                    for (var n = 0, r = 0; r < e.tiers.length; r++)
-                        if (t >= e.tiers[r].startingUnit && t <= e.tiers[r].endingUnit) {
-                            for (var a = 0; a <= r; a++) n += e.tiers[a].price;
-                            break
-                        }
-                    return n
-                }
+                
             }
         }),
         St = Object(v.f)("SubscriptionAddonEstimate", {
@@ -18250,10 +18005,7 @@
             addonInfo: Et,
             maskedNumber: s.y.string
         }).views(function(e) {
-            return {get formattedMaskedNumber() {
-                    return !e.maskedNumber && 4 < e.maskedNumber.length ? "" : "".concat(window.__i18n.t("websites.PAYMENT_MODAL.websitePayment.endingIn"), " ").concat(e.maskedNumber.substr(e.maskedNumber.length - 4))
-                }
-            }
+            
         }),
         Pt = n(1070),
         xt = Object(v.f)("WebsitesStore", {
@@ -18289,18 +18041,7 @@
                 
             }
         }).actions(function(e) {
-            var t = function(t) {
-                var n = t.data,
-                    r = Object(v.g)(n),
-                    a = r.config,
-                    i = r.allWebsites,
-                    o = r.noOfUnpaidDudaWebsites,
-                    c = r.subscriptionAddonEstimate,
-                    u = r.dudaSiteContent,
-                    s = r.dudaConfig,
-                    l = N()(r, ["config", "allWebsites", "noOfUnpaidDudaWebsites", "subscriptionAddonEstimate", "dudaSiteContent", "dudaConfig"]);
-                e.config = a, e.websiteOptions = l, e.websites = i, e.dudaSiteContent = u, e.noOfUnpaidWebsites = o, e.subscriptionAddonEstimate = c, e.dudaConfig = s
-            };
+            
             return {
                 
             }
@@ -19165,12 +18906,7 @@
             selectedPaymentMethodIndex: 0,
             selectedPaymentProviderIndex: 0
         }).views(function(e) {
-            return {get selectedPaymentMethodType() {
-                    return e.allowedMethods[e.selectedPaymentMethodIndex]
-                },
-                get selectedPaymentProvider() {
-                    return e.paymentProviders[e.selectedPaymentProviderIndex]
-                }
+            return {
             }
         }).views(function(e) {
             return {get hasMultiplePaymentMethods() {
@@ -20282,31 +20018,13 @@
             strikeThroughTotalAsMoney: u.y.maybe(l.a),
             totalWithExcludedTaxAsMoney: u.y.maybe(l.a)
         }).views(function(e) {
-            return {get getProductBookingFromCart() {
-                    var t = Object(u.n)(e).shoppingCartStore;
-                    return t && t.cart && t.cart.getProductsForCategory(e.productCategory) ? t.cart.getProductsForCategory(e.productCategory).find(function(t) {
-                        return t.id === e.productBookingId
-                    }) : void 0
-                },
-                get getProductBookingFromCheckout() {
-                    try {
-                        return Object(u.k)(e, 3).getProductsForCategory(e.productCategory).find(function(t) {
-                            return t.bookingId === e.productBookingId
-                        })
-                    } catch (e) {
-                        return void Object(d.a)(e)
-                    }
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getProductBooking() {
-                    return e.getProductBookingFromCart || e.getProductBookingFromCheckout
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getActivityBooking() {
-                    return a.ACTIVITIES === e.productCategory ? e.getProductBooking : void 0
-                }
+            return {
             }
         }).views(function(e) {
             var t = function(e, t) {
@@ -20440,13 +20158,7 @@
                 }
             }
         }).views(function(e) {
-            return {get getAdditionalItems() {
-                    return [].concat(o()(e.getPickup), o()(e.getDropoff), o()(e.getExtras))
-                },
-                get getFormattedDateTimeString() {
-                    var t = e.getTimeString;
-                    return t ? Object(c.format)(t, "MMM D, YYYY".concat(t && t.includes("@") ? ", HH:mm" : "")) : ""
-                }
+            return {
             }
         });
     t.c = m
@@ -20897,21 +20609,10 @@
             labels: i.y.frozen([]),
             type: i.y.frozen(void 0)
         }).views(function(e) {
-            return {get country() {
-                    return h.a.find(function(t) {
-                        return t.code === e.address.countryCode
-                    }) || {}
-                }
+            return {
             }
         }).views(function(e) {
-            return {get addressAsText() {
-                    var t = [e.address.postalCode, e.address.city].filter(function(e) {
-                        return "" !== e
-                    }).join(" ");
-                    return [e.address.addressLine1, t, e.country.name].filter(function(e) {
-                        return "" !== e
-                    }).join(", ")
-                }
+            return {
             }
         }),
         v = (n(93), n(612), n(740), n(555), n(453), n(280), n(337), n(72), n(104), n(553), n(364), n(5)),
@@ -20932,9 +20633,7 @@
             vendor: i.y.frozen(),
             activity: i.y.frozen()
         }).views(function(e) {
-            return {get startTime() {
-                    return Object(i.k)(e, 2)
-                }
+            return {
             }
         });
 
@@ -20962,12 +20661,7 @@
             flags__skip: i.y.maybe(i.y.array(i.y.string)),
             comboStartTimes: i.y.maybe(i.y.array(w))
         }).views(function(e) {
-            return {get activity() {
-                    return Object(i.k)(e, 2)
-                },
-                get getEndTimeAsDate() {
-                    return Object(A.addMinutes)(new Date(0, 0, 0, e.hour, e.minute), e.durationMinutes + 60 * e.durationHours + 60 * e.durationDays * 24 + 60 * e.durationWeeks * 24 * 7)
-                }
+            return {
             }
         }).views(function(e) {
             return {get getFormattedStartTime() {
@@ -21215,59 +20909,7 @@
         resourceSlots: i.y.array(b.b),
         timeZone: i.y.maybe(i.y.string)
     }).views(function(e) {
-        return {get durationInMillisecs() {
-                return 7 * e.durationWeeks * 24 * 60 * 6e4 + 24 * e.durationDays * 60 * 6e4 + 60 * e.durationHours * 6e4 + 6e4 * e.durationMinutes
-            },
-            get allPhotos() {
-                return e.keyPhoto ? [e.keyPhoto].concat(a()(0 < e.photos.length ? e.photos.filter(function(t) {
-                    return t.id !== e.keyPhoto.id
-                }) : [])) : e.photos
-            },
-            get getStatusTag() {
-                return e.published ? p.a.PUBLISHED : p.a.NOT_PUBLISHED
-            },
-            get cutoffInMillisecs() {
-                return 7 * e.bookingCutoffWeeks * 24 * 60 * 6e4 + 24 * e.bookingCutoffDays * 60 * 6e4 + 60 * e.bookingCutoffHours * 6e4 + 6e4 * e.bookingCutoffMinutes
-            },
-            get priceFrom() {
-                return e.nextDefaultPrice
-            },
-            get hasItinerary() {
-                return !!e.agendaItems && 0 < e.agendaItems.length
-            },
-            get hasRouteMap() {
-                return !!e.displaySettings.showRouteMap && !!e.route && !!e.route.start
-            },
-            get hasMeetingPoints() {
-                return (e.meetingType === S.MEET_ON_LOCATION || e.meetingType === S.MEET_ON_LOCATION_OR_PICK_UP) && !!e.startPoints && 0 < e.startPoints.length
-            },
-            get hasPickUp() {
-                return (e.meetingType === S.PICK_UP || e.meetingType === S.MEET_ON_LOCATION_OR_PICK_UP) && !!e.displaySettings.showPickupPlaces
-            },
-            get knowBeforeYouGoWithoutAccessibility() {
-                return e.knowBeforeYouGoItems.filter(function(e) {
-                    return !(e in C)
-                })
-            },
-            getContactInfoData: function(t, n) {
-                var r;
-                if (n === f.a.MainContact ? r = e.mainContactFields : n === f.a.Passenger && (r = e.passengerFields), !r || 0 === r.length) return {
-                    isSet: !1,
-                    required: !1
-                };
-                var a = r.find(function(e) {
-                    return e.field === t
-                });
-                return {
-                    isSet: void 0 !== a,
-                    required: void 0 !== a && a.required
-                }
-            },
-            getRateById: function(t) {
-                return e.rates.find(function(e) {
-                    return e.id === t
-                })
-            }
+        return {
         }
     }).actions(function(e) {
         return {
@@ -21384,9 +21026,7 @@
             parameters: r.y.array(i),
             externalFraudDetectionUrl: r.y.maybe(r.y.string)
         }).views(function(e) {
-            return {get fraudDetectionRequired() {
-                    return !!e.externalFraudDetectionUrl
-                }
+            return {
             }
         }),
         s = (t.b = u, function(e) {
@@ -30377,9 +30017,7 @@
             
         }
     }).views(function(e) {
-        return {get hasError() {
-                return e.errorMessage && 0 < e.errorMessage.length
-            }
+        return {
         }
     });
     t.b = o
@@ -30737,9 +30375,7 @@
             extraTitle: r.y.maybe(r.y.string),
             questions: r.y.array(o.a)
         }).views(function(e) {
-            return {get getExtraBooking() {
-                    return e.bookingId ? Object(i.b)(a.a, e, e.bookingId) : void 0
-                }
+            return {
             }
         }),
         s = r.y.compose(u, c.a);
@@ -30931,14 +30567,10 @@
             options: r.y.array(i.b),
             selectedCheckoutOptionIndex: 0
         }).views(function(e) {
-            return {get getSelectedCheckoutOption() {
-                    return e.options[e.selectedCheckoutOptionIndex]
-                }
+            return {
             }
         }).views(function(e) {
-            return {get hideCheckoutOptions() {
-                    return 1 >= e.options.length && void 0 !== e.getSelectedCheckoutOption && e.getSelectedCheckoutOption.type === i.a.customerFullPayment
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -31039,9 +30671,7 @@
             fields: o.y.map(g),
             hasMilestone: !1
         })).views(function(e) {
-            return {get visible() {
-                    return (e.required || !Object(o.n)(e).getUiConfig(p.a.ShowOnlyRequiredSteps, !0)) && e.status !== u.a.HIDDEN
-                }
+            return {
             }
         }),
         h = o.y.compose(g, Object(d.f)("EditorGroupConfig", {
@@ -31057,47 +30687,7 @@
             publishable: !1
         }).views(function(e) {
             return {
-                getQualityReport: function() {
-                    for (var t = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : u.a.ERROR, n = [], r = u.a.HIDDEN, i = Array.from(e.groups.entries()), o = function() {
-                            for (var e = l[s], i = a()(e, 2), o = i[0], u = i[1], d = Array.from(u.steps.entries()), p = function() {
-                                    var e = m[f],
-                                        i = a()(e, 2),
-                                        u = i[0],
-                                        s = i[1];
-                                    s.status === t && (r = y(r, s.status), n.push({
-                                        step: s,
-                                        redirectURL: function(e) {
-                                            return Object(c.a)(o, u, e)
-                                        }
-                                    }))
-                                }, f = 0, m = d; f < m.length; f++) p()
-                        }, s = 0, l = i; s < l.length; s++) o();
-                    return [r, n]
-                },
-                getFirstVisibleStepTuple: function(t, n) {
-                    var r = Array.from(e.groups.entries()),
-                        i = 0;
-                    void 0 !== t && (i = Math.max(r.findIndex(function(e) {
-                        return e[0] === t
-                    }), 0));
-                    for (var o = 0; o < r.length; o++) {
-                        var c = a()(r[(i + o) % r.length], 2),
-                            u = c[0],
-                            s = c[1],
-                            l = Array.from(s.steps.entries()),
-                            d = 0;
-                        void 0 !== n && (d = Math.max(l.findIndex(function(e) {
-                            return e[0] === n
-                        }), 0));
-                        for (var p = 0; p < l.length; p++) {
-                            var f = a()(l[(d + p) % l.length], 2),
-                                m = f[0],
-                                g = f[1];
-                            if (m !== n && g.visible) return [u, m]
-                        }
-                    }
-                    return [void 0, void 0]
-                }
+                
             }
         });
     t.e = v
@@ -31119,9 +30709,7 @@
             location: r.y.frozen(),
             unLocode: r.y.frozen()
         }).views(function(e) {
-            return {get getFlags() {
-                    return e.flags ? e.flags.split(",") : []
-                }
+            return {
             }
         });
     window.PickupPlace = i, t.b = i;
@@ -31178,35 +30766,10 @@
             totalBookingFeePercent: r.y.maybe(r.y.number),
             promoCode: r.y.frozen()
         }).views(function(e) {
-            return {get orderedProductInvoices() {
-                    return e.productInvoices.sort(function(e, t) {
-                        return e.productBookingId - t.productBookingId
-                    })
-                },
-                get getOptionType() {
-                    return Object(r.k)(e, 1).type
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getDueOnArrival() {
-                    var t = Object(r.k)(e, 1);
-                    switch (e.getOptionType) {
-                        case a.a.customerNoPayment:
-                            return t && t.partialPayment && t.depositFormattedPayOnArrival || e.remainingAmountAsMoney && e.remainingAmountAsMoney.amount && 0 < e.remainingAmountAsMoney.amount && e.remainingAmountAsText || t && t.invoice && t.invoice.remainingAmountAsText || "";
-                        case a.a.customerPartialPayment:
-                            return t.depositFormattedPayOnArrival;
-                        case a.a.customerFullPayment:
-                            return
-                    }
-                },
-                get getTotalDueNow() {
-                    switch (e.getOptionType) {
-                        case a.a.customerNoPayment:
-                            return "0";
-                        default:
-                            return e.remainingAmountAsText
-                    }
-                }
+            return {
             }
         });
     t.a = u
@@ -31533,20 +31096,7 @@
             pickupQuestions: r.y.array(i.a),
             dropoffQuestions: r.y.array(i.a)
         }).views(function(e) {
-            return {get getPassengerDetails() {
-                    return e.passengers.map(function(e) {
-                        return e.passengerDetails
-                    })
-                },
-                get getProductInvoice() {
-                    var t = Object(r.n)(e).shoppingCartStore.cart.customerInvoiceInInvoiceCurrency || Object(r.n)(e).shoppingCartStore.cart.customerInvoice;
-                    if (t) {
-                        var n = t.productInvoices;
-                        return n.length ? n.find(function(t) {
-                            return t.productBookingId === e.bookingId
-                        }) : void 0
-                    }
-                }
+            return {
             }
         }),
         s = r.y.compose("ActivityBookingQuestions", u, c.a);
@@ -31564,9 +31114,7 @@
             totalPrice: a.y.number
         }).views(function(e) {
             return {
-                getId: function() {
-                    return e.id
-                }
+                
             }
         })
 }, function(e, t, n) {
@@ -31586,43 +31134,9 @@
             cancelPageUrl: r.y.maybe(r.y.string),
             errorPageUrl: r.y.maybe(r.y.string)
         }).actions(function(e) {
-            var t, n, r, i, o, c;
+            
             return {
-                setHistoryInstance: function(e) {
-                    t = e
-                },
-                setAxiosInstance: function(e) {
-                    n = e
-                },
-                setCallbacks: function(e) {
-                    r = e.clearCart, i = e.getBookingAnswers, o = e.handleRedirectRequest, c = e.getReceiptUrl
-                },
-                fetchNewUti: function(t) {
-                    return n.get(t ? Object(a.c)(e.utiEndpoint, "paymentContractId", t.toString()) : e.utiEndpoint)
-                },
-                fetchCheckoutOptions: function() {
-                    return n.get(e.checkoutOptionsEndpoint)
-                },
-                processCheckout: function(t) {
-                    return n.post(e.processCheckoutEndpoint, t)
-                },
-                processRedirectBookingReceipt: function(t) {
-                    return e.processRedirectBookingReceiptEndpoint ? n.post(e.processRedirectBookingReceiptEndpoint, t) : new Promise(function(e) {
-                        return e(void 0)
-                    })
-                },
-                routerReceipt: function(n, r) {
-                    t.push(e.routeReceiptUrl || c(n, r))
-                },
-                onClearCart: function() {
-                    r()
-                },
-                getBookingAnswers: function() {
-                    return i()
-                },
-                handleRedirectRequest: function(e) {
-                    return o(e)
-                }
+                
             }
         });
     t.a = o
@@ -31664,13 +31178,7 @@
             pricingTypeLabel: r.y.string
         }).views(function(e) {
             return {
-                getExtraTitleAndPrice: function(t) {
-                    if (e.free) return " + " + e.extra.title + ": Included";
-                    var n = t.lineItems.find(function(t) {
-                        return t.itemBookingId.split("_")[1] === e.id.toString()
-                    }).totalAsText;
-                    return " + " + e.extra.title + ": " + n
-                }
+                
             }
         });
     t.a = i
@@ -31923,10 +31431,7 @@
             }))),
             items: r.y.array(c)
         }).views(function(e) {
-            return {get getParents() {
-                    for (var t = [], n = e; void 0 !== n.parent;) n = n.parent, t.unshift(n);
-                    return t
-                }
+            return {
             }
         });
     t.a = u
@@ -32376,15 +31881,7 @@
             questions: r.y.array(i.a),
             rooms: r.y.array(c.a)
         }).views(function(e) {
-            return {get getProductInvoice() {
-                    var t = Object(r.n)(e).shoppingCartStore.cart.customerInvoiceInInvoiceCurrency || Object(r.n)(e).shoppingCartStore.cart.customerInvoice;
-                    if (t) {
-                        var n = t.productInvoices;
-                        return n.length ? n.find(function(t) {
-                            return t.productBookingId === e.bookingId
-                        }) : void 0
-                    }
-                }
+            return {
             }
         }),
         s = r.y.compose(u, o.a);
@@ -32404,18 +31901,7 @@
                 
             }
         }).views(function(e) {
-            return {get getIndex() {
-                    return Object(r.k)(e).indexOf(e)
-                },
-                get getTitle() {
-                    return Object(o.c)(e.details)
-                },
-                get getActivityBookingQuestions() {
-                    return Object(r.k)(e, 2)
-                },
-                get getExternalPassengerDetails() {
-                    return Object(r.k)(e, 6).getPassengerDetailsExcluding(Object(r.k)(e, 2).getGuestDetails)
-                }
+            return {
             }
         }),
         s = r.y.compose(u, c.a);
@@ -32435,15 +31921,8 @@
             questions: r.y.array(o.a),
             items: r.y.array(i.a)
         }).views(function(e) {
-            return {get getProductInvoice() {
-                    var t = Object(r.n)(e).shoppingCartStore.cart.customerInvoiceInInvoiceCurrency || Object(r.n)(e).shoppingCartStore.cart.customerInvoice;
-                    if (t) {
-                        var n = t.productInvoices;
-                        return n.length ? n.find(function(t) {
-                            return t.productBookingId === e.bookingId
-                        }) : void 0
-                    }
-                }
+            return {
+               
             }
         }),
         s = r.y.compose(u, c.a);
@@ -32464,15 +31943,8 @@
             pickupQuestions: r.y.array(i.a),
             dropoffQuestions: r.y.array(i.a)
         }).views(function(e) {
-            return {get getProductInvoice() {
-                    var t = Object(r.n)(e).shoppingCartStore.cart.customerInvoiceInInvoiceCurrency || Object(r.n)(e).shoppingCartStore.cart.customerInvoice;
-                    if (t) {
-                        var n = t.productInvoices;
-                        return n.length ? n.find(function(t) {
-                            return t.productBookingId === e.bookingId
-                        }) : void 0
-                    }
-                }
+            return {
+              
             }
         }),
         s = r.y.compose(u, c.a);
@@ -34319,15 +33791,7 @@
             paymentProviderTitle: r.y.maybe(r.y.string),
             shoppingCartPosition: r.y.optional(r.y.enumeration(["LEFT", "RIGHT"]), "RIGHT")
         }).views(function(e) {
-            return {get backendOrOTA() {
-                    return e.backend || e.integratedSystem
-                },
-                get titleTrimmed() {
-                    return e.title ? e.title.substring(0, 45) + (45 < e.title.length ? "..." : "") : ""
-                },
-                hasWebsite: function() {
-                    return void 0 !== e.websiteConfig
-                }
+            return {
             }
         });
     t.a = b
@@ -34813,24 +34277,10 @@
             affectedStartTimes: i.y.frozen([]),
             guidedLanguages: i.y.frozen([])
         }).views(function(e) {
-            return {get ruleIndex() {
-                    return Object(i.k)(e, 2).recurrences.findIndex(function(t) {
-                        return t.id === e.id
-                    })
-                },
-                get getRecurrenceRuleType() {
-                    return void 0 !== e.bom.dtStart && void 0 !== e.bom.until && Object(a.a)(e.bom.dtStart.toJS(), e.bom.until.toJS()) ? r.FIXED_DATE : void 0 !== e.bom.dtStart && void 0 !== e.bom.until ? r.DATE_RANGE : 0 < e.bom.byMonth.length ? r.MONTHLY : r.WEEKLY
-                }
+            return {
             }
         }).views(function(e) {
-            return {get affectedStartTimeIds() {
-                    return e.affectedStartTimes.map(function(e) {
-                        return e.id
-                    })
-                },
-                get textColor() {
-                    return e.color && Object(o.g)(.3, Object(o.d)(e.color)) || "#000"
-                }
+            return {
             }
         });
     t.c = l
@@ -35248,40 +34698,10 @@
             openForMinutes: u.y.number,
             openFrom: u.y.array(u.y.number)
         }).views(function(e) {
-            return {get openTo() {
-                    var t = e.openFrom,
-                        n = Object(l.c)({
-                            hour: t[0],
-                            minute: t[1]
-                        }, {
-                            hour: e.openForHours,
-                            minute: e.openForMinutes
-                        });
-                    return {
-                        hour: n[0],
-                        minute: n[1]
-                    }
-                }
+            return {
             }
         }).views(function(e) {
-            return {get openFromString() {
-                    return Object(u.k)(e, 6).getFormattedTime(e.openFrom[0], e.openFrom[1])
-                },
-                get openToString() {
-                    return Object(u.k)(e, 6).getFormattedTime(e.openTo.hour, e.openTo.minute)
-                },
-                get formattedString() {
-                    var t = Object(u.k)(e, 6),
-                        n = t.getFormattedTime(e.openFrom[0], e.openFrom[1]),
-                        r = t.getFormattedTime(e.openTo.hour, e.openTo.minute);
-                    return "".concat(n, " to ").concat(r)
-                },
-                get seasonalFormattedString() {
-                    var t = Object(u.k)(e, 7),
-                        n = t.getFormattedTime(e.openFrom[0], e.openFrom[1]),
-                        r = t.getFormattedTime(e.openTo.hour, e.openTo.minute);
-                    return "".concat(n, " to ").concat(r)
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -35336,12 +34756,7 @@
             saturday: m,
             sunday: m
         }).views(function(e) {
-            return {get startDate() {
-                    return e.startMonth && e.startDay ? new Date((new Date).getFullYear(), e.startMonth - 1, e.startDay) : null
-                },
-                get endDate() {
-                    return e.endMonth && e.endDay ? new Date((new Date).getFullYear(), e.endMonth - 1, e.endDay) : null
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -35503,25 +34918,7 @@
         currencies: o.y.maybe(o.y.array(o.y.string))
     }).views(function(e) {
         return {
-            getProductListMappingTypes: function() {
-                return {
-                    options: [{
-                        label: window.__i18n.t("websiteEditor.WEBSITES.WEBSITE_TEMPLATE_COLLECTIONS.ALL_SUPPLIED"),
-                        value: {
-                            type: r.ALL_SUPPLIED,
-                            productList: null
-                        }
-                    }].concat(i()(e.templateProductLists.map(function(e) {
-                        return {
-                            label: e.title,
-                            value: {
-                                type: r.PRODUCT_LIST,
-                                productList: e.id
-                            }
-                        }
-                    })))
-                }
-            }
+            
         }
     });
     t.b = s
@@ -35572,35 +34969,11 @@
         extras: s.y.maybe(s.y.array(l.a))
     })).views(function(e) {
         return {
-            getProductId: function() {
-                return e.activity.id
-            },
-            getTitle: function() {
-                return e.activity.title
-            },
-            getKeyPhoto: function() {
-                return e.activity.keyPhoto
-            }
+            
         }
     }).views(function(e) {
         return {
-            getTotalQuantity: function() {
-                return e.pricingCategoryBookings.reduce(function(e, t) {
-                    return e + (t.quantity || 0)
-                }, 0)
-            },
-            getPricingCategoriesCount: function() {
-                return o()(e.pricingCategoryBookings.reduce(function(e, t) {
-                    return e.has(t.pricingCategoryId) ? e.get(t.pricingCategoryId).quantity++ : e.set(t.pricingCategoryId, function(e) {
-                        for (var t, n = 1; n < arguments.length; n++) t = null == arguments[n] ? {} : arguments[n], n % 2 ? m(Object(t), !0).forEach(function(n) {
-                            a()(e, n, t[n])
-                        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : m(Object(t)).forEach(function(n) {
-                            Object.defineProperty(e, n, Object.getOwnPropertyDescriptor(t, n))
-                        });
-                        return e
-                    }({}, t)), e
-                }, new Map).values())
-            }
+            
         }
     });
     t.a = g
@@ -35632,9 +35005,7 @@
             keyPhoto: r.y.maybe(o.a),
             enhancedConnectivity: r.y.optional(r.y.boolean, !1)
         }).views(function(e) {
-            return {get getStatusTag() {
-                    return e.published ? i.a.PUBLISHED : i.a.NOT_PUBLISHED
-                }
+            return {
             }
         });
     t.a = c
@@ -35811,9 +35182,7 @@
             bookingRoles: f.y.frozen()
         }).views(function(e) {
             return {
-                getProductId: function() {
-                    return e.productId
-                }
+                
             }
         }),
         L = f.y.compose(N, Object(y.f)("ActivityBookingDetails", {
@@ -35848,18 +35217,7 @@
             requestResponseNote: f.y.maybe(f.y.string)
         }).views(function(e) {
             return {
-                getProductId: function() {
-                    var t;
-                    return null === (t = e.activity) || void 0 === t ? void 0 : t.id
-                },
-                getTitle: function() {
-                    var t;
-                    return null === (t = e.activity) || void 0 === t ? void 0 : t.title
-                },
-                getKeyPhoto: function() {
-                    var t;
-                    return null === (t = e.activity) || void 0 === t ? void 0 : t.keyPhoto
-                }
+                
             }
         })),
         z = (n(54), n(907), Object(y.f)("Customer", {
@@ -35888,14 +35246,10 @@
             passportExpMonth: f.y.maybe(f.y.string),
             passportExpYear: f.y.maybe(f.y.string)
         }).views(function(e) {
-            return {get getFullName() {
-                    return e.firstName || e.lastName ? "".concat(e.firstName || "", " ").concat(e.lastName || "").trim() : null
-                }
+            return {
             }
         }).views(function(e) {
-            return {get hasInfo() {
-                    return !!(e.getFullName || e.email || e.phoneNumber)
-                }
+            return {
             }
         })),
         R = n(368),
@@ -35933,9 +35287,7 @@
             bookingFields: f.y.frozen()
         }).views(function(e) {
             return {
-                getProductsForCategory: function(t) {
-                    return t === R.b.ACCOMMODATION ? e.accommodationBookings : t === R.b.ACTIVITIES ? e.activityBookings : t === R.b.CAR_RENTALS ? e.carRentalBookings : t === R.b.TRANSPORT ? e.routeBookings : []
-                }
+                
             }
         }),
         D = Object(y.f)("DccQuote", {
@@ -35976,9 +35328,7 @@
             threeDSecureHTML: f.y.maybe(f.y.string)
         }).views(function(e) {
             return {
-                getCustomerPayment: function() {
-                    return 0 < e.customerPayments.length ? e.customerPayments[0] : e.booking && 0 < e.booking.customerPayments.length ? e.booking.customerPayments[0] : null
-                }
+                
             }
         }),
         X = (n(845), n(579), n(523)),
@@ -35989,42 +35339,16 @@
             expYear: "",
             cvc: ""
         }).views(function(e) {
-            return {get getCardValidation() {
-                    return X.number(e.cardNumber)
-                },
-                get getExpiryValidation() {
-                    return X.expirationDate("".concat(e.expMonth, "/").concat(e.expYear))
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getCvcLength() {
-                    return e.getCardValidation && e.getCardValidation.card ? e.getCardValidation.card.code.size : 3
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getCvcValidation() {
-                    return X.cvv(e.cvc, e.getCvcLength)
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getCardType() {
-                    return e.getCardValidation && e.getCardValidation.card && e.getCardValidation.card.type
-                },
-                get getIsValid() {
-                    return e.getCardValidation.isValid && e.getExpiryValidation.isValid && e.getCvcValidation.isValid
-                },
-                get getCardNumberMask() {
-                    if (e.getCardValidation.card) {
-                        var t = e.getCardValidation.card,
-                            n = 0 < t.lengths.length ? t.lengths[0] : 16,
-                            r = Array(n).fill(/\d/),
-                            a = 0;
-                        return t.gaps.map(function(e) {
-                            r.splice(e + a++, 0, " ")
-                        }), r
-                    }
-                    return [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -36084,13 +35408,8 @@
             
         }
     }).views(function(e) {
-        return {get getSelectedPaymentProvider() {
-                var t = e.checkout.getSelectedCheckoutOption;
-                return t && t.paymentMethods && t.paymentMethods ? t.paymentMethods.selectedPaymentProvider : void 0
-            },
-            get getBookingChannelUUID() {
-                return Object(f.n)(e).bookingChannelUUID
-            }
+        return {
+           
         }
     }).actions(function(e) {
         
@@ -36099,10 +35418,7 @@
         }
     }).actions(function(e) {
         return {
-            refetchCheckoutOptions: function() {
-                var t, n, r = Object(f.n)(e).widgetCheckoutStore;
-                r && r.currentStepIndex === p.a.Payment ? e.fetchCheckoutOptions() : (null === (t = Object(f.n)(e)) || void 0 === t || null === (n = t.paymentStore) || void 0 === n ? void 0 : n.fetchCheckoutOptions) && Object(f.n)(e).paymentStore.fetchCheckoutOptions()
-            }
+            
         }
     }).actions(function(e) {
         return {
@@ -36112,23 +35428,10 @@
         return {
         }
     }).views(function(e) {
-        return {get hasAcceptedTerms() {
-                var t = e.getCheckoutConfig();
-                return !(t && t.showTerms) || e.termsAndConditionsAccepted
-            },
-            get getActivityRates() {
-                var t = Object(f.n)(e).shoppingCartStore;
-                return Object(y.d)(t.cart, d.d).filter(Boolean)
-            }
+        return {
         }
     }).views(function(e) {
-        return {get submitDisabled() {
-                return e.paymentButtonDisabled || e.processingCheckout || e.hasInvalidQuestions || !e.hasAcceptedTerms
-            },
-            shouldMoveBookingBackToCart: function() {
-                var t = e.checkoutResponse;
-                return void 0 !== t && void 0 !== t.booking && "RESERVED" === t.booking.status
-            }
+        return {
         }
     });
     t.a = Z
@@ -36663,9 +35966,7 @@
             permissions: r.y.array(r.y.enumeration(Object.values(a.a)))
         }).views(function(e) {
             return {
-                hasPermission: function(t) {
-                    return e.permissions.includes(t)
-                }
+                
             }
         });
     t.a = o
@@ -36753,17 +36054,7 @@
             roomTypeTitle: r.y.string,
             startDate: r.y.string
         }).views(function(e) {
-            return {get getIndex() {
-                    return Object(r.k)(e).indexOf(e)
-                },
-                get getAccommodationBookingQuestions() {
-                    return Object(r.k)(e, 2)
-                },
-                get getGuestDetails() {
-                    return e.guests.map(function(e) {
-                        return e.details
-                    })
-                }
+            return {
             }
         }),
         l = r.y.compose(s, u.a);
@@ -36785,12 +36076,7 @@
             questions: r.y.array(o.a),
             extras: r.y.array(i.a)
         }).views(function(e) {
-            return {get getIndex() {
-                    return Object(r.k)(e).indexOf(e)
-                },
-                get getTransportBookingQuestions() {
-                    return Object(r.k)(e, 2)
-                }
+            return {
             }
         }),
         l = r.y.compose(s, u.a);
@@ -37332,9 +36618,7 @@
         questions: a.y.frozen([]),
         rateIds: a.y.frozen([])
     }).views(function(e) {
-        return {get extraUnitValue() {
-                return e.limitByPax ? r.MaxByParticipant : 0 < e.maxPerBooking ? r.Custom : r.NoMaximum
-            }
+        return {
         }
     });
     t.b = o
@@ -37377,16 +36661,7 @@
         selectMultiple: u.y.boolean,
         placeholder: u.y.maybe(u.y.string)
     }).views(function(e) {
-        return {get getDisplayLabels() {
-                var t = [window.__i18n.t("activityeditor.BOOKING.QUESTIONS.forevery", [Object(c.a)(e.context.toLowerCase())])];
-                return [].concat(t, o()(e.pricingCategoryTriggers.map(function(e) {
-                    return "PC: ".concat(e.label)
-                })), o()(e.rateTriggers.map(function(e) {
-                    return "Rate: ".concat(e.label)
-                })), o()(e.extraTriggers.map(function(e) {
-                    return "Extra: ".concat(e.label)
-                })))
-            }
+        return {
         }
     });
     t.c = l
@@ -38238,48 +37513,7 @@
             hasErrors: !1
         }).views(function(e) {
             return {
-                shouldShowRide: function() {
-                    return 0 < e.places.length || e.customAllowed
-                },
-                getPrice: function() {
-                    return "INCLUDED_IN_PRICE" === e.pricingType ? Object(P.a)().t("frontend.widgets.extras.included") : e.totalPrice ? Object(P.a)().t("frontend.widgets.extras.total.price") + ": " + e.totalPrice : ""
-                },
-                getSeparatePrices: function() {
-                    var t = "";
-                    return e.prices.map(function(e) {
-                        t += e.pricingCategoryTitle + ": " + e.unitPrice + "  \n"
-                    }), t
-                },
-                getPlaceSelectList: function() {
-                    var t = [];
-                    return "OPTIONAL" === e.selectionType && t.push({
-                        value: "none",
-                        label: Object(P.a)().t("frontend.widgets.pickUpAndDropOff.selection.none")
-                    }), e.customAllowed && t.push({
-                        value: "custom",
-                        label: Object(P.a)().t("frontend.widgets.pickUp.selection.specify")
-                    }), t.push.apply(t, R()(e.places.map(function(e) {
-                        return {
-                            value: e.id,
-                            label: e.title
-                        }
-                    }))), t
-                },
-                getIfRequired: function() {
-                    return "PRESELECTED" === e.selectionType ? Object(P.a)().t("frontend.widgets.required") : ""
-                },
-                get isPreselectedValid() {
-                    var t = e.answers;
-                    return !t.pickup || !(!t.pickupPlaceDescription && !t.pickupPlaceId)
-                },
-                asRideObject: function() {
-                    return {
-                        pickup: e.answers.pickup,
-                        pickupPlaceDescription: e.answers.pickupPlaceDescription,
-                        pickupPlaceRoomNumber: e.answers.pickupPlaceRoomNumber,
-                        pickupPlaceId: "custom" !== e.answers.pickupPlaceId && "none" !== e.answers.pickupPlaceId ? e.answers.pickupPlaceId : void 0
-                    }
-                }
+                
             }
         }).actions(function(e) {
             return {
@@ -38312,47 +37546,7 @@
             hasErrors: !1
         }).views(function(e) {
             return {
-                shouldShowRide: function() {
-                    return 0 < e.places.length || e.customAllowed
-                },
-                getPrice: function() {
-                    return "INCLUDED_IN_PRICE" === e.pricingType ? Object(P.a)().t("frontend.widgets.extras.included") : e.totalPrice ? Object(P.a)().t("frontend.widgets.extras.total.price") + ": " + e.totalPrice : ""
-                },
-                getSeparatePrices: function() {
-                    var t = "";
-                    return e.prices.map(function(e) {
-                        t += e.pricingCategoryTitle + ": " + e.unitPrice + "  \n"
-                    }), t
-                },
-                getPlaceSelectList: function() {
-                    var t = [];
-                    return "OPTIONAL" === e.selectionType && t.push({
-                        value: "none",
-                        label: Object(P.a)().t("frontend.widgets.pickUpAndDropOff.selection.none")
-                    }), e.customAllowed && t.push({
-                        value: "custom",
-                        label: Object(P.a)().t("frontend.widgets.dropOff.selection.specify")
-                    }), t.push.apply(t, R()(e.places.map(function(e) {
-                        return {
-                            value: e.id,
-                            label: e.title
-                        }
-                    }))), t
-                },
-                getIfRequired: function() {
-                    return "PRESELECTED" === e.selectionType ? Object(P.a)().t("frontend.widgets.required") : ""
-                },
-                get isPreselectedValid() {
-                    var t = e.answers;
-                    return !t.dropOff || !(!t.dropOffPlaceDescription && !t.dropOffPlaceId)
-                },
-                asRideObject: function() {
-                    return {
-                        dropOff: e.answers.dropOff,
-                        dropOffPlaceDescription: e.answers.dropOffPlaceDescription,
-                        dropOffPlaceId: "custom" !== e.answers.dropOffPlaceId && "none" !== e.answers.dropOffPlaceId ? e.answers.dropOffPlaceId : void 0
-                    }
-                }
+                
             }
         }).actions(function(e) {
             return {
@@ -38389,61 +37583,7 @@
             priceWithDiscountAsText: k.y.maybe(k.y.string)
         }).actions(function(e) {
             return {
-                setQuantity: function(t) {
-                    e.quantity = t
-                },
-                toggleExtraItem: function(t, n, r, a) {
-                    var i = t ? Object(k.k)(e, 5) : Object(k.k)(e, 3);
-                    if (t && a) {
-                        if (e.valuesForPassengers.includes(a.bookingId)) {
-                            var o = e.valuesForPassengers.indexOf(a.bookingId); - 1 < o && e.valuesForPassengers.splice(o, 1)
-                        } else e.valuesForPassengers.push(a.bookingId);
-                        if (e.valuesForPassengers.includes(a.bookingId)) {
-                            var c = Object(k.k)(e, 4).getAllBookingExtrasSelected(),
-                                u = [{
-                                    pricingCategoryId: a && a.bookingId,
-                                    extras: [{
-                                        extraId: e.id,
-                                        quantity: 1
-                                    }]
-                                }];
-                            return Object(k.n)(e).widgetCheckoutStore.addExtra(i.getExtraBodyData(c, u))
-                        }
-                        var s = a.participantQuestions.extras.find(function(t) {
-                            return t.extraId === e.id
-                        }).bookingId;
-                        if (s) return Object(k.n)(e).widgetCheckoutStore.removeExtra(i.getDeleteExtraForPassenger(s))
-                    } else {
-                        if (e.value = !r, !r) {
-                            var l = Object(k.k)(e, 2).getAllBookingExtrasSelected();
-                            return Object(k.n)(e).widgetCheckoutStore.addExtra(i.getExtraBodyData(l))
-                        }
-                        var d = Object(k.k)(e, 2).getDelete(e.id);
-                        if (d) return Object(k.n)(e).widgetCheckoutStore.removeExtra(i.getDeleteExtraBodyData(d))
-                    }
-                },
-                undoIfThingsGoWrong: function(t, n) {
-                    if (t && n)
-                        if (e.valuesForPassengers.includes(n.bookingId)) {
-                            var r = e.valuesForPassengers.indexOf(n.bookingId); - 1 < r && e.valuesForPassengers.splice(r, 1)
-                        } else e.valuesForPassengers.push(n.bookingId);
-                    else e.value = !e.value
-                },
-                addPerPersonExtra: function(t) {
-                    e.valuesForPassengers.push(t)
-                },
-                updateExtraCount: function() {
-                    var t = Object(k.k)(e, 3),
-                        n = Object(k.k)(e, 2).getAllBookingExtrasSelected();
-                    return Object(k.n)(e).widgetCheckoutStore.addExtra(t.getExtraBodyData(n))
-                },
-                afterCreate: function() {
-                    e.value = e.selectionType !== M.OPTIONAL;
-                    var t = Object(k.k)(e, 5);
-                    Object(k.p)(t) === Z && t.participants.map(function(t) {
-                        e.selectionType !== M.OPTIONAL && e.valuesForPassengers.push(t.bookingId)
-                    })
-                }
+                
             }
         }),
         F = Object(S.f)("PerPersonExtra", {
@@ -38455,16 +37595,7 @@
             perBooking: k.y.array(X)
         }).views(function(e) {
             return {
-                getAllBookingExtrasSelected: function() {
-                    return e.perBooking.filter(function(e) {
-                        return !0 === e.value
-                    })
-                },
-                getDelete: function(t) {
-                    return e.perBooking.find(function(e) {
-                        return e.id === t
-                    })
-                }
+                
             }
         }),
         H = n(214),
@@ -38482,12 +37613,7 @@
             pricingCategoryType: k.y.maybe(k.y.enumeration("PricingCategoryType", Object.values(H.a)))
         }).views(function(e) {
             return {
-                hasPerExtraQuestions: function() {
-                    var t = !1;
-                    return e.extras.map(function(e) {
-                        0 < e.questions.length && (t = !0)
-                    }), t
-                }
+                
             }
         }),
         Y = Object(S.f)("Participants", {
@@ -38499,27 +37625,7 @@
             hasErrors: !1
         }).views(function(e) {
             return {
-                getAllPassengerQuestions: function() {
-                    return e.participantQuestions.passengerDetails
-                },
-                getAllBookingQuestions: function() {
-                    return e.participantQuestions.questions
-                },
-                showPassengerInfo: function(t, n) {
-                    var r = !1;
-                    if (!Object(k.r)(e.participantQuestions)) return r;
-                    (0 < e.participantQuestions.passengerDetails.length || 0 < e.participantQuestions.questions.length || e.participantQuestions.extras.map(function(e) {
-                        return 0 < e.questions.length
-                    }).some(function(e) {
-                        return e
-                    })) && (r = !0);
-                    var a = Object(k.n)(e).widgetCheckoutStore.checkoutBookingOptions.find(function(e) {
-                        return e.activityBookingDetail.activityBookingId === t
-                    });
-                    return a.extras && a.extras.perPerson.map(function(e) {
-                        e.pricingCategoryId === n && 0 < e.extrasWithPrices.length && (r = !0)
-                    }), r
-                }
+                
             }
         }),
         K = n(671),
@@ -38534,91 +37640,9 @@
             showPickupDropoff: !1,
             showAdditionalInfo: !0
         }).views(function(e) {
-            var t = function() {
-                    return (0 < e.pickup.places.length || e.pickup.customAllowed) && "UNAVAILABLE" !== e.pickup.selectionType
-                },
-                n = function() {
-                    return (0 < e.dropOff.places.length || e.dropOff.customAllowed) && "UNAVAILABLE" !== e.dropOff.selectionType
-                };
+            
             return {
-                hasPickupDropOffAvailable: function() {
-                    return n() || t()
-                },
-                getPickupDropoffTranslationKey: function() {
-                    return t() && n() ? "PICKUP_AND_DROPOFF" : t() && !n() ? "PICKUP_ONLY" : !t() && n() ? "DROPOFF_ONLY" : "PICKUP_AND_DROPOFF"
-                },
-                hasExtrasAvailable: function() {
-                    return !!e.extras && !!(0 < e.extras.perBooking.length)
-                },
-                getExtraBodyData: function(t, n) {
-                    var r = t.map(function(e) {
-                        return {
-                            extraId: e.id,
-                            quantity: e.quantity
-                        }
-                    });
-                    return {
-                        activityBookingId: e.activityBookingDetail.activityBookingId,
-                        extraBookingRequests: r,
-                        passengerBookingRequests: n || []
-                    }
-                },
-                getDeleteExtraBodyData: function(t) {
-                    var n = Object(k.n)(e).shoppingCartStore.cart.activityBookings.find(function(t) {
-                        return t.id === e.activityBookingDetail.activityBookingId
-                    }).extraBookings.find(function(e) {
-                        return e.extra.id === t.id
-                    }).id;
-                    return {
-                        activityBookingId: e.activityBookingDetail.activityBookingId,
-                        activityBookingExtras: [{
-                            extraBookingId: n
-                        }]
-                    }
-                },
-                getDeleteExtraForPassenger: function(t) {
-                    return {
-                        activityBookingId: e.activityBookingDetail.activityBookingId,
-                        activityBookingExtras: [{
-                            extraBookingId: t
-                        }]
-                    }
-                },
-                showAdditionalInfoBox: function() {
-                    var t = !1;
-                    return e.participants.map(function(e) {
-                        (0 < e.participantQuestions.passengerDetails.length || 0 < e.participantQuestions.questions.length || e.participantQuestions.extras.map(function(e) {
-                            return 0 < e.questions.length
-                        }).some(function(e) {
-                            return e
-                        })) && (t = !0)
-                    }), e.extras && e.extras.perPerson.map(function(e) {
-                        0 < e.extrasWithPrices.length && (t = !0)
-                    }), t
-                },
-                getQuantity: function(t) {
-                    var n = Object(k.n)(e).shoppingCartStore.cart.activityBookings.find(function(t) {
-                        return t.id === e.activityBookingDetail.activityBookingId
-                    });
-                    if (!n) return 1;
-                    var r = n.extraBookings.find(function(e) {
-                        return e.extra && e.extra.id === t
-                    });
-                    return r && r.unitCount || 1
-                },
-                isPickUpLoading: function() {
-                    return e.pickup.loading
-                },
-                isDropOffLoading: function() {
-                    return e.dropOff.loading
-                },
-                get isCheckoutStep() {
-                    return (0 < e.pickup.places.length || e.pickup.customAllowed) && "UNAVAILABLE" !== e.pickup.selectionType || (0 < e.dropOff.places.length || e.dropOff.customAllowed) && "UNAVAILABLE" !== e.dropOff.selectionType || 0 < e.extras.perBooking.length || e.extras.perPerson.some(function(e) {
-                        return 0 < e.extrasWithPrices.length
-                    }) || 0 < e.perBookingQuestions.length || e.participants.some(function(e) {
-                        return 0 < e.participantQuestions.passengerDetails.length || 0 < e.participantQuestions.questions.length || 0 < e.participantQuestions.extras.length
-                    })
-                }
+                
             }
         }).actions(function(e) {
             return {
@@ -38626,9 +37650,7 @@
             }
         }).actions(function(e) {
             return {
-                addEditRide: Object(I.a)(function() {
-                    e.handleAddEditRide.apply(e, arguments)
-                }, 200)
+                
             }
         }),
         J = n(362),
@@ -38644,19 +37666,7 @@
             startTime: k.y.maybe(k.y.string),
             url: k.y.string
         }).views(function(e) {
-            return {get getDateAndTime() {
-                    if (e.date && e.startTime) {
-                        var t = new Date(e.date),
-                            n = t.getDate().toString(),
-                            r = (t.getMonth() + 1).toString(),
-                            a = t.getFullYear();
-                        return 10 > parseInt(n) && (n = "0" + n), 10 > parseInt(r) && (r = "0" + r), n + "/" + r + "/" + a + " - " + e.startTime
-                    }
-                    return ""
-                },
-                get getIndex() {
-                    return e.activityBookingId ? e.activityBookingId + "" : e.type
-                }
+            return {
             }
         }).actions(function(e) {
             return {
@@ -38855,171 +37865,22 @@
                 return te.b.create({})
             })
         }).views(function(e) {
-            return {get getStepIndex() {
-                    var t = e.currentStepIndex;
-                    return e.steps.findIndex(function(e) {
-                        return e.activityBookingId + "" === t || e.type === t
-                    })
-                },
-                get stepIndexLocalStorageKey() {
-                    return ue(Object(k.n)(e).bookingChannelUUID)
-                }
+            return {
             }
         }).views(function(e) {
-            return {get currentStep() {
-                    return e.steps[e.getStepIndex]
-                },
-                get getStepText() {
-                    if (0 < e.steps.length) {
-                        var t = e.getStepIndex;
-                        return "Step " + "".concat(t + 1, "/").concat(e.steps.length, ": ").concat(void 0 === e.steps[t] ? "" : e.steps[t].title)
-                    }
-                    return ""
-                },
-                getActivityBookingById: function(t) {
-                    return e.checkoutBookingOptions.find(function(e) {
-                        return e.activityBookingDetail.activityBookingId === parseInt(t)
-                    })
-                },
-                getHeaderProps: function(t, n) {
-                    var r = e.getStepIndex,
-                        a = e.currentStepIndex;
-                    switch (e.steps[r] && e.steps[r].type) {
-                        case $.a.ActivityBooking:
-                            var i = t.activityBookings.find(function(e) {
-                                return e.id.toString() === a
-                            });
-                            return {
-                                imgUrl: i && i.activity.keyPhoto && i.activity.keyPhoto.getImgixSrcUrl,
-                                desc: i && i.activity.title
-                            };
-                        case $.a.MainContact:
-                            return {
-                                imgUrl: t.getLastActivityBookingImageUrl(),
-                                desc: n("frontend.contact.details")
-                            };
-                        case $.a.Payment:
-                            return {
-                                imgUrl: t.getLastActivityBookingImageUrl(),
-                                desc: n("frontend.checkout.step")
-                            };
-                        default:
-                            return {
-                                imgUrl: t.getLastActivityBookingImageUrl(),
-                                desc: ""
-                            }
-                    }
-                }
+            return {
             }
         }).actions(function(e) {
             return {
                 
             }
         }).actions(function(e) {
-            return Object(k.t)(e.checkoutBookingOptions, function(t) {
-                if (-1 < t.path.indexOf("answerError") && t.value) try {
-                    Object(k.k)(Object(k.x)(e.checkoutBookingOptions, t.path))
-                } catch (e) {
-                    Object(c.a)(e)
-                }
-            }), {
-                changeStep: function(t, n, r) {
-                    var a = function(t, n) {
-                        return n ? e.steps.findIndex(function(e) {
-                            return e.activityBookingId === n && e.type === t
-                        }) : e.steps.findIndex(function(e) {
-                            return e.type === t
-                        })
-                    }(t, n);
-                    r && (e.steps[a].accessible = !0), e.steps[a].accessible && (ne.a.push(e.steps[a].url), e.setCurrentStepIndex(n ? n + "" : t))
-                }
+            return {
+                
             }
         }).actions(function(e) {
-            var t = function(t) {
-                Object(k.n)(e).shoppingCartStore.setCart(t.cart);
-                var n = e.checkoutBookingOptions.find(function(e) {
-                    return e.activityBookingDetail.activityBookingId === t.bookingId
-                });
-                n && (n.perBookingQuestions = t.perBookingQuestions, n.participants = t.participants)
-            };
             return {
-                settingStepsAfterDelete: function(t, n) {
-                    var r = function(t) {
-                        return e.steps.findIndex(function(n) {
-                            var r = t || e.currentStepIndex;
-                            return n.activityBookingId + "" === r || n.type === r
-                        })
-                    }(n + "");
-                    e.steps.some(function(e) {
-                        return e.activityBookingId === n
-                    }) && e.steps.splice(r, 1);
-                    var a = 0 < Object(k.n)(e).shoppingCartStore.bookings.length,
-                        i = e.steps.some(function(e) {
-                            return void 0 !== e.activityBookingId
-                        });
-                    n + "" === e.currentStepIndex && i ? e.changeStep($.a.ActivityBooking, e.steps[0].activityBookingId, !0) : n + "" === e.currentStepIndex && a && e.changeStep($.a.MainContact, null, !0)
-                },
-                calculateStateFromSteps: function(t) {
-                    var n, r, a = 0,
-                        i = ae(t);
-                    try {
-                        for (i.s(); !(r = i.n()).done;) {
-                            if ((n = r.value).setAccessible(!0), 0 === a ? ne.a.replace(n.url) : ne.a.push(n.url), n.status !== J.a.DONE) {
-                                e.setCurrentStepIndex(n.getIndex);
-                                break
-                            }
-                            a++
-                        }
-                    } catch (e) {
-                        i.e(e)
-                    } finally {
-                        i.f()
-                    }
-                },
-                calculateStateFromStorage: function(t) {
-                    e.currentStepIndex = Object(T.l)(e.stepIndexLocalStorageKey) || t[0].getIndex, t.some(function(t) {
-                        return t.getIndex === e.currentStepIndex
-                    }) || e.setCurrentStepIndex(t[0].getIndex);
-                    var n, r, a = 0,
-                        i = ae(t);
-                    try {
-                        for (i.s(); !(r = i.n()).done && ((n = r.value).setAccessible(!0), 0 === a ? ne.a.replace(n.url) : ne.a.push(n.url), n.getIndex !== e.currentStepIndex);) n.setStatus(J.a.DONE), a++
-                    } catch (e) {
-                        i.e(e)
-                    } finally {
-                        i.f()
-                    }
-                },
-                handleAddExtra: Object(k.i)(o.a.mark(function n(r) {
-                    var a, i;
-                    return o.a.wrap(function(n) {
-                        for (;;) switch (n.prev = n.next) {
-                            case 0:
-                                return a = Object(k.n)(e).bookingChannelUUID, n.next = 3, N.e.post("/widgets/".concat(a, "/checkout/extras"), r);
-                            case 3:
-                                i = n.sent, t(i.data);
-                            case 5:
-                            case "end":
-                                return n.stop()
-                        }
-                    }, n)
-                })),
-                handleRemoveExtra: Object(k.i)(o.a.mark(function n(r) {
-                    var a, i;
-                    return o.a.wrap(function(n) {
-                        for (;;) switch (n.prev = n.next) {
-                            case 0:
-                                return a = Object(k.n)(e).bookingChannelUUID, n.next = 3, N.e.delete("/widgets/".concat(a, "/checkout/extras/remove"), {
-                                    data: r
-                                });
-                            case 3:
-                                i = n.sent, t(i.data);
-                            case 5:
-                            case "end":
-                                return n.stop()
-                        }
-                    }, n)
-                }))
+                
             }
         }).actions(function(e) {
             var t = function() {
@@ -39173,153 +38034,7 @@
                     })
                 };
             return {
-                setQuestionSpecificationValue: function(t, n) {
-                    e.questionSpecificationValues.set(t, n)
-                },
-                removeFromCart: function(t, n, r) {
-                    return Object(k.n)(e).shoppingCartStore.removeFromCart(t, n, r)
-                },
-                continueStep: Object(k.i)(o.a.mark(function t() {
-                    var a, i, c, u, s, d, f, m, g;
-                    return o.a.wrap(function(t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                if (a = Object(k.n)(e).bookingChannelUUID, i = e.getStepIndex, !e.steps[i + 1]) {
-                                    t.next = 25;
-                                    break
-                                }
-                                if (e.steps[i].type !== $.a.MainContact) {
-                                    t.next = 12;
-                                    break
-                                }
-                                if (!n()) {
-                                    t.next = 10;
-                                    break
-                                }
-                                return t.next = 8, N.e.post("/widgets/".concat(a, "/checkout/mainContactAnswers"), {
-                                    answers: Object(x.b)(e.mainContactQuestions)
-                                }).catch(function(e) {
-                                    p(e && e.response && e.response.data && e.response.data.fields && e.response.data.fields.errors)
-                                });
-                            case 8:
-                                c = t.sent, l(c, i);
-                            case 10:
-                                t.next = 25;
-                                break;
-                            case 12:
-                                if (e.steps[i].type !== $.a.ActivityBooking) {
-                                    t.next = 24;
-                                    break
-                                }
-                                if (u = e.steps[i].activityBookingId, !(s = e.checkoutBookingOptions.find(function(e) {
-                                        return e.activityBookingDetail.activityBookingId === u
-                                    }))) {
-                                    t.next = 22;
-                                    break
-                                }
-                                if (!r(s)) {
-                                    t.next = 22;
-                                    break
-                                }
-                                return t.next = 20, N.e.post("/widgets/".concat(a, "/checkout/activityBookingAnswers"), {
-                                    activityId: s.activityBookingDetail.activityId,
-                                    bookingId: u,
-                                    answers: Object(x.b)(s.perBookingQuestions),
-                                    passengers: s.participants.map(function(e) {
-                                        return {
-                                            bookingId: e.bookingId,
-                                            pricingCategoryId: e.pricingCategoryId,
-                                            pricingCategoryTitle: e.participantQuestions.pricingCategoryTitle,
-                                            passengerDetails: Object(x.b)(e.participantQuestions.passengerDetails),
-                                            answers: Object(x.b)(e.participantQuestions.questions),
-                                            extras: e.participantQuestions.extras.map(function(e) {
-                                                return Object(x.b)(e)
-                                            })
-                                        }
-                                    }),
-                                    pickupAnswers: Object(x.b)(s.pickup.questions),
-                                    dropoffAnswers: Object(x.b)(s.dropOff.questions)
-                                }).catch(function(e) {
-                                    p(e && e.response && e.response.data && e.response.data.fields && e.response.data.fields.errors)
-                                });
-                            case 20:
-                                d = t.sent, l(d, i);
-                            case 22:
-                                t.next = 25;
-                                break;
-                            case 24:
-                                e.steps[i].type === $.a.ProductBookingQuestions && (f = Object(k.n)(e).getEventBus(), m = Object(k.n)(e).bookingQuestionsStore, g = !0, m.bookingQuestions.getAllQuestions.map(function(e) {
-                                    e.validate(), e.hasError && (g = !1, f.broadcast("FORM_VALIDATION_WARNING_MESSAGE", e))
-                                }), g && (m.submitAnswers(), l(!0, i)));
-                            case 25:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t)
-                })),
-                initCheckout: Object(k.i)(o.a.mark(function n() {
-                    var r, a, c;
-                    return o.a.wrap(function(n) {
-                        for (;;) switch (n.prev = n.next) {
-                            case 0:
-                                return e.checkoutLoading.setLoadingStatus(te.a.fetching), r = Object(k.n)(e).shoppingCartStore, a = Object(k.n)(e).getEventBus(), n.next = 5, N.e.get("/widgets/".concat(Object(k.n)(e).bookingChannelUUID, "/checkout/cartBookingOptions"));
-                            case 5:
-                                return c = n.sent, s(c.data.mainContactQuestions), i(c.data.checkoutOptions), t(), e.checkoutLoading.setLoadingStatus(te.a.done), r && r.cart && r.cart.customerInvoice && a.broadcast("EXTRA_PICKUP_STEP", r.cart.customerInvoice.productInvoices), n.abrupt("return", "DONE");
-                            case 12:
-                            case "end":
-                                return n.stop()
-                        }
-                    }, n)
-                })),
-                refreshCheckout: Object(k.i)(o.a.mark(function n() {
-                    var r, a, i = arguments;
-                    return o.a.wrap(function(n) {
-                        for (;;) switch (n.prev = n.next) {
-                            case 0:
-                                return r = !(0 < i.length && void 0 !== i[0]) || i[0], e.checkoutLoading.setLoadingStatus(te.a.fetching), n.next = 4, N.e.get("/widgets/".concat(Object(k.n)(e).bookingChannelUUID, "/checkout/cartBookingOptions"));
-                            case 4:
-                                return a = n.sent, s(a.data.mainContactQuestions), u(a.data.checkoutOptions), ne.a.location.pathname.includes("checkout") && r && t(), e.checkoutLoading.setLoadingStatus(te.a.done), n.abrupt("return", a);
-                            case 10:
-                            case "end":
-                                return n.stop()
-                        }
-                    }, n)
-                })),
-                addExtra: function(t) {
-                    return new Promise(function(n) {
-                        ce.push(function() {
-                            return e.handleAddExtra(t)
-                        }, n)
-                    })
-                },
-                removeExtra: function(t) {
-                    return new Promise(function(n) {
-                        ce.push(function() {
-                            return e.handleRemoveExtra(t)
-                        }, n)
-                    })
-                },
-                toggleMobileWrapper: function() {
-                    e.showMobileWrapper = !e.showMobileWrapper
-                },
-                setShowMobileWrapper: function(t) {
-                    e.showMobileWrapper = t
-                },
-                setLinkToProductFromCart: function(t) {
-                    e.linkToProductFromCart = t
-                },
-                fillPersonDetails: function(t) {
-                    Object(w.d)(t, e.mainContactQuestions)
-                },
-                getActivityBookingQuestions: function() {
-                    return Object(x.b)(e.checkoutBookingOptions)
-                },
-                updateStepIndex: function(t) {
-                    var n = e.steps.find(function(e) {
-                        return e.url === t.pathname
-                    });
-                    e.setCurrentStepIndex(n && n.getIndex)
-                }
+                
             }
         });
     t.a = le
@@ -39336,25 +38051,13 @@
             title: r.y.string
         }).actions(function(e) {
             return {
-                selected: function() {
-                    Object(r.n)(e).activitySearchStore.query.toggleFacetFilter(Object(r.k)(e, 2).getKey, e.term)
-                }
+                
             }
         }).views(function(e) {
-            return {get getFacet() {
-                    return Object(r.k)(e, 2)
-                }
+            return {
             }
         }).views(function(e) {
-            return {get checked() {
-                    return Object(r.n)(e).activitySearchStore.query.hasFacetFilter(Object(r.k)(e, 2).getKey, e.term)
-                },
-                get getCurrentSearchResultsCount() {
-                    return e.count
-                },
-                get translationKey() {
-                    return "frontend.activity.".concat(e.getFacet.name, ".").concat(e.term)
-                }
+            return {
             }
         }),
         c = Object(a.f)("TermFacet", {
@@ -39365,9 +38068,7 @@
             entries: r.y.array(o),
             title: r.y.string
         }).views(function(e) {
-            return {get getKey() {
-                    return "activityCategory" === e.name ? "activityCategories" : "activityAttribute" === e.name ? "activityAttributes" : "guidanceLanguage" === e.name ? "guidanceLanguages" : e.name
-                }
+            return {
             }
         }),
         u = Object(a.f)("TagFilter", {
@@ -39378,19 +38079,13 @@
             value: r.y.maybe(r.y.string)
         }).actions(function(e) {
             return {
-                remove: function() {
-                    return Object(r.n)(e).activitySearchStore.query.toggleFacetFilter(e.facetName, e.value)
-                }
+                
             }
         }).views(function(e) {
-            return {get getName() {
-                    return "activityCategories" === e.facetName ? "activityCategory" : e.facetName
-                }
+            return {
             }
         }).views(function(e) {
-            return {get getSearchResultFacet() {
-                    return Object(r.n)(e).activitySearchStore.searchResult.getFacet(e.getName, e.value)
-                }
+            return {
             }
         }),
         s = Object(a.f)("ActivitySearchResult", {
@@ -39402,27 +38097,14 @@
             totalHits: 0
         }).actions(function(e) {
             return {
-                addItems: function(t) {
-                    var n = e.items.concat(t.slice());
-                    e.items = n
-                }
-            }
-        }).views(function(e) {
-            return {get allFacets() {
-                    var t = e.tagFacets;
-                    return Object.values(e.termFacets.values()).concat(t.toJS())
-                }
+                
             }
         }).views(function(e) {
             return {
-                getFacet: function(t, n) {
-                    var r, a = e.allFacets.find(function(e) {
-                        return e.name === t
-                    });
-                    return void 0 === a || void 0 === (r = a.sortedEntries.find(function(e) {
-                        return e.term === n
-                    })) ? void 0 : r
-                }
+            }
+        }).views(function(e) {
+            return {
+                
             }
         });
     t.a = s
@@ -39447,9 +38129,7 @@
             assignedResources: r.y.array(i)
         }).actions(function(e) {
             return {
-                setAssignedResources: function(t) {
-                    Object(r.k)(e, 1).setAssignedResources(t)
-                }
+                
             }
         }),
         u = Object(a.f)("ActivityResourceSlot", {
@@ -39462,17 +38142,11 @@
             pickUpItem: r.y.maybe(c)
         }).views(function(e) {
             return {
-                hasResourceAssigned: function(t) {
-                    return e.assignedResources.some(function(e) {
-                        return e.resourceId === t
-                    })
-                }
+                
             }
         }).actions(function(e) {
             return {
-                setAssignedResources: function(t) {
-                    e.assignedResources = t, e.pickUpItem && e.pickUpItem.assignedResources.replace(t)
-                }
+                
             }
         }),
         s = (t.b = u, function(e) {
@@ -40733,14 +39407,7 @@
                 return l.a.create()
             })
         }).views(function(e) {
-            return {get bookingChannelsOptions() {
-                    return e.bookingChannels ? e.bookingChannels.map(function(e) {
-                        return {
-                            label: e.title,
-                            value: e.id
-                        }
-                    }) : []
-                }
+            return {
             }
         }).actions(function(e) {
             var t = function(t) {
@@ -40800,132 +39467,7 @@
                     return h.Supplier in localStorage ? Object(m.a)(h.Supplier, e.suppliers).value : e.currentSupplier && e.currentSupplier.value
                 };
             return {
-                setLoading: function(t) {
-                    e.loading = t
-                },
-                getBookingChannels: l,
-                getProductListsForBookingChannel: Object(c.i)(a.a.mark(function e() {
-                    var t, n;
-                    return a.a.wrap(function(e) {
-                        for (;;) switch (e.prev = e.next) {
-                            case 0:
-                                return e.next = 2, o.a.get(window.jsRoutes.controllers.extranet.onlinesales.WidgetWizard.getProductLists().url);
-                            case 2:
-                                return t = e.sent, n = t.data.list.map(function(e) {
-                                    return {
-                                        value: e.id,
-                                        label: e.title
-                                    }
-                                }), r(n), e.abrupt("return", t);
-                            case 6:
-                            case "end":
-                                return e.stop()
-                        }
-                    }, e)
-                })),
-                getSuppliersForBookingChannel: Object(c.i)(a.a.mark(function t() {
-                    var n, r, c;
-                    return a.a.wrap(function(t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return n = "".concat(window.jsRoutes.controllers.extranet.onlinesales.WidgetWizard.suggestSuppliers().url, "?bookingChannelId=").concat(e.currentBookingChannel && e.currentBookingChannel.value || 0), t.next = 3, o.a.get(n);
-                            case 3:
-                                return r = t.sent, c = r.data.list.map(function(e) {
-                                    return {
-                                        value: e.id,
-                                        label: e.label
-                                    }
-                                }), i(c), t.abrupt("return", r);
-                            case 7:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t)
-                })),
-                refetchActivities: Object(c.i)(a.a.mark(function t() {
-                    var r, i, c, u, s = arguments;
-                    return a.a.wrap(function(t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return r = 0 < s.length && void 0 !== s[0] ? s[0] : p(), i = "".concat(window.jsRoutes.controllers.extranet.onlinesales.WidgetWizard.suggestActivity().url, "?").concat(r ? "supplierId=".concat(r, "&") : "", "bookingChannelId=").concat(e.currentBookingChannel && e.currentBookingChannel.value || 0), t.next = 4, o.a.get(i);
-                            case 4:
-                                return c = t.sent, u = c.data.suggestions.map(function(e) {
-                                    return {
-                                        value: e.id,
-                                        label: e.label
-                                    }
-                                }), n(u), t.abrupt("return", u[0]);
-                            case 8:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t)
-                })),
-                createTempProductList: Object(c.i)(a.a.mark(function e() {
-                    var t, n;
-                    return a.a.wrap(function(e) {
-                        for (;;) switch (e.prev = e.next) {
-                            case 0:
-                                return e.next = 2, o.a.post("/product-lists-json/new/all-products");
-                            case 2:
-                                return (t = e.sent).data && (n = [{
-                                    value: t.data.productList.id,
-                                    label: t.data.productList.title
-                                }], r(n)), e.abrupt("return", t);
-                            case 5:
-                            case "end":
-                                return e.stop()
-                        }
-                    }, e)
-                })),
-                getSupplierId: p,
-                setInvalidGenerateButton: function(t) {
-                    e.generateButtonDisabled = t
-                },
-                updateCurrentBookingChannel: function(t) {
-                    localStorage.setItem("currentBookingChannelId", t.value);
-                    var n = u.b.location.pathname.split("/");
-                    e.bookingChannels.find(function(e) {
-                        return e.id.toString() === t.value.toString() && !0 === e.backend
-                    }) ? u.b.push("/online-sales/widgetWizard") : 5 < n.length && 8 > n.length ? (n[4] = t.value, u.b.replace(n.join("/"))) : 7 < n.length && (n[n.length - 4] = t.value, u.b.replace(n.join("/"))), e.currentBookingChannel = t, e.currentBookingChannelPaymentProvider = e.bookingChannels.find(function(e) {
-                        return e.id === t.value
-                    }).paymentProviderAdded
-                },
-                getWidgetURL: function(t) {
-                    switch (t) {
-                        case g.a.Button:
-                            return g.a.Button + "/" + (e.currentBookingChannel && e.currentBookingChannel.value) + "/" + ("productList" === localStorage.getItem(h.WidgetType) ? h.ProductList in localStorage ? Object(m.a)(h.ProductList, e.productLists).value : e.currentProductList && e.currentProductList.value : h.Experience in localStorage ? Object(m.a)(h.Experience, e.activities).value : e.currentActivity && e.currentActivity.value) + "/" + p() + "/" + (h.WidgetType in localStorage ? localStorage.getItem(h.WidgetType) : g.a.ProductPage);
-                        case g.a.Calendar:
-                            return g.a.Calendar + "/" + (e.currentBookingChannel && e.currentBookingChannel.value) + "/" + d() + "/" + p();
-                        case g.a.ProductPage:
-                            return g.a.ProductPage + "/" + (e.currentBookingChannel && e.currentBookingChannel.value) + "/" + d() + "/" + p();
-                        case g.a.ProductList:
-                            return g.a.ProductList + "/" + (e.currentBookingChannel && e.currentBookingChannel.value) + "/" + (h.ProductList in localStorage ? Object(m.a)(h.ProductList, e.productLists).value : e.currentProductList && e.currentProductList.value);
-                        default:
-                            throw new Error("Invalid WidgetType")
-                    }
-                },
-                updateActivity: function(t) {
-                    e.currentActivity = {
-                        label: t.label,
-                        value: t.value
-                    }
-                },
-                updateProductList: function(t) {
-                    e.currentProductList = {
-                        label: t.label,
-                        value: t.value
-                    }
-                },
-                updateSupplier: function(t) {
-                    e.currentSupplier = {
-                        label: t.label,
-                        value: t.value
-                    }
-                },
-                updateWidgetType: function(t) {
-                    e.widgetType = t
-                }
+                
             }
         });
     t.c = y
@@ -43889,15 +42431,7 @@
         }).actions(function(e) {
             var t = {};
             return {
-                afterCreate: function() {
-                    t = Object(r.o)(e)
-                },
-                reset: function() {
-                    Object(r.d)(e, t)
-                },
-                setButtonConfig: function(t) {
-                    Object(r.d)(e, t)
-                }
+                
             }
         });
     t.a = u
@@ -44193,21 +42727,7 @@
         type: i.y.enumeration("ActivityStartTimeType", Object.values(r)),
         voucherPickupMsg: ""
     }).views(function(e) {
-        return {get getFormattedTime() {
-                return Object(i.n)(e).getFormattedTime(e.hour, e.minute)
-            },
-            get getEndTimeAsDate() {
-                return Object(a.addMinutes)(new Date(0, 0, 0, e.hour, e.minute), e.durationMinutes + 60 * e.durationHours + 60 * e.durationDays * 24 + 60 * e.durationWeeks * 24 * 7)
-            },
-            getDurationAsString: function(t) {
-                return Object(c.g)({
-                    t: t,
-                    weeks: e.durationWeeks,
-                    days: e.durationDays,
-                    hours: e.durationHours,
-                    minutes: e.durationMinutes
-                })
-            }
+        return {
         }
     });
     t.a = u
@@ -45258,9 +43778,7 @@
             theme: r.y.frozen({}),
             customCSS: r.y.maybe(r.y.string)
         }).views(function(e) {
-            return {get getCustomCSS() {
-                    return Object(a.o)(e.customCSS)
-                }
+            return {
             }
         });
     t.a = o
@@ -45325,9 +43843,7 @@
         defaultTheme: a.y.maybe(a.y.string)
     }).actions(function(e) {
         return {
-            addFrontpageBox: function(t) {
-                e.frontpageBoxes.push(t)
-            }
+            
         }
     });
     t.a = u
@@ -45390,15 +43906,7 @@
             fav_icon: r.y.maybe(r.y.string)
         }).views(function(e) {
             return {
-                getSiteUrl: function() {
-                    return e.site_domain ? e.site_domain : e.site_default_domain
-                },
-                getSiteUrlAsString: function() {
-                    return e.site_domain ? "".concat(e.site_domain.startsWith("www.") ? "" : "www.").concat(e.site_domain) : "www.".concat(e.site_default_domain)
-                },
-                getPreviewUrl: function() {
-                    return "https://sitebuilder.bokun.tools/site/".concat(e.site_name, "/?preview=true&insitepreview=true&dm_device=desktop")
-                }
+               
             }
         });
     t.a = i
