@@ -817,11 +817,11 @@
                             return N.a.createElement("div", {
                                 className: "ActivityCalendarEvents row row-fluid all-events"
                             }, N.a.createElement("div", {
-                                className: !0 === t ? "col-xs-12" : "span5 col-lg-12 col-md-5 "
+                                className: !0 === t ? "col-xs-12" : "span5 col-lg-12"
                             }, e ? N.a.createElement(te, this.props) : null, N.a.createElement("div", {
                                 className: "availability-calendar-container"
                             }, N.a.createElement(oe, this.props))), N.a.createElement("div", {
-                                className: !0 === t ? "col-xs-12" : "span7 col-md-7 col-lg-12"
+                                className: !0 === t ? "col-xs-12" : "span7 col-lg-12"
                             }, N.a.createElement(se, p()({}, this.props, {
                                 displayStartTimes: !0
                             }))))
@@ -1599,7 +1599,7 @@
                                     onChange: e.onGroupSizeChange.bind(h, a)
                                 }, "return (", b, ")")) : null)
                             })), !0 === v.pricedPerPerson ? N.a.createElement("div", {
-                                className: "price-desc clearfix"
+                                className: "mt-3 price-desc clearfix"
                             }, 0 < H.length ? N.a.createElement("span", null, h.map((function(t, a) {
                                 var n = m.find((function(e) {
                                         return e.pricingCategoryId === t.id

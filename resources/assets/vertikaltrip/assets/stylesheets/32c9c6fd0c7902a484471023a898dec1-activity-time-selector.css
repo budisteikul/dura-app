@@ -279,3 +279,7 @@ html.rtl .activity-time-selector .radio-label span.time {
 .availability-calendar td.daycell.sold-out.selected .date {
   border: 2px solid #000;
 }
+.dropoff-container
+{
+	display:none;	
+}

@@ -65,7 +65,7 @@ $( document ).ready(function() {
     @endphp
     @if(count($pickup_questions))
     
-    <h3>Pick-up questions</h3>
+    <h3>Pick-up and drop-off questions</h3>
     
     @foreach($pickup_questions as $pickup_question)
     @if($pickup_question->dataType=="READ_ONLY")
