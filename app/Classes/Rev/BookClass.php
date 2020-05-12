@@ -81,7 +81,10 @@ class BookClass {
 				$rev_shoppingcart_products->bookingId = $data['activityBookings'][$i]['bookingId'];
 				$rev_shoppingcart_products->productConfirmationCode = $data['activityBookings'][$i]['productConfirmationCode'];
 				$rev_shoppingcart_products->productId = $data['activityBookings'][$i]['productId'];
-				$rev_shoppingcart_products->image = $data['activityBookings'][$i]['invoice']['product']['keyPhoto']['derived'][2]['url'];
+				if(isset($data['activityBookings'][$i]['invoice']['product']['keyPhoto']['derived'][2]['url']))
+				{
+					$rev_shoppingcart_products->image = $data['activityBookings'][$i]['invoice']['product']['keyPhoto']['derived'][2]['url'];
+				}
 				$rev_shoppingcart_products->title = $data['activityBookings'][$i]['product']['title'];
 				$rev_shoppingcart_products->rate = $data['activityBookings'][$i]['rateTitle'];
 				$rev_shoppingcart_products->date = self::texttodate($data['activityBookings'][$i]['invoice']['dates']);
@@ -163,10 +166,10 @@ class BookClass {
 				}
 				
 				rev_shoppingcart_products::where('id',$rev_shoppingcart_products->id)->update([
-				'currency'=>$data['currency'],
-				'subtotal'=>$subtotal_product,
-				'discount'=>$total_discount,
-				'total'=>$total_product
+					'currency'=>$data['currency'],
+					'subtotal'=>$subtotal_product,
+					'discount'=>$total_discount,
+					'total'=>$total_product
 				]);
 				
 				// activity question

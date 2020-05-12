@@ -23,9 +23,7 @@ class WebhookController extends Controller
 		switch($request->input('action'))
 		{
 		case 'BOOKING_CONFIRMED':
-		
-		BookClass::webhook_insert_shoppingcart($data);
-		
+			BookClass::webhook_insert_shoppingcart($data);
 		break;
 		case 'BOOKING_ITEM_CANCELLED':
 			rev_shoppingcarts::where('confirmationCode',$data['confirmationCode'])->update(['bookingStatus'=>'CANCELLED']);

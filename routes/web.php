@@ -73,7 +73,6 @@ Route::get('/sitemap.txt', 'Blog\Frontend\BlogController@sitemap');
 // Booking Page
 //========================================================================
 Route::post('/rev/webhook', 'Rev\WebhookController@store');
-
 Route::get('/tour/{id}', 'Blog\Frontend\BlogController@product_page_byslug');
 Route::get('/tour', 'Blog\Frontend\BlogController@product_page_byid');
 Route::get('/tours/{slug}/{id}', 'Blog\Frontend\BlogController@product_list_byslug');
