@@ -283,3 +283,7 @@ html.rtl .activity-time-selector .radio-label span.time {
 {
 	display:none;	
 }
+.participant-selector
+{
+	font-weight:bold;
+}
