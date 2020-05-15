@@ -5,7 +5,7 @@ function UPDATE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["title","product_id"];
+	var input = ["title","productId"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -16,10 +16,10 @@ function UPDATE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"title": $('#title').val(),
-			"product_id": $('#product_id').val(),
+			"productId": $('#productId').val(),
         },
 		type: 'PUT',
-		url: '{{ route('experiences.update',$blog_posts->id) }}'
+		url: '{{ route('experiences.update',$rev_experiences->id) }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -53,27 +53,22 @@ function UPDATE()
                 <div class="card-header">Edit experiences</div>
                 <div class="card-body">
 				
-<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('experiences.update',$blog_posts->id) }}">
+<form method="POST" onSubmit="UPDATE(); return false;" action="{{ route('experiences.update',$rev_experiences->id) }}">
 @csrf
 @method('PUT')
 <div id="result"></div>
 
 <div class="form-group">
 	<label for="title">Title :</label>
-	<input type="text" id="title" name="title" class="form-control" value="{{  $blog_posts->title }}" placeholder="Title">
+	<input type="text" id="title" name="title" class="form-control" value="{{  $rev_experiences->title }}" placeholder="Title">
 </div>
 
-@if($limit)
+
 <div class="form-group">
-	<label for="product_id">product_id :</label>
-	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $blog_posts->product_id }}" placeholder="product_id" disabled="true">
+	<label for="productId">productId :</label>
+	<input type="text" id="productId" name="productId" class="form-control" value="{{  $rev_experiences->productId }}" placeholder="productId">
 </div>
-@else
-<div class="form-group">
-	<label for="product_id">product_id :</label>
-	<input type="text" id="product_id" name="product_id" class="form-control" value="{{  $blog_posts->product_id }}" placeholder="product_id">
-</div>
-@endif
+
 
 
      

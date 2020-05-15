@@ -8,6 +8,7 @@ use App\Models\Blog\blog_attachments;
 use App\Models\Blog\blog_posts;
 use App\Models\Blog\blog_settings;
 use App\Models\Blog\blog_categories;
+use App\Models\Rev\rev_experiences;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -237,6 +238,36 @@ class BlogClass {
 				else
 				{
 					$results = blog_posts::where('user_id',$user_id) ->where('slug',$string_test)->where('id','<>',$id)->count();
+				}
+				if($results==0)
+				{
+					$cek=0;	
+				}
+				else
+				{
+					$string_test = $string ."-". $i;
+				}
+				$i++;
+			}
+			return $string_test;
+			
+		}
+	
+	public static function makeSlugEx($string,$id="")
+		{
+			$string = Str::slug($string,"-");
+			$cek = 1;
+			$string_test = $string;
+			$i = 2;
+			while($cek==1)
+			{
+				if ($id=="")
+				{
+					$results = rev_experiences::where('slug',$string_test)->count();
+				}
+				else
+				{
+					$results = rev_experiences::where('slug',$string_test)->where('id','<>',$id)->count();
 				}
 				if($results==0)
 				{

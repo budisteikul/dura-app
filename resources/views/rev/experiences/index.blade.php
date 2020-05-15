@@ -13,7 +13,7 @@
     		title: 'Warning',
     		content: 'Are you sure?',
     		type: 'red',
-			icon: 'fa fa-warning',
+			icon: 'fa fa-trash-alt',
     		buttons: {   
         		ok: {
             		text: "OK",
@@ -68,7 +68,6 @@
                 <div class="card-body">
       
       	<button type="button" class="btn btn-secondary mb-2"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add experiences</button>
-        <a href="/rev/experiences/import" type="button" class="btn btn-secondary mb-2"><i class="fas fa-file-import"></i> Import from Bokun</a>
         <hr>
         
 		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}

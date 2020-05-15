@@ -101,8 +101,8 @@ function STORE()
 <div class="form-group">
 	<label for="productId">Product :</label>
     <select class="form-control" id="productId">
-       @foreach($blog_post as $post)
-       	<option value="{{ $post->product_id }}">{{ $post->title }}</option>
+       @foreach($rev_experiences as $experiences)
+       	<option value="{{ $experiences->productId }}">{{ $experiences->title }}</option>
        @endforeach
 	</select>
     

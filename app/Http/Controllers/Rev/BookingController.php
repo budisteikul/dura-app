@@ -15,6 +15,7 @@ use App\Models\Rev\rev_shoppingcart_question_options;
 use App\Classes\Rev\BookClass;
 use App\Classes\Rev\PaypalClass;
 use App\Models\Rev\rev_resellers;
+use App\Models\Rev\rev_experiences;
 use App\Models\Blog\blog_posts;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
@@ -29,8 +30,8 @@ class BookingController extends Controller
 	public function create()
     {
 		$rev_resellers = rev_resellers::orderBy('name')->get();
-		$blog_post = blog_posts::where('content_type','experience')->orderBy('title')->get();
-        return view('rev.booking.create',['blog_post'=>$blog_post,'rev_resellers'=>$rev_resellers]);
+		$rev_experiences = rev_experiences::orderBy('title')->get();
+        return view('rev.booking.create',['rev_experiences'=>$rev_experiences,'rev_resellers'=>$rev_resellers]);
     }
 	
 	
@@ -101,11 +102,11 @@ class BookingController extends Controller
 			$rev_shoppingcart_questions->answer = $phone;
 			$rev_shoppingcart_questions->save();
 			
+			$title = rev_experiences::where('productId',$productId)->first()->title;
 			$rev_shoppingcart_products = new rev_shoppingcart_products();
 			$rev_shoppingcart_products->shoppingcarts_id = $rev_shoppingcarts->id;
 			$rev_shoppingcart_products->productConfirmationCode = $ticket;
 			$rev_shoppingcart_products->productId = $productId;
-			$title = blog_posts::where('product_id',$productId)->first()->title;
 			$rev_shoppingcart_products->title = $title;
 			$rev_shoppingcart_products->rate = '';
 			$rev_shoppingcart_products->date = $date;

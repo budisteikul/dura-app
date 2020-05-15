@@ -5,7 +5,7 @@ function STORE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["title","product_id"];
+	var input = ["title","productId"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -17,7 +17,7 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"title": $('#title').val(),
-			"product_id": $('#product_id').val(),
+			"productId": $('#productId').val(),
         },
 		type: 'POST',
 		url: '{{ route('experiences.store') }}'
@@ -68,8 +68,8 @@ function STORE()
 </div>
 
 <div class="form-group">
-	<label for="product_id">product_id :</label>
-	<input type="text" id="product_id" name="product_id" class="form-control" placeholder="product_id">
+	<label for="productId">productId :</label>
+	<input type="text" id="productId" name="productId" class="form-control" placeholder="productId">
 </div>
 
 
