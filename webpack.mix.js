@@ -23,8 +23,8 @@ mix.copyDirectory('resources/assets/manifest', 'public/');
 mix.copyDirectory('resources/assets/core', 'public/'); 
 
 /* VERTIKAL TRIP & JOGJAFOODTOUR */
-mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-3.0.3.js');
-mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-3.0.3.css');
+mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-tmp.js');
+mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-tmp.css');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/0.64cdccc40b9065595318.js',
@@ -45,10 +45,22 @@ mix.scripts([
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
 	],'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js');
+	
+mix.scripts([
+	'public/js/vertikaltrip-tmp.js',
+	'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
+	],'public/js/vertikaltrip-3.0.4.js');
 
 mix.styles([
 	'resources/assets/vertikaltrip/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
 	],'public/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css');
+
+mix.styles([
+	'public/css/vertikaltrip-tmp.css',
+	'public/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
+	],'public/css/vertikaltrip-3.0.4.css');
+
+
 
 mix.copyDirectory('resources/assets/vertikaltrip/img/core', 'public/img');
 

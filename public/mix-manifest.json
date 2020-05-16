@@ -1,10 +1,12 @@
 {
-    "/js/vertikaltrip-3.0.3.js": "/js/vertikaltrip-3.0.3.js",
-    "/css/vertikaltrip-3.0.3.css": "/css/vertikaltrip-3.0.3.css",
+    "/js/vertikaltrip-tmp.js": "/js/vertikaltrip-tmp.js",
+    "/css/vertikaltrip-tmp.css": "/css/vertikaltrip-tmp.css",
     "/assets/javascripts/apps/build/0.64cdccc40b9065595318.js": "/assets/javascripts/apps/build/0.64cdccc40b9065595318.js",
     "/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js": "/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js",
     "/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js": "/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js",
-    "/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js": "/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js",
     "/assets/javascripts/apps/build/ActivityBookingWidget.9a4ae35b1ec27737a85c.js": "/assets/javascripts/apps/build/ActivityBookingWidget.9a4ae35b1ec27737a85c.js",
-    "/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css": "/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css"
+    "/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js": "/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js",
+    "/js/vertikaltrip-3.0.4.js": "/js/vertikaltrip-3.0.4.js",
+    "/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css": "/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css",
+    "/css/vertikaltrip-3.0.4.css": "/css/vertikaltrip-3.0.4.css"
 }

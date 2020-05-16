@@ -1,6 +1,5 @@
   
-<script src="/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js" type="text/javascript"></script>
-<link rel="stylesheet" media="screen" href="/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css">
+
 <div class="widget-body" id="WidgetContent">
 <div class="widget">
 	<div id="ActivityBookingWidget"></div>
