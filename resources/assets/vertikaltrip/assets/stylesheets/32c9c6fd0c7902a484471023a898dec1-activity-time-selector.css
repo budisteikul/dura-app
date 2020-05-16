@@ -287,3 +287,10 @@ html.rtl .activity-time-selector .radio-label span.time {
 {
 	font-weight:bold;
 }
+.daycell:hover, .daycell.past:hover, .daycell.soldout:hover, .daycell.not-in-month:hover {
+	cursor:not-allowed;
+}
+.daycell.available:hover {
+    background: #fff !important;
+	cursor:pointer;
+}

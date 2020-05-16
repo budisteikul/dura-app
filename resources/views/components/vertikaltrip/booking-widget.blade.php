@@ -1,5 +1,3 @@
-  
-
 <div class="widget-body" id="WidgetContent">
 <div class="widget">
 	<div id="ActivityBookingWidget"></div>

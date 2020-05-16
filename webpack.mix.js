@@ -49,7 +49,7 @@ mix.scripts([
 mix.scripts([
 	'public/js/vertikaltrip-tmp.js',
 	'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
-	],'public/js/vertikaltrip-3.0.4.js');
+	],'public/js/vertikaltrip-3.0.5.js');
 
 mix.styles([
 	'resources/assets/vertikaltrip/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
@@ -58,7 +58,7 @@ mix.styles([
 mix.styles([
 	'public/css/vertikaltrip-tmp.css',
 	'public/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
-	],'public/css/vertikaltrip-3.0.4.css');
+	],'public/css/vertikaltrip-3.0.5.css');
 
 
 
