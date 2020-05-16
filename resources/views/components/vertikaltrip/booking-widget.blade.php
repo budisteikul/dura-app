@@ -51,7 +51,9 @@
         onAvailabilitySelected: function(selectedRate, selectedDate, selectedAvailability) {
         },
         onAddedToCart: function(cart) {
-                var successUrl = '/booking/shoppingcart';
+				$('.btn-theme').attr("disabled",true);
+				$('.btn-theme').html(' <i class="fa fa-spinner fa-spin fa-fw"></i>  processing... ');
+				var successUrl = '/booking/shoppingcart';
                 if ( successUrl.indexOf('?') == -1 ) {
                   successUrl += '?sessionId=<?= $sessionId ?>';
                 } else {
