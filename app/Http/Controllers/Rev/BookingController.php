@@ -16,7 +16,6 @@ use App\Classes\Rev\BookClass;
 use App\Classes\Rev\PaypalClass;
 use App\Models\Rev\rev_resellers;
 use App\Models\Rev\rev_experiences;
-use App\Models\Blog\blog_posts;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 

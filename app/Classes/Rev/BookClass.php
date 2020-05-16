@@ -2,8 +2,6 @@
 namespace App\Classes\Rev;
 use Illuminate\Http\Request;
 
-use App\Models\Blog\blog_posts;
-
 use App\Classes\Rev\BokunClass;
 use App\Models\Rev\rev_shoppingcarts;
 use App\Models\Rev\rev_shoppingcart_products;
@@ -735,19 +733,7 @@ class BookClass {
     	return $uuid;
 	}
 	
-	public static function get_id($product_id)
-	{
-		$slug = blog_posts::where('product_id',$product_id)->first();
-		if(isset($slug))
-		{
-			$product_id = $slug->id;	
-		}
-		else
-		{
-			$product_id = '';
-		}
-		return $product_id;
-	}
+	
 
 	public static function get_reseller($id)
 	{
@@ -763,19 +749,7 @@ class BookClass {
 		return $id;
 	}
 	
-	public static function get_slug($id)
-	{
-		$slug = blog_posts::where('product_id',$id)->first();
-		if(isset($slug))
-		{
-			$url = '/tour/'. $slug->slug;	
-		}
-		else
-		{
-			$url = '/tour?activityId='.$id;	
-		}
-		return $url;
-	}
+	
 	
 	public static function texttodate($str){
 		$text = $str;

@@ -11,7 +11,6 @@ use App\Models\Rev\rev_shoppingcart_rates;
 use App\Models\Rev\rev_shoppingcart_questions;
 use App\Models\Rev\rev_shoppingcart_question_options;
 use App\Models\Rev\rev_resellers;
-use App\Models\Blog\blog_posts;
 
 use App\Classes\Rev\BookClass;
 use App\Classes\Rev\PaypalClass;
@@ -60,7 +59,7 @@ class ShoppingCartController extends Controller
 			return redirect("/booking/shoppingcart/empty");
 		}
 		
-		return view('blog.frontend.shopping-cart')
+		return view('rev.frontend.shopping-cart')
 				->with([
 						'rev_shoppingcarts'=>$rev_shoppingcarts
 					]);
@@ -215,7 +214,7 @@ class ShoppingCartController extends Controller
 		$rev_shoppingcarts = rev_shoppingcarts::where('id',$id)->where('bookingStatus','CONFIRMED')->first();
 		if(isset($rev_shoppingcarts))
 		{
-			return view('blog.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
+			return view('rev.frontend.receipt')->with(['rev_shoppingcarts'=>$rev_shoppingcarts]);
 		}
 	}
 	
