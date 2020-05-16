@@ -39,12 +39,12 @@ mix.scripts([
 	],'public/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js');
 
 mix.scripts([
-	'resources/assets/vertikaltrip/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
-	],'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js');
-
-mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/ActivityBookingWidget.9a4ae35b1ec27737a85c.js',
 	],'public/assets/javascripts/apps/build/ActivityBookingWidget.9a4ae35b1ec27737a85c.js');
+
+mix.scripts([
+	'resources/assets/vertikaltrip/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
+	],'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js');
 
 mix.styles([
 	'resources/assets/vertikaltrip/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
