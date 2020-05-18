@@ -72,8 +72,8 @@ Route::get('/sitemap.txt', 'Rev\FrontendController@sitemap');
 //========================================================================
 // Booking Page
 //========================================================================
-Route::post('/rev/webhook', 'Rev\WebhookController@storebooking');
-Route::get('/rev/webhook/{id}', 'Rev\WebhookController@storeproduct');
+Route::post('/rev/webhook/{bokun_accesskey}/{bokun_secretkey}', 'Rev\WebhookController@store');
+Route::get('/rev/webhook/{bokun_accesskey}/{bokun_secretkey}', 'Rev\WebhookController@store');
 Route::get('/tour/{id}', 'Rev\FrontendController@product_page_byslug');
 Route::get('/tour', 'Rev\FrontendController@product_page_byid');
 Route::get('/tours/{slug}/{id}', 'Rev\FrontendController@product_list_byslug');

@@ -17,10 +17,30 @@ use App\Models\Rev\rev_shoppingcarts;
 class WebhookController extends Controller
 {
 	
-	public function storeproduct($id,Request $request)
+	
+	public function store($bokun_accesskey,$bokun_secretkey,Request $request)
     {
-		if(env("BOKUN_SECRETKEY")==$id)
+		if(env("BOKUN_ACCESSKEY")== $bokun_accesskey && env("BOKUN_SECRETKEY")==$bokun_secretkey)
 		{
+			$data = $request->all();
+			switch($request->input('action'))
+			{
+			case 'BOOKING_CONFIRMED':
+				BookClass::webhook_insert_shoppingcart($data);
+				return response()->json([
+					"id" => "1",
+					"message" => 'Success'
+				]);
+			break;
+			case 'BOOKING_ITEM_CANCELLED':
+				rev_shoppingcarts::where('confirmationCode',$data['confirmationCode'])->update(['bookingStatus'=>'CANCELLED']);
+				return response()->json([
+					"id" => "1",
+					"message" => 'Success'
+				]);
+			break;
+			}
+			
 			switch($request->input('trigger'))
 			{
 				case 'PRODUCT_INFO_UPDATE':
@@ -32,34 +52,6 @@ class WebhookController extends Controller
 				break;
 			}
 		}
-		return response()->json([
-					"id" => "2",
-					"message" => 'Error'
-				]);
-	}
-	
-	public function storebooking(Request $request)
-    {
-		//productId=5645&trigger=PRODUCT_INFO_UPDATE
-		$data = $request->all();
-		switch($request->input('action'))
-		{
-		case 'BOOKING_CONFIRMED':
-			BookClass::webhook_insert_shoppingcart($data);
-			return response()->json([
-					"id" => "1",
-					"message" => 'Success'
-				]);
-		break;
-		case 'BOOKING_ITEM_CANCELLED':
-			rev_shoppingcarts::where('confirmationCode',$data['confirmationCode'])->update(['bookingStatus'=>'CANCELLED']);
-			return response()->json([
-					"id" => "1",
-					"message" => 'Success'
-				]);
-		break;
-		}
-		
 		return response()->json([
 					"id" => "2",
 					"message" => 'Error'
