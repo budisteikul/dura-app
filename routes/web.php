@@ -35,7 +35,7 @@ Route::domain('localhost')->group(function () {
 	Route::get('/foodtours', 'Rev\FrontendController@foodtours');
 	Route::get('/ratnawahyu', 'Blog\Frontend\TimelineController@index');
 });
-Route::domain('www.ratnawahyu.com')->group(function () {
+Route::domain('ratna.vertikaltrip.com')->group(function () {
     Route::get('/', 'Blog\Frontend\TimelineController@index');
 });
 Route::domain('www.shinjukufoodtour.com')->group(function () {
