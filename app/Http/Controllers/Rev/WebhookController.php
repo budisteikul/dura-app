@@ -19,7 +19,7 @@ class WebhookController extends Controller
 	
 	public function storeproduct($id,Request $request)
     {
-		if(env("BOKUN_SECRET")==$id)
+		if(env("BOKUN_SECRETKEY")==$id)
 		{
 			switch($request->input('trigger'))
 			{
