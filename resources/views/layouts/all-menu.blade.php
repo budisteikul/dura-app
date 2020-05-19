@@ -7,9 +7,11 @@
         
         <div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
-                @php
-                    $contents = \App\Classes\Rev\BokunClass::get_product_list_byid(env('BOKUN_NAVBAR'));
-                @endphp
+            @php
+            	$contents = \App\Classes\Rev\BokunClass::get_product_list_byid(env('BOKUN_NAVBAR'));
+            @endphp
+                
+            @if(count($contents->children))
                 @foreach($contents->children as $line1)
                     @if(!empty($line1->children))
                         <li class="nav-item dropdown">
@@ -30,7 +32,13 @@
                         </li>
                     @endif
                @endforeach
-
+			@else
+               
+               <li class="nav-item">
+               	<a class="nav-link menu-hover" href="/tours/{{ Str::slug($contents->title) }}/{{ $contents->id }}">{{ $contents->title }}</a>
+               </li>
+               
+           @endif
 
                             
 			</ul>
