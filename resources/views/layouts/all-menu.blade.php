@@ -1,16 +1,22 @@
-		
-        
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> <span style="font-size:13px; color:#FFFFFF">TOURS</span>
         </button>
-       
-        
         <div class="collapse navbar-collapse stroke" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
+            @if(env('BOKUN_NAVBAR')=='')
+            @php
+            	$contents = \App\Classes\Rev\BokunClass::get_product_list();
+            @endphp
+            @foreach($contents as $content)
+            <li class="nav-item">
+               <a class="nav-link menu-hover" href="/tours/{{ Str::slug($content->title) }}/{{ $content->id }}">{{ $content->title }}</a>
+            </li>
+            @endforeach
+            @else
+            <!-- ===================================================================================== -->
             @php
             	$contents = \App\Classes\Rev\BokunClass::get_product_list_byid(env('BOKUN_NAVBAR'));
             @endphp
-                
             @if(count($contents->children))
                 @foreach($contents->children as $line1)
                     @if(!empty($line1->children))
@@ -33,14 +39,12 @@
                     @endif
                @endforeach
 			@else
-               
                <li class="nav-item">
                	<a class="nav-link menu-hover" href="/tours/{{ Str::slug($contents->title) }}/{{ $contents->id }}">{{ $contents->title }}</a>
                </li>
-               
            @endif
-
-                            
+           <!-- ===================================================================================== -->
+           @endif    
 			</ul>
 		</div>
       
