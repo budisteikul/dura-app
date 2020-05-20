@@ -1,6 +1,3 @@
-<?php
-print(\Carbon\Carbon::now());
-?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
