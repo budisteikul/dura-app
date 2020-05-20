@@ -18,9 +18,15 @@ use App\Models\Rev\rev_resellers;
 use App\Models\Rev\rev_experiences;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
+	public function __construct()
+    {
+		rev_shoppingcarts::where('bookingStatus','CART')->where('created_at','<=',Carbon::now()->subDays(1))->delete();
+	}
+	
     public function index(BookingsDataTable $dataTable)
     {
         return $dataTable->render('rev.booking.index');
