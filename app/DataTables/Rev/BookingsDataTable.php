@@ -138,7 +138,7 @@ class BookingsDataTable extends DataTable
     {
         //$query = rev_shoppingcarts::get();
         //return $query;
-		return $model->query();
+		return $model->query()->where('bookingStatus','CONFIRMED')->orWhere('bookingStatus','CANCELLED');
     }
 
     /**
