@@ -63,7 +63,12 @@ $contents = \App\Classes\Rev\BokunClass::get_product_list_byid($productArray[$i]
         					<div class="col-lg-4 col-md-6 mb-4">
     							<div class="card h-100 shadow card-block rounded">
                             		@if(isset($content->activity->keyPhoto->fileName))
-  				 					<a href="{!! $link !!}" class="text-decoration-none"><img class="card-img-top" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
+                                    <div class="container-book">
+										<a href="{!! $link !!}" class="text-decoration-none"><img class="card-img-top image-book" src="https://bokunprod.imgix.net/{{ $content->activity->keyPhoto->fileName }}?w=300&h=150&fit=crop&crop=faces" alt="{{ $content->activity->title }}"></a>
+                            			<div class="middle-book">
+    										<a href="{!! $link !!}" class="btn btn-theme btn-md p-3" style="border-radius:0;">BOOK NOW</a>
+  										</div>
+                            		</div>
   				 					@endif	
   									<div class="card-header bg-white border-0 text-left pb-0">
         								<h3 class="mb-4"><a href="{!! $link !!}" class="text-dark text-decoration-none">{{ $content->activity->title }}</a></h3>
