@@ -170,7 +170,7 @@
             			<h3><i class="fa fa-ticket-alt"></i> Book {{ $contents->title }}</h3>
                 		Secure booking — only takes 2 minutes!
 						<br><br>
-                    	<i class="fa fa-ticket-alt text-secondary mb-4" style="width:20px;"></i> Instant Booking
+                    	<i class="fa fa-bolt text-secondary mb-4" style="width:20px;"></i> Instant Confirmation
 						<br>
 						<i class="fa fa-phone-alt text-secondary mb-4" style="width:20px;"></i> 24/7 Support
 						<br>

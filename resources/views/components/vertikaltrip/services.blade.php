@@ -4,8 +4,8 @@
       	<div class="row">
         	<div class="col-lg-3 col-md-6 text-center">
           		<div class="mt-5 mb-2">
-            		<i class="fa fa-4x fa-ticket-alt text-theme mb-2"></i>
-            		<h3 class="h4 mb-2">Instant Booking</h3>
+            		<i class="fa fa-4x fa-bolt text-theme mb-2"></i>
+            		<h3 class="h4 mb-2">Instant Confirmation</h3>
             		<p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           		</div>
         	</div>

@@ -140,7 +140,7 @@
     });
 </script>
 @else
-<a class="btn btn-danger text-white " href="/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
+<a class="btn btn-danger text-white " href="/booking/yogyakarta-night-walking-and-food-tours/" style="margin-top:10px;margin-bottom:10px;border-radius:0;" ><i class="fa fa-ticket-alt"></i> <span style="font-family: 'Barlow','Helvetica Neue',Arial,sans-serif;"><strong>Book now</strong></span></a>	
 
 @endif
 
@@ -212,8 +212,8 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5 mb-2">
-            <i class="fa fa-4x fa-ticket-alt text-secondary mb-2"></i>
-            <h3 class="h4 mb-2">Instant Booking</h3>
+            <i class="fa fa-4x fa-bolt text-secondary mb-2"></i>
+            <h3 class="h4 mb-2">Instant Confirmation</h3>
             <p class="text-muted mb-0">To secure your spot while keeping your plans flexible. Your booking are confirmed automatically!</p>
           </div>
         </div>
