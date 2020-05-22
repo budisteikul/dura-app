@@ -42,11 +42,11 @@ mix.scripts([
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/ActivityBookingWidget.js',
-	],'public/assets/javascripts/apps/build/ActivityBookingWidget.3.0.9.js');
+	],'public/assets/javascripts/apps/build/ActivityBookingWidget.3.1.0.js');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/App.js',
-	],'public/assets/javascripts/apps/build/App-3.0.9.js');
+	],'public/assets/javascripts/apps/build/App-3.1.0.js');
 	
 mix.scripts([
 	'public/js/vertikaltrip-tmp.js',
