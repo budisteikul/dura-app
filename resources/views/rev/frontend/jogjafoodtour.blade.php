@@ -235,7 +235,7 @@
           <div class="mt-5 mb-2">
             <i class="fab fa-4x fa-paypal text-secondary mb-2"></i>
             <h3 class="h4 mb-2">Secure Payments</h3>
-            <p class="text-muted mb-0">We use PayPal as payment gateway to make it secure and simple!</p>
+            <p class="text-muted mb-0">You can pay online using your credit card or Paypal and we will make it secure and simple!</p>
           </div>
         </div>
       </div>
