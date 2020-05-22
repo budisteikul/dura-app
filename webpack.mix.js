@@ -30,21 +30,23 @@ mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/0.64cdccc40b9065595318.js',
 	],'public/assets/javascripts/apps/build/0.64cdccc40b9065595318.js');
 
-mix.scripts([
-	'resources/assets/vertikaltrip/assets/javascripts/apps/build/App-3.0.9.js',
-	],'public/assets/javascripts/apps/build/App-3.0.9.js');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js',
 	],'public/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js');
 
-mix.scripts([
-	'resources/assets/vertikaltrip/assets/javascripts/apps/build/ActivityBookingWidget.3.0.9.js',
-	],'public/assets/javascripts/apps/build/ActivityBookingWidget.3.0.9.js');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js',
 	],'public/assets/javascripts/widgets/687035c46b475965b2131d0e804b858e-widget-utils.js');
+
+mix.scripts([
+	'resources/assets/vertikaltrip/assets/javascripts/apps/build/ActivityBookingWidget.js',
+	],'public/assets/javascripts/apps/build/ActivityBookingWidget.3.0.9.js');
+
+mix.scripts([
+	'resources/assets/vertikaltrip/assets/javascripts/apps/build/App.js',
+	],'public/assets/javascripts/apps/build/App-3.0.9.js');
 	
 mix.scripts([
 	'public/js/vertikaltrip-tmp.js',
