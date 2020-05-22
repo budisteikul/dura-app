@@ -31,8 +31,8 @@ mix.scripts([
 	],'public/assets/javascripts/apps/build/0.64cdccc40b9065595318.js');
 
 mix.scripts([
-	'resources/assets/vertikaltrip/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js',
-	],'public/assets/javascripts/apps/build/5da5cda41b92360a443ab132262430e2-App.js');
+	'resources/assets/vertikaltrip/assets/javascripts/apps/build/App-3.0.9.js',
+	],'public/assets/javascripts/apps/build/App-3.0.9.js');
 
 mix.scripts([
 	'resources/assets/vertikaltrip/assets/javascripts/apps/build/100.7a31e40fbb31ca0a64f6.js',
