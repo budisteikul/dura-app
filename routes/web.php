@@ -43,6 +43,11 @@ Route::domain('www.shinjukufoodtour.com')->group(function () {
 		return redirect('https://foodtours.xyz/tours/26778');
 	});
 });
+Route::domain('vertikaltrip.herokuapp.com')->group(function () {
+	Route::get('/', function () {
+		return redirect('https://foodtours.xyz');
+	});
+});
 Route::domain('www.vertikaltrip.com')->group(function () {
 	Route::get('/', 'Rev\FrontendController@vertikaltrip');
 });
