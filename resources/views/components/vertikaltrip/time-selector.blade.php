@@ -1,7 +1,7 @@
 <section id="booking" style="background-color:#ffffff">
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-md-6 mx-auto">
+		<div class="col-lg-12 mx-auto">
 			<div class="row" style="padding-bottom:0px;">
 				<div class="col-lg-12 text-left">
 				<div style="height:77px;"></div>

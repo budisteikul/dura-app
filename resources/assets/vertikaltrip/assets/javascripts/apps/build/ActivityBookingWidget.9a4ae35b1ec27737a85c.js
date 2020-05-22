@@ -784,7 +784,7 @@
                             return N.a.createElement("div", {
                                 className: "ActivityUpcomingEvents row row-fluid upcoming-events"
                             }, N.a.createElement("div", {
-                                className: !0 === n ? "col-xs-12" : "span5 col-sm-5"
+                                className: !0 === n ? "col-lg-12" : "span5 col-lg-5"
                             }, t ? N.a.createElement(te, this.props) : null, N.a.createElement("div", {
                                 className: "start-times-box"
                             }, N.a.createElement("h4", null, e("frontend.activity.dates")), N.a.createElement("div", {
@@ -795,7 +795,7 @@
                                 identifier: "upcoming",
                                 days: a
                             })))))), N.a.createElement("div", {
-                                className: !0 === n ? "col-xs-12" : "span7 col-sm-7"
+                                className: !0 === n ? "col-lg-12" : "span7 col-lg-7"
                             }, N.a.createElement(se, p()({}, this.props, {
                                 displayStartTimes: !1
                             }))))
@@ -817,11 +817,11 @@
                             return N.a.createElement("div", {
                                 className: "ActivityCalendarEvents row row-fluid all-events"
                             }, N.a.createElement("div", {
-                                className: !0 === t ? "col-xs-12" : "span5 col-lg-12"
+                                className: !0 === t ? "col-lg-12" : "span5 col-lg-5"
                             }, e ? N.a.createElement(te, this.props) : null, N.a.createElement("div", {
                                 className: "availability-calendar-container"
                             }, N.a.createElement(oe, this.props))), N.a.createElement("div", {
-                                className: !0 === t ? "col-xs-12" : "span7 col-lg-12"
+                                className: !0 === t ? "col-lg-12" : "span7 col-lg-7"
                             }, N.a.createElement(se, p()({}, this.props, {
                                 displayStartTimes: !0
                             }))))

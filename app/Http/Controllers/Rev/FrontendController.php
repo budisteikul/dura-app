@@ -49,7 +49,8 @@ class FrontendController extends Controller
 		$microtime = $availability[0]->date;
 		$month = date("n",$microtime/1000);
 		$year = date("Y",$microtime/1000);
-        return view('rev.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
+		$embedded = "true";
+        return view('rev.frontend.vt-product-page')->with(['embedded'=>$embedded,'contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
 	}
 	
 	public function product_page_byid(Request $request)
@@ -79,7 +80,8 @@ class FrontendController extends Controller
 		$microtime = $availability[0]->date;
 		$month = date("n",$microtime/1000);
 		$year = date("Y",$microtime/1000);
-        return view('rev.frontend.vt-product-page')->with(['contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
+		$embedded = "true";
+        return view('rev.frontend.vt-product-page')->with(['embedded'=>$embedded,'contents'=>$contents,'pickup'=>$pickup,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
     }
 	
 	public function time_selector($slug)
@@ -102,7 +104,8 @@ class FrontendController extends Controller
 		$microtime = $availability[0]->date;
 		$month = date("n",$microtime/1000);
 		$year = date("Y",$microtime/1000);
-		return view('rev.frontend.booking')->with(['contents'=>$contents,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
+		$embedded = "false";
+		return view('rev.frontend.booking')->with(['embedded'=>$embedded,'contents'=>$contents,'sessionId'=>$sessionId,'bookingChannelUUID'=>$bookingChannelUUID,'firstavailability'=>$firstavailability,'year'=>$year,'month'=>$month]);
 	}
 	
 	public function product_list_byid($id)

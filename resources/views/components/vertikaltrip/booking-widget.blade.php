@@ -14,7 +14,7 @@
     window.ActivityBookingWidgetConfig = {
         currency: 'USD',
         language: 'en',
-        embedded: false,
+        embedded: {!! $embedded !!},
         priceFormatter: window.priceFormatter,
         invoicePreviewUrl: '/snippets/activity/invoice-preview',
         addToCartUrl: '/snippets/widget/cart/session/<?= $sessionId ?>/activity',
@@ -29,7 +29,7 @@
         selectedTab: 'all',
         hideExtras: false,
         showActivityList: false,
-        showFewLeftWarning: true,
+        showFewLeftWarning: false,
         warningThreshold: 10,
         displayStartTimeSelectBox: false,
         displayMessageAfterAddingToCart: false,
