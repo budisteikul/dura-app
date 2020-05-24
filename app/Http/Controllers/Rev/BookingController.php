@@ -13,12 +13,14 @@ use App\Models\Rev\rev_shoppingcart_rates;
 use App\Models\Rev\rev_shoppingcart_questions;
 use App\Models\Rev\rev_shoppingcart_question_options;
 use App\Classes\Rev\BookClass;
+use App\Classes\Rev\BokunClass;
 use App\Classes\Rev\PaypalClass;
 use App\Models\Rev\rev_resellers;
 use App\Models\Rev\rev_experiences;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Carbon\Carbon;
+use Session;
 
 class BookingController extends Controller
 {
@@ -31,7 +33,7 @@ class BookingController extends Controller
     {
         return $dataTable->render('rev.booking.index');
     }
-	
+
 	public function create()
     {
 		$rev_resellers = rev_resellers::orderBy('name')->get();
