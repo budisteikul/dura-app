@@ -60,7 +60,7 @@ mix.styles([
 mix.styles([
 	'public/css/vertikaltrip-tmp.css',
 	'public/assets/stylesheets/32c9c6fd0c7902a484471023a898dec1-activity-time-selector.css',
-	],'public/css/vertikaltrip-3.1.1.css');
+	],'public/css/vertikaltrip-3.1.2.css');
 
 
 
