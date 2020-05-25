@@ -86,9 +86,9 @@
     </div>
 </div>
 </footer>
-<!-- a href="https://wa.me/+6285743112112" class="wa-float" target="_blank">
+<a href="https://wa.me/+6285743112112" class="wa-float" target="_blank">
 <i class="fab fa-whatsapp wa-icon-float"></i>
-</a -->
+</a>
 </body>
 <script src="/assets/javascripts/apps/build/App-3.1.0.js"></script>
 <!--Start of Tawk.to Script-->
