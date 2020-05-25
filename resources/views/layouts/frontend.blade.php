@@ -86,7 +86,7 @@
     </div>
 </div>
 </footer>
-<a href="https://wa.me/+6285743112112" class="wa-float" target="_blank">
+<a href="https://wa.me/+6285743112112" class="wa-float text-white" target="_blank">
 <i class="fab fa-whatsapp wa-icon-float"></i>
 </a>
 </body>
