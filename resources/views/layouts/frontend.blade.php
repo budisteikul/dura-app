@@ -86,13 +86,13 @@
     </div>
 </div>
 </footer>
-<a href="https://wa.me/+6285743112112" class="wa-float text-white" target="_blank">
-<i class="fab fa-whatsapp wa-icon-float"></i>
+<!-- a href="https://wa.me/+6285743112112" class="wa-float text-white" target="_blank">
+<i class="fab fa-whatsapp wa-icon-float"></i -->
 </a>
 </body>
 <script src="/assets/javascripts/apps/build/App-3.1.0.js"></script>
 <!--Start of Tawk.to Script-->
-<!-- script type="text/javascript">
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -102,6 +102,6 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-</script -->
+</script>
 <!--End of Tawk.to Script-->
 </html>
