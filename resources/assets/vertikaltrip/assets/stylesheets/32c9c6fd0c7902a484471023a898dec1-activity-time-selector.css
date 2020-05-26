@@ -287,6 +287,10 @@ html.rtl .activity-time-selector .radio-label span.time {
 {
 	font-weight:bold;
 }
+.pickup-container
+{
+    font-weight: bold;
+}
 @media (min-width: 768px) {
 .daycell:hover, .daycell.past:hover, .daycell.soldout:hover, .daycell.not-in-month:hover {
 	cursor:not-allowed;
