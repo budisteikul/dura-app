@@ -126,9 +126,9 @@
             <div class="card">
                 <div class="card-header">Booking</div>
                 <div class="card-body">
-      <button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Create booking</button>
+      
        
-      	<hr>
+      
         <style>
 		#dataTableBuilder thead {
     		display: none;

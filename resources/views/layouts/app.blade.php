@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/admin-3.0.3.js') }}"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -144,4 +145,5 @@
         </main>
     </div>
 </body>
+<script src="/assets/javascripts/apps/build/App-3.1.0.js"></script>
 </html>

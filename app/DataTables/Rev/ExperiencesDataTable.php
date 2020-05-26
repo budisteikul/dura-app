@@ -22,7 +22,7 @@ class ExperiencesDataTable extends DataTable
 				return $id->title .'<br><a href="'.url('/tour/'.$id->slug).'" target="_blank">'. url('/tour/'.$id->slug) .'</a>';
 			})
 			->addColumn('action', function ($id) {
-				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-booking" type="button" onClick="window.location=\'/rev/booking/calendar?activityId='.$id->productId .' \'" class="btn btn-primary"><i class="fa fa-ticket-alt"></i> Booking</button><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
             })
 			->rawColumns(['action','title']);
     }

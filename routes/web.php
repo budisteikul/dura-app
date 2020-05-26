@@ -155,8 +155,19 @@ Route::get('/rev/experiences/import','Rev\ExperienceController@import')
 	->middleware(['auth', 'verified']);
 Route::resource('/rev/experiences','Rev\ExperienceController',[ 'names' => 'experiences' ])
 	->middleware(['auth', 'verified']);
+
+Route::get('/rev/booking/calendar', 'Rev\BookingController@get_calendar')->middleware(['auth', 'verified']);
+Route::get('/rev/booking/shoppingcart', 'Rev\BookingController@get_shoppingcart')->middleware(['auth', 'verified']);
+Route::get('/rev/booking/checkout', 'Rev\BookingController@get_checkout')->middleware(['auth', 'verified']);
+Route::post('/rev/booking/checkout', 'Rev\BookingController@post_checkout')->middleware(['auth', 'verified']);
+Route::post('/rev/booking/remove', 'Rev\BookingController@removebookingid')->middleware(['auth', 'verified']);
+Route::post('/rev/booking/promo-code', 'Rev\BookingController@applypromocode')->middleware(['auth', 'verified']);
+Route::post('/rev/booking/promo-code/remove', 'Rev\BookingController@removepromocode')->middleware(['auth', 'verified']);
 Route::resource('/rev/booking','Rev\BookingController',[ 'names' => 'bookings' ])
 	->middleware(['auth', 'verified']);
+
+
+
 //========================================================================
 // Blog App Route
 //========================================================================
