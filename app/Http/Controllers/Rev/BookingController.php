@@ -113,6 +113,8 @@ class BookingController extends Controller
 
 	public function post_checkout(Request $request)
 	{
+		$bookingChannel = $request->input('bookingChannel');
+		
 
 		if(!Session::has('sessionId')){
 			return response()->json([
@@ -124,17 +126,8 @@ class BookingController extends Controller
 		$sessionId = Session::get('sessionId');
 		$rev_shoppingcarts = rev_shoppingcarts::where('bookingStatus','CART')->where('sessionId',$sessionId)->first();
 
-		foreach($rev_shoppingcarts->shoppingcart_questions()->get() as $question)
+			foreach($rev_shoppingcarts->shoppingcart_questions()->get() as $question)
 			{
-				
-				if($request->input($question->questionId)=="" && $question->required)
-				{
-					return response()->json([
-						"id" => "2",
-						"message" => 'Variable Not Valid'
-					]);
-				}
-				
 				$rev_shoppingcart_questions = rev_shoppingcart_questions::find($question->id);
 				$rev_shoppingcart_questions->answer = $request->input($question->questionId);
 				$rev_shoppingcart_questions->save();
@@ -159,11 +152,10 @@ class BookingController extends Controller
 						
 					}
 				}
-				
 			}
 
 			$grand_total = $rev_shoppingcarts->total;
-			$rev_shoppingcarts->bookingChannel = 'Internal Booking';
+			$rev_shoppingcarts->bookingChannel = $bookingChannel;
 			$rev_shoppingcarts->paymentStatus = 0;
 			$rev_shoppingcarts->subtotal = $grand_total;
 			$rev_shoppingcarts->total = $grand_total;
@@ -203,9 +195,11 @@ class BookingController extends Controller
 			return redirect("/rev/booking");
 		}
 		
+		$rev_resellers = rev_resellers::get();
 		return view('rev.booking.checkout')
 				->with([
-						'rev_shoppingcarts'=>$rev_shoppingcarts
+						'rev_shoppingcarts'=>$rev_shoppingcarts,
+						'rev_resellers'=>$rev_resellers
 					]);
 	}
 

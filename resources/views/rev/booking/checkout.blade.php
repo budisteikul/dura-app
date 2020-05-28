@@ -84,27 +84,37 @@
                  
 <form onSubmit="STORE(); return false;">             
 <!-- ########################################### -->
+<h3>Booking Channel</h3>
+<div class="form-group">
+<label for="bookingChannel"><strong>Channel</strong></label>
+<select style="font-size:16px;height:47px;"  class="form-control" id="bookingChannel" name="bookingChannel">
+        <option value="Internal Booking">Internal Booking</option>
+        @foreach($rev_resellers as $rev_reseller)
+        <option value="{{$rev_reseller->name}}">{{$rev_reseller->name}}</option>
+        @endforeach
+</select>
+</div>
 <h3>Main Contact</h3>   
 	@php
     	$main_contacts = $rev_shoppingcarts->shoppingcart_questions()->where('type','mainContactDetails')->orderBy('order')->get()
     @endphp
     @foreach($main_contacts as $main_contact)        
 <div class="form-group">
-	<label for="{{ $main_contact->questionId }}" class="{{ $main_contact->required ? "required" : "" }}"><strong>{{ $main_contact->label }}</strong></label>
+	<label for="{{ $main_contact->questionId }}"><strong>{{ $main_contact->label }}</strong></label>
     @if($main_contact->dataFormat=="EMAIL_ADDRESS")
-	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="email" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+	<input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="email" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;">
     @elseif($main_contact->dataFormat=="PHONE_NUMBER")
-    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="tel" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="tel" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;">
     @else
     @if($main_contact->selectOption)
-    <select style="font-size:16px;height:47px;"  class="form-control" id="{{ $main_contact->questionId }}" name="{{ $main_contact->questionId }}" {{ $main_contact->required ? "required" : "" }}>
+    <select style="font-size:16px;height:47px;"  class="form-control" id="{{ $main_contact->questionId }}" name="{{ $main_contact->questionId }}">
     	<option value=""></option>
     	@foreach($main_contact->shoppingcart_question_options()->orderBy('order')->get() as $shoppingcart_question_option)
     	<option value="{{ $shoppingcart_question_option->value }}" {{ $shoppingcart_question_option->answer==1 ? "selected" : "" }}>{{ $shoppingcart_question_option->label }}</option>
         @endforeach
     </select>
     @else
-    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;" {{ $main_contact->required ? "required" : "" }}>
+    <input name="{{ $main_contact->questionId }}" value="{{ $main_contact->answer }}" type="text" class="form-control" id="{{ $main_contact->questionId }}" style="height:47px;">
     @endif
     @endif
 </div>
@@ -121,12 +131,12 @@
     @if($pickup_question->dataType=="READ_ONLY")
     <div class="form-group" style="margin-bottom:3px;">
 	<strong>{{ $pickup_question->answer }}</strong>
-	<input type="hidden" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+	<input type="hidden" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control">
 	</div>
     @else
     <div class="form-group">
-	<label for="{{ $pickup_question->questionId }}" class="{{ $pickup_question->required ? "required" : "" }}"><strong>{{ $pickup_question->label }}</strong></label>
-	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control" {{ $pickup_question->required ? "required" : "" }}>
+	<label for="{{ $pickup_question->questionId }}"><strong>{{ $pickup_question->label }}</strong></label>
+	<input type="text" id="{{ $pickup_question->questionId }}" value="{{ $pickup_question->answer }}" style="height:47px;" name="{{ $pickup_question->questionId }}" class="form-control">
 	</div>
 	@endif
     @endforeach
@@ -141,16 +151,16 @@
     
     @foreach($activityBookings as $activityBooking)
     <div class="form-group">
-	<label for="{{ $activityBooking->questionId }}" class="{{ $activityBooking->required ? "required" : "" }}"><strong>{{ $activityBooking->label }}</strong></label>
+	<label for="{{ $activityBooking->questionId }}"><strong>{{ $activityBooking->label }}</strong></label>
     @if($activityBooking->selectOption)
-    <select style="font-size:16px;height:47px;" class="form-control" id="{{ $activityBooking->questionId }}" name="{{ $activityBooking->questionId }}" {{ $activityBooking->required ? "required" : "" }}>
+    <select style="font-size:16px;height:47px;" class="form-control" id="{{ $activityBooking->questionId }}" name="{{ $activityBooking->questionId }}">
     	<option value=""></option>
     	@foreach($activityBooking->shoppingcart_question_options()->orderBy('order')->get() as $shoppingcart_question_option)
     	<option value="{{ $shoppingcart_question_option->value }}" {{ $shoppingcart_question_option->answer==1 ? "selected" : "" }}>{{ $shoppingcart_question_option->label }}</option>
         @endforeach
     </select>
     @else
-    <input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control" {{ $activityBooking->required ? "required" : "" }}>
+    <input type="text" id="{{ $activityBooking->questionId }}" value="{{ $activityBooking->answer }}" style="height:47px;" name="{{ $activityBooking->questionId }}" class="form-control">
     @endif
     @if(isset($activityBooking->help))
     <small class="form-text text-muted">{{$activityBooking->help}}</small>
@@ -175,46 +185,6 @@
 			</div>
         </div>
 	</div>
-
-
-<script>
-@php
-$questions = $rev_shoppingcarts->shoppingcart_questions()->where('required',1)->get()
-@endphp
-    @foreach($questions as $question)
-	$("#{{ $question->questionId }}").focusout(function() {
-		$('#{{ $question->questionId }}').removeClass('is-invalid');
-  		$('#span-{{ $question->questionId }}').remove();
-    	if($("#{{ $question->questionId }}").val()=="")
-		{
-			$('#{{ $question->questionId }}').addClass('is-invalid');
-			$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Please fill out this field</strong></span>');
-		}
-		else
-		{
-			@if($question->dataFormat=="EMAIL_ADDRESS")
-				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-				if(regex.test($("#{{ $question->questionId }}").val()))
-				{
-					$('#{{ $question->questionId }}').removeClass('is-invalid');
-  					$('#span-{{ $question->questionId }}').remove();
-				}
-				else
-				{
-					$('#{{ $question->questionId }}').addClass('is-invalid');
-					$('#{{ $question->questionId }}').after('<span id="span-{{ $question->questionId }}" class="invalid-feedback" role="alert"><strong>Invalid email</strong></span>');
-				}
-			@else
-				$('#{{ $question->questionId }}').removeClass('is-invalid');
-  				$('#span-{{ $question->questionId }}').remove();
-			@endif
-		}
-		
-  	});
-	@endforeach
-
-
-</script>
 <script language="javascript">
 function STORE()
 {
@@ -258,6 +228,7 @@ function STORE()
 	$.ajax({
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
+            "bookingChannel": $("#bookingChannel").val(),
 			
 				@php
     			$main_contacts = $rev_shoppingcarts->shoppingcart_questions()->where('type','mainContactDetails')->orderBy('order')->get()
