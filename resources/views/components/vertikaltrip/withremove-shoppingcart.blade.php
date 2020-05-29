@@ -71,7 +71,7 @@ function REMOVE(id)
                     				<img class="img-fluid" width="55" src="{{ $shoppingcart_product->image }}">
                                 	@endif
                     			</div>
-                    			<div class="col-8" style="font-size:12px; margin-left:-8px">
+                    			<div class="col-8" style="font-size:11px; margin-left:-8px">
                                 	{{ \App\Classes\Rev\BookClass::datetotext($shoppingcart_product->date) }}
                                 	<br>
                                     {{ $shoppingcart_product->rate }}
