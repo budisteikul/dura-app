@@ -940,3 +940,17 @@ div {
   font-size: 16px;
   padding: 16px 32px;
 }
+
+.product-detail
+{
+  font-size:13px;
+  margin-left:-8px
+}
+
+@media(max-width:767px) {
+  .product-detail
+  {
+    font-size:11px;
+    margin-left:-8px
+  }
+}
