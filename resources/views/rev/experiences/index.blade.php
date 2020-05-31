@@ -69,8 +69,12 @@
       
       	<button type="button" class="btn btn-secondary mb-2"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add experiences</button>
         <hr>
-        
-		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}
+   <style>
+    #dataTableBuilder thead {
+        display: none;
+    }
+    </style> 
+		{!! $dataTable->table(['class'=>'table table-responsive w-100 d-block d-md-table']) !!}
 		
                 </div>
             </div>
