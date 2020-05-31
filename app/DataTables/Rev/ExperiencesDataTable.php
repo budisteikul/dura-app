@@ -19,10 +19,10 @@ class ExperiencesDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
 			->editColumn('title', function($id) {
-				return $id->title .'<br><a href="'.url('/tour/'.$id->slug).'" target="_blank">'. url('/tour/'.$id->slug) .'</a>';
+				return $id->title .'<br>'.$id->productId .'</a>';
 			})
 			->addColumn('action', function ($id) {
-				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-booking" type="button" onClick="window.location=\'/rev/booking/calendar?activityId='.$id->productId .' \'" class="btn btn-primary"><i class="fa fa-ticket-alt"></i> Booking</button><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
+				return '<div class="btn-toolbar justify-content-end"><div class="btn-group mr-2 mb-2" role="group"><button id="btn-booking" type="button" onClick="window.location=\'/rev/booking/calendar?activityId='.$id->productId .' \'" class="btn btn-primary"><i class="fa fa-ticket-alt"></i> Create Booking</button><button id="btn-edit" type="button" onClick="EDIT(\''.$id->id.'\'); return false;" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button><button id="btn-del" type="button" onClick="DELETE(\''. $id->id .'\')" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete</button></div><div class="btn-group mb-2" role="group"></div></div>';
             })
 			->rawColumns(['action','title']);
     }
@@ -48,7 +48,7 @@ class ExperiencesDataTable extends DataTable
         return $this->builder()
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->addAction(['title' => '','width' => '300px','class' => 'text-center'])
+                    ->addAction(['title' => '','width' => '400px','class' => 'text-center'])
                     ->parameters([
 						'language' => [
 							'paginate' => [
@@ -76,7 +76,6 @@ class ExperiencesDataTable extends DataTable
 			["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
 			["name" => "title", "title" => "title", "data" => "title"],
-			["name" => "productId", "title" => "productId", "data" => "productId"],
         ];
     }
 

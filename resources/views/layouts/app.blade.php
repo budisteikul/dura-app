@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/admin-3.0.3.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin-3.0.4.css') }}" rel="stylesheet">
    
     @stack('scripts')
     
@@ -64,7 +64,6 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/rev/booking"><i class="far fa-circle"></i> {{ __('Booking') }}</a>
-									<a class="dropdown-item" href="/rev/experiences"><i class="far fa-circle"></i> {{ __('Experiences') }}</a>
 									<a class="dropdown-item" href="/rev/review"><i class="far fa-circle"></i> {{ __('Review') }}</a>
                                     <a class="dropdown-item" href="/rev/resellers"><i class="far fa-circle"></i> {{ __('Channel') }}</a>
                                     <!-- a class="dropdown-item" href="/blog/post"><i class="far fa-circle"></i> {{ __('Posts') }}</a -->

@@ -1,66 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<style>
-.btn-theme{
-    background-color: #1D57C7;
-    border-color:#1D57C7;
-    color:#FFFFFF;
-    
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    overflow: hidden;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: color, background-color, border-color;
-    transition-property: color, background-color, border-color;
-}
 
-.btn-theme:hover{
-    background-color: #2870fd;
-    border-color:#2870fd;
-    color:#FFFFFF;
-}
-
-.btn-theme:focus{
-    background-color:#2870fd;
-    border-color:#2870fd;
-    color:#FFFFFF;
-}
-.btn-theme:active{
-    background-color:#2870fd;
-    border-color:#2870fd;
-    color:#FFFFFF;
-}
-.btn-theme:not(:disabled):not(.disabled):active{
-    color: #FFFFFF;
-    background: #1D57C7;
-    border-color: #1D57C7;
-    outline: 0 none;
-}
-.btn-theme:not(:disabled):not(.disabled):focus{
-    box-shadow: 0 0 5px #1D57C7;
-}
-.btn-theme[disabled] {
-    background: #1D57C7 !important;
-    border-color:#1D57C7 !important;
-}
-.btn-theme[disabled]:hover {
-    background: #1D57C7 !important;
-    border-color:#1D57C7 !important;
-}
-</style>
 <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Checkout Booking</div>
                 <div class="card-body">
-
-
-
-
 
 
 	<div class="row">
@@ -285,23 +230,6 @@ function STORE()
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
 		
                 </div>
             </div>

@@ -22,7 +22,7 @@ mix.scripts(['public/js/admin-lte.js','resources/assets/bootstrap3-wysihtml5/boo
 mix.copyDirectory('resources/assets/manifest', 'public/');
 mix.copyDirectory('resources/assets/core', 'public/'); 
 
-/* VERTIKAL TRIP & JOGJAFOODTOUR */
+/* VERTIKAL TRIP & JOGJAFOODTOUR
 mix.js('resources/js/vertikaltrip.js', 'public/js/vertikaltrip-tmp.js');
 mix.sass('resources/sass/vertikaltrip.scss', 'public/css/vertikaltrip-tmp.css');
 
@@ -69,9 +69,9 @@ mix.copyDirectory('resources/assets/vertikaltrip/img/core', 'public/img');
 mix.copyDirectory('resources/assets/jogjafoodtour/img/core', 'public/img'); 
 mix.copyDirectory('resources/assets/jogjafoodtour/img/gallery', 'public/img');
 mix.copyDirectory('resources/assets/jogjafoodtour/img/tourguide', 'public/img'); 
-
+ */
  
-/* ADMIN
+/* ADMIN */
 mix.js('resources/js/admin.js', 'public/js/admin_tmp1.js');
 mix.sass('resources/sass/admin.scss', 'public/css/admin_tmp1.css');
 
@@ -90,12 +90,12 @@ mix.styles([
 	'public/css/admin_tmp1.css',
 	'resources/assets/admin/jquery-uploadfile/css/uploadfile.css',
 	'resources/assets/admin/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
-	],'public/css/admin-3.0.3.css');
+	],'public/css/admin-3.0.4.css');
 	
 
 mix.copy('node_modules/tinymce/skins', 'public/js/skins');
 mix.copy('node_modules/tinymce/themes', 'public/js/themes');
- */
+
  
 
 

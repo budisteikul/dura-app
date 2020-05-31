@@ -128,6 +128,8 @@
                 <div class="card-body">
       
        
+       <a class="btn btn-secondary mb-2" href="/rev/experiences"><b class="fa fa-plus-square"></b> Create booking</a>
+        <hr>
       
         <style>
 		#dataTableBuilder thead {
