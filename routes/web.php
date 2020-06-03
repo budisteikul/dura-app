@@ -165,7 +165,7 @@ Route::post('/rev/booking/promo-code', 'Rev\BookingController@applypromocode')->
 Route::post('/rev/booking/promo-code/remove', 'Rev\BookingController@removepromocode')->middleware(['auth', 'verified']);
 Route::resource('/rev/booking','Rev\BookingController',[ 'names' => 'bookings' ])
 	->middleware(['auth', 'verified']);
-
+Route::get('/testaja', 'Rev\BookingController@testaja')->middleware(['auth', 'verified']);
 
 
 //========================================================================

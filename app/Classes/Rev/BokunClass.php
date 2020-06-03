@@ -122,6 +122,13 @@ class BokunClass {
 		});
 		return $value;
 	}
+
+	public static function testaja()
+	{
+		
+    		return self::get_connect('/activity.json/list');
+	
+	}
 	
 	public static function get_questionshoppingcart($id)
 	{

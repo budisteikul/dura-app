@@ -29,6 +29,15 @@ class BookingController extends Controller
 		rev_shoppingcarts::where('bookingStatus','CART')->where('created_at','<=',Carbon::now()->subDays(1))->delete();
 	}
 	
+
+	public function testaja()
+	{
+		//$contents = BokunClass::get_activity_list();
+		//print_r($contents);
+		print("halo");
+	}
+
+
 	public function applypromocode(Request $request)
 	{
 		if(!Session::has('sessionId')){

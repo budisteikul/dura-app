@@ -79,7 +79,13 @@
                     	<br>
 						<img class="mb-2 mt-2" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png" alt="Credit Card Badges">
                         <br>
+                        @if(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="jogjafoodtour.com")
+                        <small> 2020 &copy; JOGJA FOOD TOUR is part of VERTIKAL TRIP</small>
+                        @elseif(str_ireplace("www.","",$_SERVER['HTTP_HOST'])=="foodtours.xyz")
+                        <small> 2020 &copy; FOODTOURS.XYZ is part of VERTIKAL TRIP</small>
+                        @else
                         <small> 2020 &copy; VERTIKAL TRIP</small>
+                        @endif
 					</p>
                 </div>
         </div>
