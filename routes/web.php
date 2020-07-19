@@ -198,6 +198,11 @@ Route::get('/mails/folder/{id}/', 'Mail\MailController@index')->middleware(['aut
 Route::resource('/mails','Mail\MailController',[ 'names' => 'mails' ])->middleware(['auth', 'verified']);
 Route::get('/mails/{id}/{view}', 'Mail\MailController@show')->name('mails.show')->middleware(['auth', 'verified']);
 //========================================================================
+// Home Route
+//========================================================================
+Route::resource('/home/lamp','Home\LampController',[ 'names' => 'home_lamps' ])
+	->middleware(['auth', 'verified']);
+//========================================================================
 
 
 
