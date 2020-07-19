@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Request;
 use App\Classes\Blog\BlogClass;
 use Illuminate\Support\Facades\Auth;
 
+
 class HomeController extends Controller
 {
     /**
