@@ -18,6 +18,8 @@ function STORE()
         	"_token": $("meta[name=csrf-token]").attr("content"),
         	"name": $('#name').val(),
 			"ip": $('#ip').val(),
+			"username": $('#username').val(),
+			"password": $('#password').val(),
         },
 		type: 'POST',
 		url: '{{ route('home_lamps.store') }}'
@@ -68,6 +70,14 @@ function STORE()
 <div class="form-group">
 	<label for="ip">IP :</label>
 	<input type="text" id="ip" name="ip" class="form-control" placeholder="IP">
+</div>
+<div class="form-group">
+	<label for="username">username :</label>
+	<input type="text" id="username" name="username" class="form-control" placeholder="username" autocomplete="off">
+</div>
+<div class="form-group">
+	<label for="password">password :</label>
+	<input type="password" id="password" name="password" class="form-control" placeholder="password" autocomplete="off">
 </div>
   
 	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>

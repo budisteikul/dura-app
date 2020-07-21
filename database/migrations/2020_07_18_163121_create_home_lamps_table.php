@@ -18,6 +18,8 @@ class CreateHomeLampsTable extends Migration
             $table->string('name')->nullable();
             $table->string('ip')->nullable();
             $table->string('state')->default("0");
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

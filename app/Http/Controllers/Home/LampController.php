@@ -42,6 +42,8 @@ class LampController extends Controller
         $validator = Validator::make($request->all(), [
             'ip' => 'required|string|max:255',
             'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            'password' => 'required|string|max:255',
         ]);
         
         if ($validator->fails()) {
@@ -51,10 +53,14 @@ class LampController extends Controller
         
         $name =  $request->input('name');
         $ip =  $request->input('ip');
+        $username =  $request->input('username');
+        $password =  $request->input('password');
         
         $home_lamps = new home_lamps();
         $home_lamps->name = $name;
         $home_lamps->ip = $ip;
+        $home_lamps->username = $username;
+        $home_lamps->password = $password;
         $home_lamps->save();
         
         return response()->json([
@@ -115,11 +121,11 @@ class LampController extends Controller
             //$url = 'http://'.$home_lamps->ip.'/gpio/'. strtoupper($state);
             if($state==1)
             {
-            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20Off";
+            	$url = "http://". $home_lamps->ip ."/cm?user=".$home_lamps->username."&password=".$home_lamps->password."&cmnd=Power%20Off";
             }
             else
             {
-            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20On";
+            	$url = "http://". $home_lamps->ip ."/cm?user=".$home_lamps->username."&password=".$home_lamps->password."&cmnd=Power%20On";
             }
             
             
