@@ -115,11 +115,11 @@ class LampController extends Controller
             //$url = 'http://'.$home_lamps->ip.'/gpio/'. strtoupper($state);
             if($state==1)
             {
-            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20On";
+            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20Off";
             }
             else
             {
-            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20Off";
+            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20On";
             }
             
             
