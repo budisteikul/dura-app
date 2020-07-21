@@ -112,8 +112,17 @@ class LampController extends Controller
                 'Accept' => 'application/json',
             ];
             $client = new \GuzzleHttp\Client(['headers' => $headers,'exceptions' => false]);
-            $url = 'http://'.$home_lamps->ip.'/gpio/'. strtoupper($state);
-           
+            //$url = 'http://'.$home_lamps->ip.'/gpio/'. strtoupper($state);
+            if($state==1)
+            {
+            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20On";
+            }
+            else
+            {
+            	$url = "http://". $home_lamps->ip ."/cm?user=admin&password=bajingan&cmnd=Power%20Off";
+            }
+            
+            
             $request = $client->get($url);
 
            
