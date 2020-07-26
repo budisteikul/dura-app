@@ -89,5 +89,5 @@
         </main>
     </div>
 </body>
-<script src="/assets/javascripts/apps/build/App-3.1.0.js"></script>
+
 </html>
