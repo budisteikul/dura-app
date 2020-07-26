@@ -9,6 +9,7 @@ use App\DataTables\LightbulbDatatable;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\settings;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -39,11 +40,13 @@ class HomeController extends Controller
         $settings = settings::where('name','lightbulb')->first();
         if($settings->value=="off")
         {
+            Storage::put('state.txt', 'on');
             $settings->value = "on";
             shell_exec('sudo -u www-data python /home/pi/gpio/relay17_on.py');
         }
         else
         {
+            Storage::put('state.txt', 'off');
             $settings->value = "off";
             shell_exec('sudo -u www-data python /home/pi/gpio/relay17_off.py');
         }
