@@ -40,10 +40,12 @@ class HomeController extends Controller
         if($settings->value=="off")
         {
             $settings->value = "on";
+            shell_exec('sudo -u www-data python /home/pi/gpio/relay17_on.py');
         }
         else
         {
             $settings->value = "off";
+            shell_exec('sudo -u www-data python /home/pi/gpio/relay17_off.py');
         }
         $settings->save();
         return response()->json([
