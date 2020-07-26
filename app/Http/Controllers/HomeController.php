@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Request;
 use App\Classes\Blog\BlogClass;
 use Illuminate\Support\Facades\Auth;
 
-use App\DataTables\LightbulbDataTable;
+use App\DataTables\LightbulbDatatable;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\settings;
