@@ -1,25 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    #dataTableBuilder thead {
-    display: none;
-}
-</style>
+
 <script type="text/javascript">
+$(function() {
+     $('#button').html('{!! $button !!}');
+  });
+
 function TOGGLE()
     {
-        var table = $('#dataTableBuilder').DataTable();
+
+        //var table = $('#dataTableBuilder').DataTable();
         $.ajax({
         data: {
             "_token": $("meta[name=csrf-token]").attr("content"),
         },
         type: 'POST',
-        url: "/home"
+        url: "/toggle"
         }).done(function( data ) {
+
             if(data.id=="1")
             {
-                table.ajax.reload( null, false );
+                $('#button').html(data.message);
+                //table.ajax.reload( null, false );
             }
         });
     }
@@ -43,14 +46,11 @@ function TOGGLE()
         </div>
 
 
-        <div class="col-md-8 mb-2">
+        <div class="col-md-4 mb-2">
             <div class="card">
                 <div class="card-header"><i class="fas fa-lightbulb"></i> LAMPU</div>
                 <div class="card-body">
-                    
-                        
-                        {!! $dataTable->table(['class'=>'table table-responsive w-100 d-block d-md-table']) !!}
-
+                        <div id="button"></div>
                 </div>
             </div>
         </div>
@@ -59,5 +59,4 @@ function TOGGLE()
     </div>
 </div>
 
-{!! $dataTable->scripts() !!}
 @endsection

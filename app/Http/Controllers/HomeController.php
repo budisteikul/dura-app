@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Request;
 use App\Classes\Blog\BlogClass;
 use Illuminate\Support\Facades\Auth;
 
-use App\DataTables\LightbulbDatatable;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\settings;
@@ -28,11 +27,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(LightbulbDataTable $dataTable)
+    public function index()
     {
 		$ipcamera = settings::where('name','ipcamera')->first()->value;
-        return $dataTable->render('home',compact('ipcamera'));
-		//return view('home')->with(['ipcamera'=>$ipcamera]);
+        $state = settings::where('name','lightbulb')->first()->value;
+        if($state=="off")
+        {
+            $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-danger">OFF</button>';
+        }
+        else
+        {
+            $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-success">ON</button>';
+        }
+		return view('home')->with(['ipcamera'=>$ipcamera,'button'=>$button]);
     }
 
     public function toggle(Request $request)
@@ -43,16 +50,18 @@ class HomeController extends Controller
             Storage::put('state.txt', 'on');
             $settings->value = "on";
             shell_exec('sudo -u www-data python /home/pi/gpio/relay17_on.py');
+            $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-success">ON</button>';
         }
         else
         {
             Storage::put('state.txt', 'off');
             $settings->value = "off";
             shell_exec('sudo -u www-data python /home/pi/gpio/relay17_off.py');
+            $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-danger">OFF</button>';
         }
         $settings->save();
         return response()->json([
-                'id' => '1', 'message' => 'sukses'
+                'id' => '1', 'message' => $button
             ]);
     }
 }
