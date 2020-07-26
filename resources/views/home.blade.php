@@ -35,7 +35,8 @@ function TOGGLE()
                 <div class="card-header"><i class="fas fa-video"></i> CAMERA</div>
                 <div class="card-body">
                     <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src=""></iframe>
+                        <iframe class="embed-responsive-item" src="http://{{ $ipcamera }}/picture/1/frame/
+"></iframe>
                     </div>
                 </div>
             </div>
