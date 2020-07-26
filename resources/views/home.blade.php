@@ -43,7 +43,7 @@ function TOGGLE()
         </div>
 
 
-        <div class="col-md-4 mb-2">
+        <div class="col-md-8 mb-2">
             <div class="card">
                 <div class="card-header"><i class="fas fa-lightbulb"></i> LAMPU</div>
                 <div class="card-body">
