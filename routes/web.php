@@ -26,6 +26,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 // Home Routes...
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
+Route::post('/home','HomeController@toggle')->name('home')->middleware(['auth', 'verified']);
 
 
 //========================================================================
