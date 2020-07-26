@@ -25,8 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-		//BlogClass::setConf('domain',preg_replace('#^https?://#', '', Request::root()),Auth::user()->id);
-        return redirect('/blog/photo');
-		//return view('home');
+		
+		return view('home');
     }
 }

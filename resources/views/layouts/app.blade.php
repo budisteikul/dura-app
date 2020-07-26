@@ -57,61 +57,6 @@
                                 </li>
                             @endif
                         @else
-                        	<li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fa fa-list"></i> Tour <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/rev/booking"><i class="far fa-circle"></i> {{ __('Booking') }}</a>
-									<a class="dropdown-item" href="/rev/review"><i class="far fa-circle"></i> {{ __('Review') }}</a>
-                                    <a class="dropdown-item" href="/rev/resellers"><i class="far fa-circle"></i> {{ __('Channel') }}</a>
-                                    <!-- a class="dropdown-item" href="/blog/post"><i class="far fa-circle"></i> {{ __('Posts') }}</a -->
-                                    <!-- a class="dropdown-item" href="/blog/category"><i class="far fa-circle"></i> {{ __('Categories') }}</a -->
-                                    <!-- a class="dropdown-item" href="/rev/widgets"><i class="far fa-circle"></i> {{ __('Widgets') }}</a -->
-                                </div>
-                            </li>
-                            
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fa fa-list"></i> Blog <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/blog/page"><i class="far fa-circle"></i> {{ __('Page') }}</a>
-                                </div>
-                            </li>
-							
-							
-							<li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fa fa-list"></i> Financial Statements <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/fin/profitloss"><i class="far fa-circle"></i> {{ __('Profit & Loss') }}</a>
-                                    
-                                    <a class="dropdown-item" href="/fin/transactions"><i class="far fa-circle"></i> {{ __('Transactions') }}</a>
-                                    
-                                    <a class="dropdown-item" href="/fin/categories"><i class="far fa-circle"></i> {{ __('Categories') }}</a>
-                                </div>
-                            </li>
-                            
-                        	
-                            
-                           
-                            <li class="nav-item">
-                                <a class="nav-link" href="/mails"><i class="fa fa-envelope"></i> {{ __('Mails') }}</a>
-                            </li>
-                        	<li class="nav-item">
-                                <a class="nav-link" href="/blog/photo"><i class="fa fa-image"></i> {{ __('Galleries') }}</a>
-                            </li>
-							
-                            
-                            
-                           
-                        	
-                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>

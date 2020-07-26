@@ -15,11 +15,10 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
 			'id' => 'eca1ca75-9e80-493f-bfef-cbeb44f8aac3',
-            'name' => 'Asd',
-            'email' => 'asd@asd.asd',
-            'password' => bcrypt('asdasd'),
+            'name' => 'Guide Vertikal Trip',
+            'email' => 'guide@vertikaltrip.com',
+            'password' => bcrypt('ratna1891'),
 			'email_verified_at' => date('Y-m-d H:i:s'),
-			'picture_url' => '/img/avatar4.png',
         ]);
     }
 }
