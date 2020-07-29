@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 import sys
 
-RELAIS_1_GPIO = sys.argv[1]
+RELAIS_1_GPIO = int(sys.argv[1])
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
