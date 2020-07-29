@@ -1,6 +1,5 @@
 <?php
 $file = file_get_contents('/home/pi/smarthome/storage/app/state.txt', true);
-
 if($file=="off")
 {
 	print("off");
