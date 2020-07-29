@@ -34,7 +34,7 @@ function TOGGLE()
 
 
         <div class="col-md-8 mb-2">
-            <div class="card">
+            <div class="card bg-dark text-white">
                 <div class="card-header"><i class="fas fa-video"></i> CAMERA</div>
                 <div class="card-body">
                     <div class="embed-responsive embed-responsive-4by3">
@@ -47,7 +47,7 @@ function TOGGLE()
 
 
         <div class="col-md-4 mb-2">
-            <div class="card">
+            <div class="card bg-dark text-white">
                 <div class="card-header"><i class="fas fa-lightbulb"></i> LAMPU</div>
                 <div class="card-body">
                         <div id="button"></div>
