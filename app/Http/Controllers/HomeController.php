@@ -49,14 +49,16 @@ class HomeController extends Controller
         {
             Storage::put('state.txt', 'on');
             $settings->value = "on";
-            shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/relay17_on.py');
+            //shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/relay17_on.py');
+            shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/gpio.py 17 high');
             $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-success">ON</button>';
         }
         else
         {
             Storage::put('state.txt', 'off');
             $settings->value = "off";
-            shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/relay17_off.py');
+            //shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/relay17_off.py');
+            shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/gpio.py 17 low');
             $button = '<button id="btn-edit" type="button" onClick="TOGGLE(); return false;" class="btn btn-block btn-danger">OFF</button>';
         }
         $settings->save();
