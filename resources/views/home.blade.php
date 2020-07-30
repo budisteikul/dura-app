@@ -9,8 +9,6 @@ $(function() {
 
 function TOGGLE()
     {
-
-        //var table = $('#dataTableBuilder').DataTable();
         $.ajax({
         data: {
             "_token": $("meta[name=csrf-token]").attr("content"),
@@ -22,7 +20,6 @@ function TOGGLE()
             if(data.id=="1")
             {
                 $('#button').html(data.message);
-                //table.ajax.reload( null, false );
             }
         });
     }
@@ -38,8 +35,7 @@ function TOGGLE()
                 <div class="card-header"><i class="fas fa-video"></i> CAMERA</div>
                 <div class="card-body">
                     <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="{!! $ipcamera !!}
-"></iframe>
+                        <iframe class="embed-responsive-item" src="/cams/picture/1/frame/"></iframe>
                     </div>
                 </div>
             </div>
