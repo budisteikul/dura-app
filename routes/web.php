@@ -25,12 +25,13 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 // Home Routes...
-Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
+
 Route::post('/toggle','HomeController@toggle')->middleware(['auth', 'verified']);
 
 
 Route::get('/home/gpio/17/high','HomeController@on');
 Route::get('/home/gpio/17/low','HomeController@off');
+Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 //========================================================================
 // Front Page
 //========================================================================
