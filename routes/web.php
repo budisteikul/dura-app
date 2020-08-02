@@ -29,8 +29,8 @@ Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'v
 Route::post('/toggle','HomeController@toggle')->middleware(['auth', 'verified']);
 
 
-Route::put('/home/gpio/17/high','HomeController@on');
-Route::put('/home/gpio/17/low','HomeController@off');
+Route::get('/home/gpio/17/high','HomeController@on');
+Route::get('/home/gpio/17/low','HomeController@off');
 //========================================================================
 // Front Page
 //========================================================================
