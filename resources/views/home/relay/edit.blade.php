@@ -62,8 +62,8 @@ function UPDATE()
 <div class="form-group">
 	<label for="type">Type :</label>
     <select class="form-control" id="type">
-      <option value="tasmota" {{ $relay->name == "tasmota" ? "selected" : "" }}>tasmota</option>
-      <option value="gpio" {{ $relay->name == "gpio" ? "selected" : "" }}>gpio</option>
+      <option value="tasmota" {{ $relay->type == "tasmota" ? "selected" : "" }}>tasmota</option>
+      <option value="gpio" {{ $relay->type == "gpio" ? "selected" : "" }}>gpio</option>
 	</select>
 </div>
 
