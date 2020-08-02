@@ -19,6 +19,7 @@ function UPDATE()
 			"ipOrGpio": $('#ipOrGpio').val(),
 			"username": $('#username').val(),
 			"password": $('#password').val(),
+			"type": $('#type').val(),
         },
 		type: 'PUT',
 		url: '{{ route('relay.update',$relay->id) }}'
