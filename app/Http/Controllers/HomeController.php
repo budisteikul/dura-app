@@ -64,4 +64,30 @@ class HomeController extends Controller
                 'id' => '1', 'message' => $button
             ]);
     }
+
+    public function on()
+    {
+        $settings = settings::where('name','lightbulb')->first();
+        
+        $settings->value = "on";
+        shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/gpio.py 18 high');
+
+        $settings->save();
+        return response()->json([
+                'id' => '1'
+            ]);
+    }
+
+    public function off()
+    {
+        $settings = settings::where('name','lightbulb')->first();
+        
+        $settings->value = "off";
+        shell_exec('sudo -u www-data python /home/pi/smarthome/gpio/gpio.py 18 low');
+
+        $settings->save();
+        return response()->json([
+                'id' => '1'
+            ]);
+    }
 }

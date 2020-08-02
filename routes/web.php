@@ -27,6 +27,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // Home Routes...
 Route::get('/home','HomeController@index')->name('home')->middleware(['auth', 'verified']);
 Route::post('/toggle','HomeController@toggle')->middleware(['auth', 'verified']);
+
+
+Route::get('/home/gpio/17/high','HomeController@on');
+Route::get('/home/gpio/17/low','HomeController@off');
 //========================================================================
 // Front Page
 //========================================================================
