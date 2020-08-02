@@ -1,5 +1,5 @@
 <?php
-$file = file_get_contents('/home/pi/smarthome/storage/app/state.txt', true);
+$file = file_get_contents('/home/pi/smarthome/storage/app/relay/3790fc49-42db-4f42-8ad1-35fa5c7caab5', true);
 if($file=="off")
 {
 	print("off");
