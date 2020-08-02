@@ -90,6 +90,7 @@ class RelayDataTable extends DataTable
         return [
             ["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
+            ["name" => "type", "title" => "type", "data" => "type"],
             ["name" => "name", "title" => "name", "data" => "name"],
             ["name" => "ipOrGpio", "title" => "IP or GPIO", "data" => "ipOrGpio"],
             ["name" => "link", "title" => "link", "data" => "link"],

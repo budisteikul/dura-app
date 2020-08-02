@@ -22,8 +22,7 @@ class Tasmota {
         $client = new \GuzzleHttp\Client(['headers' => $headers,'exceptions' => false, 'timeout' => 3, 'connect_timeout' => 3 ]);
 		$url = "http://". $ip ."/cm".$cmdn.$auth;
 		
-		print($url);
-		exit();	
+		
 		try {
   			$request = $client->get($url);
 		} catch(\GuzzleHttp\Exception\GuzzleException $e) {
