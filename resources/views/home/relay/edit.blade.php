@@ -59,6 +59,14 @@ function UPDATE()
 <div id="result"></div>
 
 <div class="form-group">
+	<label for="type">Type :</label>
+    <select class="form-control" id="type">
+      <option value="tasmota" {{ $relay->name === "tasmota" ? "selected" : "" }}>tasmota</option>
+      <option value="gpio" {{ $relay->name === "gpio" ? "selected" : "" }}>gpio</option>
+	</select>
+</div>
+
+<div class="form-group">
 	<label for="name">name :</label>
 	<input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{ $relay->name }}" autocomplete="off">
 </div>
