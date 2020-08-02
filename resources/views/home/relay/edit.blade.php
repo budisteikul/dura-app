@@ -73,8 +73,8 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="ipOrGpio">ipOrGpio :</label>
-	<input type="text" id="ipOrGpio" name="ipOrGpio" class="form-control" placeholder="ipOrGpio" value="{{ $relay->ipOrGpio }}" autocomplete="off">
+	<label for="ipOrGpio">IP or GPIO :</label>
+	<input type="text" id="ipOrGpio" name="ipOrGpio" class="form-control" placeholder="IP or GPIO" value="{{ $relay->ipOrGpio }}" autocomplete="off">
 </div>
 
 <div class="form-group">
