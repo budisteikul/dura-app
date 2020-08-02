@@ -11,6 +11,8 @@ use App\DataTables\Home\RelayDataTable;
 use App\Models\Home\Relay;
 use Storage;
 
+use App\Classes\Home\Relay\Tasmota;
+
 class RelayController extends Controller
 {
     /**
@@ -114,7 +116,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-
+                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
                 // =============================
             }
             else
@@ -122,7 +124,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-
+                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
                 // =============================
             }
             
@@ -185,7 +187,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-
+                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
                 // =============================
             }
             else
@@ -193,7 +195,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-
+                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
                 // =============================
             }
             
@@ -214,7 +216,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-
+                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
                 // =============================
             }
             else
@@ -222,7 +224,7 @@ class RelayController extends Controller
                 Storage::put($relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-
+                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
                 // =============================
             }
             

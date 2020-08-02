@@ -27,11 +27,11 @@ class RelayDataTable extends DataTable
             ->editColumn('state', function($id){
                 if($id->state=="off")
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-secondary"><i class="fa fa-toggle-off"></i> OFF</button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-off fa-2x"></i> </button>';
                 }
                 else
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-primary"><i class="fa fa-toggle-on"></i> ON</button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-on fa-2x"></i> </button>';
                 }
                 return $state_button;
             })
