@@ -5,7 +5,7 @@ function STORE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["name","ip"];
+	var input = ["name","ipOrGpio"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -17,9 +17,10 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
-			"ip": $('#ip').val(),
+			"ipOrGpio": $('#ipOrGpio').val(),
 			"username": $('#username').val(),
 			"password": $('#password').val(),
+			"type": $('#type').val(),
         },
 		type: 'POST',
 		url: '{{ route('relay.store') }}'
@@ -64,13 +65,21 @@ function STORE()
 <div id="result"></div>
 
 <div class="form-group">
+	<label for="type">Type :</label>
+    <select class="form-control" id="type">
+      <option value="tasmota">tasmota</option>
+      <option value="gpio">gpio</option>
+	</select>
+</div>
+
+<div class="form-group">
 	<label for="name">name :</label>
 	<input type="text" id="name" name="name" class="form-control" placeholder="name" autocomplete="off">
 </div>
 
 <div class="form-group">
-	<label for="ip">ip :</label>
-	<input type="text" id="ip" name="ip" class="form-control" placeholder="ip" autocomplete="off">
+	<label for="ipOrGpio">IP or GPIO :</label>
+	<input type="text" id="ipOrGpio" name="ipOrGpio" class="form-control" placeholder="IP or GPIO" autocomplete="off">
 </div>
 
 <div class="form-group">

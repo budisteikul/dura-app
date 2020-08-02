@@ -56,7 +56,7 @@
 		
 	}
 
-  function UPDATE(id)
+  function TOGGLE(id)
   {
     var table = $('#dataTableBuilder').DataTable();
     $.ajax({

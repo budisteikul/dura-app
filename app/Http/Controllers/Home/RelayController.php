@@ -12,6 +12,7 @@ use App\Models\Home\Relay;
 use Storage;
 
 use App\Classes\Home\Relay\Tasmota;
+use App\Classes\Home\Relay\GPIO;
 
 class RelayController extends Controller
 {
@@ -45,7 +46,7 @@ class RelayController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'ip' => 'required|string|max:255',
+            'ipOrGpio' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -54,16 +55,18 @@ class RelayController extends Controller
         }
 
         $name =  $request->input('name');
-        $ip =  $request->input('ip');
+        $ipOrGpio =  $request->input('ipOrGpio');
         $username =  $request->input('username');
         $password =  $request->input('password');
+        $type =  $request->input('type');
         
         $relay = new Relay();
         $relay->name = $name;
-        $relay->ip = $ip;
+        $relay->ipOrGpio = $ipOrGpio;
         $relay->username = $username;
         $relay->password = $password;
         $relay->state = 'off';
+        $relay->type = $type;
         $relay->save();
 
         Storage::put('relay/'. $relay->id, 'off');
@@ -116,7 +119,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                }
+                
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             else
@@ -124,7 +142,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                     $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                }
+
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             
@@ -138,7 +171,7 @@ class RelayController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'ip' => 'required|string|max:255',
+            'ipOrGpio' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -147,15 +180,17 @@ class RelayController extends Controller
         }
 
         $name =  $request->input('name');
-        $ip =  $request->input('ip');
+        $ipOrGpio =  $request->input('ipOrGpio');
         $username =  $request->input('username');
         $password =  $request->input('password');
+        $type =  $request->input('type');
         
         $relay = Relay::findOrFail($id);
         $relay->name = $name;
-        $relay->ip = $ip;
+        $relay->ipOrGpio = $ipOrGpio;
         $relay->username = $username;
         $relay->password = $password;
+        $relay->type = $type;
         $relay->save();
 
         return response()->json([
@@ -187,7 +222,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                }
+
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             else
@@ -195,7 +245,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                }
+                
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             
@@ -216,7 +281,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'off');
                 $relay->state = "off";
                 // =============================
-                Tasmota::switch($relay->ip,'off',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                }
+
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             else
@@ -224,7 +304,22 @@ class RelayController extends Controller
                 Storage::put('relay/'. $relay->id, 'on');
                 $relay->state = "on";
                 // =============================
-                Tasmota::switch($relay->ip,'on',$relay->username,$relay->password);
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                }
+                
+                if(!$status)
+                {
+                    return response()->json([
+                        "id" => "0",
+                        "message" => 'Failed'
+                    ]);
+                }
                 // =============================
             }
             

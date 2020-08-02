@@ -27,11 +27,11 @@ class RelayDataTable extends DataTable
             ->editColumn('state', function($id){
                 if($id->state=="off")
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-off fa-2x"></i> </button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-off fa-2x"></i> </button>';
                 }
                 else
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="UPDATE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-on fa-2x"></i> </button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-on fa-2x"></i> </button>';
                 }
                 return $state_button;
             })
@@ -91,7 +91,7 @@ class RelayDataTable extends DataTable
             ["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
             ["name" => "name", "title" => "name", "data" => "name"],
-            ["name" => "ip", "title" => "ip", "data" => "ip"],
+            ["name" => "ipOrGpio", "title" => "IP or GPIO", "data" => "ipOrGpio"],
             ["name" => "link", "title" => "link", "data" => "link"],
             ["name" => "state", "title" => "state", "data" => "state", 'width' => '220px'],
         ];

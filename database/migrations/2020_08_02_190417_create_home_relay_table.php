@@ -17,10 +17,11 @@ class CreateHomeRelayTable extends Migration
             $table->uuid('id')->primary();
                 
             $table->string('name',50)->nullable();
-            $table->string('ip',50)->nullable();
+            $table->string('ipOrGpio',50)->nullable();
             $table->string('username',50)->nullable();
             $table->string('password',50)->nullable();
             $table->string('state',50)->default('off');
+            $table->string('type',50)->nullable();
             
             $table->timestamps();
             $table->softDeletes();

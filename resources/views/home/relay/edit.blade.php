@@ -5,7 +5,7 @@ function UPDATE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["name","ip"];
+	var input = ["name","ipOrGpio"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -16,7 +16,7 @@ function UPDATE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
-			"ip": $('#ip').val(),
+			"ipOrGpio": $('#ipOrGpio').val(),
 			"username": $('#username').val(),
 			"password": $('#password').val(),
         },
@@ -64,8 +64,8 @@ function UPDATE()
 </div>
 
 <div class="form-group">
-	<label for="ip">ip :</label>
-	<input type="text" id="ip" name="ip" class="form-control" placeholder="ip" value="{{ $relay->ip }}" autocomplete="off">
+	<label for="ipOrGpio">ipOrGpio :</label>
+	<input type="text" id="ipOrGpio" name="ipOrGpio" class="form-control" placeholder="ipOrGpio" value="{{ $relay->ipOrGpio }}" autocomplete="off">
 </div>
 
 <div class="form-group">
