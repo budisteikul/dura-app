@@ -1,0 +1,275 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"home",
+				"home_lamps"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/Macintosh HD/Sites/vertikaltrip"
+	],
+	"file_history":
+	[
+		"/Volumes/Macintosh HD/project",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/home.blade.php",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/HomeController.php",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/gpio.py",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/last_state.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/gpio/gpio.py",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/gpio/relay17_off.py",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/test.py",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/gpio/last_state.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/HomeController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/home.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/routes/web.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/DataTables/LightbulbDatatable.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Controller.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/layouts/app.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/js/admin.js",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/package.json",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/app.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/webpack.mix.js",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/database/seeds/DatabaseSeeder.php",
+		"/Volumes/Macintosh HD/Sites/smarthome/resources/js/app.js",
+		"/Volumes/Macintosh HD/Sites/smarthome/package.json",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/composer.json",
+		"/Volumes/Macintosh HD/Sites/smarthome/composer.json",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/index.php",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/RelayController 2.php",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/RelayController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/home/lamp/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/blog/backend/category/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/home/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Home/HomeController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Home/LampController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/database/migrations/2016_04_24_034844_create_blog_settings_table.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/database/migrations/2020_07_24_210759_create_home_systems.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/DataTables/Mail/MailsDataTable.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/DataTables/Home/LampsDataTable.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/home/lamp/create.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/database/migrations/2020_07_18_163121_create_home_lamps_table.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/home/LampController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Fin/CategoryController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/fin/categories/create.blade.php",
+		"/Users/budi/Downloads/Template-SquareButtons/Template-SquareButtons\\index.html",
+		"/Users/budi/Desktop/simple.html",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/config.inc.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Classes/Rev/BokunClass.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Blog/Backend/PhotoController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Rev/BookingController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/blog/backend/photo/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/database/migrations/2019_09_30_125253_create_fin_categories_table.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Models/Blog/blog_categories.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Models/Home/home_lamps.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/DataTables/Fin/CategoriesDataTable.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/fin/categories/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Models/Home/home_models.php",
+		"/Users/budi/Downloads/ESP8266_Control_Relay (1).ino",
+		"/Users/budi/Library/Arduino15/packages/esp8266/hardware/esp8266/2.7.2/tools/esptool/esptool.py",
+		"/Users/budi/Downloads/ESP8266_Control_Relay.ino",
+		"/Volumes/Macintosh HD/IOBluetoothFamily.kext/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/IOBluetoothFamily.kext/Contents/PlugIns/CSRBluetoothHostControllerUSBTransport.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/CSRAppleBluetooth.kext/Contents/Info.plist",
+		"/Users/budi/Downloads/Release/BrcmPatchRAM2.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/IOBluetoothHIDDriver.kext/Contents/Info.plist",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/star_dagadu_co_id.crt",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/httpd.conf",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/welcome.conf",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/userdir.conf",
+		"/Users/budi/Downloads/SSDT-HDMI-NVIDIA-PEG0.aml",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/nota.php",
+		"/Users/budi/Downloads/CSRAppleBluetooth.kext/Contents/Info.plist",
+		"/Users/budi/Downloads/Release/BrcmFirmwareData.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/IOBluetoothFamily.kext/Contents/Info.plist",
+		"/Users/budi/Downloads/CSRAppleBluetooth.kext 2/Contents/Info.plist",
+		"/Users/budi/Downloads/BrcmPatchRAM-2.5.3-RELEASE/BrcmPatchRAM3.kext/Contents/Info.plist",
+		"/Users/budi/Downloads/BrcmPatchRAM-2.5.3-RELEASE/BrcmBluetoothInjector.kext/Contents/Info.plist",
+		"/Users/budi/Desktop/IOBluetoothFamily.kext/Contents/PlugIns/CSRBluetoothHostControllerUSBTransport.kext/Contents/Info.plist",
+		"/Users/budi/Downloads/Release/BrcmNonPatchRAM2.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/FakeSMC.kext/Contents/Info.plist",
+		"/Volumes/EFI/EFI/CLOVER/config.plist",
+		"/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/Contents/Info.plist",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/.env",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/.env",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/resources/views/auth/login.blade.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/routes/api.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/Auth/LoginController.php",
+		"/Volumes/Macintosh HD/Sites/vertikaltrip/app/Http/Controllers/API/Auth/AuthController.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/config/app.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/app/Http/Controllers/API/AuthController.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/routes/api.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/config/auth.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/app/Providers/AuthServiceProvider.php",
+		"/Volumes/Macintosh HD/Sites/laravel-auth/laravel/app/User.php",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/resources/views/admin/companies/index.blade.php",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/routes/web.php",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/app/Http/Controllers/Api/V1/CompaniesController.php",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/resources/assets/js/components/companies/CompaniesCreate.vue",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/routes/api.php",
+		"/Volumes/Macintosh HD/Sites/Laravel-Vue-First-CRUD-master/app/Http/Controllers/Auth/LoginController.php",
+		"/Users/budi/Downloads/Laravel-Vue-First-CRUD-master/resources/assets/js/components/companies/CompaniesCreate.vue",
+		"/private/var/folders/83/s6jljyxj57524lqfy419rz3c0000gn/T/fz3temp-2/cek_ID_barang.php"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 381.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
