@@ -36,4 +36,4 @@ Route::get('/home','HomeController@index')->middleware(['auth', 'verified']);
 //========================================================================
 // Front Page
 //========================================================================
-Route::get('/','HomeController@index');
+Route::get('/','HomeController@index')->middleware(['auth', 'verified']);
