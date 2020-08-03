@@ -22,7 +22,7 @@ class RelayDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
             ->addColumn('link', function($id){
-                return $_SERVER['HTTP_HOST'].'/home/relay/toggle/'.$id->id .'/[on or off]';
+				return $protocol = url('/home/relay/toggle/'.$id->id .'/ [on or off]');
             })
             ->editColumn('state', function($id){
                 if($id->state=="off")
@@ -90,11 +90,10 @@ class RelayDataTable extends DataTable
         return [
             ["name" => "created_at", "title" => "created_at", "data" => "created_at", "orderable" => true, "visible" => false,'searchable' => false],
             ["name" => "DT_RowIndex", "title" => "No", "data" => "DT_RowIndex", "orderable" => false, "render" => null,'searchable' => false, 'width' => '30px'],
-            ["name" => "type", "title" => "Type", "data" => "type"],
+			["name" => "state", "title" => "State", "data" => "state", 'width' => '70px','searchable' => false, "orderable" => false],
             ["name" => "name", "title" => "Name", "data" => "name"],
-            ["name" => "ipOrGpio", "title" => "IP or GPIO", "data" => "ipOrGpio"],
-            ["name" => "link", "title" => "Link", "data" => "link"],
-            ["name" => "state", "title" => "State", "data" => "state", 'width' => '220px'],
+            ["name" => "link", "title" => "Link", "data" => "link",'searchable' => false, "orderable" => false],
+            
         ];
     }
 
