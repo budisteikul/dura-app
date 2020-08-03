@@ -70,6 +70,15 @@ class RelayController extends Controller
         $relay->save();
 
         Storage::put('relay/'. $relay->id, 'off');
+
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                }
         
         return response()->json([
                     "id" => "1",

@@ -24,7 +24,8 @@ class GPIO {
 		foreach($relays as $relay)
 		{
 			
-			$phpfile .= '$file = file_get_contents(\'/home/pi/smarthome/storage/app/relay/'. $relay->id .'\', true);
+			$phpfile .= '
+					$file = file_get_contents(\'/home/pi/smarthome/storage/app/relay/'. $relay->id .'\', true);
 					if($file=="off")
 					{
 							print("off");
