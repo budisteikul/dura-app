@@ -29,7 +29,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-		$ipcamera = settings::where('name','ipcamera')->first()->value;
-		return view('home')->with(['ipcamera'=>$ipcamera]);
+		return view('home');
     }
 }
