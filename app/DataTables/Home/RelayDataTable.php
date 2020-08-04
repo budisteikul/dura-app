@@ -22,7 +22,7 @@ class RelayDataTable extends DataTable
         return datatables($query)
             ->addIndexColumn()
             ->addColumn('link', function($id){
-				return $protocol = url('/home/relay/toggle/'.$id->id .'/ [on or off]');
+				return $protocol = url('/home/relay/toggle/'.$id->id .'/'. $id->state);
             })
             ->editColumn('state', function($id){
                 if($id->state=="off")
