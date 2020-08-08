@@ -25,13 +25,13 @@ class RelayDataTable extends DataTable
 				return $protocol = url('/home/relay/toggle/'.$id->id .'/'. $id->state);
             })
             ->editColumn('state', function($id){
-                if($id->state=="off")
+                if($id->state=="on")
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-off fa-2x"></i> </button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-on fa-2x"></i> </button>';
                 }
                 else
                 {
-                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-on fa-2x"></i> </button>';
+                    $state_button = '<button id="btn-update" type="button" onClick="TOGGLE(\''.$id->id.'\'); return false;" class="btn btn-light"><i class="fa fa-toggle-off fa-2x"></i> </button>';
                 }
                 return $state_button;
             })

@@ -5,7 +5,7 @@ use Storage;
 class GPIO {
 	public static function switch($gpio,$action){
 		$success = true;
-		if($action=="on")
+		if($action=="off")
 		{
 			$cmdn = "high";
 		}
@@ -26,14 +26,14 @@ class GPIO {
 			
 			$phpfile .= '
 					$file = file_get_contents(\'/home/pi/smarthome/storage/app/relay/'. $relay->id .'\', true);
-					if($file=="off")
+					if($file=="on")
 					{
-							print("off");
+							print("on");
 							shell_exec(\'sudo -u www-data python /home/pi/smarthome/gpio/gpio.py '. $relay->ipOrGpio .' low\');
 					}
 					else
 					{
-							print("on");
+							print("off");
 							shell_exec(\'sudo -u www-data python /home/pi/smarthome/gpio/gpio.py '. $relay->ipOrGpio .' high\');
 					}
 					';

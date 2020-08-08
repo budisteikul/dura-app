@@ -65,11 +65,11 @@ class RelayController extends Controller
         $relay->ipOrGpio = $ipOrGpio;
         $relay->username = $username;
         $relay->password = $password;
-        $relay->state = 'off';
+        $relay->state = 'on';
         $relay->type = $type;
         $relay->save();
 
-        Storage::put('relay/'. $relay->id, 'off');
+        Storage::put('relay/'. $relay->id, 'on');
 
                 if($relay->type=="tasmota")
                 {
@@ -123,18 +123,18 @@ class RelayController extends Controller
         {
             $relay = Relay::findOrFail($id);
 
-            if($relay->state=="off")
+            if($relay->state=="on")
             {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
+                Storage::put('relay/'. $relay->id, 'off');
+                $relay->state = "off";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
                 }
                 
                 if(!$status)
@@ -148,16 +148,16 @@ class RelayController extends Controller
             }
             else
             {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
+                Storage::put('relay/'. $relay->id, 'on');
+                $relay->state = "on";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                     $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                     $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
                 }
 
                 if(!$status)
@@ -226,18 +226,18 @@ class RelayController extends Controller
     {
             $relay = Relay::findOrFail($id);
 
-            if($relay->state=="off")
+            if($relay->state=="on")
             {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
+                Storage::put('relay/'. $relay->id, 'off');
+                $relay->state = "off";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
                 }
 
                 if(!$status)
@@ -251,16 +251,16 @@ class RelayController extends Controller
             }
             else
             {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
+                Storage::put('relay/'. $relay->id, 'on');
+                $relay->state = "on";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
                 }
                 
                 if(!$status)
@@ -285,18 +285,18 @@ class RelayController extends Controller
     {
            $relay = Relay::findOrFail($id);
 
-            if($action=="off")
+            if($action=="on")
             {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
+                Storage::put('relay/'. $relay->id, 'on');
+                $relay->state = "on";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
                 }
 
                 if(!$status)
@@ -310,16 +310,16 @@ class RelayController extends Controller
             }
             else
             {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
+                Storage::put('relay/'. $relay->id, 'off');
+                $relay->state = "off";
                 // =============================
                 if($relay->type=="tasmota")
                 {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
                 }
                 else
                 {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
                 }
                 
                 if(!$status)
