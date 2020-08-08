@@ -80,8 +80,9 @@
             <div class="card">
                 <div class="card-header">Relay</div>
                 <div class="card-body">
-      
-      	<button type="button" class="btn btn-primary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Add relay</button>
+        <div class="text-right">
+      	<button type="button" class="btn btn-primary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b></button>
+        </div>
         <hr>
         
 		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}
