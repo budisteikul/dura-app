@@ -43,3 +43,7 @@ Route::get('/home/relay/toggle/{id}/{action}','Home\RelayController@toggle_actio
 Route::resource('/home/relay','Home\RelayController',[ 'names' => 'relay' ])
 	->middleware(['auth', 'verified']);
 //========================================================================
+Route::post('/home/relay/toggle/{id}','Home\RelayController@toggle');
+Route::get('/testsaja', function () {
+	print("OK");
+});
