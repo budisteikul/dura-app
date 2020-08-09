@@ -45,5 +45,15 @@ Route::resource('/home/relay','Home\RelayController',[ 'names' => 'relay' ])
 //========================================================================
 Route::post('/home/relay/toggle/{id}','Home\RelayController@toggle');
 Route::get('/testsaja', function () {
-	print("OK");
+	print("{
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": [
+          "Text response from webhook"
+        ]
+      }
+    }
+  ]
+}");
 });
