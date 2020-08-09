@@ -38,7 +38,7 @@ Route::get('/home','HomeController@index')->middleware(['auth', 'verified']);
 //========================================================================
 Route::get('/','HomeController@index')->middleware(['auth', 'verified']);
 //========================================================================
-Route::post('/home/relay/toggle/{id}','Home\RelayController@toggle');
+Route::get('/home/relay/toggle/{id}','Home\RelayController@toggle');
 Route::get('/home/relay/toggle/{id}/{action}','Home\RelayController@toggle_action');
 Route::resource('/home/relay','Home\RelayController',[ 'names' => 'relay' ])
 	->middleware(['auth', 'verified']);
