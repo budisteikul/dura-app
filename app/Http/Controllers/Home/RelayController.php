@@ -224,6 +224,7 @@ class RelayController extends Controller
 
     public function toggle($id)
     {
+
             $relay = Relay::findOrFail($id);
 
             if($relay->state=="on")
@@ -279,6 +280,75 @@ class RelayController extends Controller
                     "id" => "1",
                     "message" => 'Success'
                 ]);
+    }
+
+
+    public function webhook(Request $request)
+    {
+        
+        $data = $request->all();
+        $state = $data['queryResult']['parameters']['state'];
+        $device = $data['queryResult']['parameters']['device'];
+        $relay = Relay::findOrFail($device);
+
+        if($state=="state")
+        {
+            if($relay->state=="on")
+            {
+                $response = "Status lampu menyala";
+            }
+            else
+            {
+                $response = "Status lampu mati";
+            }
+            
+            return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
+        }
+
+        if($state=="on")
+            {
+                Storage::put('relay/'. $relay->id, 'on');
+                $relay->state = "on";
+                // =============================
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'on');
+                }
+
+                $response = 'OK, lampu telah dinyalakan';
+                // =============================
+            }
+            else
+            {
+                Storage::put('relay/'. $relay->id, 'off');
+                $relay->state = "off";
+                // =============================
+                if($relay->type=="tasmota")
+                {
+                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
+                }
+                else
+                {
+                     $status = GPIO::switch($relay->ipOrGpio,'off');
+                }
+                
+                $response = 'OK, lampu telah dimatikan';
+                // =============================
+            }
+            
+            if(!$status)
+                {
+                    $response = 'Maaf, gagal melaksanakan perintah';
+                    return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
+                }
+
+            $relay->save();
+
+            return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
     }
 
     public function toggle_action($id,$action)
