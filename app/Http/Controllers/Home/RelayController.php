@@ -176,11 +176,11 @@ class RelayController extends Controller
         {
             if($relay->state=="on")
             {
-                $response = "Status lampu menyala";
+                $response = "Kondisi lampu menyala";
             }
             else
             {
-                $response = "Status lampu mati";
+                $response = "Kondisi lampu mati";
             }
             
             return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
