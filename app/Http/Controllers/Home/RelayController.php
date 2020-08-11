@@ -187,7 +187,14 @@ class RelayController extends Controller
         }
 
         RelayClass::action($relay->id,$state);
-
+        if($state==on)
+        {
+            $response = "OK, lampu udah dinyalakan";
+        }
+        else
+        {
+            $response = "OK, lampu udah dimatikan";
+        }
         return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
     }
 
