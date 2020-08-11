@@ -187,7 +187,7 @@ class RelayController extends Controller
         }
 
         RelayClass::action($relay->id,$state);
-        if($state==on)
+        if($state=="on")
         {
             $response = "OK, lampu udah dinyalakan";
         }
