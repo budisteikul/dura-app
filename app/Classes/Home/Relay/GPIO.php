@@ -46,6 +46,7 @@ class GPIO {
 		$phpfile = $phpopen . $phpfile . $phpclose;
 
 		Storage::put('last_state.php', $phpfile);
+		
 		return $success;
 	}
 }

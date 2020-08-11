@@ -11,7 +11,7 @@ use App\DataTables\Home\RelayDataTable;
 use App\Models\Home\Relay;
 use Storage;
 
-use App\Classes\Home\Relay\Tasmota;
+use App\Classes\Home\Relay\Relay as RelayClass;
 use App\Classes\Home\Relay\GPIO;
 
 class RelayController extends Controller
@@ -69,16 +69,7 @@ class RelayController extends Controller
         $relay->type = $type;
         $relay->save();
 
-        Storage::put('relay/'. $relay->id, 'on');
-
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
-                }
+        RelayClass::action($relay->id, 'on');
         
         return response()->json([
                     "id" => "1",
@@ -122,56 +113,7 @@ class RelayController extends Controller
         if($request->input('action')=="update")
         {
             $relay = Relay::findOrFail($id);
-
-            if($relay->state=="on")
-            {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
-                }
-                
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            else
-            {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                     $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
-                }
-
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            
-            $relay->save();
-
+            RelayClass::action($relay->id);
             return response()->json([
                     "id" => "1",
                     "message" => 'Success'
@@ -222,67 +164,6 @@ class RelayController extends Controller
         $relay->delete();
     }
 
-    public function toggle($id)
-    {
-
-            $relay = Relay::findOrFail($id);
-
-            if($relay->state=="on")
-            {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
-                }
-
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            else
-            {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
-                }
-                
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            
-            $relay->save();
-
-            return response()->json([
-                    "id" => "1",
-                    "message" => 'Success'
-                ]);
-    }
-
-
     public function webhook(Request $request)
     {
         
@@ -305,105 +186,15 @@ class RelayController extends Controller
             return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
         }
 
-        if($state=="on")
-            {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
-                }
+        RelayClass::action($relay->id,$state);
 
-                $response = 'OK, lampu telah dinyalakan';
-                // =============================
-            }
-            else
-            {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
-                }
-                
-                $response = 'OK, lampu telah dimatikan';
-                // =============================
-            }
-            
-            if(!$status)
-                {
-                    $response = 'Maaf, gagal melaksanakan perintah';
-                    return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
-                }
-
-            $relay->save();
-
-            return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
+        return response()->json(json_decode('{"payload": {"google": {"expectUserResponse": true,"richResponse": {"items": [{"simpleResponse": {"textToSpeech": "'.  $response .'"}}]}}}}'));
     }
 
     public function toggle_action($id,$action)
     {
-           $relay = Relay::findOrFail($id);
-
-            if($action=="on")
-            {
-                Storage::put('relay/'. $relay->id, 'on');
-                $relay->state = "on";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'on',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'on');
-                }
-
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            else
-            {
-                Storage::put('relay/'. $relay->id, 'off');
-                $relay->state = "off";
-                // =============================
-                if($relay->type=="tasmota")
-                {
-                    $status = Tasmota::switch($relay->ipOrGpio,'off',$relay->username,$relay->password);
-                }
-                else
-                {
-                     $status = GPIO::switch($relay->ipOrGpio,'off');
-                }
-                
-                if(!$status)
-                {
-                    return response()->json([
-                        "id" => "0",
-                        "message" => 'Failed'
-                    ]);
-                }
-                // =============================
-            }
-            
-            $relay->save();
-
+            $relay = Relay::findOrFail($id);
+            RelayClass::action($relay->id,$action);
             return response()->json([
                     "id" => "1",
                     "message" => 'Success'
@@ -411,5 +202,14 @@ class RelayController extends Controller
         
     }
 
+    public function toggle($id)
+    {
 
+            $relay = Relay::findOrFail($id);
+            RelayClass::action($relay->id);
+            return response()->json([
+                    "id" => "1",
+                    "message" => 'Success'
+                ]);
+    }
 }
