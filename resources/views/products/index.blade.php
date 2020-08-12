@@ -9,7 +9,7 @@
     		title: 'Warning',
     		content: 'Are you sure?',
     		type: 'red',
-			  icon: 'fa fa-trash',
+			icon: 'fa fa-trash',
     		buttons: {   
         		ok: {
             		text: "OK",
@@ -22,7 +22,7 @@
     							request.setRequestHeader("X-CSRF-TOKEN", $("meta[name=csrf-token]").attr("content"));
   						},
      						type: 'DELETE',
-     						url: '{{ route('relay.index') }}/'+ id
+     						url: '{{ route('route_products.index') }}/'+ id
 						}).done(function( msg ) {
 							table.ajax.reload( null, false );
 						});	
@@ -40,7 +40,7 @@
 	{
 		$.fancybox.open({
         	type: 'ajax',
-       	 	src: '{{ route('relay.create') }}',
+       	 	src: '{{ route('route_products.create') }}',
 			touch: false,
 			modal: true,
    		});	
@@ -50,39 +50,20 @@
 	{
 		$.fancybox.open({
         	type: 'ajax',
-       	 	src: '{{ route('relay.index') }}/'+ id +'/edit',
+       	 	src: '{{ route('route_products.index') }}/'+ id +'/edit',
 			modal: true,
    		});
 		
 	}
-
-  function TOGGLE(id)
-  {
-    var table = $('#dataTableBuilder').DataTable();
-    $.ajax({
-    data: {
-          "_token": $("meta[name=csrf-token]").attr("content"),
-          "action": "update",
-        },
-    type: 'PUT',
-    url: '{{ route('relay.index') }}/'+ id
-    }).done(function( data ) {
-      if(data.id=="1")
-      {
-        table.ajax.reload( null, false );
-      }
-    });
-  }
 	</script>
 @endpush
 <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Relay</div>
+                <div class="card-header">Produk</div>
                 <div class="card-body">
-        <div class="text-right">
-      	<button type="button" class="btn btn-primary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b></button>
-        </div>
+      
+      	<button type="button" class="btn btn-secondary"  onclick="CREATE(); return false;"><b class="fa fa-plus-square"></b> Tambah produk</button>
         <hr>
         
 		{!! $dataTable->table(['class'=>'table table-hover table-striped table-responsive w-100 d-block d-md-table']) !!}

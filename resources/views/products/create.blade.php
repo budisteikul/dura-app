@@ -5,7 +5,7 @@ function STORE()
 	var error = false;
 	$("#submit").attr("disabled", true);
 	$('#submit').html('<i class="fa fa-spinner fa-spin"></i>');
-	var input = ["name","ipOrGpio"];
+	var input = ["sku","name","price"];
 	
 	$.each(input, function( index, value ) {
   		$('#'+ value).removeClass('is-invalid');
@@ -17,13 +17,11 @@ function STORE()
 		data: {
         	"_token": $("meta[name=csrf-token]").attr("content"),
 			"name": $('#name').val(),
-			"ipOrGpio": $('#ipOrGpio').val(),
-			"username": $('#username').val(),
-			"password": $('#password').val(),
-			"type": $('#type').val(),
+			"sku": $('#sku').val(),
+			"price": $('#price').val()
         },
 		type: 'POST',
-		url: '{{ route('relay.store') }}'
+		url: '{{ route('route_products.store') }}'
 		}).done(function( data ) {
 			
 			if(data.id=="1")
@@ -57,7 +55,7 @@ function STORE()
         <div class="col-md-12 pr-0 pl-0 pt-0 pb-0">
              <div class="card">
              
-	<div class="card-header">Add relay</div>
+	<div class="card-header">Tambah Produk</div>
 	<div class="card-body">
 				
 <form onSubmit="STORE(); return false;">
@@ -65,39 +63,26 @@ function STORE()
 <div id="result"></div>
 
 <div class="form-group">
-	<label for="type">Type :</label>
-    <select class="form-control" id="type">
-      <option value="tasmota">tasmota</option>
-      <option value="gpio">gpio</option>
-	</select>
+	<label for="sku">SKU :</label>
+	<input type="text" id="sku" name="sku" class="form-control" placeholder="SKU" autocomplete="off">
 </div>
 
 <div class="form-group">
-	<label for="name">name :</label>
-	<input type="text" id="name" name="name" class="form-control" placeholder="name" autocomplete="off">
+	<label for="name">Nama :</label>
+	<input type="text" id="name" name="name" class="form-control" placeholder="Nama" autocomplete="off">
 </div>
 
 <div class="form-group">
-	<label for="ipOrGpio">IP or GPIO :</label>
-	<input type="text" id="ipOrGpio" name="ipOrGpio" class="form-control" placeholder="IP or GPIO" autocomplete="off">
-</div>
-
-<div class="form-group">
-	<label for="username">username :</label>
-	<input type="text" id="username" name="username" class="form-control" placeholder="username" autocomplete="off">
-</div>
-
-<div class="form-group">
-	<label for="password">password :</label>
-	<input type="password" id="password" name="password" class="form-control" placeholder="password" autocomplete="off">
+	<label for="price">Harga :</label>
+	<input type="number" id="price" name="price" class="form-control" placeholder="Harga" autocomplete="off">
 </div>
 
 
 
 
        
-	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Cancel</button>
-	<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+	<button  class="btn btn-danger" type="button" onClick="$.fancybox.close();"><i class="fa fa-window-close"></i> Batal</button>
+	<button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
 	</form>
 	</div>
 </div>       

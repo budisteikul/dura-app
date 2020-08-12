@@ -31,8 +31,8 @@
     
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ str_ireplace("www.","",$_SERVER['HTTP_HOST']) }}
+                <a class="navbar-brand" href="/">
+                    My Application
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/home/relay"><i class="fa fa-plug"></i> {{ __('Relay') }}</a>
+                                <a class="nav-link" href="#"><i class="fa fa-list"></i> {{ __('Example') }}</a>
                             </li>
 
                             <li class="nav-item dropdown">

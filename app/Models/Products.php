@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Uuid;
 
-class settings extends Model
+class Products extends Model
 {
     use Uuid;
 	use SoftDeletes;
 	
-	protected $table = 'settings';
+	protected $table = 'products';
 	public $incrementing = false;
 	protected $keyType = 'string';
 }
