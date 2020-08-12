@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-		//return redirect('/home/relay');
-        return view('home');
+		return redirect('/products');
+        //return view('home');
     }
 }
