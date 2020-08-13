@@ -1,6 +1,6 @@
 <table width="100%">
 @php
-$jumlah_baris = 10;
+$jumlah_baris = 8;
 $i = 0;
 @endphp
 @while ($i < $jumlah_baris)
