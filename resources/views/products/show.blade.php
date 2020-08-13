@@ -11,6 +11,8 @@ $i = 0;
 <td>
   <center>
       <br />
+      {{ $product->name }}
+      <br />
       <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($product->sku, 'C128',2,53,array(1,1,1), true)}}" alt="barcode" />
       
       <br />
@@ -21,7 +23,9 @@ $i = 0;
 <td>&nbsp;</td>
 <td>
   <center>
-      <br />
+       <br />
+       {{ $product->name }}
+       <br />
        <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($product->sku, 'C128',2,53,array(1,1,1), true)}}" alt="barcode" />
        
         <br />
