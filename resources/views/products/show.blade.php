@@ -1,41 +1,29 @@
-<table width="100%">
+<style type="text/css">
+ @page { margin: 0px; }
+</style>
 @php
-$jumlah_baris = 8;
+$jumlah_baris = 6;
 $i = 0;
 @endphp
 @while ($i < $jumlah_baris)
 @php
   $i++;
 @endphp
-<tr>
-<td>
-  <center>
-      <br />
+
+
+  <center style="margin-top:15px;">
+      <div>
       {{ $product->name }}
-      <br />
+      </div>
+      <div>
       <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($product->sku, 'C128',2,53,array(1,1,1), true)}}" alt="barcode" />
-      
-      <br />
+      </div>
+      <div>
       Rp. {{ number_format($product->price,0,',','.') }}
-      <br />
+     </div>
   </center>
-</td>
-<td>&nbsp;</td>
-<td>
-  <center>
-       <br />
-       {{ $product->name }}
-       <br />
-       <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($product->sku, 'C128',2,53,array(1,1,1), true)}}" alt="barcode" />
-       
-        <br />
-        Rp. {{ number_format($product->price,0,',','.') }}
-        <br />
-  </center>
-</td>
- </tr>
  @endwhile
-  </table>
+
 
   
     
