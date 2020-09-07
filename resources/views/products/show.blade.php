@@ -2,7 +2,7 @@
  @page { margin: 0px; }
 </style>
 @php
-$jumlah_baris = 4;
+$jumlah_baris = 1;
 $i = 0;
 @endphp
 @while ($i < $jumlah_baris)
