@@ -11,7 +11,7 @@ $i = 0;
 @endphp
 
 
-  <center style="margin-top:1px; margin-bottom: 1px;">
+  <center style="margin-top:5px; margin-bottom: 5px;">
       <div>
       {{ $product->name }}
       </div>
