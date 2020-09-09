@@ -76,8 +76,8 @@ class ProductController extends Controller
 
        $product = Products::findOrFail($id);
        //return view('products.show',['product'=>$product]);
-       $customPaper = array(0,0,480,192);
-       $pdf = PDF::loadview('products.show',['product'=>$product])->setPaper($customPaper,'landscape');
+       $customPaper = array(0,0,200,500);
+       $pdf = PDF::loadview('products.show',['product'=>$product])->setPaper($customPaper,'portrait');
        return $pdf->stream('barcode.pdf');
     }
 
